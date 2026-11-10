@@ -1,0 +1,27 @@
+[project]
+name = "touchdesigner-harness"
+version = "0.1.0"
+description = "Claude Code harness for TouchDesigner: rules, skills, in-TD toolkit (tdh) and checks."
+requires-python = ">=3.11"  # TouchDesigner 2025 bundles Python 3.11
+license = "MIT"
+
+[project.optional-dependencies]
+test = ["pytest", "numpy", "pillow"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff]
+target-version = "py311"
+line-length = 120
+src = ["td", "tests"]
+
+[tool.ruff.lint]
+# Pinned so local and CI results don't drift with ruff's defaults.
+select = ["E4", "E7", "E9", "F", "I", "B", "UP", "BLE"]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/conftest.py" = ["E402"]  # sys.path must be set before importing the fake td
+
+[tool.ruff.lint.isort]
+known-first-party = ["tdh", "fake_td"]

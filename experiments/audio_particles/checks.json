@@ -1,0 +1,12 @@
+{
+  "root": "/project1/audio_particles",
+  "checks": [
+    {"type": "no_errors"},
+    {"type": "not_black", "path": "out1", "min_mean": 0.02},
+    {"type": "no_nan", "path": "out1"},
+    {"type": "moving", "path": "out1"},
+    {"type": "chop_range", "path": "level", "min": 0.0, "max": 1.0},
+    {"type": "resolution", "path": "out1", "max": [1280, 1280]},
+    {"type": "cook_budget", "max_ms": 12}
+  ]
+}

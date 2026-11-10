@@ -1,0 +1,527 @@
+{
+ "format": "tdh-snapshot/1",
+ "root": "/project1/audio_particles",
+ "ops": {
+  "audio1": {
+   "type": "audiofileinCHOP",
+   "family": "CHOP",
+   "pos": [
+    0,
+    400
+   ],
+   "pars": {
+    "file": {
+     "expr": "op('tracks')[parent().par.Track.eval() % (op('tracks').numRows - 1) + 1, 'path'].val if op('tracks').numRows > 1 else app.samplesFolder + '/Audio/JeremyCaulfield_www.dumb-unit.com.mp3'"
+    },
+    "timeslice": true
+   }
+  },
+  "audioout1": {
+   "type": "audiodeviceoutCHOP",
+   "family": "CHOP",
+   "pos": [
+    0,
+    220
+   ],
+   "inputs": [
+    [
+     "audio1"
+    ]
+   ],
+   "pars": {
+    "timeslice": true
+   }
+  },
+  "avg": {
+   "type": "nullCHOP",
+   "family": "CHOP",
+   "pos": [
+    900,
+    580
+   ],
+   "inputs": [
+    [
+     "level_avg"
+    ]
+   ]
+  },
+  "bloom1": {
+   "type": "bloomTOP",
+   "family": "TOP",
+   "pos": [
+    1950,
+    0
+   ],
+   "inputs": [
+    [
+     "trail_add"
+    ]
+   ],
+   "pars": {
+    "bloomintensity": 0.7,
+    "maxbloomradius": 0.35,
+    "minbloomradius": 0.05,
+    "preblacklevel": 0.15
+   }
+  },
+  "cam1": {
+   "type": "cameraCOMP",
+   "family": "COMP",
+   "pos": [
+    900,
+    -200
+   ],
+   "pars": {
+    "tz": 2.6
+   }
+  },
+  "cam1/file1": {
+   "type": "fileinPOP",
+   "family": "POP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "file": {
+     "expr": "app.samplesFolder + '/Geo/defcam.tog'"
+    }
+   }
+  },
+  "cook_driver": {
+   "type": "executeDAT",
+   "family": "DAT",
+   "pos": [
+    1300,
+    600
+   ],
+   "pars": {
+    "framestart": true,
+    "language": "python"
+   },
+   "text": [
+    "def onFrameStart(frame):",
+    "    op('level').cook(force=True)",
+    "    op('evolve').cook(force=True)",
+    "    if op('out1') is not None:",
+    "        op('out1').cook(force=True)",
+    "    return"
+   ]
+  },
+  "evolve": {
+   "type": "nullCHOP",
+   "family": "CHOP",
+   "pos": [
+    1080,
+    400
+   ],
+   "inputs": [
+    [
+     "evolve1"
+    ]
+   ]
+  },
+  "evolve1": {
+   "type": "speedCHOP",
+   "family": "CHOP",
+   "pos": [
+    900,
+    400
+   ],
+   "inputs": [
+    [
+     "level"
+    ]
+   ],
+   "pars": {
+    "timeslice": true
+   }
+  },
+  "geo1": {
+   "type": "geometryCOMP",
+   "family": "COMP",
+   "pos": [
+    900,
+    200
+   ],
+   "pars": {
+    "material": "/project1/audio_particles/pointmat",
+    "ry": {
+     "expr": "math.sin(absTime.seconds * 0.4) * 25"
+    }
+   }
+  },
+  "geo1/noise1": {
+   "type": "noisePOP",
+   "family": "POP",
+   "pos": [
+    0,
+    0
+   ],
+   "inputs": [
+    [
+     "geo1/scatter1"
+    ]
+   ],
+   "pars": {
+    "amp0": {
+     "expr": "max(0, op('../level')['chan1'] / max(op('../avg')['chan1'], 0.01) - 1.05) * 0.9"
+    },
+    "harmon": 1,
+    "period": 0.35,
+    "t4d": {
+     "expr": "op('../evolve')['chan1'] * 0.35"
+    }
+   }
+  },
+  "geo1/scatter1": {
+   "type": "sprinklePOP",
+   "family": "POP",
+   "pos": [
+    -200,
+    0
+   ],
+   "inputs": [
+    [
+     "geo1/text1"
+    ]
+   ],
+   "pars": {
+    "numpoints": 30000
+   }
+  },
+  "geo1/text1": {
+   "type": "textPOP",
+   "family": "POP",
+   "pos": [
+    -400,
+    0
+   ],
+   "pars": {
+    "alignx": "center",
+    "aligny": "center",
+    "extrude": true,
+    "extrudedepth": 0.12,
+    "fontsizex": 0.15,
+    "fontsizey": 0.15,
+    "text": {
+     "expr": "parent(2).par.Text"
+    },
+    "typeface": "Bold"
+   }
+  },
+  "hue1": {
+   "type": "hsvadjustTOP",
+   "family": "TOP",
+   "pos": [
+    1180,
+    -180
+   ],
+   "inputs": [
+    [
+     "render1"
+    ]
+   ],
+   "pars": {
+    "hueoffset": {
+     "expr": "(op('evolve')['chan1'] * 40) % 360"
+    }
+   }
+  },
+  "lag1": {
+   "type": "lagCHOP",
+   "family": "CHOP",
+   "pos": [
+    540,
+    400
+   ],
+   "inputs": [
+    [
+     "rms1"
+    ]
+   ],
+   "pars": {
+    "lag1": 0.02,
+    "lag2": 0.35,
+    "timeslice": true
+   }
+  },
+  "level": {
+   "type": "nullCHOP",
+   "family": "CHOP",
+   "pos": [
+    720,
+    400
+   ],
+   "inputs": [
+    [
+     "lag1"
+    ]
+   ]
+  },
+  "level_avg": {
+   "type": "lagCHOP",
+   "family": "CHOP",
+   "pos": [
+    720,
+    580
+   ],
+   "inputs": [
+    [
+     "level"
+    ]
+   ],
+   "pars": {
+    "lag1": 4.0,
+    "lag2": 4.0,
+    "timeslice": true
+   }
+  },
+  "mono1": {
+   "type": "mathCHOP",
+   "family": "CHOP",
+   "pos": [
+    180,
+    400
+   ],
+   "inputs": [
+    [
+     "audio1"
+    ]
+   ],
+   "pars": {
+    "chanop": "avg"
+   }
+  },
+  "out1": {
+   "type": "outTOP",
+   "family": "TOP",
+   "pos": [
+    2120,
+    0
+   ],
+   "inputs": [
+    [
+     "bloom1"
+    ]
+   ]
+  },
+  "pointmat": {
+   "type": "lineMAT",
+   "family": "MAT",
+   "pos": [
+    900,
+    0
+   ],
+   "pars": {
+    "blending": true,
+    "distancefar": 3.3,
+    "distancenear": 1.9,
+    "drawlines": false,
+    "drawpoints": true,
+    "pointfaralpha": 0.7,
+    "pointfarcolorb": 1.0,
+    "pointfarcolorg": 0.7,
+    "pointfarcolorr": 0.15,
+    "pointnearcolorb": 0.75,
+    "pointnearcolorg": 0.25,
+    "pointnearcolorr": 1.0,
+    "pointsizemultiplier": 0.7,
+    "srcblend": "sa"
+   }
+  },
+  "render1": {
+   "type": "renderTOP",
+   "family": "TOP",
+   "pos": [
+    1100,
+    0
+   ],
+   "pars": {
+    "bgcolora": 1.0,
+    "format": "rgba16float",
+    "geometry": "geo1",
+    "resolutionh": 720,
+    "resolutionw": 1280
+   }
+  },
+  "rms1": {
+   "type": "analyzeCHOP",
+   "family": "CHOP",
+   "pos": [
+    360,
+    400
+   ],
+   "inputs": [
+    [
+     "mono1"
+    ]
+   ],
+   "pars": {
+    "function": "rmspower"
+   }
+  },
+  "tracks": {
+   "type": "folderDAT",
+   "family": "DAT",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "allextensions": false,
+    "audioextensions": true,
+    "callbacks": "tracks_callbacks",
+    "rootfolder": {
+     "expr": "parent().par.Musicfolder"
+    }
+   }
+  },
+  "tracks_callbacks": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    0,
+    -120
+   ],
+   "pars": {
+    "language": "python"
+   },
+   "text": [
+    "\"\"\"",
+    "Folder DAT Callbacks",
+    "",
+    "me - this DAT",
+    "",
+    "dat - the DAT that is querying",
+    "info - the file or folder being queried",
+    "\tname \t\t\t\t- the name with extension",
+    "\tbaseName \t\t\t- the name without extension",
+    "\tpath \t\t\t\t- the full path",
+    "\textension \t\t\t- the extension of the file",
+    "\tfolder \t\t\t\t- the path of the folder this is in",
+    "\tisFolder\t\t\t- true if a folder, false if a file",
+    "\tdepth \t\t\t\t- the depth of the file/folder from the root",
+    "\tsize \t\t\t\t- size of file or folder",
+    "\ttype \t\t\t\t- a description of the file type",
+    "\tdateCreated \t\t- the file or folder creation date",
+    "\tdateModified \t\t- the file or folder last modified date",
+    "\tdateAccessed \t\t- the file or folder last accessed date",
+    "\"\"\"",
+    "",
+    "from typing import List, Any",
+    "",
+    "# Uncomment following two functions to add custom columns",
+    "",
+    "# def onInitGetColumnNames(dat: folderDAT) -> List[str]:",
+    "# \t\"\"\"",
+    "# \tCalled to initialize custom column names. Return a list of column names.",
+    "# \t\"\"\"",
+    "# \treturn ['digits']",
+    "",
+    "# def onGetValues(dat: folderDAT, info: FileEntry, row: int) -> List[Any]:",
+    "# \t\"\"\"",
+    "# \tCalled to get custom column values. Return a list of values corresponding",
+    "#   to the custom columns defined in onInitGetColumnNames.",
+    "# \t\"\"\"",
+    "# \treturn [dat.digits]",
+    "",
+    "# control which folders are included",
+    "",
+    "def onGetInclude(dat: folderDAT, info: FileEntry, row: int) -> bool:",
+    "\t\"\"\"",
+    "\tCalled to determine if a file/folder should be included.",
+    "\t",
+    "\tArgs:",
+    "\t\tdat: The DAT that is querying",
+    "\t\tinfo: The FileEntry being queried",
+    "\t\trow: The table row index",
+    "\t\t",
+    "\tReturns:",
+    "\t\tbool: True if the file/folder should be included",
+    "\t\"\"\"",
+    "\treturn True",
+    "",
+    "def onFound(dat: folderDAT, info: FileEntry, row: int):",
+    "\t\"\"\"",
+    "\tCalled when a file/folder is found.",
+    "\t",
+    "\tArgs:",
+    "\t\tdat: The DAT that is querying",
+    "\t\tinfo: The FileEntry that was found",
+    "\t\trow: The table row index",
+    "\t\"\"\"",
+    "\treturn"
+   ]
+  },
+  "trail_add": {
+   "type": "compositeTOP",
+   "family": "TOP",
+   "pos": [
+    1780,
+    0
+   ],
+   "inputs": [
+    [
+     "hue1"
+    ],
+    [
+     "trail_fade"
+    ]
+   ],
+   "pars": {
+    "operand": "maximum"
+   }
+  },
+  "trail_fade": {
+   "type": "levelTOP",
+   "family": "TOP",
+   "pos": [
+    1610,
+    0
+   ],
+   "inputs": [
+    [
+     "trail_xf"
+    ]
+   ],
+   "pars": {
+    "brightness1": 0.9
+   }
+  },
+  "trail_fb": {
+   "type": "feedbackTOP",
+   "family": "TOP",
+   "pos": [
+    1270,
+    0
+   ],
+   "inputs": [
+    [
+     "hue1"
+    ]
+   ],
+   "pars": {
+    "format": "rgba16float",
+    "top": "trail_add"
+   }
+  },
+  "trail_xf": {
+   "type": "transformTOP",
+   "family": "TOP",
+   "pos": [
+    1440,
+    0
+   ],
+   "inputs": [
+    [
+     "trail_fb"
+    ]
+   ],
+   "pars": {
+    "sx": 1.006,
+    "sy": 1.006
+   }
+  }
+ }
+}

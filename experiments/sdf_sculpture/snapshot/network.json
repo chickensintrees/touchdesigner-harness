@@ -1,0 +1,153 @@
+{
+ "format": "tdh-snapshot/1",
+ "root": "/project1/sdf_sculpture",
+ "ops": {
+  "cook_driver": {
+   "type": "executeDAT",
+   "family": "DAT",
+   "pos": [
+    200,
+    -200
+   ],
+   "pars": {
+    "framestart": true,
+    "language": "python"
+   },
+   "text": [
+    "def onFrameStart(frame):",
+    "    op('out1').cook(force=True)   # relative to this COMP; NOT '../out1'",
+    "    return"
+   ]
+  },
+  "glsl1": {
+   "type": "glslTOP",
+   "family": "TOP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "computedat": "glsl1_compute",
+    "format": "rgba16float",
+    "outputresolution": "custom",
+    "pixeldat": "sculpt_frag",
+    "resolutionh": 720,
+    "resolutionw": 1280,
+    "vec0name": "time",
+    "vec0valuex": {
+     "expr": "absTime.seconds"
+    },
+    "vec1name": "_scale",
+    "vec2name": "size",
+    "vec2valuex": 0.5,
+    "vec3name": "mouse",
+    "vec3valuex": 0.5,
+    "vec3valuey": 0.5,
+    "vec3valuez": 0.5,
+    "vec4name": "opacity",
+    "vec5name": "stepSize",
+    "vec5valuex": 0.45,
+    "vec6name": "speed",
+    "vec6valuex": 0.5
+   }
+  },
+  "glsl1_compute": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    320,
+    -120
+   ],
+   "pars": {
+    "language": "glsl"
+   },
+   "text": [
+    "// Example Compute Shader",
+    "",
+    "// uniform float exampleUniform;",
+    "",
+    "layout (local_size_x = 8, local_size_y = 4) in;",
+    "void main()",
+    "{",
+    "\t// This code is running 1:1 per pixel, so early-exit",
+    "\t// if this thread overhangs the edge of the output",
+    "\tif (any(greaterThanEqual(ivec2(gl_GlobalInvocationID.xy), ivec2(uTDOutputInfo.res.zw))))",
+    "\t\treturn;",
+    "",
+    "\tvec4 color;",
+    "\t//color = texelFetch(sTD2DInputs[0], ivec2(gl_GlobalInvocationID.xy), 0);",
+    "\tcolor = vec4(1.0);",
+    "\t// We need to use TDImageStoreOutput() so that 8-bit textures that are sRGB",
+    "\t// encoded can be written to correctly from incoming linear values.",
+    "\t// imageStore() does not do this automatically, while pixel shader outputs do.",
+    "\tTDImageStoreOutput(0, gl_GlobalInvocationID, color);",
+    "}"
+   ]
+  },
+  "glsl1_info": {
+   "type": "infoDAT",
+   "family": "DAT",
+   "pos": [
+    160,
+    -120
+   ],
+   "pars": {
+    "language": "text",
+    "op": "glsl1"
+   }
+  },
+  "glsl1_pixel": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    0,
+    -120
+   ],
+   "pars": {
+    "extension": "frag",
+    "language": "glsl"
+   },
+   "text": [
+    "",
+    "// Example Pixel Shader",
+    "",
+    "// uniform float exampleUniform;",
+    "",
+    "out vec4 fragColor;",
+    "void main()",
+    "{",
+    "\t// vec4 color = texture(sTD2DInputs[0], vUV.st);",
+    "\tvec4 color = vec4(1.0);",
+    "\tfragColor = TDOutputSwizzle(color);",
+    "}"
+   ]
+  },
+  "out1": {
+   "type": "outTOP",
+   "family": "TOP",
+   "pos": [
+    200,
+    0
+   ],
+   "inputs": [
+    [
+     "glsl1"
+    ]
+   ]
+  },
+  "sculpt_frag": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    -200,
+    0
+   ],
+   "pars": {
+    "file": "experiments/sdf_sculpture/shaders/sculpt.top.glsl",
+    "language": "text",
+    "syncfile": true
+   },
+   "text_file": "experiments/sdf_sculpture/shaders/sculpt.top.glsl"
+  }
+ }
+}

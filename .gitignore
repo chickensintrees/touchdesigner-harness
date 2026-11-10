@@ -1,0 +1,26 @@
+# TouchDesigner autosaves and backups
+Backup/
+CrashAutoSave*
+*.dmp
+*.toe.dir/
+*.tox.dir/
+# Python
+__pycache__/
+*.pyc
+.venv/
+.pytest_cache/
+.ruff_cache/
+# OS
+.DS_Store
+Thumbs.db
+# Per-run captures (hero frames are kept; see td-snapshot)
+experiments/*/captures/*
+!experiments/*/captures/hero.png
+!experiments/*/captures/.gitkeep
+# Your local lab project: it contains the MCP server component (TDMCP's license
+# forbids redistributing it), so it never goes in git. Experiments are .tox files.
+/lab.toe
+/lab.*.toe
+
+# Shader Park compiler deps
+node_modules/
