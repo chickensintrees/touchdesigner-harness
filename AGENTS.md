@@ -25,6 +25,7 @@ You are working with a live TouchDesigner (TD) session through an MCP server. Th
 13. **Wiring.** `src.outputConnectors[0].connect(dst)` **appends** a new input on dst. `src.outputConnectors[0].connect(dst.inputConnectors[i])` **replaces** input i. Use the indexed form when you mean "this input".
 14. **Write every execute-python snippet the same way.** Start it with `import tdh`: some servers (touchdesigner-mcp) run each call in a fresh namespace, so `tdh` from an earlier call is gone, though the module is still loaded. End it with a bare variable name holding the result (`r = tdh.check(...)` then `r`): touchdesigner-mcp evaluates the last line again to get the result, so a last line with side effects (`print`, `create`, `save`) runs twice. The `tdh.x(...)` calls written inline in the skills are shorthand for this pattern.
 15. **Ask before outward actions.** That means pushing, opening PRs, sending OSC/MIDI/DMX to real devices, and opening network ports.
+16. **Every experiment is playable without reading its network.** The person you are building for should never have to find an operator to change something. As soon as a value is one they would want to change (the words on screen, an amount, a speed, a colour, which file, which variation), put it on the experiment COMP as a custom parameter with a plain label, on a page named `Controls`, and read it inside with `parent().par.Name`. Text is always a control, never typed into an operator. Do this as you build, without being asked, and say which controls you added. After the first working picture and after any change to the controls, run `tdh.show('/project1/<slug>')`: it opens the controls and the output as two windows, so they can move a slider and watch. The `controls` check in `checks.json` fails if there are fewer than three controls or if any control is read by nothing: a slider that does nothing is worse than no slider.
 
 ## Quick reference
 
@@ -34,6 +35,8 @@ You are working with a live TouchDesigner (TD) session through an MCP server. Th
 | Start something new | `td-new-experiment` skill |
 | Iterate on a look | `td-sketch` skill |
 | Shader work | `td-glsl` skill |
+| Let the user play with it | `tdh.show('/project1/<slug>')` (controls + output windows) |
+| What can the user change? | `tdh.controls('/project1/<slug>')` |
 | Is it done? | `td-verify` skill → `tdh.check(...)` |
 | Keep this version | `td-snapshot` skill |
 | Harness checks (no TD needed) | `./check.sh` |

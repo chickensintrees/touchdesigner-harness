@@ -25,9 +25,10 @@ description: Run an experiment's checks in TouchDesigner plus the harness checks
 5. **On failure:**
    - `no_errors`: fix the listed operator paths.
    - `not_black`: walk upstream with `tdh.stats` until the output stops being black.
+   - `controls`: the result lists what is missing. Too few: expose the values a person would change as custom parameters and read them inside with `parent().par.Name`. `unused`: a control nothing reads; wire it in or delete it. `tdh.controls('/project1/<slug>')` shows what reads each one.
    - `cook_budget`: find the expensive operator (TDMCP `get_cook_performance`) and reduce resolution or particle count.
    - Never loosen a threshold in `checks.json` just to get a pass. Change it only when the intent changed, and say so in `NOTES.md`.
 
 ## Adding checks
 
-Add assertions to `checks.json` as the experiment takes shape. Check types: `no_errors`, `not_black`, `no_nan`, `moving`, `chop_range`, `resolution`, `cook_budget`. They are documented in `td/tdh/checks.py`. Give every claim in the Intent a check where one is possible. For example, "reacts to audio" becomes a `chop_range` check on the analysis CHOP plus `moving`.
+Add assertions to `checks.json` as the experiment takes shape. Check types: `no_errors`, `not_black`, `no_nan`, `moving`, `chop_range`, `resolution`, `cook_budget`, `controls`. They are documented in `td/tdh/checks.py`. Give every claim in the Intent a check where one is possible. For example, "reacts to audio" becomes a `chop_range` check on the analysis CHOP plus `moving`.

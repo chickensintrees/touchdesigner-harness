@@ -17,11 +17,13 @@ It does not include an MCP server. It sits on top of one (touchdesigner-mcp, ver
 ## Decisions
 
 - **Works with any MCP server.** tdh needs only an execute-python tool, which TDMCP, touchdesigner-mcp and Embody all have. The typed build tools come from whichever server you run. Verified end to end: touchdesigner-mcp 2.2.0. Also supported: TDMCP (official, undo stack, consent, localhost only), pending its first full run.
-- **tdh observes; it doesn't build.** The one exception is `save_tox`, which writes a file. Building goes through the server's typed tools, so with TDMCP every edit can be undone.
+- **tdh observes; it doesn't build.** The exceptions are `save_tox`, which writes a file, and `show`, which opens two windows. Building goes through the server's typed tools, so with TDMCP every edit can be undone.
 - **Git:** each experiment is a `.tox` (to restore it) plus a deterministic JSON snapshot (to review it). The snapshot records non-default parameters, wiring, layout, expressions and binds, and authored DAT text. It is not a restore format. `lab.toe` stays local, because it contains the MCP server component, and TDMCP's license forbids redistributing it.
 - **Platforms:** TD on macOS and Windows. Claude Code either runs locally, or on a GPU VM that runs TD (see `docs/REMOTE.md`). Linux can only edit the harness; it can't run TD.
 - **Python 3.11** (the version TD bundles). tdh needs only numpy, which TD includes, and the standard library. It writes PNGs itself, so no PIL is needed.
 - **No main-thread blocking.** Anything that needs time, such as motion, is measured across two calls.
+
+- **The interface comes with the experiment.** A user should be able to change the words and move sliders and watch the output, without reading a network and without asking the agent. TouchDesigner already draws a COMP's custom parameters as a panel, so the harness makes the agent expose them as it builds (AGENTS.md rule 16), checks that each one is really read by something (`controls` check, `tdh.controls`), and opens the panel beside the output (`tdh.show`). No separate UI to build or maintain.
 
 ## Definition of done (for harness changes)
 

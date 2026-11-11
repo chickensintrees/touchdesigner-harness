@@ -24,3 +24,6 @@ experiments/*/captures/*
 
 # Shader Park compiler deps
 node_modules/
+
+# FBX COMP import cache
+TDImportCache/

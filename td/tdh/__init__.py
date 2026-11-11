@@ -20,9 +20,11 @@ Then:
     tdh.check('experiments/x/checks.json')       # definition of done
     tdh.snapshot('/project1/x', 'experiments/x/snapshot/network.json')
     tdh.save_tox('/project1/x', 'experiments/x/x.tox')
+    tdh.controls('/project1/x')                  # the experiment's knobs, and what reads each
+    tdh.show('/project1/x')                      # open its controls and output as windows
 
 Every function returns plain JSON-able data. Nothing here creates, deletes or
-rewires operators (save_tox only writes a file): building is the MCP server's job; tdh observes and records.
+rewires operators (save_tox only writes a file, show only opens windows): building is the MCP server's job; tdh observes and records.
 """
 
 from __future__ import annotations
@@ -31,6 +33,7 @@ import importlib
 
 from . import _td, imaging, probe, snapshots
 from . import checks as _checks
+from . import ui as _ui
 
 __version__ = "0.1.0"
 
@@ -42,6 +45,8 @@ cook_ms = probe.cook_ms
 cook_sample = probe.cook_sample
 info = probe.info
 capture = imaging.capture
+controls = _ui.controls
+show = _ui.show
 
 
 def check(spec, print_summary=True):
@@ -71,6 +76,6 @@ def reload():
     Note: re-binds the module, so motion() history is cleared."""
     import tdh
 
-    for mod in (_td, probe, imaging, _checks, snapshots):
+    for mod in (_td, probe, imaging, _ui, _checks, snapshots):
         importlib.reload(mod)
     return importlib.reload(tdh)

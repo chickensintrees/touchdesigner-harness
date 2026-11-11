@@ -59,6 +59,15 @@ Three experiments, each built entirely through this harness. Each folder holds i
 | ![sdf_sculpture](docs/media/sdf_sculpture.gif) | **[`sdf_sculpture`](experiments/sdf_sculpture/)**: a raymarched liquid sculpture written in a few lines of [Shader Park](https://github.com/shader-park/shader-park-core) JavaScript, compiled headless to a GLSL TOP shader by [`tools/shaderpark`](tools/shaderpark/), at about 1.2 ms a frame at 1280×720. |
 | ![feedback_drift](docs/media/feedback_drift.gif) | **[`feedback_drift`](experiments/feedback_drift/)**: noise blooms tinted by a hue-drifting ramp, spiralling inward through a 16-bit float feedback loop. The first experiment; its `NOTES.md` shows the build-look-adjust loop step by step. |
 
+## Gallery: an example project
+
+The harness was used to build an audio-reactive scene engine in one TouchDesigner project. A hub plays a music track and publishes what the music is doing on every frame. Eighteen scenes each read the hub and apply a different technique, and a cutter switches between them on beat lines. Every scene has between 7 and 14 takes, which are the same network with another camera, subject, palette or mode.
+
+- The [preset gallery](docs/GALLERY.md) shows every scene and every take.
+- The project page at [billmoore.ai/touchdesigner](https://billmoore.ai/touchdesigner/) has the samples in motion.
+
+The source of these scenes is not in this repository yet. They still load 3D models, fonts and music from local folders, so they would not run on another machine. They will be added once those paths are portable.
+
 ## What's inside
 
 | | |
@@ -66,6 +75,7 @@ Three experiments, each built entirely through this harness. Each folder holds i
 | [`AGENTS.md`](AGENTS.md) | The rules Claude follows around a live TD session. Several of them came from traps hit on a real install. |
 | [`.claude/skills/`](.claude/skills/) | `td-connect`, `td-new-experiment`, `td-sketch` (the build → look → adjust loop), `td-glsl`, `td-verify`, `td-snapshot` |
 | [`td/tdh/`](td/tdh/) | The in-TD toolkit (Python 3.11 + numpy). It handles the error sweep, PNG capture, motion and stall detection, the cook budget, `checks.json` and text snapshots. It observes; it never builds. |
+| Controls | You never have to read the network to change something. As it builds, Claude puts the words, amounts and choices on the experiment as labelled controls, a check fails if any control does nothing, and `tdh.show(...)` opens the controls beside the output so you can move a slider and watch. |
 | [`experiments/`](experiments/) | One folder per idea, and `_template/` to start from |
 | [`docs/`](docs/) | [SETUP](docs/SETUP.md) · [TRANSPORTS](docs/TRANSPORTS.md) (servers and tool names) · [REMOTE](docs/REMOTE.md) (phone, other machines, GPU VMs) · [KNOWN-ISSUES](docs/KNOWN-ISSUES.md) · [RESEARCH](docs/RESEARCH.md) (what else exists) |
 
@@ -82,3 +92,7 @@ Three experiments, each built entirely through this harness. Each folder holds i
 ## License
 
 MIT, for this repo. touchdesigner-mcp (MIT) and TDMCP (Derivative's Shared Use License) are separate projects with their own licenses, and neither is included here.
+
+## Licence
+
+The code in this repository is released under the MIT licence (see `LICENSE`). The images in `docs/media/gallery/` show SUPERWORLD! artwork, models and lettering, which are not covered by that licence and remain the property of Bill Moore.

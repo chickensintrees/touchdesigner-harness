@@ -14,7 +14,8 @@ checks.json:
     {"type": "moving", "path": "out1", "min_delta": 0.002},
     {"type": "chop_range", "path": "level", "channels": "*", "min": 0, "max": 1},
     {"type": "resolution", "path": "out1", "max": [1280, 1280]},
-    {"type": "cook_budget", "max_ms": 8}
+    {"type": "cook_budget", "max_ms": 8},
+    {"type": "controls", "min": 3}
   ]
 }
 Paths are relative to root unless they start with '/'.
@@ -26,9 +27,10 @@ import json
 from fnmatch import fnmatch
 
 from . import probe
+from . import ui as _ui
 from ._td import get_op, resolve_path
 
-CHECK_TYPES = ("no_errors", "not_black", "no_nan", "moving", "chop_range", "resolution", "cook_budget")
+CHECK_TYPES = ("no_errors", "not_black", "no_nan", "moving", "chop_range", "resolution", "cook_budget", "controls")
 
 
 def _abs(root, path):
@@ -103,6 +105,12 @@ def _cook_budget(c, path):
     return s["cook_ms"] <= c["max_ms"], detail
 
 
+def _has_controls(c, path):
+    """The COMP can be played from its own parameter panel: at least `min` custom
+    parameters, each read by something inside it (tdh.controls)."""
+    return _ui.summary(path, minimum=int(c.get("min", 3)), allow_unused=tuple(c.get("allow_unused", ())))
+
+
 _RUNNERS = {
     "no_errors": _no_errors,
     "not_black": _not_black,
@@ -111,6 +119,7 @@ _RUNNERS = {
     "chop_range": _chop_range,
     "resolution": _resolution,
     "cook_budget": _cook_budget,
+    "controls": _has_controls,
 }
 
 

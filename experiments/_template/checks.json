@@ -1,10 +1,33 @@
 {
   "root": "/project1/SLUG",
   "checks": [
-    {"type": "no_errors"},
-    {"type": "not_black", "path": "out1", "min_mean": 0.01},
-    {"type": "no_nan", "path": "out1"},
-    {"type": "resolution", "path": "out1", "max": [1280, 1280]},
-    {"type": "cook_budget", "max_ms": 12}
+    {
+      "type": "no_errors"
+    },
+    {
+      "type": "not_black",
+      "path": "out1",
+      "min_mean": 0.01
+    },
+    {
+      "type": "no_nan",
+      "path": "out1"
+    },
+    {
+      "type": "resolution",
+      "path": "out1",
+      "max": [
+        1280,
+        1280
+      ]
+    },
+    {
+      "type": "cook_budget",
+      "max_ms": 12
+    },
+    {
+      "type": "controls",
+      "min": 3
+    }
   ]
 }

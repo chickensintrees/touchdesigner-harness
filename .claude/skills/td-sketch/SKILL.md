@@ -10,6 +10,7 @@ Each pass through this loop makes **one** meaningful change and then looks at th
 1. **Re-read** `experiments/<slug>/NOTES.md`: the intent and the last log entry.
 2. **Plan one step.** Pick the smallest change that moves toward the intent, such as adding a feedback loop or swapping noise for a ramp. Look up any operator or parameter you're unsure of (TDMCP `get_help` / `get_docs`). Don't rely on memory.
 3. **Make the change** with typed tools: create, wire, set parameters. TDMCP's `build_network` handles several operators in one call. Keep everything inside `/project1/<slug>`, and lay operators out left to right.
+   - **Promote as you go.** If the step introduced a value the user would want to change (text, an amount, a speed, a colour, a choice), make it a control on the COMP's `Controls` page and read it with `parent().par.Name` instead of leaving a number in an operator. Give it a plain label and a sensible slider range. Do not wait to be asked.
 4. **Errors:** `tdh.errors('/project1/<slug>')`. Fix anything new before going further.
 5. **Look:** `tdh.capture('/project1/<slug>/out1', 'experiments/<slug>/captures/<n>.png')`. Then **open the PNG with the Read tool and look at it.** Describe what you actually see, not what you expect to see.
    - Upside down? Pass `flip=False`.
@@ -21,6 +22,6 @@ Each pass through this loop makes **one** meaningful change and then looks at th
    - Better: keep it. If it's a real step forward, run `td-snapshot`.
    - Worse: undo (Ctrl+Z through TDMCP's undo, or revert the parameter) and log why.
    - Stuck after 3 tries on the same problem: stop, show the user the captures, and ask.
-8. Repeat. Every few steps, run `td-verify`.
+8. Repeat. Every few steps, run `td-verify`. When the controls change, run `tdh.show('/project1/<slug>')` again and tell the user what they can now move.
 
 Experiments are allowed to be weird. The loop exists so that every step is seen, logged and reversible, not to keep the results tame.

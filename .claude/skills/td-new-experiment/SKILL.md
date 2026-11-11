@@ -21,7 +21,19 @@ description: Start a new TouchDesigner experiment, with its own folder, COMP, no
      ```
 
      `op('name')` inside a DAT resolves relative to the COMP that holds the DAT. `'../out1'` points one level higher, outside the experiment.
+   - Add a custom page named `Controls` to the COMP now, even if it starts with one parameter. Every value the user would want to change goes there as you build (AGENTS.md rule 16):
+
+     ```python
+     comp = op('/project1/<slug>')
+     page = comp.appendCustomPage('Controls')
+     page.appendStr('Text', label='Text')[0].val = 'HELLO'       # words are always a control
+     p = page.appendFloat('Amount', label='Amount')[0]
+     p.normMin, p.normMax, p.val = 0, 1, 0.5                      # the slider's range
+     ```
+
+     Inside the COMP read them with `parent().par.Text`, `parent().par.Amount` (set as parameter expressions through execute-python). Menus: `appendMenu` then `par.menuNames` / `par.menuLabels`. Buttons: `appendPulse`, handled in a Parameter Execute DAT's `onPulse`.
    - Check with `tdh.errors('/project1/<slug>')`. Then check the driver works: `tdh.total_cooks('/project1/<slug>/out1')` should go up between two calls.
 6. **First save:** `tdh.save_tox('/project1/<slug>', 'experiments/<slug>/<slug>.tox')`.
 7. **Commit** the folder: `exp(<slug>): start`.
-8. Move on to `td-sketch`.
+8. Open it for the user: `tdh.show('/project1/<slug>')` floats the controls and the output as two windows. Tell them which controls exist.
+9. Move on to `td-sketch`.
