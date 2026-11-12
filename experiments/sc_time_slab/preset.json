@@ -1,0 +1,26 @@
+{
+ "title": "Time-sliced objects",
+ "technique": "A slit-scan effect: a spinning 3D object is recorded for about a second, and every part of the picture shows a different moment of that recording.",
+ "music": "Kick drums snap the prop round, pulse its size and throw parts of the picture further into the past, while snares make it nod and flash the rim light. Bass and overall loudness set how deep into the past the picture reaches, and the tempo drives the bounce, the sweeps and the crawl.",
+ "accepts_input": true,
+ "as_processor": "It records the last second of the picture it is given and rebuilds every frame from different moments of it, so anything that moves is torn along giant letters, rings, slices, blades, panels or a grid, or unrolled sideways through a slit; it also sways the picture with the beat and swells it on each kick drum, so even a still picture is cut up in time with the music.",
+ "words_note": "In Describe mode every take carries a two-line caption along the bottom (the first two entries of words). Numbers in a caption follow the shot's seed: the twist has 10 to 27 slices, the panels take is 3, 4 or 5 MOMENTS, the contact sheet is 16, 36 or 64 frames. Takes 0 and 7 also swap the text of their time map: take 0 uses one of the nine two-line phrases (the seed picks), take 7 crawls all eighteen sentences.",
+ "takes": [
+  {"name": "Word tear", "description": "A prop sits off centre in a dark room and a giant phrase appears only as a tear in time across it, where the prop is a few frames older and turned differently.",
+   "words": ["TIME DISPLACEMENT", "The letters are not drawn. Inside them the picture is up to a second older, so whatever moves tears.", "SLIT SCAN", "TIME SLAB", "THE PAST", "OLDER HERE", "64 FRAMES", "TIME TEAR", "NOT NOW", "TIME MAP", "LATE"]},
+  {"name": "Twist", "description": "In an empty black room seen from a low camera, a smooth ramp of time is cut into slices so the fast-spinning prop becomes a stack of discs each turned a different amount, with no text.",
+   "words": ["SLIT-SCAN IN 10 SLICES", "Each slice shows a different moment of the last second, so anything that moves is cut into steps."]},
+  {"name": "Strip photo", "description": "A scrolling canvas is fed from one thin vertical slit of the picture, so the turning prop is unrolled sideways into a long frieze that wipes across the ordinary view after each cut.",
+   "words": ["STRIP PHOTOGRAPH", "One thin slit of the picture is recorded each frame and laid beside the last, so across is time."]},
+  {"name": "Rings", "description": "Seen from high above, a large prop is cut by stepped rings of the past that leave an off-centre point on every beat, with kicks throwing alternate rings further back.",
+   "words": ["RINGS OF THE PAST", "Each ring is an older moment. A new one leaves the centre on every beat. Kick drums push rings back."]},
+  {"name": "Triptych", "description": "Three to five tall panels show the same view at evenly spaced moments of the last second, each under its own colour, and every kick moves the present one panel along.",
+   "words": ["3 MOMENTS", "The same view at 3 moments of the last second. Each kick drum moves the present one panel along."]},
+  {"name": "Contact sheet", "description": "A grid of small frames, each the whole picture a little older than the last, drawn in pure black and white dots and filling in cell by cell after a cut.",
+   "words": ["CONTACT SHEET OF ONE SECOND", "16 frames from the last second in reading order, newest at top left, drawn in black and white dots."]},
+  {"name": "Blades macro", "description": "A long lens close on part of the prop is cut by slanted blades of time with the widest colour fringes, reshuffled by every kick into abstract chrome and rainbow.",
+   "words": ["BLADES OF TIME", "Each slanted blade shows one of four moments of the last second. Kick drums reshuffle them."]},
+  {"name": "Phrase crawl", "description": "Against a daylit beige wall, lines of small text crawl up the frame and act as the time pattern, so the words read as a texture across a large prop set to one side.",
+   "words": ["TEXT AS A TIME MAP", "No text is drawn. Each letter is a window: inside it the picture is up to a second older.", "EVERY LETTER IS A WINDOW INTO THE PAST.", "INSIDE A LETTER THE PICTURE IS OLDER.", "THE LAST 64 FRAMES ARE KEPT IN A STACK.", "EACH PIXEL PICKS ITS OWN MOMENT.", "THIS TEXT IS THE MAP THAT PICKS IT.", "NO TEXT IS DRAWN. ONLY TIME IS MOVED.", "EACH LINE LOOKS BACK A DIFFERENT AMOUNT.", "THE CRAWL IS LOCKED TO THE TEMPO.", "BASS AND LOUDNESS DEEPEN THE LETTERS.", "KICK DRUMS DROP STRIPS INTO THE PAST.", "RED, GREEN AND BLUE READ DIFFERENT MOMENTS.", "A TEXTURE 3D TOP HOLDS THE LAST SECOND.", "ONE GLSL PASS REBUILDS EVERY FRAME.", "WHAT STANDS STILL LOOKS NORMAL.", "WHAT MOVES IS TORN ALONG THE LETTERS.", "SLIT-SCAN, WITH WORDS FOR THE SLIT.", "HISTORY 640 X 360. OUTPUT 1280 X 720.", "TIME DISPLACEMENT."]}
+ ]
+}

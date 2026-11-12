@@ -1,0 +1,11 @@
+{
+  "root": "/project1/sc_glyph_render",
+  "checks": [
+    {"type": "no_errors", "include_warnings": true},
+    {"type": "not_black", "path": "out1", "min_mean": 0.01},
+    {"type": "no_nan", "path": "out1"},
+    {"type": "resolution", "path": "out1", "width": 1280, "height": 720},
+    {"type": "moving", "path": "out1"},
+    {"type": "cook_budget", "max_ms": 8}
+  ]
+}

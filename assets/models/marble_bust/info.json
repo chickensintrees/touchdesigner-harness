@@ -1,0 +1,22 @@
+{
+ "slug": "marble_bust",
+ "source": "marble_bust",
+ "parts_joined": 1,
+ "vertices": 20552,
+ "triangles": 28229,
+ "decimated": false,
+ "original_size_m": [
+  0.5584,
+  0.5342,
+  1.0011
+ ],
+ "size_units": [
+  0.5578,
+  1.0,
+  0.5336
+ ],
+ "has_uv": true,
+ "has_texture": true,
+ "generator": "TRELLIS.2",
+ "prompt": "a classical marble bust of an anonymous figure with curly hair and blank eyes, on a square pedestal, weathered ancient sculpture"
+}

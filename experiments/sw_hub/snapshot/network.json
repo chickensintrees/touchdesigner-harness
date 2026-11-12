@@ -1,0 +1,420 @@
+{
+ "format": "tdh-snapshot/1",
+ "root": "/project1/sw_hub",
+ "ops": {
+  "ainfo": {
+   "type": "infoCHOP",
+   "family": "CHOP",
+   "pos": [
+    320,
+    -130
+   ],
+   "pars": {
+    "op": "audio"
+   }
+  },
+  "audio": {
+   "type": "audiofileinCHOP",
+   "family": "CHOP",
+   "pos": [
+    480,
+    -130
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.hub.audio(parent().par.Track.eval())"
+    },
+    "timeslice": true
+   }
+  },
+  "audioout": {
+   "type": "audiodeviceoutCHOP",
+   "family": "CHOP",
+   "pos": [
+    160,
+    -390
+   ],
+   "inputs": [
+    [
+     "audio"
+    ]
+   ],
+   "pars": {
+    "timeslice": true,
+    "volume": {
+     "expr": "parent().par.Volume"
+    }
+   }
+  },
+  "cook_driver": {
+   "type": "executeDAT",
+   "family": "DAT",
+   "pos": [
+    800,
+    -390
+   ],
+   "pars": {
+    "framestart": true,
+    "language": "python"
+   },
+   "text": [
+    "def onFrameStart(frame):",
+    "    op('feed').cook(force=True)",
+    "    op('spectex').cook(force=True)",
+    "    return"
+   ]
+  },
+  "derived": {
+   "type": "constantCHOP",
+   "family": "CHOP",
+   "pos": [
+    640,
+    -260
+   ],
+   "pars": {
+    "const0name": "beat",
+    "const0value": {
+     "expr": "op('row')['beat_pos'] % 1"
+    },
+    "const1name": "bar",
+    "const1value": {
+     "expr": "op('row')['bar_pos'] % 1"
+    },
+    "const2name": "beat_i",
+    "const2value": {
+     "expr": "math.floor(op('row')['beat_pos'])"
+    },
+    "const3name": "bar_i",
+    "const3value": {
+     "expr": "math.floor(op('row')['bar_pos'])"
+    },
+    "const4name": "pulse",
+    "const4value": {
+     "expr": "math.exp(-4.0 * (op('row')['beat_pos'] % 1))"
+    },
+    "const5name": "bar_pulse",
+    "const5value": {
+     "expr": "math.exp(-6.0 * (op('row')['bar_pos'] % 1))"
+    },
+    "const6name": "track_pos",
+    "const6value": {
+     "expr": "op('tsec')['t'] / max(parent().par.Duration.eval(), 0.01)"
+    }
+   }
+  },
+  "evolve": {
+   "type": "renameCHOP",
+   "family": "CHOP",
+   "pos": [
+    320,
+    -260
+   ],
+   "inputs": [
+    [
+     "speed"
+    ]
+   ],
+   "pars": {
+    "renameto": "evolve"
+   }
+  },
+  "feed": {
+   "type": "nullCHOP",
+   "family": "CHOP",
+   "pos": [
+    480,
+    0
+   ],
+   "inputs": [
+    [
+     "merge"
+    ]
+   ]
+  },
+  "feedin": {
+   "type": "fileinCHOP",
+   "family": "CHOP",
+   "pos": [
+    480,
+    -260
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.hub.feed(parent().par.Track.eval()) + '/feed.chan'"
+    },
+    "rate": 100.0,
+    "rateoption": "override",
+    "renameto": "t rms bass drums vocals other energy pitch pitch_conf bass_pitch beat_pos bar_pos section section_pos hit_low hit_mid hit_high hits_low hits_mid hits_high onset onsets"
+   }
+  },
+  "lag": {
+   "type": "lagCHOP",
+   "family": "CHOP",
+   "pos": [
+    0,
+    0
+   ],
+   "inputs": [
+    [
+     "rms_clean"
+    ]
+   ],
+   "pars": {
+    "lag1": 0.02,
+    "lag2": 0.3,
+    "timeslice": true
+   }
+  },
+  "level": {
+   "type": "renameCHOP",
+   "family": "CHOP",
+   "pos": [
+    640,
+    -130
+   ],
+   "inputs": [
+    [
+     "lag"
+    ]
+   ],
+   "pars": {
+    "renameto": "level"
+   }
+  },
+  "local": {
+   "type": "baseCOMP",
+   "family": "COMP",
+   "pos": [
+    800,
+    -130
+   ]
+  },
+  "local/modules": {
+   "type": "baseCOMP",
+   "family": "COMP",
+   "pos": [
+    0,
+    0
+   ]
+  },
+  "local/modules/hub": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "file": {
+     "expr": "project.folder.replace(chr(92), '/') + '/experiments/sw_hub/hub_module.py'"
+    },
+    "language": "text",
+    "syncfile": true
+   },
+   "text_file": "experiments/sw_hub/hub_module.py"
+  },
+  "merge": {
+   "type": "mergeCHOP",
+   "family": "CHOP",
+   "pos": [
+    0,
+    -260
+   ],
+   "inputs": [
+    [
+     "row"
+    ],
+    [
+     "derived"
+    ],
+    [
+     "level"
+    ],
+    [
+     "evolve"
+    ]
+   ]
+  },
+  "mono": {
+   "type": "mathCHOP",
+   "family": "CHOP",
+   "pos": [
+    640,
+    0
+   ],
+   "inputs": [
+    [
+     "audio"
+    ]
+   ],
+   "pars": {
+    "chanop": "avg"
+   }
+  },
+  "out1": {
+   "type": "outTOP",
+   "family": "TOP",
+   "pos": [
+    800,
+    0
+   ],
+   "inputs": [
+    [
+     "spectex"
+    ]
+   ]
+  },
+  "rms": {
+   "type": "analyzeCHOP",
+   "family": "CHOP",
+   "pos": [
+    160,
+    0
+   ],
+   "inputs": [
+    [
+     "mono"
+    ]
+   ],
+   "pars": {
+    "function": "rmspower"
+   }
+  },
+  "rms_clean": {
+   "type": "constantCHOP",
+   "family": "CHOP",
+   "pos": [
+    640,
+    -390
+   ],
+   "pars": {
+    "const0name": "level",
+    "const0value": {
+     "expr": "(lambda v: v if v == v else 0.0)(float(op('rms')[0]))"
+    }
+   }
+  },
+  "row": {
+   "type": "lookupCHOP",
+   "family": "CHOP",
+   "pos": [
+    320,
+    0
+   ],
+   "inputs": [
+    [
+     "tsec"
+    ],
+    [
+     "feedin"
+    ]
+   ],
+   "pars": {
+    "index2": {
+     "expr": "parent().par.Duration"
+    }
+   }
+  },
+  "spec": {
+   "type": "nullCHOP",
+   "family": "CHOP",
+   "pos": [
+    0,
+    -130
+   ],
+   "inputs": [
+    [
+     "spectrum"
+    ]
+   ]
+  },
+  "speccrop": {
+   "type": "cropTOP",
+   "family": "TOP",
+   "pos": [
+    320,
+    -390
+   ],
+   "inputs": [
+    [
+     "specraw"
+    ]
+   ],
+   "pars": {
+    "cropright": 0.2
+   }
+  },
+  "specraw": {
+   "type": "choptoTOP",
+   "family": "TOP",
+   "pos": [
+    800,
+    -260
+   ],
+   "pars": {
+    "chop": "spec"
+   }
+  },
+  "spectex": {
+   "type": "resolutionTOP",
+   "family": "TOP",
+   "pos": [
+    0,
+    -390
+   ],
+   "inputs": [
+    [
+     "speccrop"
+    ]
+   ],
+   "pars": {
+    "outputresolution": "custom",
+    "resolutionh": 1,
+    "resolutionw": 512
+   }
+  },
+  "spectrum": {
+   "type": "audiospectrumCHOP",
+   "family": "CHOP",
+   "pos": [
+    480,
+    -390
+   ],
+   "inputs": [
+    [
+     "mono"
+    ]
+   ]
+  },
+  "speed": {
+   "type": "speedCHOP",
+   "family": "CHOP",
+   "pos": [
+    160,
+    -260
+   ],
+   "inputs": [
+    [
+     "level"
+    ]
+   ],
+   "pars": {
+    "timeslice": true
+   }
+  },
+  "tsec": {
+   "type": "constantCHOP",
+   "family": "CHOP",
+   "pos": [
+    160,
+    -130
+   ],
+   "pars": {
+    "const0name": "t",
+    "const0value": {
+     "expr": "op('ainfo')['true_sample'] / max(op('ainfo')['sample_rate'], 1)"
+    }
+   }
+  }
+ }
+}

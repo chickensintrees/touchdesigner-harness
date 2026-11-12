@@ -1,0 +1,4174 @@
+{
+ "format": "tdh-snapshot/1",
+ "root": "/project1/sc_riso_press",
+ "ops": {
+  "black": {
+   "type": "constantTOP",
+   "family": "TOP",
+   "pos": [
+    0,
+    -360
+   ],
+   "pars": {
+    "alpha": 0.0,
+    "colorb": 0.0,
+    "colorg": 0.0,
+    "colorr": 0.0,
+    "format": "rgba8fixed",
+    "outputresolution": "custom",
+    "resolutionh": 640,
+    "resolutionw": 1024
+   }
+  },
+  "cam": {
+   "type": "cameraCOMP",
+   "family": "COMP",
+   "pos": [
+    -250,
+    -460
+   ],
+   "pars": {
+    "fov": 40.0,
+    "lookat": "/project1/sc_riso_press/target",
+    "ty": 1.0829617936073868,
+    "tz": 2.2532629126639154
+   }
+  },
+  "cam/file1": {
+   "type": "fileinPOP",
+   "family": "POP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "file": {
+     "expr": "app.samplesFolder + '/Geo/defcam.tog'"
+    }
+   }
+  },
+  "cook_driver": {
+   "type": "executeDAT",
+   "family": "DAT",
+   "pos": [
+    -400,
+    -80
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.here('press_driver.py')"
+    },
+    "framestart": true,
+    "language": "python",
+    "syncfile": true
+   },
+   "text_file": "experiments/sc_riso_press/press_driver.py"
+  },
+  "ctl": {
+   "type": "constantCHOP",
+   "family": "CHOP",
+   "pos": [
+    -400,
+    -200
+   ],
+   "pars": {
+    "const0name": "take",
+    "const0value": 4.0,
+    "const10name": "reg1",
+    "const10value": 0.007566026036097356,
+    "const11name": "driver_ms",
+    "const11value": 1.4795733775069295,
+    "const1name": "sheet",
+    "const1value": 18.0,
+    "const2name": "slide",
+    "const3name": "lay0",
+    "const3value": 1.0,
+    "const4name": "lay1",
+    "const4value": 1.0,
+    "const5name": "lay2",
+    "const5value": 1.0,
+    "const6name": "lay3",
+    "const6value": 1.0,
+    "const7name": "latches",
+    "const7value": 1.0,
+    "const8name": "gain",
+    "const8value": 0.7006451351245672,
+    "const9name": "reg0",
+    "const9value": 0.00155929248026048
+   }
+  },
+  "fb_hold": {
+   "type": "feedbackTOP",
+   "family": "TOP",
+   "pos": [
+    300,
+    -360
+   ],
+   "inputs": [
+    [
+     "black"
+    ]
+   ],
+   "pars": {
+    "top": "hold"
+   }
+  },
+  "fb_sep": {
+   "type": "feedbackTOP",
+   "family": "TOP",
+   "pos": [
+    150,
+    -360
+   ],
+   "inputs": [
+    [
+     "black"
+    ]
+   ],
+   "pars": {
+    "top": "sep"
+   }
+  },
+  "fontsel": {
+   "type": "constantCHOP",
+   "family": "CHOP",
+   "pos": [
+    -350,
+    200
+   ],
+   "pars": {
+    "const0name": "bigfont"
+   }
+  },
+  "hold": {
+   "type": "glslTOP",
+   "family": "TOP",
+   "pos": [
+    450,
+    -360
+   ],
+   "inputs": [
+    [
+     "sep"
+    ],
+    [
+     "fb_hold"
+    ]
+   ],
+   "pars": {
+    "computedat": "hold_compute",
+    "format": "rgba8fixed",
+    "outputresolution": "custom",
+    "pixeldat": "hold_frag",
+    "resolutionh": 640,
+    "resolutionw": 1024,
+    "vec0name": "uLatch",
+    "vec0valuex": 0.0,
+    "vec1name": "uLaid"
+   }
+  },
+  "hold_frag": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    450,
+    -480
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.here('shaders/hold.frag')"
+    },
+    "language": "text",
+    "syncfile": true
+   },
+   "text_file": "experiments/sc_riso_press/shaders/hold.frag"
+  },
+  "hold_info": {
+   "type": "infoDAT",
+   "family": "DAT",
+   "pos": [
+    160,
+    -120
+   ],
+   "pars": {
+    "language": "text",
+    "op": "hold"
+   }
+  },
+  "hub": {
+   "type": "selectCHOP",
+   "family": "CHOP",
+   "pos": [
+    -400,
+    200
+   ],
+   "pars": {
+    "chops": "/project1/sw_hub/feed"
+   }
+  },
+  "in_prep": {
+   "type": "glslTOP",
+   "family": "TOP",
+   "pos": [
+    0,
+    -330
+   ],
+   "inputs": [
+    [
+     "in_sel"
+    ]
+   ],
+   "pars": {
+    "computedat": "in_prep_compute",
+    "format": "rgba8fixed",
+    "outputresolution": "custom",
+    "pixeldat": "in_prep_frag",
+    "resolutionh": 600,
+    "resolutionw": 1024,
+    "vec0name": "uPrep",
+    "vec0valuex": 0.16,
+    "vec0valuey": 0.8
+   }
+  },
+  "in_prep_frag": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    -150,
+    -230
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.here('shaders/in_prep.frag')"
+    },
+    "language": "text",
+    "syncfile": true
+   },
+   "text_file": "experiments/sc_riso_press/shaders/in_prep.frag"
+  },
+  "in_prep_info": {
+   "type": "infoDAT",
+   "family": "DAT",
+   "pos": [
+    160,
+    -120
+   ],
+   "pars": {
+    "language": "text",
+    "op": "in_prep"
+   }
+  },
+  "in_sel": {
+   "type": "selectTOP",
+   "family": "TOP",
+   "pos": [
+    -150,
+    -330
+   ],
+   "pars": {
+    "top": "black"
+   }
+  },
+  "light0": {
+   "type": "lightCOMP",
+   "family": "COMP",
+   "pos": [
+    -100,
+    -460
+   ],
+   "pars": {
+    "cb": 0.0,
+    "cg": 0.0,
+    "dimmer": 3.6,
+    "lookat": "/project1/sc_riso_press/target",
+    "tx": -2.9969683879512465,
+    "ty": 1.3,
+    "tz": 1.881005178520492
+   }
+  },
+  "light0/circle1": {
+   "type": "circlePOP",
+   "family": "POP",
+   "pos": [
+    780,
+    170
+   ],
+   "pars": {
+    "connectivity": "surface",
+    "scale": 0.2
+   }
+  },
+  "light0/circle_attenEnd": {
+   "type": "circlePOP",
+   "family": "POP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "bypass": {
+     "expr": "not parent().par.attenuated"
+    },
+    "connectivity": "surface",
+    "pageindex": 3,
+    "radx": 0.1,
+    "rady": 0.1,
+    "tz": {
+     "expr": "-parent().par.attenuationend"
+    }
+   }
+  },
+  "light0/circle_attenStart": {
+   "type": "circlePOP",
+   "family": "POP",
+   "pos": [
+    0,
+    120
+   ],
+   "pars": {
+    "bypass": {
+     "expr": "not parent().par.attenuated"
+    },
+    "connectivity": "surface",
+    "pageindex": 1,
+    "radx": 0.1,
+    "rady": 0.1,
+    "tz": {
+     "expr": "-parent().par.attenuationstart"
+    }
+   }
+  },
+  "light0/connectivity1": {
+   "type": "connectivityPOP",
+   "family": "POP",
+   "pos": [
+    780,
+    290
+   ],
+   "inputs": [
+    [
+     "light0/merge3"
+    ]
+   ],
+   "pars": {
+    "surftype": "lines"
+   }
+  },
+  "light0/copy1": {
+   "type": "copyPOP",
+   "family": "POP",
+   "pos": [
+    520,
+    670
+   ],
+   "inputs": [
+    [
+     "light0/tube_attenuated"
+    ]
+   ],
+   "pars": {
+    "ncy": 2,
+    "pageindex": 2,
+    "rx": 90.0
+   }
+  },
+  "light0/line_atten": {
+   "type": "linePOP",
+   "family": "POP",
+   "pos": [
+    0,
+    230
+   ],
+   "pars": {
+    "bypass": {
+     "expr": "not parent().par.attenuated"
+    },
+    "divs": 1,
+    "pageindex": 2,
+    "pt0posz": {
+     "expr": "-parent().par.attenuationstart"
+    },
+    "pt1posz": {
+     "expr": "-parent().par.attenuationend"
+    }
+   },
+   "custom_pars": [
+    "pt",
+    "pt0posx",
+    "pt0posy",
+    "pt0posz",
+    "pt1posx",
+    "pt1posy",
+    "pt1posz"
+   ]
+  },
+  "light0/merge1": {
+   "type": "mergePOP",
+   "family": "POP",
+   "pos": [
+    250,
+    500
+   ],
+   "inputs": [
+    [
+     "light0/rectangle1"
+    ],
+    [
+     "light0/tube_cone1"
+    ],
+    [
+     "light0/tube_cone2"
+    ],
+    [
+     "light0/primitive1"
+    ],
+    [
+     "light0/line_atten"
+    ],
+    [
+     "light0/circle_attenStart"
+    ],
+    [
+     "light0/circle_attenEnd"
+    ]
+   ],
+   "pars": {
+    "pageindex": 1
+   }
+  },
+  "light0/merge2": {
+   "type": "mergePOP",
+   "family": "POP",
+   "pos": [
+    950,
+    230
+   ],
+   "inputs": [
+    [
+     "light0/connectivity1"
+    ],
+    [
+     "light0/circle1"
+    ]
+   ]
+  },
+  "light0/merge3": {
+   "type": "mergePOP",
+   "family": "POP",
+   "pos": [
+    620,
+    290
+   ],
+   "inputs": [
+    [
+     "light0/pointgen1"
+    ],
+    [
+     "light0/transform1"
+    ]
+   ]
+  },
+  "light0/merge_pointLight": {
+   "type": "mergePOP",
+   "family": "POP",
+   "pos": [
+    760,
+    820
+   ],
+   "inputs": [
+    [
+     "light0/sphere1"
+    ],
+    [
+     "light0/primitive_quadrants"
+    ],
+    [
+     "light0/copy1"
+    ]
+   ],
+   "pars": {
+    "pageindex": 1
+   }
+  },
+  "light0/pointgen1": {
+   "type": "pointgeneratorPOP",
+   "family": "POP",
+   "pos": [
+    270,
+    290
+   ],
+   "pars": {
+    "numpoints": 17,
+    "pageindex": 1,
+    "shape": "circle",
+    "sx": 0.2,
+    "sy": 0.2,
+    "sz": 0.2
+   }
+  },
+  "light0/primitive1": {
+   "type": "primitivePOP",
+   "family": "POP",
+   "pos": [
+    0,
+    390
+   ],
+   "pars": {
+    "addpts": true,
+    "method": "pattern",
+    "pageindex": 1,
+    "prim0pattern": "0 1 0 2 0 3 0 4",
+    "prim0type": "lines",
+    "pt1posx": {
+     "expr": "mod.math.sin(mod.math.radians(parent().par.coneangle/2)) + mod.math.sin(mod.math.radians(parent().par.conedelta/2))"
+    },
+    "pt1posz": {
+     "expr": "-op('tube_cone1').par.height"
+    },
+    "pt2posx": {
+     "expr": "mod.math.sin(-mod.math.radians(parent().par.coneangle/2)) - mod.math.sin(mod.math.radians(parent().par.conedelta/2))"
+    },
+    "pt2posz": {
+     "expr": "0-op('tube_cone1').par.height"
+    },
+    "pt3posy": {
+     "expr": "-mod.math.sin(-mod.math.radians(parent().par.coneangle/2)) - mod.math.sin(mod.math.radians(parent().par.conedelta/2))"
+    },
+    "pt3posz": {
+     "expr": "-op('tube_cone1').par.height"
+    },
+    "pt4posy": {
+     "expr": "mod.math.sin(-mod.math.radians(parent().par.coneangle/2)) - mod.math.sin(mod.math.radians(parent().par.conedelta/2))"
+    },
+    "pt4posz": {
+     "expr": "-op('tube_cone1').par.height"
+    }
+   },
+   "custom_pars": [
+    "pt",
+    "pt0posx",
+    "pt0posy",
+    "pt0posz",
+    "pt1posx",
+    "pt1posy",
+    "pt1posz",
+    "pt2posx",
+    "pt2posy",
+    "pt2posz",
+    "pt3posx",
+    "pt3posy",
+    "pt3posz",
+    "pt4posx",
+    "pt4posy",
+    "pt4posz"
+   ]
+  },
+  "light0/primitive_cross": {
+   "type": "primitivePOP",
+   "family": "POP",
+   "pos": [
+    520,
+    1000
+   ],
+   "pars": {
+    "addpts": true,
+    "method": "set",
+    "pageindex": 1,
+    "pt0posx": -0.2,
+    "pt1posx": 0.2,
+    "pt2posy": -0.2,
+    "pt3posy": 0.2,
+    "pt4posz": -0.2,
+    "pt5posz": 0.2,
+    "setprimtype": "lines"
+   },
+   "custom_pars": [
+    "pt",
+    "pt0posx",
+    "pt0posy",
+    "pt0posz",
+    "pt1posx",
+    "pt1posy",
+    "pt1posz",
+    "pt2posx",
+    "pt2posy",
+    "pt2posz",
+    "pt3posx",
+    "pt3posy",
+    "pt3posz",
+    "pt4posx",
+    "pt4posy",
+    "pt4posz",
+    "pt5posx",
+    "pt5posy",
+    "pt5posz"
+   ]
+  },
+  "light0/primitive_quadrants": {
+   "type": "primitivePOP",
+   "family": "POP",
+   "pos": [
+    520,
+    780
+   ],
+   "pars": {
+    "addpts": true,
+    "method": "set",
+    "pageindex": 1,
+    "pt0posx": 0.07,
+    "pt0posy": 0.07,
+    "pt0posz": 0.07,
+    "pt1posx": -0.07,
+    "pt1posy": -0.07,
+    "pt1posz": -0.07,
+    "pt2posx": -0.07,
+    "pt2posy": 0.07,
+    "pt2posz": 0.07,
+    "pt3posx": 0.07,
+    "pt3posy": -0.07,
+    "pt3posz": -0.07,
+    "pt4posx": 0.07,
+    "pt4posy": 0.07,
+    "pt4posz": -0.07,
+    "pt5posx": -0.07,
+    "pt5posy": -0.07,
+    "pt5posz": 0.07,
+    "pt6posx": -0.07,
+    "pt6posy": 0.07,
+    "pt6posz": -0.07,
+    "pt7posx": 0.07,
+    "pt7posy": -0.07,
+    "pt7posz": 0.07,
+    "setprimtype": "lines"
+   },
+   "custom_pars": [
+    "pt",
+    "pt0posx",
+    "pt0posy",
+    "pt0posz",
+    "pt1posx",
+    "pt1posy",
+    "pt1posz",
+    "pt2posx",
+    "pt2posy",
+    "pt2posz",
+    "pt3posx",
+    "pt3posy",
+    "pt3posz",
+    "pt4posx",
+    "pt4posy",
+    "pt4posz",
+    "pt5posx",
+    "pt5posy",
+    "pt5posz",
+    "pt6posx",
+    "pt6posy",
+    "pt6posz",
+    "pt7posx",
+    "pt7posy",
+    "pt7posz"
+   ]
+  },
+  "light0/rectangle1": {
+   "type": "rectanglePOP",
+   "family": "POP",
+   "pos": [
+    0,
+    730
+   ],
+   "pars": {
+    "anchorv": 0.0,
+    "sizeu": 0.02,
+    "sizev": 0.5
+   }
+  },
+  "light0/sphere1": {
+   "type": "spherePOP",
+   "family": "POP",
+   "pos": [
+    520,
+    890
+   ],
+   "pars": {
+    "freq": 3,
+    "pageindex": 2,
+    "radx": 0.05,
+    "rady": 0.05,
+    "radz": 0.05
+   }
+  },
+  "light0/switch_lightType": {
+   "type": "switchPOP",
+   "family": "POP",
+   "pos": [
+    1140,
+    500
+   ],
+   "inputs": [
+    [
+     "light0/merge_pointLight"
+    ],
+    [
+     "light0/merge1"
+    ],
+    [
+     "light0/merge2"
+    ]
+   ],
+   "pars": {
+    "index": {
+     "expr": "parent().par.lighttype.menuIndex"
+    }
+   }
+  },
+  "light0/transform1": {
+   "type": "transformPOP",
+   "family": "POP",
+   "pos": [
+    450,
+    370
+   ],
+   "inputs": [
+    [
+     "light0/pointgen1"
+    ]
+   ],
+   "pars": {
+    "tz": 0.8
+   }
+  },
+  "light0/tube_attenuated": {
+   "type": "tubePOP",
+   "family": "POP",
+   "pos": [
+    368,
+    673
+   ],
+   "pars": {
+    "bypass": {
+     "expr": "not parent().par.attenuated"
+    },
+    "height": 0.0,
+    "orient": "z",
+    "radx": {
+     "expr": "parent().par.attenuationend"
+    },
+    "rady": {
+     "expr": "parent().par.attenuationstart"
+    },
+    "rows": 2,
+    "surftype": "rows"
+   }
+  },
+  "light0/tube_cone1": {
+   "type": "tubePOP",
+   "family": "POP",
+   "pos": [
+    0,
+    620
+   ],
+   "pars": {
+    "height": {
+     "expr": "mod.math.cos(mod.math.radians(parent().par.coneangle/2))"
+    },
+    "orient": "z",
+    "radx": {
+     "expr": "mod.math.sin(mod.math.radians(parent().par.coneangle/2))"
+    },
+    "rady": 0.01,
+    "rows": 2,
+    "tz": {
+     "expr": "-me.par.height*0.5"
+    }
+   }
+  },
+  "light0/tube_cone2": {
+   "type": "tubePOP",
+   "family": "POP",
+   "pos": [
+    0,
+    500
+   ],
+   "pars": {
+    "height": 0.0,
+    "orient": "z",
+    "radx": {
+     "expr": "mod.math.sin(mod.math.radians(parent().par.coneangle/2)) + mod.math.sin(mod.math.radians(parent().par.conedelta/2))"
+    },
+    "rady": {
+     "expr": "mod.math.sin(mod.math.radians(parent().par.coneangle/2))"
+    },
+    "rows": 2,
+    "tz": {
+     "expr": "-op('tube_cone1').par.height"
+    }
+   }
+  },
+  "light1": {
+   "type": "lightCOMP",
+   "family": "COMP",
+   "pos": [
+    50,
+    -460
+   ],
+   "pars": {
+    "cb": 0.0,
+    "cr": 0.0,
+    "dimmer": 3.6,
+    "lookat": "/project1/sc_riso_press/target",
+    "tx": 2.7281995136622696,
+    "ty": -0.2,
+    "tz": 1.7311636010651787
+   }
+  },
+  "light1/circle1": {
+   "type": "circlePOP",
+   "family": "POP",
+   "pos": [
+    780,
+    170
+   ],
+   "pars": {
+    "connectivity": "surface",
+    "scale": 0.2
+   }
+  },
+  "light1/circle_attenEnd": {
+   "type": "circlePOP",
+   "family": "POP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "bypass": {
+     "expr": "not parent().par.attenuated"
+    },
+    "connectivity": "surface",
+    "pageindex": 3,
+    "radx": 0.1,
+    "rady": 0.1,
+    "tz": {
+     "expr": "-parent().par.attenuationend"
+    }
+   }
+  },
+  "light1/circle_attenStart": {
+   "type": "circlePOP",
+   "family": "POP",
+   "pos": [
+    0,
+    120
+   ],
+   "pars": {
+    "bypass": {
+     "expr": "not parent().par.attenuated"
+    },
+    "connectivity": "surface",
+    "pageindex": 1,
+    "radx": 0.1,
+    "rady": 0.1,
+    "tz": {
+     "expr": "-parent().par.attenuationstart"
+    }
+   }
+  },
+  "light1/connectivity1": {
+   "type": "connectivityPOP",
+   "family": "POP",
+   "pos": [
+    780,
+    290
+   ],
+   "inputs": [
+    [
+     "light1/merge3"
+    ]
+   ],
+   "pars": {
+    "surftype": "lines"
+   }
+  },
+  "light1/copy1": {
+   "type": "copyPOP",
+   "family": "POP",
+   "pos": [
+    520,
+    670
+   ],
+   "inputs": [
+    [
+     "light1/tube_attenuated"
+    ]
+   ],
+   "pars": {
+    "ncy": 2,
+    "pageindex": 2,
+    "rx": 90.0
+   }
+  },
+  "light1/line_atten": {
+   "type": "linePOP",
+   "family": "POP",
+   "pos": [
+    0,
+    230
+   ],
+   "pars": {
+    "bypass": {
+     "expr": "not parent().par.attenuated"
+    },
+    "divs": 1,
+    "pageindex": 2,
+    "pt0posz": {
+     "expr": "-parent().par.attenuationstart"
+    },
+    "pt1posz": {
+     "expr": "-parent().par.attenuationend"
+    }
+   },
+   "custom_pars": [
+    "pt",
+    "pt0posx",
+    "pt0posy",
+    "pt0posz",
+    "pt1posx",
+    "pt1posy",
+    "pt1posz"
+   ]
+  },
+  "light1/merge1": {
+   "type": "mergePOP",
+   "family": "POP",
+   "pos": [
+    250,
+    500
+   ],
+   "inputs": [
+    [
+     "light1/rectangle1"
+    ],
+    [
+     "light1/tube_cone1"
+    ],
+    [
+     "light1/tube_cone2"
+    ],
+    [
+     "light1/primitive1"
+    ],
+    [
+     "light1/line_atten"
+    ],
+    [
+     "light1/circle_attenStart"
+    ],
+    [
+     "light1/circle_attenEnd"
+    ]
+   ],
+   "pars": {
+    "pageindex": 1
+   }
+  },
+  "light1/merge2": {
+   "type": "mergePOP",
+   "family": "POP",
+   "pos": [
+    950,
+    230
+   ],
+   "inputs": [
+    [
+     "light1/connectivity1"
+    ],
+    [
+     "light1/circle1"
+    ]
+   ]
+  },
+  "light1/merge3": {
+   "type": "mergePOP",
+   "family": "POP",
+   "pos": [
+    620,
+    290
+   ],
+   "inputs": [
+    [
+     "light1/pointgen1"
+    ],
+    [
+     "light1/transform1"
+    ]
+   ]
+  },
+  "light1/merge_pointLight": {
+   "type": "mergePOP",
+   "family": "POP",
+   "pos": [
+    760,
+    820
+   ],
+   "inputs": [
+    [
+     "light1/sphere1"
+    ],
+    [
+     "light1/primitive_quadrants"
+    ],
+    [
+     "light1/copy1"
+    ]
+   ],
+   "pars": {
+    "pageindex": 1
+   }
+  },
+  "light1/pointgen1": {
+   "type": "pointgeneratorPOP",
+   "family": "POP",
+   "pos": [
+    270,
+    290
+   ],
+   "pars": {
+    "numpoints": 17,
+    "pageindex": 1,
+    "shape": "circle",
+    "sx": 0.2,
+    "sy": 0.2,
+    "sz": 0.2
+   }
+  },
+  "light1/primitive1": {
+   "type": "primitivePOP",
+   "family": "POP",
+   "pos": [
+    0,
+    390
+   ],
+   "pars": {
+    "addpts": true,
+    "method": "pattern",
+    "pageindex": 1,
+    "prim0pattern": "0 1 0 2 0 3 0 4",
+    "prim0type": "lines",
+    "pt1posx": {
+     "expr": "mod.math.sin(mod.math.radians(parent().par.coneangle/2)) + mod.math.sin(mod.math.radians(parent().par.conedelta/2))"
+    },
+    "pt1posz": {
+     "expr": "-op('tube_cone1').par.height"
+    },
+    "pt2posx": {
+     "expr": "mod.math.sin(-mod.math.radians(parent().par.coneangle/2)) - mod.math.sin(mod.math.radians(parent().par.conedelta/2))"
+    },
+    "pt2posz": {
+     "expr": "0-op('tube_cone1').par.height"
+    },
+    "pt3posy": {
+     "expr": "-mod.math.sin(-mod.math.radians(parent().par.coneangle/2)) - mod.math.sin(mod.math.radians(parent().par.conedelta/2))"
+    },
+    "pt3posz": {
+     "expr": "-op('tube_cone1').par.height"
+    },
+    "pt4posy": {
+     "expr": "mod.math.sin(-mod.math.radians(parent().par.coneangle/2)) - mod.math.sin(mod.math.radians(parent().par.conedelta/2))"
+    },
+    "pt4posz": {
+     "expr": "-op('tube_cone1').par.height"
+    }
+   },
+   "custom_pars": [
+    "pt",
+    "pt0posx",
+    "pt0posy",
+    "pt0posz",
+    "pt1posx",
+    "pt1posy",
+    "pt1posz",
+    "pt2posx",
+    "pt2posy",
+    "pt2posz",
+    "pt3posx",
+    "pt3posy",
+    "pt3posz",
+    "pt4posx",
+    "pt4posy",
+    "pt4posz"
+   ]
+  },
+  "light1/primitive_cross": {
+   "type": "primitivePOP",
+   "family": "POP",
+   "pos": [
+    520,
+    1000
+   ],
+   "pars": {
+    "addpts": true,
+    "method": "set",
+    "pageindex": 1,
+    "pt0posx": -0.2,
+    "pt1posx": 0.2,
+    "pt2posy": -0.2,
+    "pt3posy": 0.2,
+    "pt4posz": -0.2,
+    "pt5posz": 0.2,
+    "setprimtype": "lines"
+   },
+   "custom_pars": [
+    "pt",
+    "pt0posx",
+    "pt0posy",
+    "pt0posz",
+    "pt1posx",
+    "pt1posy",
+    "pt1posz",
+    "pt2posx",
+    "pt2posy",
+    "pt2posz",
+    "pt3posx",
+    "pt3posy",
+    "pt3posz",
+    "pt4posx",
+    "pt4posy",
+    "pt4posz",
+    "pt5posx",
+    "pt5posy",
+    "pt5posz"
+   ]
+  },
+  "light1/primitive_quadrants": {
+   "type": "primitivePOP",
+   "family": "POP",
+   "pos": [
+    520,
+    780
+   ],
+   "pars": {
+    "addpts": true,
+    "method": "set",
+    "pageindex": 1,
+    "pt0posx": 0.07,
+    "pt0posy": 0.07,
+    "pt0posz": 0.07,
+    "pt1posx": -0.07,
+    "pt1posy": -0.07,
+    "pt1posz": -0.07,
+    "pt2posx": -0.07,
+    "pt2posy": 0.07,
+    "pt2posz": 0.07,
+    "pt3posx": 0.07,
+    "pt3posy": -0.07,
+    "pt3posz": -0.07,
+    "pt4posx": 0.07,
+    "pt4posy": 0.07,
+    "pt4posz": -0.07,
+    "pt5posx": -0.07,
+    "pt5posy": -0.07,
+    "pt5posz": 0.07,
+    "pt6posx": -0.07,
+    "pt6posy": 0.07,
+    "pt6posz": -0.07,
+    "pt7posx": 0.07,
+    "pt7posy": -0.07,
+    "pt7posz": 0.07,
+    "setprimtype": "lines"
+   },
+   "custom_pars": [
+    "pt",
+    "pt0posx",
+    "pt0posy",
+    "pt0posz",
+    "pt1posx",
+    "pt1posy",
+    "pt1posz",
+    "pt2posx",
+    "pt2posy",
+    "pt2posz",
+    "pt3posx",
+    "pt3posy",
+    "pt3posz",
+    "pt4posx",
+    "pt4posy",
+    "pt4posz",
+    "pt5posx",
+    "pt5posy",
+    "pt5posz",
+    "pt6posx",
+    "pt6posy",
+    "pt6posz",
+    "pt7posx",
+    "pt7posy",
+    "pt7posz"
+   ]
+  },
+  "light1/rectangle1": {
+   "type": "rectanglePOP",
+   "family": "POP",
+   "pos": [
+    0,
+    730
+   ],
+   "pars": {
+    "anchorv": 0.0,
+    "sizeu": 0.02,
+    "sizev": 0.5
+   }
+  },
+  "light1/sphere1": {
+   "type": "spherePOP",
+   "family": "POP",
+   "pos": [
+    520,
+    890
+   ],
+   "pars": {
+    "freq": 3,
+    "pageindex": 2,
+    "radx": 0.05,
+    "rady": 0.05,
+    "radz": 0.05
+   }
+  },
+  "light1/switch_lightType": {
+   "type": "switchPOP",
+   "family": "POP",
+   "pos": [
+    1140,
+    500
+   ],
+   "inputs": [
+    [
+     "light1/merge_pointLight"
+    ],
+    [
+     "light1/merge1"
+    ],
+    [
+     "light1/merge2"
+    ]
+   ],
+   "pars": {
+    "index": {
+     "expr": "parent().par.lighttype.menuIndex"
+    }
+   }
+  },
+  "light1/transform1": {
+   "type": "transformPOP",
+   "family": "POP",
+   "pos": [
+    450,
+    370
+   ],
+   "inputs": [
+    [
+     "light1/pointgen1"
+    ]
+   ],
+   "pars": {
+    "tz": 0.8
+   }
+  },
+  "light1/tube_attenuated": {
+   "type": "tubePOP",
+   "family": "POP",
+   "pos": [
+    368,
+    673
+   ],
+   "pars": {
+    "bypass": {
+     "expr": "not parent().par.attenuated"
+    },
+    "height": 0.0,
+    "orient": "z",
+    "radx": {
+     "expr": "parent().par.attenuationend"
+    },
+    "rady": {
+     "expr": "parent().par.attenuationstart"
+    },
+    "rows": 2,
+    "surftype": "rows"
+   }
+  },
+  "light1/tube_cone1": {
+   "type": "tubePOP",
+   "family": "POP",
+   "pos": [
+    0,
+    620
+   ],
+   "pars": {
+    "height": {
+     "expr": "mod.math.cos(mod.math.radians(parent().par.coneangle/2))"
+    },
+    "orient": "z",
+    "radx": {
+     "expr": "mod.math.sin(mod.math.radians(parent().par.coneangle/2))"
+    },
+    "rady": 0.01,
+    "rows": 2,
+    "tz": {
+     "expr": "-me.par.height*0.5"
+    }
+   }
+  },
+  "light1/tube_cone2": {
+   "type": "tubePOP",
+   "family": "POP",
+   "pos": [
+    0,
+    500
+   ],
+   "pars": {
+    "height": 0.0,
+    "orient": "z",
+    "radx": {
+     "expr": "mod.math.sin(mod.math.radians(parent().par.coneangle/2)) + mod.math.sin(mod.math.radians(parent().par.conedelta/2))"
+    },
+    "rady": {
+     "expr": "mod.math.sin(mod.math.radians(parent().par.coneangle/2))"
+    },
+    "rows": 2,
+    "tz": {
+     "expr": "-op('tube_cone1').par.height"
+    }
+   }
+  },
+  "light2": {
+   "type": "lightCOMP",
+   "family": "COMP",
+   "pos": [
+    200,
+    -460
+   ],
+   "pars": {
+    "cg": 0.0,
+    "cr": 0.0,
+    "dimmer": 3.6,
+    "lookat": "/project1/sc_riso_press/target",
+    "tx": 0.5890843560882,
+    "ty": 3.2,
+    "tz": -1.517557122948639
+   }
+  },
+  "light2/circle1": {
+   "type": "circlePOP",
+   "family": "POP",
+   "pos": [
+    780,
+    170
+   ],
+   "pars": {
+    "connectivity": "surface",
+    "scale": 0.2
+   }
+  },
+  "light2/circle_attenEnd": {
+   "type": "circlePOP",
+   "family": "POP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "bypass": {
+     "expr": "not parent().par.attenuated"
+    },
+    "connectivity": "surface",
+    "pageindex": 3,
+    "radx": 0.1,
+    "rady": 0.1,
+    "tz": {
+     "expr": "-parent().par.attenuationend"
+    }
+   }
+  },
+  "light2/circle_attenStart": {
+   "type": "circlePOP",
+   "family": "POP",
+   "pos": [
+    0,
+    120
+   ],
+   "pars": {
+    "bypass": {
+     "expr": "not parent().par.attenuated"
+    },
+    "connectivity": "surface",
+    "pageindex": 1,
+    "radx": 0.1,
+    "rady": 0.1,
+    "tz": {
+     "expr": "-parent().par.attenuationstart"
+    }
+   }
+  },
+  "light2/connectivity1": {
+   "type": "connectivityPOP",
+   "family": "POP",
+   "pos": [
+    780,
+    290
+   ],
+   "inputs": [
+    [
+     "light2/merge3"
+    ]
+   ],
+   "pars": {
+    "surftype": "lines"
+   }
+  },
+  "light2/copy1": {
+   "type": "copyPOP",
+   "family": "POP",
+   "pos": [
+    520,
+    670
+   ],
+   "inputs": [
+    [
+     "light2/tube_attenuated"
+    ]
+   ],
+   "pars": {
+    "ncy": 2,
+    "pageindex": 2,
+    "rx": 90.0
+   }
+  },
+  "light2/line_atten": {
+   "type": "linePOP",
+   "family": "POP",
+   "pos": [
+    0,
+    230
+   ],
+   "pars": {
+    "bypass": {
+     "expr": "not parent().par.attenuated"
+    },
+    "divs": 1,
+    "pageindex": 2,
+    "pt0posz": {
+     "expr": "-parent().par.attenuationstart"
+    },
+    "pt1posz": {
+     "expr": "-parent().par.attenuationend"
+    }
+   },
+   "custom_pars": [
+    "pt",
+    "pt0posx",
+    "pt0posy",
+    "pt0posz",
+    "pt1posx",
+    "pt1posy",
+    "pt1posz"
+   ]
+  },
+  "light2/merge1": {
+   "type": "mergePOP",
+   "family": "POP",
+   "pos": [
+    250,
+    500
+   ],
+   "inputs": [
+    [
+     "light2/rectangle1"
+    ],
+    [
+     "light2/tube_cone1"
+    ],
+    [
+     "light2/tube_cone2"
+    ],
+    [
+     "light2/primitive1"
+    ],
+    [
+     "light2/line_atten"
+    ],
+    [
+     "light2/circle_attenStart"
+    ],
+    [
+     "light2/circle_attenEnd"
+    ]
+   ],
+   "pars": {
+    "pageindex": 1
+   }
+  },
+  "light2/merge2": {
+   "type": "mergePOP",
+   "family": "POP",
+   "pos": [
+    950,
+    230
+   ],
+   "inputs": [
+    [
+     "light2/connectivity1"
+    ],
+    [
+     "light2/circle1"
+    ]
+   ]
+  },
+  "light2/merge3": {
+   "type": "mergePOP",
+   "family": "POP",
+   "pos": [
+    620,
+    290
+   ],
+   "inputs": [
+    [
+     "light2/pointgen1"
+    ],
+    [
+     "light2/transform1"
+    ]
+   ]
+  },
+  "light2/merge_pointLight": {
+   "type": "mergePOP",
+   "family": "POP",
+   "pos": [
+    760,
+    820
+   ],
+   "inputs": [
+    [
+     "light2/sphere1"
+    ],
+    [
+     "light2/primitive_quadrants"
+    ],
+    [
+     "light2/copy1"
+    ]
+   ],
+   "pars": {
+    "pageindex": 1
+   }
+  },
+  "light2/pointgen1": {
+   "type": "pointgeneratorPOP",
+   "family": "POP",
+   "pos": [
+    270,
+    290
+   ],
+   "pars": {
+    "numpoints": 17,
+    "pageindex": 1,
+    "shape": "circle",
+    "sx": 0.2,
+    "sy": 0.2,
+    "sz": 0.2
+   }
+  },
+  "light2/primitive1": {
+   "type": "primitivePOP",
+   "family": "POP",
+   "pos": [
+    0,
+    390
+   ],
+   "pars": {
+    "addpts": true,
+    "method": "pattern",
+    "pageindex": 1,
+    "prim0pattern": "0 1 0 2 0 3 0 4",
+    "prim0type": "lines",
+    "pt1posx": {
+     "expr": "mod.math.sin(mod.math.radians(parent().par.coneangle/2)) + mod.math.sin(mod.math.radians(parent().par.conedelta/2))"
+    },
+    "pt1posz": {
+     "expr": "-op('tube_cone1').par.height"
+    },
+    "pt2posx": {
+     "expr": "mod.math.sin(-mod.math.radians(parent().par.coneangle/2)) - mod.math.sin(mod.math.radians(parent().par.conedelta/2))"
+    },
+    "pt2posz": {
+     "expr": "0-op('tube_cone1').par.height"
+    },
+    "pt3posy": {
+     "expr": "-mod.math.sin(-mod.math.radians(parent().par.coneangle/2)) - mod.math.sin(mod.math.radians(parent().par.conedelta/2))"
+    },
+    "pt3posz": {
+     "expr": "-op('tube_cone1').par.height"
+    },
+    "pt4posy": {
+     "expr": "mod.math.sin(-mod.math.radians(parent().par.coneangle/2)) - mod.math.sin(mod.math.radians(parent().par.conedelta/2))"
+    },
+    "pt4posz": {
+     "expr": "-op('tube_cone1').par.height"
+    }
+   },
+   "custom_pars": [
+    "pt",
+    "pt0posx",
+    "pt0posy",
+    "pt0posz",
+    "pt1posx",
+    "pt1posy",
+    "pt1posz",
+    "pt2posx",
+    "pt2posy",
+    "pt2posz",
+    "pt3posx",
+    "pt3posy",
+    "pt3posz",
+    "pt4posx",
+    "pt4posy",
+    "pt4posz"
+   ]
+  },
+  "light2/primitive_cross": {
+   "type": "primitivePOP",
+   "family": "POP",
+   "pos": [
+    520,
+    1000
+   ],
+   "pars": {
+    "addpts": true,
+    "method": "set",
+    "pageindex": 1,
+    "pt0posx": -0.2,
+    "pt1posx": 0.2,
+    "pt2posy": -0.2,
+    "pt3posy": 0.2,
+    "pt4posz": -0.2,
+    "pt5posz": 0.2,
+    "setprimtype": "lines"
+   },
+   "custom_pars": [
+    "pt",
+    "pt0posx",
+    "pt0posy",
+    "pt0posz",
+    "pt1posx",
+    "pt1posy",
+    "pt1posz",
+    "pt2posx",
+    "pt2posy",
+    "pt2posz",
+    "pt3posx",
+    "pt3posy",
+    "pt3posz",
+    "pt4posx",
+    "pt4posy",
+    "pt4posz",
+    "pt5posx",
+    "pt5posy",
+    "pt5posz"
+   ]
+  },
+  "light2/primitive_quadrants": {
+   "type": "primitivePOP",
+   "family": "POP",
+   "pos": [
+    520,
+    780
+   ],
+   "pars": {
+    "addpts": true,
+    "method": "set",
+    "pageindex": 1,
+    "pt0posx": 0.07,
+    "pt0posy": 0.07,
+    "pt0posz": 0.07,
+    "pt1posx": -0.07,
+    "pt1posy": -0.07,
+    "pt1posz": -0.07,
+    "pt2posx": -0.07,
+    "pt2posy": 0.07,
+    "pt2posz": 0.07,
+    "pt3posx": 0.07,
+    "pt3posy": -0.07,
+    "pt3posz": -0.07,
+    "pt4posx": 0.07,
+    "pt4posy": 0.07,
+    "pt4posz": -0.07,
+    "pt5posx": -0.07,
+    "pt5posy": -0.07,
+    "pt5posz": 0.07,
+    "pt6posx": -0.07,
+    "pt6posy": 0.07,
+    "pt6posz": -0.07,
+    "pt7posx": 0.07,
+    "pt7posy": -0.07,
+    "pt7posz": 0.07,
+    "setprimtype": "lines"
+   },
+   "custom_pars": [
+    "pt",
+    "pt0posx",
+    "pt0posy",
+    "pt0posz",
+    "pt1posx",
+    "pt1posy",
+    "pt1posz",
+    "pt2posx",
+    "pt2posy",
+    "pt2posz",
+    "pt3posx",
+    "pt3posy",
+    "pt3posz",
+    "pt4posx",
+    "pt4posy",
+    "pt4posz",
+    "pt5posx",
+    "pt5posy",
+    "pt5posz",
+    "pt6posx",
+    "pt6posy",
+    "pt6posz",
+    "pt7posx",
+    "pt7posy",
+    "pt7posz"
+   ]
+  },
+  "light2/rectangle1": {
+   "type": "rectanglePOP",
+   "family": "POP",
+   "pos": [
+    0,
+    730
+   ],
+   "pars": {
+    "anchorv": 0.0,
+    "sizeu": 0.02,
+    "sizev": 0.5
+   }
+  },
+  "light2/sphere1": {
+   "type": "spherePOP",
+   "family": "POP",
+   "pos": [
+    520,
+    890
+   ],
+   "pars": {
+    "freq": 3,
+    "pageindex": 2,
+    "radx": 0.05,
+    "rady": 0.05,
+    "radz": 0.05
+   }
+  },
+  "light2/switch_lightType": {
+   "type": "switchPOP",
+   "family": "POP",
+   "pos": [
+    1140,
+    500
+   ],
+   "inputs": [
+    [
+     "light2/merge_pointLight"
+    ],
+    [
+     "light2/merge1"
+    ],
+    [
+     "light2/merge2"
+    ]
+   ],
+   "pars": {
+    "index": {
+     "expr": "parent().par.lighttype.menuIndex"
+    }
+   }
+  },
+  "light2/transform1": {
+   "type": "transformPOP",
+   "family": "POP",
+   "pos": [
+    450,
+    370
+   ],
+   "inputs": [
+    [
+     "light2/pointgen1"
+    ]
+   ],
+   "pars": {
+    "tz": 0.8
+   }
+  },
+  "light2/tube_attenuated": {
+   "type": "tubePOP",
+   "family": "POP",
+   "pos": [
+    368,
+    673
+   ],
+   "pars": {
+    "bypass": {
+     "expr": "not parent().par.attenuated"
+    },
+    "height": 0.0,
+    "orient": "z",
+    "radx": {
+     "expr": "parent().par.attenuationend"
+    },
+    "rady": {
+     "expr": "parent().par.attenuationstart"
+    },
+    "rows": 2,
+    "surftype": "rows"
+   }
+  },
+  "light2/tube_cone1": {
+   "type": "tubePOP",
+   "family": "POP",
+   "pos": [
+    0,
+    620
+   ],
+   "pars": {
+    "height": {
+     "expr": "mod.math.cos(mod.math.radians(parent().par.coneangle/2))"
+    },
+    "orient": "z",
+    "radx": {
+     "expr": "mod.math.sin(mod.math.radians(parent().par.coneangle/2))"
+    },
+    "rady": 0.01,
+    "rows": 2,
+    "tz": {
+     "expr": "-me.par.height*0.5"
+    }
+   }
+  },
+  "light2/tube_cone2": {
+   "type": "tubePOP",
+   "family": "POP",
+   "pos": [
+    0,
+    500
+   ],
+   "pars": {
+    "height": 0.0,
+    "orient": "z",
+    "radx": {
+     "expr": "mod.math.sin(mod.math.radians(parent().par.coneangle/2)) + mod.math.sin(mod.math.radians(parent().par.conedelta/2))"
+    },
+    "rady": {
+     "expr": "mod.math.sin(mod.math.radians(parent().par.coneangle/2))"
+    },
+    "rows": 2,
+    "tz": {
+     "expr": "-op('tube_cone1').par.height"
+    }
+   }
+  },
+  "local": {
+   "type": "baseCOMP",
+   "family": "COMP",
+   "pos": [
+    -400,
+    460
+   ]
+  },
+  "local/modules": {
+   "type": "baseCOMP",
+   "family": "COMP",
+   "pos": [
+    0,
+    0
+   ]
+  },
+  "local/modules/paths": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "file": {
+     "expr": "project.folder.replace(chr(92), '/') + '/experiments/sw_hub/paths_module.py'"
+    },
+    "language": "text",
+    "syncfile": true
+   },
+   "text_file": "experiments/sw_hub/paths_module.py"
+  },
+  "m_amphora": {
+   "type": "geometryCOMP",
+   "family": "COMP",
+   "pos": [
+    -100,
+    -760
+   ],
+   "pars": {
+    "material": "/project1/sc_riso_press/m_amphora/mat",
+    "rx": 3.0060923597389895,
+    "ry": 234.96075563583872,
+    "scale": 0.8528175044804811
+   }
+  },
+  "m_amphora/fit": {
+   "type": "transformPOP",
+   "family": "POP",
+   "pos": [
+    0,
+    0
+   ],
+   "inputs": [
+    [
+     "m_amphora/mesh"
+    ]
+   ],
+   "pars": {
+    "scale": {
+     "expr": "1 if mod.paths.have('models/amphora/model.obj') else 0.509174"
+    },
+    "tx": {
+     "expr": "0 if mod.paths.have('models/amphora/model.obj') else 0.007086"
+    },
+    "ty": {
+     "expr": "0 if mod.paths.have('models/amphora/model.obj') else -0.233143"
+    },
+    "tz": {
+     "expr": "0 if mod.paths.have('models/amphora/model.obj') else -0.0"
+    }
+   }
+  },
+  "m_amphora/lift": {
+   "type": "levelTOP",
+   "family": "TOP",
+   "pos": [
+    0,
+    0
+   ],
+   "inputs": [
+    [
+     "m_amphora/mono"
+    ]
+   ],
+   "pars": {
+    "outlow": 0.62
+   }
+  },
+  "m_amphora/mat": {
+   "type": "pbrMAT",
+   "family": "MAT",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "basecolormap": "/project1/sc_riso_press/m_amphora/lift",
+    "metallic": 0.0,
+    "roughness": 0.55
+   }
+  },
+  "m_amphora/mesh": {
+   "type": "fileinPOP",
+   "family": "POP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.model_file('amphora')"
+    }
+   }
+  },
+  "m_amphora/mono": {
+   "type": "monochromeTOP",
+   "family": "TOP",
+   "pos": [
+    0,
+    0
+   ],
+   "inputs": [
+    [
+     "m_amphora/tex"
+    ]
+   ]
+  },
+  "m_amphora/tex": {
+   "type": "moviefileinTOP",
+   "family": "TOP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.model_texture('amphora') or mod.paths.here('data/blank.png')"
+    }
+   }
+  },
+  "m_astrolabe": {
+   "type": "geometryCOMP",
+   "family": "COMP",
+   "pos": [
+    -100,
+    -620
+   ],
+   "pars": {
+    "material": "/project1/sc_riso_press/m_astrolabe/mat",
+    "render": false,
+    "rx": 0.15595726715594138,
+    "ry": 8.761040343204513,
+    "scale": 0.851419260893017
+   }
+  },
+  "m_astrolabe/fit": {
+   "type": "transformPOP",
+   "family": "POP",
+   "pos": [
+    0,
+    0
+   ],
+   "inputs": [
+    [
+     "m_astrolabe/mesh"
+    ]
+   ],
+   "pars": {
+    "scale": {
+     "expr": "1 if mod.paths.have('models/astrolabe/model.obj') else 0.509174"
+    },
+    "tx": {
+     "expr": "0 if mod.paths.have('models/astrolabe/model.obj') else 0.007086"
+    },
+    "ty": {
+     "expr": "0 if mod.paths.have('models/astrolabe/model.obj') else -0.233143"
+    },
+    "tz": {
+     "expr": "0 if mod.paths.have('models/astrolabe/model.obj') else -0.0"
+    }
+   }
+  },
+  "m_astrolabe/lift": {
+   "type": "levelTOP",
+   "family": "TOP",
+   "pos": [
+    0,
+    0
+   ],
+   "inputs": [
+    [
+     "m_astrolabe/mono"
+    ]
+   ],
+   "pars": {
+    "outlow": 0.62
+   }
+  },
+  "m_astrolabe/mat": {
+   "type": "pbrMAT",
+   "family": "MAT",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "basecolormap": "/project1/sc_riso_press/m_astrolabe/lift",
+    "metallic": 0.0,
+    "roughness": 0.55
+   }
+  },
+  "m_astrolabe/mesh": {
+   "type": "fileinPOP",
+   "family": "POP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.model_file('astrolabe')"
+    }
+   }
+  },
+  "m_astrolabe/mono": {
+   "type": "monochromeTOP",
+   "family": "TOP",
+   "pos": [
+    0,
+    0
+   ],
+   "inputs": [
+    [
+     "m_astrolabe/tex"
+    ]
+   ]
+  },
+  "m_astrolabe/tex": {
+   "type": "moviefileinTOP",
+   "family": "TOP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.model_texture('astrolabe') or mod.paths.here('data/blank.png')"
+    }
+   }
+  },
+  "m_balanced_solids": {
+   "type": "geometryCOMP",
+   "family": "COMP",
+   "pos": [
+    -400,
+    -900
+   ],
+   "pars": {
+    "material": "/project1/sc_riso_press/m_balanced_solids/mat",
+    "render": false
+   }
+  },
+  "m_balanced_solids/fit": {
+   "type": "transformPOP",
+   "family": "POP",
+   "pos": [
+    0,
+    0
+   ],
+   "inputs": [
+    [
+     "m_balanced_solids/mesh"
+    ]
+   ],
+   "pars": {
+    "scale": {
+     "expr": "1 if mod.paths.have('models/balanced_solids/model.obj') else 0.509174"
+    },
+    "tx": {
+     "expr": "0 if mod.paths.have('models/balanced_solids/model.obj') else 0.007086"
+    },
+    "ty": {
+     "expr": "0 if mod.paths.have('models/balanced_solids/model.obj') else -0.233143"
+    },
+    "tz": {
+     "expr": "0 if mod.paths.have('models/balanced_solids/model.obj') else -0.0"
+    }
+   }
+  },
+  "m_balanced_solids/lift": {
+   "type": "levelTOP",
+   "family": "TOP",
+   "pos": [
+    0,
+    0
+   ],
+   "inputs": [
+    [
+     "m_balanced_solids/mono"
+    ]
+   ],
+   "pars": {
+    "outlow": 0.62
+   }
+  },
+  "m_balanced_solids/mat": {
+   "type": "pbrMAT",
+   "family": "MAT",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "basecolormap": "/project1/sc_riso_press/m_balanced_solids/lift",
+    "metallic": 0.0,
+    "roughness": 0.55
+   }
+  },
+  "m_balanced_solids/mesh": {
+   "type": "fileinPOP",
+   "family": "POP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.model_file('balanced_solids')"
+    }
+   }
+  },
+  "m_balanced_solids/mono": {
+   "type": "monochromeTOP",
+   "family": "TOP",
+   "pos": [
+    0,
+    0
+   ],
+   "inputs": [
+    [
+     "m_balanced_solids/tex"
+    ]
+   ]
+  },
+  "m_balanced_solids/tex": {
+   "type": "moviefileinTOP",
+   "family": "TOP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.model_texture('balanced_solids') or mod.paths.here('data/blank.png')"
+    }
+   }
+  },
+  "m_broken_column": {
+   "type": "geometryCOMP",
+   "family": "COMP",
+   "pos": [
+    500,
+    -760
+   ],
+   "pars": {
+    "material": "/project1/sc_riso_press/m_broken_column/mat",
+    "render": false
+   }
+  },
+  "m_broken_column/fit": {
+   "type": "transformPOP",
+   "family": "POP",
+   "pos": [
+    0,
+    0
+   ],
+   "inputs": [
+    [
+     "m_broken_column/mesh"
+    ]
+   ],
+   "pars": {
+    "scale": {
+     "expr": "1 if mod.paths.have('models/broken_column/model.obj') else 0.509174"
+    },
+    "tx": {
+     "expr": "0 if mod.paths.have('models/broken_column/model.obj') else 0.007086"
+    },
+    "ty": {
+     "expr": "0 if mod.paths.have('models/broken_column/model.obj') else -0.233143"
+    },
+    "tz": {
+     "expr": "0 if mod.paths.have('models/broken_column/model.obj') else -0.0"
+    }
+   }
+  },
+  "m_broken_column/lift": {
+   "type": "levelTOP",
+   "family": "TOP",
+   "pos": [
+    0,
+    0
+   ],
+   "inputs": [
+    [
+     "m_broken_column/mono"
+    ]
+   ],
+   "pars": {
+    "outlow": 0.62
+   }
+  },
+  "m_broken_column/mat": {
+   "type": "pbrMAT",
+   "family": "MAT",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "basecolormap": "/project1/sc_riso_press/m_broken_column/lift",
+    "metallic": 0.0,
+    "roughness": 0.55
+   }
+  },
+  "m_broken_column/mesh": {
+   "type": "fileinPOP",
+   "family": "POP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.model_file('broken_column')"
+    }
+   }
+  },
+  "m_broken_column/mono": {
+   "type": "monochromeTOP",
+   "family": "TOP",
+   "pos": [
+    0,
+    0
+   ],
+   "inputs": [
+    [
+     "m_broken_column/tex"
+    ]
+   ]
+  },
+  "m_broken_column/tex": {
+   "type": "moviefileinTOP",
+   "family": "TOP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.model_texture('broken_column') or mod.paths.here('data/blank.png')"
+    }
+   }
+  },
+  "m_crystal_cluster": {
+   "type": "geometryCOMP",
+   "family": "COMP",
+   "pos": [
+    200,
+    -760
+   ],
+   "pars": {
+    "material": "/project1/sc_riso_press/m_crystal_cluster/mat",
+    "render": false
+   }
+  },
+  "m_crystal_cluster/fit": {
+   "type": "transformPOP",
+   "family": "POP",
+   "pos": [
+    0,
+    0
+   ],
+   "inputs": [
+    [
+     "m_crystal_cluster/mesh"
+    ]
+   ],
+   "pars": {
+    "scale": {
+     "expr": "1 if mod.paths.have('models/crystal_cluster/model.obj') else 0.509174"
+    },
+    "tx": {
+     "expr": "0 if mod.paths.have('models/crystal_cluster/model.obj') else 0.007086"
+    },
+    "ty": {
+     "expr": "0 if mod.paths.have('models/crystal_cluster/model.obj') else -0.233143"
+    },
+    "tz": {
+     "expr": "0 if mod.paths.have('models/crystal_cluster/model.obj') else -0.0"
+    }
+   }
+  },
+  "m_crystal_cluster/lift": {
+   "type": "levelTOP",
+   "family": "TOP",
+   "pos": [
+    0,
+    0
+   ],
+   "inputs": [
+    [
+     "m_crystal_cluster/mono"
+    ]
+   ],
+   "pars": {
+    "outlow": 0.62
+   }
+  },
+  "m_crystal_cluster/mat": {
+   "type": "pbrMAT",
+   "family": "MAT",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "basecolormap": "/project1/sc_riso_press/m_crystal_cluster/lift",
+    "metallic": 0.0,
+    "roughness": 0.55
+   }
+  },
+  "m_crystal_cluster/mesh": {
+   "type": "fileinPOP",
+   "family": "POP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.model_file('crystal_cluster')"
+    }
+   }
+  },
+  "m_crystal_cluster/mono": {
+   "type": "monochromeTOP",
+   "family": "TOP",
+   "pos": [
+    0,
+    0
+   ],
+   "inputs": [
+    [
+     "m_crystal_cluster/tex"
+    ]
+   ]
+  },
+  "m_crystal_cluster/tex": {
+   "type": "moviefileinTOP",
+   "family": "TOP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.model_texture('crystal_cluster') or mod.paths.here('data/blank.png')"
+    }
+   }
+  },
+  "m_gramophone": {
+   "type": "geometryCOMP",
+   "family": "COMP",
+   "pos": [
+    -400,
+    -620
+   ],
+   "pars": {
+    "material": "/project1/sc_riso_press/m_gramophone/mat",
+    "render": false
+   }
+  },
+  "m_gramophone/fit": {
+   "type": "transformPOP",
+   "family": "POP",
+   "pos": [
+    0,
+    0
+   ],
+   "inputs": [
+    [
+     "m_gramophone/mesh"
+    ]
+   ],
+   "pars": {
+    "scale": {
+     "expr": "1 if mod.paths.have('models/gramophone/model.obj') else 0.509174"
+    },
+    "tx": {
+     "expr": "0 if mod.paths.have('models/gramophone/model.obj') else 0.007086"
+    },
+    "ty": {
+     "expr": "0 if mod.paths.have('models/gramophone/model.obj') else -0.233143"
+    },
+    "tz": {
+     "expr": "0 if mod.paths.have('models/gramophone/model.obj') else -0.0"
+    }
+   }
+  },
+  "m_gramophone/lift": {
+   "type": "levelTOP",
+   "family": "TOP",
+   "pos": [
+    0,
+    0
+   ],
+   "inputs": [
+    [
+     "m_gramophone/mono"
+    ]
+   ],
+   "pars": {
+    "outlow": 0.62
+   }
+  },
+  "m_gramophone/mat": {
+   "type": "pbrMAT",
+   "family": "MAT",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "basecolormap": "/project1/sc_riso_press/m_gramophone/lift",
+    "metallic": 0.0,
+    "roughness": 0.55
+   }
+  },
+  "m_gramophone/mesh": {
+   "type": "fileinPOP",
+   "family": "POP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.model_file('gramophone')"
+    }
+   }
+  },
+  "m_gramophone/mono": {
+   "type": "monochromeTOP",
+   "family": "TOP",
+   "pos": [
+    0,
+    0
+   ],
+   "inputs": [
+    [
+     "m_gramophone/tex"
+    ]
+   ]
+  },
+  "m_gramophone/tex": {
+   "type": "moviefileinTOP",
+   "family": "TOP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.model_texture('gramophone') or mod.paths.here('data/blank.png')"
+    }
+   }
+  },
+  "m_hourglass": {
+   "type": "geometryCOMP",
+   "family": "COMP",
+   "pos": [
+    50,
+    -620
+   ],
+   "pars": {
+    "material": "/project1/sc_riso_press/m_hourglass/mat",
+    "render": false,
+    "rx": -2.6900538983806124,
+    "ry": 85.90337432757951,
+    "scale": 0.85
+   }
+  },
+  "m_hourglass/fit": {
+   "type": "transformPOP",
+   "family": "POP",
+   "pos": [
+    0,
+    0
+   ],
+   "inputs": [
+    [
+     "m_hourglass/mesh"
+    ]
+   ],
+   "pars": {
+    "scale": {
+     "expr": "1 if mod.paths.have('models/hourglass/model.obj') else 0.509174"
+    },
+    "tx": {
+     "expr": "0 if mod.paths.have('models/hourglass/model.obj') else 0.007086"
+    },
+    "ty": {
+     "expr": "0 if mod.paths.have('models/hourglass/model.obj') else -0.233143"
+    },
+    "tz": {
+     "expr": "0 if mod.paths.have('models/hourglass/model.obj') else -0.0"
+    }
+   }
+  },
+  "m_hourglass/lift": {
+   "type": "levelTOP",
+   "family": "TOP",
+   "pos": [
+    0,
+    0
+   ],
+   "inputs": [
+    [
+     "m_hourglass/mono"
+    ]
+   ],
+   "pars": {
+    "outlow": 0.62
+   }
+  },
+  "m_hourglass/mat": {
+   "type": "pbrMAT",
+   "family": "MAT",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "basecolormap": "/project1/sc_riso_press/m_hourglass/lift",
+    "metallic": 0.0,
+    "roughness": 0.55
+   }
+  },
+  "m_hourglass/mesh": {
+   "type": "fileinPOP",
+   "family": "POP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.model_file('hourglass')"
+    }
+   }
+  },
+  "m_hourglass/mono": {
+   "type": "monochromeTOP",
+   "family": "TOP",
+   "pos": [
+    0,
+    0
+   ],
+   "inputs": [
+    [
+     "m_hourglass/tex"
+    ]
+   ]
+  },
+  "m_hourglass/tex": {
+   "type": "moviefileinTOP",
+   "family": "TOP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.model_texture('hourglass') or mod.paths.here('data/blank.png')"
+    }
+   }
+  },
+  "m_lander": {
+   "type": "geometryCOMP",
+   "family": "COMP",
+   "pos": [
+    -250,
+    -760
+   ],
+   "pars": {
+    "material": "/project1/sc_riso_press/m_lander/mat",
+    "render": false
+   }
+  },
+  "m_lander/fit": {
+   "type": "transformPOP",
+   "family": "POP",
+   "pos": [
+    0,
+    0
+   ],
+   "inputs": [
+    [
+     "m_lander/mesh"
+    ]
+   ],
+   "pars": {
+    "scale": {
+     "expr": "1 if mod.paths.have('models/lander/model.obj') else 0.509174"
+    },
+    "tx": {
+     "expr": "0 if mod.paths.have('models/lander/model.obj') else 0.007086"
+    },
+    "ty": {
+     "expr": "0 if mod.paths.have('models/lander/model.obj') else -0.233143"
+    },
+    "tz": {
+     "expr": "0 if mod.paths.have('models/lander/model.obj') else -0.0"
+    }
+   }
+  },
+  "m_lander/lift": {
+   "type": "levelTOP",
+   "family": "TOP",
+   "pos": [
+    0,
+    0
+   ],
+   "inputs": [
+    [
+     "m_lander/mono"
+    ]
+   ],
+   "pars": {
+    "outlow": 0.62
+   }
+  },
+  "m_lander/mat": {
+   "type": "pbrMAT",
+   "family": "MAT",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "basecolormap": "/project1/sc_riso_press/m_lander/lift",
+    "metallic": 0.0,
+    "roughness": 0.55
+   }
+  },
+  "m_lander/mesh": {
+   "type": "fileinPOP",
+   "family": "POP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.model_file('lander')"
+    }
+   }
+  },
+  "m_lander/mono": {
+   "type": "monochromeTOP",
+   "family": "TOP",
+   "pos": [
+    0,
+    0
+   ],
+   "inputs": [
+    [
+     "m_lander/tex"
+    ]
+   ]
+  },
+  "m_lander/tex": {
+   "type": "moviefileinTOP",
+   "family": "TOP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.model_texture('lander') or mod.paths.here('data/blank.png')"
+    }
+   }
+  },
+  "m_marble_bust": {
+   "type": "geometryCOMP",
+   "family": "COMP",
+   "pos": [
+    -400,
+    -760
+   ],
+   "pars": {
+    "material": "/project1/sc_riso_press/m_marble_bust/mat",
+    "render": false
+   }
+  },
+  "m_marble_bust/fit": {
+   "type": "transformPOP",
+   "family": "POP",
+   "pos": [
+    0,
+    0
+   ],
+   "inputs": [
+    [
+     "m_marble_bust/mesh"
+    ]
+   ],
+   "pars": {
+    "scale": {
+     "expr": "1 if mod.paths.have('models/marble_bust/model.obj') else 0.509174"
+    },
+    "tx": {
+     "expr": "0 if mod.paths.have('models/marble_bust/model.obj') else 0.007086"
+    },
+    "ty": {
+     "expr": "0 if mod.paths.have('models/marble_bust/model.obj') else -0.233143"
+    },
+    "tz": {
+     "expr": "0 if mod.paths.have('models/marble_bust/model.obj') else -0.0"
+    }
+   }
+  },
+  "m_marble_bust/lift": {
+   "type": "levelTOP",
+   "family": "TOP",
+   "pos": [
+    0,
+    0
+   ],
+   "inputs": [
+    [
+     "m_marble_bust/mono"
+    ]
+   ],
+   "pars": {
+    "outlow": 0.62
+   }
+  },
+  "m_marble_bust/mat": {
+   "type": "pbrMAT",
+   "family": "MAT",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "basecolormap": "/project1/sc_riso_press/m_marble_bust/lift",
+    "metallic": 0.0,
+    "roughness": 0.55
+   }
+  },
+  "m_marble_bust/mesh": {
+   "type": "fileinPOP",
+   "family": "POP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.model_file('marble_bust')"
+    }
+   }
+  },
+  "m_marble_bust/mono": {
+   "type": "monochromeTOP",
+   "family": "TOP",
+   "pos": [
+    0,
+    0
+   ],
+   "inputs": [
+    [
+     "m_marble_bust/tex"
+    ]
+   ]
+  },
+  "m_marble_bust/tex": {
+   "type": "moviefileinTOP",
+   "family": "TOP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.model_texture('marble_bust') or mod.paths.here('data/blank.png')"
+    }
+   }
+  },
+  "m_pierced_stone": {
+   "type": "geometryCOMP",
+   "family": "COMP",
+   "pos": [
+    350,
+    -620
+   ],
+   "pars": {
+    "material": "/project1/sc_riso_press/m_pierced_stone/mat",
+    "render": false
+   }
+  },
+  "m_pierced_stone/fit": {
+   "type": "transformPOP",
+   "family": "POP",
+   "pos": [
+    0,
+    0
+   ],
+   "inputs": [
+    [
+     "m_pierced_stone/mesh"
+    ]
+   ],
+   "pars": {
+    "scale": {
+     "expr": "1 if mod.paths.have('models/pierced_stone/model.obj') else 0.509174"
+    },
+    "tx": {
+     "expr": "0 if mod.paths.have('models/pierced_stone/model.obj') else 0.007086"
+    },
+    "ty": {
+     "expr": "0 if mod.paths.have('models/pierced_stone/model.obj') else -0.233143"
+    },
+    "tz": {
+     "expr": "0 if mod.paths.have('models/pierced_stone/model.obj') else -0.0"
+    }
+   }
+  },
+  "m_pierced_stone/lift": {
+   "type": "levelTOP",
+   "family": "TOP",
+   "pos": [
+    0,
+    0
+   ],
+   "inputs": [
+    [
+     "m_pierced_stone/mono"
+    ]
+   ],
+   "pars": {
+    "outlow": 0.62
+   }
+  },
+  "m_pierced_stone/mat": {
+   "type": "pbrMAT",
+   "family": "MAT",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "basecolormap": "/project1/sc_riso_press/m_pierced_stone/lift",
+    "metallic": 0.0,
+    "roughness": 0.55
+   }
+  },
+  "m_pierced_stone/mesh": {
+   "type": "fileinPOP",
+   "family": "POP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.model_file('pierced_stone')"
+    }
+   }
+  },
+  "m_pierced_stone/mono": {
+   "type": "monochromeTOP",
+   "family": "TOP",
+   "pos": [
+    0,
+    0
+   ],
+   "inputs": [
+    [
+     "m_pierced_stone/tex"
+    ]
+   ]
+  },
+  "m_pierced_stone/tex": {
+   "type": "moviefileinTOP",
+   "family": "TOP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.model_texture('pierced_stone') or mod.paths.here('data/blank.png')"
+    }
+   }
+  },
+  "m_ribbon_loop": {
+   "type": "geometryCOMP",
+   "family": "COMP",
+   "pos": [
+    200,
+    -620
+   ],
+   "pars": {
+    "material": "/project1/sc_riso_press/m_ribbon_loop/mat",
+    "render": false
+   }
+  },
+  "m_ribbon_loop/fit": {
+   "type": "transformPOP",
+   "family": "POP",
+   "pos": [
+    0,
+    0
+   ],
+   "inputs": [
+    [
+     "m_ribbon_loop/mesh"
+    ]
+   ],
+   "pars": {
+    "scale": {
+     "expr": "1 if mod.paths.have('models/ribbon_loop/model.obj') else 0.509174"
+    },
+    "tx": {
+     "expr": "0 if mod.paths.have('models/ribbon_loop/model.obj') else 0.007086"
+    },
+    "ty": {
+     "expr": "0 if mod.paths.have('models/ribbon_loop/model.obj') else -0.233143"
+    },
+    "tz": {
+     "expr": "0 if mod.paths.have('models/ribbon_loop/model.obj') else -0.0"
+    }
+   }
+  },
+  "m_ribbon_loop/lift": {
+   "type": "levelTOP",
+   "family": "TOP",
+   "pos": [
+    0,
+    0
+   ],
+   "inputs": [
+    [
+     "m_ribbon_loop/mono"
+    ]
+   ],
+   "pars": {
+    "outlow": 0.62
+   }
+  },
+  "m_ribbon_loop/mat": {
+   "type": "pbrMAT",
+   "family": "MAT",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "basecolormap": "/project1/sc_riso_press/m_ribbon_loop/lift",
+    "metallic": 0.0,
+    "roughness": 0.55
+   }
+  },
+  "m_ribbon_loop/mesh": {
+   "type": "fileinPOP",
+   "family": "POP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.model_file('ribbon_loop')"
+    }
+   }
+  },
+  "m_ribbon_loop/mono": {
+   "type": "monochromeTOP",
+   "family": "TOP",
+   "pos": [
+    0,
+    0
+   ],
+   "inputs": [
+    [
+     "m_ribbon_loop/tex"
+    ]
+   ]
+  },
+  "m_ribbon_loop/tex": {
+   "type": "moviefileinTOP",
+   "family": "TOP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.model_texture('ribbon_loop') or mod.paths.here('data/blank.png')"
+    }
+   }
+  },
+  "m_rubber_duck": {
+   "type": "geometryCOMP",
+   "family": "COMP",
+   "pos": [
+    500,
+    -620
+   ],
+   "pars": {
+    "material": "/project1/sc_riso_press/m_rubber_duck/mat",
+    "render": false
+   }
+  },
+  "m_rubber_duck/fit": {
+   "type": "transformPOP",
+   "family": "POP",
+   "pos": [
+    0,
+    0
+   ],
+   "inputs": [
+    [
+     "m_rubber_duck/mesh"
+    ]
+   ],
+   "pars": {
+    "scale": {
+     "expr": "1 if mod.paths.have('models/rubber_duck/model.obj') else 0.509174"
+    },
+    "tx": {
+     "expr": "0 if mod.paths.have('models/rubber_duck/model.obj') else 0.007086"
+    },
+    "ty": {
+     "expr": "0 if mod.paths.have('models/rubber_duck/model.obj') else -0.233143"
+    },
+    "tz": {
+     "expr": "0 if mod.paths.have('models/rubber_duck/model.obj') else -0.0"
+    }
+   }
+  },
+  "m_rubber_duck/lift": {
+   "type": "levelTOP",
+   "family": "TOP",
+   "pos": [
+    0,
+    0
+   ],
+   "inputs": [
+    [
+     "m_rubber_duck/mono"
+    ]
+   ],
+   "pars": {
+    "outlow": 0.62
+   }
+  },
+  "m_rubber_duck/mat": {
+   "type": "pbrMAT",
+   "family": "MAT",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "basecolormap": "/project1/sc_riso_press/m_rubber_duck/lift",
+    "metallic": 0.0,
+    "roughness": 0.55
+   }
+  },
+  "m_rubber_duck/mesh": {
+   "type": "fileinPOP",
+   "family": "POP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.model_file('rubber_duck')"
+    }
+   }
+  },
+  "m_rubber_duck/mono": {
+   "type": "monochromeTOP",
+   "family": "TOP",
+   "pos": [
+    0,
+    0
+   ],
+   "inputs": [
+    [
+     "m_rubber_duck/tex"
+    ]
+   ]
+  },
+  "m_rubber_duck/tex": {
+   "type": "moviefileinTOP",
+   "family": "TOP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.model_texture('rubber_duck') or mod.paths.here('data/blank.png')"
+    }
+   }
+  },
+  "m_skeleton_key": {
+   "type": "geometryCOMP",
+   "family": "COMP",
+   "pos": [
+    -250,
+    -900
+   ],
+   "pars": {
+    "material": "/project1/sc_riso_press/m_skeleton_key/mat",
+    "render": false
+   }
+  },
+  "m_skeleton_key/fit": {
+   "type": "transformPOP",
+   "family": "POP",
+   "pos": [
+    0,
+    0
+   ],
+   "inputs": [
+    [
+     "m_skeleton_key/mesh"
+    ]
+   ],
+   "pars": {
+    "scale": {
+     "expr": "1 if mod.paths.have('models/skeleton_key/model.obj') else 0.509174"
+    },
+    "tx": {
+     "expr": "0 if mod.paths.have('models/skeleton_key/model.obj') else 0.007086"
+    },
+    "ty": {
+     "expr": "0 if mod.paths.have('models/skeleton_key/model.obj') else -0.233143"
+    },
+    "tz": {
+     "expr": "0 if mod.paths.have('models/skeleton_key/model.obj') else -0.0"
+    }
+   }
+  },
+  "m_skeleton_key/lift": {
+   "type": "levelTOP",
+   "family": "TOP",
+   "pos": [
+    0,
+    0
+   ],
+   "inputs": [
+    [
+     "m_skeleton_key/mono"
+    ]
+   ],
+   "pars": {
+    "outlow": 0.62
+   }
+  },
+  "m_skeleton_key/mat": {
+   "type": "pbrMAT",
+   "family": "MAT",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "basecolormap": "/project1/sc_riso_press/m_skeleton_key/lift",
+    "metallic": 0.0,
+    "roughness": 0.55
+   }
+  },
+  "m_skeleton_key/mesh": {
+   "type": "fileinPOP",
+   "family": "POP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.model_file('skeleton_key')"
+    }
+   }
+  },
+  "m_skeleton_key/mono": {
+   "type": "monochromeTOP",
+   "family": "TOP",
+   "pos": [
+    0,
+    0
+   ],
+   "inputs": [
+    [
+     "m_skeleton_key/tex"
+    ]
+   ]
+  },
+  "m_skeleton_key/tex": {
+   "type": "moviefileinTOP",
+   "family": "TOP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.model_texture('skeleton_key') or mod.paths.here('data/blank.png')"
+    }
+   }
+  },
+  "m_space_helmet": {
+   "type": "geometryCOMP",
+   "family": "COMP",
+   "pos": [
+    -250,
+    -620
+   ],
+   "pars": {
+    "material": "/project1/sc_riso_press/m_space_helmet/mat",
+    "render": false
+   }
+  },
+  "m_space_helmet/fit": {
+   "type": "transformPOP",
+   "family": "POP",
+   "pos": [
+    0,
+    0
+   ],
+   "inputs": [
+    [
+     "m_space_helmet/mesh"
+    ]
+   ],
+   "pars": {
+    "scale": {
+     "expr": "1 if mod.paths.have('models/space_helmet/model.obj') else 0.509174"
+    },
+    "tx": {
+     "expr": "0 if mod.paths.have('models/space_helmet/model.obj') else 0.007086"
+    },
+    "ty": {
+     "expr": "0 if mod.paths.have('models/space_helmet/model.obj') else -0.233143"
+    },
+    "tz": {
+     "expr": "0 if mod.paths.have('models/space_helmet/model.obj') else -0.0"
+    }
+   }
+  },
+  "m_space_helmet/lift": {
+   "type": "levelTOP",
+   "family": "TOP",
+   "pos": [
+    0,
+    0
+   ],
+   "inputs": [
+    [
+     "m_space_helmet/mono"
+    ]
+   ],
+   "pars": {
+    "outlow": 0.62
+   }
+  },
+  "m_space_helmet/mat": {
+   "type": "pbrMAT",
+   "family": "MAT",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "basecolormap": "/project1/sc_riso_press/m_space_helmet/lift",
+    "metallic": 0.0,
+    "roughness": 0.55
+   }
+  },
+  "m_space_helmet/mesh": {
+   "type": "fileinPOP",
+   "family": "POP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.model_file('space_helmet')"
+    }
+   }
+  },
+  "m_space_helmet/mono": {
+   "type": "monochromeTOP",
+   "family": "TOP",
+   "pos": [
+    0,
+    0
+   ],
+   "inputs": [
+    [
+     "m_space_helmet/tex"
+    ]
+   ]
+  },
+  "m_space_helmet/tex": {
+   "type": "moviefileinTOP",
+   "family": "TOP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.model_texture('space_helmet') or mod.paths.here('data/blank.png')"
+    }
+   }
+  },
+  "m_traffic_cone": {
+   "type": "geometryCOMP",
+   "family": "COMP",
+   "pos": [
+    50,
+    -760
+   ],
+   "pars": {
+    "material": "/project1/sc_riso_press/m_traffic_cone/mat",
+    "render": false,
+    "rx": -5.460066690740185,
+    "ry": 143.09973410359817,
+    "scale": 0.960111560076475
+   }
+  },
+  "m_traffic_cone/fit": {
+   "type": "transformPOP",
+   "family": "POP",
+   "pos": [
+    0,
+    0
+   ],
+   "inputs": [
+    [
+     "m_traffic_cone/mesh"
+    ]
+   ],
+   "pars": {
+    "scale": {
+     "expr": "1 if mod.paths.have('models/traffic_cone/model.obj') else 0.509174"
+    },
+    "tx": {
+     "expr": "0 if mod.paths.have('models/traffic_cone/model.obj') else 0.007086"
+    },
+    "ty": {
+     "expr": "0 if mod.paths.have('models/traffic_cone/model.obj') else -0.233143"
+    },
+    "tz": {
+     "expr": "0 if mod.paths.have('models/traffic_cone/model.obj') else -0.0"
+    }
+   }
+  },
+  "m_traffic_cone/lift": {
+   "type": "levelTOP",
+   "family": "TOP",
+   "pos": [
+    0,
+    0
+   ],
+   "inputs": [
+    [
+     "m_traffic_cone/mono"
+    ]
+   ],
+   "pars": {
+    "outlow": 0.62
+   }
+  },
+  "m_traffic_cone/mat": {
+   "type": "pbrMAT",
+   "family": "MAT",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "basecolormap": "/project1/sc_riso_press/m_traffic_cone/lift",
+    "metallic": 0.0,
+    "roughness": 0.55
+   }
+  },
+  "m_traffic_cone/mesh": {
+   "type": "fileinPOP",
+   "family": "POP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.model_file('traffic_cone')"
+    }
+   }
+  },
+  "m_traffic_cone/mono": {
+   "type": "monochromeTOP",
+   "family": "TOP",
+   "pos": [
+    0,
+    0
+   ],
+   "inputs": [
+    [
+     "m_traffic_cone/tex"
+    ]
+   ]
+  },
+  "m_traffic_cone/tex": {
+   "type": "moviefileinTOP",
+   "family": "TOP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.model_texture('traffic_cone') or mod.paths.here('data/blank.png')"
+    }
+   }
+  },
+  "m_wire_cage": {
+   "type": "geometryCOMP",
+   "family": "COMP",
+   "pos": [
+    350,
+    -760
+   ],
+   "pars": {
+    "material": "/project1/sc_riso_press/m_wire_cage/mat",
+    "render": false
+   }
+  },
+  "m_wire_cage/fit": {
+   "type": "transformPOP",
+   "family": "POP",
+   "pos": [
+    0,
+    0
+   ],
+   "inputs": [
+    [
+     "m_wire_cage/mesh"
+    ]
+   ],
+   "pars": {
+    "scale": {
+     "expr": "1 if mod.paths.have('models/wire_cage/model.obj') else 0.509174"
+    },
+    "tx": {
+     "expr": "0 if mod.paths.have('models/wire_cage/model.obj') else 0.007086"
+    },
+    "ty": {
+     "expr": "0 if mod.paths.have('models/wire_cage/model.obj') else -0.233143"
+    },
+    "tz": {
+     "expr": "0 if mod.paths.have('models/wire_cage/model.obj') else -0.0"
+    }
+   }
+  },
+  "m_wire_cage/lift": {
+   "type": "levelTOP",
+   "family": "TOP",
+   "pos": [
+    0,
+    0
+   ],
+   "inputs": [
+    [
+     "m_wire_cage/mono"
+    ]
+   ],
+   "pars": {
+    "outlow": 0.62
+   }
+  },
+  "m_wire_cage/mat": {
+   "type": "pbrMAT",
+   "family": "MAT",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "basecolormap": "/project1/sc_riso_press/m_wire_cage/lift",
+    "metallic": 0.0,
+    "roughness": 0.55
+   }
+  },
+  "m_wire_cage/mesh": {
+   "type": "fileinPOP",
+   "family": "POP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.model_file('wire_cage')"
+    }
+   }
+  },
+  "m_wire_cage/mono": {
+   "type": "monochromeTOP",
+   "family": "TOP",
+   "pos": [
+    0,
+    0
+   ],
+   "inputs": [
+    [
+     "m_wire_cage/tex"
+    ]
+   ]
+  },
+  "m_wire_cage/tex": {
+   "type": "moviefileinTOP",
+   "family": "TOP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.model_texture('wire_cage') or mod.paths.here('data/blank.png')"
+    }
+   }
+  },
+  "out1": {
+   "type": "outTOP",
+   "family": "TOP",
+   "pos": [
+    1200,
+    0
+   ],
+   "inputs": [
+    [
+     "press"
+    ]
+   ]
+  },
+  "press": {
+   "type": "glslTOP",
+   "family": "TOP",
+   "pos": [
+    700,
+    -60
+   ],
+   "inputs": [
+    [
+     "sep"
+    ],
+    [
+     "hold"
+    ],
+    [
+     "t_cap"
+    ]
+   ],
+   "pars": {
+    "computedat": "press_compute",
+    "format": "rgba8fixed",
+    "outputresolution": "custom",
+    "pixeldat": "press_frag",
+    "resolutionh": 720,
+    "resolutionw": 1280,
+    "vec0name": "uView",
+    "vec0valuew": -0.07847138376230327,
+    "vec0valuex": -0.022141226900623145,
+    "vec0valuey": 0.08437079478677013,
+    "vec0valuez": 0.5559443916443038,
+    "vec10name": "uFm",
+    "vec10valuew": 0.5,
+    "vec10valuez": 0.42,
+    "vec11name": "uPaper",
+    "vec11valuew": 0.0,
+    "vec11valuex": 0.93,
+    "vec11valuey": 0.89,
+    "vec11valuez": 0.78,
+    "vec12name": "uBed",
+    "vec12valuew": 0.0,
+    "vec12valuex": 0.07,
+    "vec12valuey": 0.1,
+    "vec12valuez": 0.14,
+    "vec13name": "uMisc",
+    "vec13valuew": 3.7959999999999994,
+    "vec13valuex": 0.0,
+    "vec13valuey": 0.0,
+    "vec13valuez": 50.75042724609375,
+    "vec14name": "uFx",
+    "vec14valuew": 0.029832400381565094,
+    "vec14valuex": 0.03,
+    "vec14valuey": 0.2,
+    "vec14valuez": 0.006,
+    "vec15name": "uCam",
+    "vec15valuew": 0.7,
+    "vec15valuex": 0.0,
+    "vec15valuey": 0.0,
+    "vec16name": "uMode",
+    "vec16valuew": 0.0,
+    "vec16valuey": 0.0,
+    "vec16valuez": 0.0,
+    "vec17name": "uInkB",
+    "vec17valuew": -1.0,
+    "vec17valuex": 9.0,
+    "vec17valuey": 10.0,
+    "vec17valuez": -1.0,
+    "vec1name": "uFeed",
+    "vec1valuew": 0.14,
+    "vec1valuex": 0.0,
+    "vec1valuez": 18.0,
+    "vec2name": "uLay",
+    "vec3name": "uRegA",
+    "vec3valuew": -0.0007380410637147391,
+    "vec3valuex": -0.0010337771069365807,
+    "vec3valuey": -0.0011673465347405254,
+    "vec3valuez": 0.00752994325125853,
+    "vec4name": "uRegB",
+    "vec4valuew": 0.0005208332219397073,
+    "vec4valuex": 0.0,
+    "vec4valuey": 0.0,
+    "vec4valuez": 0.0008332211033572824,
+    "vec5name": "uPl0",
+    "vec5valuex": 0.0,
+    "vec5valuey": 0.0,
+    "vec5valuez": 0.2617993877991494,
+    "vec6name": "uPl1",
+    "vec6valuew": 0.9413339301142702,
+    "vec6valuey": 2.0,
+    "vec6valuez": 1.3089969389957472,
+    "vec7name": "uPl2",
+    "vec7valuex": 0.0,
+    "vec7valuey": 0.0,
+    "vec7valuez": 0.0,
+    "vec8name": "uPl3",
+    "vec8valuex": 3.0,
+    "vec8valuez": 1.5707963267948966,
+    "vec9name": "uTone",
+    "vec9valuew": 0.239046997949481,
+    "vec9valuex": 120.0,
+    "vec9valuey": 0.7006451351245672,
+    "vec9valuez": 0.5
+   }
+  },
+  "press_frag": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    700,
+    80
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.here('shaders/press.frag')"
+    },
+    "language": "text",
+    "syncfile": true
+   },
+   "text_file": "experiments/sc_riso_press/shaders/press.frag"
+  },
+  "press_info": {
+   "type": "infoDAT",
+   "family": "DAT",
+   "pos": [
+    160,
+    -120
+   ],
+   "pars": {
+    "language": "text",
+    "op": "press"
+   }
+  },
+  "render": {
+   "type": "renderTOP",
+   "family": "TOP",
+   "pos": [
+    0,
+    -200
+   ],
+   "pars": {
+    "camera": "cam",
+    "geometry": "m_*",
+    "lights": "light*",
+    "resolutionh": 600,
+    "resolutionw": 1024
+   }
+  },
+  "sep": {
+   "type": "glslTOP",
+   "family": "TOP",
+   "pos": [
+    250,
+    -60
+   ],
+   "inputs": [
+    [
+     "src_sw"
+    ],
+    [
+     "typepack"
+    ],
+    [
+     "fb_sep"
+    ]
+   ],
+   "pars": {
+    "computedat": "sep_compute",
+    "format": "rgba8fixed",
+    "outputresolution": "custom",
+    "pixeldat": "sep_frag",
+    "resolutionh": 640,
+    "resolutionw": 1024,
+    "vec0name": "uLatch",
+    "vec0valuex": 0.0,
+    "vec0valuey": 1.0,
+    "vec10name": "uPb2",
+    "vec10valuew": 0.0,
+    "vec10valuex": 0.95,
+    "vec10valuey": 3.0,
+    "vec11name": "uPb3",
+    "vec11valuew": 0.0,
+    "vec11valuex": 0.0,
+    "vec11valuey": 0.0,
+    "vec12name": "uPc0",
+    "vec12valuew": 2.0,
+    "vec12valuex": -0.011929529711313837,
+    "vec12valuey": 0.004516266432284177,
+    "vec12valuez": 0.0,
+    "vec13name": "uPc1",
+    "vec13valuew": 2.0,
+    "vec13valuex": 0.028169377631317313,
+    "vec13valuey": -0.036991657987140776,
+    "vec13valuez": 0.0,
+    "vec14name": "uPc2",
+    "vec14valuew": 2.0,
+    "vec14valuex": 0.0,
+    "vec14valuey": 0.0,
+    "vec14valuez": 0.0,
+    "vec15name": "uPc3",
+    "vec15valuew": 2.0,
+    "vec15valuex": 0.0,
+    "vec15valuey": 0.0,
+    "vec15valuez": 0.0,
+    "vec16name": "uIn",
+    "vec16valuew": 0.0,
+    "vec16valuex": 0.0,
+    "vec16valuey": 0.0,
+    "vec16valuez": 0.0,
+    "vec1name": "uImg",
+    "vec1valuew": 16.388,
+    "vec1valuex": 0.0,
+    "vec2name": "uSun",
+    "vec2valuex": 0.7561302202298975,
+    "vec2valuey": 0.578639444946748,
+    "vec2valuez": 0.37986298474608887,
+    "vec3name": "uAmt",
+    "vec4name": "uPa0",
+    "vec4valuex": 0.0,
+    "vec4valuey": 2.0,
+    "vec4valuez": 0.0,
+    "vec5name": "uPa1",
+    "vec5valuew": 0.72,
+    "vec5valuey": 2.0,
+    "vec5valuez": 0.0,
+    "vec6name": "uPa2",
+    "vec6valuew": 0.0,
+    "vec6valuex": 2.0,
+    "vec6valuey": 2.0,
+    "vec6valuez": 0.0,
+    "vec7name": "uPa3",
+    "vec7valuew": 0.0,
+    "vec7valuex": 2.0,
+    "vec7valuey": 2.0,
+    "vec7valuez": 0.5,
+    "vec8name": "uPb0",
+    "vec8valuew": 0.0,
+    "vec8valuex": 0.0,
+    "vec8valuey": 0.0,
+    "vec9name": "uPb1",
+    "vec9valuew": 0.0,
+    "vec9valuex": 0.0,
+    "vec9valuey": 0.0
+   }
+  },
+  "sep_frag": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    250,
+    80
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.here('shaders/sep.frag')"
+    },
+    "language": "text",
+    "syncfile": true
+   },
+   "text_file": "experiments/sc_riso_press/shaders/sep.frag"
+  },
+  "sep_info": {
+   "type": "infoDAT",
+   "family": "DAT",
+   "pos": [
+    160,
+    -120
+   ],
+   "pars": {
+    "language": "text",
+    "op": "sep"
+   }
+  },
+  "shot": {
+   "type": "constantCHOP",
+   "family": "CHOP",
+   "pos": [
+    -400,
+    330
+   ],
+   "pars": {
+    "const0name": "take",
+    "const0value": {
+     "expr": "parent().par.Take"
+    },
+    "const1name": "seed",
+    "const1value": {
+     "expr": "parent().par.Seed"
+    },
+    "const2name": "age",
+    "const2value": {
+     "expr": "max(0, absTime.seconds - parent().par.Shotstart)"
+    }
+   }
+  },
+  "spectrum": {
+   "type": "selectTOP",
+   "family": "TOP",
+   "pos": [
+    -400,
+    60
+   ],
+   "pars": {
+    "top": "/project1/sw_hub/spectex"
+   }
+  },
+  "src_sw": {
+   "type": "switchTOP",
+   "family": "TOP",
+   "pos": [
+    130,
+    -200
+   ],
+   "inputs": [
+    [
+     "render"
+    ],
+    [
+     "in_prep"
+    ]
+   ]
+  },
+  "t_big": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    -200,
+    200
+   ],
+   "pars": {
+    "alignx": "left",
+    "bgalpha": 1.0,
+    "bold": {
+     "expr": "not me.par.fontfile.eval()"
+    },
+    "fontfile": {
+     "expr": "mod.paths.font(('archivo', 'chicago')[int(op('fontsel')['bigfont'])])"
+    },
+    "fontsizex": 420.0,
+    "format": "mono8fixed",
+    "outputresolution": "custom",
+    "positiony": -16.726898889464792,
+    "resmult": false,
+    "resolutionh": 640,
+    "resolutionw": 1024,
+    "text": "PLATE 07"
+   }
+  },
+  "t_cap": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    -350,
+    80
+   ],
+   "pars": {
+    "bgalpha": 1.0,
+    "bold": {
+     "expr": "not me.par.fontfile.eval()"
+    },
+    "fontfile": {
+     "expr": "mod.paths.font('chicago')"
+    },
+    "fontsizex": 24.0,
+    "format": "mono8fixed",
+    "outputresolution": "custom",
+    "resmult": false,
+    "resolutionh": 640,
+    "resolutionw": 1024,
+    "text": ""
+   }
+  },
+  "t_rows": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    -200,
+    -40
+   ],
+   "pars": {
+    "alignx": "left",
+    "aligny": "top",
+    "bgalpha": 1.0,
+    "bold": {
+     "expr": "not me.par.fontfile.eval()"
+    },
+    "fontfile": {
+     "expr": "mod.paths.font('barlow')"
+    },
+    "fontsizex": 92.0,
+    "format": "mono8fixed",
+    "linespacing": -14.0,
+    "outputresolution": "custom",
+    "resmult": false,
+    "resolutionh": 640,
+    "resolutionw": 1024,
+    "text": "REAL TIME.  HERE. NOW.  SOUND IN. PICTURE OUT.  SIGNAL ......... FOUND  ORIGIN: UNRECORDED. SO FAR.  AN OBJECT OF UNKNOWN USE. KEEP IT DRY.  EVERY FRAME IS MADE NOW.  THE KICK MOVES THE INK.  LISTEN WITH YOUR EYES.  DO NOT TOUCH  PLATE OF THE DAY  PLATE 07  EXHIBIT 12-B  HANDLE WITH BOTH HANDS. THEN LET GO.  NOTHING ON THIS SHEET IS PRERENDERED  THIS SHEET IS MADE OF SOUND.  LOUD PRINTS. QUIET IS PAPER.  EVERYTHING IS INK  CATALOGUE NO. 0047  SIXTY FRAMES A SECOND  PAST. PRESENT. LATER. IN ORDER.  LOOP. LOOP. LOOPLOOP.  REAL TIME.  HERE. NOW.  SOUND IN. PICTURE OUT.  SIGNAL ......... FOUND  ORIGIN: UNRECORDED. SO FAR.  AN OBJECT OF UNKNOWN USE. KEEP IT DRY.  EVERY FRAME IS MADE NOW.  THE KICK MOVES THE INK.  LISTEN WITH YOUR EYES.  DO NOT TOUCH  PLATE OF THE DAY  PLATE 07  EXHIBIT 12-B  HANDLE WITH BOTH HANDS. THEN LET GO.  NOTHING ON THIS SHEET IS PRERENDERED  THIS SHEET IS MADE OF SOUND.  LOUD PRINTS. QUIET IS PAPER.  EVERYTHING IS INK  CATALOGUE NO. 0047  SIXTY FRAMES A SECOND  PAST. PRESENT. LATER. IN ORDER.  LOOP. LOOP. LOOPLOOP.",
+    "wordwrap": true
+   }
+  },
+  "t_slug": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    -200,
+    80
+   ],
+   "pars": {
+    "alignx": "right",
+    "aligny": "bottom",
+    "bgalpha": 1.0,
+    "bold": {
+     "expr": "not me.par.fontfile.eval()"
+    },
+    "fontfile": {
+     "expr": "mod.paths.font('chicago')"
+    },
+    "fontsizex": 24.0,
+    "format": "mono8fixed",
+    "outputresolution": "custom",
+    "positionx": -52.0,
+    "positiony": -11.0,
+    "resmult": false,
+    "resolutionh": 640,
+    "resolutionw": 1024,
+    "text": "TYPE  SHEET 0018"
+   }
+  },
+  "target": {
+   "type": "nullCOMP",
+   "family": "COMP",
+   "pos": [
+    -400,
+    -460
+   ]
+  },
+  "target/primitive1": {
+   "type": "primitivePOP",
+   "family": "POP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "addpts": true,
+    "attr0name": "color",
+    "method": "pattern",
+    "prim0pattern": "0 1",
+    "prim0type": "lines",
+    "prim1pattern": "2 3",
+    "prim1type": "lines",
+    "prim2pattern": "4 5",
+    "prim2type": "lines",
+    "pt0colorb": 0.0,
+    "pt0colorg": 0.0,
+    "pt0posx": -0.1,
+    "pt1colorb": 0.0,
+    "pt1colorg": 0.0,
+    "pt1posx": 0.1,
+    "pt2colorb": 0.0,
+    "pt2colorr": 0.0,
+    "pt2posy": -0.1,
+    "pt3colorb": 0.0,
+    "pt3colorr": 0.0,
+    "pt3posy": 0.1,
+    "pt4colorg": 0.0,
+    "pt4colorr": 0.0,
+    "pt4posz": -0.1,
+    "pt5colorg": 0.0,
+    "pt5colorr": 0.0,
+    "pt5posz": 0.1
+   }
+  },
+  "typepack": {
+   "type": "glslTOP",
+   "family": "TOP",
+   "pos": [
+    0,
+    80
+   ],
+   "inputs": [
+    [
+     "t_big"
+    ],
+    [
+     "t_slug"
+    ],
+    [
+     "t_rows"
+    ]
+   ],
+   "pars": {
+    "computedat": "typepack_compute",
+    "format": "rgba8fixed",
+    "outputresolution": "custom",
+    "pixeldat": "typepack_frag",
+    "resolutionh": 640,
+    "resolutionw": 1024,
+    "vec0name": "uScroll",
+    "vec0valuex": 7.809005126953125
+   }
+  },
+  "typepack_frag": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    0,
+    200
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.here('shaders/typepack.frag')"
+    },
+    "language": "text",
+    "syncfile": true
+   },
+   "text_file": "experiments/sc_riso_press/shaders/typepack.frag"
+  },
+  "typepack_info": {
+   "type": "infoDAT",
+   "family": "DAT",
+   "pos": [
+    160,
+    -120
+   ],
+   "pars": {
+    "language": "text",
+    "op": "typepack"
+   }
+  }
+ }
+}

@@ -61,14 +61,34 @@ Three experiments, each built entirely through this harness. Each folder holds i
 | ![sdf_sculpture](docs/media/sdf_sculpture.gif) | **[`sdf_sculpture`](experiments/sdf_sculpture/)**: a raymarched liquid sculpture written in a few lines of [Shader Park](https://github.com/shader-park/shader-park-core) JavaScript, compiled headless to a GLSL TOP shader by [`tools/shaderpark`](tools/shaderpark/), at about 1.2 ms a frame at 1280×720. |
 | ![feedback_drift](docs/media/feedback_drift.gif) | **[`feedback_drift`](experiments/feedback_drift/)**: noise blooms tinted by a hue-drifting ramp, spiralling inward through a 16-bit float feedback loop. The first experiment; its `NOTES.md` shows the build-look-adjust loop step by step. |
 
-## Gallery: an example project
+## The scene engine
 
-The harness was used to build an audio-reactive scene engine in one TouchDesigner project. A hub plays a music track and publishes what the music is doing on every frame. Eighteen scenes each read the hub and apply a different technique, and a cutter switches between them on beat lines. Every scene has between 7 and 14 takes, which are the same network with another camera, subject, palette or mode.
+The largest thing built with the harness so far is an audio-reactive scene engine. It is in this repository, with everything it needs to run.
 
-- The [preset gallery](docs/GALLERY.md) shows every scene and every take.
-- The project page at [billmoore.ai/touchdesigner](https://billmoore.ai/touchdesigner/) has the samples in motion.
+- **The hub** (`experiments/sw_hub/`) plays a music track and publishes what the music is doing on every frame: the loudness of each stem, beats, bars, sections and drum hits.
+- **Eighteen scenes** (`experiments/sc_*/`) each read the hub and apply a different technique, such as reaction-diffusion, a slime-mould simulation, ray-marched fractals, a vector scope or kinetic type. Each scene has several takes, so it looks different each time it returns.
+- **The cutter** (`experiments/sw_cut/`) switches between scenes on beat lines and adds treatments, transitions and layers.
+- **The control panel** (`experiments/sw_panel/`) has the scene, take, treatment, track and volume on one page, so nobody has to read the network.
 
-The source of these scenes is not in this repository yet. They still load 3D models, fonts and music from local folders, so they would not run on another machine. They will be added once those paths are portable.
+The [preset gallery](docs/GALLERY.md) shows every scene and every take, and the project page at [billmoore.ai/touchdesigner](https://billmoore.ai/touchdesigner/) has samples in motion.
+
+To build the engine in your lab project, ask Claude to run `experiments/sw_hub/build_all.py`, or run it yourself from the Textport:
+
+```python
+g = {'op': op, 'td': td, 'absTime': absTime, 'project': project}
+exec(open(project.folder + '/experiments/sw_hub/build_all.py', encoding='utf-8').read(), g)
+g['start']()
+```
+
+### The asset pack
+
+![The sixteen objects in the asset pack, front and back](docs/media/asset-pack.jpg)
+
+The scenes draw their 3D models, typefaces, lettering and music from [`assets/`](assets/), a pack that ships with the repository. Everything in it was generated for this project: sixteen objects (abstract sculptures, archetypal objects, and objects from the past, present and future), three printed sheets, three open-licence typefaces and two instrumental tracks with their analysis. [`assets/README.md`](assets/README.md) lists the contents and how each part was made.
+
+A scene's words, model names and tuning are one table at the top of its `build.py`. A pack can replace them, and you can point the engine at a pack of your own, without changing a scene's code. With no pack at all, each scene falls back to TouchDesigner's bundled teapot, default typeface and sample track.
+
+More preset and asset packs are planned for future releases.
 
 ## What's inside
 
@@ -93,8 +113,4 @@ The source of these scenes is not in this repository yet. They still load 3D mod
 
 ## License
 
-MIT, for this repo. touchdesigner-mcp (MIT) and TDMCP (Derivative's Shared Use License) are separate projects with their own licenses, and neither is included here.
-
-## Licence
-
-The code in this repository is released under the MIT licence (see `LICENSE`). The images in `docs/media/gallery/` show SUPERWORLD! artwork, models and lettering, which are not covered by that licence and remain the property of Bill Moore.
+MIT, for this repo. The typefaces in `assets/fonts/` are under the SIL Open Font License, and their licence texts are beside them. touchdesigner-mcp (MIT) and TDMCP (Derivative's Shared Use License) are separate projects with their own licenses, and neither is included here.

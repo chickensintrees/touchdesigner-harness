@@ -1,0 +1,9340 @@
+{
+ "format": "tdh-snapshot/1",
+ "root": "/project1/sc_paper_storm",
+ "ops": {
+  "aim": {
+   "type": "nullCOMP",
+   "family": "COMP",
+   "pos": [
+    950,
+    -370
+   ],
+   "pars": {
+    "tx": {
+     "expr": "op('tk')['aimx'] * (-1 if (op('tk')['mirror'] > 0.5 and (op('shot')['seed'] * 3.7) % 1 > 0.5) else 1)"
+    },
+    "ty": {
+     "expr": "op('tk')['aimy']"
+    },
+    "tz": {
+     "expr": "op('tk')['aimz']"
+    }
+   }
+  },
+  "aim/primitive1": {
+   "type": "primitivePOP",
+   "family": "POP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "addpts": true,
+    "attr0name": "color",
+    "method": "pattern",
+    "prim0pattern": "0 1",
+    "prim0type": "lines",
+    "prim1pattern": "2 3",
+    "prim1type": "lines",
+    "prim2pattern": "4 5",
+    "prim2type": "lines",
+    "pt0colorb": 0.0,
+    "pt0colorg": 0.0,
+    "pt0posx": -0.1,
+    "pt1colorb": 0.0,
+    "pt1colorg": 0.0,
+    "pt1posx": 0.1,
+    "pt2colorb": 0.0,
+    "pt2colorr": 0.0,
+    "pt2posy": -0.1,
+    "pt3colorb": 0.0,
+    "pt3colorr": 0.0,
+    "pt3posy": 0.1,
+    "pt4colorg": 0.0,
+    "pt4colorr": 0.0,
+    "pt4posz": -0.1,
+    "pt5colorg": 0.0,
+    "pt5colorr": 0.0,
+    "pt5posz": 0.1
+   }
+  },
+  "amb": {
+   "type": "ambientlightCOMP",
+   "family": "COMP",
+   "pos": [
+    800,
+    -590
+   ],
+   "pars": {
+    "cb": {
+     "expr": "op('tk')['ambb']"
+    },
+    "cg": {
+     "expr": "op('tk')['ambg']"
+    },
+    "cr": {
+     "expr": "op('tk')['ambr']"
+    },
+    "dimmer": {
+     "expr": "op('tk')['ambd']"
+    }
+   }
+  },
+  "amb/sphere1": {
+   "type": "spherePOP",
+   "family": "POP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "radx": 0.2,
+    "rady": 0.2,
+    "radz": 0.2
+   }
+  },
+  "backs": {
+   "type": "geometryCOMP",
+   "family": "COMP",
+   "pos": [
+    950,
+    300
+   ],
+   "pars": {
+    "instanceb": "b",
+    "instancecolormode": "multiply",
+    "instancecolorop": "/project1/sc_paper_storm/sheet_c",
+    "instanceg": "g",
+    "instanceop": "/project1/sc_paper_storm/sheet_p",
+    "instancer": "r",
+    "instancerottoforward": "posy",
+    "instancerottoop": "/project1/sc_paper_storm/sheet_n",
+    "instancerottox": "r",
+    "instancerottoy": "g",
+    "instancerottoz": "b",
+    "instancerotupop": "/project1/sc_paper_storm/sheet_u",
+    "instancerotupx": "r",
+    "instancerotupy": "g",
+    "instancerotupz": "b",
+    "instancetx": "r",
+    "instancety": "g",
+    "instancetz": "b",
+    "instancing": true,
+    "material": "/project1/sc_paper_storm/backs/mat",
+    "render": {
+     "expr": "op('tk')['sheets'] > 0.5"
+    }
+   }
+  },
+  "backs/backphrase": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    -300,
+    -40
+   ],
+   "pars": {
+    "bgalpha": 1.0,
+    "bgcolorb": {
+     "expr": "op('../tk')['backb']"
+    },
+    "bgcolorg": {
+     "expr": "op('../tk')['backg']"
+    },
+    "bgcolorr": {
+     "expr": "op('../tk')['backr']"
+    },
+    "fontautosize": "fitiffat",
+    "fontcolorb": 0.78,
+    "fontcolorg": 0.9,
+    "fontcolorr": 0.96,
+    "fontfile": {
+     "expr": "mod.paths.font('chicago')"
+    },
+    "fontsizex": 90.0,
+    "outputresolution": "custom",
+    "resmult": false,
+    "resolutionh": 396,
+    "resolutionw": 512,
+    "text": {
+     "expr": "('NOW.', 'DO NOT\\nTOUCH', 'SOUND\\nIN.', 'PLATE\\n07', 'NOT\\nMADE', 'LOOP')[int(op('../shot')['seed'] * 61) % 6]"
+    }
+   }
+  },
+  "backs/backphrase_d": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    -300,
+    -160
+   ],
+   "pars": {
+    "bgalpha": 1.0,
+    "bgcolorb": {
+     "expr": "op('../tk')['backb']"
+    },
+    "bgcolorg": {
+     "expr": "op('../tk')['backg']"
+    },
+    "bgcolorr": {
+     "expr": "op('../tk')['backr']"
+    },
+    "fontautosize": "fitiffat",
+    "fontcolorb": 0.78,
+    "fontcolorg": 0.9,
+    "fontcolorr": 0.96,
+    "fontfile": {
+     "expr": "mod.paths.font('chicago')"
+    },
+    "fontsizex": 110.0,
+    "outputresolution": "custom",
+    "resmult": false,
+    "resolutionh": 396,
+    "resolutionw": 512,
+    "text": {
+     "expr": "('6144\\nSHEETS', 'FLIP ON\\nBEAT', 'ONE\\nSHADER', 'PAPER\\nCOPIES', 'RINGS\\nTURN', 'KICK\\nWIDENS')[int(op('../shot')['seed'] * 61) % 6]"
+    }
+   }
+  },
+  "backs/backphrasesw": {
+   "type": "switchTOP",
+   "family": "TOP",
+   "pos": [
+    -150,
+    -40
+   ],
+   "inputs": [
+    [
+     "backs/backphrase"
+    ],
+    [
+     "backs/backphrase_d"
+    ]
+   ],
+   "pars": {
+    "index": {
+     "expr": "op('../mode')['describe']"
+    }
+   }
+  },
+  "backs/backplain": {
+   "type": "constantTOP",
+   "family": "TOP",
+   "pos": [
+    -150,
+    80
+   ],
+   "pars": {
+    "colorb": {
+     "expr": "op('../tk')['backb']"
+    },
+    "colorg": {
+     "expr": "op('../tk')['backg']"
+    },
+    "colorr": {
+     "expr": "op('../tk')['backr']"
+    },
+    "outputresolution": "custom",
+    "resolutionh": 48,
+    "resolutionw": 64
+   }
+  },
+  "backs/backprint": {
+   "type": "glslTOP",
+   "family": "TOP",
+   "pos": [
+    -150,
+    -160
+   ],
+   "inputs": [
+    [
+     "backs/backprint_in"
+    ]
+   ],
+   "pars": {
+    "computedat": "backprint_compute",
+    "inputfiltertype": "mipmap",
+    "outputresolution": "custom",
+    "pixeldat": "../print_frag",
+    "resolutionh": 396,
+    "resolutionw": 512,
+    "vec0name": "uPaper",
+    "vec0valuex": 1.0,
+    "vec0valuey": 1.0,
+    "vec0valuez": 1.0,
+    "vec1name": "uDuo",
+    "vec1valuex": {
+     "expr": "op('../tk')['backr']"
+    },
+    "vec1valuey": {
+     "expr": "op('../tk')['backg']"
+    },
+    "vec1valuez": {
+     "expr": "op('../tk')['backb']"
+    }
+   }
+  },
+  "backs/backprint_compute": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    320,
+    -120
+   ],
+   "pars": {
+    "language": "glsl"
+   },
+   "text": [
+    "// Example Compute Shader",
+    "",
+    "// uniform float exampleUniform;",
+    "",
+    "layout (local_size_x = 8, local_size_y = 4) in;",
+    "void main()",
+    "{",
+    "\t// This code is running 1:1 per pixel, so early-exit",
+    "\t// if this thread overhangs the edge of the output",
+    "\tif (any(greaterThanEqual(ivec2(gl_GlobalInvocationID.xy), ivec2(uTDOutputInfo.res.zw))))",
+    "\t\treturn;",
+    "",
+    "\tvec4 color;",
+    "\t//color = texelFetch(sTD2DInputs[0], ivec2(gl_GlobalInvocationID.xy), 0);",
+    "\tcolor = vec4(1.0);",
+    "\t// We need to use TDImageStoreOutput() so that 8-bit textures that are sRGB",
+    "\t// encoded can be written to correctly from incoming linear values.",
+    "\t// imageStore() does not do this automatically, while pixel shader outputs do.",
+    "\tTDImageStoreOutput(0, gl_GlobalInvocationID, color);",
+    "}"
+   ]
+  },
+  "backs/backprint_in": {
+   "type": "selectTOP",
+   "family": "TOP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "top": "../inp"
+   }
+  },
+  "backs/backprint_info": {
+   "type": "infoDAT",
+   "family": "DAT",
+   "pos": [
+    160,
+    -120
+   ],
+   "pars": {
+    "language": "text",
+    "op": "backprint"
+   }
+  },
+  "backs/backprint_pixel": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    0,
+    -120
+   ],
+   "pars": {
+    "extension": "frag",
+    "language": "glsl"
+   },
+   "text": [
+    "",
+    "// Example Pixel Shader",
+    "",
+    "// uniform float exampleUniform;",
+    "",
+    "out vec4 fragColor;",
+    "void main()",
+    "{",
+    "\t// vec4 color = texture(sTD2DInputs[0], vUV.st);",
+    "\tvec4 color = vec4(1.0);",
+    "\tfragColor = TDOutputSwizzle(color);",
+    "}"
+   ]
+  },
+  "backs/backsw": {
+   "type": "switchTOP",
+   "family": "TOP",
+   "pos": [
+    0,
+    0
+   ],
+   "inputs": [
+    [
+     "backs/backtexsw"
+    ],
+    [
+     "backs/backplain"
+    ],
+    [
+     "backs/backphrasesw"
+    ],
+    [
+     "backs/backprint"
+    ]
+   ],
+   "pars": {
+    "index": {
+     "expr": "3 if (op('../mode')['inp'] and op('../tk')['backin'] > 0.5 and not op('../mode')['describe']) else op('../tk')['back']"
+    }
+   }
+  },
+  "backs/backtex": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    -300,
+    200
+   ],
+   "pars": {
+    "bgalpha": 1.0,
+    "bgcolorb": 0.13,
+    "bgcolorg": 0.2,
+    "bgcolorr": 0.86,
+    "fontcolorb": 0.78,
+    "fontcolorg": 0.9,
+    "fontcolorr": 0.96,
+    "fontfile": {
+     "expr": "mod.paths.font('chicago')"
+    },
+    "fontsizex": 96.0,
+    "outputresolution": "custom",
+    "resmult": false,
+    "resolutionh": 396,
+    "resolutionw": 512,
+    "text": "REAL\nTIME"
+   }
+  },
+  "backs/backtex_d": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    -300,
+    80
+   ],
+   "pars": {
+    "bgalpha": 1.0,
+    "bgcolorb": 0.13,
+    "bgcolorg": 0.2,
+    "bgcolorr": 0.86,
+    "fontautosize": "fitiffat",
+    "fontcolorb": 0.78,
+    "fontcolorg": 0.9,
+    "fontcolorr": 0.96,
+    "fontfile": {
+     "expr": "mod.paths.font('chicago')"
+    },
+    "fontsizex": 84.0,
+    "outputresolution": "custom",
+    "resmult": false,
+    "resolutionh": 396,
+    "resolutionw": 512,
+    "text": {
+     "expr": "('6144\\nCOPIES', '\\n', '\\n', '\\n', '\\n', '\\n', '6144\\nCOPIES', '\\n')[int(op('../shot')['take']) % 8]"
+    }
+   }
+  },
+  "backs/backtexsw": {
+   "type": "switchTOP",
+   "family": "TOP",
+   "pos": [
+    -150,
+    200
+   ],
+   "inputs": [
+    [
+     "backs/backtex"
+    ],
+    [
+     "backs/backtex_d"
+    ]
+   ],
+   "pars": {
+    "index": {
+     "expr": "op('../mode')['describe']"
+    }
+   }
+  },
+  "backs/mat": {
+   "type": "pbrMAT",
+   "family": "MAT",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "basecolormap": "/project1/sc_paper_storm/backs/backsw",
+    "cullface": "backfaces",
+    "emitb": {
+     "expr": "op('../tk')['backemit']"
+    },
+    "emitg": {
+     "expr": "op('../tk')['backemit']"
+    },
+    "emitmap": "/project1/sc_paper_storm/backs/backsw",
+    "emitr": {
+     "expr": "op('../tk')['backemit']"
+    },
+    "metallic": 0.0,
+    "roughness": 0.85,
+    "writecameradepthtoalpha": true
+   }
+  },
+  "backs/mesh": {
+   "type": "fileinPOP",
+   "family": "POP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.here('meshes/sheet_back.obj')"
+    }
+   }
+  },
+  "backs/tex": {
+   "type": "moviefileinTOP",
+   "family": "TOP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.model_texture('blueprint') or mod.paths.here('data/white.png')"
+    }
+   }
+  },
+  "bloom": {
+   "type": "bloomTOP",
+   "family": "TOP",
+   "pos": [
+    1100,
+    -110
+   ],
+   "inputs": [
+    [
+     "post"
+    ]
+   ],
+   "pars": {
+    "bloomintensity": {
+     "expr": "op('tk')['bloom']"
+    },
+    "bloomthreshold": 0.6
+   }
+  },
+  "blur": {
+   "type": "blurTOP",
+   "family": "TOP",
+   "pos": [
+    1100,
+    110
+   ],
+   "inputs": [
+    [
+     "render"
+    ]
+   ],
+   "pars": {
+    "size": {
+     "expr": "op('tk')['blur']"
+    }
+   }
+  },
+  "bouncel": {
+   "type": "lightCOMP",
+   "family": "COMP",
+   "pos": [
+    1100,
+    -590
+   ],
+   "pars": {
+    "cb": 0.8,
+    "cr": 0.85,
+    "dimmer": {
+     "expr": "op('tk')['bouncel']"
+    },
+    "lighttype": "distant",
+    "rx": 75.0,
+    "ry": -30.0,
+    "tz": 10.0
+   }
+  },
+  "bouncel/circle1": {
+   "type": "circlePOP",
+   "family": "POP",
+   "pos": [
+    780,
+    170
+   ],
+   "pars": {
+    "connectivity": "surface",
+    "scale": 0.2
+   }
+  },
+  "bouncel/circle_attenEnd": {
+   "type": "circlePOP",
+   "family": "POP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "bypass": {
+     "expr": "not parent().par.attenuated"
+    },
+    "connectivity": "surface",
+    "pageindex": 3,
+    "radx": 0.1,
+    "rady": 0.1,
+    "tz": {
+     "expr": "-parent().par.attenuationend"
+    }
+   }
+  },
+  "bouncel/circle_attenStart": {
+   "type": "circlePOP",
+   "family": "POP",
+   "pos": [
+    0,
+    120
+   ],
+   "pars": {
+    "bypass": {
+     "expr": "not parent().par.attenuated"
+    },
+    "connectivity": "surface",
+    "pageindex": 1,
+    "radx": 0.1,
+    "rady": 0.1,
+    "tz": {
+     "expr": "-parent().par.attenuationstart"
+    }
+   }
+  },
+  "bouncel/connectivity1": {
+   "type": "connectivityPOP",
+   "family": "POP",
+   "pos": [
+    780,
+    290
+   ],
+   "inputs": [
+    [
+     "bouncel/merge3"
+    ]
+   ],
+   "pars": {
+    "surftype": "lines"
+   }
+  },
+  "bouncel/copy1": {
+   "type": "copyPOP",
+   "family": "POP",
+   "pos": [
+    520,
+    670
+   ],
+   "inputs": [
+    [
+     "bouncel/tube_attenuated"
+    ]
+   ],
+   "pars": {
+    "ncy": 2,
+    "pageindex": 2,
+    "rx": 90.0
+   }
+  },
+  "bouncel/line_atten": {
+   "type": "linePOP",
+   "family": "POP",
+   "pos": [
+    0,
+    230
+   ],
+   "pars": {
+    "bypass": {
+     "expr": "not parent().par.attenuated"
+    },
+    "divs": 1,
+    "pageindex": 2,
+    "pt0posz": {
+     "expr": "-parent().par.attenuationstart"
+    },
+    "pt1posz": {
+     "expr": "-parent().par.attenuationend"
+    }
+   },
+   "custom_pars": [
+    "pt",
+    "pt0posx",
+    "pt0posy",
+    "pt0posz",
+    "pt1posx",
+    "pt1posy",
+    "pt1posz"
+   ]
+  },
+  "bouncel/merge1": {
+   "type": "mergePOP",
+   "family": "POP",
+   "pos": [
+    250,
+    500
+   ],
+   "inputs": [
+    [
+     "bouncel/rectangle1"
+    ],
+    [
+     "bouncel/tube_cone1"
+    ],
+    [
+     "bouncel/tube_cone2"
+    ],
+    [
+     "bouncel/primitive1"
+    ],
+    [
+     "bouncel/line_atten"
+    ],
+    [
+     "bouncel/circle_attenStart"
+    ],
+    [
+     "bouncel/circle_attenEnd"
+    ]
+   ],
+   "pars": {
+    "pageindex": 1
+   }
+  },
+  "bouncel/merge2": {
+   "type": "mergePOP",
+   "family": "POP",
+   "pos": [
+    950,
+    230
+   ],
+   "inputs": [
+    [
+     "bouncel/connectivity1"
+    ],
+    [
+     "bouncel/circle1"
+    ]
+   ]
+  },
+  "bouncel/merge3": {
+   "type": "mergePOP",
+   "family": "POP",
+   "pos": [
+    620,
+    290
+   ],
+   "inputs": [
+    [
+     "bouncel/pointgen1"
+    ],
+    [
+     "bouncel/transform1"
+    ]
+   ]
+  },
+  "bouncel/merge_pointLight": {
+   "type": "mergePOP",
+   "family": "POP",
+   "pos": [
+    760,
+    820
+   ],
+   "inputs": [
+    [
+     "bouncel/sphere1"
+    ],
+    [
+     "bouncel/primitive_quadrants"
+    ],
+    [
+     "bouncel/copy1"
+    ]
+   ],
+   "pars": {
+    "pageindex": 1
+   }
+  },
+  "bouncel/pointgen1": {
+   "type": "pointgeneratorPOP",
+   "family": "POP",
+   "pos": [
+    270,
+    290
+   ],
+   "pars": {
+    "numpoints": 17,
+    "pageindex": 1,
+    "shape": "circle",
+    "sx": 0.2,
+    "sy": 0.2,
+    "sz": 0.2
+   }
+  },
+  "bouncel/primitive1": {
+   "type": "primitivePOP",
+   "family": "POP",
+   "pos": [
+    0,
+    390
+   ],
+   "pars": {
+    "addpts": true,
+    "method": "pattern",
+    "pageindex": 1,
+    "prim0pattern": "0 1 0 2 0 3 0 4",
+    "prim0type": "lines",
+    "pt1posx": {
+     "expr": "mod.math.sin(mod.math.radians(parent().par.coneangle/2)) + mod.math.sin(mod.math.radians(parent().par.conedelta/2))"
+    },
+    "pt1posz": {
+     "expr": "-op('tube_cone1').par.height"
+    },
+    "pt2posx": {
+     "expr": "mod.math.sin(-mod.math.radians(parent().par.coneangle/2)) - mod.math.sin(mod.math.radians(parent().par.conedelta/2))"
+    },
+    "pt2posz": {
+     "expr": "0-op('tube_cone1').par.height"
+    },
+    "pt3posy": {
+     "expr": "-mod.math.sin(-mod.math.radians(parent().par.coneangle/2)) - mod.math.sin(mod.math.radians(parent().par.conedelta/2))"
+    },
+    "pt3posz": {
+     "expr": "-op('tube_cone1').par.height"
+    },
+    "pt4posy": {
+     "expr": "mod.math.sin(-mod.math.radians(parent().par.coneangle/2)) - mod.math.sin(mod.math.radians(parent().par.conedelta/2))"
+    },
+    "pt4posz": {
+     "expr": "-op('tube_cone1').par.height"
+    }
+   },
+   "custom_pars": [
+    "pt",
+    "pt0posx",
+    "pt0posy",
+    "pt0posz",
+    "pt1posx",
+    "pt1posy",
+    "pt1posz",
+    "pt2posx",
+    "pt2posy",
+    "pt2posz",
+    "pt3posx",
+    "pt3posy",
+    "pt3posz",
+    "pt4posx",
+    "pt4posy",
+    "pt4posz"
+   ]
+  },
+  "bouncel/primitive_cross": {
+   "type": "primitivePOP",
+   "family": "POP",
+   "pos": [
+    520,
+    1000
+   ],
+   "pars": {
+    "addpts": true,
+    "method": "set",
+    "pageindex": 1,
+    "pt0posx": -0.2,
+    "pt1posx": 0.2,
+    "pt2posy": -0.2,
+    "pt3posy": 0.2,
+    "pt4posz": -0.2,
+    "pt5posz": 0.2,
+    "setprimtype": "lines"
+   },
+   "custom_pars": [
+    "pt",
+    "pt0posx",
+    "pt0posy",
+    "pt0posz",
+    "pt1posx",
+    "pt1posy",
+    "pt1posz",
+    "pt2posx",
+    "pt2posy",
+    "pt2posz",
+    "pt3posx",
+    "pt3posy",
+    "pt3posz",
+    "pt4posx",
+    "pt4posy",
+    "pt4posz",
+    "pt5posx",
+    "pt5posy",
+    "pt5posz"
+   ]
+  },
+  "bouncel/primitive_quadrants": {
+   "type": "primitivePOP",
+   "family": "POP",
+   "pos": [
+    520,
+    780
+   ],
+   "pars": {
+    "addpts": true,
+    "method": "set",
+    "pageindex": 1,
+    "pt0posx": 0.07,
+    "pt0posy": 0.07,
+    "pt0posz": 0.07,
+    "pt1posx": -0.07,
+    "pt1posy": -0.07,
+    "pt1posz": -0.07,
+    "pt2posx": -0.07,
+    "pt2posy": 0.07,
+    "pt2posz": 0.07,
+    "pt3posx": 0.07,
+    "pt3posy": -0.07,
+    "pt3posz": -0.07,
+    "pt4posx": 0.07,
+    "pt4posy": 0.07,
+    "pt4posz": -0.07,
+    "pt5posx": -0.07,
+    "pt5posy": -0.07,
+    "pt5posz": 0.07,
+    "pt6posx": -0.07,
+    "pt6posy": 0.07,
+    "pt6posz": -0.07,
+    "pt7posx": 0.07,
+    "pt7posy": -0.07,
+    "pt7posz": 0.07,
+    "setprimtype": "lines"
+   },
+   "custom_pars": [
+    "pt",
+    "pt0posx",
+    "pt0posy",
+    "pt0posz",
+    "pt1posx",
+    "pt1posy",
+    "pt1posz",
+    "pt2posx",
+    "pt2posy",
+    "pt2posz",
+    "pt3posx",
+    "pt3posy",
+    "pt3posz",
+    "pt4posx",
+    "pt4posy",
+    "pt4posz",
+    "pt5posx",
+    "pt5posy",
+    "pt5posz",
+    "pt6posx",
+    "pt6posy",
+    "pt6posz",
+    "pt7posx",
+    "pt7posy",
+    "pt7posz"
+   ]
+  },
+  "bouncel/rectangle1": {
+   "type": "rectanglePOP",
+   "family": "POP",
+   "pos": [
+    0,
+    730
+   ],
+   "pars": {
+    "anchorv": 0.0,
+    "sizeu": 0.02,
+    "sizev": 0.5
+   }
+  },
+  "bouncel/sphere1": {
+   "type": "spherePOP",
+   "family": "POP",
+   "pos": [
+    520,
+    890
+   ],
+   "pars": {
+    "freq": 3,
+    "pageindex": 2,
+    "radx": 0.05,
+    "rady": 0.05,
+    "radz": 0.05
+   }
+  },
+  "bouncel/switch_lightType": {
+   "type": "switchPOP",
+   "family": "POP",
+   "pos": [
+    1140,
+    500
+   ],
+   "inputs": [
+    [
+     "bouncel/merge_pointLight"
+    ],
+    [
+     "bouncel/merge1"
+    ],
+    [
+     "bouncel/merge2"
+    ]
+   ],
+   "pars": {
+    "index": {
+     "expr": "parent().par.lighttype.menuIndex"
+    }
+   }
+  },
+  "bouncel/transform1": {
+   "type": "transformPOP",
+   "family": "POP",
+   "pos": [
+    450,
+    370
+   ],
+   "inputs": [
+    [
+     "bouncel/pointgen1"
+    ]
+   ],
+   "pars": {
+    "tz": 0.8
+   }
+  },
+  "bouncel/tube_attenuated": {
+   "type": "tubePOP",
+   "family": "POP",
+   "pos": [
+    368,
+    673
+   ],
+   "pars": {
+    "bypass": {
+     "expr": "not parent().par.attenuated"
+    },
+    "height": 0.0,
+    "orient": "z",
+    "radx": {
+     "expr": "parent().par.attenuationend"
+    },
+    "rady": {
+     "expr": "parent().par.attenuationstart"
+    },
+    "rows": 2,
+    "surftype": "rows"
+   }
+  },
+  "bouncel/tube_cone1": {
+   "type": "tubePOP",
+   "family": "POP",
+   "pos": [
+    0,
+    620
+   ],
+   "pars": {
+    "height": {
+     "expr": "mod.math.cos(mod.math.radians(parent().par.coneangle/2))"
+    },
+    "orient": "z",
+    "radx": {
+     "expr": "mod.math.sin(mod.math.radians(parent().par.coneangle/2))"
+    },
+    "rady": 0.01,
+    "rows": 2,
+    "tz": {
+     "expr": "-me.par.height*0.5"
+    }
+   }
+  },
+  "bouncel/tube_cone2": {
+   "type": "tubePOP",
+   "family": "POP",
+   "pos": [
+    0,
+    500
+   ],
+   "pars": {
+    "height": 0.0,
+    "orient": "z",
+    "radx": {
+     "expr": "mod.math.sin(mod.math.radians(parent().par.coneangle/2)) + mod.math.sin(mod.math.radians(parent().par.conedelta/2))"
+    },
+    "rady": {
+     "expr": "mod.math.sin(mod.math.radians(parent().par.coneangle/2))"
+    },
+    "rows": 2,
+    "tz": {
+     "expr": "-op('tube_cone1').par.height"
+    }
+   }
+  },
+  "cam": {
+   "type": "cameraCOMP",
+   "family": "COMP",
+   "pos": [
+    800,
+    -370
+   ],
+   "pars": {
+    "far": 900.0,
+    "fog": "exp",
+    "fogalpha": {
+     "expr": "op('tk')['bgk']"
+    },
+    "fogcolorb": {
+     "expr": "op('tk')['hazeb']"
+    },
+    "fogcolorg": {
+     "expr": "op('tk')['hazeg']"
+    },
+    "fogcolorr": {
+     "expr": "op('tk')['hazer']"
+    },
+    "fogdensity": {
+     "expr": "op('tk')['fog']"
+    },
+    "fov": {
+     "expr": "op('tk')['fov']"
+    },
+    "lookat": "/project1/sc_paper_storm/aim",
+    "near": 0.2,
+    "tx": {
+     "expr": "op('ctl')['camx']"
+    },
+    "ty": {
+     "expr": "op('ctl')['camy']"
+    },
+    "tz": {
+     "expr": "op('ctl')['camz']"
+    }
+   }
+  },
+  "cam/file1": {
+   "type": "fileinPOP",
+   "family": "POP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "file": {
+     "expr": "app.samplesFolder + '/Geo/defcam.tog'"
+    }
+   }
+  },
+  "cap": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    1100,
+    -330
+   ],
+   "pars": {
+    "alignx": "left",
+    "bgalpha": {
+     "expr": "(0.86, 0.86, 0.86, 0.86, 0.86, 1.0, 0.86, 0.86)[int(op('shot')['take']) % 8]"
+    },
+    "bgcolorb": {
+     "expr": "(0.066, 0.075, 0.74, 0.015, 0.72, 0.0, 0.066, 0.066)[int(op('shot')['take']) % 8]"
+    },
+    "bgcolorg": {
+     "expr": "(0.052, 0.04, 0.88, 0.02, 0.9, 0.0, 0.052, 0.052)[int(op('shot')['take']) % 8]"
+    },
+    "bgcolorr": {
+     "expr": "(0.03, 0.016, 0.93, 0.2, 0.84, 0.0, 0.03, 0.03)[int(op('shot')['take']) % 8]"
+    },
+    "fontcolorb": {
+     "expr": "(0.78, 0.78, 0.1, 0.78, 0.05, 1.0, 0.78, 0.78)[int(op('shot')['take']) % 8]"
+    },
+    "fontcolorg": {
+     "expr": "(0.9, 0.9, 0.07, 0.9, 0.09, 1.0, 0.9, 0.9)[int(op('shot')['take']) % 8]"
+    },
+    "fontcolorr": {
+     "expr": "(0.96, 0.96, 0.05, 0.96, 0.06, 1.0, 0.96, 0.96)[int(op('shot')['take']) % 8]"
+    },
+    "fontfile": {
+     "expr": "mod.paths.font('chicago')"
+    },
+    "fontsizex": 24.0,
+    "fontsizexunit": "pixels",
+    "outputresolution": "custom",
+    "positionx": 24.0,
+    "resmult": false,
+    "resolutionh": 80,
+    "resolutionw": 1280,
+    "text": {
+     "expr": "(('INSTANCING: THE INPUT PICTURE, PRINTED ON 6144 PAPER SHEETS.\\nA SHADER FLIES THEM PAST AS A TUNNEL. THE BEAT FLIPS A RING OF THEM.', 'INSTANCING: A WALL OF 96 X 64 PAPER SHEETS SHOWS THE INPUT PICTURE.\\nA SHEET TURNS TO ITS YELLOW BACK WHERE THE PICTURE IS BRIGHT.', 'INSTANCING: 6144 PAPER SHEETS, EACH ONE PLACED BY A SHADER.\\nTHREE SINE WAVES FOLD THE FLOCK. BASS DEEPENS THE FOLDS.', 'INSTANCING: 196 OBJECTS, EACH ONE PLACED BY A SHADER.\\nDUCKS HOP IN A WAVE ON THE BEAT. A KICK DRUM THROWS THE KEYS.', 'INSTANCING: THE INPUT PICTURE, PRINTED ON 6144 PAPER SHEETS.\\nTHEY FALL ONE STEP PER BEAT. NEAR SHEETS GO OUT OF FOCUS.', 'INSTANCING: THE INPUT PICTURE ON A FLOOR OF 6144 SHEETS, IN 1-BIT.\\nEVERY 2 BEATS A RING OF SHEETS TURNS OVER TO BLACK.', 'INSTANCING: THE INPUT PICTURE, PRINTED ON ONE LARGE SHEET.\\nTHE BLUR BEHIND IT IS 6144 MORE PRINTS. A KICK DRUM TIPS THE SHEET.', 'INSTANCING: THE INPUT PICTURE, PRINTED ON 6144 PAPER SHEETS.\\nRINGS OF THEM TURN WITH THE BAR. THE BEAT FLIPS A RING OF THEM.') if op('mode')['inp'] else ('INSTANCING: 6144 COPIES OF ONE PAPER SHEET, EACH PLACED BY A SHADER.\\nTHE BAR TURNS THE TUNNEL. THE BEAT FLIPS A RING OF SHEETS TO RED.', '', 'INSTANCING: 6144 PAPER SHEETS, EACH ONE PLACED BY A SHADER.\\nTHREE SINE WAVES FOLD THE FLOCK. BASS DEEPENS THE FOLDS.', 'INSTANCING: 196 OBJECTS, EACH ONE PLACED BY A SHADER.\\nDUCKS HOP IN A WAVE ON THE BEAT. A KICK DRUM THROWS THE KEYS.', 'INSTANCING: 6144 PAPER SHEETS, EACH ONE PLACED BY A SHADER.\\nTHEY FALL ONE STEP PER BEAT. NEAR SHEETS GO OUT OF FOCUS.', 'INSTANCING: A FLOOR OF 6144 SHEETS, DRAWN IN 1-BIT DITHER.\\nEVERY 2 BEATS A RING OF SHEETS TURNS OVER TO BLACK.', '', 'INSTANCING: 6144 COPIES OF ONE PAPER SHEET, EACH PLACED BY A SHADER.\\nRINGS OF PAPER TURN WITH THE BAR. THE BEAT FLIPS A RING TO BLUE.'))[int(op('shot')['take']) % 8]"
+    }
+   }
+  },
+  "capover": {
+   "type": "overTOP",
+   "family": "TOP",
+   "pos": [
+    1200,
+    -220
+   ],
+   "inputs": [
+    [
+     "cap"
+    ],
+    [
+     "bloom"
+    ]
+   ],
+   "pars": {
+    "justifyh": "left",
+    "justifyv": "bottom",
+    "prefit": "nativeres"
+   }
+  },
+  "capsw": {
+   "type": "switchTOP",
+   "family": "TOP",
+   "pos": [
+    1200,
+    -110
+   ],
+   "inputs": [
+    [
+     "bloom"
+    ],
+    [
+     "capover"
+    ]
+   ],
+   "pars": {
+    "index": {
+     "expr": "1 if (op('mode')['describe'] and (('INSTANCING: THE INPUT PICTURE, PRINTED ON 6144 PAPER SHEETS.\\nA SHADER FLIES THEM PAST AS A TUNNEL. THE BEAT FLIPS A RING OF THEM.', 'INSTANCING: A WALL OF 96 X 64 PAPER SHEETS SHOWS THE INPUT PICTURE.\\nA SHEET TURNS TO ITS YELLOW BACK WHERE THE PICTURE IS BRIGHT.', 'INSTANCING: 6144 PAPER SHEETS, EACH ONE PLACED BY A SHADER.\\nTHREE SINE WAVES FOLD THE FLOCK. BASS DEEPENS THE FOLDS.', 'INSTANCING: 196 OBJECTS, EACH ONE PLACED BY A SHADER.\\nDUCKS HOP IN A WAVE ON THE BEAT. A KICK DRUM THROWS THE KEYS.', 'INSTANCING: THE INPUT PICTURE, PRINTED ON 6144 PAPER SHEETS.\\nTHEY FALL ONE STEP PER BEAT. NEAR SHEETS GO OUT OF FOCUS.', 'INSTANCING: THE INPUT PICTURE ON A FLOOR OF 6144 SHEETS, IN 1-BIT.\\nEVERY 2 BEATS A RING OF SHEETS TURNS OVER TO BLACK.', 'INSTANCING: THE INPUT PICTURE, PRINTED ON ONE LARGE SHEET.\\nTHE BLUR BEHIND IT IS 6144 MORE PRINTS. A KICK DRUM TIPS THE SHEET.', 'INSTANCING: THE INPUT PICTURE, PRINTED ON 6144 PAPER SHEETS.\\nRINGS OF THEM TURN WITH THE BAR. THE BEAT FLIPS A RING OF THEM.') if op('mode')['inp'] else ('INSTANCING: 6144 COPIES OF ONE PAPER SHEET, EACH PLACED BY A SHADER.\\nTHE BAR TURNS THE TUNNEL. THE BEAT FLIPS A RING OF SHEETS TO RED.', '', 'INSTANCING: 6144 PAPER SHEETS, EACH ONE PLACED BY A SHADER.\\nTHREE SINE WAVES FOLD THE FLOCK. BASS DEEPENS THE FOLDS.', 'INSTANCING: 196 OBJECTS, EACH ONE PLACED BY A SHADER.\\nDUCKS HOP IN A WAVE ON THE BEAT. A KICK DRUM THROWS THE KEYS.', 'INSTANCING: 6144 PAPER SHEETS, EACH ONE PLACED BY A SHADER.\\nTHEY FALL ONE STEP PER BEAT. NEAR SHEETS GO OUT OF FOCUS.', 'INSTANCING: A FLOOR OF 6144 SHEETS, DRAWN IN 1-BIT DITHER.\\nEVERY 2 BEATS A RING OF SHEETS TURNS OVER TO BLACK.', '', 'INSTANCING: 6144 COPIES OF ONE PAPER SHEET, EACH PLACED BY A SHADER.\\nRINGS OF PAPER TURN WITH THE BAR. THE BEAT FLIPS A RING TO BLUE.'))[int(op('shot')['take']) % 8]) else 0"
+    }
+   }
+  },
+  "cook_driver": {
+   "type": "executeDAT",
+   "family": "DAT",
+   "pos": [
+    -400,
+    -80
+   ],
+   "pars": {
+    "framestart": true,
+    "language": "python"
+   },
+   "text": [
+    "def onFrameStart(frame):",
+    "    hub = op('/project1/sw_hub')",
+    "    me_on = parent().par.Preview.eval()",
+    "    if hub is not None:",
+    "        me_on = me_on or hub.par.Solo.eval() or hub.par.Scene.eval() == parent().name",
+    "    if me_on:",
+    "        op('hub').cook(force=True)",
+    "        op('out1').cook(force=True)",
+    "    return"
+   ]
+  },
+  "ctl": {
+   "type": "constantCHOP",
+   "family": "CHOP",
+   "pos": [
+    -200,
+    200
+   ],
+   "pars": {
+    "const0name": "bar_pos",
+    "const0value": {
+     "expr": "op('hub')['bar_pos']"
+    },
+    "const10name": "age",
+    "const10value": {
+     "expr": "op('shot')['age']"
+    },
+    "const11name": "ring",
+    "const11value": {
+     "expr": "op('ringenv')[0]"
+    },
+    "const12name": "camx",
+    "const12value": {
+     "expr": "(op('tk')['aimx'] + (op('tk')['camx'] - op('tk')['aimx']) * ((1 + op('tk')['dolly'] * math.exp(-5 * op('shot')['age'])) * (1 - (op('tk')['zvard'] if (op('mode')['describe'] or op('mode')['inp']) else op('tk')['zvar']) * ((op('shot')['seed'] * 9.1) % 1)))) * (-1 if (op('tk')['mirror'] > 0.5 and (op('shot')['seed'] * 3.7) % 1 > 0.5) else 1) + math.sin(op('hub')['evolve'] * 0.23) * 1.3 * op('tk')['sway']"
+    },
+    "const13name": "camy",
+    "const13value": {
+     "expr": "op('tk')['aimy'] + (op('tk')['camy'] - op('tk')['aimy']) * ((1 + op('tk')['dolly'] * math.exp(-5 * op('shot')['age'])) * (1 - (op('tk')['zvard'] if (op('mode')['describe'] or op('mode')['inp']) else op('tk')['zvar']) * ((op('shot')['seed'] * 9.1) % 1))) + op('tk')['yvar'] * ((op('shot')['seed'] * 5.3) % 1) + math.sin(op('hub')['evolve'] * 0.17) * 0.6 * op('tk')['sway']"
+    },
+    "const14name": "camz",
+    "const14value": {
+     "expr": "op('tk')['aimz'] + (op('tk')['camz'] - op('tk')['aimz']) * ((1 + op('tk')['dolly'] * math.exp(-5 * op('shot')['age'])) * (1 - (op('tk')['zvard'] if (op('mode')['describe'] or op('mode')['inp']) else op('tk')['zvar']) * ((op('shot')['seed'] * 9.1) % 1)))"
+    },
+    "const15name": "keepout",
+    "const15value": {
+     "expr": "op('tk')['keepout']"
+    },
+    "const16name": "hit_high",
+    "const16value": {
+     "expr": "op('hub')['hit_high']"
+    },
+    "const17name": "bass",
+    "const17value": {
+     "expr": "op('hub')['bass']"
+    },
+    "const18name": "flip",
+    "const18value": {
+     "expr": "op('tk')['flip']"
+    },
+    "const19name": "ringscale",
+    "const19value": {
+     "expr": "op('tk')['ring']"
+    },
+    "const1name": "beat_pos",
+    "const1value": {
+     "expr": "op('hub')['beat_pos']"
+    },
+    "const20name": "tintr",
+    "const20value": {
+     "expr": "op('tk')['tintr']"
+    },
+    "const21name": "tintg",
+    "const21value": {
+     "expr": "op('tk')['tintg']"
+    },
+    "const22name": "tintb",
+    "const22value": {
+     "expr": "op('tk')['tintb']"
+    },
+    "const23name": "inp",
+    "const23value": {
+     "expr": "op('mode')['inp']"
+    },
+    "const2name": "kick",
+    "const2value": {
+     "expr": "op('kicklag')['hit_low']"
+    },
+    "const3name": "evolve",
+    "const3value": {
+     "expr": "op('hub')['evolve']"
+    },
+    "const4name": "energy",
+    "const4value": {
+     "expr": "op('hub')['energy']"
+    },
+    "const5name": "form",
+    "const5value": {
+     "expr": "op('tk')['form']"
+    },
+    "const6name": "seed",
+    "const6value": {
+     "expr": "op('shot')['seed']"
+    },
+    "const7name": "arr",
+    "const7value": {
+     "expr": "(lambda a: (1 - a) * (1 - a))(min(1.0, op('shot')['age'] / 0.7))"
+    },
+    "const8name": "focus",
+    "const8value": {
+     "expr": "op('tk')['focus']"
+    },
+    "const9name": "hit_mid",
+    "const9value": {
+     "expr": "op('hub')['hit_mid']"
+    }
+   }
+  },
+  "ctltex": {
+   "type": "choptoTOP",
+   "family": "TOP",
+   "pos": [
+    -50,
+    200
+   ],
+   "pars": {
+    "chop": "ctl",
+    "format": "mono32float"
+   }
+  },
+  "field_frag": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    -200,
+    60
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.here('shaders/field.frag')"
+    },
+    "language": "text",
+    "syncfile": true
+   },
+   "text_file": "experiments/sc_paper_storm/shaders/field.frag"
+  },
+  "hero": {
+   "type": "geometryCOMP",
+   "family": "COMP",
+   "pos": [
+    1100,
+    -260
+   ],
+   "pars": {
+    "material": "/project1/sc_paper_storm/hero/mat",
+    "render": {
+     "expr": "op('tk')['hero'] > 0.5"
+    },
+    "rx": {
+     "expr": "78 + 14 * math.sin(op('hub')['evolve'] * 0.6) + 22 * op('ctl')['kick']"
+    },
+    "ry": {
+     "expr": "(-1 if (op('tk')['mirror'] > 0.5 and (op('shot')['seed'] * 3.7) % 1 > 0.5) else 1) * 18 + 24 * math.sin(op('hub')['evolve'] * 0.8)"
+    },
+    "rz": {
+     "expr": "(-1 if (op('tk')['mirror'] > 0.5 and (op('shot')['seed'] * 3.7) % 1 > 0.5) else 1) * (-8 + 150 * op('ctl')['arr']) + 6 * math.sin(op('hub')['bar_pos'] * math.pi)"
+    },
+    "scale": 2.3,
+    "tx": {
+     "expr": "(-1 if (op('tk')['mirror'] > 0.5 and (op('shot')['seed'] * 3.7) % 1 > 0.5) else 1) * (-1.45 - 7 * op('ctl')['arr']) + op('ctl')['camx']"
+    },
+    "ty": {
+     "expr": "op('ctl')['camy'] - 0.75 + 0.15 * math.sin(op('hub')['evolve'] * 1.1)"
+    },
+    "tz": {
+     "expr": "op('ctl')['camz'] - 3.6"
+    }
+   }
+  },
+  "hero/dform_hero_bg": {
+   "type": "constantTOP",
+   "family": "TOP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "colorb": 0.933,
+    "colorg": 0.957,
+    "colorr": 0.965,
+    "outputresolution": "custom",
+    "resolutionh": 1024,
+    "resolutionw": 1024
+   }
+  },
+  "hero/dform_hero_body": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    0,
+    0
+   ],
+   "inputs": [
+    [
+     "hero/dform_hero_bg"
+    ]
+   ],
+   "pars": {
+    "alignx": "left",
+    "aligny": "bottom",
+    "fontcolorb": 0.12,
+    "fontcolorg": 0.1,
+    "fontcolorr": 0.1,
+    "fontfile": {
+     "expr": "mod.paths.font('barlow')"
+    },
+    "fontsizex": {
+     "expr": "46.0 * (1 if mod.paths.font('barlow') else 0.6)"
+    },
+    "fontsizexunit": "pixels",
+    "resmult": false,
+    "specdat": "dform_hero_body_spec"
+   }
+  },
+  "hero/dform_hero_body_spec": {
+   "type": "tableDAT",
+   "family": "DAT",
+   "pos": [
+    0,
+    0
+   ],
+   "text": [
+    "x\ty\ttext",
+    "48\t528\tThis sheet is one flat model: two triangles.",
+    "48\t456\tThe blur behind it is 6144 copies of the model,",
+    "48\t384\tarranged in a spiral by one shader. The shader",
+    "48\t312\twrites one pixel per copy: its position and",
+    "48\t240\twhich way it faces. The bar turns the spiral.",
+    "48\t168\tEach kick drum tips this sheet back."
+   ]
+  },
+  "hero/dform_hero_mid": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    0,
+    0
+   ],
+   "inputs": [
+    [
+     "hero/dform_hero_small"
+    ]
+   ],
+   "pars": {
+    "alignx": "left",
+    "aligny": "bottom",
+    "fontcolorb": 0.12,
+    "fontcolorg": 0.1,
+    "fontcolorr": 0.1,
+    "fontfile": {
+     "expr": "mod.paths.font('barlow')"
+    },
+    "fontsizex": {
+     "expr": "56.0 * (1 if mod.paths.font('barlow') else 0.6)"
+    },
+    "fontsizexunit": "pixels",
+    "resmult": false,
+    "specdat": "dform_hero_mid_spec"
+   }
+  },
+  "hero/dform_hero_mid_spec": {
+   "type": "tableDAT",
+   "family": "DAT",
+   "pos": [
+    0,
+    0
+   ],
+   "text": [
+    "x\ty\ttext",
+    "48\t624\tONE SHEET OF PAPER, 6144 COPIES"
+   ]
+  },
+  "hero/dform_hero_small": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    0,
+    0
+   ],
+   "inputs": [
+    [
+     "hero/dform_hero_body"
+    ]
+   ],
+   "pars": {
+    "alignx": "left",
+    "aligny": "bottom",
+    "fontcolorb": 0.12,
+    "fontcolorg": 0.1,
+    "fontcolorr": 0.1,
+    "fontfile": {
+     "expr": "mod.paths.font('barlow')"
+    },
+    "fontsizex": {
+     "expr": "34.0 * (1 if mod.paths.font('barlow') else 0.6)"
+    },
+    "fontsizexunit": "pixels",
+    "resmult": false,
+    "specdat": "dform_hero_small_spec"
+   }
+  },
+  "hero/dform_hero_small_spec": {
+   "type": "tableDAT",
+   "family": "DAT",
+   "pos": [
+    0,
+    0
+   ],
+   "text": [
+    "x\ty\ttext",
+    "48\t936\tHOW THIS PICTURE IS MADE",
+    "48\t40\tTOUCHDESIGNER   GEOMETRY COMP INSTANCING FROM A GLSL TOP",
+    "48\t916\t________________________________________________________________________"
+   ]
+  },
+  "hero/dform_hero_title": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    0,
+    0
+   ],
+   "inputs": [
+    [
+     "hero/dform_hero_mid"
+    ]
+   ],
+   "pars": {
+    "alignx": "left",
+    "aligny": "bottom",
+    "fontcolorb": 0.12,
+    "fontcolorg": 0.1,
+    "fontcolorr": 0.1,
+    "fontfile": {
+     "expr": "mod.paths.font('barlow')"
+    },
+    "fontsizex": {
+     "expr": "208.0 * (1 if mod.paths.font('barlow') else 0.6)"
+    },
+    "fontsizexunit": "pixels",
+    "resmult": false,
+    "specdat": "dform_hero_title_spec"
+   }
+  },
+  "hero/dform_hero_title_spec": {
+   "type": "tableDAT",
+   "family": "DAT",
+   "pos": [
+    0,
+    0
+   ],
+   "text": [
+    "x\ty\ttext",
+    "40\t708\tINSTANCING"
+   ]
+  },
+  "hero/face": {
+   "type": "switchTOP",
+   "family": "TOP",
+   "pos": [
+    0,
+    0
+   ],
+   "inputs": [
+    [
+     "hero/texsw"
+    ],
+    [
+     "hero/dform_hero_title"
+    ],
+    [
+     "hero/print"
+    ]
+   ],
+   "pars": {
+    "index": {
+     "expr": "2 if op('../mode')['inp'] else int(op('../mode')['describe'])"
+    }
+   }
+  },
+  "hero/mat": {
+   "type": "pbrMAT",
+   "family": "MAT",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "basecolormap": "/project1/sc_paper_storm/hero/face",
+    "cullface": "backfaces",
+    "emitb": 0.04,
+    "emitg": 0.03,
+    "emitr": 0.03,
+    "metallic": 0.0,
+    "roughness": 0.8,
+    "writecameradepthtoalpha": true
+   }
+  },
+  "hero/mesh": {
+   "type": "fileinPOP",
+   "family": "POP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.here('meshes/sheet_front.obj')"
+    }
+   }
+  },
+  "hero/mesh_back": {
+   "type": "fileinPOP",
+   "family": "POP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.here('meshes/sheet_back.obj')"
+    }
+   }
+  },
+  "hero/pic0": {
+   "type": "switchTOP",
+   "family": "TOP",
+   "pos": [
+    150,
+    200
+   ],
+   "inputs": [
+    [
+     "hero/tex"
+    ],
+    [
+     "hero/sform0_title"
+    ]
+   ],
+   "pars": {
+    "index": {
+     "expr": "0 if bool(mod.paths.model_texture('blueprint')) else 1"
+    }
+   }
+  },
+  "hero/pic1": {
+   "type": "switchTOP",
+   "family": "TOP",
+   "pos": [
+    150,
+    80
+   ],
+   "inputs": [
+    [
+     "hero/tex1"
+    ],
+    [
+     "hero/sform1_title"
+    ]
+   ],
+   "pars": {
+    "index": {
+     "expr": "0 if bool(mod.paths.model_texture('star_chart')) else 1"
+    }
+   }
+  },
+  "hero/pic2": {
+   "type": "switchTOP",
+   "family": "TOP",
+   "pos": [
+    150,
+    -40
+   ],
+   "inputs": [
+    [
+     "hero/tex2"
+    ],
+    [
+     "hero/sform2_title"
+    ]
+   ],
+   "pars": {
+    "index": {
+     "expr": "0 if bool(mod.paths.model_texture('ticket')) else 1"
+    }
+   }
+  },
+  "hero/print": {
+   "type": "glslTOP",
+   "family": "TOP",
+   "pos": [
+    0,
+    0
+   ],
+   "inputs": [
+    [
+     "hero/print_in"
+    ]
+   ],
+   "pars": {
+    "computedat": "print_compute",
+    "inputfiltertype": "mipmap",
+    "outputresolution": "custom",
+    "pixeldat": "../print_frag",
+    "resolutionh": 1024,
+    "resolutionw": 1024,
+    "vec0name": "uPaper",
+    "vec0valuex": 0.965,
+    "vec0valuey": 0.957,
+    "vec0valuez": 0.933,
+    "vec1name": "uDuo",
+    "vec1valuew": 0.0
+   }
+  },
+  "hero/print_compute": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    320,
+    -120
+   ],
+   "pars": {
+    "language": "glsl"
+   },
+   "text": [
+    "// Example Compute Shader",
+    "",
+    "// uniform float exampleUniform;",
+    "",
+    "layout (local_size_x = 8, local_size_y = 4) in;",
+    "void main()",
+    "{",
+    "\t// This code is running 1:1 per pixel, so early-exit",
+    "\t// if this thread overhangs the edge of the output",
+    "\tif (any(greaterThanEqual(ivec2(gl_GlobalInvocationID.xy), ivec2(uTDOutputInfo.res.zw))))",
+    "\t\treturn;",
+    "",
+    "\tvec4 color;",
+    "\t//color = texelFetch(sTD2DInputs[0], ivec2(gl_GlobalInvocationID.xy), 0);",
+    "\tcolor = vec4(1.0);",
+    "\t// We need to use TDImageStoreOutput() so that 8-bit textures that are sRGB",
+    "\t// encoded can be written to correctly from incoming linear values.",
+    "\t// imageStore() does not do this automatically, while pixel shader outputs do.",
+    "\tTDImageStoreOutput(0, gl_GlobalInvocationID, color);",
+    "}"
+   ]
+  },
+  "hero/print_in": {
+   "type": "selectTOP",
+   "family": "TOP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "top": "../inp"
+   }
+  },
+  "hero/print_info": {
+   "type": "infoDAT",
+   "family": "DAT",
+   "pos": [
+    160,
+    -120
+   ],
+   "pars": {
+    "language": "text",
+    "op": "print"
+   }
+  },
+  "hero/print_pixel": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    0,
+    -120
+   ],
+   "pars": {
+    "extension": "frag",
+    "language": "glsl"
+   },
+   "text": [
+    "",
+    "// Example Pixel Shader",
+    "",
+    "// uniform float exampleUniform;",
+    "",
+    "out vec4 fragColor;",
+    "void main()",
+    "{",
+    "\t// vec4 color = texture(sTD2DInputs[0], vUV.st);",
+    "\tvec4 color = vec4(1.0);",
+    "\tfragColor = TDOutputSwizzle(color);",
+    "}"
+   ]
+  },
+  "hero/sform0_bg": {
+   "type": "constantTOP",
+   "family": "TOP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "colorb": 0.933,
+    "colorg": 0.957,
+    "colorr": 0.965,
+    "outputresolution": "custom",
+    "resolutionh": 1024,
+    "resolutionw": 1024
+   }
+  },
+  "hero/sform0_mid": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    0,
+    0
+   ],
+   "inputs": [
+    [
+     "hero/sform0_small"
+    ]
+   ],
+   "pars": {
+    "alignx": "left",
+    "aligny": "bottom",
+    "fontcolorb": 0.12,
+    "fontcolorg": 0.1,
+    "fontcolorr": 0.1,
+    "fontfile": {
+     "expr": "mod.paths.font('barlow')"
+    },
+    "fontsizex": {
+     "expr": "56.0 * (1 if mod.paths.font('barlow') else 0.6)"
+    },
+    "fontsizexunit": "pixels",
+    "resmult": false,
+    "specdat": "sform0_mid_spec"
+   }
+  },
+  "hero/sform0_mid_spec": {
+   "type": "tableDAT",
+   "family": "DAT",
+   "pos": [
+    0,
+    0
+   ],
+   "text": [
+    "x\ty\ttext",
+    "48\t624\tOBJECT OF UNKNOWN USE, PART 1",
+    "48\t500\tNAME",
+    "352\t500\t",
+    "48\t392\tORIGIN",
+    "352\t392\t",
+    "48\t284\tDATE",
+    "352\t284\t",
+    "48\t176\tUSE",
+    "352\t176\t"
+   ]
+  },
+  "hero/sform0_small": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    0,
+    0
+   ],
+   "inputs": [
+    [
+     "hero/sform0_bg"
+    ]
+   ],
+   "pars": {
+    "alignx": "left",
+    "aligny": "bottom",
+    "fontcolorb": 0.12,
+    "fontcolorg": 0.1,
+    "fontcolorr": 0.1,
+    "fontfile": {
+     "expr": "mod.paths.font('barlow')"
+    },
+    "fontsizex": {
+     "expr": "34.0 * (1 if mod.paths.font('barlow') else 0.6)"
+    },
+    "fontsizexunit": "pixels",
+    "resmult": false,
+    "specdat": "sform0_small_spec"
+   }
+  },
+  "hero/sform0_small_spec": {
+   "type": "tableDAT",
+   "family": "DAT",
+   "pos": [
+    0,
+    0
+   ],
+   "text": [
+    "x\ty\ttext",
+    "48\t936\tCATALOGUE OF UNEXPLAINED OBJECTS",
+    "48\t40\tFOUND, NOT MADE.   DO NOT TOUCH",
+    "48\t916\t________________________________________________________________________",
+    "344\t488\t_________________________________________________",
+    "344\t380\t_________________________________________________",
+    "344\t272\t_________________________________________________",
+    "344\t164\t_________________________________________________"
+   ]
+  },
+  "hero/sform0_title": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    0,
+    0
+   ],
+   "inputs": [
+    [
+     "hero/sform0_mid"
+    ]
+   ],
+   "pars": {
+    "alignx": "left",
+    "aligny": "bottom",
+    "fontcolorb": 0.12,
+    "fontcolorg": 0.1,
+    "fontcolorr": 0.1,
+    "fontfile": {
+     "expr": "mod.paths.font('barlow')"
+    },
+    "fontsizex": {
+     "expr": "208.0 * (1 if mod.paths.font('barlow') else 0.6)"
+    },
+    "fontsizexunit": "pixels",
+    "resmult": false,
+    "specdat": "sform0_title_spec"
+   }
+  },
+  "hero/sform0_title_spec": {
+   "type": "tableDAT",
+   "family": "DAT",
+   "pos": [
+    0,
+    0
+   ],
+   "text": [
+    "x\ty\ttext",
+    "40\t708\tPLATE 07"
+   ]
+  },
+  "hero/sform1_bg": {
+   "type": "constantTOP",
+   "family": "TOP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "colorb": 0.933,
+    "colorg": 0.957,
+    "colorr": 0.965,
+    "outputresolution": "custom",
+    "resolutionh": 1024,
+    "resolutionw": 1024
+   }
+  },
+  "hero/sform1_mid": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    0,
+    0
+   ],
+   "inputs": [
+    [
+     "hero/sform1_small"
+    ]
+   ],
+   "pars": {
+    "alignx": "left",
+    "aligny": "bottom",
+    "fontcolorb": 0.12,
+    "fontcolorg": 0.1,
+    "fontcolorr": 0.1,
+    "fontfile": {
+     "expr": "mod.paths.font('barlow')"
+    },
+    "fontsizex": {
+     "expr": "56.0 * (1 if mod.paths.font('barlow') else 0.6)"
+    },
+    "fontsizexunit": "pixels",
+    "resmult": false,
+    "specdat": "sform1_mid_spec"
+   }
+  },
+  "hero/sform1_mid_spec": {
+   "type": "tableDAT",
+   "family": "DAT",
+   "pos": [
+    0,
+    0
+   ],
+   "text": [
+    "x\ty\ttext",
+    "48\t624\tSOUND IN. PICTURE OUT. NOTHING KEPT.",
+    "48\t500\tNAME",
+    "352\t500\t",
+    "48\t392\tSIGNAL",
+    "352\t392\t....... OPEN",
+    "48\t284\tON TAPE",
+    "352\t284\tNOTHING",
+    "48\t176\tFRAMES",
+    "352\t176\tARE MADE NOW"
+   ]
+  },
+  "hero/sform1_small": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    0,
+    0
+   ],
+   "inputs": [
+    [
+     "hero/sform1_bg"
+    ]
+   ],
+   "pars": {
+    "alignx": "left",
+    "aligny": "bottom",
+    "fontcolorb": 0.12,
+    "fontcolorg": 0.1,
+    "fontcolorr": 0.1,
+    "fontfile": {
+     "expr": "mod.paths.font('barlow')"
+    },
+    "fontsizex": {
+     "expr": "34.0 * (1 if mod.paths.font('barlow') else 0.6)"
+    },
+    "fontsizexunit": "pixels",
+    "resmult": false,
+    "specdat": "sform1_small_spec"
+   }
+  },
+  "hero/sform1_small_spec": {
+   "type": "tableDAT",
+   "family": "DAT",
+   "pos": [
+    0,
+    0
+   ],
+   "text": [
+    "x\ty\ttext",
+    "48\t936\tREGISTER OF REAL-TIME PICTURES",
+    "48\t40\tNOTHING IS PRERENDERED.",
+    "48\t916\t________________________________________________________________________",
+    "344\t488\t_________________________________________________",
+    "344\t380\t_________________________________________________",
+    "344\t272\t_________________________________________________",
+    "344\t164\t_________________________________________________"
+   ]
+  },
+  "hero/sform1_title": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    0,
+    0
+   ],
+   "inputs": [
+    [
+     "hero/sform1_mid"
+    ]
+   ],
+   "pars": {
+    "alignx": "left",
+    "aligny": "bottom",
+    "fontcolorb": 0.12,
+    "fontcolorg": 0.1,
+    "fontcolorr": 0.1,
+    "fontfile": {
+     "expr": "mod.paths.font('barlow')"
+    },
+    "fontsizex": {
+     "expr": "208.0 * (1 if mod.paths.font('barlow') else 0.6)"
+    },
+    "fontsizexunit": "pixels",
+    "resmult": false,
+    "specdat": "sform1_title_spec"
+   }
+  },
+  "hero/sform1_title_spec": {
+   "type": "tableDAT",
+   "family": "DAT",
+   "pos": [
+    0,
+    0
+   ],
+   "text": [
+    "x\ty\ttext",
+    "40\t708\tSIGNAL IN"
+   ]
+  },
+  "hero/sform2_bg": {
+   "type": "constantTOP",
+   "family": "TOP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "colorb": 0.77,
+    "colorg": 0.71,
+    "colorr": 0.94,
+    "outputresolution": "custom",
+    "resolutionh": 1024,
+    "resolutionw": 1024
+   }
+  },
+  "hero/sform2_mid": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    0,
+    0
+   ],
+   "inputs": [
+    [
+     "hero/sform2_small"
+    ]
+   ],
+   "pars": {
+    "alignx": "left",
+    "aligny": "bottom",
+    "fontcolorb": 0.17,
+    "fontcolorg": 0.09,
+    "fontcolorr": 0.58,
+    "fontfile": {
+     "expr": "mod.paths.font('barlow')"
+    },
+    "fontsizex": {
+     "expr": "56.0 * (1 if mod.paths.font('barlow') else 0.6)"
+    },
+    "fontsizexunit": "pixels",
+    "resmult": false,
+    "specdat": "sform2_mid_spec"
+   }
+  },
+  "hero/sform2_mid_spec": {
+   "type": "tableDAT",
+   "family": "DAT",
+   "pos": [
+    0,
+    0
+   ],
+   "text": [
+    "x\ty\ttext",
+    "48\t624\tOBJECT OF UNKNOWN USE",
+    "48\t500\tORIGIN",
+    "352\t500\tUNRECORDED, POSSIBLY LATER",
+    "48\t392\tNUMBER",
+    "352\t392\tCATALOGUE 0047",
+    "48\t284\tNOTE",
+    "352\t284\tHANDLE WITH BOTH HANDS.",
+    "48\t176\tWHEN",
+    "352\t176\tEVERY FRAME IS MADE NOW."
+   ]
+  },
+  "hero/sform2_small": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    0,
+    0
+   ],
+   "inputs": [
+    [
+     "hero/sform2_bg"
+    ]
+   ],
+   "pars": {
+    "alignx": "left",
+    "aligny": "bottom",
+    "fontcolorb": 0.17,
+    "fontcolorg": 0.09,
+    "fontcolorr": 0.58,
+    "fontfile": {
+     "expr": "mod.paths.font('barlow')"
+    },
+    "fontsizex": {
+     "expr": "34.0 * (1 if mod.paths.font('barlow') else 0.6)"
+    },
+    "fontsizexunit": "pixels",
+    "resmult": false,
+    "specdat": "sform2_small_spec"
+   }
+  },
+  "hero/sform2_small_spec": {
+   "type": "tableDAT",
+   "family": "DAT",
+   "pos": [
+    0,
+    0
+   ],
+   "text": [
+    "x\ty\ttext",
+    "48\t936\tPAST. PRESENT. LATER.",
+    "48\t40\tDO NOT TOUCH THE EXHIBITS.",
+    "48\t916\t________________________________________________________________________",
+    "344\t488\t_________________________________________________",
+    "344\t380\t_________________________________________________",
+    "344\t272\t_________________________________________________",
+    "344\t164\t_________________________________________________"
+   ]
+  },
+  "hero/sform2_title": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    0,
+    0
+   ],
+   "inputs": [
+    [
+     "hero/sform2_mid"
+    ]
+   ],
+   "pars": {
+    "alignx": "left",
+    "aligny": "bottom",
+    "fontcolorb": 0.17,
+    "fontcolorg": 0.09,
+    "fontcolorr": 0.58,
+    "fontfile": {
+     "expr": "mod.paths.font('barlow')"
+    },
+    "fontsizex": {
+     "expr": "208.0 * (1 if mod.paths.font('barlow') else 0.6)"
+    },
+    "fontsizexunit": "pixels",
+    "resmult": false,
+    "specdat": "sform2_title_spec"
+   }
+  },
+  "hero/sform2_title_spec": {
+   "type": "tableDAT",
+   "family": "DAT",
+   "pos": [
+    0,
+    0
+   ],
+   "text": [
+    "x\ty\ttext",
+    "40\t708\tEXHIBIT B"
+   ]
+  },
+  "hero/tex": {
+   "type": "moviefileinTOP",
+   "family": "TOP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.model_texture('blueprint') or mod.paths.here('data/white.png')"
+    }
+   }
+  },
+  "hero/tex1": {
+   "type": "moviefileinTOP",
+   "family": "TOP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.model_texture('star_chart') or mod.paths.here('data/white.png')"
+    }
+   }
+  },
+  "hero/tex2": {
+   "type": "moviefileinTOP",
+   "family": "TOP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.model_texture('ticket') or mod.paths.here('data/white.png')"
+    }
+   }
+  },
+  "hero/texsw": {
+   "type": "switchTOP",
+   "family": "TOP",
+   "pos": [
+    0,
+    0
+   ],
+   "inputs": [
+    [
+     "hero/pic0"
+    ],
+    [
+     "hero/pic1"
+    ],
+    [
+     "hero/pic2"
+    ]
+   ],
+   "pars": {
+    "index": {
+     "expr": "int(op('../shot')['seed'] * 31) % 3"
+    }
+   }
+  },
+  "hitsel": {
+   "type": "selectCHOP",
+   "family": "CHOP",
+   "pos": [
+    -200,
+    420
+   ],
+   "pars": {
+    "channames": "hits_low",
+    "chops": "hub"
+   }
+  },
+  "hitslope": {
+   "type": "slopeCHOP",
+   "family": "CHOP",
+   "pos": [
+    -50,
+    420
+   ],
+   "inputs": [
+    [
+     "hitsel"
+    ]
+   ],
+   "pars": {
+    "timeslice": true
+   }
+  },
+  "hub": {
+   "type": "selectCHOP",
+   "family": "CHOP",
+   "pos": [
+    -400,
+    200
+   ],
+   "pars": {
+    "chops": "/project1/sw_hub/feed"
+   }
+  },
+  "idol": {
+   "type": "geometryCOMP",
+   "family": "COMP",
+   "pos": [
+    950,
+    -260
+   ],
+   "pars": {
+    "material": "/project1/sc_paper_storm/idol/mat",
+    "render": {
+     "expr": "op('tk')['idol'] > 0.5"
+    },
+    "ry": {
+     "expr": "op('hub')['evolve'] * 25 + 200 * op('ctl')['arr']"
+    },
+    "scale": {
+     "expr": "2.2 * (1 + 0.07 * op('ctl')['kick'])"
+    },
+    "ty": 1.0
+   }
+  },
+  "idol/fit": {
+   "type": "transformPOP",
+   "family": "POP",
+   "pos": [
+    0,
+    0
+   ],
+   "inputs": [
+    [
+     "idol/mesh"
+    ]
+   ],
+   "pars": {
+    "scale": {
+     "expr": "1 if mod.paths.have('models/lander/model.obj') else 0.509"
+    },
+    "tx": {
+     "expr": "0 if mod.paths.have('models/lander/model.obj') else 0.0071"
+    },
+    "ty": {
+     "expr": "0 if mod.paths.have('models/lander/model.obj') else -0.2331"
+    },
+    "tz": {
+     "expr": "0 if mod.paths.have('models/lander/model.obj') else 0.0"
+    }
+   }
+  },
+  "idol/mat": {
+   "type": "pbrMAT",
+   "family": "MAT",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "basecolorb": {
+     "expr": "1 if bool(mod.paths.model_texture('lander')) else 0.2"
+    },
+    "basecolorg": {
+     "expr": "1 if bool(mod.paths.model_texture('lander')) else 0.66"
+    },
+    "basecolormap": "/project1/sc_paper_storm/idol/tex",
+    "basecolorr": {
+     "expr": "1 if bool(mod.paths.model_texture('lander')) else 0.95"
+    },
+    "emitb": 0.02,
+    "emitg": 0.07,
+    "emitr": 0.1,
+    "metallic": 0.0,
+    "roughness": 0.35,
+    "writecameradepthtoalpha": true
+   }
+  },
+  "idol/mesh": {
+   "type": "fileinPOP",
+   "family": "POP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.model_file('lander')"
+    }
+   }
+  },
+  "idol/tex": {
+   "type": "moviefileinTOP",
+   "family": "TOP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.model_texture('lander') or mod.paths.here('data/white.png')"
+    }
+   }
+  },
+  "inblank": {
+   "type": "constantTOP",
+   "family": "TOP",
+   "pos": [
+    -900,
+    460
+   ],
+   "pars": {
+    "colorb": 0.0,
+    "colorg": 0.0,
+    "colorr": 0.0,
+    "outputresolution": "custom",
+    "resolutionh": 16,
+    "resolutionw": 16
+   }
+  },
+  "inlum": {
+   "type": "resolutionTOP",
+   "family": "TOP",
+   "pos": [
+    -640,
+    460
+   ],
+   "inputs": [
+    [
+     "inp"
+    ]
+   ],
+   "pars": {
+    "filtertype": "nearest",
+    "inputfiltertype": "mipmap",
+    "outputresolution": "custom",
+    "resolutionh": 54,
+    "resolutionw": 96
+   }
+  },
+  "inp": {
+   "type": "selectTOP",
+   "family": "TOP",
+   "pos": [
+    -770,
+    460
+   ],
+   "pars": {
+    "top": {
+     "expr": "(lambda p: p if (p and op(p) is not None and op(p).isTOP and not op(p).path.startswith(parent().path + '/')) else 'inblank')(parent().par.Input.eval().strip())"
+    }
+   }
+  },
+  "key": {
+   "type": "lightCOMP",
+   "family": "COMP",
+   "pos": [
+    800,
+    -480
+   ],
+   "pars": {
+    "attenuated": true,
+    "attenuationend": {
+     "expr": "op('tk')['keyend']"
+    },
+    "attenuationstart": 4.0,
+    "cb": 0.84,
+    "cg": 0.95,
+    "dimmer": {
+     "expr": "op('tk')['key']"
+    },
+    "tx": {
+     "expr": "op('cam').par.tx - 1.1"
+    },
+    "ty": {
+     "expr": "op('cam').par.ty + 1.4"
+    },
+    "tz": {
+     "expr": "op('cam').par.tz + 0.6"
+    }
+   }
+  },
+  "key/circle1": {
+   "type": "circlePOP",
+   "family": "POP",
+   "pos": [
+    780,
+    170
+   ],
+   "pars": {
+    "connectivity": "surface",
+    "scale": 0.2
+   }
+  },
+  "key/circle_attenEnd": {
+   "type": "circlePOP",
+   "family": "POP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "bypass": {
+     "expr": "not parent().par.attenuated"
+    },
+    "connectivity": "surface",
+    "pageindex": 3,
+    "radx": 0.1,
+    "rady": 0.1,
+    "tz": {
+     "expr": "-parent().par.attenuationend"
+    }
+   }
+  },
+  "key/circle_attenStart": {
+   "type": "circlePOP",
+   "family": "POP",
+   "pos": [
+    0,
+    120
+   ],
+   "pars": {
+    "bypass": {
+     "expr": "not parent().par.attenuated"
+    },
+    "connectivity": "surface",
+    "pageindex": 1,
+    "radx": 0.1,
+    "rady": 0.1,
+    "tz": {
+     "expr": "-parent().par.attenuationstart"
+    }
+   }
+  },
+  "key/connectivity1": {
+   "type": "connectivityPOP",
+   "family": "POP",
+   "pos": [
+    780,
+    290
+   ],
+   "inputs": [
+    [
+     "key/merge3"
+    ]
+   ],
+   "pars": {
+    "surftype": "lines"
+   }
+  },
+  "key/copy1": {
+   "type": "copyPOP",
+   "family": "POP",
+   "pos": [
+    520,
+    670
+   ],
+   "inputs": [
+    [
+     "key/tube_attenuated"
+    ]
+   ],
+   "pars": {
+    "ncy": 2,
+    "pageindex": 2,
+    "rx": 90.0
+   }
+  },
+  "key/line_atten": {
+   "type": "linePOP",
+   "family": "POP",
+   "pos": [
+    0,
+    230
+   ],
+   "pars": {
+    "bypass": {
+     "expr": "not parent().par.attenuated"
+    },
+    "divs": 1,
+    "pageindex": 2,
+    "pt0posz": {
+     "expr": "-parent().par.attenuationstart"
+    },
+    "pt1posz": {
+     "expr": "-parent().par.attenuationend"
+    }
+   },
+   "custom_pars": [
+    "pt",
+    "pt0posx",
+    "pt0posy",
+    "pt0posz",
+    "pt1posx",
+    "pt1posy",
+    "pt1posz"
+   ]
+  },
+  "key/merge1": {
+   "type": "mergePOP",
+   "family": "POP",
+   "pos": [
+    250,
+    500
+   ],
+   "inputs": [
+    [
+     "key/rectangle1"
+    ],
+    [
+     "key/tube_cone1"
+    ],
+    [
+     "key/tube_cone2"
+    ],
+    [
+     "key/primitive1"
+    ],
+    [
+     "key/line_atten"
+    ],
+    [
+     "key/circle_attenStart"
+    ],
+    [
+     "key/circle_attenEnd"
+    ]
+   ],
+   "pars": {
+    "pageindex": 1
+   }
+  },
+  "key/merge2": {
+   "type": "mergePOP",
+   "family": "POP",
+   "pos": [
+    950,
+    230
+   ],
+   "inputs": [
+    [
+     "key/connectivity1"
+    ],
+    [
+     "key/circle1"
+    ]
+   ]
+  },
+  "key/merge3": {
+   "type": "mergePOP",
+   "family": "POP",
+   "pos": [
+    620,
+    290
+   ],
+   "inputs": [
+    [
+     "key/pointgen1"
+    ],
+    [
+     "key/transform1"
+    ]
+   ]
+  },
+  "key/merge_pointLight": {
+   "type": "mergePOP",
+   "family": "POP",
+   "pos": [
+    760,
+    820
+   ],
+   "inputs": [
+    [
+     "key/sphere1"
+    ],
+    [
+     "key/primitive_quadrants"
+    ],
+    [
+     "key/copy1"
+    ]
+   ],
+   "pars": {
+    "pageindex": 1
+   }
+  },
+  "key/pointgen1": {
+   "type": "pointgeneratorPOP",
+   "family": "POP",
+   "pos": [
+    270,
+    290
+   ],
+   "pars": {
+    "numpoints": 17,
+    "pageindex": 1,
+    "shape": "circle",
+    "sx": 0.2,
+    "sy": 0.2,
+    "sz": 0.2
+   }
+  },
+  "key/primitive1": {
+   "type": "primitivePOP",
+   "family": "POP",
+   "pos": [
+    0,
+    390
+   ],
+   "pars": {
+    "addpts": true,
+    "method": "pattern",
+    "pageindex": 1,
+    "prim0pattern": "0 1 0 2 0 3 0 4",
+    "prim0type": "lines",
+    "pt1posx": {
+     "expr": "mod.math.sin(mod.math.radians(parent().par.coneangle/2)) + mod.math.sin(mod.math.radians(parent().par.conedelta/2))"
+    },
+    "pt1posz": {
+     "expr": "-op('tube_cone1').par.height"
+    },
+    "pt2posx": {
+     "expr": "mod.math.sin(-mod.math.radians(parent().par.coneangle/2)) - mod.math.sin(mod.math.radians(parent().par.conedelta/2))"
+    },
+    "pt2posz": {
+     "expr": "0-op('tube_cone1').par.height"
+    },
+    "pt3posy": {
+     "expr": "-mod.math.sin(-mod.math.radians(parent().par.coneangle/2)) - mod.math.sin(mod.math.radians(parent().par.conedelta/2))"
+    },
+    "pt3posz": {
+     "expr": "-op('tube_cone1').par.height"
+    },
+    "pt4posy": {
+     "expr": "mod.math.sin(-mod.math.radians(parent().par.coneangle/2)) - mod.math.sin(mod.math.radians(parent().par.conedelta/2))"
+    },
+    "pt4posz": {
+     "expr": "-op('tube_cone1').par.height"
+    }
+   },
+   "custom_pars": [
+    "pt",
+    "pt0posx",
+    "pt0posy",
+    "pt0posz",
+    "pt1posx",
+    "pt1posy",
+    "pt1posz",
+    "pt2posx",
+    "pt2posy",
+    "pt2posz",
+    "pt3posx",
+    "pt3posy",
+    "pt3posz",
+    "pt4posx",
+    "pt4posy",
+    "pt4posz"
+   ]
+  },
+  "key/primitive_cross": {
+   "type": "primitivePOP",
+   "family": "POP",
+   "pos": [
+    520,
+    1000
+   ],
+   "pars": {
+    "addpts": true,
+    "method": "set",
+    "pageindex": 1,
+    "pt0posx": -0.2,
+    "pt1posx": 0.2,
+    "pt2posy": -0.2,
+    "pt3posy": 0.2,
+    "pt4posz": -0.2,
+    "pt5posz": 0.2,
+    "setprimtype": "lines"
+   },
+   "custom_pars": [
+    "pt",
+    "pt0posx",
+    "pt0posy",
+    "pt0posz",
+    "pt1posx",
+    "pt1posy",
+    "pt1posz",
+    "pt2posx",
+    "pt2posy",
+    "pt2posz",
+    "pt3posx",
+    "pt3posy",
+    "pt3posz",
+    "pt4posx",
+    "pt4posy",
+    "pt4posz",
+    "pt5posx",
+    "pt5posy",
+    "pt5posz"
+   ]
+  },
+  "key/primitive_quadrants": {
+   "type": "primitivePOP",
+   "family": "POP",
+   "pos": [
+    520,
+    780
+   ],
+   "pars": {
+    "addpts": true,
+    "method": "set",
+    "pageindex": 1,
+    "pt0posx": 0.07,
+    "pt0posy": 0.07,
+    "pt0posz": 0.07,
+    "pt1posx": -0.07,
+    "pt1posy": -0.07,
+    "pt1posz": -0.07,
+    "pt2posx": -0.07,
+    "pt2posy": 0.07,
+    "pt2posz": 0.07,
+    "pt3posx": 0.07,
+    "pt3posy": -0.07,
+    "pt3posz": -0.07,
+    "pt4posx": 0.07,
+    "pt4posy": 0.07,
+    "pt4posz": -0.07,
+    "pt5posx": -0.07,
+    "pt5posy": -0.07,
+    "pt5posz": 0.07,
+    "pt6posx": -0.07,
+    "pt6posy": 0.07,
+    "pt6posz": -0.07,
+    "pt7posx": 0.07,
+    "pt7posy": -0.07,
+    "pt7posz": 0.07,
+    "setprimtype": "lines"
+   },
+   "custom_pars": [
+    "pt",
+    "pt0posx",
+    "pt0posy",
+    "pt0posz",
+    "pt1posx",
+    "pt1posy",
+    "pt1posz",
+    "pt2posx",
+    "pt2posy",
+    "pt2posz",
+    "pt3posx",
+    "pt3posy",
+    "pt3posz",
+    "pt4posx",
+    "pt4posy",
+    "pt4posz",
+    "pt5posx",
+    "pt5posy",
+    "pt5posz",
+    "pt6posx",
+    "pt6posy",
+    "pt6posz",
+    "pt7posx",
+    "pt7posy",
+    "pt7posz"
+   ]
+  },
+  "key/rectangle1": {
+   "type": "rectanglePOP",
+   "family": "POP",
+   "pos": [
+    0,
+    730
+   ],
+   "pars": {
+    "anchorv": 0.0,
+    "sizeu": 0.02,
+    "sizev": 0.5
+   }
+  },
+  "key/sphere1": {
+   "type": "spherePOP",
+   "family": "POP",
+   "pos": [
+    520,
+    890
+   ],
+   "pars": {
+    "freq": 3,
+    "pageindex": 2,
+    "radx": 0.05,
+    "rady": 0.05,
+    "radz": 0.05
+   }
+  },
+  "key/switch_lightType": {
+   "type": "switchPOP",
+   "family": "POP",
+   "pos": [
+    1140,
+    500
+   ],
+   "inputs": [
+    [
+     "key/merge_pointLight"
+    ],
+    [
+     "key/merge1"
+    ],
+    [
+     "key/merge2"
+    ]
+   ],
+   "pars": {
+    "index": {
+     "expr": "parent().par.lighttype.menuIndex"
+    }
+   }
+  },
+  "key/transform1": {
+   "type": "transformPOP",
+   "family": "POP",
+   "pos": [
+    450,
+    370
+   ],
+   "inputs": [
+    [
+     "key/pointgen1"
+    ]
+   ],
+   "pars": {
+    "tz": 0.8
+   }
+  },
+  "key/tube_attenuated": {
+   "type": "tubePOP",
+   "family": "POP",
+   "pos": [
+    368,
+    673
+   ],
+   "pars": {
+    "bypass": {
+     "expr": "not parent().par.attenuated"
+    },
+    "height": 0.0,
+    "orient": "z",
+    "radx": {
+     "expr": "parent().par.attenuationend"
+    },
+    "rady": {
+     "expr": "parent().par.attenuationstart"
+    },
+    "rows": 2,
+    "surftype": "rows"
+   }
+  },
+  "key/tube_cone1": {
+   "type": "tubePOP",
+   "family": "POP",
+   "pos": [
+    0,
+    620
+   ],
+   "pars": {
+    "height": {
+     "expr": "mod.math.cos(mod.math.radians(parent().par.coneangle/2))"
+    },
+    "orient": "z",
+    "radx": {
+     "expr": "mod.math.sin(mod.math.radians(parent().par.coneangle/2))"
+    },
+    "rady": 0.01,
+    "rows": 2,
+    "tz": {
+     "expr": "-me.par.height*0.5"
+    }
+   }
+  },
+  "key/tube_cone2": {
+   "type": "tubePOP",
+   "family": "POP",
+   "pos": [
+    0,
+    500
+   ],
+   "pars": {
+    "height": 0.0,
+    "orient": "z",
+    "radx": {
+     "expr": "mod.math.sin(mod.math.radians(parent().par.coneangle/2)) + mod.math.sin(mod.math.radians(parent().par.conedelta/2))"
+    },
+    "rady": {
+     "expr": "mod.math.sin(mod.math.radians(parent().par.coneangle/2))"
+    },
+    "rows": 2,
+    "tz": {
+     "expr": "-op('tube_cone1').par.height"
+    }
+   }
+  },
+  "kicklag": {
+   "type": "lagCHOP",
+   "family": "CHOP",
+   "pos": [
+    -50,
+    320
+   ],
+   "inputs": [
+    [
+     "kicksel"
+    ]
+   ],
+   "pars": {
+    "lag1": 0.0,
+    "lag2": 0.22,
+    "timeslice": true
+   }
+  },
+  "kicksel": {
+   "type": "selectCHOP",
+   "family": "CHOP",
+   "pos": [
+    -200,
+    320
+   ],
+   "pars": {
+    "channames": "hit_low",
+    "chops": "hub"
+   }
+  },
+  "local": {
+   "type": "baseCOMP",
+   "family": "COMP",
+   "pos": [
+    -400,
+    460
+   ]
+  },
+  "local/modules": {
+   "type": "baseCOMP",
+   "family": "COMP",
+   "pos": [
+    0,
+    0
+   ]
+  },
+  "local/modules/paths": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "file": {
+     "expr": "project.folder.replace(chr(92), '/') + '/experiments/sw_hub/paths_module.py'"
+    },
+    "language": "text",
+    "syncfile": true
+   },
+   "text_file": "experiments/sw_hub/paths_module.py"
+  },
+  "mode": {
+   "type": "constantCHOP",
+   "family": "CHOP",
+   "pos": [
+    -510,
+    460
+   ],
+   "pars": {
+    "const0name": "describe",
+    "const0value": {
+     "expr": "int(parent().par.Describe)"
+    },
+    "const1name": "inp",
+    "const1value": {
+     "expr": "int(op('inp').par.top.eval() != op('inblank'))"
+    }
+   }
+  },
+  "monolith": {
+   "type": "geometryCOMP",
+   "family": "COMP",
+   "pos": [
+    800,
+    -260
+   ],
+   "pars": {
+    "material": "/project1/sc_paper_storm/monolith/mat",
+    "render": {
+     "expr": "op('tk')['mono'] > 0.5"
+    },
+    "ry": 24.0,
+    "scale": 5.0
+   }
+  },
+  "monolith/fit": {
+   "type": "transformPOP",
+   "family": "POP",
+   "pos": [
+    0,
+    0
+   ],
+   "inputs": [
+    [
+     "monolith/mesh"
+    ]
+   ],
+   "pars": {
+    "scale": {
+     "expr": "1 if mod.paths.have('models/marble_bust/model.obj') else 0.509"
+    },
+    "tx": {
+     "expr": "0 if mod.paths.have('models/marble_bust/model.obj') else 0.0071"
+    },
+    "ty": {
+     "expr": "0 if mod.paths.have('models/marble_bust/model.obj') else -0.2331"
+    },
+    "tz": {
+     "expr": "0 if mod.paths.have('models/marble_bust/model.obj') else 0.0"
+    }
+   }
+  },
+  "monolith/mat": {
+   "type": "pbrMAT",
+   "family": "MAT",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "basecolorb": {
+     "expr": "1 if bool(mod.paths.model_texture('marble_bust')) else 0.65"
+    },
+    "basecolorg": {
+     "expr": "1 if bool(mod.paths.model_texture('marble_bust')) else 0.75"
+    },
+    "basecolormap": "/project1/sc_paper_storm/monolith/tex",
+    "basecolorr": {
+     "expr": "1 if bool(mod.paths.model_texture('marble_bust')) else 0.78"
+    },
+    "metallic": 0.0,
+    "roughness": 0.6,
+    "writecameradepthtoalpha": true
+   }
+  },
+  "monolith/mesh": {
+   "type": "fileinPOP",
+   "family": "POP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.model_file('marble_bust')"
+    }
+   }
+  },
+  "monolith/tex": {
+   "type": "moviefileinTOP",
+   "family": "TOP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.model_texture('marble_bust') or mod.paths.here('data/white.png')"
+    }
+   }
+  },
+  "out1": {
+   "type": "outTOP",
+   "family": "TOP",
+   "pos": [
+    1200,
+    0
+   ],
+   "inputs": [
+    [
+     "capsw"
+    ]
+   ]
+  },
+  "pages": {
+   "type": "layoutTOP",
+   "family": "TOP",
+   "pos": [
+    -330,
+    -330
+   ],
+   "pars": {
+    "align": "vertbt",
+    "filtertype": "nearest",
+    "fit": "fill",
+    "outputresolution": "custom",
+    "resolutionh": 384,
+    "resolutionw": 96,
+    "tops": "pg0 pg1 pg2 pg3 pg4 pg5 pg6 pg7"
+   }
+  },
+  "pages_d": {
+   "type": "layoutTOP",
+   "family": "TOP",
+   "pos": [
+    -330,
+    -910
+   ],
+   "pars": {
+    "align": "vertbt",
+    "filtertype": "nearest",
+    "fit": "fill",
+    "outputresolution": "custom",
+    "resolutionh": 384,
+    "resolutionw": 96,
+    "tops": "pgd0 pgd1 pgd2 pgd3 pgd4 pgd5 pgd6 pgd7"
+   }
+  },
+  "pagesw": {
+   "type": "switchTOP",
+   "family": "TOP",
+   "pos": [
+    -200,
+    -330
+   ],
+   "inputs": [
+    [
+     "pages"
+    ],
+    [
+     "pages_d"
+    ]
+   ],
+   "pars": {
+    "index": {
+     "expr": "op('mode')['describe']"
+    }
+   }
+  },
+  "pg0": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    -900,
+    60
+   ],
+   "pars": {
+    "bgalpha": 1.0,
+    "fontfile": {
+     "expr": "mod.paths.font('chicago')"
+    },
+    "fontsizex": 12.0,
+    "fontsizexunit": "pixels",
+    "outputresolution": "custom",
+    "resmult": false,
+    "resolutionh": 48,
+    "resolutionw": 96,
+    "text": "HERE.\nNOW.\nHERE. NOW."
+   }
+  },
+  "pg1": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    -770,
+    60
+   ],
+   "pars": {
+    "bgalpha": 1.0,
+    "fontfile": {
+     "expr": "mod.paths.font('chicago')"
+    },
+    "fontsizex": 12.0,
+    "fontsizexunit": "pixels",
+    "outputresolution": "custom",
+    "resmult": false,
+    "resolutionh": 48,
+    "resolutionw": 96,
+    "text": "DO NOT\nTOUCH\nPLATE 07"
+   }
+  },
+  "pg2": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    -640,
+    60
+   ],
+   "pars": {
+    "bgalpha": 1.0,
+    "fontfile": {
+     "expr": "mod.paths.font('chicago')"
+    },
+    "fontsizex": 12.0,
+    "fontsizexunit": "pixels",
+    "outputresolution": "custom",
+    "resmult": false,
+    "resolutionh": 48,
+    "resolutionw": 96,
+    "text": "NOTHING\nIS\nPRERENDERED"
+   }
+  },
+  "pg3": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    -510,
+    60
+   ],
+   "pars": {
+    "bgalpha": 1.0,
+    "fontfile": {
+     "expr": "mod.paths.font('chicago')"
+    },
+    "fontsizex": 12.0,
+    "fontsizexunit": "pixels",
+    "outputresolution": "custom",
+    "resmult": false,
+    "resolutionh": 48,
+    "resolutionw": 96,
+    "text": "SOUND IN.\nPICTURE\nOUT."
+   }
+  },
+  "pg4": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    -900,
+    -50
+   ],
+   "pars": {
+    "bgalpha": 1.0,
+    "fontfile": {
+     "expr": "mod.paths.font('chicago')"
+    },
+    "fontsizex": 12.0,
+    "fontsizexunit": "pixels",
+    "outputresolution": "custom",
+    "resmult": false,
+    "resolutionh": 48,
+    "resolutionw": 96,
+    "text": "ORIGIN:\nNOT\nRECORDED."
+   }
+  },
+  "pg5": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    -770,
+    -50
+   ],
+   "pars": {
+    "bgalpha": 1.0,
+    "fontfile": {
+     "expr": "mod.paths.font('chicago')"
+    },
+    "fontsizex": 12.0,
+    "fontsizexunit": "pixels",
+    "outputresolution": "custom",
+    "resmult": false,
+    "resolutionh": 48,
+    "resolutionw": 96,
+    "text": "EVERY FRAME\nIS MADE\nNOW."
+   }
+  },
+  "pg6": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    -640,
+    -50
+   ],
+   "pars": {
+    "bgalpha": 1.0,
+    "fontfile": {
+     "expr": "mod.paths.font('chicago')"
+    },
+    "fontsizex": 12.0,
+    "fontsizexunit": "pixels",
+    "outputresolution": "custom",
+    "resmult": false,
+    "resolutionh": 48,
+    "resolutionw": 96,
+    "text": "LISTEN\nWITH\nYOUR EYES."
+   }
+  },
+  "pg7": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    -510,
+    -50
+   ],
+   "pars": {
+    "bgalpha": 1.0,
+    "fontfile": {
+     "expr": "mod.paths.font('chicago')"
+    },
+    "fontsizex": 12.0,
+    "fontsizexunit": "pixels",
+    "outputresolution": "custom",
+    "resmult": false,
+    "resolutionh": 48,
+    "resolutionw": 96,
+    "text": "PAST.\nPRESENT.\nLATER."
+   }
+  },
+  "pgd0": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    -900,
+    -520
+   ],
+   "pars": {
+    "bgalpha": 1.0,
+    "fontfile": {
+     "expr": "mod.paths.font('chicago')"
+    },
+    "fontsizex": 12.0,
+    "fontsizexunit": "pixels",
+    "outputresolution": "custom",
+    "resmult": false,
+    "resolutionh": 48,
+    "resolutionw": 96,
+    "text": "INSTANCING\n6144\nSHEETS"
+   }
+  },
+  "pgd1": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    -770,
+    -520
+   ],
+   "pars": {
+    "bgalpha": 1.0,
+    "fontfile": {
+     "expr": "mod.paths.font('chicago')"
+    },
+    "fontsizex": 12.0,
+    "fontsizexunit": "pixels",
+    "outputresolution": "custom",
+    "resmult": false,
+    "resolutionh": 48,
+    "resolutionw": 96,
+    "text": "EVERY SHEET\nIS A PIXEL\nOF THIS TEXT"
+   }
+  },
+  "pgd2": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    -640,
+    -520
+   ],
+   "pars": {
+    "bgalpha": 1.0,
+    "fontfile": {
+     "expr": "mod.paths.font('chicago')"
+    },
+    "fontsizex": 12.0,
+    "fontsizexunit": "pixels",
+    "outputresolution": "custom",
+    "resmult": false,
+    "resolutionh": 48,
+    "resolutionw": 96,
+    "text": "ONE SHADER\nPLACES\nTHEM ALL"
+   }
+  },
+  "pgd3": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    -510,
+    -520
+   ],
+   "pars": {
+    "bgalpha": 1.0,
+    "fontfile": {
+     "expr": "mod.paths.font('chicago')"
+    },
+    "fontsizex": 12.0,
+    "fontsizexunit": "pixels",
+    "outputresolution": "custom",
+    "resmult": false,
+    "resolutionh": 48,
+    "resolutionw": 96,
+    "text": "LIT PIXEL =\nSHEET\nTURNS OVER"
+   }
+  },
+  "pgd4": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    -900,
+    -630
+   ],
+   "pars": {
+    "bgalpha": 1.0,
+    "fontfile": {
+     "expr": "mod.paths.font('chicago')"
+    },
+    "fontsizex": 12.0,
+    "fontsizexunit": "pixels",
+    "outputresolution": "custom",
+    "resmult": false,
+    "resolutionh": 48,
+    "resolutionw": 96,
+    "text": "NEW PAGE\nEVERY\n2 BEATS"
+   }
+  },
+  "pgd5": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    -770,
+    -630
+   ],
+   "pars": {
+    "bgalpha": 1.0,
+    "fontfile": {
+     "expr": "mod.paths.font('chicago')"
+    },
+    "fontsizex": 12.0,
+    "fontsizexunit": "pixels",
+    "outputresolution": "custom",
+    "resmult": false,
+    "resolutionh": 48,
+    "resolutionw": 96,
+    "text": "KICK DRUM\nSENDS\nA RING OUT"
+   }
+  },
+  "pgd6": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    -640,
+    -630
+   ],
+   "pars": {
+    "bgalpha": 1.0,
+    "fontfile": {
+     "expr": "mod.paths.font('chicago')"
+    },
+    "fontsizex": 12.0,
+    "fontsizexunit": "pixels",
+    "outputresolution": "custom",
+    "resmult": false,
+    "resolutionh": 48,
+    "resolutionw": 96,
+    "text": "HI-HATS\nRATTLE\nLOOSE SHEETS"
+   }
+  },
+  "pgd7": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    -510,
+    -630
+   ],
+   "pars": {
+    "bgalpha": 1.0,
+    "fontfile": {
+     "expr": "mod.paths.font('chicago')"
+    },
+    "fontsizex": 12.0,
+    "fontsizexunit": "pixels",
+    "outputresolution": "custom",
+    "resmult": false,
+    "resolutionh": 48,
+    "resolutionw": 96,
+    "text": "96 SHEETS\nACROSS\n64 DOWN"
+   }
+  },
+  "post": {
+   "type": "glslTOP",
+   "family": "TOP",
+   "pos": [
+    1000,
+    -110
+   ],
+   "inputs": [
+    [
+     "render"
+    ],
+    [
+     "ctltex"
+    ],
+    [
+     "blur"
+    ]
+   ],
+   "pars": {
+    "computedat": "post_compute",
+    "format": "rgba16float",
+    "pixeldat": "post_frag",
+    "vec0name": "uHaze",
+    "vec0valuex": {
+     "expr": "op('tk')['hazer']"
+    },
+    "vec0valuey": {
+     "expr": "op('tk')['hazeg']"
+    },
+    "vec0valuez": {
+     "expr": "op('tk')['hazeb']"
+    },
+    "vec1name": "uShadow",
+    "vec1valuex": {
+     "expr": "op('tk')['shr']"
+    },
+    "vec1valuey": {
+     "expr": "op('tk')['shg']"
+    },
+    "vec1valuez": {
+     "expr": "op('tk')['shb']"
+    },
+    "vec2name": "uP1",
+    "vec2valuew": {
+     "expr": "op('tk')['dither']"
+    },
+    "vec2valuex": {
+     "expr": "op('tk')['glow']"
+    },
+    "vec2valuey": {
+     "expr": "op('tk')['vig']"
+    },
+    "vec2valuez": {
+     "expr": "op('tk')['sat']"
+    },
+    "vec3name": "uP2",
+    "vec3valuew": {
+     "expr": "op('tk')['sky']"
+    },
+    "vec3valuex": {
+     "expr": "op('tk')['dof0']"
+    },
+    "vec3valuey": {
+     "expr": "op('tk')['dof1']"
+    },
+    "vec3valuez": {
+     "expr": "op('tk')['dofnear']"
+    }
+   }
+  },
+  "post_compute": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    320,
+    -120
+   ],
+   "pars": {
+    "language": "glsl"
+   },
+   "text": [
+    "// Example Compute Shader",
+    "",
+    "// uniform float exampleUniform;",
+    "",
+    "layout (local_size_x = 8, local_size_y = 4) in;",
+    "void main()",
+    "{",
+    "\t// This code is running 1:1 per pixel, so early-exit",
+    "\t// if this thread overhangs the edge of the output",
+    "\tif (any(greaterThanEqual(ivec2(gl_GlobalInvocationID.xy), ivec2(uTDOutputInfo.res.zw))))",
+    "\t\treturn;",
+    "",
+    "\tvec4 color;",
+    "\t//color = texelFetch(sTD2DInputs[0], ivec2(gl_GlobalInvocationID.xy), 0);",
+    "\tcolor = vec4(1.0);",
+    "\t// We need to use TDImageStoreOutput() so that 8-bit textures that are sRGB",
+    "\t// encoded can be written to correctly from incoming linear values.",
+    "\t// imageStore() does not do this automatically, while pixel shader outputs do.",
+    "\tTDImageStoreOutput(0, gl_GlobalInvocationID, color);",
+    "}"
+   ]
+  },
+  "post_frag": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    1000,
+    -220
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.here('shaders/post.frag')"
+    },
+    "language": "text",
+    "syncfile": true
+   },
+   "text_file": "experiments/sc_paper_storm/shaders/post.frag"
+  },
+  "post_info": {
+   "type": "infoDAT",
+   "family": "DAT",
+   "pos": [
+    160,
+    -120
+   ],
+   "pars": {
+    "language": "text",
+    "op": "post"
+   }
+  },
+  "post_pixel": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    0,
+    -120
+   ],
+   "pars": {
+    "extension": "frag",
+    "language": "glsl"
+   },
+   "text": [
+    "",
+    "// Example Pixel Shader",
+    "",
+    "// uniform float exampleUniform;",
+    "",
+    "out vec4 fragColor;",
+    "void main()",
+    "{",
+    "\t// vec4 color = texture(sTD2DInputs[0], vUV.st);",
+    "\tvec4 color = vec4(1.0);",
+    "\tfragColor = TDOutputSwizzle(color);",
+    "}"
+   ]
+  },
+  "print_frag": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    -380,
+    460
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.here('shaders/print.frag')"
+    },
+    "language": "text",
+    "syncfile": true
+   },
+   "text_file": "experiments/sc_paper_storm/shaders/print.frag"
+  },
+  "prop0": {
+   "type": "geometryCOMP",
+   "family": "COMP",
+   "pos": [
+    800,
+    190
+   ],
+   "pars": {
+    "instanceb": "b",
+    "instancecolormode": "multiply",
+    "instancecolorop": "/project1/sc_paper_storm/prop0_c",
+    "instanceg": "g",
+    "instanceop": "/project1/sc_paper_storm/prop0_p",
+    "instancer": "r",
+    "instancerottoforward": "posz",
+    "instancerottoop": "/project1/sc_paper_storm/prop0_n",
+    "instancerottox": "r",
+    "instancerottoy": "g",
+    "instancerottoz": "b",
+    "instancerotupop": "/project1/sc_paper_storm/prop0_u",
+    "instancerotupx": "r",
+    "instancerotupy": "g",
+    "instancerotupz": "b",
+    "instancetx": "r",
+    "instancety": "g",
+    "instancetz": "b",
+    "instancing": true,
+    "material": "/project1/sc_paper_storm/prop0/mat",
+    "render": {
+     "expr": "op('tk')['props'] > 0.5"
+    },
+    "scale": 0.45
+   }
+  },
+  "prop0/fit": {
+   "type": "transformPOP",
+   "family": "POP",
+   "pos": [
+    0,
+    0
+   ],
+   "inputs": [
+    [
+     "prop0/mesh"
+    ]
+   ],
+   "pars": {
+    "scale": {
+     "expr": "1 if mod.paths.have('models/rubber_duck/model.obj') else 0.509"
+    },
+    "tx": {
+     "expr": "0 if mod.paths.have('models/rubber_duck/model.obj') else 0.0071"
+    },
+    "ty": {
+     "expr": "0 if mod.paths.have('models/rubber_duck/model.obj') else -0.2331"
+    },
+    "tz": {
+     "expr": "0 if mod.paths.have('models/rubber_duck/model.obj') else 0.0"
+    }
+   }
+  },
+  "prop0/mat": {
+   "type": "pbrMAT",
+   "family": "MAT",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "basecolorb": {
+     "expr": "1 if bool(mod.paths.model_texture('rubber_duck')) else 0.2"
+    },
+    "basecolorg": {
+     "expr": "1 if bool(mod.paths.model_texture('rubber_duck')) else 0.8"
+    },
+    "basecolormap": "/project1/sc_paper_storm/prop0/tex",
+    "basecolorr": {
+     "expr": "1 if bool(mod.paths.model_texture('rubber_duck')) else 0.95"
+    },
+    "metallic": 0.0,
+    "roughness": 0.6,
+    "writecameradepthtoalpha": true
+   }
+  },
+  "prop0/mesh": {
+   "type": "fileinPOP",
+   "family": "POP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.model_file('rubber_duck')"
+    }
+   }
+  },
+  "prop0/tex": {
+   "type": "moviefileinTOP",
+   "family": "TOP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.model_texture('rubber_duck') or mod.paths.here('data/white.png')"
+    }
+   }
+  },
+  "prop0_c": {
+   "type": "glslTOP",
+   "family": "TOP",
+   "pos": [
+    600,
+    190
+   ],
+   "inputs": [
+    [
+     "ctltex"
+    ],
+    [
+     "pagesw"
+    ],
+    [
+     "inlum"
+    ]
+   ],
+   "pars": {
+    "computedat": "prop0_c_compute",
+    "filtertype": "nearest",
+    "format": "rgba32float",
+    "inputfiltertype": "nearest",
+    "outputresolution": "custom",
+    "pixeldat": "field_frag",
+    "resolutionh": 4,
+    "resolutionw": 10,
+    "vec0name": "uOut",
+    "vec0valuex": 3.0,
+    "vec1name": "uProp",
+    "vec2name": "uSeed",
+    "vec2valuex": 10.0,
+    "vec3name": "uPages",
+    "vec3valuex": 8.0
+   }
+  },
+  "prop0_c_compute": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    320,
+    -120
+   ],
+   "pars": {
+    "language": "glsl"
+   },
+   "text": [
+    "// Example Compute Shader",
+    "",
+    "// uniform float exampleUniform;",
+    "",
+    "layout (local_size_x = 8, local_size_y = 4) in;",
+    "void main()",
+    "{",
+    "\t// This code is running 1:1 per pixel, so early-exit",
+    "\t// if this thread overhangs the edge of the output",
+    "\tif (any(greaterThanEqual(ivec2(gl_GlobalInvocationID.xy), ivec2(uTDOutputInfo.res.zw))))",
+    "\t\treturn;",
+    "",
+    "\tvec4 color;",
+    "\t//color = texelFetch(sTD2DInputs[0], ivec2(gl_GlobalInvocationID.xy), 0);",
+    "\tcolor = vec4(1.0);",
+    "\t// We need to use TDImageStoreOutput() so that 8-bit textures that are sRGB",
+    "\t// encoded can be written to correctly from incoming linear values.",
+    "\t// imageStore() does not do this automatically, while pixel shader outputs do.",
+    "\tTDImageStoreOutput(0, gl_GlobalInvocationID, color);",
+    "}"
+   ]
+  },
+  "prop0_c_info": {
+   "type": "infoDAT",
+   "family": "DAT",
+   "pos": [
+    160,
+    -120
+   ],
+   "pars": {
+    "language": "text",
+    "op": "prop0_c"
+   }
+  },
+  "prop0_c_pixel": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    0,
+    -120
+   ],
+   "pars": {
+    "extension": "frag",
+    "language": "glsl"
+   },
+   "text": [
+    "",
+    "// Example Pixel Shader",
+    "",
+    "// uniform float exampleUniform;",
+    "",
+    "out vec4 fragColor;",
+    "void main()",
+    "{",
+    "\t// vec4 color = texture(sTD2DInputs[0], vUV.st);",
+    "\tvec4 color = vec4(1.0);",
+    "\tfragColor = TDOutputSwizzle(color);",
+    "}"
+   ]
+  },
+  "prop0_n": {
+   "type": "glslTOP",
+   "family": "TOP",
+   "pos": [
+    300,
+    190
+   ],
+   "inputs": [
+    [
+     "ctltex"
+    ],
+    [
+     "pagesw"
+    ],
+    [
+     "inlum"
+    ]
+   ],
+   "pars": {
+    "computedat": "prop0_n_compute",
+    "filtertype": "nearest",
+    "format": "rgba32float",
+    "inputfiltertype": "nearest",
+    "outputresolution": "custom",
+    "pixeldat": "field_frag",
+    "resolutionh": 4,
+    "resolutionw": 10,
+    "vec0name": "uOut",
+    "vec0valuex": 1.0,
+    "vec1name": "uProp",
+    "vec2name": "uSeed",
+    "vec2valuex": 10.0,
+    "vec3name": "uPages",
+    "vec3valuex": 8.0
+   }
+  },
+  "prop0_n_compute": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    320,
+    -120
+   ],
+   "pars": {
+    "language": "glsl"
+   },
+   "text": [
+    "// Example Compute Shader",
+    "",
+    "// uniform float exampleUniform;",
+    "",
+    "layout (local_size_x = 8, local_size_y = 4) in;",
+    "void main()",
+    "{",
+    "\t// This code is running 1:1 per pixel, so early-exit",
+    "\t// if this thread overhangs the edge of the output",
+    "\tif (any(greaterThanEqual(ivec2(gl_GlobalInvocationID.xy), ivec2(uTDOutputInfo.res.zw))))",
+    "\t\treturn;",
+    "",
+    "\tvec4 color;",
+    "\t//color = texelFetch(sTD2DInputs[0], ivec2(gl_GlobalInvocationID.xy), 0);",
+    "\tcolor = vec4(1.0);",
+    "\t// We need to use TDImageStoreOutput() so that 8-bit textures that are sRGB",
+    "\t// encoded can be written to correctly from incoming linear values.",
+    "\t// imageStore() does not do this automatically, while pixel shader outputs do.",
+    "\tTDImageStoreOutput(0, gl_GlobalInvocationID, color);",
+    "}"
+   ]
+  },
+  "prop0_n_info": {
+   "type": "infoDAT",
+   "family": "DAT",
+   "pos": [
+    160,
+    -120
+   ],
+   "pars": {
+    "language": "text",
+    "op": "prop0_n"
+   }
+  },
+  "prop0_n_pixel": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    0,
+    -120
+   ],
+   "pars": {
+    "extension": "frag",
+    "language": "glsl"
+   },
+   "text": [
+    "",
+    "// Example Pixel Shader",
+    "",
+    "// uniform float exampleUniform;",
+    "",
+    "out vec4 fragColor;",
+    "void main()",
+    "{",
+    "\t// vec4 color = texture(sTD2DInputs[0], vUV.st);",
+    "\tvec4 color = vec4(1.0);",
+    "\tfragColor = TDOutputSwizzle(color);",
+    "}"
+   ]
+  },
+  "prop0_p": {
+   "type": "glslTOP",
+   "family": "TOP",
+   "pos": [
+    150,
+    190
+   ],
+   "inputs": [
+    [
+     "ctltex"
+    ],
+    [
+     "pagesw"
+    ],
+    [
+     "inlum"
+    ]
+   ],
+   "pars": {
+    "computedat": "prop0_p_compute",
+    "filtertype": "nearest",
+    "format": "rgba32float",
+    "inputfiltertype": "nearest",
+    "outputresolution": "custom",
+    "pixeldat": "field_frag",
+    "resolutionh": 4,
+    "resolutionw": 10,
+    "vec0name": "uOut",
+    "vec0valuex": 0.0,
+    "vec1name": "uProp",
+    "vec2name": "uSeed",
+    "vec2valuex": 10.0,
+    "vec3name": "uPages",
+    "vec3valuex": 8.0
+   }
+  },
+  "prop0_p_compute": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    320,
+    -120
+   ],
+   "pars": {
+    "language": "glsl"
+   },
+   "text": [
+    "// Example Compute Shader",
+    "",
+    "// uniform float exampleUniform;",
+    "",
+    "layout (local_size_x = 8, local_size_y = 4) in;",
+    "void main()",
+    "{",
+    "\t// This code is running 1:1 per pixel, so early-exit",
+    "\t// if this thread overhangs the edge of the output",
+    "\tif (any(greaterThanEqual(ivec2(gl_GlobalInvocationID.xy), ivec2(uTDOutputInfo.res.zw))))",
+    "\t\treturn;",
+    "",
+    "\tvec4 color;",
+    "\t//color = texelFetch(sTD2DInputs[0], ivec2(gl_GlobalInvocationID.xy), 0);",
+    "\tcolor = vec4(1.0);",
+    "\t// We need to use TDImageStoreOutput() so that 8-bit textures that are sRGB",
+    "\t// encoded can be written to correctly from incoming linear values.",
+    "\t// imageStore() does not do this automatically, while pixel shader outputs do.",
+    "\tTDImageStoreOutput(0, gl_GlobalInvocationID, color);",
+    "}"
+   ]
+  },
+  "prop0_p_info": {
+   "type": "infoDAT",
+   "family": "DAT",
+   "pos": [
+    160,
+    -120
+   ],
+   "pars": {
+    "language": "text",
+    "op": "prop0_p"
+   }
+  },
+  "prop0_p_pixel": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    0,
+    -120
+   ],
+   "pars": {
+    "extension": "frag",
+    "language": "glsl"
+   },
+   "text": [
+    "",
+    "// Example Pixel Shader",
+    "",
+    "// uniform float exampleUniform;",
+    "",
+    "out vec4 fragColor;",
+    "void main()",
+    "{",
+    "\t// vec4 color = texture(sTD2DInputs[0], vUV.st);",
+    "\tvec4 color = vec4(1.0);",
+    "\tfragColor = TDOutputSwizzle(color);",
+    "}"
+   ]
+  },
+  "prop0_u": {
+   "type": "glslTOP",
+   "family": "TOP",
+   "pos": [
+    450,
+    190
+   ],
+   "inputs": [
+    [
+     "ctltex"
+    ],
+    [
+     "pagesw"
+    ],
+    [
+     "inlum"
+    ]
+   ],
+   "pars": {
+    "computedat": "prop0_u_compute",
+    "filtertype": "nearest",
+    "format": "rgba32float",
+    "inputfiltertype": "nearest",
+    "outputresolution": "custom",
+    "pixeldat": "field_frag",
+    "resolutionh": 4,
+    "resolutionw": 10,
+    "vec0name": "uOut",
+    "vec0valuex": 2.0,
+    "vec1name": "uProp",
+    "vec2name": "uSeed",
+    "vec2valuex": 10.0,
+    "vec3name": "uPages",
+    "vec3valuex": 8.0
+   }
+  },
+  "prop0_u_compute": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    320,
+    -120
+   ],
+   "pars": {
+    "language": "glsl"
+   },
+   "text": [
+    "// Example Compute Shader",
+    "",
+    "// uniform float exampleUniform;",
+    "",
+    "layout (local_size_x = 8, local_size_y = 4) in;",
+    "void main()",
+    "{",
+    "\t// This code is running 1:1 per pixel, so early-exit",
+    "\t// if this thread overhangs the edge of the output",
+    "\tif (any(greaterThanEqual(ivec2(gl_GlobalInvocationID.xy), ivec2(uTDOutputInfo.res.zw))))",
+    "\t\treturn;",
+    "",
+    "\tvec4 color;",
+    "\t//color = texelFetch(sTD2DInputs[0], ivec2(gl_GlobalInvocationID.xy), 0);",
+    "\tcolor = vec4(1.0);",
+    "\t// We need to use TDImageStoreOutput() so that 8-bit textures that are sRGB",
+    "\t// encoded can be written to correctly from incoming linear values.",
+    "\t// imageStore() does not do this automatically, while pixel shader outputs do.",
+    "\tTDImageStoreOutput(0, gl_GlobalInvocationID, color);",
+    "}"
+   ]
+  },
+  "prop0_u_info": {
+   "type": "infoDAT",
+   "family": "DAT",
+   "pos": [
+    160,
+    -120
+   ],
+   "pars": {
+    "language": "text",
+    "op": "prop0_u"
+   }
+  },
+  "prop0_u_pixel": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    0,
+    -120
+   ],
+   "pars": {
+    "extension": "frag",
+    "language": "glsl"
+   },
+   "text": [
+    "",
+    "// Example Pixel Shader",
+    "",
+    "// uniform float exampleUniform;",
+    "",
+    "out vec4 fragColor;",
+    "void main()",
+    "{",
+    "\t// vec4 color = texture(sTD2DInputs[0], vUV.st);",
+    "\tvec4 color = vec4(1.0);",
+    "\tfragColor = TDOutputSwizzle(color);",
+    "}"
+   ]
+  },
+  "prop1": {
+   "type": "geometryCOMP",
+   "family": "COMP",
+   "pos": [
+    800,
+    80
+   ],
+   "pars": {
+    "instanceb": "b",
+    "instancecolormode": "multiply",
+    "instancecolorop": "/project1/sc_paper_storm/prop1_c",
+    "instanceg": "g",
+    "instanceop": "/project1/sc_paper_storm/prop1_p",
+    "instancer": "r",
+    "instancerottoforward": "posz",
+    "instancerottoop": "/project1/sc_paper_storm/prop1_n",
+    "instancerottox": "r",
+    "instancerottoy": "g",
+    "instancerottoz": "b",
+    "instancerotupop": "/project1/sc_paper_storm/prop1_u",
+    "instancerotupx": "r",
+    "instancerotupy": "g",
+    "instancerotupz": "b",
+    "instancetx": "r",
+    "instancety": "g",
+    "instancetz": "b",
+    "instancing": true,
+    "material": "/project1/sc_paper_storm/prop1/mat",
+    "render": {
+     "expr": "op('tk')['props'] > 0.5"
+    },
+    "scale": 0.5
+   }
+  },
+  "prop1/fit": {
+   "type": "transformPOP",
+   "family": "POP",
+   "pos": [
+    0,
+    0
+   ],
+   "inputs": [
+    [
+     "prop1/mesh"
+    ]
+   ],
+   "pars": {
+    "rx": {
+     "expr": "90.0 if mod.paths.have('models/skeleton_key/model.obj') else 0"
+    },
+    "rz": {
+     "expr": "90.0 if mod.paths.have('models/skeleton_key/model.obj') else 0"
+    },
+    "scale": {
+     "expr": "1 if mod.paths.have('models/skeleton_key/model.obj') else 0.509"
+    },
+    "tx": {
+     "expr": "0 if mod.paths.have('models/skeleton_key/model.obj') else 0.0071"
+    },
+    "ty": {
+     "expr": "0 if mod.paths.have('models/skeleton_key/model.obj') else -0.2331"
+    },
+    "tz": {
+     "expr": "0 if mod.paths.have('models/skeleton_key/model.obj') else 0.0"
+    }
+   }
+  },
+  "prop1/mat": {
+   "type": "pbrMAT",
+   "family": "MAT",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "basecolorb": {
+     "expr": "1 if bool(mod.paths.model_texture('skeleton_key')) else 0.25"
+    },
+    "basecolorg": {
+     "expr": "1 if bool(mod.paths.model_texture('skeleton_key')) else 0.55"
+    },
+    "basecolormap": "/project1/sc_paper_storm/prop1/tex",
+    "basecolorr": {
+     "expr": "1 if bool(mod.paths.model_texture('skeleton_key')) else 0.7"
+    },
+    "metallic": 0.0,
+    "roughness": 0.6,
+    "writecameradepthtoalpha": true
+   }
+  },
+  "prop1/mesh": {
+   "type": "fileinPOP",
+   "family": "POP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.model_file('skeleton_key')"
+    }
+   }
+  },
+  "prop1/tex": {
+   "type": "moviefileinTOP",
+   "family": "TOP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.model_texture('skeleton_key') or mod.paths.here('data/white.png')"
+    }
+   }
+  },
+  "prop1_c": {
+   "type": "glslTOP",
+   "family": "TOP",
+   "pos": [
+    600,
+    80
+   ],
+   "inputs": [
+    [
+     "ctltex"
+    ],
+    [
+     "pagesw"
+    ],
+    [
+     "inlum"
+    ]
+   ],
+   "pars": {
+    "computedat": "prop1_c_compute",
+    "filtertype": "nearest",
+    "format": "rgba32float",
+    "inputfiltertype": "nearest",
+    "outputresolution": "custom",
+    "pixeldat": "field_frag",
+    "resolutionh": 10,
+    "resolutionw": 14,
+    "vec0name": "uOut",
+    "vec0valuex": 3.0,
+    "vec1name": "uProp",
+    "vec2name": "uSeed",
+    "vec2valuex": 11.0,
+    "vec3name": "uPages",
+    "vec3valuex": 8.0
+   }
+  },
+  "prop1_c_compute": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    320,
+    -120
+   ],
+   "pars": {
+    "language": "glsl"
+   },
+   "text": [
+    "// Example Compute Shader",
+    "",
+    "// uniform float exampleUniform;",
+    "",
+    "layout (local_size_x = 8, local_size_y = 4) in;",
+    "void main()",
+    "{",
+    "\t// This code is running 1:1 per pixel, so early-exit",
+    "\t// if this thread overhangs the edge of the output",
+    "\tif (any(greaterThanEqual(ivec2(gl_GlobalInvocationID.xy), ivec2(uTDOutputInfo.res.zw))))",
+    "\t\treturn;",
+    "",
+    "\tvec4 color;",
+    "\t//color = texelFetch(sTD2DInputs[0], ivec2(gl_GlobalInvocationID.xy), 0);",
+    "\tcolor = vec4(1.0);",
+    "\t// We need to use TDImageStoreOutput() so that 8-bit textures that are sRGB",
+    "\t// encoded can be written to correctly from incoming linear values.",
+    "\t// imageStore() does not do this automatically, while pixel shader outputs do.",
+    "\tTDImageStoreOutput(0, gl_GlobalInvocationID, color);",
+    "}"
+   ]
+  },
+  "prop1_c_info": {
+   "type": "infoDAT",
+   "family": "DAT",
+   "pos": [
+    160,
+    -120
+   ],
+   "pars": {
+    "language": "text",
+    "op": "prop1_c"
+   }
+  },
+  "prop1_c_pixel": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    0,
+    -120
+   ],
+   "pars": {
+    "extension": "frag",
+    "language": "glsl"
+   },
+   "text": [
+    "",
+    "// Example Pixel Shader",
+    "",
+    "// uniform float exampleUniform;",
+    "",
+    "out vec4 fragColor;",
+    "void main()",
+    "{",
+    "\t// vec4 color = texture(sTD2DInputs[0], vUV.st);",
+    "\tvec4 color = vec4(1.0);",
+    "\tfragColor = TDOutputSwizzle(color);",
+    "}"
+   ]
+  },
+  "prop1_n": {
+   "type": "glslTOP",
+   "family": "TOP",
+   "pos": [
+    300,
+    80
+   ],
+   "inputs": [
+    [
+     "ctltex"
+    ],
+    [
+     "pagesw"
+    ],
+    [
+     "inlum"
+    ]
+   ],
+   "pars": {
+    "computedat": "prop1_n_compute",
+    "filtertype": "nearest",
+    "format": "rgba32float",
+    "inputfiltertype": "nearest",
+    "outputresolution": "custom",
+    "pixeldat": "field_frag",
+    "resolutionh": 10,
+    "resolutionw": 14,
+    "vec0name": "uOut",
+    "vec0valuex": 1.0,
+    "vec1name": "uProp",
+    "vec2name": "uSeed",
+    "vec2valuex": 11.0,
+    "vec3name": "uPages",
+    "vec3valuex": 8.0
+   }
+  },
+  "prop1_n_compute": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    320,
+    -120
+   ],
+   "pars": {
+    "language": "glsl"
+   },
+   "text": [
+    "// Example Compute Shader",
+    "",
+    "// uniform float exampleUniform;",
+    "",
+    "layout (local_size_x = 8, local_size_y = 4) in;",
+    "void main()",
+    "{",
+    "\t// This code is running 1:1 per pixel, so early-exit",
+    "\t// if this thread overhangs the edge of the output",
+    "\tif (any(greaterThanEqual(ivec2(gl_GlobalInvocationID.xy), ivec2(uTDOutputInfo.res.zw))))",
+    "\t\treturn;",
+    "",
+    "\tvec4 color;",
+    "\t//color = texelFetch(sTD2DInputs[0], ivec2(gl_GlobalInvocationID.xy), 0);",
+    "\tcolor = vec4(1.0);",
+    "\t// We need to use TDImageStoreOutput() so that 8-bit textures that are sRGB",
+    "\t// encoded can be written to correctly from incoming linear values.",
+    "\t// imageStore() does not do this automatically, while pixel shader outputs do.",
+    "\tTDImageStoreOutput(0, gl_GlobalInvocationID, color);",
+    "}"
+   ]
+  },
+  "prop1_n_info": {
+   "type": "infoDAT",
+   "family": "DAT",
+   "pos": [
+    160,
+    -120
+   ],
+   "pars": {
+    "language": "text",
+    "op": "prop1_n"
+   }
+  },
+  "prop1_n_pixel": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    0,
+    -120
+   ],
+   "pars": {
+    "extension": "frag",
+    "language": "glsl"
+   },
+   "text": [
+    "",
+    "// Example Pixel Shader",
+    "",
+    "// uniform float exampleUniform;",
+    "",
+    "out vec4 fragColor;",
+    "void main()",
+    "{",
+    "\t// vec4 color = texture(sTD2DInputs[0], vUV.st);",
+    "\tvec4 color = vec4(1.0);",
+    "\tfragColor = TDOutputSwizzle(color);",
+    "}"
+   ]
+  },
+  "prop1_p": {
+   "type": "glslTOP",
+   "family": "TOP",
+   "pos": [
+    150,
+    80
+   ],
+   "inputs": [
+    [
+     "ctltex"
+    ],
+    [
+     "pagesw"
+    ],
+    [
+     "inlum"
+    ]
+   ],
+   "pars": {
+    "computedat": "prop1_p_compute",
+    "filtertype": "nearest",
+    "format": "rgba32float",
+    "inputfiltertype": "nearest",
+    "outputresolution": "custom",
+    "pixeldat": "field_frag",
+    "resolutionh": 10,
+    "resolutionw": 14,
+    "vec0name": "uOut",
+    "vec0valuex": 0.0,
+    "vec1name": "uProp",
+    "vec2name": "uSeed",
+    "vec2valuex": 11.0,
+    "vec3name": "uPages",
+    "vec3valuex": 8.0
+   }
+  },
+  "prop1_p_compute": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    320,
+    -120
+   ],
+   "pars": {
+    "language": "glsl"
+   },
+   "text": [
+    "// Example Compute Shader",
+    "",
+    "// uniform float exampleUniform;",
+    "",
+    "layout (local_size_x = 8, local_size_y = 4) in;",
+    "void main()",
+    "{",
+    "\t// This code is running 1:1 per pixel, so early-exit",
+    "\t// if this thread overhangs the edge of the output",
+    "\tif (any(greaterThanEqual(ivec2(gl_GlobalInvocationID.xy), ivec2(uTDOutputInfo.res.zw))))",
+    "\t\treturn;",
+    "",
+    "\tvec4 color;",
+    "\t//color = texelFetch(sTD2DInputs[0], ivec2(gl_GlobalInvocationID.xy), 0);",
+    "\tcolor = vec4(1.0);",
+    "\t// We need to use TDImageStoreOutput() so that 8-bit textures that are sRGB",
+    "\t// encoded can be written to correctly from incoming linear values.",
+    "\t// imageStore() does not do this automatically, while pixel shader outputs do.",
+    "\tTDImageStoreOutput(0, gl_GlobalInvocationID, color);",
+    "}"
+   ]
+  },
+  "prop1_p_info": {
+   "type": "infoDAT",
+   "family": "DAT",
+   "pos": [
+    160,
+    -120
+   ],
+   "pars": {
+    "language": "text",
+    "op": "prop1_p"
+   }
+  },
+  "prop1_p_pixel": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    0,
+    -120
+   ],
+   "pars": {
+    "extension": "frag",
+    "language": "glsl"
+   },
+   "text": [
+    "",
+    "// Example Pixel Shader",
+    "",
+    "// uniform float exampleUniform;",
+    "",
+    "out vec4 fragColor;",
+    "void main()",
+    "{",
+    "\t// vec4 color = texture(sTD2DInputs[0], vUV.st);",
+    "\tvec4 color = vec4(1.0);",
+    "\tfragColor = TDOutputSwizzle(color);",
+    "}"
+   ]
+  },
+  "prop1_u": {
+   "type": "glslTOP",
+   "family": "TOP",
+   "pos": [
+    450,
+    80
+   ],
+   "inputs": [
+    [
+     "ctltex"
+    ],
+    [
+     "pagesw"
+    ],
+    [
+     "inlum"
+    ]
+   ],
+   "pars": {
+    "computedat": "prop1_u_compute",
+    "filtertype": "nearest",
+    "format": "rgba32float",
+    "inputfiltertype": "nearest",
+    "outputresolution": "custom",
+    "pixeldat": "field_frag",
+    "resolutionh": 10,
+    "resolutionw": 14,
+    "vec0name": "uOut",
+    "vec0valuex": 2.0,
+    "vec1name": "uProp",
+    "vec2name": "uSeed",
+    "vec2valuex": 11.0,
+    "vec3name": "uPages",
+    "vec3valuex": 8.0
+   }
+  },
+  "prop1_u_compute": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    320,
+    -120
+   ],
+   "pars": {
+    "language": "glsl"
+   },
+   "text": [
+    "// Example Compute Shader",
+    "",
+    "// uniform float exampleUniform;",
+    "",
+    "layout (local_size_x = 8, local_size_y = 4) in;",
+    "void main()",
+    "{",
+    "\t// This code is running 1:1 per pixel, so early-exit",
+    "\t// if this thread overhangs the edge of the output",
+    "\tif (any(greaterThanEqual(ivec2(gl_GlobalInvocationID.xy), ivec2(uTDOutputInfo.res.zw))))",
+    "\t\treturn;",
+    "",
+    "\tvec4 color;",
+    "\t//color = texelFetch(sTD2DInputs[0], ivec2(gl_GlobalInvocationID.xy), 0);",
+    "\tcolor = vec4(1.0);",
+    "\t// We need to use TDImageStoreOutput() so that 8-bit textures that are sRGB",
+    "\t// encoded can be written to correctly from incoming linear values.",
+    "\t// imageStore() does not do this automatically, while pixel shader outputs do.",
+    "\tTDImageStoreOutput(0, gl_GlobalInvocationID, color);",
+    "}"
+   ]
+  },
+  "prop1_u_info": {
+   "type": "infoDAT",
+   "family": "DAT",
+   "pos": [
+    160,
+    -120
+   ],
+   "pars": {
+    "language": "text",
+    "op": "prop1_u"
+   }
+  },
+  "prop1_u_pixel": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    0,
+    -120
+   ],
+   "pars": {
+    "extension": "frag",
+    "language": "glsl"
+   },
+   "text": [
+    "",
+    "// Example Pixel Shader",
+    "",
+    "// uniform float exampleUniform;",
+    "",
+    "out vec4 fragColor;",
+    "void main()",
+    "{",
+    "\t// vec4 color = texture(sTD2DInputs[0], vUV.st);",
+    "\tvec4 color = vec4(1.0);",
+    "\tfragColor = TDOutputSwizzle(color);",
+    "}"
+   ]
+  },
+  "prop2": {
+   "type": "geometryCOMP",
+   "family": "COMP",
+   "pos": [
+    800,
+    -30
+   ],
+   "pars": {
+    "instanceb": "b",
+    "instancecolormode": "multiply",
+    "instancecolorop": "/project1/sc_paper_storm/prop2_c",
+    "instanceg": "g",
+    "instanceop": "/project1/sc_paper_storm/prop2_p",
+    "instancer": "r",
+    "instancerottoforward": "posz",
+    "instancerottoop": "/project1/sc_paper_storm/prop2_n",
+    "instancerottox": "r",
+    "instancerottoy": "g",
+    "instancerottoz": "b",
+    "instancerotupop": "/project1/sc_paper_storm/prop2_u",
+    "instancerotupx": "r",
+    "instancerotupy": "g",
+    "instancerotupz": "b",
+    "instancetx": "r",
+    "instancety": "g",
+    "instancetz": "b",
+    "instancing": true,
+    "material": "/project1/sc_paper_storm/prop2/mat",
+    "render": {
+     "expr": "op('tk')['props'] > 0.5"
+    },
+    "scale": 0.6
+   }
+  },
+  "prop2/fit": {
+   "type": "transformPOP",
+   "family": "POP",
+   "pos": [
+    0,
+    0
+   ],
+   "inputs": [
+    [
+     "prop2/mesh"
+    ]
+   ],
+   "pars": {
+    "rx": {
+     "expr": "-90.0 if mod.paths.have('models/traffic_cone/model.obj') else 0"
+    },
+    "scale": {
+     "expr": "1 if mod.paths.have('models/traffic_cone/model.obj') else 0.509"
+    },
+    "tx": {
+     "expr": "0 if mod.paths.have('models/traffic_cone/model.obj') else 0.0071"
+    },
+    "ty": {
+     "expr": "0 if mod.paths.have('models/traffic_cone/model.obj') else -0.2331"
+    },
+    "tz": {
+     "expr": "0 if mod.paths.have('models/traffic_cone/model.obj') else 0.0"
+    }
+   }
+  },
+  "prop2/mat": {
+   "type": "pbrMAT",
+   "family": "MAT",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "basecolorb": {
+     "expr": "1 if bool(mod.paths.model_texture('traffic_cone')) else 0.15"
+    },
+    "basecolorg": {
+     "expr": "1 if bool(mod.paths.model_texture('traffic_cone')) else 0.4"
+    },
+    "basecolormap": "/project1/sc_paper_storm/prop2/tex",
+    "basecolorr": {
+     "expr": "1 if bool(mod.paths.model_texture('traffic_cone')) else 0.9"
+    },
+    "metallic": 0.0,
+    "roughness": 0.6,
+    "writecameradepthtoalpha": true
+   }
+  },
+  "prop2/mesh": {
+   "type": "fileinPOP",
+   "family": "POP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.model_file('traffic_cone')"
+    }
+   }
+  },
+  "prop2/tex": {
+   "type": "moviefileinTOP",
+   "family": "TOP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.model_texture('traffic_cone') or mod.paths.here('data/white.png')"
+    }
+   }
+  },
+  "prop2_c": {
+   "type": "glslTOP",
+   "family": "TOP",
+   "pos": [
+    600,
+    -30
+   ],
+   "inputs": [
+    [
+     "ctltex"
+    ],
+    [
+     "pagesw"
+    ],
+    [
+     "inlum"
+    ]
+   ],
+   "pars": {
+    "computedat": "prop2_c_compute",
+    "filtertype": "nearest",
+    "format": "rgba32float",
+    "inputfiltertype": "nearest",
+    "outputresolution": "custom",
+    "pixeldat": "field_frag",
+    "resolutionh": 2,
+    "resolutionw": 4,
+    "vec0name": "uOut",
+    "vec0valuex": 3.0,
+    "vec1name": "uProp",
+    "vec2name": "uSeed",
+    "vec2valuex": 12.0,
+    "vec3name": "uPages",
+    "vec3valuex": 8.0
+   }
+  },
+  "prop2_c_compute": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    320,
+    -120
+   ],
+   "pars": {
+    "language": "glsl"
+   },
+   "text": [
+    "// Example Compute Shader",
+    "",
+    "// uniform float exampleUniform;",
+    "",
+    "layout (local_size_x = 8, local_size_y = 4) in;",
+    "void main()",
+    "{",
+    "\t// This code is running 1:1 per pixel, so early-exit",
+    "\t// if this thread overhangs the edge of the output",
+    "\tif (any(greaterThanEqual(ivec2(gl_GlobalInvocationID.xy), ivec2(uTDOutputInfo.res.zw))))",
+    "\t\treturn;",
+    "",
+    "\tvec4 color;",
+    "\t//color = texelFetch(sTD2DInputs[0], ivec2(gl_GlobalInvocationID.xy), 0);",
+    "\tcolor = vec4(1.0);",
+    "\t// We need to use TDImageStoreOutput() so that 8-bit textures that are sRGB",
+    "\t// encoded can be written to correctly from incoming linear values.",
+    "\t// imageStore() does not do this automatically, while pixel shader outputs do.",
+    "\tTDImageStoreOutput(0, gl_GlobalInvocationID, color);",
+    "}"
+   ]
+  },
+  "prop2_c_info": {
+   "type": "infoDAT",
+   "family": "DAT",
+   "pos": [
+    160,
+    -120
+   ],
+   "pars": {
+    "language": "text",
+    "op": "prop2_c"
+   }
+  },
+  "prop2_c_pixel": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    0,
+    -120
+   ],
+   "pars": {
+    "extension": "frag",
+    "language": "glsl"
+   },
+   "text": [
+    "",
+    "// Example Pixel Shader",
+    "",
+    "// uniform float exampleUniform;",
+    "",
+    "out vec4 fragColor;",
+    "void main()",
+    "{",
+    "\t// vec4 color = texture(sTD2DInputs[0], vUV.st);",
+    "\tvec4 color = vec4(1.0);",
+    "\tfragColor = TDOutputSwizzle(color);",
+    "}"
+   ]
+  },
+  "prop2_n": {
+   "type": "glslTOP",
+   "family": "TOP",
+   "pos": [
+    300,
+    -30
+   ],
+   "inputs": [
+    [
+     "ctltex"
+    ],
+    [
+     "pagesw"
+    ],
+    [
+     "inlum"
+    ]
+   ],
+   "pars": {
+    "computedat": "prop2_n_compute",
+    "filtertype": "nearest",
+    "format": "rgba32float",
+    "inputfiltertype": "nearest",
+    "outputresolution": "custom",
+    "pixeldat": "field_frag",
+    "resolutionh": 2,
+    "resolutionw": 4,
+    "vec0name": "uOut",
+    "vec0valuex": 1.0,
+    "vec1name": "uProp",
+    "vec2name": "uSeed",
+    "vec2valuex": 12.0,
+    "vec3name": "uPages",
+    "vec3valuex": 8.0
+   }
+  },
+  "prop2_n_compute": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    320,
+    -120
+   ],
+   "pars": {
+    "language": "glsl"
+   },
+   "text": [
+    "// Example Compute Shader",
+    "",
+    "// uniform float exampleUniform;",
+    "",
+    "layout (local_size_x = 8, local_size_y = 4) in;",
+    "void main()",
+    "{",
+    "\t// This code is running 1:1 per pixel, so early-exit",
+    "\t// if this thread overhangs the edge of the output",
+    "\tif (any(greaterThanEqual(ivec2(gl_GlobalInvocationID.xy), ivec2(uTDOutputInfo.res.zw))))",
+    "\t\treturn;",
+    "",
+    "\tvec4 color;",
+    "\t//color = texelFetch(sTD2DInputs[0], ivec2(gl_GlobalInvocationID.xy), 0);",
+    "\tcolor = vec4(1.0);",
+    "\t// We need to use TDImageStoreOutput() so that 8-bit textures that are sRGB",
+    "\t// encoded can be written to correctly from incoming linear values.",
+    "\t// imageStore() does not do this automatically, while pixel shader outputs do.",
+    "\tTDImageStoreOutput(0, gl_GlobalInvocationID, color);",
+    "}"
+   ]
+  },
+  "prop2_n_info": {
+   "type": "infoDAT",
+   "family": "DAT",
+   "pos": [
+    160,
+    -120
+   ],
+   "pars": {
+    "language": "text",
+    "op": "prop2_n"
+   }
+  },
+  "prop2_n_pixel": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    0,
+    -120
+   ],
+   "pars": {
+    "extension": "frag",
+    "language": "glsl"
+   },
+   "text": [
+    "",
+    "// Example Pixel Shader",
+    "",
+    "// uniform float exampleUniform;",
+    "",
+    "out vec4 fragColor;",
+    "void main()",
+    "{",
+    "\t// vec4 color = texture(sTD2DInputs[0], vUV.st);",
+    "\tvec4 color = vec4(1.0);",
+    "\tfragColor = TDOutputSwizzle(color);",
+    "}"
+   ]
+  },
+  "prop2_p": {
+   "type": "glslTOP",
+   "family": "TOP",
+   "pos": [
+    150,
+    -30
+   ],
+   "inputs": [
+    [
+     "ctltex"
+    ],
+    [
+     "pagesw"
+    ],
+    [
+     "inlum"
+    ]
+   ],
+   "pars": {
+    "computedat": "prop2_p_compute",
+    "filtertype": "nearest",
+    "format": "rgba32float",
+    "inputfiltertype": "nearest",
+    "outputresolution": "custom",
+    "pixeldat": "field_frag",
+    "resolutionh": 2,
+    "resolutionw": 4,
+    "vec0name": "uOut",
+    "vec0valuex": 0.0,
+    "vec1name": "uProp",
+    "vec2name": "uSeed",
+    "vec2valuex": 12.0,
+    "vec3name": "uPages",
+    "vec3valuex": 8.0
+   }
+  },
+  "prop2_p_compute": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    320,
+    -120
+   ],
+   "pars": {
+    "language": "glsl"
+   },
+   "text": [
+    "// Example Compute Shader",
+    "",
+    "// uniform float exampleUniform;",
+    "",
+    "layout (local_size_x = 8, local_size_y = 4) in;",
+    "void main()",
+    "{",
+    "\t// This code is running 1:1 per pixel, so early-exit",
+    "\t// if this thread overhangs the edge of the output",
+    "\tif (any(greaterThanEqual(ivec2(gl_GlobalInvocationID.xy), ivec2(uTDOutputInfo.res.zw))))",
+    "\t\treturn;",
+    "",
+    "\tvec4 color;",
+    "\t//color = texelFetch(sTD2DInputs[0], ivec2(gl_GlobalInvocationID.xy), 0);",
+    "\tcolor = vec4(1.0);",
+    "\t// We need to use TDImageStoreOutput() so that 8-bit textures that are sRGB",
+    "\t// encoded can be written to correctly from incoming linear values.",
+    "\t// imageStore() does not do this automatically, while pixel shader outputs do.",
+    "\tTDImageStoreOutput(0, gl_GlobalInvocationID, color);",
+    "}"
+   ]
+  },
+  "prop2_p_info": {
+   "type": "infoDAT",
+   "family": "DAT",
+   "pos": [
+    160,
+    -120
+   ],
+   "pars": {
+    "language": "text",
+    "op": "prop2_p"
+   }
+  },
+  "prop2_p_pixel": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    0,
+    -120
+   ],
+   "pars": {
+    "extension": "frag",
+    "language": "glsl"
+   },
+   "text": [
+    "",
+    "// Example Pixel Shader",
+    "",
+    "// uniform float exampleUniform;",
+    "",
+    "out vec4 fragColor;",
+    "void main()",
+    "{",
+    "\t// vec4 color = texture(sTD2DInputs[0], vUV.st);",
+    "\tvec4 color = vec4(1.0);",
+    "\tfragColor = TDOutputSwizzle(color);",
+    "}"
+   ]
+  },
+  "prop2_u": {
+   "type": "glslTOP",
+   "family": "TOP",
+   "pos": [
+    450,
+    -30
+   ],
+   "inputs": [
+    [
+     "ctltex"
+    ],
+    [
+     "pagesw"
+    ],
+    [
+     "inlum"
+    ]
+   ],
+   "pars": {
+    "computedat": "prop2_u_compute",
+    "filtertype": "nearest",
+    "format": "rgba32float",
+    "inputfiltertype": "nearest",
+    "outputresolution": "custom",
+    "pixeldat": "field_frag",
+    "resolutionh": 2,
+    "resolutionw": 4,
+    "vec0name": "uOut",
+    "vec0valuex": 2.0,
+    "vec1name": "uProp",
+    "vec2name": "uSeed",
+    "vec2valuex": 12.0,
+    "vec3name": "uPages",
+    "vec3valuex": 8.0
+   }
+  },
+  "prop2_u_compute": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    320,
+    -120
+   ],
+   "pars": {
+    "language": "glsl"
+   },
+   "text": [
+    "// Example Compute Shader",
+    "",
+    "// uniform float exampleUniform;",
+    "",
+    "layout (local_size_x = 8, local_size_y = 4) in;",
+    "void main()",
+    "{",
+    "\t// This code is running 1:1 per pixel, so early-exit",
+    "\t// if this thread overhangs the edge of the output",
+    "\tif (any(greaterThanEqual(ivec2(gl_GlobalInvocationID.xy), ivec2(uTDOutputInfo.res.zw))))",
+    "\t\treturn;",
+    "",
+    "\tvec4 color;",
+    "\t//color = texelFetch(sTD2DInputs[0], ivec2(gl_GlobalInvocationID.xy), 0);",
+    "\tcolor = vec4(1.0);",
+    "\t// We need to use TDImageStoreOutput() so that 8-bit textures that are sRGB",
+    "\t// encoded can be written to correctly from incoming linear values.",
+    "\t// imageStore() does not do this automatically, while pixel shader outputs do.",
+    "\tTDImageStoreOutput(0, gl_GlobalInvocationID, color);",
+    "}"
+   ]
+  },
+  "prop2_u_info": {
+   "type": "infoDAT",
+   "family": "DAT",
+   "pos": [
+    160,
+    -120
+   ],
+   "pars": {
+    "language": "text",
+    "op": "prop2_u"
+   }
+  },
+  "prop2_u_pixel": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    0,
+    -120
+   ],
+   "pars": {
+    "extension": "frag",
+    "language": "glsl"
+   },
+   "text": [
+    "",
+    "// Example Pixel Shader",
+    "",
+    "// uniform float exampleUniform;",
+    "",
+    "out vec4 fragColor;",
+    "void main()",
+    "{",
+    "\t// vec4 color = texture(sTD2DInputs[0], vUV.st);",
+    "\tvec4 color = vec4(1.0);",
+    "\tfragColor = TDOutputSwizzle(color);",
+    "}"
+   ]
+  },
+  "prop3": {
+   "type": "geometryCOMP",
+   "family": "COMP",
+   "pos": [
+    800,
+    -140
+   ],
+   "pars": {
+    "instanceb": "b",
+    "instancecolormode": "multiply",
+    "instancecolorop": "/project1/sc_paper_storm/prop3_c",
+    "instanceg": "g",
+    "instanceop": "/project1/sc_paper_storm/prop3_p",
+    "instancer": "r",
+    "instancerottoforward": "posz",
+    "instancerottoop": "/project1/sc_paper_storm/prop3_n",
+    "instancerottox": "r",
+    "instancerottoy": "g",
+    "instancerottoz": "b",
+    "instancerotupop": "/project1/sc_paper_storm/prop3_u",
+    "instancerotupx": "r",
+    "instancerotupy": "g",
+    "instancerotupz": "b",
+    "instancetx": "r",
+    "instancety": "g",
+    "instancetz": "b",
+    "instancing": true,
+    "material": "/project1/sc_paper_storm/prop3/mat",
+    "render": {
+     "expr": "op('tk')['props'] > 0.5"
+    },
+    "scale": 0.8
+   }
+  },
+  "prop3/fit": {
+   "type": "transformPOP",
+   "family": "POP",
+   "pos": [
+    0,
+    0
+   ],
+   "inputs": [
+    [
+     "prop3/mesh"
+    ]
+   ],
+   "pars": {
+    "scale": {
+     "expr": "1 if mod.paths.have('models/amphora/model.obj') else 0.509"
+    },
+    "tx": {
+     "expr": "0 if mod.paths.have('models/amphora/model.obj') else 0.0071"
+    },
+    "ty": {
+     "expr": "0 if mod.paths.have('models/amphora/model.obj') else -0.2331"
+    },
+    "tz": {
+     "expr": "0 if mod.paths.have('models/amphora/model.obj') else 0.0"
+    }
+   }
+  },
+  "prop3/mat": {
+   "type": "pbrMAT",
+   "family": "MAT",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "basecolorb": {
+     "expr": "1 if bool(mod.paths.model_texture('amphora')) else 0.2"
+    },
+    "basecolorg": {
+     "expr": "1 if bool(mod.paths.model_texture('amphora')) else 0.35"
+    },
+    "basecolormap": "/project1/sc_paper_storm/prop3/tex",
+    "basecolorr": {
+     "expr": "1 if bool(mod.paths.model_texture('amphora')) else 0.7"
+    },
+    "metallic": 0.0,
+    "roughness": 0.6,
+    "writecameradepthtoalpha": true
+   }
+  },
+  "prop3/mesh": {
+   "type": "fileinPOP",
+   "family": "POP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.model_file('amphora')"
+    }
+   }
+  },
+  "prop3/tex": {
+   "type": "moviefileinTOP",
+   "family": "TOP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.model_texture('amphora') or mod.paths.here('data/white.png')"
+    }
+   }
+  },
+  "prop3_c": {
+   "type": "glslTOP",
+   "family": "TOP",
+   "pos": [
+    600,
+    -140
+   ],
+   "inputs": [
+    [
+     "ctltex"
+    ],
+    [
+     "pagesw"
+    ],
+    [
+     "inlum"
+    ]
+   ],
+   "pars": {
+    "computedat": "prop3_c_compute",
+    "filtertype": "nearest",
+    "format": "rgba32float",
+    "inputfiltertype": "nearest",
+    "outputresolution": "custom",
+    "pixeldat": "field_frag",
+    "resolutionh": 2,
+    "resolutionw": 4,
+    "vec0name": "uOut",
+    "vec0valuex": 3.0,
+    "vec1name": "uProp",
+    "vec2name": "uSeed",
+    "vec2valuex": 13.0,
+    "vec3name": "uPages",
+    "vec3valuex": 8.0
+   }
+  },
+  "prop3_c_compute": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    320,
+    -120
+   ],
+   "pars": {
+    "language": "glsl"
+   },
+   "text": [
+    "// Example Compute Shader",
+    "",
+    "// uniform float exampleUniform;",
+    "",
+    "layout (local_size_x = 8, local_size_y = 4) in;",
+    "void main()",
+    "{",
+    "\t// This code is running 1:1 per pixel, so early-exit",
+    "\t// if this thread overhangs the edge of the output",
+    "\tif (any(greaterThanEqual(ivec2(gl_GlobalInvocationID.xy), ivec2(uTDOutputInfo.res.zw))))",
+    "\t\treturn;",
+    "",
+    "\tvec4 color;",
+    "\t//color = texelFetch(sTD2DInputs[0], ivec2(gl_GlobalInvocationID.xy), 0);",
+    "\tcolor = vec4(1.0);",
+    "\t// We need to use TDImageStoreOutput() so that 8-bit textures that are sRGB",
+    "\t// encoded can be written to correctly from incoming linear values.",
+    "\t// imageStore() does not do this automatically, while pixel shader outputs do.",
+    "\tTDImageStoreOutput(0, gl_GlobalInvocationID, color);",
+    "}"
+   ]
+  },
+  "prop3_c_info": {
+   "type": "infoDAT",
+   "family": "DAT",
+   "pos": [
+    160,
+    -120
+   ],
+   "pars": {
+    "language": "text",
+    "op": "prop3_c"
+   }
+  },
+  "prop3_c_pixel": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    0,
+    -120
+   ],
+   "pars": {
+    "extension": "frag",
+    "language": "glsl"
+   },
+   "text": [
+    "",
+    "// Example Pixel Shader",
+    "",
+    "// uniform float exampleUniform;",
+    "",
+    "out vec4 fragColor;",
+    "void main()",
+    "{",
+    "\t// vec4 color = texture(sTD2DInputs[0], vUV.st);",
+    "\tvec4 color = vec4(1.0);",
+    "\tfragColor = TDOutputSwizzle(color);",
+    "}"
+   ]
+  },
+  "prop3_n": {
+   "type": "glslTOP",
+   "family": "TOP",
+   "pos": [
+    300,
+    -140
+   ],
+   "inputs": [
+    [
+     "ctltex"
+    ],
+    [
+     "pagesw"
+    ],
+    [
+     "inlum"
+    ]
+   ],
+   "pars": {
+    "computedat": "prop3_n_compute",
+    "filtertype": "nearest",
+    "format": "rgba32float",
+    "inputfiltertype": "nearest",
+    "outputresolution": "custom",
+    "pixeldat": "field_frag",
+    "resolutionh": 2,
+    "resolutionw": 4,
+    "vec0name": "uOut",
+    "vec0valuex": 1.0,
+    "vec1name": "uProp",
+    "vec2name": "uSeed",
+    "vec2valuex": 13.0,
+    "vec3name": "uPages",
+    "vec3valuex": 8.0
+   }
+  },
+  "prop3_n_compute": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    320,
+    -120
+   ],
+   "pars": {
+    "language": "glsl"
+   },
+   "text": [
+    "// Example Compute Shader",
+    "",
+    "// uniform float exampleUniform;",
+    "",
+    "layout (local_size_x = 8, local_size_y = 4) in;",
+    "void main()",
+    "{",
+    "\t// This code is running 1:1 per pixel, so early-exit",
+    "\t// if this thread overhangs the edge of the output",
+    "\tif (any(greaterThanEqual(ivec2(gl_GlobalInvocationID.xy), ivec2(uTDOutputInfo.res.zw))))",
+    "\t\treturn;",
+    "",
+    "\tvec4 color;",
+    "\t//color = texelFetch(sTD2DInputs[0], ivec2(gl_GlobalInvocationID.xy), 0);",
+    "\tcolor = vec4(1.0);",
+    "\t// We need to use TDImageStoreOutput() so that 8-bit textures that are sRGB",
+    "\t// encoded can be written to correctly from incoming linear values.",
+    "\t// imageStore() does not do this automatically, while pixel shader outputs do.",
+    "\tTDImageStoreOutput(0, gl_GlobalInvocationID, color);",
+    "}"
+   ]
+  },
+  "prop3_n_info": {
+   "type": "infoDAT",
+   "family": "DAT",
+   "pos": [
+    160,
+    -120
+   ],
+   "pars": {
+    "language": "text",
+    "op": "prop3_n"
+   }
+  },
+  "prop3_n_pixel": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    0,
+    -120
+   ],
+   "pars": {
+    "extension": "frag",
+    "language": "glsl"
+   },
+   "text": [
+    "",
+    "// Example Pixel Shader",
+    "",
+    "// uniform float exampleUniform;",
+    "",
+    "out vec4 fragColor;",
+    "void main()",
+    "{",
+    "\t// vec4 color = texture(sTD2DInputs[0], vUV.st);",
+    "\tvec4 color = vec4(1.0);",
+    "\tfragColor = TDOutputSwizzle(color);",
+    "}"
+   ]
+  },
+  "prop3_p": {
+   "type": "glslTOP",
+   "family": "TOP",
+   "pos": [
+    150,
+    -140
+   ],
+   "inputs": [
+    [
+     "ctltex"
+    ],
+    [
+     "pagesw"
+    ],
+    [
+     "inlum"
+    ]
+   ],
+   "pars": {
+    "computedat": "prop3_p_compute",
+    "filtertype": "nearest",
+    "format": "rgba32float",
+    "inputfiltertype": "nearest",
+    "outputresolution": "custom",
+    "pixeldat": "field_frag",
+    "resolutionh": 2,
+    "resolutionw": 4,
+    "vec0name": "uOut",
+    "vec0valuex": 0.0,
+    "vec1name": "uProp",
+    "vec2name": "uSeed",
+    "vec2valuex": 13.0,
+    "vec3name": "uPages",
+    "vec3valuex": 8.0
+   }
+  },
+  "prop3_p_compute": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    320,
+    -120
+   ],
+   "pars": {
+    "language": "glsl"
+   },
+   "text": [
+    "// Example Compute Shader",
+    "",
+    "// uniform float exampleUniform;",
+    "",
+    "layout (local_size_x = 8, local_size_y = 4) in;",
+    "void main()",
+    "{",
+    "\t// This code is running 1:1 per pixel, so early-exit",
+    "\t// if this thread overhangs the edge of the output",
+    "\tif (any(greaterThanEqual(ivec2(gl_GlobalInvocationID.xy), ivec2(uTDOutputInfo.res.zw))))",
+    "\t\treturn;",
+    "",
+    "\tvec4 color;",
+    "\t//color = texelFetch(sTD2DInputs[0], ivec2(gl_GlobalInvocationID.xy), 0);",
+    "\tcolor = vec4(1.0);",
+    "\t// We need to use TDImageStoreOutput() so that 8-bit textures that are sRGB",
+    "\t// encoded can be written to correctly from incoming linear values.",
+    "\t// imageStore() does not do this automatically, while pixel shader outputs do.",
+    "\tTDImageStoreOutput(0, gl_GlobalInvocationID, color);",
+    "}"
+   ]
+  },
+  "prop3_p_info": {
+   "type": "infoDAT",
+   "family": "DAT",
+   "pos": [
+    160,
+    -120
+   ],
+   "pars": {
+    "language": "text",
+    "op": "prop3_p"
+   }
+  },
+  "prop3_p_pixel": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    0,
+    -120
+   ],
+   "pars": {
+    "extension": "frag",
+    "language": "glsl"
+   },
+   "text": [
+    "",
+    "// Example Pixel Shader",
+    "",
+    "// uniform float exampleUniform;",
+    "",
+    "out vec4 fragColor;",
+    "void main()",
+    "{",
+    "\t// vec4 color = texture(sTD2DInputs[0], vUV.st);",
+    "\tvec4 color = vec4(1.0);",
+    "\tfragColor = TDOutputSwizzle(color);",
+    "}"
+   ]
+  },
+  "prop3_u": {
+   "type": "glslTOP",
+   "family": "TOP",
+   "pos": [
+    450,
+    -140
+   ],
+   "inputs": [
+    [
+     "ctltex"
+    ],
+    [
+     "pagesw"
+    ],
+    [
+     "inlum"
+    ]
+   ],
+   "pars": {
+    "computedat": "prop3_u_compute",
+    "filtertype": "nearest",
+    "format": "rgba32float",
+    "inputfiltertype": "nearest",
+    "outputresolution": "custom",
+    "pixeldat": "field_frag",
+    "resolutionh": 2,
+    "resolutionw": 4,
+    "vec0name": "uOut",
+    "vec0valuex": 2.0,
+    "vec1name": "uProp",
+    "vec2name": "uSeed",
+    "vec2valuex": 13.0,
+    "vec3name": "uPages",
+    "vec3valuex": 8.0
+   }
+  },
+  "prop3_u_compute": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    320,
+    -120
+   ],
+   "pars": {
+    "language": "glsl"
+   },
+   "text": [
+    "// Example Compute Shader",
+    "",
+    "// uniform float exampleUniform;",
+    "",
+    "layout (local_size_x = 8, local_size_y = 4) in;",
+    "void main()",
+    "{",
+    "\t// This code is running 1:1 per pixel, so early-exit",
+    "\t// if this thread overhangs the edge of the output",
+    "\tif (any(greaterThanEqual(ivec2(gl_GlobalInvocationID.xy), ivec2(uTDOutputInfo.res.zw))))",
+    "\t\treturn;",
+    "",
+    "\tvec4 color;",
+    "\t//color = texelFetch(sTD2DInputs[0], ivec2(gl_GlobalInvocationID.xy), 0);",
+    "\tcolor = vec4(1.0);",
+    "\t// We need to use TDImageStoreOutput() so that 8-bit textures that are sRGB",
+    "\t// encoded can be written to correctly from incoming linear values.",
+    "\t// imageStore() does not do this automatically, while pixel shader outputs do.",
+    "\tTDImageStoreOutput(0, gl_GlobalInvocationID, color);",
+    "}"
+   ]
+  },
+  "prop3_u_info": {
+   "type": "infoDAT",
+   "family": "DAT",
+   "pos": [
+    160,
+    -120
+   ],
+   "pars": {
+    "language": "text",
+    "op": "prop3_u"
+   }
+  },
+  "prop3_u_pixel": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    0,
+    -120
+   ],
+   "pars": {
+    "extension": "frag",
+    "language": "glsl"
+   },
+   "text": [
+    "",
+    "// Example Pixel Shader",
+    "",
+    "// uniform float exampleUniform;",
+    "",
+    "out vec4 fragColor;",
+    "void main()",
+    "{",
+    "\t// vec4 color = texture(sTD2DInputs[0], vUV.st);",
+    "\tvec4 color = vec4(1.0);",
+    "\tfragColor = TDOutputSwizzle(color);",
+    "}"
+   ]
+  },
+  "render": {
+   "type": "renderTOP",
+   "family": "TOP",
+   "pos": [
+    1000,
+    0
+   ],
+   "pars": {
+    "bgcolorb": {
+     "expr": "op('tk')['hazeb']"
+    },
+    "bgcolorg": {
+     "expr": "op('tk')['hazeg']"
+    },
+    "bgcolorr": {
+     "expr": "op('tk')['hazer']"
+    },
+    "camera": "/project1/sc_paper_storm/cam",
+    "format": "rgba16float",
+    "geometry": "/project1/sc_paper_storm/sheets /project1/sc_paper_storm/backs /project1/sc_paper_storm/monolith /project1/sc_paper_storm/idol /project1/sc_paper_storm/hero /project1/sc_paper_storm/prop0 /project1/sc_paper_storm/prop1 /project1/sc_paper_storm/prop2 /project1/sc_paper_storm/prop3",
+    "lights": "/project1/sc_paper_storm/key /project1/sc_paper_storm/spot /project1/sc_paper_storm/amb /project1/sc_paper_storm/skyl /project1/sc_paper_storm/bouncel",
+    "resolutionh": 720,
+    "resolutionw": 1280
+   }
+  },
+  "ringenv": {
+   "type": "triggerCHOP",
+   "family": "CHOP",
+   "pos": [
+    100,
+    420
+   ],
+   "inputs": [
+    [
+     "hitslope"
+    ]
+   ],
+   "pars": {
+    "attack": 0.0,
+    "decay": 0.85,
+    "dshape": "linear",
+    "multitrigger": "restart",
+    "peaklen": 0.0,
+    "release": 0.0,
+    "sustain": 0.0,
+    "threshdown": 0.5,
+    "threshup": 0.5,
+    "timeslice": true
+   }
+  },
+  "sheet_c": {
+   "type": "glslTOP",
+   "family": "TOP",
+   "pos": [
+    600,
+    300
+   ],
+   "inputs": [
+    [
+     "ctltex"
+    ],
+    [
+     "pagesw"
+    ],
+    [
+     "inlum"
+    ]
+   ],
+   "pars": {
+    "computedat": "sheet_c_compute",
+    "filtertype": "nearest",
+    "format": "rgba32float",
+    "inputfiltertype": "nearest",
+    "outputresolution": "custom",
+    "pixeldat": "field_frag",
+    "resolutionh": 96,
+    "resolutionw": 64,
+    "vec0name": "uOut",
+    "vec0valuex": 3.0,
+    "vec1name": "uProp",
+    "vec1valuex": 0.0,
+    "vec2name": "uSeed",
+    "vec3name": "uPages",
+    "vec3valuex": 8.0
+   }
+  },
+  "sheet_c_compute": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    320,
+    -120
+   ],
+   "pars": {
+    "language": "glsl"
+   },
+   "text": [
+    "// Example Compute Shader",
+    "",
+    "// uniform float exampleUniform;",
+    "",
+    "layout (local_size_x = 8, local_size_y = 4) in;",
+    "void main()",
+    "{",
+    "\t// This code is running 1:1 per pixel, so early-exit",
+    "\t// if this thread overhangs the edge of the output",
+    "\tif (any(greaterThanEqual(ivec2(gl_GlobalInvocationID.xy), ivec2(uTDOutputInfo.res.zw))))",
+    "\t\treturn;",
+    "",
+    "\tvec4 color;",
+    "\t//color = texelFetch(sTD2DInputs[0], ivec2(gl_GlobalInvocationID.xy), 0);",
+    "\tcolor = vec4(1.0);",
+    "\t// We need to use TDImageStoreOutput() so that 8-bit textures that are sRGB",
+    "\t// encoded can be written to correctly from incoming linear values.",
+    "\t// imageStore() does not do this automatically, while pixel shader outputs do.",
+    "\tTDImageStoreOutput(0, gl_GlobalInvocationID, color);",
+    "}"
+   ]
+  },
+  "sheet_c_info": {
+   "type": "infoDAT",
+   "family": "DAT",
+   "pos": [
+    160,
+    -120
+   ],
+   "pars": {
+    "language": "text",
+    "op": "sheet_c"
+   }
+  },
+  "sheet_c_pixel": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    0,
+    -120
+   ],
+   "pars": {
+    "extension": "frag",
+    "language": "glsl"
+   },
+   "text": [
+    "",
+    "// Example Pixel Shader",
+    "",
+    "// uniform float exampleUniform;",
+    "",
+    "out vec4 fragColor;",
+    "void main()",
+    "{",
+    "\t// vec4 color = texture(sTD2DInputs[0], vUV.st);",
+    "\tvec4 color = vec4(1.0);",
+    "\tfragColor = TDOutputSwizzle(color);",
+    "}"
+   ]
+  },
+  "sheet_n": {
+   "type": "glslTOP",
+   "family": "TOP",
+   "pos": [
+    300,
+    300
+   ],
+   "inputs": [
+    [
+     "ctltex"
+    ],
+    [
+     "pagesw"
+    ],
+    [
+     "inlum"
+    ]
+   ],
+   "pars": {
+    "computedat": "sheet_n_compute",
+    "filtertype": "nearest",
+    "format": "rgba32float",
+    "inputfiltertype": "nearest",
+    "outputresolution": "custom",
+    "pixeldat": "field_frag",
+    "resolutionh": 96,
+    "resolutionw": 64,
+    "vec0name": "uOut",
+    "vec0valuex": 1.0,
+    "vec1name": "uProp",
+    "vec1valuex": 0.0,
+    "vec2name": "uSeed",
+    "vec3name": "uPages",
+    "vec3valuex": 8.0
+   }
+  },
+  "sheet_n_compute": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    320,
+    -120
+   ],
+   "pars": {
+    "language": "glsl"
+   },
+   "text": [
+    "// Example Compute Shader",
+    "",
+    "// uniform float exampleUniform;",
+    "",
+    "layout (local_size_x = 8, local_size_y = 4) in;",
+    "void main()",
+    "{",
+    "\t// This code is running 1:1 per pixel, so early-exit",
+    "\t// if this thread overhangs the edge of the output",
+    "\tif (any(greaterThanEqual(ivec2(gl_GlobalInvocationID.xy), ivec2(uTDOutputInfo.res.zw))))",
+    "\t\treturn;",
+    "",
+    "\tvec4 color;",
+    "\t//color = texelFetch(sTD2DInputs[0], ivec2(gl_GlobalInvocationID.xy), 0);",
+    "\tcolor = vec4(1.0);",
+    "\t// We need to use TDImageStoreOutput() so that 8-bit textures that are sRGB",
+    "\t// encoded can be written to correctly from incoming linear values.",
+    "\t// imageStore() does not do this automatically, while pixel shader outputs do.",
+    "\tTDImageStoreOutput(0, gl_GlobalInvocationID, color);",
+    "}"
+   ]
+  },
+  "sheet_n_info": {
+   "type": "infoDAT",
+   "family": "DAT",
+   "pos": [
+    160,
+    -120
+   ],
+   "pars": {
+    "language": "text",
+    "op": "sheet_n"
+   }
+  },
+  "sheet_n_pixel": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    0,
+    -120
+   ],
+   "pars": {
+    "extension": "frag",
+    "language": "glsl"
+   },
+   "text": [
+    "",
+    "// Example Pixel Shader",
+    "",
+    "// uniform float exampleUniform;",
+    "",
+    "out vec4 fragColor;",
+    "void main()",
+    "{",
+    "\t// vec4 color = texture(sTD2DInputs[0], vUV.st);",
+    "\tvec4 color = vec4(1.0);",
+    "\tfragColor = TDOutputSwizzle(color);",
+    "}"
+   ]
+  },
+  "sheet_p": {
+   "type": "glslTOP",
+   "family": "TOP",
+   "pos": [
+    150,
+    300
+   ],
+   "inputs": [
+    [
+     "ctltex"
+    ],
+    [
+     "pagesw"
+    ],
+    [
+     "inlum"
+    ]
+   ],
+   "pars": {
+    "computedat": "sheet_p_compute",
+    "filtertype": "nearest",
+    "format": "rgba32float",
+    "inputfiltertype": "nearest",
+    "outputresolution": "custom",
+    "pixeldat": "field_frag",
+    "resolutionh": 96,
+    "resolutionw": 64,
+    "vec0name": "uOut",
+    "vec0valuex": 0.0,
+    "vec1name": "uProp",
+    "vec1valuex": 0.0,
+    "vec2name": "uSeed",
+    "vec3name": "uPages",
+    "vec3valuex": 8.0
+   }
+  },
+  "sheet_p_compute": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    320,
+    -120
+   ],
+   "pars": {
+    "language": "glsl"
+   },
+   "text": [
+    "// Example Compute Shader",
+    "",
+    "// uniform float exampleUniform;",
+    "",
+    "layout (local_size_x = 8, local_size_y = 4) in;",
+    "void main()",
+    "{",
+    "\t// This code is running 1:1 per pixel, so early-exit",
+    "\t// if this thread overhangs the edge of the output",
+    "\tif (any(greaterThanEqual(ivec2(gl_GlobalInvocationID.xy), ivec2(uTDOutputInfo.res.zw))))",
+    "\t\treturn;",
+    "",
+    "\tvec4 color;",
+    "\t//color = texelFetch(sTD2DInputs[0], ivec2(gl_GlobalInvocationID.xy), 0);",
+    "\tcolor = vec4(1.0);",
+    "\t// We need to use TDImageStoreOutput() so that 8-bit textures that are sRGB",
+    "\t// encoded can be written to correctly from incoming linear values.",
+    "\t// imageStore() does not do this automatically, while pixel shader outputs do.",
+    "\tTDImageStoreOutput(0, gl_GlobalInvocationID, color);",
+    "}"
+   ]
+  },
+  "sheet_p_info": {
+   "type": "infoDAT",
+   "family": "DAT",
+   "pos": [
+    160,
+    -120
+   ],
+   "pars": {
+    "language": "text",
+    "op": "sheet_p"
+   }
+  },
+  "sheet_p_pixel": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    0,
+    -120
+   ],
+   "pars": {
+    "extension": "frag",
+    "language": "glsl"
+   },
+   "text": [
+    "",
+    "// Example Pixel Shader",
+    "",
+    "// uniform float exampleUniform;",
+    "",
+    "out vec4 fragColor;",
+    "void main()",
+    "{",
+    "\t// vec4 color = texture(sTD2DInputs[0], vUV.st);",
+    "\tvec4 color = vec4(1.0);",
+    "\tfragColor = TDOutputSwizzle(color);",
+    "}"
+   ]
+  },
+  "sheet_u": {
+   "type": "glslTOP",
+   "family": "TOP",
+   "pos": [
+    450,
+    300
+   ],
+   "inputs": [
+    [
+     "ctltex"
+    ],
+    [
+     "pagesw"
+    ],
+    [
+     "inlum"
+    ]
+   ],
+   "pars": {
+    "computedat": "sheet_u_compute",
+    "filtertype": "nearest",
+    "format": "rgba32float",
+    "inputfiltertype": "nearest",
+    "outputresolution": "custom",
+    "pixeldat": "field_frag",
+    "resolutionh": 96,
+    "resolutionw": 64,
+    "vec0name": "uOut",
+    "vec0valuex": 2.0,
+    "vec1name": "uProp",
+    "vec1valuex": 0.0,
+    "vec2name": "uSeed",
+    "vec3name": "uPages",
+    "vec3valuex": 8.0
+   }
+  },
+  "sheet_u_compute": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    320,
+    -120
+   ],
+   "pars": {
+    "language": "glsl"
+   },
+   "text": [
+    "// Example Compute Shader",
+    "",
+    "// uniform float exampleUniform;",
+    "",
+    "layout (local_size_x = 8, local_size_y = 4) in;",
+    "void main()",
+    "{",
+    "\t// This code is running 1:1 per pixel, so early-exit",
+    "\t// if this thread overhangs the edge of the output",
+    "\tif (any(greaterThanEqual(ivec2(gl_GlobalInvocationID.xy), ivec2(uTDOutputInfo.res.zw))))",
+    "\t\treturn;",
+    "",
+    "\tvec4 color;",
+    "\t//color = texelFetch(sTD2DInputs[0], ivec2(gl_GlobalInvocationID.xy), 0);",
+    "\tcolor = vec4(1.0);",
+    "\t// We need to use TDImageStoreOutput() so that 8-bit textures that are sRGB",
+    "\t// encoded can be written to correctly from incoming linear values.",
+    "\t// imageStore() does not do this automatically, while pixel shader outputs do.",
+    "\tTDImageStoreOutput(0, gl_GlobalInvocationID, color);",
+    "}"
+   ]
+  },
+  "sheet_u_info": {
+   "type": "infoDAT",
+   "family": "DAT",
+   "pos": [
+    160,
+    -120
+   ],
+   "pars": {
+    "language": "text",
+    "op": "sheet_u"
+   }
+  },
+  "sheet_u_pixel": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    0,
+    -120
+   ],
+   "pars": {
+    "extension": "frag",
+    "language": "glsl"
+   },
+   "text": [
+    "",
+    "// Example Pixel Shader",
+    "",
+    "// uniform float exampleUniform;",
+    "",
+    "out vec4 fragColor;",
+    "void main()",
+    "{",
+    "\t// vec4 color = texture(sTD2DInputs[0], vUV.st);",
+    "\tvec4 color = vec4(1.0);",
+    "\tfragColor = TDOutputSwizzle(color);",
+    "}"
+   ]
+  },
+  "sheets": {
+   "type": "geometryCOMP",
+   "family": "COMP",
+   "pos": [
+    800,
+    300
+   ],
+   "pars": {
+    "instanceb": "b",
+    "instancecolormode": "multiply",
+    "instancecolorop": "/project1/sc_paper_storm/sheet_c",
+    "instanceg": "g",
+    "instanceop": "/project1/sc_paper_storm/sheet_p",
+    "instancer": "r",
+    "instancerottoforward": "posy",
+    "instancerottoop": "/project1/sc_paper_storm/sheet_n",
+    "instancerottox": "r",
+    "instancerottoy": "g",
+    "instancerottoz": "b",
+    "instancerotupop": "/project1/sc_paper_storm/sheet_u",
+    "instancerotupx": "r",
+    "instancerotupy": "g",
+    "instancerotupz": "b",
+    "instancetexindex": "a",
+    "instancetexindexop": "/project1/sc_paper_storm/sheet_p",
+    "instancetexs": "/project1/sc_paper_storm/sheets/face0 /project1/sc_paper_storm/sheets/face1 /project1/sc_paper_storm/sheets/face2",
+    "instancetx": "r",
+    "instancety": "g",
+    "instancetz": "b",
+    "instancing": true,
+    "material": "/project1/sc_paper_storm/sheets/mat",
+    "render": {
+     "expr": "op('tk')['sheets'] > 0.5"
+    }
+   }
+  },
+  "sheets/dform_a_bg": {
+   "type": "constantTOP",
+   "family": "TOP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "colorb": 0.933,
+    "colorg": 0.957,
+    "colorr": 0.965,
+    "outputresolution": "custom",
+    "resolutionh": 512,
+    "resolutionw": 512
+   }
+  },
+  "sheets/dform_a_mid": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    0,
+    0
+   ],
+   "inputs": [
+    [
+     "sheets/dform_a_small"
+    ]
+   ],
+   "pars": {
+    "alignx": "left",
+    "aligny": "bottom",
+    "fontcolorb": 0.12,
+    "fontcolorg": 0.1,
+    "fontcolorr": 0.1,
+    "fontfile": {
+     "expr": "mod.paths.font('barlow')"
+    },
+    "fontsizex": {
+     "expr": "28.0 * (1 if mod.paths.font('barlow') else 0.6)"
+    },
+    "fontsizexunit": "pixels",
+    "resmult": false,
+    "specdat": "dform_a_mid_spec"
+   }
+  },
+  "sheets/dform_a_mid_spec": {
+   "type": "tableDAT",
+   "family": "DAT",
+   "pos": [
+    0,
+    0
+   ],
+   "text": [
+    "x\ty\ttext",
+    "24\t312\tONE SHEET OF PAPER, 6144 COPIES",
+    "24\t250\tMODEL",
+    "176\t250\tone flat sheet, 2 triangles",
+    "24\t196\tCOPIES",
+    "176\t196\t6144, all drawn at once",
+    "24\t142\tPLACED BY",
+    "176\t142\tone shader, every frame",
+    "24\t88\tPRINT",
+    "176\t88\t3 sheets like this, mixed"
+   ]
+  },
+  "sheets/dform_a_small": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    0,
+    0
+   ],
+   "inputs": [
+    [
+     "sheets/dform_a_bg"
+    ]
+   ],
+   "pars": {
+    "alignx": "left",
+    "aligny": "bottom",
+    "fontcolorb": 0.12,
+    "fontcolorg": 0.1,
+    "fontcolorr": 0.1,
+    "fontfile": {
+     "expr": "mod.paths.font('barlow')"
+    },
+    "fontsizex": {
+     "expr": "17.0 * (1 if mod.paths.font('barlow') else 0.6)"
+    },
+    "fontsizexunit": "pixels",
+    "resmult": false,
+    "specdat": "dform_a_small_spec"
+   }
+  },
+  "sheets/dform_a_small_spec": {
+   "type": "tableDAT",
+   "family": "DAT",
+   "pos": [
+    0,
+    0
+   ],
+   "text": [
+    "x\ty\ttext",
+    "24\t468\tHOW THIS PICTURE IS MADE   1 OF 3",
+    "24\t20\tTOUCHDESIGNER   GEOMETRY COMP INSTANCING",
+    "24\t458\t________________________________________________________________________",
+    "172\t244\t_________________________________________________",
+    "172\t190\t_________________________________________________",
+    "172\t136\t_________________________________________________",
+    "172\t82\t_________________________________________________"
+   ]
+  },
+  "sheets/dform_a_title": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    0,
+    0
+   ],
+   "inputs": [
+    [
+     "sheets/dform_a_mid"
+    ]
+   ],
+   "pars": {
+    "alignx": "left",
+    "aligny": "bottom",
+    "fontcolorb": 0.12,
+    "fontcolorg": 0.1,
+    "fontcolorr": 0.1,
+    "fontfile": {
+     "expr": "mod.paths.font('barlow')"
+    },
+    "fontsizex": {
+     "expr": "104.0 * (1 if mod.paths.font('barlow') else 0.6)"
+    },
+    "fontsizexunit": "pixels",
+    "resmult": false,
+    "specdat": "dform_a_title_spec"
+   }
+  },
+  "sheets/dform_a_title_spec": {
+   "type": "tableDAT",
+   "family": "DAT",
+   "pos": [
+    0,
+    0
+   ],
+   "text": [
+    "x\ty\ttext",
+    "20\t354\tINSTANCING"
+   ]
+  },
+  "sheets/dform_b_bg": {
+   "type": "constantTOP",
+   "family": "TOP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "colorb": 0.933,
+    "colorg": 0.957,
+    "colorr": 0.965,
+    "outputresolution": "custom",
+    "resolutionh": 512,
+    "resolutionw": 512
+   }
+  },
+  "sheets/dform_b_mid": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    0,
+    0
+   ],
+   "inputs": [
+    [
+     "sheets/dform_b_small"
+    ]
+   ],
+   "pars": {
+    "alignx": "left",
+    "aligny": "bottom",
+    "fontcolorb": 0.12,
+    "fontcolorg": 0.1,
+    "fontcolorr": 0.1,
+    "fontfile": {
+     "expr": "mod.paths.font('barlow')"
+    },
+    "fontsizex": {
+     "expr": "28.0 * (1 if mod.paths.font('barlow') else 0.6)"
+    },
+    "fontsizexunit": "pixels",
+    "resmult": false,
+    "specdat": "dform_b_mid_spec"
+   }
+  },
+  "sheets/dform_b_mid_spec": {
+   "type": "tableDAT",
+   "family": "DAT",
+   "pos": [
+    0,
+    0
+   ],
+   "text": [
+    "x\ty\ttext",
+    "24\t312\tDECIDES WHERE EVERY SHEET GOES",
+    "24\t250\tOUTPUT",
+    "176\t250\ta 64 x 96 pixel texture",
+    "24\t196\t1 PIXEL",
+    "176\t196\t= 1 sheet of paper",
+    "24\t142\tITS COLOUR",
+    "176\t142\t= the position x, y, z",
+    "24\t88\tALSO",
+    "176\t88\tfacing, up and tint"
+   ]
+  },
+  "sheets/dform_b_small": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    0,
+    0
+   ],
+   "inputs": [
+    [
+     "sheets/dform_b_bg"
+    ]
+   ],
+   "pars": {
+    "alignx": "left",
+    "aligny": "bottom",
+    "fontcolorb": 0.12,
+    "fontcolorg": 0.1,
+    "fontcolorr": 0.1,
+    "fontfile": {
+     "expr": "mod.paths.font('barlow')"
+    },
+    "fontsizex": {
+     "expr": "17.0 * (1 if mod.paths.font('barlow') else 0.6)"
+    },
+    "fontsizexunit": "pixels",
+    "resmult": false,
+    "specdat": "dform_b_small_spec"
+   }
+  },
+  "sheets/dform_b_small_spec": {
+   "type": "tableDAT",
+   "family": "DAT",
+   "pos": [
+    0,
+    0
+   ],
+   "text": [
+    "x\ty\ttext",
+    "24\t468\tHOW THIS PICTURE IS MADE   2 OF 3",
+    "24\t20\tTOUCHDESIGNER   GLSL TOP TO INSTANCES",
+    "24\t458\t________________________________________________________________________",
+    "172\t244\t_________________________________________________",
+    "172\t190\t_________________________________________________",
+    "172\t136\t_________________________________________________",
+    "172\t82\t_________________________________________________"
+   ]
+  },
+  "sheets/dform_b_title": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    0,
+    0
+   ],
+   "inputs": [
+    [
+     "sheets/dform_b_mid"
+    ]
+   ],
+   "pars": {
+    "alignx": "left",
+    "aligny": "bottom",
+    "fontcolorb": 0.12,
+    "fontcolorg": 0.1,
+    "fontcolorr": 0.1,
+    "fontfile": {
+     "expr": "mod.paths.font('barlow')"
+    },
+    "fontsizex": {
+     "expr": "104.0 * (1 if mod.paths.font('barlow') else 0.6)"
+    },
+    "fontsizexunit": "pixels",
+    "resmult": false,
+    "specdat": "dform_b_title_spec"
+   }
+  },
+  "sheets/dform_b_title_spec": {
+   "type": "tableDAT",
+   "family": "DAT",
+   "pos": [
+    0,
+    0
+   ],
+   "text": [
+    "x\ty\ttext",
+    "20\t354\tONE SHADER"
+   ]
+  },
+  "sheets/dform_c_bg": {
+   "type": "constantTOP",
+   "family": "TOP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "colorb": 0.77,
+    "colorg": 0.71,
+    "colorr": 0.94,
+    "outputresolution": "custom",
+    "resolutionh": 512,
+    "resolutionw": 512
+   }
+  },
+  "sheets/dform_c_mid": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    0,
+    0
+   ],
+   "inputs": [
+    [
+     "sheets/dform_c_small"
+    ]
+   ],
+   "pars": {
+    "alignx": "left",
+    "aligny": "bottom",
+    "fontcolorb": 0.17,
+    "fontcolorg": 0.09,
+    "fontcolorr": 0.58,
+    "fontfile": {
+     "expr": "mod.paths.font('barlow')"
+    },
+    "fontsizex": {
+     "expr": "28.0 * (1 if mod.paths.font('barlow') else 0.6)"
+    },
+    "fontsizexunit": "pixels",
+    "resmult": false,
+    "specdat": "dform_c_mid_spec"
+   }
+  },
+  "sheets/dform_c_mid_spec": {
+   "type": "tableDAT",
+   "family": "DAT",
+   "pos": [
+    0,
+    0
+   ],
+   "text": [
+    "x\ty\ttext",
+    "24\t312\tTHE MUSIC MOVES THE PAPER",
+    "24\t250\tBEAT",
+    "176\t250\tsheets flip or step",
+    "24\t196\tKICK DRUM",
+    "176\t196\tsheets are thrown",
+    "24\t142\tEACH SHOT",
+    "176\t142\ta new variation",
+    "24\t88\tSENT AS",
+    "176\t88\ta small texture"
+   ]
+  },
+  "sheets/dform_c_small": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    0,
+    0
+   ],
+   "inputs": [
+    [
+     "sheets/dform_c_bg"
+    ]
+   ],
+   "pars": {
+    "alignx": "left",
+    "aligny": "bottom",
+    "fontcolorb": 0.17,
+    "fontcolorg": 0.09,
+    "fontcolorr": 0.58,
+    "fontfile": {
+     "expr": "mod.paths.font('barlow')"
+    },
+    "fontsizex": {
+     "expr": "17.0 * (1 if mod.paths.font('barlow') else 0.6)"
+    },
+    "fontsizexunit": "pixels",
+    "resmult": false,
+    "specdat": "dform_c_small_spec"
+   }
+  },
+  "sheets/dform_c_small_spec": {
+   "type": "tableDAT",
+   "family": "DAT",
+   "pos": [
+    0,
+    0
+   ],
+   "text": [
+    "x\ty\ttext",
+    "24\t468\tHOW THIS PICTURE IS MADE   3 OF 3",
+    "24\t20\tTOUCHDESIGNER   AUDIO VALUES TO THE SHADER",
+    "24\t458\t________________________________________________________________________",
+    "172\t244\t_________________________________________________",
+    "172\t190\t_________________________________________________",
+    "172\t136\t_________________________________________________",
+    "172\t82\t_________________________________________________"
+   ]
+  },
+  "sheets/dform_c_title": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    0,
+    0
+   ],
+   "inputs": [
+    [
+     "sheets/dform_c_mid"
+    ]
+   ],
+   "pars": {
+    "alignx": "left",
+    "aligny": "bottom",
+    "fontcolorb": 0.17,
+    "fontcolorg": 0.09,
+    "fontcolorr": 0.58,
+    "fontfile": {
+     "expr": "mod.paths.font('barlow')"
+    },
+    "fontsizex": {
+     "expr": "104.0 * (1 if mod.paths.font('barlow') else 0.6)"
+    },
+    "fontsizexunit": "pixels",
+    "resmult": false,
+    "specdat": "dform_c_title_spec"
+   }
+  },
+  "sheets/dform_c_title_spec": {
+   "type": "tableDAT",
+   "family": "DAT",
+   "pos": [
+    0,
+    0
+   ],
+   "text": [
+    "x\ty\ttext",
+    "20\t354\tON THE BEAT"
+   ]
+  },
+  "sheets/face0": {
+   "type": "switchTOP",
+   "family": "TOP",
+   "pos": [
+    300,
+    200
+   ],
+   "inputs": [
+    [
+     "sheets/pic0"
+    ],
+    [
+     "sheets/dform_a_title"
+    ],
+    [
+     "sheets/print0"
+    ]
+   ],
+   "pars": {
+    "index": {
+     "expr": "2 if op('../mode')['inp'] else int(op('../mode')['describe'])"
+    }
+   }
+  },
+  "sheets/face1": {
+   "type": "switchTOP",
+   "family": "TOP",
+   "pos": [
+    300,
+    80
+   ],
+   "inputs": [
+    [
+     "sheets/pic1"
+    ],
+    [
+     "sheets/dform_b_title"
+    ],
+    [
+     "sheets/print1"
+    ]
+   ],
+   "pars": {
+    "index": {
+     "expr": "2 if op('../mode')['inp'] else int(op('../mode')['describe'])"
+    }
+   }
+  },
+  "sheets/face2": {
+   "type": "switchTOP",
+   "family": "TOP",
+   "pos": [
+    300,
+    -40
+   ],
+   "inputs": [
+    [
+     "sheets/pic2"
+    ],
+    [
+     "sheets/dform_c_title"
+    ],
+    [
+     "sheets/print2"
+    ]
+   ],
+   "pars": {
+    "index": {
+     "expr": "2 if op('../mode')['inp'] else int(op('../mode')['describe'])"
+    }
+   }
+  },
+  "sheets/mat": {
+   "type": "pbrMAT",
+   "family": "MAT",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "basecolormap": "/project1/sc_paper_storm/sheets/tex",
+    "cullface": "backfaces",
+    "emitb": 0.06,
+    "emitg": 0.045,
+    "emitr": 0.035,
+    "metallic": 0.0,
+    "roughness": 0.85,
+    "writecameradepthtoalpha": true
+   }
+  },
+  "sheets/mesh": {
+   "type": "fileinPOP",
+   "family": "POP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.here('meshes/sheet_front.obj')"
+    }
+   }
+  },
+  "sheets/pic0": {
+   "type": "switchTOP",
+   "family": "TOP",
+   "pos": [
+    150,
+    200
+   ],
+   "inputs": [
+    [
+     "sheets/tex"
+    ],
+    [
+     "sheets/sform0_title"
+    ]
+   ],
+   "pars": {
+    "index": {
+     "expr": "0 if bool(mod.paths.model_texture('blueprint')) else 1"
+    }
+   }
+  },
+  "sheets/pic1": {
+   "type": "switchTOP",
+   "family": "TOP",
+   "pos": [
+    150,
+    80
+   ],
+   "inputs": [
+    [
+     "sheets/tex1"
+    ],
+    [
+     "sheets/sform1_title"
+    ]
+   ],
+   "pars": {
+    "index": {
+     "expr": "0 if bool(mod.paths.model_texture('star_chart')) else 1"
+    }
+   }
+  },
+  "sheets/pic2": {
+   "type": "switchTOP",
+   "family": "TOP",
+   "pos": [
+    150,
+    -40
+   ],
+   "inputs": [
+    [
+     "sheets/tex2"
+    ],
+    [
+     "sheets/sform2_title"
+    ]
+   ],
+   "pars": {
+    "index": {
+     "expr": "0 if bool(mod.paths.model_texture('ticket')) else 1"
+    }
+   }
+  },
+  "sheets/print0": {
+   "type": "glslTOP",
+   "family": "TOP",
+   "pos": [
+    0,
+    0
+   ],
+   "inputs": [
+    [
+     "sheets/print0_in"
+    ]
+   ],
+   "pars": {
+    "computedat": "print0_compute",
+    "inputfiltertype": "mipmap",
+    "outputresolution": "custom",
+    "pixeldat": "../print_frag",
+    "resolutionh": 512,
+    "resolutionw": 512,
+    "vec0name": "uPaper",
+    "vec0valuex": 0.965,
+    "vec0valuey": 0.957,
+    "vec0valuez": 0.933,
+    "vec1name": "uDuo",
+    "vec1valuew": 0.0
+   }
+  },
+  "sheets/print0_compute": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    320,
+    -120
+   ],
+   "pars": {
+    "language": "glsl"
+   },
+   "text": [
+    "// Example Compute Shader",
+    "",
+    "// uniform float exampleUniform;",
+    "",
+    "layout (local_size_x = 8, local_size_y = 4) in;",
+    "void main()",
+    "{",
+    "\t// This code is running 1:1 per pixel, so early-exit",
+    "\t// if this thread overhangs the edge of the output",
+    "\tif (any(greaterThanEqual(ivec2(gl_GlobalInvocationID.xy), ivec2(uTDOutputInfo.res.zw))))",
+    "\t\treturn;",
+    "",
+    "\tvec4 color;",
+    "\t//color = texelFetch(sTD2DInputs[0], ivec2(gl_GlobalInvocationID.xy), 0);",
+    "\tcolor = vec4(1.0);",
+    "\t// We need to use TDImageStoreOutput() so that 8-bit textures that are sRGB",
+    "\t// encoded can be written to correctly from incoming linear values.",
+    "\t// imageStore() does not do this automatically, while pixel shader outputs do.",
+    "\tTDImageStoreOutput(0, gl_GlobalInvocationID, color);",
+    "}"
+   ]
+  },
+  "sheets/print0_in": {
+   "type": "selectTOP",
+   "family": "TOP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "top": "../inp"
+   }
+  },
+  "sheets/print0_info": {
+   "type": "infoDAT",
+   "family": "DAT",
+   "pos": [
+    160,
+    -120
+   ],
+   "pars": {
+    "language": "text",
+    "op": "print0"
+   }
+  },
+  "sheets/print0_pixel": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    0,
+    -120
+   ],
+   "pars": {
+    "extension": "frag",
+    "language": "glsl"
+   },
+   "text": [
+    "",
+    "// Example Pixel Shader",
+    "",
+    "// uniform float exampleUniform;",
+    "",
+    "out vec4 fragColor;",
+    "void main()",
+    "{",
+    "\t// vec4 color = texture(sTD2DInputs[0], vUV.st);",
+    "\tvec4 color = vec4(1.0);",
+    "\tfragColor = TDOutputSwizzle(color);",
+    "}"
+   ]
+  },
+  "sheets/print1": {
+   "type": "glslTOP",
+   "family": "TOP",
+   "pos": [
+    0,
+    0
+   ],
+   "inputs": [
+    [
+     "sheets/print1_in"
+    ]
+   ],
+   "pars": {
+    "computedat": "print1_compute",
+    "inputfiltertype": "mipmap",
+    "outputresolution": "custom",
+    "pixeldat": "../print_frag",
+    "resolutionh": 512,
+    "resolutionw": 512,
+    "vec0name": "uPaper",
+    "vec0valuex": 0.965,
+    "vec0valuey": 0.957,
+    "vec0valuez": 0.933,
+    "vec1name": "uDuo",
+    "vec1valuew": 0.0
+   }
+  },
+  "sheets/print1_compute": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    320,
+    -120
+   ],
+   "pars": {
+    "language": "glsl"
+   },
+   "text": [
+    "// Example Compute Shader",
+    "",
+    "// uniform float exampleUniform;",
+    "",
+    "layout (local_size_x = 8, local_size_y = 4) in;",
+    "void main()",
+    "{",
+    "\t// This code is running 1:1 per pixel, so early-exit",
+    "\t// if this thread overhangs the edge of the output",
+    "\tif (any(greaterThanEqual(ivec2(gl_GlobalInvocationID.xy), ivec2(uTDOutputInfo.res.zw))))",
+    "\t\treturn;",
+    "",
+    "\tvec4 color;",
+    "\t//color = texelFetch(sTD2DInputs[0], ivec2(gl_GlobalInvocationID.xy), 0);",
+    "\tcolor = vec4(1.0);",
+    "\t// We need to use TDImageStoreOutput() so that 8-bit textures that are sRGB",
+    "\t// encoded can be written to correctly from incoming linear values.",
+    "\t// imageStore() does not do this automatically, while pixel shader outputs do.",
+    "\tTDImageStoreOutput(0, gl_GlobalInvocationID, color);",
+    "}"
+   ]
+  },
+  "sheets/print1_in": {
+   "type": "selectTOP",
+   "family": "TOP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "top": "../inp"
+   }
+  },
+  "sheets/print1_info": {
+   "type": "infoDAT",
+   "family": "DAT",
+   "pos": [
+    160,
+    -120
+   ],
+   "pars": {
+    "language": "text",
+    "op": "print1"
+   }
+  },
+  "sheets/print1_pixel": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    0,
+    -120
+   ],
+   "pars": {
+    "extension": "frag",
+    "language": "glsl"
+   },
+   "text": [
+    "",
+    "// Example Pixel Shader",
+    "",
+    "// uniform float exampleUniform;",
+    "",
+    "out vec4 fragColor;",
+    "void main()",
+    "{",
+    "\t// vec4 color = texture(sTD2DInputs[0], vUV.st);",
+    "\tvec4 color = vec4(1.0);",
+    "\tfragColor = TDOutputSwizzle(color);",
+    "}"
+   ]
+  },
+  "sheets/print2": {
+   "type": "glslTOP",
+   "family": "TOP",
+   "pos": [
+    0,
+    0
+   ],
+   "inputs": [
+    [
+     "sheets/print2_in"
+    ]
+   ],
+   "pars": {
+    "computedat": "print2_compute",
+    "inputfiltertype": "mipmap",
+    "outputresolution": "custom",
+    "pixeldat": "../print_frag",
+    "resolutionh": 512,
+    "resolutionw": 512,
+    "vec0name": "uPaper",
+    "vec0valuex": 0.94,
+    "vec0valuey": 0.71,
+    "vec0valuez": 0.77,
+    "vec1name": "uDuo",
+    "vec1valuew": 0.0
+   }
+  },
+  "sheets/print2_compute": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    320,
+    -120
+   ],
+   "pars": {
+    "language": "glsl"
+   },
+   "text": [
+    "// Example Compute Shader",
+    "",
+    "// uniform float exampleUniform;",
+    "",
+    "layout (local_size_x = 8, local_size_y = 4) in;",
+    "void main()",
+    "{",
+    "\t// This code is running 1:1 per pixel, so early-exit",
+    "\t// if this thread overhangs the edge of the output",
+    "\tif (any(greaterThanEqual(ivec2(gl_GlobalInvocationID.xy), ivec2(uTDOutputInfo.res.zw))))",
+    "\t\treturn;",
+    "",
+    "\tvec4 color;",
+    "\t//color = texelFetch(sTD2DInputs[0], ivec2(gl_GlobalInvocationID.xy), 0);",
+    "\tcolor = vec4(1.0);",
+    "\t// We need to use TDImageStoreOutput() so that 8-bit textures that are sRGB",
+    "\t// encoded can be written to correctly from incoming linear values.",
+    "\t// imageStore() does not do this automatically, while pixel shader outputs do.",
+    "\tTDImageStoreOutput(0, gl_GlobalInvocationID, color);",
+    "}"
+   ]
+  },
+  "sheets/print2_in": {
+   "type": "selectTOP",
+   "family": "TOP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "top": "../inp"
+   }
+  },
+  "sheets/print2_info": {
+   "type": "infoDAT",
+   "family": "DAT",
+   "pos": [
+    160,
+    -120
+   ],
+   "pars": {
+    "language": "text",
+    "op": "print2"
+   }
+  },
+  "sheets/print2_pixel": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    0,
+    -120
+   ],
+   "pars": {
+    "extension": "frag",
+    "language": "glsl"
+   },
+   "text": [
+    "",
+    "// Example Pixel Shader",
+    "",
+    "// uniform float exampleUniform;",
+    "",
+    "out vec4 fragColor;",
+    "void main()",
+    "{",
+    "\t// vec4 color = texture(sTD2DInputs[0], vUV.st);",
+    "\tvec4 color = vec4(1.0);",
+    "\tfragColor = TDOutputSwizzle(color);",
+    "}"
+   ]
+  },
+  "sheets/sform0_bg": {
+   "type": "constantTOP",
+   "family": "TOP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "colorb": 0.933,
+    "colorg": 0.957,
+    "colorr": 0.965,
+    "outputresolution": "custom",
+    "resolutionh": 512,
+    "resolutionw": 512
+   }
+  },
+  "sheets/sform0_mid": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    0,
+    0
+   ],
+   "inputs": [
+    [
+     "sheets/sform0_small"
+    ]
+   ],
+   "pars": {
+    "alignx": "left",
+    "aligny": "bottom",
+    "fontcolorb": 0.12,
+    "fontcolorg": 0.1,
+    "fontcolorr": 0.1,
+    "fontfile": {
+     "expr": "mod.paths.font('barlow')"
+    },
+    "fontsizex": {
+     "expr": "28.0 * (1 if mod.paths.font('barlow') else 0.6)"
+    },
+    "fontsizexunit": "pixels",
+    "resmult": false,
+    "specdat": "sform0_mid_spec"
+   }
+  },
+  "sheets/sform0_mid_spec": {
+   "type": "tableDAT",
+   "family": "DAT",
+   "pos": [
+    0,
+    0
+   ],
+   "text": [
+    "x\ty\ttext",
+    "24\t312\tOBJECT OF UNKNOWN USE, PART 1",
+    "24\t250\tNAME",
+    "176\t250\t",
+    "24\t196\tORIGIN",
+    "176\t196\t",
+    "24\t142\tDATE",
+    "176\t142\t",
+    "24\t88\tUSE",
+    "176\t88\t"
+   ]
+  },
+  "sheets/sform0_small": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    0,
+    0
+   ],
+   "inputs": [
+    [
+     "sheets/sform0_bg"
+    ]
+   ],
+   "pars": {
+    "alignx": "left",
+    "aligny": "bottom",
+    "fontcolorb": 0.12,
+    "fontcolorg": 0.1,
+    "fontcolorr": 0.1,
+    "fontfile": {
+     "expr": "mod.paths.font('barlow')"
+    },
+    "fontsizex": {
+     "expr": "17.0 * (1 if mod.paths.font('barlow') else 0.6)"
+    },
+    "fontsizexunit": "pixels",
+    "resmult": false,
+    "specdat": "sform0_small_spec"
+   }
+  },
+  "sheets/sform0_small_spec": {
+   "type": "tableDAT",
+   "family": "DAT",
+   "pos": [
+    0,
+    0
+   ],
+   "text": [
+    "x\ty\ttext",
+    "24\t468\tCATALOGUE OF UNEXPLAINED OBJECTS",
+    "24\t20\tFOUND, NOT MADE.   DO NOT TOUCH",
+    "24\t458\t________________________________________________________________________",
+    "172\t244\t_________________________________________________",
+    "172\t190\t_________________________________________________",
+    "172\t136\t_________________________________________________",
+    "172\t82\t_________________________________________________"
+   ]
+  },
+  "sheets/sform0_title": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    0,
+    0
+   ],
+   "inputs": [
+    [
+     "sheets/sform0_mid"
+    ]
+   ],
+   "pars": {
+    "alignx": "left",
+    "aligny": "bottom",
+    "fontcolorb": 0.12,
+    "fontcolorg": 0.1,
+    "fontcolorr": 0.1,
+    "fontfile": {
+     "expr": "mod.paths.font('barlow')"
+    },
+    "fontsizex": {
+     "expr": "104.0 * (1 if mod.paths.font('barlow') else 0.6)"
+    },
+    "fontsizexunit": "pixels",
+    "resmult": false,
+    "specdat": "sform0_title_spec"
+   }
+  },
+  "sheets/sform0_title_spec": {
+   "type": "tableDAT",
+   "family": "DAT",
+   "pos": [
+    0,
+    0
+   ],
+   "text": [
+    "x\ty\ttext",
+    "20\t354\tPLATE 07"
+   ]
+  },
+  "sheets/sform1_bg": {
+   "type": "constantTOP",
+   "family": "TOP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "colorb": 0.933,
+    "colorg": 0.957,
+    "colorr": 0.965,
+    "outputresolution": "custom",
+    "resolutionh": 512,
+    "resolutionw": 512
+   }
+  },
+  "sheets/sform1_mid": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    0,
+    0
+   ],
+   "inputs": [
+    [
+     "sheets/sform1_small"
+    ]
+   ],
+   "pars": {
+    "alignx": "left",
+    "aligny": "bottom",
+    "fontcolorb": 0.12,
+    "fontcolorg": 0.1,
+    "fontcolorr": 0.1,
+    "fontfile": {
+     "expr": "mod.paths.font('barlow')"
+    },
+    "fontsizex": {
+     "expr": "28.0 * (1 if mod.paths.font('barlow') else 0.6)"
+    },
+    "fontsizexunit": "pixels",
+    "resmult": false,
+    "specdat": "sform1_mid_spec"
+   }
+  },
+  "sheets/sform1_mid_spec": {
+   "type": "tableDAT",
+   "family": "DAT",
+   "pos": [
+    0,
+    0
+   ],
+   "text": [
+    "x\ty\ttext",
+    "24\t312\tSOUND IN. PICTURE OUT. NOTHING KEPT.",
+    "24\t250\tNAME",
+    "176\t250\t",
+    "24\t196\tSIGNAL",
+    "176\t196\t....... OPEN",
+    "24\t142\tON TAPE",
+    "176\t142\tNOTHING",
+    "24\t88\tFRAMES",
+    "176\t88\tARE MADE NOW"
+   ]
+  },
+  "sheets/sform1_small": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    0,
+    0
+   ],
+   "inputs": [
+    [
+     "sheets/sform1_bg"
+    ]
+   ],
+   "pars": {
+    "alignx": "left",
+    "aligny": "bottom",
+    "fontcolorb": 0.12,
+    "fontcolorg": 0.1,
+    "fontcolorr": 0.1,
+    "fontfile": {
+     "expr": "mod.paths.font('barlow')"
+    },
+    "fontsizex": {
+     "expr": "17.0 * (1 if mod.paths.font('barlow') else 0.6)"
+    },
+    "fontsizexunit": "pixels",
+    "resmult": false,
+    "specdat": "sform1_small_spec"
+   }
+  },
+  "sheets/sform1_small_spec": {
+   "type": "tableDAT",
+   "family": "DAT",
+   "pos": [
+    0,
+    0
+   ],
+   "text": [
+    "x\ty\ttext",
+    "24\t468\tREGISTER OF REAL-TIME PICTURES",
+    "24\t20\tNOTHING IS PRERENDERED.",
+    "24\t458\t________________________________________________________________________",
+    "172\t244\t_________________________________________________",
+    "172\t190\t_________________________________________________",
+    "172\t136\t_________________________________________________",
+    "172\t82\t_________________________________________________"
+   ]
+  },
+  "sheets/sform1_title": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    0,
+    0
+   ],
+   "inputs": [
+    [
+     "sheets/sform1_mid"
+    ]
+   ],
+   "pars": {
+    "alignx": "left",
+    "aligny": "bottom",
+    "fontcolorb": 0.12,
+    "fontcolorg": 0.1,
+    "fontcolorr": 0.1,
+    "fontfile": {
+     "expr": "mod.paths.font('barlow')"
+    },
+    "fontsizex": {
+     "expr": "104.0 * (1 if mod.paths.font('barlow') else 0.6)"
+    },
+    "fontsizexunit": "pixels",
+    "resmult": false,
+    "specdat": "sform1_title_spec"
+   }
+  },
+  "sheets/sform1_title_spec": {
+   "type": "tableDAT",
+   "family": "DAT",
+   "pos": [
+    0,
+    0
+   ],
+   "text": [
+    "x\ty\ttext",
+    "20\t354\tSIGNAL IN"
+   ]
+  },
+  "sheets/sform2_bg": {
+   "type": "constantTOP",
+   "family": "TOP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "colorb": 0.77,
+    "colorg": 0.71,
+    "colorr": 0.94,
+    "outputresolution": "custom",
+    "resolutionh": 512,
+    "resolutionw": 512
+   }
+  },
+  "sheets/sform2_mid": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    0,
+    0
+   ],
+   "inputs": [
+    [
+     "sheets/sform2_small"
+    ]
+   ],
+   "pars": {
+    "alignx": "left",
+    "aligny": "bottom",
+    "fontcolorb": 0.17,
+    "fontcolorg": 0.09,
+    "fontcolorr": 0.58,
+    "fontfile": {
+     "expr": "mod.paths.font('barlow')"
+    },
+    "fontsizex": {
+     "expr": "28.0 * (1 if mod.paths.font('barlow') else 0.6)"
+    },
+    "fontsizexunit": "pixels",
+    "resmult": false,
+    "specdat": "sform2_mid_spec"
+   }
+  },
+  "sheets/sform2_mid_spec": {
+   "type": "tableDAT",
+   "family": "DAT",
+   "pos": [
+    0,
+    0
+   ],
+   "text": [
+    "x\ty\ttext",
+    "24\t312\tOBJECT OF UNKNOWN USE",
+    "24\t250\tORIGIN",
+    "176\t250\tUNRECORDED, POSSIBLY LATER",
+    "24\t196\tNUMBER",
+    "176\t196\tCATALOGUE 0047",
+    "24\t142\tNOTE",
+    "176\t142\tHANDLE WITH BOTH HANDS.",
+    "24\t88\tWHEN",
+    "176\t88\tEVERY FRAME IS MADE NOW."
+   ]
+  },
+  "sheets/sform2_small": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    0,
+    0
+   ],
+   "inputs": [
+    [
+     "sheets/sform2_bg"
+    ]
+   ],
+   "pars": {
+    "alignx": "left",
+    "aligny": "bottom",
+    "fontcolorb": 0.17,
+    "fontcolorg": 0.09,
+    "fontcolorr": 0.58,
+    "fontfile": {
+     "expr": "mod.paths.font('barlow')"
+    },
+    "fontsizex": {
+     "expr": "17.0 * (1 if mod.paths.font('barlow') else 0.6)"
+    },
+    "fontsizexunit": "pixels",
+    "resmult": false,
+    "specdat": "sform2_small_spec"
+   }
+  },
+  "sheets/sform2_small_spec": {
+   "type": "tableDAT",
+   "family": "DAT",
+   "pos": [
+    0,
+    0
+   ],
+   "text": [
+    "x\ty\ttext",
+    "24\t468\tPAST. PRESENT. LATER.",
+    "24\t20\tDO NOT TOUCH THE EXHIBITS.",
+    "24\t458\t________________________________________________________________________",
+    "172\t244\t_________________________________________________",
+    "172\t190\t_________________________________________________",
+    "172\t136\t_________________________________________________",
+    "172\t82\t_________________________________________________"
+   ]
+  },
+  "sheets/sform2_title": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    0,
+    0
+   ],
+   "inputs": [
+    [
+     "sheets/sform2_mid"
+    ]
+   ],
+   "pars": {
+    "alignx": "left",
+    "aligny": "bottom",
+    "fontcolorb": 0.17,
+    "fontcolorg": 0.09,
+    "fontcolorr": 0.58,
+    "fontfile": {
+     "expr": "mod.paths.font('barlow')"
+    },
+    "fontsizex": {
+     "expr": "104.0 * (1 if mod.paths.font('barlow') else 0.6)"
+    },
+    "fontsizexunit": "pixels",
+    "resmult": false,
+    "specdat": "sform2_title_spec"
+   }
+  },
+  "sheets/sform2_title_spec": {
+   "type": "tableDAT",
+   "family": "DAT",
+   "pos": [
+    0,
+    0
+   ],
+   "text": [
+    "x\ty\ttext",
+    "20\t354\tEXHIBIT B"
+   ]
+  },
+  "sheets/tex": {
+   "type": "moviefileinTOP",
+   "family": "TOP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.model_texture('blueprint') or mod.paths.here('data/white.png')"
+    },
+    "outputresolution": "custom",
+    "resolutionh": 512,
+    "resolutionw": 512
+   }
+  },
+  "sheets/tex1": {
+   "type": "moviefileinTOP",
+   "family": "TOP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.model_texture('star_chart') or mod.paths.here('data/white.png')"
+    },
+    "outputresolution": "custom",
+    "resolutionh": 512,
+    "resolutionw": 512
+   }
+  },
+  "sheets/tex2": {
+   "type": "moviefileinTOP",
+   "family": "TOP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.model_texture('ticket') or mod.paths.here('data/white.png')"
+    },
+    "outputresolution": "custom",
+    "resolutionh": 512,
+    "resolutionw": 512
+   }
+  },
+  "shot": {
+   "type": "constantCHOP",
+   "family": "CHOP",
+   "pos": [
+    -400,
+    330
+   ],
+   "pars": {
+    "const0name": "take",
+    "const0value": {
+     "expr": "parent().par.Take"
+    },
+    "const1name": "seed",
+    "const1value": {
+     "expr": "parent().par.Seed"
+    },
+    "const2name": "age",
+    "const2value": {
+     "expr": "max(0, absTime.seconds - parent().par.Shotstart)"
+    }
+   }
+  },
+  "skyl": {
+   "type": "lightCOMP",
+   "family": "COMP",
+   "pos": [
+    950,
+    -590
+   ],
+   "pars": {
+    "dimmer": {
+     "expr": "op('tk')['skyl']"
+    },
+    "lighttype": "distant",
+    "rx": -70.0,
+    "ry": 20.0,
+    "tz": 10.0
+   }
+  },
+  "skyl/circle1": {
+   "type": "circlePOP",
+   "family": "POP",
+   "pos": [
+    780,
+    170
+   ],
+   "pars": {
+    "connectivity": "surface",
+    "scale": 0.2
+   }
+  },
+  "skyl/circle_attenEnd": {
+   "type": "circlePOP",
+   "family": "POP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "bypass": {
+     "expr": "not parent().par.attenuated"
+    },
+    "connectivity": "surface",
+    "pageindex": 3,
+    "radx": 0.1,
+    "rady": 0.1,
+    "tz": {
+     "expr": "-parent().par.attenuationend"
+    }
+   }
+  },
+  "skyl/circle_attenStart": {
+   "type": "circlePOP",
+   "family": "POP",
+   "pos": [
+    0,
+    120
+   ],
+   "pars": {
+    "bypass": {
+     "expr": "not parent().par.attenuated"
+    },
+    "connectivity": "surface",
+    "pageindex": 1,
+    "radx": 0.1,
+    "rady": 0.1,
+    "tz": {
+     "expr": "-parent().par.attenuationstart"
+    }
+   }
+  },
+  "skyl/connectivity1": {
+   "type": "connectivityPOP",
+   "family": "POP",
+   "pos": [
+    780,
+    290
+   ],
+   "inputs": [
+    [
+     "skyl/merge3"
+    ]
+   ],
+   "pars": {
+    "surftype": "lines"
+   }
+  },
+  "skyl/copy1": {
+   "type": "copyPOP",
+   "family": "POP",
+   "pos": [
+    520,
+    670
+   ],
+   "inputs": [
+    [
+     "skyl/tube_attenuated"
+    ]
+   ],
+   "pars": {
+    "ncy": 2,
+    "pageindex": 2,
+    "rx": 90.0
+   }
+  },
+  "skyl/line_atten": {
+   "type": "linePOP",
+   "family": "POP",
+   "pos": [
+    0,
+    230
+   ],
+   "pars": {
+    "bypass": {
+     "expr": "not parent().par.attenuated"
+    },
+    "divs": 1,
+    "pageindex": 2,
+    "pt0posz": {
+     "expr": "-parent().par.attenuationstart"
+    },
+    "pt1posz": {
+     "expr": "-parent().par.attenuationend"
+    }
+   },
+   "custom_pars": [
+    "pt",
+    "pt0posx",
+    "pt0posy",
+    "pt0posz",
+    "pt1posx",
+    "pt1posy",
+    "pt1posz"
+   ]
+  },
+  "skyl/merge1": {
+   "type": "mergePOP",
+   "family": "POP",
+   "pos": [
+    250,
+    500
+   ],
+   "inputs": [
+    [
+     "skyl/rectangle1"
+    ],
+    [
+     "skyl/tube_cone1"
+    ],
+    [
+     "skyl/tube_cone2"
+    ],
+    [
+     "skyl/primitive1"
+    ],
+    [
+     "skyl/line_atten"
+    ],
+    [
+     "skyl/circle_attenStart"
+    ],
+    [
+     "skyl/circle_attenEnd"
+    ]
+   ],
+   "pars": {
+    "pageindex": 1
+   }
+  },
+  "skyl/merge2": {
+   "type": "mergePOP",
+   "family": "POP",
+   "pos": [
+    950,
+    230
+   ],
+   "inputs": [
+    [
+     "skyl/connectivity1"
+    ],
+    [
+     "skyl/circle1"
+    ]
+   ]
+  },
+  "skyl/merge3": {
+   "type": "mergePOP",
+   "family": "POP",
+   "pos": [
+    620,
+    290
+   ],
+   "inputs": [
+    [
+     "skyl/pointgen1"
+    ],
+    [
+     "skyl/transform1"
+    ]
+   ]
+  },
+  "skyl/merge_pointLight": {
+   "type": "mergePOP",
+   "family": "POP",
+   "pos": [
+    760,
+    820
+   ],
+   "inputs": [
+    [
+     "skyl/sphere1"
+    ],
+    [
+     "skyl/primitive_quadrants"
+    ],
+    [
+     "skyl/copy1"
+    ]
+   ],
+   "pars": {
+    "pageindex": 1
+   }
+  },
+  "skyl/pointgen1": {
+   "type": "pointgeneratorPOP",
+   "family": "POP",
+   "pos": [
+    270,
+    290
+   ],
+   "pars": {
+    "numpoints": 17,
+    "pageindex": 1,
+    "shape": "circle",
+    "sx": 0.2,
+    "sy": 0.2,
+    "sz": 0.2
+   }
+  },
+  "skyl/primitive1": {
+   "type": "primitivePOP",
+   "family": "POP",
+   "pos": [
+    0,
+    390
+   ],
+   "pars": {
+    "addpts": true,
+    "method": "pattern",
+    "pageindex": 1,
+    "prim0pattern": "0 1 0 2 0 3 0 4",
+    "prim0type": "lines",
+    "pt1posx": {
+     "expr": "mod.math.sin(mod.math.radians(parent().par.coneangle/2)) + mod.math.sin(mod.math.radians(parent().par.conedelta/2))"
+    },
+    "pt1posz": {
+     "expr": "-op('tube_cone1').par.height"
+    },
+    "pt2posx": {
+     "expr": "mod.math.sin(-mod.math.radians(parent().par.coneangle/2)) - mod.math.sin(mod.math.radians(parent().par.conedelta/2))"
+    },
+    "pt2posz": {
+     "expr": "0-op('tube_cone1').par.height"
+    },
+    "pt3posy": {
+     "expr": "-mod.math.sin(-mod.math.radians(parent().par.coneangle/2)) - mod.math.sin(mod.math.radians(parent().par.conedelta/2))"
+    },
+    "pt3posz": {
+     "expr": "-op('tube_cone1').par.height"
+    },
+    "pt4posy": {
+     "expr": "mod.math.sin(-mod.math.radians(parent().par.coneangle/2)) - mod.math.sin(mod.math.radians(parent().par.conedelta/2))"
+    },
+    "pt4posz": {
+     "expr": "-op('tube_cone1').par.height"
+    }
+   },
+   "custom_pars": [
+    "pt",
+    "pt0posx",
+    "pt0posy",
+    "pt0posz",
+    "pt1posx",
+    "pt1posy",
+    "pt1posz",
+    "pt2posx",
+    "pt2posy",
+    "pt2posz",
+    "pt3posx",
+    "pt3posy",
+    "pt3posz",
+    "pt4posx",
+    "pt4posy",
+    "pt4posz"
+   ]
+  },
+  "skyl/primitive_cross": {
+   "type": "primitivePOP",
+   "family": "POP",
+   "pos": [
+    520,
+    1000
+   ],
+   "pars": {
+    "addpts": true,
+    "method": "set",
+    "pageindex": 1,
+    "pt0posx": -0.2,
+    "pt1posx": 0.2,
+    "pt2posy": -0.2,
+    "pt3posy": 0.2,
+    "pt4posz": -0.2,
+    "pt5posz": 0.2,
+    "setprimtype": "lines"
+   },
+   "custom_pars": [
+    "pt",
+    "pt0posx",
+    "pt0posy",
+    "pt0posz",
+    "pt1posx",
+    "pt1posy",
+    "pt1posz",
+    "pt2posx",
+    "pt2posy",
+    "pt2posz",
+    "pt3posx",
+    "pt3posy",
+    "pt3posz",
+    "pt4posx",
+    "pt4posy",
+    "pt4posz",
+    "pt5posx",
+    "pt5posy",
+    "pt5posz"
+   ]
+  },
+  "skyl/primitive_quadrants": {
+   "type": "primitivePOP",
+   "family": "POP",
+   "pos": [
+    520,
+    780
+   ],
+   "pars": {
+    "addpts": true,
+    "method": "set",
+    "pageindex": 1,
+    "pt0posx": 0.07,
+    "pt0posy": 0.07,
+    "pt0posz": 0.07,
+    "pt1posx": -0.07,
+    "pt1posy": -0.07,
+    "pt1posz": -0.07,
+    "pt2posx": -0.07,
+    "pt2posy": 0.07,
+    "pt2posz": 0.07,
+    "pt3posx": 0.07,
+    "pt3posy": -0.07,
+    "pt3posz": -0.07,
+    "pt4posx": 0.07,
+    "pt4posy": 0.07,
+    "pt4posz": -0.07,
+    "pt5posx": -0.07,
+    "pt5posy": -0.07,
+    "pt5posz": 0.07,
+    "pt6posx": -0.07,
+    "pt6posy": 0.07,
+    "pt6posz": -0.07,
+    "pt7posx": 0.07,
+    "pt7posy": -0.07,
+    "pt7posz": 0.07,
+    "setprimtype": "lines"
+   },
+   "custom_pars": [
+    "pt",
+    "pt0posx",
+    "pt0posy",
+    "pt0posz",
+    "pt1posx",
+    "pt1posy",
+    "pt1posz",
+    "pt2posx",
+    "pt2posy",
+    "pt2posz",
+    "pt3posx",
+    "pt3posy",
+    "pt3posz",
+    "pt4posx",
+    "pt4posy",
+    "pt4posz",
+    "pt5posx",
+    "pt5posy",
+    "pt5posz",
+    "pt6posx",
+    "pt6posy",
+    "pt6posz",
+    "pt7posx",
+    "pt7posy",
+    "pt7posz"
+   ]
+  },
+  "skyl/rectangle1": {
+   "type": "rectanglePOP",
+   "family": "POP",
+   "pos": [
+    0,
+    730
+   ],
+   "pars": {
+    "anchorv": 0.0,
+    "sizeu": 0.02,
+    "sizev": 0.5
+   }
+  },
+  "skyl/sphere1": {
+   "type": "spherePOP",
+   "family": "POP",
+   "pos": [
+    520,
+    890
+   ],
+   "pars": {
+    "freq": 3,
+    "pageindex": 2,
+    "radx": 0.05,
+    "rady": 0.05,
+    "radz": 0.05
+   }
+  },
+  "skyl/switch_lightType": {
+   "type": "switchPOP",
+   "family": "POP",
+   "pos": [
+    1140,
+    500
+   ],
+   "inputs": [
+    [
+     "skyl/merge_pointLight"
+    ],
+    [
+     "skyl/merge1"
+    ],
+    [
+     "skyl/merge2"
+    ]
+   ],
+   "pars": {
+    "index": {
+     "expr": "parent().par.lighttype.menuIndex"
+    }
+   }
+  },
+  "skyl/transform1": {
+   "type": "transformPOP",
+   "family": "POP",
+   "pos": [
+    450,
+    370
+   ],
+   "inputs": [
+    [
+     "skyl/pointgen1"
+    ]
+   ],
+   "pars": {
+    "tz": 0.8
+   }
+  },
+  "skyl/tube_attenuated": {
+   "type": "tubePOP",
+   "family": "POP",
+   "pos": [
+    368,
+    673
+   ],
+   "pars": {
+    "bypass": {
+     "expr": "not parent().par.attenuated"
+    },
+    "height": 0.0,
+    "orient": "z",
+    "radx": {
+     "expr": "parent().par.attenuationend"
+    },
+    "rady": {
+     "expr": "parent().par.attenuationstart"
+    },
+    "rows": 2,
+    "surftype": "rows"
+   }
+  },
+  "skyl/tube_cone1": {
+   "type": "tubePOP",
+   "family": "POP",
+   "pos": [
+    0,
+    620
+   ],
+   "pars": {
+    "height": {
+     "expr": "mod.math.cos(mod.math.radians(parent().par.coneangle/2))"
+    },
+    "orient": "z",
+    "radx": {
+     "expr": "mod.math.sin(mod.math.radians(parent().par.coneangle/2))"
+    },
+    "rady": 0.01,
+    "rows": 2,
+    "tz": {
+     "expr": "-me.par.height*0.5"
+    }
+   }
+  },
+  "skyl/tube_cone2": {
+   "type": "tubePOP",
+   "family": "POP",
+   "pos": [
+    0,
+    500
+   ],
+   "pars": {
+    "height": 0.0,
+    "orient": "z",
+    "radx": {
+     "expr": "mod.math.sin(mod.math.radians(parent().par.coneangle/2)) + mod.math.sin(mod.math.radians(parent().par.conedelta/2))"
+    },
+    "rady": {
+     "expr": "mod.math.sin(mod.math.radians(parent().par.coneangle/2))"
+    },
+    "rows": 2,
+    "tz": {
+     "expr": "-op('tube_cone1').par.height"
+    }
+   }
+  },
+  "spectrum": {
+   "type": "selectTOP",
+   "family": "TOP",
+   "pos": [
+    -400,
+    60
+   ],
+   "pars": {
+    "top": "/project1/sw_hub/spectex"
+   }
+  },
+  "spot": {
+   "type": "lightCOMP",
+   "family": "COMP",
+   "pos": [
+    950,
+    -480
+   ],
+   "pars": {
+    "cb": 0.62,
+    "cg": 0.86,
+    "coneangle": 38.0,
+    "conedelta": 10.0,
+    "dimmer": {
+     "expr": "(2.6 + 2.6 * op('hub')['energy']) * op('tk')['spot']"
+    },
+    "lighttype": "cone",
+    "lookat": "/project1/sc_paper_storm/monolith",
+    "tx": 1.5,
+    "ty": 15.0,
+    "tz": 4.0
+   }
+  },
+  "spot/circle1": {
+   "type": "circlePOP",
+   "family": "POP",
+   "pos": [
+    780,
+    170
+   ],
+   "pars": {
+    "connectivity": "surface",
+    "scale": 0.2
+   }
+  },
+  "spot/circle_attenEnd": {
+   "type": "circlePOP",
+   "family": "POP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "bypass": {
+     "expr": "not parent().par.attenuated"
+    },
+    "connectivity": "surface",
+    "pageindex": 3,
+    "radx": 0.1,
+    "rady": 0.1,
+    "tz": {
+     "expr": "-parent().par.attenuationend"
+    }
+   }
+  },
+  "spot/circle_attenStart": {
+   "type": "circlePOP",
+   "family": "POP",
+   "pos": [
+    0,
+    120
+   ],
+   "pars": {
+    "bypass": {
+     "expr": "not parent().par.attenuated"
+    },
+    "connectivity": "surface",
+    "pageindex": 1,
+    "radx": 0.1,
+    "rady": 0.1,
+    "tz": {
+     "expr": "-parent().par.attenuationstart"
+    }
+   }
+  },
+  "spot/connectivity1": {
+   "type": "connectivityPOP",
+   "family": "POP",
+   "pos": [
+    780,
+    290
+   ],
+   "inputs": [
+    [
+     "spot/merge3"
+    ]
+   ],
+   "pars": {
+    "surftype": "lines"
+   }
+  },
+  "spot/copy1": {
+   "type": "copyPOP",
+   "family": "POP",
+   "pos": [
+    520,
+    670
+   ],
+   "inputs": [
+    [
+     "spot/tube_attenuated"
+    ]
+   ],
+   "pars": {
+    "ncy": 2,
+    "pageindex": 2,
+    "rx": 90.0
+   }
+  },
+  "spot/line_atten": {
+   "type": "linePOP",
+   "family": "POP",
+   "pos": [
+    0,
+    230
+   ],
+   "pars": {
+    "bypass": {
+     "expr": "not parent().par.attenuated"
+    },
+    "divs": 1,
+    "pageindex": 2,
+    "pt0posz": {
+     "expr": "-parent().par.attenuationstart"
+    },
+    "pt1posz": {
+     "expr": "-parent().par.attenuationend"
+    }
+   },
+   "custom_pars": [
+    "pt",
+    "pt0posx",
+    "pt0posy",
+    "pt0posz",
+    "pt1posx",
+    "pt1posy",
+    "pt1posz"
+   ]
+  },
+  "spot/merge1": {
+   "type": "mergePOP",
+   "family": "POP",
+   "pos": [
+    250,
+    500
+   ],
+   "inputs": [
+    [
+     "spot/rectangle1"
+    ],
+    [
+     "spot/tube_cone1"
+    ],
+    [
+     "spot/tube_cone2"
+    ],
+    [
+     "spot/primitive1"
+    ],
+    [
+     "spot/line_atten"
+    ],
+    [
+     "spot/circle_attenStart"
+    ],
+    [
+     "spot/circle_attenEnd"
+    ]
+   ],
+   "pars": {
+    "pageindex": 1
+   }
+  },
+  "spot/merge2": {
+   "type": "mergePOP",
+   "family": "POP",
+   "pos": [
+    950,
+    230
+   ],
+   "inputs": [
+    [
+     "spot/connectivity1"
+    ],
+    [
+     "spot/circle1"
+    ]
+   ]
+  },
+  "spot/merge3": {
+   "type": "mergePOP",
+   "family": "POP",
+   "pos": [
+    620,
+    290
+   ],
+   "inputs": [
+    [
+     "spot/pointgen1"
+    ],
+    [
+     "spot/transform1"
+    ]
+   ]
+  },
+  "spot/merge_pointLight": {
+   "type": "mergePOP",
+   "family": "POP",
+   "pos": [
+    760,
+    820
+   ],
+   "inputs": [
+    [
+     "spot/sphere1"
+    ],
+    [
+     "spot/primitive_quadrants"
+    ],
+    [
+     "spot/copy1"
+    ]
+   ],
+   "pars": {
+    "pageindex": 1
+   }
+  },
+  "spot/pointgen1": {
+   "type": "pointgeneratorPOP",
+   "family": "POP",
+   "pos": [
+    270,
+    290
+   ],
+   "pars": {
+    "numpoints": 17,
+    "pageindex": 1,
+    "shape": "circle",
+    "sx": 0.2,
+    "sy": 0.2,
+    "sz": 0.2
+   }
+  },
+  "spot/primitive1": {
+   "type": "primitivePOP",
+   "family": "POP",
+   "pos": [
+    0,
+    390
+   ],
+   "pars": {
+    "addpts": true,
+    "method": "pattern",
+    "pageindex": 1,
+    "prim0pattern": "0 1 0 2 0 3 0 4",
+    "prim0type": "lines",
+    "pt1posx": {
+     "expr": "mod.math.sin(mod.math.radians(parent().par.coneangle/2)) + mod.math.sin(mod.math.radians(parent().par.conedelta/2))"
+    },
+    "pt1posz": {
+     "expr": "-op('tube_cone1').par.height"
+    },
+    "pt2posx": {
+     "expr": "mod.math.sin(-mod.math.radians(parent().par.coneangle/2)) - mod.math.sin(mod.math.radians(parent().par.conedelta/2))"
+    },
+    "pt2posz": {
+     "expr": "0-op('tube_cone1').par.height"
+    },
+    "pt3posy": {
+     "expr": "-mod.math.sin(-mod.math.radians(parent().par.coneangle/2)) - mod.math.sin(mod.math.radians(parent().par.conedelta/2))"
+    },
+    "pt3posz": {
+     "expr": "-op('tube_cone1').par.height"
+    },
+    "pt4posy": {
+     "expr": "mod.math.sin(-mod.math.radians(parent().par.coneangle/2)) - mod.math.sin(mod.math.radians(parent().par.conedelta/2))"
+    },
+    "pt4posz": {
+     "expr": "-op('tube_cone1').par.height"
+    }
+   },
+   "custom_pars": [
+    "pt",
+    "pt0posx",
+    "pt0posy",
+    "pt0posz",
+    "pt1posx",
+    "pt1posy",
+    "pt1posz",
+    "pt2posx",
+    "pt2posy",
+    "pt2posz",
+    "pt3posx",
+    "pt3posy",
+    "pt3posz",
+    "pt4posx",
+    "pt4posy",
+    "pt4posz"
+   ]
+  },
+  "spot/primitive_cross": {
+   "type": "primitivePOP",
+   "family": "POP",
+   "pos": [
+    520,
+    1000
+   ],
+   "pars": {
+    "addpts": true,
+    "method": "set",
+    "pageindex": 1,
+    "pt0posx": -0.2,
+    "pt1posx": 0.2,
+    "pt2posy": -0.2,
+    "pt3posy": 0.2,
+    "pt4posz": -0.2,
+    "pt5posz": 0.2,
+    "setprimtype": "lines"
+   },
+   "custom_pars": [
+    "pt",
+    "pt0posx",
+    "pt0posy",
+    "pt0posz",
+    "pt1posx",
+    "pt1posy",
+    "pt1posz",
+    "pt2posx",
+    "pt2posy",
+    "pt2posz",
+    "pt3posx",
+    "pt3posy",
+    "pt3posz",
+    "pt4posx",
+    "pt4posy",
+    "pt4posz",
+    "pt5posx",
+    "pt5posy",
+    "pt5posz"
+   ]
+  },
+  "spot/primitive_quadrants": {
+   "type": "primitivePOP",
+   "family": "POP",
+   "pos": [
+    520,
+    780
+   ],
+   "pars": {
+    "addpts": true,
+    "method": "set",
+    "pageindex": 1,
+    "pt0posx": 0.07,
+    "pt0posy": 0.07,
+    "pt0posz": 0.07,
+    "pt1posx": -0.07,
+    "pt1posy": -0.07,
+    "pt1posz": -0.07,
+    "pt2posx": -0.07,
+    "pt2posy": 0.07,
+    "pt2posz": 0.07,
+    "pt3posx": 0.07,
+    "pt3posy": -0.07,
+    "pt3posz": -0.07,
+    "pt4posx": 0.07,
+    "pt4posy": 0.07,
+    "pt4posz": -0.07,
+    "pt5posx": -0.07,
+    "pt5posy": -0.07,
+    "pt5posz": 0.07,
+    "pt6posx": -0.07,
+    "pt6posy": 0.07,
+    "pt6posz": -0.07,
+    "pt7posx": 0.07,
+    "pt7posy": -0.07,
+    "pt7posz": 0.07,
+    "setprimtype": "lines"
+   },
+   "custom_pars": [
+    "pt",
+    "pt0posx",
+    "pt0posy",
+    "pt0posz",
+    "pt1posx",
+    "pt1posy",
+    "pt1posz",
+    "pt2posx",
+    "pt2posy",
+    "pt2posz",
+    "pt3posx",
+    "pt3posy",
+    "pt3posz",
+    "pt4posx",
+    "pt4posy",
+    "pt4posz",
+    "pt5posx",
+    "pt5posy",
+    "pt5posz",
+    "pt6posx",
+    "pt6posy",
+    "pt6posz",
+    "pt7posx",
+    "pt7posy",
+    "pt7posz"
+   ]
+  },
+  "spot/rectangle1": {
+   "type": "rectanglePOP",
+   "family": "POP",
+   "pos": [
+    0,
+    730
+   ],
+   "pars": {
+    "anchorv": 0.0,
+    "sizeu": 0.02,
+    "sizev": 0.5
+   }
+  },
+  "spot/sphere1": {
+   "type": "spherePOP",
+   "family": "POP",
+   "pos": [
+    520,
+    890
+   ],
+   "pars": {
+    "freq": 3,
+    "pageindex": 2,
+    "radx": 0.05,
+    "rady": 0.05,
+    "radz": 0.05
+   }
+  },
+  "spot/switch_lightType": {
+   "type": "switchPOP",
+   "family": "POP",
+   "pos": [
+    1140,
+    500
+   ],
+   "inputs": [
+    [
+     "spot/merge_pointLight"
+    ],
+    [
+     "spot/merge1"
+    ],
+    [
+     "spot/merge2"
+    ]
+   ],
+   "pars": {
+    "index": {
+     "expr": "parent().par.lighttype.menuIndex"
+    }
+   }
+  },
+  "spot/transform1": {
+   "type": "transformPOP",
+   "family": "POP",
+   "pos": [
+    450,
+    370
+   ],
+   "inputs": [
+    [
+     "spot/pointgen1"
+    ]
+   ],
+   "pars": {
+    "tz": 0.8
+   }
+  },
+  "spot/tube_attenuated": {
+   "type": "tubePOP",
+   "family": "POP",
+   "pos": [
+    368,
+    673
+   ],
+   "pars": {
+    "bypass": {
+     "expr": "not parent().par.attenuated"
+    },
+    "height": 0.0,
+    "orient": "z",
+    "radx": {
+     "expr": "parent().par.attenuationend"
+    },
+    "rady": {
+     "expr": "parent().par.attenuationstart"
+    },
+    "rows": 2,
+    "surftype": "rows"
+   }
+  },
+  "spot/tube_cone1": {
+   "type": "tubePOP",
+   "family": "POP",
+   "pos": [
+    0,
+    620
+   ],
+   "pars": {
+    "height": {
+     "expr": "mod.math.cos(mod.math.radians(parent().par.coneangle/2))"
+    },
+    "orient": "z",
+    "radx": {
+     "expr": "mod.math.sin(mod.math.radians(parent().par.coneangle/2))"
+    },
+    "rady": 0.01,
+    "rows": 2,
+    "tz": {
+     "expr": "-me.par.height*0.5"
+    }
+   }
+  },
+  "spot/tube_cone2": {
+   "type": "tubePOP",
+   "family": "POP",
+   "pos": [
+    0,
+    500
+   ],
+   "pars": {
+    "height": 0.0,
+    "orient": "z",
+    "radx": {
+     "expr": "mod.math.sin(mod.math.radians(parent().par.coneangle/2)) + mod.math.sin(mod.math.radians(parent().par.conedelta/2))"
+    },
+    "rady": {
+     "expr": "mod.math.sin(mod.math.radians(parent().par.coneangle/2))"
+    },
+    "rows": 2,
+    "tz": {
+     "expr": "-op('tube_cone1').par.height"
+    }
+   }
+  },
+  "tk": {
+   "type": "constantCHOP",
+   "family": "CHOP",
+   "pos": [
+    -400,
+    460
+   ],
+   "pars": {
+    "const0name": "bgk",
+    "const0value": {
+     "expr": "(0.5, 0.5, 1.0, 0.5, 1.0, 0.5, 0.5, 0.5)[int(op('shot')['take']) % 8]"
+    },
+    "const10name": "fog",
+    "const10value": {
+     "expr": "(0.035, 0.0, 0.004, 0.02, 0.03, 0.0, 0.035, 0.02)[int(op('shot')['take']) % 8]"
+    },
+    "const11name": "key",
+    "const11value": {
+     "expr": "(2.6, 3.0, 0.0, 2.2, 2.2, 1.2, 2.2, 2.9)[int(op('shot')['take']) % 8]"
+    },
+    "const12name": "keyend",
+    "const12value": {
+     "expr": "(46.0, 900.0, 46.0, 40.0, 40.0, 60.0, 46.0, 40.0)[int(op('shot')['take']) % 8]"
+    },
+    "const13name": "spot",
+    "const13value": {
+     "expr": "(1.0, 0.0, 0.0, 1.6, 0.0, 1.5, 1.3, 0.0)[int(op('shot')['take']) % 8]"
+    },
+    "const14name": "sheets",
+    "const14value": {
+     "expr": "(1.0, 1.0, 1.0, 0.0, 1.0, 1.0, 1.0, 1.0)[int(op('shot')['take']) % 8]"
+    },
+    "const15name": "props",
+    "const15value": {
+     "expr": "(1.0, 0.0, 0.0, 1.0, 0.0, 0.0, 1.0, 0.0)[int(op('shot')['take']) % 8]"
+    },
+    "const16name": "mono",
+    "const16value": {
+     "expr": "(1.0, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0, 0.0)[int(op('shot')['take']) % 8]"
+    },
+    "const17name": "hero",
+    "const17value": {
+     "expr": "(0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0)[int(op('shot')['take']) % 8]"
+    },
+    "const18name": "idol",
+    "const18value": {
+     "expr": "(0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0)[int(op('shot')['take']) % 8]"
+    },
+    "const19name": "back",
+    "const19value": {
+     "expr": "(0.0, 1.0, 1.0, 0.0, 1.0, 1.0, 0.0, 2.0)[int(op('shot')['take']) % 8]"
+    },
+    "const1name": "skyl",
+    "const1value": {
+     "expr": "(0.0, 0.0, 0.0, 0.0, 1.1, 0.0, 0.0, 0.0)[int(op('shot')['take']) % 8]"
+    },
+    "const20name": "backin",
+    "const20value": {
+     "expr": "(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 1.0, 1.0)[int(op('shot')['take']) % 8]"
+    },
+    "const21name": "backemit",
+    "const21value": {
+     "expr": "(0.55, 0.75, 0.0, 0.55, 0.0, 0.0, 0.55, 0.6)[int(op('shot')['take']) % 8]"
+    },
+    "const22name": "flip",
+    "const22value": {
+     "expr": "(1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 1.0)[int(op('shot')['take']) % 8]"
+    },
+    "const23name": "ring",
+    "const23value": {
+     "expr": "(1.0, 1.5, 0.0, 0.0, 0.0, 0.6, 1.0, 1.0)[int(op('shot')['take']) % 8]"
+    },
+    "const24name": "keepout",
+    "const24value": {
+     "expr": "(2.8, 2.8, 0.0, 0.0, 1.3, 0.0, 2.8, 2.8)[int(op('shot')['take']) % 8]"
+    },
+    "const25name": "glow",
+    "const25value": {
+     "expr": "(1.0, 0.0, 0.0, 0.25, 0.0, 0.0, 1.4, 1.2)[int(op('shot')['take']) % 8]"
+    },
+    "const26name": "vig",
+    "const26value": {
+     "expr": "(0.7, 0.45, 0.3, 0.55, 0.35, 0.5, 0.75, 0.6)[int(op('shot')['take']) % 8]"
+    },
+    "const27name": "sat",
+    "const27value": {
+     "expr": "(1.3, 1.25, 1.0, 1.25, 1.1, 1.0, 1.35, 1.3)[int(op('shot')['take']) % 8]"
+    },
+    "const28name": "dither",
+    "const28value": {
+     "expr": "(0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0)[int(op('shot')['take']) % 8]"
+    },
+    "const29name": "sky",
+    "const29value": {
+     "expr": "(0.0, 0.0, 1.0, 0.0, 0.6, 0.0, 0.0, 0.0)[int(op('shot')['take']) % 8]"
+    },
+    "const2name": "bouncel",
+    "const2value": {
+     "expr": "(0.0, 0.0, 0.0, 0.0, 0.75, 0.0, 0.0, 0.0)[int(op('shot')['take']) % 8]"
+    },
+    "const30name": "bloom",
+    "const30value": {
+     "expr": "(0.35, 0.22, 0.0, 0.3, 0.0, 0.0, 0.4, 0.3)[int(op('shot')['take']) % 8]"
+    },
+    "const31name": "dof0",
+    "const31value": {
+     "expr": "(7.0, 400.0, 400.0, 2.5, 5.0, 400.0, 1.5, 5.0)[int(op('shot')['take']) % 8]"
+    },
+    "const32name": "dof1",
+    "const32value": {
+     "expr": "(24.0, 800.0, 800.0, 9.0, 18.0, 800.0, 7.0, 14.0)[int(op('shot')['take']) % 8]"
+    },
+    "const33name": "dofnear",
+    "const33value": {
+     "expr": "(3.6, 0.0, 0.0, 4.2, 5.5, 0.0, 0.0, 0.0)[int(op('shot')['take']) % 8]"
+    },
+    "const34name": "blur",
+    "const34value": {
+     "expr": "(9.0, 9.0, 9.0, 12.0, 18.0, 9.0, 22.0, 9.0)[int(op('shot')['take']) % 8]"
+    },
+    "const35name": "camx",
+    "const35value": {
+     "expr": "(0.0, 0.0, 0.0, 3.4, 0.0, 0.0, 0.0, -2.4)[int(op('shot')['take']) % 8]"
+    },
+    "const36name": "camy",
+    "const36value": {
+     "expr": "(0.0, 0.0, 1.0, 1.5, 0.0, 12.0, 3.2, -6.5)[int(op('shot')['take']) % 8]"
+    },
+    "const37name": "camz",
+    "const37value": {
+     "expr": "(14.0, 166.0, 42.0, 9.4, 12.0, 0.6, 15.0, 3.2)[int(op('shot')['take']) % 8]"
+    },
+    "const38name": "aimx",
+    "const38value": {
+     "expr": "(0.0, 0.0, 5.0, -1.0, -4.2, 0.0, 0.0, 3.4)[int(op('shot')['take']) % 8]"
+    },
+    "const39name": "aimy",
+    "const39value": {
+     "expr": "(0.0, 0.0, 10.0, 0.6, 0.0, 0.0, 0.0, 6.0)[int(op('shot')['take']) % 8]"
+    },
+    "const3name": "form",
+    "const3value": {
+     "expr": "(0.0, 7.0, 5.0, 6.0, 4.0, 2.0, 3.0, 1.0)[int(op('shot')['take']) % 8]"
+    },
+    "const40name": "aimz",
+    "const40value": {
+     "expr": "(0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, -1.0)[int(op('shot')['take']) % 8]"
+    },
+    "const41name": "hazer",
+    "const41value": {
+     "expr": "(0.03, 0.016, 1.2, 0.42, 0.92, 0.0, 0.035, 0.012)[int(op('shot')['take']) % 8]"
+    },
+    "const42name": "hazeg",
+    "const42value": {
+     "expr": "(0.052, 0.04, 1.08, 0.045, 1.08, 0.0, 0.03, 0.05)[int(op('shot')['take']) % 8]"
+    },
+    "const43name": "hazeb",
+    "const43value": {
+     "expr": "(0.066, 0.075, 0.84, 0.03, 0.72, 0.0, 0.075, 0.065)[int(op('shot')['take']) % 8]"
+    },
+    "const44name": "ambr",
+    "const44value": {
+     "expr": "(0.26, 0.5, 1.0, 1.0, 0.9, 1.0, 0.4, 0.3)[int(op('shot')['take']) % 8]"
+    },
+    "const45name": "ambg",
+    "const45value": {
+     "expr": "(0.42, 0.6, 1.0, 0.75, 1.0, 1.0, 0.35, 0.6)[int(op('shot')['take']) % 8]"
+    },
+    "const46name": "ambb",
+    "const46value": {
+     "expr": "(0.6, 0.8, 1.0, 0.6, 0.8, 1.0, 0.7, 0.7)[int(op('shot')['take']) % 8]"
+    },
+    "const47name": "ambd",
+    "const47value": {
+     "expr": "(0.3, 0.45, 0.6, 0.45, 0.9, 0.25, 0.35, 0.3)[int(op('shot')['take']) % 8]"
+    },
+    "const48name": "backr",
+    "const48value": {
+     "expr": "(0.86, 0.9, 0.03, 0.86, 0.8, 0.0, 0.86, 0.16)[int(op('shot')['take']) % 8]"
+    },
+    "const49name": "backg",
+    "const49value": {
+     "expr": "(0.2, 0.68, 0.04, 0.2, 0.82, 0.0, 0.2, 0.49)[int(op('shot')['take']) % 8]"
+    },
+    "const4name": "fov",
+    "const4value": {
+     "expr": "(78.0, 34.0, 64.0, 50.0, 70.0, 78.0, 78.0, 104.0)[int(op('shot')['take']) % 8]"
+    },
+    "const50name": "backb",
+    "const50value": {
+     "expr": "(0.13, 0.14, 0.06, 0.13, 0.74, 0.0, 0.13, 0.61)[int(op('shot')['take']) % 8]"
+    },
+    "const51name": "tintr",
+    "const51value": {
+     "expr": "(1.0, 1.0, 0.05, 1.0, 1.0, 1.0, 1.0, 1.0)[int(op('shot')['take']) % 8]"
+    },
+    "const52name": "tintg",
+    "const52value": {
+     "expr": "(1.0, 1.0, 0.07, 1.0, 1.0, 1.0, 1.0, 1.0)[int(op('shot')['take']) % 8]"
+    },
+    "const53name": "tintb",
+    "const53value": {
+     "expr": "(1.0, 1.0, 0.1, 1.0, 1.0, 1.0, 1.0, 1.0)[int(op('shot')['take']) % 8]"
+    },
+    "const54name": "shr",
+    "const54value": {
+     "expr": "(0.74, 0.74, 1.0, 1.1, 0.8, 1.0, 0.85, 0.7)[int(op('shot')['take']) % 8]"
+    },
+    "const55name": "shg",
+    "const55value": {
+     "expr": "(0.96, 0.96, 1.0, 0.75, 1.05, 1.0, 0.8, 1.0)[int(op('shot')['take']) % 8]"
+    },
+    "const56name": "shb",
+    "const56value": {
+     "expr": "(1.22, 1.22, 1.0, 0.7, 0.78, 1.0, 1.3, 1.15)[int(op('shot')['take']) % 8]"
+    },
+    "const57name": "focus",
+    "const57value": {
+     "expr": "(14.0, 166.0, 43.243496620879306, 7.0, 9.0, 12.014990636700471, 3.6, 14.405901568454507)[int(op('shot')['take']) % 8]"
+    },
+    "const58name": "zvard",
+    "const58value": {
+     "expr": "(0.0, 0.08, 0.0, 0.0, 0.0, 0.4, 0.0, 0.0)[int(op('shot')['take']) % 8]"
+    },
+    "const5name": "sway",
+    "const5value": {
+     "expr": "(1.0, 0.0, 0.6, 0.5, 0.0, 0.0, 0.5, 0.6)[int(op('shot')['take']) % 8]"
+    },
+    "const6name": "dolly",
+    "const6value": {
+     "expr": "(0.25, 0.12, 0.1, 0.3, 0.0, 0.15, 0.1, 0.2)[int(op('shot')['take']) % 8]"
+    },
+    "const7name": "mirror",
+    "const7value": {
+     "expr": "(0.0, 0.0, 1.0, 1.0, 1.0, 0.0, 1.0, 1.0)[int(op('shot')['take']) % 8]"
+    },
+    "const8name": "yvar",
+    "const8value": {
+     "expr": "(0.0, 0.0, 0.0, 4.5, 0.0, 0.0, 0.0, 0.0)[int(op('shot')['take']) % 8]"
+    },
+    "const9name": "zvar",
+    "const9value": {
+     "expr": "(0.0, 0.16, 0.0, 0.0, 0.0, 0.4, 0.0, 0.0)[int(op('shot')['take']) % 8]"
+    }
+   }
+  }
+ }
+}

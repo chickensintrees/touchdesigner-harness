@@ -1,0 +1,4127 @@
+{
+ "format": "tdh-snapshot/1",
+ "root": "/project1/sc_shatter",
+ "ops": {
+  "atlas": {
+   "type": "switchTOP",
+   "family": "TOP",
+   "pos": [
+    -900,
+    400
+   ],
+   "inputs": [
+    [
+     "atlas_bust"
+    ],
+    [
+     "atlas_amphora"
+    ],
+    [
+     "atlas_stone"
+    ],
+    [
+     "atlas_gramophone"
+    ],
+    [
+     "atlas_helmet"
+    ],
+    [
+     "atlas_lander"
+    ],
+    [
+     "atlas_astrolabe"
+    ],
+    [
+     "atlas_hourglass"
+    ],
+    [
+     "atlas_cone"
+    ],
+    [
+     "atlas_column"
+    ],
+    [
+     "atlas_solids"
+    ],
+    [
+     "atlas_crystal"
+    ],
+    [
+     "atlas_cage"
+    ],
+    [
+     "atlas_duck_s"
+    ],
+    [
+     "atlas_amphora_s"
+    ],
+    [
+     "atlas_bust_m"
+    ],
+    [
+     "atlas_w_touch"
+    ],
+    [
+     "atlas_w_frame"
+    ],
+    [
+     "atlas_w_sound"
+    ],
+    [
+     "atlas_w_nothing"
+    ],
+    [
+     "atlas_w_here"
+    ],
+    [
+     "atlas_w_object"
+    ],
+    [
+     "atlas_w_found"
+    ],
+    [
+     "atlas_x_chips"
+    ],
+    [
+     "atlas_x_flock"
+    ],
+    [
+     "atlas_x_bars"
+    ],
+    [
+     "atlas_x_math"
+    ],
+    [
+     "atlas_x_blocks"
+    ],
+    [
+     "atlas_x_fall"
+    ],
+    [
+     "atlas_x_rev"
+    ],
+    [
+     "atlas_panel"
+    ],
+    [
+     "atlas_panel_f"
+    ],
+    [
+     "atlas_panel_s"
+    ],
+    [
+     "atlas_panel_m"
+    ]
+   ],
+   "pars": {
+    "index": {
+     "expr": "int(op('ctl')['subj'])"
+    }
+   }
+  },
+  "atlas_amphora": {
+   "type": "scriptTOP",
+   "family": "TOP",
+   "pos": [
+    -1300,
+    280
+   ],
+   "pars": {
+    "callbacks": "/project1/sc_shatter/load_atlas"
+   }
+  },
+  "atlas_amphora_s": {
+   "type": "scriptTOP",
+   "family": "TOP",
+   "pos": [
+    -1300,
+    -1280
+   ],
+   "pars": {
+    "callbacks": "/project1/sc_shatter/load_atlas"
+   }
+  },
+  "atlas_astrolabe": {
+   "type": "scriptTOP",
+   "family": "TOP",
+   "pos": [
+    -1300,
+    -320
+   ],
+   "pars": {
+    "callbacks": "/project1/sc_shatter/load_atlas"
+   }
+  },
+  "atlas_bust": {
+   "type": "scriptTOP",
+   "family": "TOP",
+   "pos": [
+    -1300,
+    400
+   ],
+   "pars": {
+    "callbacks": "/project1/sc_shatter/load_atlas"
+   }
+  },
+  "atlas_bust_m": {
+   "type": "scriptTOP",
+   "family": "TOP",
+   "pos": [
+    -1300,
+    -1400
+   ],
+   "pars": {
+    "callbacks": "/project1/sc_shatter/load_atlas"
+   }
+  },
+  "atlas_cage": {
+   "type": "scriptTOP",
+   "family": "TOP",
+   "pos": [
+    -1300,
+    -1040
+   ],
+   "pars": {
+    "callbacks": "/project1/sc_shatter/load_atlas"
+   }
+  },
+  "atlas_column": {
+   "type": "scriptTOP",
+   "family": "TOP",
+   "pos": [
+    -1300,
+    -680
+   ],
+   "pars": {
+    "callbacks": "/project1/sc_shatter/load_atlas"
+   }
+  },
+  "atlas_cone": {
+   "type": "scriptTOP",
+   "family": "TOP",
+   "pos": [
+    -1300,
+    -560
+   ],
+   "pars": {
+    "callbacks": "/project1/sc_shatter/load_atlas"
+   }
+  },
+  "atlas_crystal": {
+   "type": "scriptTOP",
+   "family": "TOP",
+   "pos": [
+    -1300,
+    -920
+   ],
+   "pars": {
+    "callbacks": "/project1/sc_shatter/load_atlas"
+   }
+  },
+  "atlas_duck_s": {
+   "type": "scriptTOP",
+   "family": "TOP",
+   "pos": [
+    -1300,
+    -1160
+   ],
+   "pars": {
+    "callbacks": "/project1/sc_shatter/load_atlas"
+   }
+  },
+  "atlas_gramophone": {
+   "type": "scriptTOP",
+   "family": "TOP",
+   "pos": [
+    -1300,
+    40
+   ],
+   "pars": {
+    "callbacks": "/project1/sc_shatter/load_atlas"
+   }
+  },
+  "atlas_helmet": {
+   "type": "scriptTOP",
+   "family": "TOP",
+   "pos": [
+    -1300,
+    -80
+   ],
+   "pars": {
+    "callbacks": "/project1/sc_shatter/load_atlas"
+   }
+  },
+  "atlas_hourglass": {
+   "type": "scriptTOP",
+   "family": "TOP",
+   "pos": [
+    -1300,
+    -440
+   ],
+   "pars": {
+    "callbacks": "/project1/sc_shatter/load_atlas"
+   }
+  },
+  "atlas_lander": {
+   "type": "scriptTOP",
+   "family": "TOP",
+   "pos": [
+    -1300,
+    -200
+   ],
+   "pars": {
+    "callbacks": "/project1/sc_shatter/load_atlas"
+   }
+  },
+  "atlas_panel": {
+   "type": "scriptTOP",
+   "family": "TOP",
+   "pos": [
+    -1300,
+    -3200
+   ],
+   "pars": {
+    "callbacks": "/project1/sc_shatter/load_atlas"
+   }
+  },
+  "atlas_panel_f": {
+   "type": "scriptTOP",
+   "family": "TOP",
+   "pos": [
+    -1300,
+    -3320
+   ],
+   "pars": {
+    "callbacks": "/project1/sc_shatter/load_atlas"
+   }
+  },
+  "atlas_panel_m": {
+   "type": "scriptTOP",
+   "family": "TOP",
+   "pos": [
+    -1300,
+    -3560
+   ],
+   "pars": {
+    "callbacks": "/project1/sc_shatter/load_atlas"
+   }
+  },
+  "atlas_panel_s": {
+   "type": "scriptTOP",
+   "family": "TOP",
+   "pos": [
+    -1300,
+    -3440
+   ],
+   "pars": {
+    "callbacks": "/project1/sc_shatter/load_atlas"
+   }
+  },
+  "atlas_solids": {
+   "type": "scriptTOP",
+   "family": "TOP",
+   "pos": [
+    -1300,
+    -800
+   ],
+   "pars": {
+    "callbacks": "/project1/sc_shatter/load_atlas"
+   }
+  },
+  "atlas_stone": {
+   "type": "scriptTOP",
+   "family": "TOP",
+   "pos": [
+    -1300,
+    160
+   ],
+   "pars": {
+    "callbacks": "/project1/sc_shatter/load_atlas"
+   }
+  },
+  "atlas_w_found": {
+   "type": "scriptTOP",
+   "family": "TOP",
+   "pos": [
+    -1300,
+    -2240
+   ],
+   "pars": {
+    "callbacks": "/project1/sc_shatter/load_atlas"
+   }
+  },
+  "atlas_w_frame": {
+   "type": "scriptTOP",
+   "family": "TOP",
+   "pos": [
+    -1300,
+    -1640
+   ],
+   "pars": {
+    "callbacks": "/project1/sc_shatter/load_atlas"
+   }
+  },
+  "atlas_w_here": {
+   "type": "scriptTOP",
+   "family": "TOP",
+   "pos": [
+    -1300,
+    -2000
+   ],
+   "pars": {
+    "callbacks": "/project1/sc_shatter/load_atlas"
+   }
+  },
+  "atlas_w_nothing": {
+   "type": "scriptTOP",
+   "family": "TOP",
+   "pos": [
+    -1300,
+    -1880
+   ],
+   "pars": {
+    "callbacks": "/project1/sc_shatter/load_atlas"
+   }
+  },
+  "atlas_w_object": {
+   "type": "scriptTOP",
+   "family": "TOP",
+   "pos": [
+    -1300,
+    -2120
+   ],
+   "pars": {
+    "callbacks": "/project1/sc_shatter/load_atlas"
+   }
+  },
+  "atlas_w_sound": {
+   "type": "scriptTOP",
+   "family": "TOP",
+   "pos": [
+    -1300,
+    -1760
+   ],
+   "pars": {
+    "callbacks": "/project1/sc_shatter/load_atlas"
+   }
+  },
+  "atlas_w_touch": {
+   "type": "scriptTOP",
+   "family": "TOP",
+   "pos": [
+    -1300,
+    -1520
+   ],
+   "pars": {
+    "callbacks": "/project1/sc_shatter/load_atlas"
+   }
+  },
+  "atlas_x_bars": {
+   "type": "scriptTOP",
+   "family": "TOP",
+   "pos": [
+    -1300,
+    -2600
+   ],
+   "pars": {
+    "callbacks": "/project1/sc_shatter/load_atlas"
+   }
+  },
+  "atlas_x_blocks": {
+   "type": "scriptTOP",
+   "family": "TOP",
+   "pos": [
+    -1300,
+    -2840
+   ],
+   "pars": {
+    "callbacks": "/project1/sc_shatter/load_atlas"
+   }
+  },
+  "atlas_x_chips": {
+   "type": "scriptTOP",
+   "family": "TOP",
+   "pos": [
+    -1300,
+    -2360
+   ],
+   "pars": {
+    "callbacks": "/project1/sc_shatter/load_atlas"
+   }
+  },
+  "atlas_x_fall": {
+   "type": "scriptTOP",
+   "family": "TOP",
+   "pos": [
+    -1300,
+    -2960
+   ],
+   "pars": {
+    "callbacks": "/project1/sc_shatter/load_atlas"
+   }
+  },
+  "atlas_x_flock": {
+   "type": "scriptTOP",
+   "family": "TOP",
+   "pos": [
+    -1300,
+    -2480
+   ],
+   "pars": {
+    "callbacks": "/project1/sc_shatter/load_atlas"
+   }
+  },
+  "atlas_x_math": {
+   "type": "scriptTOP",
+   "family": "TOP",
+   "pos": [
+    -1300,
+    -2720
+   ],
+   "pars": {
+    "callbacks": "/project1/sc_shatter/load_atlas"
+   }
+  },
+  "atlas_x_rev": {
+   "type": "scriptTOP",
+   "family": "TOP",
+   "pos": [
+    -1300,
+    -3080
+   ],
+   "pars": {
+    "callbacks": "/project1/sc_shatter/load_atlas"
+   }
+  },
+  "big": {
+   "type": "geometryCOMP",
+   "family": "COMP",
+   "pos": [
+    -300,
+    -100
+   ],
+   "pars": {
+    "instancecountmode": "manual",
+    "instancing": true,
+    "material": "/project1/sc_shatter/mat",
+    "numinstances": {
+     "expr": "2*int(op('tk')['nx'])*int(op('tk')['nz'])"
+    },
+    "render": {
+     "expr": "float(op('tk')['soup']) < 0.5"
+    }
+   }
+  },
+  "big/grid": {
+   "type": "gridPOP",
+   "family": "POP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "cols": 401,
+    "rows": 221,
+    "surftype": "triangles"
+   }
+  },
+  "big/soup": {
+   "type": "facetPOP",
+   "family": "POP",
+   "pos": [
+    0,
+    0
+   ],
+   "inputs": [
+    [
+     "big/grid"
+    ]
+   ],
+   "pars": {
+    "computenormals": false,
+    "operation": "unique"
+   }
+  },
+  "bright": {
+   "type": "glslTOP",
+   "family": "TOP",
+   "pos": [
+    550,
+    -250
+   ],
+   "inputs": [
+    [
+     "comp"
+    ]
+   ],
+   "pars": {
+    "computedat": "bright_compute",
+    "format": "rgba16float",
+    "outputresolution": "custom",
+    "pixeldat": "/project1/sc_shatter/bright_px",
+    "resolutionh": 180,
+    "resolutionw": 320,
+    "vec0name": "uThr",
+    "vec0valuex": 1.0
+   }
+  },
+  "bright_px": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    550,
+    -370
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.here('shaders/bright.frag')"
+    },
+    "language": "text",
+    "syncfile": true
+   },
+   "text_file": "experiments/sc_shatter/shaders/bright.frag"
+  },
+  "cam": {
+   "type": "cameraCOMP",
+   "family": "COMP",
+   "pos": [
+    -150,
+    150
+   ],
+   "pars": {
+    "far": 120.0,
+    "fov": {
+     "expr": "op('tk')['fov']"
+    },
+    "lookat": "/project1/sc_shatter/target",
+    "near": 0.03,
+    "tx": {
+     "expr": "op('ctl')['camx']"
+    },
+    "ty": {
+     "expr": "op('ctl')['camy']"
+    },
+    "tz": {
+     "expr": "op('ctl')['camz']"
+    }
+   }
+  },
+  "cam/file1": {
+   "type": "fileinPOP",
+   "family": "POP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "file": {
+     "expr": "app.samplesFolder + '/Geo/defcam.tog'"
+    }
+   }
+  },
+  "comp": {
+   "type": "glslTOP",
+   "family": "TOP",
+   "pos": [
+    350,
+    0
+   ],
+   "inputs": [
+    [
+     "render"
+    ],
+    [
+     "shadow_blur"
+    ]
+   ],
+   "pars": {
+    "computedat": "comp_compute",
+    "format": "rgba16float",
+    "outputresolution": "custom",
+    "pixeldat": "/project1/sc_shatter/comp_px",
+    "resolutionh": 720,
+    "resolutionw": 1280,
+    "vec0name": "uCamPos",
+    "vec0valuew": {
+     "expr": "op('ctl')['th']"
+    },
+    "vec0valuex": {
+     "expr": "op('ctl')['camx']"
+    },
+    "vec0valuey": {
+     "expr": "op('ctl')['camy']"
+    },
+    "vec0valuez": {
+     "expr": "op('ctl')['camz']"
+    },
+    "vec1name": "uCamTgt",
+    "vec1valuew": 0.0,
+    "vec1valuex": {
+     "expr": "op('tk')['tgtx']"
+    },
+    "vec1valuey": {
+     "expr": "op('tk')['tgty']"
+    },
+    "vec1valuez": {
+     "expr": "op('tk')['tgtz']"
+    },
+    "vec2name": "uFloorA",
+    "vec2valuew": {
+     "expr": "op('tk')['poolr']"
+    },
+    "vec2valuex": {
+     "expr": "op('tk')['fAr']"
+    },
+    "vec2valuey": {
+     "expr": "op('tk')['fAg']"
+    },
+    "vec2valuez": {
+     "expr": "op('tk')['fAb']"
+    },
+    "vec3name": "uFloorB",
+    "vec3valuew": {
+     "expr": "op('tk')['shadow']"
+    },
+    "vec3valuex": {
+     "expr": "op('tk')['fBr']"
+    },
+    "vec3valuey": {
+     "expr": "op('tk')['fBg']"
+    },
+    "vec3valuez": {
+     "expr": "op('tk')['fBb']"
+    },
+    "vec4name": "uWallA",
+    "vec4valuew": {
+     "expr": "op('tk')['pattern']"
+    },
+    "vec4valuex": {
+     "expr": "op('tk')['wAr']"
+    },
+    "vec4valuey": {
+     "expr": "op('tk')['wAg']"
+    },
+    "vec4valuez": {
+     "expr": "op('tk')['wAb']"
+    },
+    "vec5name": "uWallB",
+    "vec5valuew": {
+     "expr": "op('tk')['shR']"
+    },
+    "vec5valuex": {
+     "expr": "op('tk')['wBr']"
+    },
+    "vec5valuey": {
+     "expr": "op('tk')['wBg']"
+    },
+    "vec5valuez": {
+     "expr": "op('tk')['wBb']"
+    },
+    "vec6name": "uFx",
+    "vec6valuew": {
+     "expr": "op('tk')['tgtx']"
+    },
+    "vec6valuex": {
+     "expr": "op('hub')['pulse']"
+    },
+    "vec6valuey": {
+     "expr": "op('ctl')['hit']"
+    },
+    "vec6valuez": {
+     "expr": "op('hub')['evolve']"
+    }
+   }
+  },
+  "comp_px": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    350,
+    -120
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.here('shaders/comp.frag')"
+    },
+    "language": "text",
+    "syncfile": true
+   },
+   "text_file": "experiments/sc_shatter/shaders/comp.frag"
+  },
+  "cook_driver": {
+   "type": "executeDAT",
+   "family": "DAT",
+   "pos": [
+    -400,
+    -80
+   ],
+   "pars": {
+    "framestart": true,
+    "language": "python"
+   },
+   "text": [
+    "def onFrameStart(frame):",
+    "    hub = op('/project1/sw_hub')",
+    "    me_on = parent().par.Preview.eval()",
+    "    if hub is not None:",
+    "        me_on = me_on or hub.par.Solo.eval() or hub.par.Scene.eval() == parent().name",
+    "    if me_on:",
+    "        op('hub').cook(force=True)",
+    "        op('out1').cook(force=True)",
+    "    return"
+   ]
+  },
+  "ctl": {
+   "type": "constantCHOP",
+   "family": "CHOP",
+   "pos": [
+    50,
+    330
+   ],
+   "pars": {
+    "const0name": "subj",
+    "const0value": {
+     "expr": "(int(parent().par.Subject) if parent().par.Subject >= 0 else (int(op('tk')['insub']) if (1.0 if (float(op('modes')['input']) > 0.5 and float(op('tk')['insub']) >= 0) else 0.0) > 0.5 else (lambda L: L[(int(op('hub')['section']) + int(float(op('shot')['seed'])*97.0)) % len(L)])((((0, 1, 2), (13, 14), (3, 4, 5, 6, 7, 8), (23, 24, 25, 26), (15,), (9, 10, 8, 7), (1, 7, 4, 11, 2), (27, 28, 29), (5, 3, 11, 4), (12, 6, 5, 3)) if float(op('modes')['describe']) > 0.5 else ((0, 1, 2), (13, 14), (3, 4, 5, 6, 7, 8), (17, 18, 19, 21), (15,), (9, 10, 8, 7), (1, 7, 4, 11, 2), (16, 20, 22), (5, 3, 11, 4), (12, 6, 5, 3)))[int(op('shot')['take']) % 10])))"
+    },
+    "const10name": "usetex",
+    "const10value": {
+     "expr": "float((1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1)[int((int(parent().par.Subject) if parent().par.Subject >= 0 else (int(op('tk')['insub']) if (1.0 if (float(op('modes')['input']) > 0.5 and float(op('tk')['insub']) >= 0) else 0.0) > 0.5 else (lambda L: L[(int(op('hub')['section']) + int(float(op('shot')['seed'])*97.0)) % len(L)])((((0, 1, 2), (13, 14), (3, 4, 5, 6, 7, 8), (23, 24, 25, 26), (15,), (9, 10, 8, 7), (1, 7, 4, 11, 2), (27, 28, 29), (5, 3, 11, 4), (12, 6, 5, 3)) if float(op('modes')['describe']) > 0.5 else ((0, 1, 2), (13, 14), (3, 4, 5, 6, 7, 8), (17, 18, 19, 21), (15,), (9, 10, 8, 7), (1, 7, 4, 11, 2), (16, 20, 22), (5, 3, 11, 4), (12, 6, 5, 3)))[int(op('shot')['take']) % 10]))))])"
+    },
+    "const11name": "th",
+    "const11value": {
+     "expr": "math.tan(math.radians(float(op('tk')['fov']))*0.5)"
+    },
+    "const12name": "hit",
+    "const12value": {
+     "expr": "min(float(op('hub')['hit_low']), 1.3)"
+    },
+    "const13name": "pw",
+    "const13value": {
+     "expr": "float(op('tk')['power'])*(0.72 + 0.5*min(1.0, max(0.0, (float(op('hub')['energy'])-0.33)/0.32)))"
+    },
+    "const14name": "glowin",
+    "const14value": {
+     "expr": "float(op('tk')['inem'])*(1.0 + 0.8*min(float(op('hub')['vocals']), 1.5))"
+    },
+    "const15name": "useinp",
+    "const15value": {
+     "expr": "(1.0 if (float(op('modes')['input']) > 0.5 and float(op('tk')['insub']) >= 0) else 0.0)"
+    },
+    "const1name": "q",
+    "const1value": {
+     "expr": "(float(parent().par.Phase) if parent().par.Manual else (lambda q, n: (math.floor(q*n)/n if n > 0.5 else q))(min(1.0, ((float(op('hub')['bar_pos'])/float(op('tk')['cyc'])) % 1.0)/max(1e-3, 1.0-float(op('tk')['rest']))), float(op('tk')['stepq'])))"
+    },
+    "const2name": "arr",
+    "const2value": {
+     "expr": "(0.0 if parent().par.Manual else max(max(0.0, 1.0 - float(op('shot')['age'])/0.5)**2, 0.75*max(0.0, 1.0 - float(op('hub')['section_pos'])/0.07)**2))"
+    },
+    "const3name": "jolt",
+    "const3value": {
+     "expr": "(0.0 if parent().par.Manual else float(op('tk')['jolt'])*min(float(op('hub')['hit_low']), 1.3))"
+    },
+    "const4name": "camx",
+    "const4value": {
+     "expr": "float(op('tk')['tgtx']) + (float(op('tk')['dist'])*(1.0 + 0.22*max(0.0, 1.0 - float(op('shot')['age'])/0.5)**2)*(1.0 - 0.025*float(op('hub')['pulse']) - 0.03*min(float(op('hub')['hit_low']), 1.3)))*math.sin((lambda u: math.radians(float(op('tk')['az']) + min(float(op('tk')['swing']), 18.0 if u else 1e9)*math.sin(float(op('hub')['evolve'])*0.35 + float(op('shot')['seed'])*6.283) + (0.0 if u else float(op('tk')['orbit'])*float(op('hub')['evolve'])) + (float(op('shot')['seed'])-0.5)*min(float(op('tk')['azseed']), 50.0 if u else 1e9)))((1.0 if (float(op('modes')['input']) > 0.5 and float(op('tk')['insub']) >= 0) else 0.0) > 0.5))"
+    },
+    "const5name": "camy",
+    "const5value": {
+     "expr": "float(op('tk')['height']) + 0.04*float(op('tk')['dist'])*math.sin(float(op('hub')['evolve'])*0.23)"
+    },
+    "const6name": "camz",
+    "const6value": {
+     "expr": "float(op('tk')['tgtz']) + (float(op('tk')['dist'])*(1.0 + 0.22*max(0.0, 1.0 - float(op('shot')['age'])/0.5)**2)*(1.0 - 0.025*float(op('hub')['pulse']) - 0.03*min(float(op('hub')['hit_low']), 1.3)))*math.cos((lambda u: math.radians(float(op('tk')['az']) + min(float(op('tk')['swing']), 18.0 if u else 1e9)*math.sin(float(op('hub')['evolve'])*0.35 + float(op('shot')['seed'])*6.283) + (0.0 if u else float(op('tk')['orbit'])*float(op('hub')['evolve'])) + (float(op('shot')['seed'])-0.5)*min(float(op('tk')['azseed']), 50.0 if u else 1e9)))((1.0 if (float(op('modes')['input']) > 0.5 and float(op('tk')['insub']) >= 0) else 0.0) > 0.5))"
+    },
+    "const7name": "lx",
+    "const7value": {
+     "expr": "math.cos(math.radians(float(op('tk')['lel'])))*math.sin(math.radians(float(op('tk')['laz'])))"
+    },
+    "const8name": "ly",
+    "const8value": {
+     "expr": "math.sin(math.radians(float(op('tk')['lel'])))"
+    },
+    "const9name": "lz",
+    "const9value": {
+     "expr": "math.cos(math.radians(float(op('tk')['lel'])))*math.cos(math.radians(float(op('tk')['laz'])))"
+    }
+   }
+  },
+  "glow": {
+   "type": "blurTOP",
+   "family": "TOP",
+   "pos": [
+    700,
+    -250
+   ],
+   "inputs": [
+    [
+     "bright"
+    ]
+   ],
+   "pars": {
+    "size": 9
+   }
+  },
+  "hub": {
+   "type": "selectCHOP",
+   "family": "CHOP",
+   "pos": [
+    -400,
+    200
+   ],
+   "pars": {
+    "chops": "/project1/sw_hub/feed"
+   }
+  },
+  "input_pic": {
+   "type": "selectTOP",
+   "family": "TOP",
+   "pos": [
+    -1100,
+    780
+   ],
+   "pars": {
+    "top": {
+     "expr": "parent().par.Input.eval().strip() if float(op('modes')['input']) > 0.5 else 'white'"
+    }
+   }
+  },
+  "label": {
+   "type": "switchTOP",
+   "family": "TOP",
+   "pos": [
+    700,
+    -520
+   ],
+   "inputs": [
+    [
+     "label_off"
+    ],
+    [
+     "label0"
+    ],
+    [
+     "label1"
+    ],
+    [
+     "label2"
+    ],
+    [
+     "label3"
+    ],
+    [
+     "label4"
+    ],
+    [
+     "label5"
+    ],
+    [
+     "label6"
+    ],
+    [
+     "label7"
+    ],
+    [
+     "label8"
+    ],
+    [
+     "label9"
+    ],
+    [
+     "label10"
+    ],
+    [
+     "label11"
+    ],
+    [
+     "label12"
+    ],
+    [
+     "label13"
+    ],
+    [
+     "label14"
+    ],
+    [
+     "label15"
+    ],
+    [
+     "label16"
+    ],
+    [
+     "label17"
+    ],
+    [
+     "label18"
+    ],
+    [
+     "label19"
+    ]
+   ],
+   "pars": {
+    "index": {
+     "expr": "(1 + (int(op('shot')['take']) % 10 + (10 if op('ctl')['useinp'] > 0.5 else 0))) if float(op('modes')['describe']) > 0.5 else 0"
+    }
+   }
+  },
+  "label0": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    400,
+    -640
+   ],
+   "pars": {
+    "alignx": "left",
+    "fontfile": {
+     "expr": "mod.paths.font('barlow')"
+    },
+    "fontsizex": 27.0,
+    "fontsizexunit": "pixels",
+    "linespacing": 6.0,
+    "outputresolution": "custom",
+    "resmult": false,
+    "resolutionh": 84,
+    "resolutionw": 1232,
+    "text": "SHATTER AND REASSEMBLE: A 3D MODEL CUT INTO ABOUT A DOZEN BIG PIECES BEFORE PLAYBACK\nA shader pushes the pieces apart and pulls them back, whole on every bar line. Kick drums open the cracks."
+   }
+  },
+  "label1": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    400,
+    -750
+   ],
+   "pars": {
+    "alignx": "left",
+    "fontfile": {
+     "expr": "mod.paths.font('barlow')"
+    },
+    "fontsizex": 27.0,
+    "fontsizexunit": "pixels",
+    "linespacing": 6.0,
+    "outputresolution": "custom",
+    "resmult": false,
+    "resolutionh": 84,
+    "resolutionw": 1232,
+    "text": "FORTY COPIES OF ONE PRE-CUT MODEL, EACH IN ABOUT 40 SHARDS\nA burst wave crosses the grid every two bars. Each shard's path is a formula of the bar phase, so it reverses exactly."
+   }
+  },
+  "label10": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    200,
+    -640
+   ],
+   "pars": {
+    "alignx": "left",
+    "fontfile": {
+     "expr": "mod.paths.font('barlow')"
+    },
+    "fontsizex": 27.0,
+    "fontsizexunit": "pixels",
+    "linespacing": 6.0,
+    "outputresolution": "custom",
+    "resmult": false,
+    "resolutionh": 84,
+    "resolutionw": 1232,
+    "text": "SHATTER AND REASSEMBLE: THE INPUT PICTURE ON A SLAB CUT INTO A DOZEN BIG PIECES\nA shader pushes the pieces apart and pulls them back, whole on every bar line. Kick drums open the cracks."
+   }
+  },
+  "label11": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    200,
+    -750
+   ],
+   "pars": {
+    "alignx": "left",
+    "fontfile": {
+     "expr": "mod.paths.font('barlow')"
+    },
+    "fontsizex": 27.0,
+    "fontsizexunit": "pixels",
+    "linespacing": 6.0,
+    "outputresolution": "custom",
+    "resmult": false,
+    "resolutionh": 84,
+    "resolutionw": 1232,
+    "text": "FORTY COPIES OF THE INPUT PICTURE, EACH ON A SLAB PRE-CUT INTO 40 SHARDS\nA burst wave crosses the grid every two bars. Each shard's path is a formula of the bar phase, so it reverses exactly."
+   }
+  },
+  "label12": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    200,
+    -860
+   ],
+   "pars": {
+    "alignx": "left",
+    "fontfile": {
+     "expr": "mod.paths.font('barlow')"
+    },
+    "fontsizex": 27.0,
+    "fontsizexunit": "pixels",
+    "linespacing": 6.0,
+    "outputresolution": "custom",
+    "resmult": false,
+    "resolutionh": 84,
+    "resolutionw": 1232,
+    "text": "KNOLLING: THE INPUT PICTURE ON A SLAB, TAKEN APART INTO ITS 260 PRE-CUT PIECES\nEach piece hops to a slot in a grid, turns its skin up and scales to fit, then flies home. One cycle is two bars."
+   }
+  },
+  "label13": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    200,
+    -970
+   ],
+   "pars": {
+    "alignx": "left",
+    "fontfile": {
+     "expr": "mod.paths.font('barlow')"
+    },
+    "fontsizex": 27.0,
+    "fontsizexunit": "pixels",
+    "linespacing": 6.0,
+    "outputresolution": "custom",
+    "resmult": false,
+    "resolutionh": 84,
+    "resolutionw": 1232,
+    "text": "THE INPUT PICTURE ON A SLAB CUT INTO NEARLY 5,000 CHIPS, DITHERED TO BLACK AND WHITE\nThe chips ride a flow field, then lock in from left to right and hold for one bar."
+   }
+  },
+  "label14": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    200,
+    -1080
+   ],
+   "pars": {
+    "alignx": "left",
+    "fontfile": {
+     "expr": "mod.paths.font('barlow')"
+    },
+    "fontsizex": 27.0,
+    "fontsizexunit": "pixels",
+    "linespacing": 6.0,
+    "outputresolution": "custom",
+    "resmult": false,
+    "resolutionh": 84,
+    "resolutionw": 1232,
+    "text": "SEVEN GILDED COPIES OF THE INPUT PICTURE; THE FLOOR REFLECTION IS A MIRRORED COPY\nThey crack open one after another down the line, once every two bars. Vocals brighten the white insides."
+   }
+  },
+  "label15": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    200,
+    -1190
+   ],
+   "pars": {
+    "alignx": "left",
+    "fontfile": {
+     "expr": "mod.paths.font('barlow')"
+    },
+    "fontsizex": 27.0,
+    "fontsizexunit": "pixels",
+    "linespacing": 6.0,
+    "outputresolution": "custom",
+    "resmult": false,
+    "resolutionh": 84,
+    "resolutionw": 1232,
+    "text": "THE INPUT PICTURE ON A SLAB SLICED ON HORIZONTAL PLANES, TEN SLICES PER UNIT OF HEIGHT\nThe slabs slide apart from the top down and close again once per bar. Kick drums nudge them open."
+   }
+  },
+  "label16": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    200,
+    -1300
+   ],
+   "pars": {
+    "alignx": "left",
+    "fontfile": {
+     "expr": "mod.paths.font('barlow')"
+    },
+    "fontsizex": 27.0,
+    "fontsizexunit": "pixels",
+    "linespacing": 6.0,
+    "outputresolution": "custom",
+    "resmult": false,
+    "resolutionh": 84,
+    "resolutionw": 1232,
+    "text": "THE INPUT PICTURE ON GLASS SHARDS, DRAWN ADDITIVELY WITH NO DEPTH TEST\nRims, highlights and the picture add up to brightness. The slab opens and closes over two bars."
+   }
+  },
+  "label17": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    200,
+    -1410
+   ],
+   "pars": {
+    "alignx": "left",
+    "fontfile": {
+     "expr": "mod.paths.font('barlow')"
+    },
+    "fontsizex": 27.0,
+    "fontsizexunit": "pixels",
+    "linespacing": 6.0,
+    "outputresolution": "custom",
+    "resmult": false,
+    "resolutionh": 84,
+    "resolutionw": 1232,
+    "text": "THE INPUT PICTURE ON A SLAB CUT INTO 260 BLOCKS\nThe blocks fall from the top down, then the same motion runs backwards. One fall and rise takes two bars."
+   }
+  },
+  "label18": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    200,
+    -1520
+   ],
+   "pars": {
+    "alignx": "left",
+    "fontfile": {
+     "expr": "mod.paths.font('barlow')"
+    },
+    "fontsizex": 27.0,
+    "fontsizexunit": "pixels",
+    "linespacing": 6.0,
+    "outputresolution": "custom",
+    "resmult": false,
+    "resolutionh": 84,
+    "resolutionw": 1232,
+    "text": "THE CAMERA SITS INSIDE ONE BURST OF THE INPUT PICTURE THAT LASTS FOUR BARS\nNothing is simulated: each shard's position is a formula of the bar phase, so every piece returns to its place."
+   }
+  },
+  "label19": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    200,
+    -1630
+   ],
+   "pars": {
+    "alignx": "left",
+    "fontfile": {
+     "expr": "mod.paths.font('barlow')"
+    },
+    "fontsizex": 27.0,
+    "fontsizexunit": "pixels",
+    "linespacing": 6.0,
+    "outputresolution": "custom",
+    "resmult": false,
+    "resolutionh": 84,
+    "resolutionw": 1232,
+    "text": "THE INPUT PICTURE ON A LIT SLAB AND ITS SHADOW, DITHERED TO PURE BLACK AND WHITE\nThe burst phase is rounded to twelve steps per burst, which gives the stop-motion look."
+   }
+  },
+  "label2": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    400,
+    -860
+   ],
+   "pars": {
+    "alignx": "left",
+    "fontfile": {
+     "expr": "mod.paths.font('barlow')"
+    },
+    "fontsizex": 27.0,
+    "fontsizexunit": "pixels",
+    "linespacing": 6.0,
+    "outputresolution": "custom",
+    "resmult": false,
+    "resolutionh": 84,
+    "resolutionw": 1232,
+    "text": "KNOLLING: ONE MODEL TAKEN APART INTO ITS 260 PRE-CUT PIECES\nEach piece hops to a slot in a grid, turns its skin up and scales to fit, then flies home. One cycle is two bars."
+   }
+  },
+  "label3": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    400,
+    -970
+   ],
+   "pars": {
+    "alignx": "left",
+    "fontfile": {
+     "expr": "mod.paths.font('barlow')"
+    },
+    "fontsizex": 27.0,
+    "fontsizexunit": "pixels",
+    "linespacing": 6.0,
+    "outputresolution": "custom",
+    "resmult": false,
+    "resolutionh": 84,
+    "resolutionw": 1232,
+    "text": "A 3D SENTENCE CUT INTO NEARLY 5,000 CHIPS, DRAWN IN PURE BLACK AND WHITE\nThe chips ride a flow field, then lock in from left to right and hold for one bar."
+   }
+  },
+  "label4": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    400,
+    -1080
+   ],
+   "pars": {
+    "alignx": "left",
+    "fontfile": {
+     "expr": "mod.paths.font('barlow')"
+    },
+    "fontsizex": 27.0,
+    "fontsizexunit": "pixels",
+    "linespacing": 6.0,
+    "outputresolution": "custom",
+    "resmult": false,
+    "resolutionh": 84,
+    "resolutionw": 1232,
+    "text": "SEVEN GILDED COPIES OF ONE PRE-CUT MODEL; THE FLOOR REFLECTION IS A MIRRORED COPY\nThey crack open one after another down the line, once every two bars. Vocals brighten the white insides."
+   }
+  },
+  "label5": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    400,
+    -1190
+   ],
+   "pars": {
+    "alignx": "left",
+    "fontfile": {
+     "expr": "mod.paths.font('barlow')"
+    },
+    "fontsizex": 27.0,
+    "fontsizexunit": "pixels",
+    "linespacing": 6.0,
+    "outputresolution": "custom",
+    "resmult": false,
+    "resolutionh": 84,
+    "resolutionw": 1232,
+    "text": "ONE MODEL SLICED ON HORIZONTAL PLANES, TEN SLICES PER UNIT OF HEIGHT\nThe slabs slide apart from the top down and close again once per bar. Kick drums nudge them open."
+   }
+  },
+  "label6": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    400,
+    -1300
+   ],
+   "pars": {
+    "alignx": "left",
+    "fontfile": {
+     "expr": "mod.paths.font('barlow')"
+    },
+    "fontsizex": 27.0,
+    "fontsizexunit": "pixels",
+    "linespacing": 6.0,
+    "outputresolution": "custom",
+    "resmult": false,
+    "resolutionh": 84,
+    "resolutionw": 1232,
+    "text": "THE SAME SHARDS DRAWN ADDITIVELY WITH NO DEPTH TEST\nOnly edge-on rims and highlights add up to brightness, so the object reads as glass. It opens and closes over two bars."
+   }
+  },
+  "label7": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    400,
+    -1410
+   ],
+   "pars": {
+    "alignx": "left",
+    "fontfile": {
+     "expr": "mod.paths.font('barlow')"
+    },
+    "fontsizex": 27.0,
+    "fontsizexunit": "pixels",
+    "linespacing": 6.0,
+    "outputresolution": "custom",
+    "resmult": false,
+    "resolutionh": 84,
+    "resolutionw": 1232,
+    "text": "EXTRUDED 3D TEXT CUT INTO HUNDREDS OF BLOCKS\nThe blocks fall from the top down, then the same motion runs backwards. One fall and rise takes two bars."
+   }
+  },
+  "label8": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    400,
+    -1520
+   ],
+   "pars": {
+    "alignx": "left",
+    "fontfile": {
+     "expr": "mod.paths.font('barlow')"
+    },
+    "fontsizex": 27.0,
+    "fontsizexunit": "pixels",
+    "linespacing": 6.0,
+    "outputresolution": "custom",
+    "resmult": false,
+    "resolutionh": 84,
+    "resolutionw": 1232,
+    "text": "THE CAMERA SITS INSIDE ONE BURST THAT LASTS FOUR BARS\nNothing is simulated: each shard's position is a formula of the bar phase, so every piece returns to its place."
+   }
+  },
+  "label9": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    400,
+    -1630
+   ],
+   "pars": {
+    "alignx": "left",
+    "fontfile": {
+     "expr": "mod.paths.font('barlow')"
+    },
+    "fontsizex": 27.0,
+    "fontsizexunit": "pixels",
+    "linespacing": 6.0,
+    "outputresolution": "custom",
+    "resmult": false,
+    "resolutionh": 84,
+    "resolutionw": 1232,
+    "text": "ONE LIT MODEL AND ITS SHADOW, DITHERED TO PURE BLACK AND WHITE\nThe burst phase is rounded to twelve steps per burst, which gives the stop-motion look."
+   }
+  },
+  "label_off": {
+   "type": "constantTOP",
+   "family": "TOP",
+   "pos": [
+    550,
+    -520
+   ],
+   "pars": {
+    "alpha": 0.0,
+    "colorb": 0.0,
+    "colorg": 0.0,
+    "colorr": 0.0,
+    "outputresolution": "custom",
+    "resolutionh": 16,
+    "resolutionw": 16
+   }
+  },
+  "load_atlas": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    -1500,
+    500
+   ],
+   "pars": {
+    "language": "text"
+   },
+   "text": [
+    "# Script TOP callbacks: load one baked fracture atlas (see bake.py) into a float texture.",
+    "import numpy as np",
+    "",
+    "",
+    "def onCook(scriptOp):",
+    "    name = scriptOp.name[len('atlas_'):]",
+    "    a = np.load(mod.paths.here(scriptOp.parent().fetch('atlas_files')[name]))",
+    "    scriptOp.copyNumpyArray(a)",
+    "    return"
+   ]
+  },
+  "local": {
+   "type": "baseCOMP",
+   "family": "COMP",
+   "pos": [
+    -400,
+    460
+   ]
+  },
+  "local/modules": {
+   "type": "baseCOMP",
+   "family": "COMP",
+   "pos": [
+    0,
+    0
+   ]
+  },
+  "local/modules/paths": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "file": {
+     "expr": "project.folder.replace(chr(92), '/') + '/experiments/sw_hub/paths_module.py'"
+    },
+    "language": "text",
+    "syncfile": true
+   },
+   "text_file": "experiments/sw_hub/paths_module.py"
+  },
+  "mat": {
+   "type": "glslMAT",
+   "family": "MAT",
+   "pos": [
+    -500,
+    -250
+   ],
+   "pars": {
+    "blending": {
+     "expr": "op('tk')['glass'] > 0.5"
+    },
+    "cullface": "neither",
+    "depthtest": {
+     "expr": "op('tk')['glass'] < 0.5"
+    },
+    "depthwriting": {
+     "expr": "op('tk')['glass'] < 0.5"
+    },
+    "destblend": "one",
+    "pdat": "/project1/sc_shatter/shard_frag",
+    "sampler0filter": "nearest",
+    "sampler0name": "sAtlas",
+    "sampler0top": "/project1/sc_shatter/atlas",
+    "sampler1filter": "nearest",
+    "sampler1name": "sTex",
+    "sampler1top": "/project1/sc_shatter/tex",
+    "vdat": "/project1/sc_shatter/shard_vert",
+    "vec0name": "uBurst",
+    "vec0valuew": {
+     "expr": "op('tk')['level']"
+    },
+    "vec0valuex": {
+     "expr": "op('ctl')['q']"
+    },
+    "vec0valuey": {
+     "expr": "op('ctl')['pw']"
+    },
+    "vec0valuez": {
+     "expr": "op('tk')['spin']"
+    },
+    "vec10name": "uKey",
+    "vec10valuew": {
+     "expr": "op('tk')['amb']"
+    },
+    "vec10valuex": {
+     "expr": "op('tk')['keyr']"
+    },
+    "vec10valuey": {
+     "expr": "op('tk')['keyg']"
+    },
+    "vec10valuez": {
+     "expr": "op('tk')['keyb']"
+    },
+    "vec11name": "uInner",
+    "vec11valuew": {
+     "expr": "op('ctl')['glowin']"
+    },
+    "vec11valuex": {
+     "expr": "op('tk')['inr']"
+    },
+    "vec11valuey": {
+     "expr": "op('tk')['ing']"
+    },
+    "vec11valuez": {
+     "expr": "op('tk')['inb']"
+    },
+    "vec12name": "uTint",
+    "vec12valuew": {
+     "expr": "op('ctl')['usetex']"
+    },
+    "vec12valuex": {
+     "expr": "op('tk')['tr']"
+    },
+    "vec12valuey": {
+     "expr": "op('tk')['tg']"
+    },
+    "vec12valuez": {
+     "expr": "op('tk')['tb']"
+    },
+    "vec13name": "uLook",
+    "vec13valuew": {
+     "expr": "op('tk')['refl']"
+    },
+    "vec13valuex": {
+     "expr": "op('tk')['rough']"
+    },
+    "vec13valuey": {
+     "expr": "op('tk')['envs']"
+    },
+    "vec13valuez": {
+     "expr": "op('tk')['unlit']"
+    },
+    "vec14name": "uHits",
+    "vec14valuew": {
+     "expr": "op('tk')['inmetal']"
+    },
+    "vec14valuex": {
+     "expr": "op('ctl')['hit']"
+    },
+    "vec14valuey": {
+     "expr": "min(float(op('hub')['hit_high']), 1.2)"
+    },
+    "vec14valuez": {
+     "expr": "op('hub')['pulse']"
+    },
+    "vec15name": "uEnv",
+    "vec15valuew": {
+     "expr": "op('tk')['burstglow']"
+    },
+    "vec15valuex": {
+     "expr": "op('tk')['envr']"
+    },
+    "vec15valuey": {
+     "expr": "op('tk')['envg']"
+    },
+    "vec15valuez": {
+     "expr": "op('tk')['envb']"
+    },
+    "vec16name": "uInput",
+    "vec16valuew": 0.0,
+    "vec16valuex": {
+     "expr": "op('ctl')['useinp']"
+    },
+    "vec16valuey": 0.0,
+    "vec16valuez": 0.0,
+    "vec1name": "uShape",
+    "vec1valuew": {
+     "expr": "op('tk')['swirl']"
+    },
+    "vec1valuex": {
+     "expr": "op('tk')['d0']"
+    },
+    "vec1valuey": {
+     "expr": "op('tk')['d1']"
+    },
+    "vec1valuez": {
+     "expr": "op('tk')['gravity']"
+    },
+    "vec2name": "uAudio",
+    "vec2valuew": {
+     "expr": "op('tk')['spread']"
+    },
+    "vec2valuex": {
+     "expr": "op('ctl')['jolt']"
+    },
+    "vec2valuey": {
+     "expr": "op('hub')['evolve']"
+    },
+    "vec2valuez": {
+     "expr": "op('ctl')['arr']*float(op('tk')['arrp'])"
+    },
+    "vec3name": "uGrid",
+    "vec3valuew": {
+     "expr": "op('tk')['sz']"
+    },
+    "vec3valuex": {
+     "expr": "op('tk')['nx']"
+    },
+    "vec3valuey": {
+     "expr": "op('tk')['nz']"
+    },
+    "vec3valuez": {
+     "expr": "op('tk')['sx']"
+    },
+    "vec4name": "uWave",
+    "vec4valuew": {
+     "expr": "op('tk')['yawjit']"
+    },
+    "vec4valuex": {
+     "expr": "op('tk')['wave']"
+    },
+    "vec4valuey": {
+     "expr": "op('tk')['wavedir']"
+    },
+    "vec4valuez": {
+     "expr": "op('shot')['seed']"
+    },
+    "vec5name": "uLight",
+    "vec5valuew": {
+     "expr": "1.0 if op('tk')['refl'] > 0.01 else 0.0"
+    },
+    "vec5valuex": {
+     "expr": "op('ctl')['lx']"
+    },
+    "vec5valuey": {
+     "expr": "op('ctl')['ly']"
+    },
+    "vec5valuez": {
+     "expr": "op('ctl')['lz']"
+    },
+    "vec6name": "uSlab",
+    "vec6valuew": 10.0,
+    "vec6valuex": {
+     "expr": "math.cos(float(op('tk')['slabdir']))"
+    },
+    "vec6valuey": 0.0,
+    "vec6valuez": {
+     "expr": "math.sin(float(op('tk')['slabdir']))"
+    },
+    "vec7name": "uOrder",
+    "vec7valuex": {
+     "expr": "op('tk')['omode']"
+    },
+    "vec7valuey": {
+     "expr": "0.5 + 0.4*math.sin(float(op('shot')['seed'])*40.0)"
+    },
+    "vec7valuez": {
+     "expr": "0.55 + 0.35*math.sin(float(op('shot')['seed'])*71.0)"
+    },
+    "vec8name": "uXform",
+    "vec8valuew": {
+     "expr": "op('tk')['fclamp']"
+    },
+    "vec8valuex": {
+     "expr": "float(op('tk')['oscale'])*(float(op('tk')['inscale']) if op('ctl')['useinp'] > 0.5 else 1.0)"
+    },
+    "vec8valuey": {
+     "expr": "float(op('tk')['oyaw']) + (float(op('tk')['inyaw']) if op('ctl')['useinp'] > 0.5 else 0.0)"
+    },
+    "vec8valuez": {
+     "expr": "op('tk')['drift']"
+    },
+    "vec9name": "uMode",
+    "vec9valuew": {
+     "expr": "op('tk')['glass']"
+    },
+    "vec9valuex": {
+     "expr": "op('tk')['lay']"
+    },
+    "vec9valuey": {
+     "expr": "op('tk')['kgap']"
+    },
+    "vec9valuez": {
+     "expr": "op('tk')['skinmetal']"
+    }
+   }
+  },
+  "mid": {
+   "type": "geometryCOMP",
+   "family": "COMP",
+   "pos": [
+    -300,
+    -360
+   ],
+   "pars": {
+    "instancecountmode": "manual",
+    "instancing": true,
+    "material": "/project1/sc_shatter/mat",
+    "numinstances": {
+     "expr": "2*int(op('tk')['nx'])*int(op('tk')['nz'])"
+    },
+    "render": {
+     "expr": "float(op('tk')['soup']) == 2.0"
+    }
+   }
+  },
+  "mid/grid": {
+   "type": "gridPOP",
+   "family": "POP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "cols": 201,
+    "rows": 136,
+    "surftype": "triangles"
+   }
+  },
+  "mid/soup": {
+   "type": "facetPOP",
+   "family": "POP",
+   "pos": [
+    0,
+    0
+   ],
+   "inputs": [
+    [
+     "mid/grid"
+    ]
+   ],
+   "pars": {
+    "computenormals": false,
+    "operation": "unique"
+   }
+  },
+  "modes": {
+   "type": "constantCHOP",
+   "family": "CHOP",
+   "pos": [
+    -400,
+    460
+   ],
+   "pars": {
+    "const0name": "describe",
+    "const0value": {
+     "expr": "1 if parent().par.Describe else 0"
+    },
+    "const1name": "input",
+    "const1value": {
+     "expr": "(lambda o: 1 if (o is not None and o.isTOP and not (o.path + '/').startswith(parent().path + '/')) else 0)(op(parent().par.Input.eval().strip()) if parent().par.Input.eval().strip() else None)"
+    }
+   }
+  },
+  "out1": {
+   "type": "outTOP",
+   "family": "TOP",
+   "pos": [
+    1200,
+    0
+   ],
+   "inputs": [
+    [
+     "post"
+    ]
+   ]
+  },
+  "post": {
+   "type": "glslTOP",
+   "family": "TOP",
+   "pos": [
+    900,
+    0
+   ],
+   "inputs": [
+    [
+     "comp"
+    ],
+    [
+     "glow"
+    ],
+    [
+     "label"
+    ]
+   ],
+   "pars": {
+    "computedat": "post_compute",
+    "format": "rgba8fixed",
+    "outputresolution": "custom",
+    "pixeldat": "/project1/sc_shatter/post_px",
+    "resolutionh": 720,
+    "resolutionw": 1280,
+    "vec0name": "uPost",
+    "vec0valuew": {
+     "expr": "op('tk')['mode']"
+    },
+    "vec0valuex": {
+     "expr": "op('tk')['expo']"
+    },
+    "vec0valuey": {
+     "expr": "op('tk')['glow']"
+    },
+    "vec0valuez": {
+     "expr": "op('tk')['vig']"
+    },
+    "vec1name": "uBeat",
+    "vec1valuew": {
+     "expr": "op('tk')['sat']"
+    },
+    "vec1valuex": {
+     "expr": "op('ctl')['hit']"
+    },
+    "vec1valuey": {
+     "expr": "op('hub')['pulse']"
+    },
+    "vec1valuez": {
+     "expr": "op('hub')['t']"
+    },
+    "vec2name": "uDesc",
+    "vec2valuew": 84.0,
+    "vec2valuex": {
+     "expr": "op('modes')['describe']"
+    },
+    "vec2valuey": {
+     "expr": "(1057, 1140, 1046, 786, 1026, 977, 1156, 1039, 1059, 859, 1057, 1140, 1046, 904, 1026, 977, 929, 1039, 1059, 869)[(int(op('shot')['take']) % 10 + (10 if op('ctl')['useinp'] > 0.5 else 0))]"
+    },
+    "vec2valuez": 1232.0
+   }
+  },
+  "post_px": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    900,
+    -120
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.here('shaders/post.frag')"
+    },
+    "language": "text",
+    "syncfile": true
+   },
+   "text_file": "experiments/sc_shatter/shaders/post.frag"
+  },
+  "render": {
+   "type": "renderTOP",
+   "family": "TOP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "camera": "/project1/sc_shatter/cam",
+    "format": "rgba16float",
+    "geometry": "big small mid",
+    "lights": "",
+    "resolutionh": 720,
+    "resolutionw": 1280
+   }
+  },
+  "shadow": {
+   "type": "renderTOP",
+   "family": "TOP",
+   "pos": [
+    0,
+    -400
+   ],
+   "pars": {
+    "camera": "/project1/sc_shatter/shadow_cam",
+    "geometry": "big small mid",
+    "lights": "",
+    "resolutionh": 768,
+    "resolutionw": 768
+   }
+  },
+  "shadow_blur": {
+   "type": "blurTOP",
+   "family": "TOP",
+   "pos": [
+    150,
+    -400
+   ],
+   "inputs": [
+    [
+     "shadow"
+    ]
+   ],
+   "pars": {
+    "size": {
+     "expr": "op('tk')['shblur']"
+    }
+   }
+  },
+  "shadow_cam": {
+   "type": "cameraCOMP",
+   "family": "COMP",
+   "pos": [
+    -150,
+    -400
+   ],
+   "pars": {
+    "far": 100.0,
+    "orthowidth": {
+     "expr": "2.0*float(op('tk')['shR'])"
+    },
+    "projection": "ortho",
+    "rx": -90.0,
+    "ty": 30.0
+   }
+  },
+  "shadow_cam/file1": {
+   "type": "fileinPOP",
+   "family": "POP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "file": {
+     "expr": "app.samplesFolder + '/Geo/defcam.tog'"
+    }
+   }
+  },
+  "shard_frag": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    -700,
+    -370
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.here('shaders/shard.frag')"
+    },
+    "language": "text",
+    "syncfile": true
+   },
+   "text_file": "experiments/sc_shatter/shaders/shard.frag"
+  },
+  "shard_vert": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    -700,
+    -250
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.here('shaders/shard.vert')"
+    },
+    "language": "text",
+    "syncfile": true
+   },
+   "text_file": "experiments/sc_shatter/shaders/shard.vert"
+  },
+  "shot": {
+   "type": "constantCHOP",
+   "family": "CHOP",
+   "pos": [
+    -400,
+    330
+   ],
+   "pars": {
+    "const0name": "take",
+    "const0value": {
+     "expr": "parent().par.Take"
+    },
+    "const1name": "seed",
+    "const1value": {
+     "expr": "parent().par.Seed"
+    },
+    "const2name": "age",
+    "const2value": {
+     "expr": "max(0, absTime.seconds - parent().par.Shotstart)"
+    }
+   }
+  },
+  "small": {
+   "type": "geometryCOMP",
+   "family": "COMP",
+   "pos": [
+    -300,
+    -230
+   ],
+   "pars": {
+    "instancecountmode": "manual",
+    "instancing": true,
+    "material": "/project1/sc_shatter/mat",
+    "numinstances": {
+     "expr": "2*int(op('tk')['nx'])*int(op('tk')['nz'])"
+    },
+    "render": {
+     "expr": "float(op('tk')['soup']) == 1.0"
+    }
+   }
+  },
+  "small/grid": {
+   "type": "gridPOP",
+   "family": "POP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "cols": 101,
+    "rows": 73,
+    "surftype": "triangles"
+   }
+  },
+  "small/soup": {
+   "type": "facetPOP",
+   "family": "POP",
+   "pos": [
+    0,
+    0
+   ],
+   "inputs": [
+    [
+     "small/grid"
+    ]
+   ],
+   "pars": {
+    "computenormals": false,
+    "operation": "unique"
+   }
+  },
+  "spectrum": {
+   "type": "selectTOP",
+   "family": "TOP",
+   "pos": [
+    -400,
+    60
+   ],
+   "pars": {
+    "top": "/project1/sw_hub/spectex"
+   }
+  },
+  "take0": {
+   "type": "constantCHOP",
+   "family": "CHOP",
+   "pos": [
+    -250,
+    1430
+   ],
+   "pars": {
+    "const0name": "level",
+    "const0value": 2.0,
+    "const10name": "rest",
+    "const11name": "jolt",
+    "const11value": 0.6,
+    "const12name": "arrp",
+    "const12value": 1.6,
+    "const13name": "drift",
+    "const13value": 0.5,
+    "const14name": "fclamp",
+    "const14value": 1.0,
+    "const15name": "lay",
+    "const16name": "kgap",
+    "const16value": 0.2,
+    "const17name": "stepq",
+    "const18name": "slabdir",
+    "const19name": "soup",
+    "const1name": "power",
+    "const1value": 0.17,
+    "const20name": "nx",
+    "const20value": 1.0,
+    "const21name": "nz",
+    "const21value": 1.0,
+    "const22name": "sx",
+    "const22value": 1.0,
+    "const23name": "sz",
+    "const23value": 1.0,
+    "const24name": "wave",
+    "const25name": "wavedir",
+    "const26name": "yawjit",
+    "const27name": "oscale",
+    "const27value": 1.0,
+    "const28name": "oyaw",
+    "const29name": "insub",
+    "const29value": 30.0,
+    "const2name": "spin",
+    "const2value": 0.035,
+    "const30name": "inscale",
+    "const30value": 0.85,
+    "const31name": "inyaw",
+    "const32name": "dist",
+    "const32value": 2.8,
+    "const33name": "height",
+    "const33value": 0.8,
+    "const34name": "az",
+    "const34value": 28.0,
+    "const35name": "swing",
+    "const35value": 16.0,
+    "const36name": "orbit",
+    "const37name": "tgtx",
+    "const37value": 0.18,
+    "const38name": "tgty",
+    "const38value": 0.53,
+    "const39name": "tgtz",
+    "const3name": "spread",
+    "const3value": 0.12,
+    "const40name": "fov",
+    "const40value": 40.0,
+    "const41name": "azseed",
+    "const41value": 30.0,
+    "const42name": "laz",
+    "const42value": -50.0,
+    "const43name": "lel",
+    "const43value": 48.0,
+    "const44name": "keyr",
+    "const44value": 2.6,
+    "const45name": "keyg",
+    "const45value": 2.4,
+    "const46name": "keyb",
+    "const46value": 2.1,
+    "const47name": "amb",
+    "const47value": 0.35,
+    "const48name": "envr",
+    "const48value": 0.5,
+    "const49name": "envg",
+    "const49value": 0.55,
+    "const4name": "gravity",
+    "const50name": "envb",
+    "const50value": 0.6,
+    "const51name": "rough",
+    "const51value": 0.38,
+    "const52name": "envs",
+    "const52value": 1.0,
+    "const53name": "refl",
+    "const53value": 0.38,
+    "const54name": "inr",
+    "const54value": 1.0,
+    "const55name": "ing",
+    "const55value": 0.52,
+    "const56name": "inb",
+    "const56value": 0.07,
+    "const57name": "inem",
+    "const57value": 0.28,
+    "const58name": "inmetal",
+    "const58value": 1.0,
+    "const59name": "tr",
+    "const59value": 1.0,
+    "const5name": "swirl",
+    "const60name": "tg",
+    "const60value": 1.0,
+    "const61name": "tb",
+    "const61value": 1.0,
+    "const62name": "burstglow",
+    "const63name": "skinmetal",
+    "const64name": "glass",
+    "const65name": "wAr",
+    "const65value": 0.03,
+    "const66name": "wAg",
+    "const66value": 0.05,
+    "const67name": "wAb",
+    "const67value": 0.07,
+    "const68name": "wBr",
+    "const68value": 0.004,
+    "const69name": "wBg",
+    "const69value": 0.008,
+    "const6name": "d0",
+    "const6value": 0.22,
+    "const70name": "wBb",
+    "const70value": 0.014,
+    "const71name": "fAr",
+    "const71value": 0.1,
+    "const72name": "fAg",
+    "const72value": 0.13,
+    "const73name": "fAb",
+    "const73value": 0.16,
+    "const74name": "fBr",
+    "const74value": 0.008,
+    "const75name": "fBg",
+    "const75value": 0.012,
+    "const76name": "fBb",
+    "const76value": 0.018,
+    "const77name": "poolr",
+    "const77value": 3.2,
+    "const78name": "shadow",
+    "const78value": 0.75,
+    "const79name": "pattern",
+    "const7name": "d1",
+    "const7value": 0.12,
+    "const80name": "shR",
+    "const80value": 3.0,
+    "const81name": "shblur",
+    "const81value": 3.0,
+    "const82name": "unlit",
+    "const83name": "mode",
+    "const84name": "expo",
+    "const84value": 1.0,
+    "const85name": "glow",
+    "const85value": 0.45,
+    "const86name": "vig",
+    "const86value": 0.5,
+    "const87name": "sat",
+    "const87value": 1.05,
+    "const8name": "omode",
+    "const8value": 1.0,
+    "const9name": "cyc",
+    "const9value": 1.0
+   }
+  },
+  "take1": {
+   "type": "constantCHOP",
+   "family": "CHOP",
+   "pos": [
+    -250,
+    1320
+   ],
+   "pars": {
+    "const0name": "level",
+    "const0value": 1.0,
+    "const10name": "rest",
+    "const10value": 0.25,
+    "const11name": "jolt",
+    "const11value": 0.3,
+    "const12name": "arrp",
+    "const12value": 0.8,
+    "const13name": "drift",
+    "const13value": 0.25,
+    "const14name": "fclamp",
+    "const14value": 1.0,
+    "const15name": "lay",
+    "const16name": "kgap",
+    "const16value": 0.2,
+    "const17name": "stepq",
+    "const18name": "slabdir",
+    "const19name": "soup",
+    "const19value": 1.0,
+    "const1name": "power",
+    "const1value": 0.55,
+    "const20name": "nx",
+    "const20value": 8.0,
+    "const21name": "nz",
+    "const21value": 5.0,
+    "const22name": "sx",
+    "const22value": 1.32,
+    "const23name": "sz",
+    "const23value": 1.12,
+    "const24name": "wave",
+    "const24value": 0.5,
+    "const25name": "wavedir",
+    "const26name": "yawjit",
+    "const26value": 0.6,
+    "const27name": "oscale",
+    "const27value": 1.0,
+    "const28name": "oyaw",
+    "const29name": "insub",
+    "const29value": 32.0,
+    "const2name": "spin",
+    "const2value": 0.9,
+    "const30name": "inscale",
+    "const30value": 1.0,
+    "const31name": "inyaw",
+    "const32name": "dist",
+    "const32value": 0.05,
+    "const33name": "height",
+    "const33value": 19.5,
+    "const34name": "az",
+    "const35name": "swing",
+    "const36name": "orbit",
+    "const37name": "tgtx",
+    "const38name": "tgty",
+    "const39name": "tgtz",
+    "const39value": -0.25,
+    "const3name": "spread",
+    "const3value": 0.5,
+    "const40name": "fov",
+    "const40value": 33.0,
+    "const41name": "azseed",
+    "const42name": "laz",
+    "const42value": -60.0,
+    "const43name": "lel",
+    "const43value": 30.0,
+    "const44name": "keyr",
+    "const44value": 3.0,
+    "const45name": "keyg",
+    "const45value": 2.8,
+    "const46name": "keyb",
+    "const46value": 2.4,
+    "const47name": "amb",
+    "const47value": 0.7,
+    "const48name": "envr",
+    "const48value": 0.9,
+    "const49name": "envg",
+    "const49value": 0.9,
+    "const4name": "gravity",
+    "const50name": "envb",
+    "const50value": 0.8,
+    "const51name": "rough",
+    "const51value": 0.38,
+    "const52name": "envs",
+    "const52value": 1.0,
+    "const53name": "refl",
+    "const54name": "inr",
+    "const54value": 0.586,
+    "const55name": "ing",
+    "const55value": 0.0152,
+    "const56name": "inb",
+    "const56value": 0.0078,
+    "const57name": "inem",
+    "const57value": 0.3,
+    "const58name": "inmetal",
+    "const59name": "tr",
+    "const59value": 1.0,
+    "const5name": "swirl",
+    "const60name": "tg",
+    "const60value": 1.0,
+    "const61name": "tb",
+    "const61value": 1.0,
+    "const62name": "burstglow",
+    "const63name": "skinmetal",
+    "const64name": "glass",
+    "const65name": "wAr",
+    "const65value": 0.03,
+    "const66name": "wAg",
+    "const66value": 0.05,
+    "const67name": "wAb",
+    "const67value": 0.07,
+    "const68name": "wBr",
+    "const68value": 0.004,
+    "const69name": "wBg",
+    "const69value": 0.008,
+    "const6name": "d0",
+    "const6value": 0.1,
+    "const70name": "wBb",
+    "const70value": 0.014,
+    "const71name": "fAr",
+    "const71value": 0.2158,
+    "const72name": "fAg",
+    "const72value": 0.3021,
+    "const73name": "fAb",
+    "const73value": 0.1905,
+    "const74name": "fBr",
+    "const74value": 0.1113,
+    "const75name": "fBg",
+    "const75value": 0.1573,
+    "const76name": "fBb",
+    "const76value": 0.0963,
+    "const77name": "poolr",
+    "const77value": 14.0,
+    "const78name": "shadow",
+    "const78value": 0.72,
+    "const79name": "pattern",
+    "const79value": 1.0,
+    "const7name": "d1",
+    "const7value": 0.05,
+    "const80name": "shR",
+    "const80value": 8.0,
+    "const81name": "shblur",
+    "const81value": 2.0,
+    "const82name": "unlit",
+    "const83name": "mode",
+    "const84name": "expo",
+    "const84value": 0.95,
+    "const85name": "glow",
+    "const85value": 0.25,
+    "const86name": "vig",
+    "const86value": 0.35,
+    "const87name": "sat",
+    "const87value": 1.05,
+    "const8name": "omode",
+    "const9name": "cyc",
+    "const9value": 2.0
+   }
+  },
+  "take2": {
+   "type": "constantCHOP",
+   "family": "CHOP",
+   "pos": [
+    -250,
+    1210
+   ],
+   "pars": {
+    "const0name": "level",
+    "const0value": 1.0,
+    "const10name": "rest",
+    "const10value": 0.125,
+    "const11name": "jolt",
+    "const11value": 0.35,
+    "const12name": "arrp",
+    "const12value": 0.8,
+    "const13name": "drift",
+    "const14name": "fclamp",
+    "const14value": 1.0,
+    "const15name": "lay",
+    "const15value": 1.0,
+    "const16name": "kgap",
+    "const16value": 0.205,
+    "const17name": "stepq",
+    "const18name": "slabdir",
+    "const19name": "soup",
+    "const1name": "power",
+    "const1value": 0.3,
+    "const20name": "nx",
+    "const20value": 1.0,
+    "const21name": "nz",
+    "const21value": 1.0,
+    "const22name": "sx",
+    "const22value": 1.0,
+    "const23name": "sz",
+    "const23value": 1.0,
+    "const24name": "wave",
+    "const25name": "wavedir",
+    "const26name": "yawjit",
+    "const27name": "oscale",
+    "const27value": 1.0,
+    "const28name": "oyaw",
+    "const29name": "insub",
+    "const29value": 31.0,
+    "const2name": "spin",
+    "const30name": "inscale",
+    "const30value": 1.0,
+    "const31name": "inyaw",
+    "const32name": "dist",
+    "const32value": 0.7,
+    "const33name": "height",
+    "const33value": 6.6,
+    "const34name": "az",
+    "const35name": "swing",
+    "const35value": 4.0,
+    "const36name": "orbit",
+    "const37name": "tgtx",
+    "const38name": "tgty",
+    "const39name": "tgtz",
+    "const39value": -0.3,
+    "const3name": "spread",
+    "const3value": 0.3,
+    "const40name": "fov",
+    "const40value": 44.0,
+    "const41name": "azseed",
+    "const41value": 8.0,
+    "const42name": "laz",
+    "const42value": -62.0,
+    "const43name": "lel",
+    "const43value": 34.0,
+    "const44name": "keyr",
+    "const44value": 2.1,
+    "const45name": "keyg",
+    "const45value": 2.0,
+    "const46name": "keyb",
+    "const46value": 1.85,
+    "const47name": "amb",
+    "const47value": 0.55,
+    "const48name": "envr",
+    "const48value": 0.7,
+    "const49name": "envg",
+    "const49value": 0.8,
+    "const4name": "gravity",
+    "const50name": "envb",
+    "const50value": 0.9,
+    "const51name": "rough",
+    "const51value": 0.38,
+    "const52name": "envs",
+    "const52value": 1.0,
+    "const53name": "refl",
+    "const54name": "inr",
+    "const54value": 0.7227,
+    "const55name": "ing",
+    "const55value": 0.4704,
+    "const56name": "inb",
+    "const56value": 0.043,
+    "const57name": "inem",
+    "const57value": 0.06,
+    "const58name": "inmetal",
+    "const59name": "tr",
+    "const59value": 1.0,
+    "const5name": "swirl",
+    "const60name": "tg",
+    "const60value": 1.0,
+    "const61name": "tb",
+    "const61value": 1.0,
+    "const62name": "burstglow",
+    "const63name": "skinmetal",
+    "const64name": "glass",
+    "const65name": "wAr",
+    "const65value": 0.0072,
+    "const66name": "wAg",
+    "const66value": 0.0239,
+    "const67name": "wAb",
+    "const67value": 0.0479,
+    "const68name": "wBr",
+    "const68value": 0.0036,
+    "const69name": "wBg",
+    "const69value": 0.0119,
+    "const6name": "d0",
+    "const6value": 0.3,
+    "const70name": "wBb",
+    "const70value": 0.0239,
+    "const71name": "fAr",
+    "const71value": 0.0156,
+    "const72name": "fAg",
+    "const72value": 0.0517,
+    "const73name": "fAb",
+    "const73value": 0.1037,
+    "const74name": "fBr",
+    "const74value": 0.0072,
+    "const75name": "fBg",
+    "const75value": 0.0239,
+    "const76name": "fBb",
+    "const76value": 0.0479,
+    "const77name": "poolr",
+    "const77value": 9.0,
+    "const78name": "shadow",
+    "const78value": 0.8,
+    "const79name": "pattern",
+    "const7name": "d1",
+    "const7value": 0.25,
+    "const80name": "shR",
+    "const80value": 3.6,
+    "const81name": "shblur",
+    "const81value": 1.5,
+    "const82name": "unlit",
+    "const83name": "mode",
+    "const84name": "expo",
+    "const84value": 1.0,
+    "const85name": "glow",
+    "const85value": 0.3,
+    "const86name": "vig",
+    "const86value": 0.4,
+    "const87name": "sat",
+    "const87value": 1.05,
+    "const8name": "omode",
+    "const9name": "cyc",
+    "const9value": 2.0
+   }
+  },
+  "take3": {
+   "type": "constantCHOP",
+   "family": "CHOP",
+   "pos": [
+    -250,
+    1100
+   ],
+   "pars": {
+    "const0name": "level",
+    "const10name": "rest",
+    "const10value": 0.5,
+    "const11name": "jolt",
+    "const11value": 0.08,
+    "const12name": "arrp",
+    "const12value": 0.6,
+    "const13name": "drift",
+    "const13value": 0.25,
+    "const14name": "fclamp",
+    "const15name": "lay",
+    "const16name": "kgap",
+    "const16value": 0.2,
+    "const17name": "stepq",
+    "const18name": "slabdir",
+    "const19name": "soup",
+    "const1name": "power",
+    "const1value": 1.3,
+    "const20name": "nx",
+    "const20value": 1.0,
+    "const21name": "nz",
+    "const21value": 1.0,
+    "const22name": "sx",
+    "const22value": 1.0,
+    "const23name": "sz",
+    "const23value": 1.0,
+    "const24name": "wave",
+    "const25name": "wavedir",
+    "const26name": "yawjit",
+    "const27name": "oscale",
+    "const27value": 1.0,
+    "const28name": "oyaw",
+    "const29name": "insub",
+    "const29value": 30.0,
+    "const2name": "spin",
+    "const2value": 1.6,
+    "const30name": "inscale",
+    "const30value": 2.3,
+    "const31name": "inyaw",
+    "const32name": "dist",
+    "const32value": 5.2,
+    "const33name": "height",
+    "const33value": 0.6,
+    "const34name": "az",
+    "const35name": "swing",
+    "const35value": 8.0,
+    "const36name": "orbit",
+    "const37name": "tgtx",
+    "const38name": "tgty",
+    "const38value": 0.5,
+    "const39name": "tgtz",
+    "const3name": "spread",
+    "const3value": 1.0,
+    "const40name": "fov",
+    "const40value": 44.0,
+    "const41name": "azseed",
+    "const41value": 14.0,
+    "const42name": "laz",
+    "const42value": -40.0,
+    "const43name": "lel",
+    "const43value": 52.0,
+    "const44name": "keyr",
+    "const44value": 2.6,
+    "const45name": "keyg",
+    "const45value": 2.4,
+    "const46name": "keyb",
+    "const46value": 2.1,
+    "const47name": "amb",
+    "const47value": 0.35,
+    "const48name": "envr",
+    "const48value": 0.5,
+    "const49name": "envg",
+    "const49value": 0.55,
+    "const4name": "gravity",
+    "const50name": "envb",
+    "const50value": 0.6,
+    "const51name": "rough",
+    "const51value": 0.38,
+    "const52name": "envs",
+    "const52value": 1.0,
+    "const53name": "refl",
+    "const54name": "inr",
+    "const54value": 1.0,
+    "const55name": "ing",
+    "const55value": 0.62,
+    "const56name": "inb",
+    "const56value": 0.12,
+    "const57name": "inem",
+    "const57value": 0.5,
+    "const58name": "inmetal",
+    "const58value": 1.0,
+    "const59name": "tr",
+    "const59value": 1.0,
+    "const5name": "swirl",
+    "const5value": 1.6,
+    "const60name": "tg",
+    "const60value": 1.0,
+    "const61name": "tb",
+    "const61value": 1.0,
+    "const62name": "burstglow",
+    "const63name": "skinmetal",
+    "const64name": "glass",
+    "const65name": "wAr",
+    "const66name": "wAg",
+    "const67name": "wAb",
+    "const68name": "wBr",
+    "const69name": "wBg",
+    "const6name": "d0",
+    "const6value": 0.3,
+    "const70name": "wBb",
+    "const71name": "fAr",
+    "const72name": "fAg",
+    "const73name": "fAb",
+    "const74name": "fBr",
+    "const75name": "fBg",
+    "const76name": "fBb",
+    "const77name": "poolr",
+    "const77value": 3.2,
+    "const78name": "shadow",
+    "const79name": "pattern",
+    "const7name": "d1",
+    "const7value": -0.3,
+    "const80name": "shR",
+    "const80value": 3.0,
+    "const81name": "shblur",
+    "const81value": 3.0,
+    "const82name": "unlit",
+    "const82value": 1.0,
+    "const83name": "mode",
+    "const83value": 1.0,
+    "const84name": "expo",
+    "const84value": 1.0,
+    "const85name": "glow",
+    "const86name": "vig",
+    "const87name": "sat",
+    "const87value": 1.05,
+    "const8name": "omode",
+    "const8value": 2.0,
+    "const9name": "cyc",
+    "const9value": 2.0
+   }
+  },
+  "take4": {
+   "type": "constantCHOP",
+   "family": "CHOP",
+   "pos": [
+    -250,
+    990
+   ],
+   "pars": {
+    "const0name": "level",
+    "const0value": 2.0,
+    "const10name": "rest",
+    "const10value": 0.25,
+    "const11name": "jolt",
+    "const11value": 0.6,
+    "const12name": "arrp",
+    "const12value": 1.3,
+    "const13name": "drift",
+    "const13value": 0.5,
+    "const14name": "fclamp",
+    "const14value": 1.0,
+    "const15name": "lay",
+    "const16name": "kgap",
+    "const16value": 0.2,
+    "const17name": "stepq",
+    "const18name": "slabdir",
+    "const19name": "soup",
+    "const19value": 2.0,
+    "const1name": "power",
+    "const1value": 0.2,
+    "const20name": "nx",
+    "const20value": 7.0,
+    "const21name": "nz",
+    "const21value": 1.0,
+    "const22name": "sx",
+    "const22value": 0.8,
+    "const23name": "sz",
+    "const23value": 1.0,
+    "const24name": "wave",
+    "const24value": 0.6,
+    "const25name": "wavedir",
+    "const26name": "yawjit",
+    "const26value": 0.3,
+    "const27name": "oscale",
+    "const27value": 1.0,
+    "const28name": "oyaw",
+    "const29name": "insub",
+    "const29value": 33.0,
+    "const2name": "spin",
+    "const2value": 0.05,
+    "const30name": "inscale",
+    "const30value": 1.5,
+    "const31name": "inyaw",
+    "const31value": 1.5708,
+    "const32name": "dist",
+    "const32value": 4.6,
+    "const33name": "height",
+    "const33value": 0.62,
+    "const34name": "az",
+    "const34value": 52.0,
+    "const35name": "swing",
+    "const35value": 6.0,
+    "const36name": "orbit",
+    "const37name": "tgtx",
+    "const37value": 0.5,
+    "const38name": "tgty",
+    "const38value": 0.5,
+    "const39name": "tgtz",
+    "const3name": "spread",
+    "const3value": 0.15,
+    "const40name": "fov",
+    "const40value": 36.0,
+    "const41name": "azseed",
+    "const41value": 30.0,
+    "const42name": "laz",
+    "const42value": -30.0,
+    "const43name": "lel",
+    "const43value": 44.0,
+    "const44name": "keyr",
+    "const44value": 2.6,
+    "const45name": "keyg",
+    "const45value": 2.35,
+    "const46name": "keyb",
+    "const46value": 1.9,
+    "const47name": "amb",
+    "const47value": 0.5,
+    "const48name": "envr",
+    "const48value": 1.0,
+    "const49name": "envg",
+    "const49value": 0.6,
+    "const4name": "gravity",
+    "const50name": "envb",
+    "const50value": 0.5,
+    "const51name": "rough",
+    "const51value": 0.26,
+    "const52name": "envs",
+    "const52value": 1.2,
+    "const53name": "refl",
+    "const53value": 0.4,
+    "const54name": "inr",
+    "const54value": 0.8592,
+    "const55name": "ing",
+    "const55value": 0.7818,
+    "const56name": "inb",
+    "const56value": 0.6121,
+    "const57name": "inem",
+    "const57value": 0.55,
+    "const58name": "inmetal",
+    "const59name": "tr",
+    "const59value": 1.0,
+    "const5name": "swirl",
+    "const60name": "tg",
+    "const60value": 1.0,
+    "const61name": "tb",
+    "const61value": 1.0,
+    "const62name": "burstglow",
+    "const63name": "skinmetal",
+    "const63value": 1.0,
+    "const64name": "glass",
+    "const65name": "wAr",
+    "const65value": 0.3594,
+    "const66name": "wAg",
+    "const66value": 0.025,
+    "const67name": "wAb",
+    "const67value": 0.0179,
+    "const68name": "wBr",
+    "const68value": 0.1198,
+    "const69name": "wBg",
+    "const69value": 0.0083,
+    "const6name": "d0",
+    "const6value": 0.2,
+    "const70name": "wBb",
+    "const70value": 0.006,
+    "const71name": "fAr",
+    "const71value": 0.5989,
+    "const72name": "fAg",
+    "const72value": 0.0417,
+    "const73name": "fAb",
+    "const73value": 0.0299,
+    "const74name": "fBr",
+    "const74value": 0.1996,
+    "const75name": "fBg",
+    "const75value": 0.0139,
+    "const76name": "fBb",
+    "const76value": 0.01,
+    "const77name": "poolr",
+    "const77value": 7.0,
+    "const78name": "shadow",
+    "const78value": 0.7,
+    "const79name": "pattern",
+    "const7name": "d1",
+    "const7value": 0.1,
+    "const80name": "shR",
+    "const80value": 5.0,
+    "const81name": "shblur",
+    "const81value": 3.0,
+    "const82name": "unlit",
+    "const83name": "mode",
+    "const84name": "expo",
+    "const84value": 1.0,
+    "const85name": "glow",
+    "const85value": 0.4,
+    "const86name": "vig",
+    "const86value": 0.5,
+    "const87name": "sat",
+    "const87value": 1.05,
+    "const8name": "omode",
+    "const8value": 1.0,
+    "const9name": "cyc",
+    "const9value": 2.0
+   }
+  },
+  "take5": {
+   "type": "constantCHOP",
+   "family": "CHOP",
+   "pos": [
+    -250,
+    880
+   ],
+   "pars": {
+    "const0name": "level",
+    "const0value": 3.0,
+    "const10name": "rest",
+    "const11name": "jolt",
+    "const11value": 0.25,
+    "const12name": "arrp",
+    "const12value": 0.4,
+    "const13name": "drift",
+    "const14name": "fclamp",
+    "const14value": 1.0,
+    "const15name": "lay",
+    "const16name": "kgap",
+    "const16value": 0.2,
+    "const17name": "stepq",
+    "const18name": "slabdir",
+    "const18value": 0.3,
+    "const19name": "soup",
+    "const1name": "power",
+    "const1value": 0.32,
+    "const20name": "nx",
+    "const20value": 1.0,
+    "const21name": "nz",
+    "const21value": 1.0,
+    "const22name": "sx",
+    "const22value": 1.0,
+    "const23name": "sz",
+    "const23value": 1.0,
+    "const24name": "wave",
+    "const25name": "wavedir",
+    "const26name": "yawjit",
+    "const27name": "oscale",
+    "const27value": 1.0,
+    "const28name": "oyaw",
+    "const29name": "insub",
+    "const29value": 30.0,
+    "const2name": "spin",
+    "const2value": 0.12,
+    "const30name": "inscale",
+    "const30value": 1.0,
+    "const31name": "inyaw",
+    "const32name": "dist",
+    "const32value": 5.9,
+    "const33name": "height",
+    "const33value": 0.8,
+    "const34name": "az",
+    "const34value": 14.0,
+    "const35name": "swing",
+    "const35value": 5.0,
+    "const36name": "orbit",
+    "const37name": "tgtx",
+    "const37value": 0.3,
+    "const38name": "tgty",
+    "const38value": 0.42,
+    "const39name": "tgtz",
+    "const3name": "spread",
+    "const3value": 0.35,
+    "const40name": "fov",
+    "const40value": 24.0,
+    "const41name": "azseed",
+    "const41value": 20.0,
+    "const42name": "laz",
+    "const42value": -40.0,
+    "const43name": "lel",
+    "const43value": 52.0,
+    "const44name": "keyr",
+    "const44value": 2.6,
+    "const45name": "keyg",
+    "const45value": 2.6,
+    "const46name": "keyb",
+    "const46value": 2.6,
+    "const47name": "amb",
+    "const47value": 0.8,
+    "const48name": "envr",
+    "const48value": 0.9,
+    "const49name": "envg",
+    "const49value": 0.85,
+    "const4name": "gravity",
+    "const50name": "envb",
+    "const50value": 0.6,
+    "const51name": "rough",
+    "const51value": 0.38,
+    "const52name": "envs",
+    "const52value": 1.0,
+    "const53name": "refl",
+    "const53value": 0.2,
+    "const54name": "inr",
+    "const54value": 0.017,
+    "const55name": "ing",
+    "const55value": 0.212,
+    "const56name": "inb",
+    "const56value": 0.3345,
+    "const57name": "inem",
+    "const57value": 0.25,
+    "const58name": "inmetal",
+    "const59name": "tr",
+    "const59value": 1.0,
+    "const5name": "swirl",
+    "const60name": "tg",
+    "const60value": 1.0,
+    "const61name": "tb",
+    "const61value": 1.0,
+    "const62name": "burstglow",
+    "const63name": "skinmetal",
+    "const64name": "glass",
+    "const65name": "wAr",
+    "const65value": 0.7227,
+    "const66name": "wAg",
+    "const66value": 0.4704,
+    "const67name": "wAb",
+    "const67value": 0.043,
+    "const68name": "wBr",
+    "const68value": 0.5782,
+    "const69name": "wBg",
+    "const69value": 0.3763,
+    "const6name": "d0",
+    "const6value": 0.45,
+    "const70name": "wBb",
+    "const70value": 0.0344,
+    "const71name": "fAr",
+    "const71value": 0.9034,
+    "const72name": "fAg",
+    "const72value": 0.588,
+    "const73name": "fAb",
+    "const73value": 0.0537,
+    "const74name": "fBr",
+    "const74value": 0.6504,
+    "const75name": "fBg",
+    "const75value": 0.4234,
+    "const76name": "fBb",
+    "const76value": 0.0387,
+    "const77name": "poolr",
+    "const77value": 6.0,
+    "const78name": "shadow",
+    "const78value": 0.55,
+    "const79name": "pattern",
+    "const7name": "d1",
+    "const7value": 0.3,
+    "const80name": "shR",
+    "const80value": 3.0,
+    "const81name": "shblur",
+    "const81value": 3.0,
+    "const82name": "unlit",
+    "const83name": "mode",
+    "const84name": "expo",
+    "const84value": 1.0,
+    "const85name": "glow",
+    "const85value": 0.3,
+    "const86name": "vig",
+    "const86value": 0.3,
+    "const87name": "sat",
+    "const87value": 1.1,
+    "const8name": "omode",
+    "const8value": 3.0,
+    "const9name": "cyc",
+    "const9value": 1.0
+   }
+  },
+  "take6": {
+   "type": "constantCHOP",
+   "family": "CHOP",
+   "pos": [
+    -250,
+    770
+   ],
+   "pars": {
+    "const0name": "level",
+    "const0value": 1.0,
+    "const10name": "rest",
+    "const10value": 0.125,
+    "const11name": "jolt",
+    "const11value": 0.3,
+    "const12name": "arrp",
+    "const12value": 0.5,
+    "const13name": "drift",
+    "const13value": 0.4,
+    "const14name": "fclamp",
+    "const15name": "lay",
+    "const16name": "kgap",
+    "const16value": 0.2,
+    "const17name": "stepq",
+    "const18name": "slabdir",
+    "const19name": "soup",
+    "const1name": "power",
+    "const1value": 0.4,
+    "const20name": "nx",
+    "const20value": 1.0,
+    "const21name": "nz",
+    "const21value": 1.0,
+    "const22name": "sx",
+    "const22value": 1.0,
+    "const23name": "sz",
+    "const23value": 1.0,
+    "const24name": "wave",
+    "const25name": "wavedir",
+    "const26name": "yawjit",
+    "const27name": "oscale",
+    "const27value": 1.0,
+    "const28name": "oyaw",
+    "const29name": "insub",
+    "const29value": 30.0,
+    "const2name": "spin",
+    "const2value": 0.3,
+    "const30name": "inscale",
+    "const30value": 1.0,
+    "const31name": "inyaw",
+    "const32name": "dist",
+    "const32value": 2.65,
+    "const33name": "height",
+    "const33value": 0.75,
+    "const34name": "az",
+    "const35name": "swing",
+    "const35value": 30.0,
+    "const36name": "orbit",
+    "const36value": 3.0,
+    "const37name": "tgtx",
+    "const37value": -0.25,
+    "const38name": "tgty",
+    "const38value": 0.5,
+    "const39name": "tgtz",
+    "const3name": "spread",
+    "const3value": 0.3,
+    "const40name": "fov",
+    "const40value": 46.0,
+    "const41name": "azseed",
+    "const41value": 360.0,
+    "const42name": "laz",
+    "const42value": -40.0,
+    "const43name": "lel",
+    "const43value": 52.0,
+    "const44name": "keyr",
+    "const44value": 2.4,
+    "const45name": "keyg",
+    "const45value": 2.4,
+    "const46name": "keyb",
+    "const46value": 2.4,
+    "const47name": "amb",
+    "const47value": 0.35,
+    "const48name": "envr",
+    "const48value": 0.3,
+    "const49name": "envg",
+    "const49value": 0.5,
+    "const4name": "gravity",
+    "const50name": "envb",
+    "const50value": 0.4,
+    "const51name": "rough",
+    "const51value": 0.3,
+    "const52name": "envs",
+    "const52value": 1.0,
+    "const53name": "refl",
+    "const54name": "inr",
+    "const54value": 0.35,
+    "const55name": "ing",
+    "const55value": 0.75,
+    "const56name": "inb",
+    "const56value": 1.0,
+    "const57name": "inem",
+    "const57value": 0.12,
+    "const58name": "inmetal",
+    "const59name": "tr",
+    "const59value": 0.3,
+    "const5name": "swirl",
+    "const5value": 0.1,
+    "const60name": "tg",
+    "const60value": 1.0,
+    "const61name": "tb",
+    "const61value": 0.45,
+    "const62name": "burstglow",
+    "const63name": "skinmetal",
+    "const64name": "glass",
+    "const64value": 1.0,
+    "const65name": "wAr",
+    "const66name": "wAg",
+    "const66value": 0.012,
+    "const67name": "wAb",
+    "const67value": 0.008,
+    "const68name": "wBr",
+    "const69name": "wBg",
+    "const6name": "d0",
+    "const6value": 0.25,
+    "const70name": "wBb",
+    "const71name": "fAr",
+    "const72name": "fAg",
+    "const72value": 0.03,
+    "const73name": "fAb",
+    "const73value": 0.02,
+    "const74name": "fBr",
+    "const75name": "fBg",
+    "const76name": "fBb",
+    "const77name": "poolr",
+    "const77value": 3.2,
+    "const78name": "shadow",
+    "const79name": "pattern",
+    "const7name": "d1",
+    "const7value": 0.2,
+    "const80name": "shR",
+    "const80value": 3.0,
+    "const81name": "shblur",
+    "const81value": 3.0,
+    "const82name": "unlit",
+    "const83name": "mode",
+    "const84name": "expo",
+    "const84value": 1.0,
+    "const85name": "glow",
+    "const85value": 0.9,
+    "const86name": "vig",
+    "const86value": 0.5,
+    "const87name": "sat",
+    "const87value": 1.05,
+    "const8name": "omode",
+    "const9name": "cyc",
+    "const9value": 2.0
+   }
+  },
+  "take7": {
+   "type": "constantCHOP",
+   "family": "CHOP",
+   "pos": [
+    -250,
+    660
+   ],
+   "pars": {
+    "const0name": "level",
+    "const0value": 1.0,
+    "const10name": "rest",
+    "const10value": 0.25,
+    "const11name": "jolt",
+    "const11value": 0.2,
+    "const12name": "arrp",
+    "const12value": 0.5,
+    "const13name": "drift",
+    "const13value": 0.25,
+    "const14name": "fclamp",
+    "const14value": 1.0,
+    "const15name": "lay",
+    "const16name": "kgap",
+    "const16value": 0.2,
+    "const17name": "stepq",
+    "const18name": "slabdir",
+    "const19name": "soup",
+    "const1name": "power",
+    "const1value": 0.85,
+    "const20name": "nx",
+    "const20value": 1.0,
+    "const21name": "nz",
+    "const21value": 1.0,
+    "const22name": "sx",
+    "const22value": 1.0,
+    "const23name": "sz",
+    "const23value": 1.0,
+    "const24name": "wave",
+    "const25name": "wavedir",
+    "const26name": "yawjit",
+    "const27name": "oscale",
+    "const27value": 1.0,
+    "const28name": "oyaw",
+    "const29name": "insub",
+    "const29value": 30.0,
+    "const2name": "spin",
+    "const2value": 0.5,
+    "const30name": "inscale",
+    "const30value": 1.4,
+    "const31name": "inyaw",
+    "const32name": "dist",
+    "const32value": 2.3,
+    "const33name": "height",
+    "const33value": 0.16,
+    "const34name": "az",
+    "const34value": -56.0,
+    "const35name": "swing",
+    "const35value": 6.0,
+    "const36name": "orbit",
+    "const37name": "tgtx",
+    "const37value": -0.35,
+    "const38name": "tgty",
+    "const38value": 0.42,
+    "const39name": "tgtz",
+    "const3name": "spread",
+    "const3value": 0.6,
+    "const40name": "fov",
+    "const40value": 66.0,
+    "const41name": "azseed",
+    "const41value": 12.0,
+    "const42name": "laz",
+    "const42value": -40.0,
+    "const43name": "lel",
+    "const43value": 52.0,
+    "const44name": "keyr",
+    "const44value": 2.6,
+    "const45name": "keyg",
+    "const45value": 2.4,
+    "const46name": "keyb",
+    "const46value": 2.1,
+    "const47name": "amb",
+    "const47value": 0.7,
+    "const48name": "envr",
+    "const48value": 0.9,
+    "const49name": "envg",
+    "const49value": 0.85,
+    "const4name": "gravity",
+    "const4value": 1.0,
+    "const50name": "envb",
+    "const50value": 0.75,
+    "const51name": "rough",
+    "const51value": 0.38,
+    "const52name": "envs",
+    "const52value": 1.0,
+    "const53name": "refl",
+    "const53value": 0.25,
+    "const54name": "inr",
+    "const54value": 0.02,
+    "const55name": "ing",
+    "const55value": 0.035,
+    "const56name": "inb",
+    "const56value": 0.06,
+    "const57name": "inem",
+    "const58name": "inmetal",
+    "const59name": "tr",
+    "const59value": 0.586,
+    "const5name": "swirl",
+    "const60name": "tg",
+    "const60value": 0.0152,
+    "const61name": "tb",
+    "const61value": 0.0078,
+    "const62name": "burstglow",
+    "const63name": "skinmetal",
+    "const64name": "glass",
+    "const65name": "wAr",
+    "const65value": 0.8513,
+    "const66name": "wAg",
+    "const66value": 0.7742,
+    "const67name": "wAb",
+    "const67value": 0.586,
+    "const68name": "wBr",
+    "const68value": 0.5959,
+    "const69name": "wBg",
+    "const69value": 0.5419,
+    "const6name": "d0",
+    "const6value": 0.35,
+    "const70name": "wBb",
+    "const70value": 0.4102,
+    "const71name": "fAr",
+    "const71value": 0.6446,
+    "const72name": "fAg",
+    "const72value": 0.5825,
+    "const73name": "fAb",
+    "const73value": 0.4278,
+    "const74name": "fBr",
+    "const74value": 0.4102,
+    "const75name": "fBg",
+    "const75value": 0.3706,
+    "const76name": "fBb",
+    "const76value": 0.2722,
+    "const77name": "poolr",
+    "const77value": 6.0,
+    "const78name": "shadow",
+    "const78value": 0.65,
+    "const79name": "pattern",
+    "const7name": "d1",
+    "const7value": 0.2,
+    "const80name": "shR",
+    "const80value": 3.0,
+    "const81name": "shblur",
+    "const81value": 3.0,
+    "const82name": "unlit",
+    "const83name": "mode",
+    "const84name": "expo",
+    "const84value": 1.0,
+    "const85name": "glow",
+    "const85value": 0.35,
+    "const86name": "vig",
+    "const86value": 0.5,
+    "const87name": "sat",
+    "const87value": 1.05,
+    "const8name": "omode",
+    "const8value": 3.0,
+    "const9name": "cyc",
+    "const9value": 2.0
+   }
+  },
+  "take8": {
+   "type": "constantCHOP",
+   "family": "CHOP",
+   "pos": [
+    -250,
+    550
+   ],
+   "pars": {
+    "const0name": "level",
+    "const0value": 1.0,
+    "const10name": "rest",
+    "const10value": 0.125,
+    "const11name": "jolt",
+    "const11value": 0.15,
+    "const12name": "arrp",
+    "const12value": 0.3,
+    "const13name": "drift",
+    "const13value": 0.9,
+    "const14name": "fclamp",
+    "const14value": 1.0,
+    "const15name": "lay",
+    "const16name": "kgap",
+    "const16value": 0.2,
+    "const17name": "stepq",
+    "const18name": "slabdir",
+    "const19name": "soup",
+    "const1name": "power",
+    "const1value": 0.95,
+    "const20name": "nx",
+    "const20value": 1.0,
+    "const21name": "nz",
+    "const21value": 1.0,
+    "const22name": "sx",
+    "const22value": 1.0,
+    "const23name": "sz",
+    "const23value": 1.0,
+    "const24name": "wave",
+    "const25name": "wavedir",
+    "const26name": "yawjit",
+    "const27name": "oscale",
+    "const27value": 1.0,
+    "const28name": "oyaw",
+    "const29name": "insub",
+    "const29value": 30.0,
+    "const2name": "spin",
+    "const2value": 0.5,
+    "const30name": "inscale",
+    "const30value": 1.0,
+    "const31name": "inyaw",
+    "const32name": "dist",
+    "const32value": 1.45,
+    "const33name": "height",
+    "const33value": 0.55,
+    "const34name": "az",
+    "const35name": "swing",
+    "const35value": 40.0,
+    "const36name": "orbit",
+    "const36value": 6.0,
+    "const37name": "tgtx",
+    "const38name": "tgty",
+    "const38value": 0.36,
+    "const39name": "tgtz",
+    "const3name": "spread",
+    "const3value": 0.4,
+    "const40name": "fov",
+    "const40value": 62.0,
+    "const41name": "azseed",
+    "const41value": 360.0,
+    "const42name": "laz",
+    "const42value": -40.0,
+    "const43name": "lel",
+    "const43value": 52.0,
+    "const44name": "keyr",
+    "const44value": 2.3,
+    "const45name": "keyg",
+    "const45value": 2.2,
+    "const46name": "keyb",
+    "const46value": 2.1,
+    "const47name": "amb",
+    "const47value": 0.25,
+    "const48name": "envr",
+    "const48value": 0.5,
+    "const49name": "envg",
+    "const49value": 0.55,
+    "const4name": "gravity",
+    "const50name": "envb",
+    "const50value": 0.6,
+    "const51name": "rough",
+    "const51value": 0.38,
+    "const52name": "envs",
+    "const52value": 1.0,
+    "const53name": "refl",
+    "const53value": 0.25,
+    "const54name": "inr",
+    "const54value": 0.586,
+    "const55name": "ing",
+    "const55value": 0.0152,
+    "const56name": "inb",
+    "const56value": 0.0078,
+    "const57name": "inem",
+    "const57value": 0.9,
+    "const58name": "inmetal",
+    "const59name": "tr",
+    "const59value": 1.0,
+    "const5name": "swirl",
+    "const5value": 0.12,
+    "const60name": "tg",
+    "const60value": 1.0,
+    "const61name": "tb",
+    "const61value": 1.0,
+    "const62name": "burstglow",
+    "const62value": 0.3,
+    "const63name": "skinmetal",
+    "const64name": "glass",
+    "const65name": "wAr",
+    "const65value": 0.012,
+    "const66name": "wAg",
+    "const66value": 0.012,
+    "const67name": "wAb",
+    "const67value": 0.016,
+    "const68name": "wBr",
+    "const69name": "wBg",
+    "const6name": "d0",
+    "const6value": 0.1,
+    "const70name": "wBb",
+    "const71name": "fAr",
+    "const71value": 0.03,
+    "const72name": "fAg",
+    "const72value": 0.03,
+    "const73name": "fAb",
+    "const73value": 0.035,
+    "const74name": "fBr",
+    "const75name": "fBg",
+    "const76name": "fBb",
+    "const77name": "poolr",
+    "const77value": 3.2,
+    "const78name": "shadow",
+    "const78value": 0.6,
+    "const79name": "pattern",
+    "const7name": "d1",
+    "const7value": 0.2,
+    "const80name": "shR",
+    "const80value": 4.0,
+    "const81name": "shblur",
+    "const81value": 3.0,
+    "const82name": "unlit",
+    "const83name": "mode",
+    "const84name": "expo",
+    "const84value": 0.9,
+    "const85name": "glow",
+    "const85value": 0.6,
+    "const86name": "vig",
+    "const86value": 0.5,
+    "const87name": "sat",
+    "const87value": 1.05,
+    "const8name": "omode",
+    "const9name": "cyc",
+    "const9value": 4.0
+   }
+  },
+  "take9": {
+   "type": "constantCHOP",
+   "family": "CHOP",
+   "pos": [
+    -250,
+    440
+   ],
+   "pars": {
+    "const0name": "level",
+    "const0value": 1.0,
+    "const10name": "rest",
+    "const10value": 0.25,
+    "const11name": "jolt",
+    "const11value": 0.2,
+    "const12name": "arrp",
+    "const12value": 0.5,
+    "const13name": "drift",
+    "const13value": 0.25,
+    "const14name": "fclamp",
+    "const14value": 1.0,
+    "const15name": "lay",
+    "const16name": "kgap",
+    "const16value": 0.2,
+    "const17name": "stepq",
+    "const17value": 12.0,
+    "const18name": "slabdir",
+    "const19name": "soup",
+    "const1name": "power",
+    "const1value": 0.75,
+    "const20name": "nx",
+    "const20value": 1.0,
+    "const21name": "nz",
+    "const21value": 1.0,
+    "const22name": "sx",
+    "const22value": 1.0,
+    "const23name": "sz",
+    "const23value": 1.0,
+    "const24name": "wave",
+    "const25name": "wavedir",
+    "const26name": "yawjit",
+    "const27name": "oscale",
+    "const27value": 1.0,
+    "const28name": "oyaw",
+    "const29name": "insub",
+    "const29value": 30.0,
+    "const2name": "spin",
+    "const2value": 0.8,
+    "const30name": "inscale",
+    "const30value": 0.8,
+    "const31name": "inyaw",
+    "const32name": "dist",
+    "const32value": 3.7,
+    "const33name": "height",
+    "const33value": 0.95,
+    "const34name": "az",
+    "const34value": 24.0,
+    "const35name": "swing",
+    "const35value": 10.0,
+    "const36name": "orbit",
+    "const37name": "tgtx",
+    "const37value": -0.35,
+    "const38name": "tgty",
+    "const38value": 0.52,
+    "const39name": "tgtz",
+    "const3name": "spread",
+    "const3value": 0.5,
+    "const40name": "fov",
+    "const40value": 40.0,
+    "const41name": "azseed",
+    "const41value": 30.0,
+    "const42name": "laz",
+    "const42value": -35.0,
+    "const43name": "lel",
+    "const43value": 40.0,
+    "const44name": "keyr",
+    "const44value": 2.4,
+    "const45name": "keyg",
+    "const45value": 2.4,
+    "const46name": "keyb",
+    "const46value": 2.4,
+    "const47name": "amb",
+    "const47value": 0.5,
+    "const48name": "envr",
+    "const48value": 0.5,
+    "const49name": "envg",
+    "const49value": 0.55,
+    "const4name": "gravity",
+    "const50name": "envb",
+    "const50value": 0.6,
+    "const51name": "rough",
+    "const51value": 0.38,
+    "const52name": "envs",
+    "const52value": 1.0,
+    "const53name": "refl",
+    "const54name": "inr",
+    "const54value": 0.02,
+    "const55name": "ing",
+    "const55value": 0.02,
+    "const56name": "inb",
+    "const56value": 0.02,
+    "const57name": "inem",
+    "const58name": "inmetal",
+    "const59name": "tr",
+    "const59value": 1.0,
+    "const5name": "swirl",
+    "const60name": "tg",
+    "const60value": 1.0,
+    "const61name": "tb",
+    "const61value": 1.0,
+    "const62name": "burstglow",
+    "const63name": "skinmetal",
+    "const64name": "glass",
+    "const65name": "wAr",
+    "const65value": 1.4,
+    "const66name": "wAg",
+    "const66value": 1.4,
+    "const67name": "wAb",
+    "const67value": 1.4,
+    "const68name": "wBr",
+    "const68value": 1.4,
+    "const69name": "wBg",
+    "const69value": 1.4,
+    "const6name": "d0",
+    "const6value": 0.15,
+    "const70name": "wBb",
+    "const70value": 1.4,
+    "const71name": "fAr",
+    "const71value": 1.4,
+    "const72name": "fAg",
+    "const72value": 1.4,
+    "const73name": "fAb",
+    "const73value": 1.4,
+    "const74name": "fBr",
+    "const74value": 1.4,
+    "const75name": "fBg",
+    "const75value": 1.4,
+    "const76name": "fBb",
+    "const76value": 1.4,
+    "const77name": "poolr",
+    "const77value": 3.2,
+    "const78name": "shadow",
+    "const78value": 0.85,
+    "const79name": "pattern",
+    "const7name": "d1",
+    "const7value": 0.1,
+    "const80name": "shR",
+    "const80value": 3.0,
+    "const81name": "shblur",
+    "const81value": 3.0,
+    "const82name": "unlit",
+    "const83name": "mode",
+    "const83value": 1.0,
+    "const84name": "expo",
+    "const84value": 0.9,
+    "const85name": "glow",
+    "const86name": "vig",
+    "const87name": "sat",
+    "const87value": 1.05,
+    "const8name": "omode",
+    "const9name": "cyc",
+    "const9value": 1.0
+   }
+  },
+  "target": {
+   "type": "nullCOMP",
+   "family": "COMP",
+   "pos": [
+    -300,
+    150
+   ],
+   "pars": {
+    "tx": {
+     "expr": "op('tk')['tgtx']"
+    },
+    "ty": {
+     "expr": "op('tk')['tgty']"
+    },
+    "tz": {
+     "expr": "op('tk')['tgtz']"
+    }
+   }
+  },
+  "target/primitive1": {
+   "type": "primitivePOP",
+   "family": "POP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "addpts": true,
+    "attr0name": "color",
+    "method": "pattern",
+    "prim0pattern": "0 1",
+    "prim0type": "lines",
+    "prim1pattern": "2 3",
+    "prim1type": "lines",
+    "prim2pattern": "4 5",
+    "prim2type": "lines",
+    "pt0colorb": 0.0,
+    "pt0colorg": 0.0,
+    "pt0posx": -0.1,
+    "pt1colorb": 0.0,
+    "pt1colorg": 0.0,
+    "pt1posx": 0.1,
+    "pt2colorb": 0.0,
+    "pt2colorr": 0.0,
+    "pt2posy": -0.1,
+    "pt3colorb": 0.0,
+    "pt3colorr": 0.0,
+    "pt3posy": 0.1,
+    "pt4colorg": 0.0,
+    "pt4colorr": 0.0,
+    "pt4posz": -0.1,
+    "pt5colorg": 0.0,
+    "pt5colorr": 0.0,
+    "pt5posz": 0.1
+   }
+  },
+  "tex": {
+   "type": "switchTOP",
+   "family": "TOP",
+   "pos": [
+    -900,
+    250
+   ],
+   "inputs": [
+    [
+     "tex_bust"
+    ],
+    [
+     "tex_amphora"
+    ],
+    [
+     "tex_stone"
+    ],
+    [
+     "tex_gramophone"
+    ],
+    [
+     "tex_helmet"
+    ],
+    [
+     "tex_lander"
+    ],
+    [
+     "tex_astrolabe"
+    ],
+    [
+     "tex_hourglass"
+    ],
+    [
+     "tex_cone"
+    ],
+    [
+     "tex_column"
+    ],
+    [
+     "tex_solids"
+    ],
+    [
+     "tex_crystal"
+    ],
+    [
+     "tex_cage"
+    ],
+    [
+     "tex_duck_s"
+    ],
+    [
+     "tex_amphora_s"
+    ],
+    [
+     "tex_bust_m"
+    ],
+    [
+     "white"
+    ],
+    [
+     "white"
+    ],
+    [
+     "white"
+    ],
+    [
+     "white"
+    ],
+    [
+     "white"
+    ],
+    [
+     "white"
+    ],
+    [
+     "white"
+    ],
+    [
+     "white"
+    ],
+    [
+     "white"
+    ],
+    [
+     "white"
+    ],
+    [
+     "white"
+    ],
+    [
+     "white"
+    ],
+    [
+     "white"
+    ],
+    [
+     "white"
+    ],
+    [
+     "input_pic"
+    ],
+    [
+     "input_pic"
+    ],
+    [
+     "input_pic"
+    ],
+    [
+     "input_pic"
+    ]
+   ],
+   "pars": {
+    "index": {
+     "expr": "int(op('ctl')['subj'])"
+    }
+   }
+  },
+  "tex_amphora": {
+   "type": "moviefileinTOP",
+   "family": "TOP",
+   "pos": [
+    -1100,
+    280
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.model_texture('amphora')"
+    }
+   }
+  },
+  "tex_amphora_s": {
+   "type": "moviefileinTOP",
+   "family": "TOP",
+   "pos": [
+    -1100,
+    -1280
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.model_texture('amphora')"
+    }
+   }
+  },
+  "tex_astrolabe": {
+   "type": "moviefileinTOP",
+   "family": "TOP",
+   "pos": [
+    -1100,
+    -320
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.model_texture('astrolabe')"
+    }
+   }
+  },
+  "tex_bust": {
+   "type": "moviefileinTOP",
+   "family": "TOP",
+   "pos": [
+    -1100,
+    400
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.model_texture('marble_bust')"
+    }
+   }
+  },
+  "tex_bust_m": {
+   "type": "moviefileinTOP",
+   "family": "TOP",
+   "pos": [
+    -1100,
+    -1400
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.model_texture('marble_bust')"
+    }
+   }
+  },
+  "tex_cage": {
+   "type": "moviefileinTOP",
+   "family": "TOP",
+   "pos": [
+    -1100,
+    -1040
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.model_texture('wire_cage')"
+    }
+   }
+  },
+  "tex_column": {
+   "type": "moviefileinTOP",
+   "family": "TOP",
+   "pos": [
+    -1100,
+    -680
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.model_texture('broken_column')"
+    }
+   }
+  },
+  "tex_cone": {
+   "type": "moviefileinTOP",
+   "family": "TOP",
+   "pos": [
+    -1100,
+    -560
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.model_texture('traffic_cone')"
+    }
+   }
+  },
+  "tex_crystal": {
+   "type": "moviefileinTOP",
+   "family": "TOP",
+   "pos": [
+    -1100,
+    -920
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.model_texture('crystal_cluster')"
+    }
+   }
+  },
+  "tex_duck_s": {
+   "type": "moviefileinTOP",
+   "family": "TOP",
+   "pos": [
+    -1100,
+    -1160
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.model_texture('rubber_duck')"
+    }
+   }
+  },
+  "tex_gramophone": {
+   "type": "moviefileinTOP",
+   "family": "TOP",
+   "pos": [
+    -1100,
+    40
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.model_texture('gramophone')"
+    }
+   }
+  },
+  "tex_helmet": {
+   "type": "moviefileinTOP",
+   "family": "TOP",
+   "pos": [
+    -1100,
+    -80
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.model_texture('space_helmet')"
+    }
+   }
+  },
+  "tex_hourglass": {
+   "type": "moviefileinTOP",
+   "family": "TOP",
+   "pos": [
+    -1100,
+    -440
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.model_texture('hourglass')"
+    }
+   }
+  },
+  "tex_lander": {
+   "type": "moviefileinTOP",
+   "family": "TOP",
+   "pos": [
+    -1100,
+    -200
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.model_texture('lander')"
+    }
+   }
+  },
+  "tex_solids": {
+   "type": "moviefileinTOP",
+   "family": "TOP",
+   "pos": [
+    -1100,
+    -800
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.model_texture('balanced_solids')"
+    }
+   }
+  },
+  "tex_stone": {
+   "type": "moviefileinTOP",
+   "family": "TOP",
+   "pos": [
+    -1100,
+    160
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.model_texture('pierced_stone')"
+    }
+   }
+  },
+  "tk": {
+   "type": "switchCHOP",
+   "family": "CHOP",
+   "pos": [
+    -100,
+    330
+   ],
+   "inputs": [
+    [
+     "take0"
+    ],
+    [
+     "take1"
+    ],
+    [
+     "take2"
+    ],
+    [
+     "take3"
+    ],
+    [
+     "take4"
+    ],
+    [
+     "take5"
+    ],
+    [
+     "take6"
+    ],
+    [
+     "take7"
+    ],
+    [
+     "take8"
+    ],
+    [
+     "take9"
+    ]
+   ],
+   "pars": {
+    "index": {
+     "expr": "int(op('shot')['take']) % 10"
+    }
+   }
+  },
+  "white": {
+   "type": "constantTOP",
+   "family": "TOP",
+   "pos": [
+    -1100,
+    650
+   ],
+   "pars": {
+    "outputresolution": "custom",
+    "resolutionh": 16,
+    "resolutionw": 16
+   }
+  }
+ }
+}

@@ -1,0 +1,110 @@
+{
+  "title": "Letter architecture",
+  "technique": "A single ray-marched shader draws an endless folded fractal lattice of steel blocks, with sign lettering embossed into its surfaces as real relief that catches light.",
+  "music": "Bass and vocal pitch change the fold angles so each note reshapes the building, the bar line opens the gaps between blocks, and every kick sends a pulse of light travelling through the space. Snares make the red lettering flare, hi-hats knock lights out or flash random blocks, and the camera never stops moving.",
+  "takes": [
+    {
+      "name": "Nave",
+      "description": "A flight down an arched corridor under fluorescent tube lights in fluorescent green, with a steel band of whole readable sign words on both walls and occasional power cuts where only the red lettering glows.",
+      "words": [
+        "RAY MARCHING",
+        "NO POLYGONS",
+        "ONE SHADER",
+        "80 STEPS MAX"
+      ]
+    },
+    {
+      "name": "Block",
+      "description": "The view moves outside into daylight, where a finite chunk of the lattice stands like a dark monolith on an endless cream printed sheet under a beige sky.",
+      "words": [
+        "FRACTAL BLOCK",
+        "SOFT SHADOW",
+        "FOLDED 3 TIMES",
+        "RAY MARCHED"
+      ]
+    },
+    {
+      "name": "Shaft",
+      "description": "A plunge down a square shaft lined with huge extruded phrase letters and square ring lights, drawn in dithered 1-bit black and white that flips to its negative on the snare.",
+      "words": [
+        "1-BIT RAY MARCH",
+        "EACH DOT IS BLACK OR WHITE.",
+        "4 BY 4 ORDERED DITHER, DOTS DOUBLED.",
+        "THE SNARE SWAPS BLACK AND WHITE.",
+        "1-BIT 1-BIT 1-BIT 1-BIT",
+        "DITHER DITHER DITHER",
+        "RAY MARCH RAY MARCH",
+        "BLACK WHITE BLACK WHITE",
+        "NO GREY NO GREY NO GREY",
+        "SNARE = NEGATIVE"
+      ]
+    },
+    {
+      "name": "Macro",
+      "description": "An extreme close-up skims sideways over a sliced plate where ink-blue and red letters stand up off ivory tiles under a low raking sun.",
+      "words": [
+        "RAISED TYPE",
+        "HEIGHT MAP",
+        "SIDE LIGHT",
+        "NO MESH",
+        "RAY MARCH",
+        "RAKING SUN",
+        "MACRO"
+      ]
+    },
+    {
+      "name": "Rotunda",
+      "description": "The camera sits inside a sphere carved from a more strongly folded lattice, where a glowing amber orb at the centre throws radial shadows over a dome of words, amber on black.",
+      "words": [
+        "CARVED SPHERE",
+        "ONE ORB LIGHT",
+        "FOLDED 4 TIMES",
+        "RAY MARCHED"
+      ]
+    },
+    {
+      "name": "Cut",
+      "description": "A flat, poster-like view square onto a diagonal slice through the lattice, with the cut face painted red, phrases knocked out in white, and soft white clay showing through the holes.",
+      "words": [
+        "THIS IS NOT A 3D MODEL.",
+        "ONE SHADER MEASURES THE",
+        "DISTANCE TO A FOLDED BOX",
+        "FOR EVERY PIXEL.",
+        "THIS IS A FLAT SLICE",
+        "THROUGH THAT FRACTAL.",
+        "EACH KICK DRUM PUSHES",
+        "THE SLICE DEEPER."
+      ]
+    },
+    {
+      "name": "Strafe",
+      "description": "The corridor again but in red emergency lighting, travelling sideways along the wall like a train window while one phrase at a time passes and alternate tube lights strobe on the beat.",
+      "words": [
+        "ONE SHADER.",
+        "NO POLYGONS.",
+        "UP TO 80 STEPS.",
+        "NOTES BEND WALLS.",
+        "KICK FIRES TUBES.",
+        "BEAT SWAPS LIGHTS.",
+        "TEXT IS THE WALL.",
+        "EMERGENCY RED."
+      ]
+    }
+  ],
+  "accepts_input": true,
+  "as_processor": "Uses the picture in place of the lettering: its brightness becomes raised relief on the fractal building and its colour becomes the paint, shown as a strip of film frames along the corridor walls, a print on the floor, or a poster on the cut face, then lit and graded by the take.",
+  "input_takes": {
+    "best": [
+      0,
+      5,
+      6,
+      1
+    ],
+    "usable": [
+      4,
+      2,
+      3
+    ],
+    "ignores_input": []
+  }
+}

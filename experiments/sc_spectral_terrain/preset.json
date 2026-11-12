@@ -1,0 +1,77 @@
+{
+  "title": "Spectrogram terrain",
+  "technique": "A scrolling history of the last few seconds of the sound spectrum becomes a height map, drawn as a landscape of glowing ridge lines that recede from the viewer.",
+  "music": "The frequency spectrum is the shape of the land itself, with the newest sound at the near edge, and each kick drum sends a bright swell rolling away, nudges the camera and flashes the standing words. The sung note sets the height of a ribbon of light, the bass note tints the horizon glow, and snare hits split the colours.",
+  "takes": [
+    {
+      "name": "Valley",
+      "description": "The original view: a tall extruded phrase stands in a line-drawn valley under a sun made from the spectrum, in green and amber on an old-monitor screen.",
+      "words": [
+        "SPECTRUM\nTERRAIN",
+        "LOUDER IS\nHIGHER",
+        "BASS BUILDS\nWALLS",
+        "EVERY FRAME THE SOUND SPECTRUM BECOMES THE FRONT ROW OF A HEIGHT MAP.\nOLDER ROWS SLIDE AWAY. BASS BUILDS THE WALLS, A KICK IS A WHITE RIDGE."
+      ]
+    },
+    {
+      "name": "Skim",
+      "description": "A low, wide-angle forward flight in ice blue with no standing phrase, where the rows of the landscape rush at the lens and a small text readout sits in the corner.",
+      "words": [
+        "256 BY 192 HEIGHT MAP OF THE SPECTRUM, ONE NEW ROW EVERY FRAME.\nTHE HORIZON IS NOW. THE ROWS FLYING PAST ARE THE LAST FEW SECONDS.",
+        "EACH LINE RUSHING AT THE LENS IS ONE FRAME OF SOUND, NEWEST AT THE\nHORIZON. THE RIBBON OVERHEAD HANGS AT THE PITCH OF THE VOICE."
+      ]
+    },
+    {
+      "name": "Tunnel",
+      "description": "The landscape is rolled into a red tube with the camera inside, rolling with each bar while kicks travel down it as white rings toward a round sun at the far end.",
+      "words": [
+        "THE SAME HEIGHT MAP ROLLED INTO A TUBE: FREQUENCY RUNS ROUND THE WALL,\nTIME RUNS DOWN THE BORE. KICKS ARE WHITE RINGS. THE BAR ROLLS THE CAMERA."
+      ]
+    },
+    {
+      "name": "Map",
+      "description": "A daylight view straight down onto cream paper, where the land becomes ink contour lines with a blue height tint, kicks are stamped as red hatched bands and a title block labels the sheet.",
+      "words": [
+        "CONTOUR MAP OF SOUND FROM STRAIGHT ABOVE: LINES JOIN EQUAL LOUDNESS,\nBLUER IS LOUDER. RED HATCHED BANDS ARE KICK DRUMS CROSSING THE SHEET.",
+        "THE SPECTRUM HISTORY PRINTED AS A SURVEY SHEET: TIME ALONG ONE AXIS,\nFREQUENCY ALONG THE OTHER. A SNARE KNOCKS THE INK OUT OF REGISTER."
+      ]
+    },
+    {
+      "name": "Dusk",
+      "description": "Solid, lit mountains in pink fog under a small sun, with a phrase standing small and far away instead of the usual line drawing.",
+      "words": [
+        "HEIGHT IS\nLOUDNESS",
+        "ONE ROW\nPER FRAME",
+        "SHADED\nSOLID",
+        "THE SAME SPECTRUM HEIGHT MAP SHADED AS SOLID ROCK: ONE SUN, DISTANCE FOG.\nTHE THIN STRATA ARE ITS ROWS. A KICK DRUM IS A GLOWING BAND ROLLING AWAY."
+      ]
+    },
+    {
+      "name": "Chart",
+      "description": "No perspective at all: the rows are stacked flat like a seismograph trace in pure black and white dots with a caption, sometimes inverted or turned on its side.",
+      "words": [
+        "ONE TRACE PER FRAME OF SOUND, STACKED FLAT WITH NO PERSPECTIVE.\nBASS IS IN THE MIDDLE. EACH TRACE HIDES THE ONES BEHIND IT.",
+        "THE SPECTRUM HISTORY AS A SEISMOGRAPH IN PURE BLACK AND WHITE:\nORDERED DITHER AT 640 BY 360. THE BEAT THICKENS THE DOTS."
+      ]
+    },
+    {
+      "name": "Planet",
+      "description": "The landscape is wrapped around an amber globe turning in a field of stars, seen either whole or close along its edge, with kicks swelling a band around it.",
+      "words": [
+        "THE HEIGHT MAP WRAPPED ON A SPHERE: FREQUENCY IS LONGITUDE, NEW SOUND\nENTERS AT THE NORTH POLE AND TRAVELS SOUTH. A KICK SWELLS ONE LATITUDE.",
+        "SPECTRUM PLANET: A 256 BY 192 GRID PUSHED OUT BY THE LAST SECONDS OF\nSOUND. IT TURNS FASTER WHEN THE MUSIC IS LOUD."
+      ]
+    },
+    {
+      "name": "Pond",
+      "description": "A spiral disc of cream ripples on black spreads outward from a red phrase at its centre, each kick leaving the middle as a new ring.",
+      "words": [
+        "NOW IS\nTHE CENTRE",
+        "KICKS MAKE\nRINGS",
+        "THE HEIGHT MAP AS A SPIRAL DISC: FREQUENCY IS THE ANGLE, NEW SOUND STARTS\nAT THE CENTRE AND SPREADS OUT. EACH KICK DRUM LEAVES THE MIDDLE AS A RING."
+      ]
+    }
+  ],
+  "accepts_input": true,
+  "as_processor": "Lays the picture on the landscape as relief: bright areas rise and colour the ridge lines, contours or rock, while the sound spectrum still ripples through it."
+}

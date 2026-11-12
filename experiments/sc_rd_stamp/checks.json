@@ -1,0 +1,16 @@
+{
+  "root": "/project1/sc_rd_stamp",
+  "checks": [
+    {"type": "no_errors"},
+    {"type": "not_black", "path": "out1", "min_mean": 0.05},
+    {"type": "no_nan", "path": "out1"},
+    {"type": "no_nan", "path": "sim"},
+    {"type": "moving", "path": "out1", "min_delta": 0.0005},
+    {"type": "chop_range", "path": "ctl", "channels": "hold", "min": 0, "max": 1},
+    {"type": "chop_range", "path": "ctl", "channels": "boot", "min": 0, "max": 1},
+    {"type": "chop_range", "path": "ctl", "channels": "kick", "min": 0, "max": 1},
+    {"type": "chop_range", "path": "ctl", "channels": "mat", "min": 0, "max": 4},
+    {"type": "resolution", "path": "out1", "width": 1280, "height": 720, "max": [1280, 1280]},
+    {"type": "cook_budget", "max_ms": 8}
+  ]
+}

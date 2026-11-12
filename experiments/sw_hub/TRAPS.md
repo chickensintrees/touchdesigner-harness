@@ -1,0 +1,90 @@
+# Traps found by the first eight scene builders (2026-11-10)
+
+Each list is one builder's own report, verified by that builder in TouchDesigner 2025.33230 while building the named scene. The builders worked with a different asset pack and track from the ones that ship with the repository, so model names, word examples and measured feed ranges in these reports describe that set; the lessons hold for any pack. Read the ones near your technique before you start. If one proves wrong, fix it here.
+
+
+## From `sc_kifs_office`
+
+1) Trigger CHOP: par.threshold is the 'Specify Threshold' toggle, not a level; the levels are threshup/threshdown (default 0, so it never fires on a 0..1 envelope). Also set peaklen 0 and dshape 'linear' for a clean ramp. 2) Hold CHOP par.sample='whileon' with a Logic CHOP (default off-when-zero) on input 1 keeps the last non-zero pitch through rests; then Lag. 3) GLSL TOP uniforms: set glsl.seq.vec.numBlocks = N before vecNname/vecNvaluex. Creating a GLSL TOP also creates docked kifs_pixel/kifs_compute/kifs_info DATs. 4) tdh.check 'moving' and cook_budget keep their first sample across a rebuild: the first check after a rebuild fails with negative cooks; run it twice more. 5) tdh.capture defaults to max_size 768 (gave 640x360 here); pass max_size=1280 for full frames. 6) To capture a short event (kick, snare) put a temporary Execute DAT with onFrameEnd in your own COMP that calls tdh.capture when the channel condition is met and stores the feed in comp storage; parallel MCP calls all land within about 250 ms and miss it. 7) In a ray-march, textureLod with an explicit lod (from ray distance) is needed for the text input; set inputextenduv='repeat' and inputfiltertype='mipmap' on the GLSL TOP and filtertype='mipmap' on the source. 8) Per-channel ACES-style tone mapping turns a bright emissive red into salmon pink; use a far more saturated emissive (0.9,0.06,0.04) and clamp the hit value (hit_* peaks pass 1). 9) Triplanar text needs the u axis multiplied by the sign of the normal (x wall: u = sign(n.x)*z; z wall: u = -sign(n.z)*x) or it reads mirrored on half the faces.
+
+
+## From `sc_flow_mosh`
+
+Optical Flow TOP exists in 2025.33230 but on this machine errors with "The GPU or driver is reporting that Optical Flow is not supported" and passes its input through unchanged: compute flow in GLSL (windowed Lucas-Kanade at 320x180 costs under 0.1 ms). `layout` is a reserved word in GLSL ("unexpected LAYOUT"). A Feedback TOP whose target is its own input yields that input's previous frame. For feedback displacement, sub-pixel sampling (even with nearest filtering) gives scan-line striations and noise within about 2 s; reading the flow once per block and rounding to whole pixels with random rounding keeps colours intact. Per-channel displacement inside a feedback loop accumulates into rainbow noise in about 30 frames: keep channel splits outside the loop. Clamp displaced UVs or black creeps in from the frame edges. Layout TOP align='gridrows' with numcols/numrows plus Cache TOP and Cache Select TOPs (parameter `cachetop`, index 0 newest, negative older) makes a contact sheet of recent frames, which is the only practical way to look at a hit-to-decay sequence in stills. tdh.capture defaults to max_size=768 (pass max_size=1280 for a full-size hero). GLSL TOPs created from Python bring docked _pixel/_info/_compute DATs. Global frame rate on the shared instance swung between about 1 and 55 fps, so per-frame feedback effects vary in strength; cook_budget in tdh.check is unreliable under that load.
+
+
+## From `sc_paper_storm`
+
+1) Camera COMP `fov` is the HORIZONTAL field of view: 58 gives only about 34 degrees vertically at 16:9. 2) `half` is a reserved word in TouchDesigner's GLSL: compile error "Reserved word". 3) A Constant CHOP expression that reads its own channels (`me['fa']`) raises a cook dependency loop warning: repeat the expression instead. 4) `TOP.sample(x=,y=)` on an rgba32float GLSL TOP returned the red value in the alpha slot; `numpyArray()` showed the true alpha. Do not trust sample() for alpha. 5) Geometry COMP instancing works straight from TOPs: `instanceop` + `instancetx='r'` etc., orientation without Euler angles via `instancerottoop` (Rotate to Vector) + `instancerotupop`, with `instancerottoforward` = 'posy' for the flat sheets (their normal is +Y) and 'posz' for props; `instancecountmode='oplength'`. 6) Per-instance textures work with the PBR MAT: `instancetexmode='replace'`, `instancetexs` = space-separated TOP paths, `instancetexindexop`/`instancetexindex='a'` (index from a TOP channel). 7) PBR MAT `writecameradepthtoalpha` gives linear camera depth in the render's alpha (read 12.6 at a 12.5 unit subject), which is an easy route to depth of field; background alpha stays 0. 8) Camera COMP fog (`fog='exp'`, `fogdensity`, `fogcolor*`) is applied by PBR MAT. 9) Bloom TOP defaults (threshold 0.01) white out a bright image: use threshold about 0.6, intensity about 0.45. 10) A CHOP To TOP of N single-sample channels with dataformat 'r' is 1 wide by N tall: read with texelFetch(ivec2(0, i)). 11) Constant CHOP channel count is set with `ctl.seq.const.numBlocks`; GLSL TOP uniform count with `g.seq.vec.numBlocks`. 12) `findChildren` takes `maxDepth=`, not `depth=` (depth= silently returns nothing). 13) `cpuCookTime` on File In POP / Movie File In keeps the load-time value (45 ms for a 60k-triangle OBJ) long after loading, and gpuCookTime of every TOP inflates about ten-fold while other scenes cook; compare against a fixed-cost TOP such as Bloom to gauge contention. 14) Library meshes can be heavy (two of the models used here were 60000 triangles each; the count is in each model's info.json): do not instance them by the hundred. 15) Bash heredocs containing Python with `%` and quotes broke in Git Bash once; writing the file with the Write tool was reliable.
+
+
+## From `sc_time_slab`
+
+- GLSL TOP has exactly 3 input connectors: inputConnectors[3] raises IndexError, and src.outputConnectors[0].connect(glsl) does NOT append, it replaces input 0. Needing a fourth texture means another route.
+- Time Machine TOP picks the nearest layer (no blend): a smooth gradient map gives blocky stair-steps on anything moving. One GLSL pass reading the Texture 3D TOP as sTD2DArrayInputs[0] with vec3(uv, layerIndex) and mixing two layers is smoother and cheaper than several Time Machines.
+- Texture 3D TOP (texture2darray) in its default rolling mode is a ring whose newest-layer index is not exposed (measured: newest at layer 10, oldest at 11, unrelated to totalCooks). To sample it in GLSL, turn replacesingle on and drive replaceindex from your own counter (a Constant CHOP advanced by an Execute DAT onFrameStart); the layer at that index then equals the current input exactly.
+- 2D and array inputs are indexed separately in a GLSL TOP: with input 0 an array and input 1 a 2D texture, they are sTD2DArrayInputs[0] and sTD2DInputs[0].
+- Bloom TOP bloomthreshold is not in plain 0-1 brightness terms: 0.3 added exactly nothing (output mean identical to input), 0.03 added 44%, the default 0.01 added 60%. 0.05 with intensity 0.6 is a moderate glow.
+- Camera COMP fov is horizontal by default (viewanglemethod 'horzfov'): 38 degrees at 3.4 units shows only 2.3 x 1.3 units, so a 1-unit model at scale 1.2 overflows the frame.
+- Creating a GLSL TOP auto-creates docked DATs <name>_pixel, <name>_info, <name>_compute; pointing pixeldat at your own file DAT leaves them behind.
+- cpuCookTime on GLSL TOPs reads about 3 ms each across the whole project while other agents are compiling or rebuilding, and 0.02 to 0.07 ms when quiet; tdh.check's cook_budget right after a rebuild also counts model loads (25 to 55 ms per File In POP). Wait a few seconds and run it again.
+- hits_* counters reset when the track loops, so anything accumulating rotation from them through a Lag whips backwards at the loop.
+- Text TOP: fontautosize = 'fitiffat' keeps a large fontsizex but shrinks lines that overflow (WORLD! at 250 px in Archivo Black is wider than 1280).
+- PBR metallic 0.6 without an environment map renders as a near-black silhouette.
+- The feed's t does not always advance in step with wall time between calls (it jumped and repeated values such as 149.96 across my calls), so do not estimate frame rate from it; time.perf_counter in an Execute DAT measured a steady 60 fps.
+
+
+## From `sc_glyph_render`
+
+- GLSL TOP wiring: `src.outputConnectors[0].connect(glslTop)` does NOT append; it replaces input 0 every time (the GLSL TOP has three separate input connectors). Use `connect(glsl.inputConnectors[i])`. Symptom: compile error "array index out of range '1'" on sTD2DInputs. The brief's "connect(dst) appends" holds for single multi-input connectors (Composite), not here.
+- A GLSL TOP with a compile error shows a checkerboard; tdh.errors may list it for one TOP and not another. Read the real message with an Info DAT pointed at the GLSL TOP.
+- Camera COMP `fov` is horizontal. A 1-unit model at tz 3.3 and fov 42 already fills most of a 16:9 frame; scale about 1.1-1.2, not 2.
+- Text TOP `specdat`: a Table DAT with columns x, y, text (pixels from lower left) draws many strings in one TOP: a whole glyph atlas from one Text TOP. `textTOP.evalTextSize(str)` returns width and height, including multi-line strings; use it to snap glyphs to whole pixels and to size text yourself.
+- Text TOP `fontautosize = 'alwaysfit'` fits width only; multi-line text runs off the top and bottom.
+- A bitmap-style face (ChicagoFLF was the one tested) rasterised at 12 px font size is the original bitmap font and is crisp; its W and M are one em wide, so monospace cell width = font size. Below 12 px it is unreadable when thresholded. Do not scale one big atlas down with mipmaps and threshold it: at 8 px every horizontal stroke disappears. Make one atlas per size and use texelFetch.
+- Passing `absTime.frame` (millions) into a fract-based GLSL hash flattens it to 0: wrap it with mod first.
+- In a shader that derives UVs from fract()/floor() cells, use textureLod / textureGrad or texelFetch; implicit derivatives jump at cell borders.
+- `energy` is not smooth enough to threshold directly: it crossed four thresholds 453 times in a 249 s track. Sample it per bar (Constant CHOP gate `bar < 0.5` into a Hold CHOP, sample 'offtoon').
+- A Geometry COMP hidden by `par.render` does not load its File In POP or texture until first shown: 25-50 ms mesh plus about 13 ms texture hitch on that section change. Force-cook `mesh` and `tex` at build time.
+- `pulse`, `beat`, `bar`, `evolve`, `level` are not in the hub's feed file (`sw_hub/feedin`), only in the live feed; the file has the 22 analysis channels at 100 samples a second and is handy for counting how often an expression would trigger.
+- `tdh.capture` downsizes to 768 px by default; pass `max_size=1280` to judge fine detail.
+- Text DAT with `syncfile` picks up an edited shader file one call later; check for a marker string in `.text` before trusting a capture.
+- Script TOP: `copyNumpyArray` with a float32 array of shape (1, N, 1) gives an N x 1 32-bit float mono TOP; its callbacks DAT is `par.callbacks.eval()`.
+
+
+## From `sc_spectral_terrain`
+
+1. The scaffold's `spectrum` TOP (/project1/sw_hub/spectex) is not a usable spectrum. It is the first 20% of a 24000-sample log-frequency Audio Spectrum CHOP (frequencylog 1), which sits below the music: a smooth ramp with no peaks, whose level swung from 0.0005 to 0.2 between passages (the brief says 0.0005 to 0.01). The real content is in roughly 14% to 95% of /project1/sw_hub/specraw (24000x1), peaks 0.05 to 0.25. I pointed my own Select TOP at specraw; other scenes using `spectrum` are probably reading near-noise. 2. `pitch` was non-zero only about 7% of the track used at the time and `bass_pitch` about 10%, in bursts averaging 50 ms (max 0.4 s); vocal range is MIDI 40 to 64, bass about 30 to 48 (read from sw_hub/feedin). Anything drawn only while pitch > 0 flickers for a frame or two: hold the last note and decay a marker. 3. GLSL `pow(x, 2.0)` with negative x is NaN; a few NaN pixels in the render make the Bloom TOP output NaN everywhere and the final frame black with no error or warning. 4. `normalize(cross(dFdx(p), dFdy(p)))` gives NaN on degenerate triangles of an extruded Text POP. 5. `smoothstep(a, b, x)` with a > b returned 0 here; write `1.0 - smoothstep(b, a, x)`. 6. GLSL MAT vertex shaders work on both Grid SOP and Text POP geometry with `TDPos()`. 7. POP bounds are `pop.computeBounds()`; `pop.bounds` is a method object, so `.size` on it raises. 8. Text POP has `extrude`, `extrudedepth` and `linespacing` (negative tightens). 9. Bloom TOP's `output` menu has a bloom-only mode ('bloom'), and default `preblacklevel` is 0.6. 10. tdh.check cook_budget can read 50+ ms within seconds of a rebuild or tox save, and `moving` reports negative cooks if its first sample predates a rebuild. 11. Inline Python in a Bash heredoc turns `\n` inside string literals into real newlines; patch files with a script file or Edit.
+
+
+## From `sc_point_morph`
+
+- Sprinkle POP method 'perprim' puts an equal number of points on every primitive regardless of area (measured: 800 tiny triangles beside 2 large ones took 99.7% of points). The other two methods fill volumes. For even surface sampling do it yourself.
+- POP to TOP with extract='vertex' returns zeros for P (a point attribute) but works for vertex attributes N and Tex. Facet POP operation='unique' makes points == vertices so P (extract point) lines up with N/Tex (extract vertex), three consecutive texels per triangle. POP to TOP's attribute parameter is `attribscope` (rgba1..4 are floats, not attribute names).
+- Library OBJ via File In POP: P is a point attribute, N and Tex are vertex attributes (numVerts = 3 x prims).
+- Script TOP with copyNumpyArray(float32 HxWx4) gives a 32-bit float texture and cooks once if nothing upstream changes; fine for static bakes (about 100-300 ms for 124k samples).
+- GLSL MAT: gl_PointSize and gl_PointCoord work on a Grid POP with surftype='points'; camera position is uTDMats[TDCameraIndex()].camInverse[3].xyz; TDInstanceID() works with Geometry COMP instancing set to instancecountmode='manual', numinstances=N; sampler and vector blocks are sized with mat.seq.sampler.numBlocks / seq.vec.numBlocks; pixel shader output is `out vec4 oFragColor`.
+- Render TOP alpha is 1 where opaque points were drawn, usable in post as a mask.
+- Bloom TOP at defaults lifts the whole frame to grey; a quarter-size Blur TOP added in post is easier to control.
+- Appending two inputs to a GLSL TOP with connect(dst) left it with one input for me ("array index out of range '1'"); use dst.inputConnectors[i] explicitly.
+- op.cook(force=True) several times inside one script does not advance the frame: captures of different states taken in one call all show the same picture. Schedule with run(code, delayFrames=n) and store results with comp.store(); frames get dropped under load (26 cooks in 37 frames), so allow margin.
+- cpuCookTime of render/GLSL TOPs jumps from ~0.1 ms to 3-6 ms between samples when other scenes are cooking; a single reading (or one tdh.check cook_budget) is not reliable.
+- Feed ranges (on the track used at the time): bass reaches about 2.0 and vocals about 1.56, not ~1; clamp before using as gain. evolve advances roughly 0.2 per second.
+- tdh.capture defaults to max_size=768 (pass max_size=1280 for full frames).
+- Python expression strings can hold tuple literals indexed by section, e.g. "(a,b,c)[int(op('hub')['section'])%3]", which avoids a table DAT.
+
+
+## From `sc_rd_stamp`
+
+- GLSL TOP inputs: it has only 3 input connectors (inputConnectors[3] raises IndexError). `src.outputConnectors[0].connect(glslTop)` did not append a second input; the shader then failed with "array index out of range '1'". Wire with `connect(dst.inputConnectors[i])`.
+- GLSL TOP multipass: `npasses` does chain. Each pass reads the previous pass's output as sTD2DInputs[0], and `uTDPass` exists (verified: +0.1 per pass over 4 passes gave 0.4).
+- GLSL TOP docked DATs: creating one also creates docked `<name>_pixel`, `<name>_compute` and `<name>_info`. Destroy the first two if you use your own file-backed DAT; an Info DAT pointed at the TOP gives the compile error text.
+- Uniform blocks: `glsl.seq.vec.numBlocks = n` sizes the Vectors page. `TDSimplexNoise(vec2/vec3)` works in a GLSL TOP.
+- Frame counters: the `frame` passed to an Execute DAT's onFrameStart is the timeline frame and wraps (at 600 here). Use `absTime.frame` for elapsed-frame logic. `absTime` is not defined inside a file exec'd with a custom globals dict unless you pass it in.
+- Detecting a cut: `op.cookAbsFrame` exists. `absTime.frame - op('sim').cookAbsFrame > 3` in a CHOP expression detects "this scene was not cooking", which is how to reset a feedback loop when the cutter switches to a scene.
+- Gray-Scott band on this discretisation (dU=1, dV=0.5, 9-point Laplacian 0.2/0.05, dt=1), measured in map_b.png: flood edge k is about 0.0587 + 0.25(F-0.04) - 13(F-0.04)^2 for F 0.03 to 0.05, with patterns up to about 0.006 above it. Growth from a stamped shape is only fast within about 0.002 of that edge; steering around the band centre lets everything die.
+- Bloom TOP: on an already tonemapped image with bright paper it washes everything out (only preblacklevel 0.82, intensity 0.55 was tried). It needs an HDR input.
+- tdh.check after a rebuild: fails twice for non-scene reasons (stale motion sample from the destroyed COMP, then one-off texture load counted by cook_budget). Run it three times.
+- Camera yaw: a camera swinging 0.34 units sideways at 0.66 distance reads as a 30 degree rotation of a flat page; keep lateral swing small.
+- Feed ranges: energy only spans about 0.37 to 0.62 (p10 to p90) on the track used at the time, so remap it (smoothstep 0.33 to 0.65) before using it as a regime control. Kick strengths (hit_low at the hit) have median 0.65, p10 0.27.
+- tdh.capture defaults to max_size=768; pass max_size=1280 for a full-resolution PNG.

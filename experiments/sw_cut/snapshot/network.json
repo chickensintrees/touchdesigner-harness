@@ -1,0 +1,662 @@
+{
+ "format": "tdh-snapshot/1",
+ "root": "/project1/sw_cut",
+ "ops": {
+  "cook_driver": {
+   "type": "executeDAT",
+   "family": "DAT",
+   "pos": [
+    250,
+    200
+   ],
+   "pars": {
+    "framestart": true,
+    "language": "python"
+   },
+   "text": [
+    "def onFrameStart(frame):",
+    "    comp = parent()",
+    "    hub = op('/project1/sw_hub')",
+    "    feed = hub.op('feed') if hub else None",
+    "    if feed is None or feed.numChans == 0:",
+    "        return",
+    "    logic = mod('cutlogic')",
+    "    rows = comp.op('scenes').rows()[1:]",
+    "    scenes = [(r[0].val, float(r[1].val), float(r[2].val)) for r in rows if op('/project1/' + r[0].val)]",
+    "    names = [s[0] for s in scenes]",
+    "    if not names:",
+    "        return",
+    "    par = comp.par",
+    "    state = comp.fetch('state', None) or logic.new_state()",
+    "    treatments = comp.fetch('treatments')",
+    "    transitions = comp.fetch('transitions')",
+    "    layer_modes = comp.fetch('layer_modes')",
+    "    now = absTime.seconds",
+    "    cut = False",
+    "    before = state['scene']",
+    "",
+    "    if par.Auto.eval():",
+    "        values = {",
+    "            'energy': float(feed['energy'][0]),",
+    "            'section': float(feed['section'][0]),",
+    "            'section_pos': float(feed['section_pos'][0]),",
+    "            'bar_i': int(feed['bar_i'][0]),",
+    "            'bar': float(feed['bar'][0]),",
+    "            'beat_i': int(feed['beat_i'][0]),",
+    "        }",
+    "        looks = par.Looks.eval()",
+    "        cfg = {",
+    "            'loud': par.Loud.eval(), 'bars_loud': par.Barsloud.eval(), 'min_bars': par.Minbars.eval(),",
+    "            'treatments': treatments[1:], 'treat_chance': par.Treatchance.eval() * looks,",
+    "            'transitions': transitions[1:], 'trans_chance': par.Transchance.eval() * looks,",
+    "            'layer_modes': layer_modes[1:], 'layer_chance': par.Layerchance.eval() * looks,",
+    "        }",
+    "        had_next = state['next']",
+    "        cut = logic.step(state, values, scenes, cfg)",
+    "        if state['next'] and state['next'] != had_next:",
+    "            _dress(op('/project1/' + state['next']), state['next_plan'])",
+    "    else:",
+    "        want = names[int(par.Manual.eval()) % len(names)]",
+    "        plan = dict(state['shot'], treat=treatments[int(par.Mantreat.eval()) % len(treatments)],",
+    "                    trans='cut', layer='', layer_mode='', take=int(par.Mantake.eval()), seed=par.Manseed.eval())",
+    "        if want != state['scene'] or plan != state['shot']:",
+    "            cut = want != state['scene']",
+    "            state['scene'], state['next'], state['next_plan'] = want, '', None",
+    "            state['shot'] = plan",
+    "            _dress(op('/project1/' + want), plan)",
+    "",
+    "    shot = state['shot']",
+    "    scene = state['scene']",
+    "    if cut:",
+    "        comp.store('cuts', comp.fetch('cuts', 0) + 1)",
+    "        comp.store('cut_time', now)",
+    "        comp.store('prev', before)",
+    "        target = op('/project1/' + scene)",
+    "        if target is not None and hasattr(target.par, 'Shotstart'):",
+    "            _dress(target, shot)",
+    "            target.par.Shotstart = now",
+    "        log = comp.fetch('log', [])",
+    "        log.append((round(float(feed['t'][0]), 2), scene, shot['take'], shot['treat'], shot['trans'], shot['layer'], shot['layer_mode']))",
+    "        comp.store('log', log[-400:])",
+    "    comp.store('state', state)",
+    "",
+    "    age = now - comp.fetch('cut_time', now)",
+    "    progress = 1.0 if shot['trans'] == 'cut' else min(1.0, age / comp.fetch('transition_seconds', 0.32))",
+    "    in_transition = progress < 1.0",
+    "    layer = shot.get('layer') or ''",
+    "    if layer and layer not in names:",
+    "        layer = ''",
+    "",
+    "    if scene in names:",
+    "        if hub.par.Scene.eval() != scene:",
+    "            hub.par.Scene = scene",
+    "        comp.op('switch_a').par.index = names.index(scene)",
+    "    # B is the outgoing scene (its last frame stays in its out1) during a transition,",
+    "    # then the layered scene.",
+    "    prev = comp.fetch('prev', '')",
+    "    b_scene = prev if (in_transition and prev in names) else (layer or prev or scene)",
+    "    if b_scene in names:",
+    "        comp.op('switch_b').par.index = names.index(b_scene)",
+    "",
+    "    live = []",
+    "    if layer and not in_transition:",
+    "        lay = op('/project1/' + layer)",
+    "        if hasattr(lay.par, 'Shotstart') and lay.par.Shotstart.eval() < comp.fetch('cut_time', now):",
+    "            lay.par.Take = int(shot['seed'] * 997) % 6",
+    "            lay.par.Seed = (shot['seed'] * 7.31) % 1.0",
+    "            lay.par.Shotstart = comp.fetch('cut_time', now)",
+    "        live.append(layer)",
+    "    warm = state.get('next')",
+    "    if warm and warm != scene and warm in names:",
+    "        live.append(warm)",
+    "    for name in live:",
+    "        if name != scene:",
+    "            op('/project1/' + name + '/hub').cook(force=True)",
+    "            op('/project1/' + name + '/out1').cook(force=True)",
+    "",
+    "    mix = comp.op('mix')",
+    "    mix.par.vec0valuex = treatments.index(shot['treat']) if shot['treat'] in treatments else 0",
+    "    mix.par.vec0valuey = transitions.index(shot['trans']) if shot['trans'] in transitions else 0",
+    "    mix.par.vec0valuez = (layer_modes.index(shot['layer_mode']) if shot['layer_mode'] in layer_modes else 0) if layer else 0",
+    "    mix.par.vec0valuew = shot['seed']",
+    "    mix.par.vec1valuex = progress",
+    "    mix.par.vec1valuey = age",
+    "    comp.op('out1').cook(force=True)",
+    "    if comp.op('rec').par.record.eval():",
+    "        comp.op('rec').cook(force=True)",
+    "    return",
+    "",
+    "",
+    "def _dress(target, plan):",
+    "    \"\"\"Give a scene its take and seed for the coming shot (before it is seen).\"\"\"",
+    "    if target is None or plan is None or not hasattr(target.par, 'Take'):",
+    "        return",
+    "    target.par.Take = int(plan['take'])",
+    "    target.par.Seed = float(plan['seed'])"
+   ]
+  },
+  "cutlogic": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "file": {
+     "expr": "project.folder.replace(chr(92), '/') + '/experiments/sw_cut/cutlogic.py'"
+    },
+    "language": "text",
+    "syncfile": true
+   },
+   "text_file": "experiments/sw_cut/cutlogic.py"
+  },
+  "fit_a": {
+   "type": "fitTOP",
+   "family": "TOP",
+   "pos": [
+    450,
+    0
+   ],
+   "inputs": [
+    [
+     "switch_a"
+    ]
+   ],
+   "pars": {
+    "outputaspect": "resolution",
+    "outputresolution": "custom",
+    "resolutionh": 720,
+    "resolutionw": 1280
+   }
+  },
+  "fit_b": {
+   "type": "fitTOP",
+   "family": "TOP",
+   "pos": [
+    450,
+    -200
+   ],
+   "inputs": [
+    [
+     "switch_b"
+    ]
+   ],
+   "pars": {
+    "outputaspect": "resolution",
+    "outputresolution": "custom",
+    "resolutionh": 720,
+    "resolutionw": 1280
+   }
+  },
+  "in_sc_droste_crt": {
+   "type": "selectTOP",
+   "family": "TOP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "top": "/project1/sc_droste_crt/out1"
+   }
+  },
+  "in_sc_exploded_view": {
+   "type": "selectTOP",
+   "family": "TOP",
+   "pos": [
+    0,
+    -110
+   ],
+   "pars": {
+    "top": "/project1/sc_exploded_view/out1"
+   }
+  },
+  "in_sc_flow_mosh": {
+   "type": "selectTOP",
+   "family": "TOP",
+   "pos": [
+    0,
+    -220
+   ],
+   "pars": {
+    "top": "/project1/sc_flow_mosh/out1"
+   }
+  },
+  "in_sc_fluid_ink": {
+   "type": "selectTOP",
+   "family": "TOP",
+   "pos": [
+    0,
+    -330
+   ],
+   "pars": {
+    "top": "/project1/sc_fluid_ink/out1"
+   }
+  },
+  "in_sc_glyph_render": {
+   "type": "selectTOP",
+   "family": "TOP",
+   "pos": [
+    0,
+    -440
+   ],
+   "pars": {
+    "top": "/project1/sc_glyph_render/out1"
+   }
+  },
+  "in_sc_kifs_office": {
+   "type": "selectTOP",
+   "family": "TOP",
+   "pos": [
+    0,
+    -550
+   ],
+   "pars": {
+    "top": "/project1/sc_kifs_office/out1"
+   }
+  },
+  "in_sc_kinetic_type": {
+   "type": "selectTOP",
+   "family": "TOP",
+   "pos": [
+    0,
+    -660
+   ],
+   "pars": {
+    "top": "/project1/sc_kinetic_type/out1"
+   }
+  },
+  "in_sc_light_gobo": {
+   "type": "selectTOP",
+   "family": "TOP",
+   "pos": [
+    0,
+    -770
+   ],
+   "pars": {
+    "top": "/project1/sc_light_gobo/out1"
+   }
+  },
+  "in_sc_paper_storm": {
+   "type": "selectTOP",
+   "family": "TOP",
+   "pos": [
+    0,
+    -880
+   ],
+   "pars": {
+    "top": "/project1/sc_paper_storm/out1"
+   }
+  },
+  "in_sc_physarum": {
+   "type": "selectTOP",
+   "family": "TOP",
+   "pos": [
+    0,
+    -990
+   ],
+   "pars": {
+    "top": "/project1/sc_physarum/out1"
+   }
+  },
+  "in_sc_point_morph": {
+   "type": "selectTOP",
+   "family": "TOP",
+   "pos": [
+    0,
+    -1100
+   ],
+   "pars": {
+    "top": "/project1/sc_point_morph/out1"
+   }
+  },
+  "in_sc_rd_stamp": {
+   "type": "selectTOP",
+   "family": "TOP",
+   "pos": [
+    0,
+    -1210
+   ],
+   "pars": {
+    "top": "/project1/sc_rd_stamp/out1"
+   }
+  },
+  "in_sc_riso_press": {
+   "type": "selectTOP",
+   "family": "TOP",
+   "pos": [
+    0,
+    -1320
+   ],
+   "pars": {
+    "top": "/project1/sc_riso_press/out1"
+   }
+  },
+  "in_sc_rutt_etra": {
+   "type": "selectTOP",
+   "family": "TOP",
+   "pos": [
+    0,
+    -1430
+   ],
+   "pars": {
+    "top": "/project1/sc_rutt_etra/out1"
+   }
+  },
+  "in_sc_shatter": {
+   "type": "selectTOP",
+   "family": "TOP",
+   "pos": [
+    0,
+    -1540
+   ],
+   "pars": {
+    "top": "/project1/sc_shatter/out1"
+   }
+  },
+  "in_sc_spectral_terrain": {
+   "type": "selectTOP",
+   "family": "TOP",
+   "pos": [
+    0,
+    -1650
+   ],
+   "pars": {
+    "top": "/project1/sc_spectral_terrain/out1"
+   }
+  },
+  "in_sc_time_slab": {
+   "type": "selectTOP",
+   "family": "TOP",
+   "pos": [
+    0,
+    -1760
+   ],
+   "pars": {
+    "top": "/project1/sc_time_slab/out1"
+   }
+  },
+  "in_sc_vector_scope": {
+   "type": "selectTOP",
+   "family": "TOP",
+   "pos": [
+    0,
+    -1870
+   ],
+   "pars": {
+    "top": "/project1/sc_vector_scope/out1"
+   }
+  },
+  "mix": {
+   "type": "glslTOP",
+   "family": "TOP",
+   "pos": [
+    650,
+    0
+   ],
+   "inputs": [
+    [
+     "fit_a"
+    ],
+    [
+     "fit_b"
+    ]
+   ],
+   "pars": {
+    "computedat": "mix_compute",
+    "format": "rgba16float",
+    "outputresolution": "custom",
+    "pixeldat": "mix_frag",
+    "resolutionh": 720,
+    "resolutionw": 1280,
+    "vec0name": "uShot",
+    "vec0valuew": 0.73199,
+    "vec0valuex": 4.0,
+    "vec1name": "uTime",
+    "vec1valuew": {
+     "expr": "op('/project1/sw_hub/feed')['bar_pos']"
+    },
+    "vec1valuey": 4.149999999994179,
+    "vec1valuez": {
+     "expr": "op('/project1/sw_hub/feed')['beat_pos']"
+    },
+    "vec2name": "uAudio",
+    "vec2valuew": {
+     "expr": "op('/project1/sw_hub/feed')['energy']"
+    },
+    "vec2valuex": {
+     "expr": "op('/project1/sw_hub/feed')['pulse']"
+    },
+    "vec2valuey": {
+     "expr": "op('/project1/sw_hub/feed')['hit_low']"
+    },
+    "vec2valuez": {
+     "expr": "op('/project1/sw_hub/feed')['hit_mid']"
+    }
+   }
+  },
+  "mix_frag": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "file": {
+     "expr": "project.folder.replace(chr(92), '/') + '/experiments/sw_cut/shaders/mix.frag'"
+    },
+    "language": "text",
+    "syncfile": true
+   },
+   "text_file": "experiments/sw_cut/shaders/mix.frag"
+  },
+  "mix_info": {
+   "type": "infoDAT",
+   "family": "DAT",
+   "pos": [
+    160,
+    -120
+   ],
+   "pars": {
+    "language": "text",
+    "op": "mix"
+   }
+  },
+  "out1": {
+   "type": "outTOP",
+   "family": "TOP",
+   "pos": [
+    850,
+    0
+   ],
+   "inputs": [
+    [
+     "mix"
+    ]
+   ]
+  },
+  "rec": {
+   "type": "moviefileoutTOP",
+   "family": "TOP",
+   "pos": [
+    850,
+    -150
+   ],
+   "inputs": [
+    [
+     "mix"
+    ]
+   ],
+   "pars": {
+    "audiochop": "/project1/sw_hub/audio",
+    "audiocodec": "aac",
+    "lengthunit": "seconds",
+    "limitlength": true
+   }
+  },
+  "scenes": {
+   "type": "tableDAT",
+   "family": "DAT",
+   "pos": [
+    0,
+    0
+   ],
+   "text": [
+    "scene\tenergy_min\tenergy_max",
+    "sc_droste_crt\t0.4\t9.0",
+    "sc_exploded_view\t0.4\t0.58",
+    "sc_flow_mosh\t0.42\t9.0",
+    "sc_fluid_ink\t0.42\t9.0",
+    "sc_glyph_render\t0.4\t9.0",
+    "sc_kifs_office\t0.0\t9.0",
+    "sc_kinetic_type\t0.42\t9.0",
+    "sc_light_gobo\t0.0\t0.55",
+    "sc_paper_storm\t0.4\t9.0",
+    "sc_physarum\t0.0\t0.56",
+    "sc_point_morph\t0.4\t9.0",
+    "sc_rd_stamp\t0.0\t9.0",
+    "sc_riso_press\t0.42\t9.0",
+    "sc_rutt_etra\t0.4\t9.0",
+    "sc_shatter\t0.42\t9.0",
+    "sc_spectral_terrain\t0.0\t9.0",
+    "sc_time_slab\t0.42\t9.0",
+    "sc_vector_scope\t0.0\t9.0"
+   ]
+  },
+  "switch_a": {
+   "type": "switchTOP",
+   "family": "TOP",
+   "pos": [
+    250,
+    0
+   ],
+   "inputs": [
+    [
+     "in_sc_droste_crt"
+    ],
+    [
+     "in_sc_exploded_view"
+    ],
+    [
+     "in_sc_flow_mosh"
+    ],
+    [
+     "in_sc_fluid_ink"
+    ],
+    [
+     "in_sc_glyph_render"
+    ],
+    [
+     "in_sc_kifs_office"
+    ],
+    [
+     "in_sc_kinetic_type"
+    ],
+    [
+     "in_sc_light_gobo"
+    ],
+    [
+     "in_sc_paper_storm"
+    ],
+    [
+     "in_sc_physarum"
+    ],
+    [
+     "in_sc_point_morph"
+    ],
+    [
+     "in_sc_rd_stamp"
+    ],
+    [
+     "in_sc_riso_press"
+    ],
+    [
+     "in_sc_rutt_etra"
+    ],
+    [
+     "in_sc_shatter"
+    ],
+    [
+     "in_sc_spectral_terrain"
+    ],
+    [
+     "in_sc_time_slab"
+    ],
+    [
+     "in_sc_vector_scope"
+    ]
+   ],
+   "pars": {
+    "index": 17.0
+   }
+  },
+  "switch_b": {
+   "type": "switchTOP",
+   "family": "TOP",
+   "pos": [
+    250,
+    -200
+   ],
+   "inputs": [
+    [
+     "in_sc_droste_crt"
+    ],
+    [
+     "in_sc_exploded_view"
+    ],
+    [
+     "in_sc_flow_mosh"
+    ],
+    [
+     "in_sc_fluid_ink"
+    ],
+    [
+     "in_sc_glyph_render"
+    ],
+    [
+     "in_sc_kifs_office"
+    ],
+    [
+     "in_sc_kinetic_type"
+    ],
+    [
+     "in_sc_light_gobo"
+    ],
+    [
+     "in_sc_paper_storm"
+    ],
+    [
+     "in_sc_physarum"
+    ],
+    [
+     "in_sc_point_morph"
+    ],
+    [
+     "in_sc_rd_stamp"
+    ],
+    [
+     "in_sc_riso_press"
+    ],
+    [
+     "in_sc_rutt_etra"
+    ],
+    [
+     "in_sc_shatter"
+    ],
+    [
+     "in_sc_spectral_terrain"
+    ],
+    [
+     "in_sc_time_slab"
+    ],
+    [
+     "in_sc_vector_scope"
+    ]
+   ],
+   "pars": {
+    "index": 17.0
+   }
+  }
+ }
+}

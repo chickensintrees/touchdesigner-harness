@@ -1,0 +1,22 @@
+{
+ "slug": "skeleton_key",
+ "source": "skeleton_key",
+ "parts_joined": 1,
+ "vertices": 19452,
+ "triangles": 29544,
+ "decimated": false,
+ "original_size_m": [
+  0.1225,
+  0.435,
+  1.0017
+ ],
+ "size_units": [
+  0.1223,
+  1.0,
+  0.4343
+ ],
+ "has_uv": true,
+ "has_texture": true,
+ "generator": "TRELLIS.2",
+ "prompt": "a giant ornate antique skeleton key standing upright on its bow, aged brass with a decorative looped handle and a toothed bit"
+}

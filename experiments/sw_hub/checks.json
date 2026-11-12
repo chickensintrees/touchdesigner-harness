@@ -1,0 +1,10 @@
+{
+  "root": "/project1/sw_hub",
+  "checks": [
+    {"type": "no_errors"},
+    {"type": "chop_range", "path": "feed", "channels": "rms", "min": 0.0, "max": 3.0},
+    {"type": "chop_range", "path": "feed", "channels": "beat", "min": 0.0, "max": 1.0},
+    {"type": "chop_range", "path": "feed", "channels": "level", "min": 0.0, "max": 1.0},
+    {"type": "cook_budget", "max_ms": 4}
+  ]
+}

@@ -1,0 +1,3054 @@
+{
+ "format": "tdh-snapshot/1",
+ "root": "/project1/sc_light_gobo",
+ "ops": {
+  "amphora": {
+   "type": "geometryCOMP",
+   "family": "COMP",
+   "pos": [
+    -800,
+    200
+   ],
+   "pars": {
+    "render": {
+     "expr": "(1,0,1,0,0,0,0,0,0,0,0)[int(parent().par.Take)%11]"
+    },
+    "ry": {
+     "expr": "(200,0,0,0,0,0,0,0,0,0,0)[int(parent().par.Take)%11] + (0.3,0,0,0,0,0,0,0,0,0,0)[int(parent().par.Take)%11]*op('hub')['evolve']*40 + op('shot')['seed']*(0.3,0,0,0,0,0,0,0,0,0,0)[int(parent().par.Take)%11]*360"
+    },
+    "scale": {
+     "expr": "(1.5,1,1.3,1,1,1,1,1,1,1,1)[int(parent().par.Take)%11]"
+    },
+    "tx": {
+     "expr": "(-0.8,0,-0.6,0,0,0,0,0,0,0,0)[int(parent().par.Take)%11]"
+    },
+    "ty": {
+     "expr": "(0.75,0.5,0.65,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5)[int(parent().par.Take)%11]"
+    },
+    "tz": {
+     "expr": "(-0.7,0,-0.9,0,0,0,0,0,0,0,0)[int(parent().par.Take)%11]"
+    }
+   }
+  },
+  "amphora/fit": {
+   "type": "transformPOP",
+   "family": "POP",
+   "pos": [
+    160,
+    0
+   ],
+   "inputs": [
+    [
+     "amphora/mesh"
+    ]
+   ],
+   "pars": {
+    "sx": {
+     "expr": "1 if mod.paths.have('models/amphora/model.obj') else 0.29109"
+    },
+    "sy": {
+     "expr": "1 if mod.paths.have('models/amphora/model.obj') else 1.092"
+    },
+    "sz": {
+     "expr": "1 if mod.paths.have('models/amphora/model.obj') else 0.46838"
+    },
+    "tx": {
+     "expr": "0 if mod.paths.have('models/amphora/model.obj') else 0.004051"
+    },
+    "ty": {
+     "expr": "0 if mod.paths.have('models/amphora/model.obj') else -0.5"
+    },
+    "tz": {
+     "expr": "0 if mod.paths.have('models/amphora/model.obj') else -0"
+    }
+   }
+  },
+  "amphora/mesh": {
+   "type": "fileinPOP",
+   "family": "POP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.model_file('amphora')"
+    }
+   }
+  },
+  "astrolabe": {
+   "type": "geometryCOMP",
+   "family": "COMP",
+   "pos": [
+    -480,
+    60
+   ],
+   "pars": {
+    "render": {
+     "expr": "(0,0,0,1,0,0,0,0,0,0,0)[int(parent().par.Take)%11]"
+    },
+    "ry": {
+     "expr": "(0,0,0,-20,0,0,0,0,0,0,0)[int(parent().par.Take)%11] + (0,0,0,0,0,0,0,0,0,0,0)[int(parent().par.Take)%11]*op('hub')['evolve']*40 + op('shot')['seed']*(0,0,0,0,0,0,0,0,0,0,0)[int(parent().par.Take)%11]*360"
+    },
+    "scale": {
+     "expr": "(1,1,1,1.25,1,1,1,1,1,1,1)[int(parent().par.Take)%11]"
+    },
+    "tx": {
+     "expr": "(0,0,0,0.32,0,0,0,0,0,0,0)[int(parent().par.Take)%11]"
+    },
+    "ty": {
+     "expr": "(0.5,0.5,0.5,0.625,0.5,0.5,0.5,0.5,0.5,0.5,0.5)[int(parent().par.Take)%11]"
+    },
+    "tz": {
+     "expr": "(0,0,0,-0.05,0,0,0,0,0,0,0)[int(parent().par.Take)%11]"
+    }
+   }
+  },
+  "astrolabe/fit": {
+   "type": "transformPOP",
+   "family": "POP",
+   "pos": [
+    160,
+    0
+   ],
+   "inputs": [
+    [
+     "astrolabe/mesh"
+    ]
+   ],
+   "pars": {
+    "sx": {
+     "expr": "1 if mod.paths.have('models/astrolabe/model.obj') else 0.32501"
+    },
+    "sy": {
+     "expr": "1 if mod.paths.have('models/astrolabe/model.obj') else 1.092"
+    },
+    "sz": {
+     "expr": "1 if mod.paths.have('models/astrolabe/model.obj') else 0.52308"
+    },
+    "tx": {
+     "expr": "0 if mod.paths.have('models/astrolabe/model.obj') else 0.0045229"
+    },
+    "ty": {
+     "expr": "0 if mod.paths.have('models/astrolabe/model.obj') else -0.5"
+    },
+    "tz": {
+     "expr": "0 if mod.paths.have('models/astrolabe/model.obj') else -0"
+    }
+   }
+  },
+  "astrolabe/mesh": {
+   "type": "fileinPOP",
+   "family": "POP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.model_file('astrolabe')"
+    }
+   }
+  },
+  "atlas": {
+   "type": "layoutTOP",
+   "family": "TOP",
+   "pos": [
+    -800,
+    500
+   ],
+   "pars": {
+    "align": "gridrows",
+    "bgcolora": 1.0,
+    "numcols": 2,
+    "outputresolution": "custom",
+    "resolutionh": 1024,
+    "resolutionw": 1024,
+    "tops": "t[0-7]"
+   }
+  },
+  "atlas_d0": {
+   "type": "layoutTOP",
+   "family": "TOP",
+   "pos": [
+    -1500,
+    500
+   ],
+   "pars": {
+    "align": "gridrows",
+    "bgcolora": 1.0,
+    "numcols": 2,
+    "outputresolution": "custom",
+    "resolutionh": 1024,
+    "resolutionw": 1024,
+    "tops": "d0_[0-7]"
+   }
+  },
+  "atlas_d4": {
+   "type": "layoutTOP",
+   "family": "TOP",
+   "pos": [
+    -1660,
+    500
+   ],
+   "pars": {
+    "align": "gridrows",
+    "bgcolora": 1.0,
+    "numcols": 2,
+    "outputresolution": "custom",
+    "resolutionh": 1024,
+    "resolutionw": 1024,
+    "tops": "d4_[0-7]"
+   }
+  },
+  "atlas_d8": {
+   "type": "layoutTOP",
+   "family": "TOP",
+   "pos": [
+    -1820,
+    500
+   ],
+   "pars": {
+    "align": "gridrows",
+    "bgcolora": 1.0,
+    "numcols": 2,
+    "outputresolution": "custom",
+    "resolutionh": 1024,
+    "resolutionw": 1024,
+    "tops": "d8_[0-7]"
+   }
+  },
+  "balanced_solids": {
+   "type": "geometryCOMP",
+   "family": "COMP",
+   "pos": [
+    -320,
+    60
+   ],
+   "pars": {
+    "render": {
+     "expr": "(0,0,0,1,0,0,0,0,0,1,0)[int(parent().par.Take)%11]"
+    },
+    "ry": {
+     "expr": "(0,0,0,30,0,0,0,0,0,-90,0)[int(parent().par.Take)%11] + (0,0,0,0,0,0,0,0,0,0,0)[int(parent().par.Take)%11]*op('hub')['evolve']*40 + op('shot')['seed']*(0,0,0,0,0,0,0,0,0,0,0)[int(parent().par.Take)%11]*360"
+    },
+    "scale": {
+     "expr": "(1,1,1,1.3,1,1,1,1,1,1.5,1)[int(parent().par.Take)%11]"
+    },
+    "tx": {
+     "expr": "(0,0,0,-0.12,0,0,0,0,0,1.9,0)[int(parent().par.Take)%11]"
+    },
+    "ty": {
+     "expr": "(0.5,0.5,0.5,0.65,0.5,0.5,0.5,0.5,0.5,0.75,0.5)[int(parent().par.Take)%11]"
+    },
+    "tz": {
+     "expr": "(0,0,0,0.3,0,0,0,0,0,-1,0)[int(parent().par.Take)%11]"
+    }
+   }
+  },
+  "balanced_solids/fit": {
+   "type": "transformPOP",
+   "family": "POP",
+   "pos": [
+    160,
+    0
+   ],
+   "inputs": [
+    [
+     "balanced_solids/mesh"
+    ]
+   ],
+   "pars": {
+    "sx": {
+     "expr": "1 if mod.paths.have('models/balanced_solids/model.obj') else 0.1526"
+    },
+    "sy": {
+     "expr": "1 if mod.paths.have('models/balanced_solids/model.obj') else 1.092"
+    },
+    "sz": {
+     "expr": "1 if mod.paths.have('models/balanced_solids/model.obj') else 0.24537"
+    },
+    "tx": {
+     "expr": "0 if mod.paths.have('models/balanced_solids/model.obj') else 0.0021236"
+    },
+    "ty": {
+     "expr": "0 if mod.paths.have('models/balanced_solids/model.obj') else -0.5"
+    },
+    "tz": {
+     "expr": "0 if mod.paths.have('models/balanced_solids/model.obj') else -0"
+    }
+   }
+  },
+  "balanced_solids/mesh": {
+   "type": "fileinPOP",
+   "family": "POP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.model_file('balanced_solids')"
+    }
+   }
+  },
+  "beam": {
+   "type": "glslTOP",
+   "family": "TOP",
+   "pos": [
+    560,
+    100
+   ],
+   "inputs": [
+    [
+     "gb_cam"
+    ],
+    [
+     "gb_lgt"
+    ],
+    [
+     "slide"
+    ]
+   ],
+   "pars": {
+    "computedat": "beam_compute",
+    "format": "rgba16float",
+    "outputresolution": "custom",
+    "pixeldat": "beam_frag",
+    "resolutionh": 720,
+    "resolutionw": 1280,
+    "vec0name": "uCamP",
+    "vec0valuew": {
+     "expr": "op('tk')['ctan']"
+    },
+    "vec0valuex": {
+     "expr": "op('rig')['cpx']"
+    },
+    "vec0valuey": {
+     "expr": "op('rig')['cpy']"
+    },
+    "vec0valuez": {
+     "expr": "op('rig')['cpz']"
+    },
+    "vec10name": "uHit",
+    "vec10valuew": {
+     "expr": "op('hub')['pulse']"
+    },
+    "vec10valuex": {
+     "expr": "min(op('hub')['hit_low'],1.5)"
+    },
+    "vec10valuey": {
+     "expr": "min(op('hub')['hit_mid'],1.5)"
+    },
+    "vec10valuez": {
+     "expr": "min(op('hub')['hit_high'],1.5)"
+    },
+    "vec11name": "uLamp",
+    "vec11valuew": {
+     "expr": "op('tk')['lampi']*(0.7+0.6*min(op('hub')['vocals'],1.5))"
+    },
+    "vec11valuex": {
+     "expr": "op('tk')['lamp0']"
+    },
+    "vec11valuey": {
+     "expr": "op('tk')['lamp1']"
+    },
+    "vec11valuez": {
+     "expr": "op('tk')['lamp2']"
+    },
+    "vec12name": "uFog",
+    "vec12valuew": {
+     "expr": "op('tk')['amb']"
+    },
+    "vec12valuex": {
+     "expr": "op('tk')['fog']*(0.6+0.35*min(op('hub')['bass'],2)+0.45*min(op('slow')['hit_low'],1.2))"
+    },
+    "vec12valuey": {
+     "expr": "op('hub')['evolve']"
+    },
+    "vec12valuez": {
+     "expr": "op('tk')['fnoise']"
+    },
+    "vec13name": "uMisc",
+    "vec13valuew": {
+     "expr": "op('tk')['fscale']"
+    },
+    "vec13valuex": {
+     "expr": "op('shot')['seed']"
+    },
+    "vec13valuey": {
+     "expr": "op('shot')['age']"
+    },
+    "vec13valuez": {
+     "expr": "op('tk')['exp']"
+    },
+    "vec14name": "uRoom",
+    "vec14valuew": {
+     "expr": "op('tk')['room3']"
+    },
+    "vec14valuex": {
+     "expr": "op('tk')['room0']"
+    },
+    "vec14valuey": {
+     "expr": "op('tk')['room1']"
+    },
+    "vec14valuez": {
+     "expr": "op('tk')['room2']"
+    },
+    "vec15name": "uIn",
+    "vec15valuew": {
+     "expr": "0"
+    },
+    "vec15valuex": {
+     "expr": "op('inp')['on']"
+    },
+    "vec15valuey": {
+     "expr": "op('tk')['ing']"
+    },
+    "vec15valuez": {
+     "expr": "op('tk')['inw']"
+    },
+    "vec1name": "uCamT",
+    "vec1valuew": {
+     "expr": "1280.0/720.0"
+    },
+    "vec1valuex": {
+     "expr": "op('rig')['ctx']"
+    },
+    "vec1valuey": {
+     "expr": "op('rig')['cty']"
+    },
+    "vec1valuez": {
+     "expr": "op('rig')['ctz']"
+    },
+    "vec2name": "uLgtP",
+    "vec2valuew": {
+     "expr": "op('tk')['ltan']"
+    },
+    "vec2valuex": {
+     "expr": "op('rig')['lpx']"
+    },
+    "vec2valuey": {
+     "expr": "op('rig')['lpy']"
+    },
+    "vec2valuez": {
+     "expr": "op('rig')['lpz']"
+    },
+    "vec3name": "uLgtT",
+    "vec3valuew": {
+     "expr": "op('tk')['gobo']"
+    },
+    "vec3valuex": {
+     "expr": "op('rig')['ltx']"
+    },
+    "vec3valuey": {
+     "expr": "op('rig')['lty']"
+    },
+    "vec3valuez": {
+     "expr": "op('rig')['ltz']"
+    },
+    "vec4name": "uLgtC",
+    "vec4valuew": {
+     "expr": "op('tk')['sheets']"
+    },
+    "vec4valuex": {
+     "expr": "op('tk')['lcol0']*op('tk')['lint']*(0.8+0.3*min(op('hub')['pulse'],1)+0.6*min(op('hub')['hit_mid'],1.2))"
+    },
+    "vec4valuey": {
+     "expr": "op('tk')['lcol1']*op('tk')['lint']*(0.8+0.3*min(op('hub')['pulse'],1)+0.6*min(op('hub')['hit_mid'],1.2))"
+    },
+    "vec4valuez": {
+     "expr": "op('tk')['lcol2']*op('tk')['lint']*(0.8+0.3*min(op('hub')['pulse'],1)+0.6*min(op('hub')['hit_mid'],1.2))"
+    },
+    "vec5name": "uGobo",
+    "vec5valuew": {
+     "expr": "0.36 + 0.2*math.sin(op('hub')['bar_pos']*math.pi)"
+    },
+    "vec5valuex": {
+     "expr": "op('hub')['section'] + int(op('shot')['seed']*8)"
+    },
+    "vec5valuey": {
+     "expr": "op('tk')['grot'] + (op('shot')['seed']-0.5)*0.25"
+    },
+    "vec5valuez": {
+     "expr": "op('hub')['beat_pos']"
+    },
+    "vec6name": "uGobo2",
+    "vec6valuew": {
+     "expr": "op('hub')['section']"
+    },
+    "vec6valuex": {
+     "expr": "op('tk')['ginv']"
+    },
+    "vec6valuey": {
+     "expr": "op('tk')['sheetsp']"
+    },
+    "vec6valuez": {
+     "expr": "op('tk')['gscale']"
+    },
+    "vec7name": "uTube",
+    "vec7valuew": {
+     "expr": "absTime.seconds%1000"
+    },
+    "vec7valuex": {
+     "expr": "op('tk')['ntube']"
+    },
+    "vec7valuey": {
+     "expr": "op('tk')['tlay']"
+    },
+    "vec7valuez": {
+     "expr": "op('tk')['tint']*(0.7+0.6*min(max((op('hub')['energy']-0.33)/0.32,0),1))"
+    },
+    "vec8name": "uTube2",
+    "vec8valuew": {
+     "expr": "op('tk')['lfall']"
+    },
+    "vec8valuex": {
+     "expr": "op('tk')['tidle']"
+    },
+    "vec8valuey": {
+     "expr": "op('tk')['tz0']"
+    },
+    "vec8valuez": {
+     "expr": "op('tk')['tsp']"
+    },
+    "vec9name": "uTubeHit",
+    "vec9valuew": {
+     "expr": "op('slow')['hit_mid']"
+    },
+    "vec9valuex": {
+     "expr": "op('hub')['hits_low']"
+    },
+    "vec9valuey": {
+     "expr": "op('hub')['hits_mid']"
+    },
+    "vec9valuez": {
+     "expr": "op('slow')['hit_low']"
+    }
+   }
+  },
+  "beam_frag": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    380,
+    380
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.here('shaders/beam.frag')"
+    },
+    "language": "text",
+    "syncfile": true
+   },
+   "text_file": "experiments/sc_light_gobo/shaders/beam.frag"
+  },
+  "beam_info": {
+   "type": "infoDAT",
+   "family": "DAT",
+   "pos": [
+    160,
+    -120
+   ],
+   "pars": {
+    "language": "text",
+    "op": "beam"
+   }
+  },
+  "broken_column": {
+   "type": "geometryCOMP",
+   "family": "COMP",
+   "pos": [
+    -480,
+    200
+   ],
+   "pars": {
+    "render": {
+     "expr": "(0,0,1,0,0,0,0,0,0,0,0)[int(parent().par.Take)%11]"
+    },
+    "ry": {
+     "expr": "(0,0,0,0,0,0,0,0,0,0,0)[int(parent().par.Take)%11] + (0,0,0,0,0,0,0,0,0,0,0)[int(parent().par.Take)%11]*op('hub')['evolve']*40 + op('shot')['seed']*(0,0,0,0,0,0,0,0,0,0,0)[int(parent().par.Take)%11]*360"
+    },
+    "scale": {
+     "expr": "(1,1,1.5,1,1,1,1,1,1,1,1)[int(parent().par.Take)%11]"
+    },
+    "tx": {
+     "expr": "(0,0,0.5,0,0,0,0,0,0,0,0)[int(parent().par.Take)%11]"
+    },
+    "ty": {
+     "expr": "(0.5,0.5,0.75,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5)[int(parent().par.Take)%11]"
+    },
+    "tz": {
+     "expr": "(0,0,0,0,0,0,0,0,0,0,0)[int(parent().par.Take)%11]"
+    }
+   }
+  },
+  "broken_column/fit": {
+   "type": "transformPOP",
+   "family": "POP",
+   "pos": [
+    160,
+    0
+   ],
+   "inputs": [
+    [
+     "broken_column/mesh"
+    ]
+   ],
+   "pars": {
+    "sx": {
+     "expr": "1 if mod.paths.have('models/broken_column/model.obj') else 0.37939"
+    },
+    "sy": {
+     "expr": "1 if mod.paths.have('models/broken_column/model.obj') else 1.092"
+    },
+    "sz": {
+     "expr": "1 if mod.paths.have('models/broken_column/model.obj') else 0.63455"
+    },
+    "tx": {
+     "expr": "0 if mod.paths.have('models/broken_column/model.obj') else 0.0052797"
+    },
+    "ty": {
+     "expr": "0 if mod.paths.have('models/broken_column/model.obj') else -0.5"
+    },
+    "tz": {
+     "expr": "0 if mod.paths.have('models/broken_column/model.obj') else -0"
+    }
+   }
+  },
+  "broken_column/mesh": {
+   "type": "fileinPOP",
+   "family": "POP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.model_file('broken_column')"
+    }
+   }
+  },
+  "cam": {
+   "type": "cameraCOMP",
+   "family": "COMP",
+   "pos": [
+    -160,
+    200
+   ],
+   "pars": {
+    "tz": 5.0
+   }
+  },
+  "cam/file1": {
+   "type": "fileinPOP",
+   "family": "POP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "file": {
+     "expr": "app.samplesFolder + '/Geo/defcam.tog'"
+    }
+   }
+  },
+  "caption": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    740,
+    -180
+   ],
+   "pars": {
+    "alignx": "left",
+    "bgalpha": 1.0,
+    "fontautosize": "fitiffat",
+    "fontfile": {
+     "expr": "mod.paths.font('barlow')"
+    },
+    "fontsizex": 27.0,
+    "fontsizexunit": "pixels",
+    "outputresolution": "custom",
+    "resmult": false,
+    "resolutionh": 96,
+    "resolutionw": 1216,
+    "text": {
+     "expr": "((('A projector throws the incoming picture into ray-marched fog.\\nThin layers of smoke each catch the whole picture and travel down the beam on the beat. A shadow map cuts out the amphora.', 'The incoming picture is the light behind a venetian blind: its colours ride the shafts through ray-marched fog.\\nThe slats open and close over two bars. A shadow map cuts out the gramophone.', 'No beam here: five thin planes of red light slice the fog, and each shows a cross-section of the drifting smoke.\\nKick and snare choose which planes flare. The objects are only a black skyline.', \"The incoming picture is the lamp's light: one cone, ray-marched through fine smoke, landing on an astrolabe and a stack of solids.\\nThe kick makes the smoke thicker. A shadow map cuts the objects' shadows out of the cone.\", 'Seen from straight above: a projector throws the incoming picture across the carpet at a raking angle.\\nIts beam streaks the ray-marched fog. A shadow map gives the pierced stone and the cone their long shadows.', \"A projector high on the left throws the incoming picture across a big dark floor, through ray-marched fog.\\nKick and snare strike the ceiling tubes. A shadow map cuts the objects' shadows out of the picture.\", 'No projector: five bare fluorescent tubes are line lights in thin fog, each mirrored in the floor by one reflected ray.\\nKick and snare choose which tubes strike. They stutter like a ballast catching, then hold bright.', \"The same fog and light, reduced to pure black and white dots by an ordered dither.\\nA spoked wheel turns in front of the lamp on the beat. The bust's shadow is a solid shape in the fog.\", 'The projector lights the room with the negative of the incoming picture.\\nThe cage turns in the beam and a shadow map throws its shadow on the wall. A snare makes the lamp brighter.', \"No projector: eight ceiling tubes light the fog as line lights, sampled 12 times along each pixel's ray.\\nA pulse of light runs down the row toward the camera every two beats. Kick and snare strike single tubes.\", \"A hidden projector beside the floor tube throws the incoming picture, and the looped ribbon's shadow, up the wall.\\nKick and snare strike the tube, and the tube and the picture flicker together.\")) if op('inp')['on'] else (('A projector shines through a stencil of these words into ray-marched fog.\\nThin layers of smoke catch the image and travel down the beam on the beat. A snare makes it brighter.', \"Volumetric light: one shader steps 64 times through fog along each pixel's ray and asks if light reaches that point.\\nHere the mask is a venetian blind. The slats open and close over two bars. A shadow map cuts out the gramophone.\", 'No beam here: five thin planes of red light slice the fog, and each shows a cross-section of the drifting smoke.\\nKick and snare choose which planes flare. The objects are only a black skyline.', \"One cone of warm light, ray-marched through fine smoke over an astrolabe and a stack of solids.\\nThe kick makes the smoke thicker. A shadow map cuts the objects' shadows out of the cone.\", 'Seen from straight above: a projector throws these tiled words across the carpet at a raking angle.\\nRows slide against each other on the beat. A shadow map gives the pierced stone and the cone their long shadows.', \"The projector's mask is a printed grid: its ruled lines and filled boxes become planes of blue light in the fog.\\nKick and snare strike the ceiling tubes. Each new section of the song fills different boxes.\", 'No projector: five bare fluorescent tubes are line lights in thin fog, each mirrored in the floor by one reflected ray.\\nKick and snare choose which tubes strike. They stutter like a ballast catching, then hold bright.', \"The same fog and light, reduced to pure black and white dots by an ordered dither.\\nA spoked wheel turns in front of the lamp on the beat. The bust's shadow is a solid shape in the fog.\", 'The mask is inverted: the projector lights the whole room and these words are its shadows.\\nThe cage turns in the beam and a shadow map throws its shadow on the wall. A snare makes the lamp brighter.', \"No projector: eight ceiling tubes light the fog as line lights, sampled 12 times along each pixel's ray.\\nA pulse of light runs down the row toward the camera every two beats. Kick and snare strike single tubes.\", \"One fluorescent tube lies on the carpet. A hidden lamp beside it throws the looped ribbon's shadow up the wall.\\nKick and snare strike the tube, and the tube and its light flicker together.\")))[int(parent().par.Take)%11] if parent().par.Describe else ''"
+    }
+   }
+  },
+  "cook_driver": {
+   "type": "executeDAT",
+   "family": "DAT",
+   "pos": [
+    -400,
+    -80
+   ],
+   "pars": {
+    "framestart": true,
+    "language": "python"
+   },
+   "text": [
+    "def onFrameStart(frame):",
+    "    hub = op('/project1/sw_hub')",
+    "    me_on = parent().par.Preview.eval()",
+    "    if hub is not None:",
+    "        me_on = me_on or hub.par.Solo.eval() or hub.par.Scene.eval() == parent().name",
+    "    if me_on:",
+    "        op('hub').cook(force=True)",
+    "        op('out1').cook(force=True)",
+    "    return"
+   ]
+  },
+  "crystal_cluster": {
+   "type": "geometryCOMP",
+   "family": "COMP",
+   "pos": [
+    -320,
+    -80
+   ],
+   "pars": {
+    "render": {
+     "expr": "(0,0,0,0,0,0,1,0,0,0,0)[int(parent().par.Take)%11]"
+    },
+    "ry": {
+     "expr": "(0,0,0,0,0,0,0,0,0,0,0)[int(parent().par.Take)%11] + (0,0,0,0,0,0,0.2,0,0,0,0)[int(parent().par.Take)%11]*op('hub')['evolve']*40 + op('shot')['seed']*(0,0,0,0,0,0,0.2,0,0,0,0)[int(parent().par.Take)%11]*360"
+    },
+    "scale": {
+     "expr": "(1,1,1,1,1,1,1.4,1,1,1,1)[int(parent().par.Take)%11]"
+    },
+    "tx": {
+     "expr": "(0,0,0,0,0,0,1.3,0,0,0,0)[int(parent().par.Take)%11]"
+    },
+    "ty": {
+     "expr": "(0.32435,0.32435,0.32435,0.32435,0.32435,0.32435,0.45409,0.32435,0.32435,0.32435,0.32435)[int(parent().par.Take)%11]"
+    },
+    "tz": {
+     "expr": "(0,0,0,0,0,0,0.8,0,0,0,0)[int(parent().par.Take)%11]"
+    }
+   }
+  },
+  "crystal_cluster/fit": {
+   "type": "transformPOP",
+   "family": "POP",
+   "pos": [
+    160,
+    0
+   ],
+   "inputs": [
+    [
+     "crystal_cluster/mesh"
+    ]
+   ],
+   "pars": {
+    "sx": {
+     "expr": "1 if mod.paths.have('models/crystal_cluster/model.obj') else 0.50917"
+    },
+    "sy": {
+     "expr": "1 if mod.paths.have('models/crystal_cluster/model.obj') else 0.70837"
+    },
+    "sz": {
+     "expr": "1 if mod.paths.have('models/crystal_cluster/model.obj') else 0.70318"
+    },
+    "tx": {
+     "expr": "0 if mod.paths.have('models/crystal_cluster/model.obj') else 0.0070859"
+    },
+    "ty": {
+     "expr": "0 if mod.paths.have('models/crystal_cluster/model.obj') else -0.32435"
+    },
+    "tz": {
+     "expr": "0 if mod.paths.have('models/crystal_cluster/model.obj') else -0"
+    }
+   }
+  },
+  "crystal_cluster/mesh": {
+   "type": "fileinPOP",
+   "family": "POP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.model_file('crystal_cluster')"
+    }
+   }
+  },
+  "d0_0": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    -1500,
+    900
+   ],
+   "pars": {
+    "bgalpha": 1.0,
+    "bold": {
+     "expr": "not mod.paths.font('archivo')"
+    },
+    "fontautosize": "fitiffat",
+    "fontfile": {
+     "expr": "mod.paths.font('archivo')"
+    },
+    "fontsizex": 104.0,
+    "fontsizexunit": "pixels",
+    "linespacing": -14.0,
+    "outputresolution": "custom",
+    "resmult": false,
+    "resolutionw": 512,
+    "text": "LIGHT\nIN FOG"
+   }
+  },
+  "d0_1": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    -1500,
+    780
+   ],
+   "pars": {
+    "bgalpha": 1.0,
+    "bold": {
+     "expr": "not mod.paths.font('archivo')"
+    },
+    "fontautosize": "fitiffat",
+    "fontfile": {
+     "expr": "mod.paths.font('archivo')"
+    },
+    "fontsizex": 104.0,
+    "fontsizexunit": "pixels",
+    "linespacing": -14.0,
+    "outputresolution": "custom",
+    "resmult": false,
+    "resolutionw": 512,
+    "text": "A WORD IS\nA STENCIL"
+   }
+  },
+  "d0_2": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    -1500,
+    660
+   ],
+   "pars": {
+    "bgalpha": 1.0,
+    "bold": {
+     "expr": "not mod.paths.font('archivo')"
+    },
+    "fontautosize": "fitiffat",
+    "fontfile": {
+     "expr": "mod.paths.font('archivo')"
+    },
+    "fontsizex": 104.0,
+    "fontsizexunit": "pixels",
+    "linespacing": -14.0,
+    "outputresolution": "custom",
+    "resmult": false,
+    "resolutionw": 512,
+    "text": "RAY-MARCHED\nFOG"
+   }
+  },
+  "d0_3": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    -1500,
+    540
+   ],
+   "pars": {
+    "bgalpha": 1.0,
+    "bold": {
+     "expr": "not mod.paths.font('archivo')"
+    },
+    "fontautosize": "fitiffat",
+    "fontfile": {
+     "expr": "mod.paths.font('archivo')"
+    },
+    "fontsizex": 104.0,
+    "fontsizexunit": "pixels",
+    "linespacing": -14.0,
+    "outputresolution": "custom",
+    "resmult": false,
+    "resolutionw": 512,
+    "text": "LAYERS\nOF SMOKE"
+   }
+  },
+  "d0_4": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    -1500,
+    420
+   ],
+   "pars": {
+    "bgalpha": 1.0,
+    "bold": {
+     "expr": "not mod.paths.font('archivo')"
+    },
+    "fontautosize": "fitiffat",
+    "fontfile": {
+     "expr": "mod.paths.font('archivo')"
+    },
+    "fontsizex": 104.0,
+    "fontsizexunit": "pixels",
+    "linespacing": -14.0,
+    "outputresolution": "custom",
+    "resmult": false,
+    "resolutionw": 512,
+    "text": "36 FOG STEPS\nPER PIXEL"
+   }
+  },
+  "d0_5": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    -1500,
+    300
+   ],
+   "pars": {
+    "bgalpha": 1.0,
+    "bold": {
+     "expr": "not mod.paths.font('archivo')"
+    },
+    "fontautosize": "fitiffat",
+    "fontfile": {
+     "expr": "mod.paths.font('archivo')"
+    },
+    "fontsizex": 104.0,
+    "fontsizexunit": "pixels",
+    "linespacing": -14.0,
+    "outputresolution": "custom",
+    "resmult": false,
+    "resolutionw": 512,
+    "text": "SHADOW\nMAP"
+   }
+  },
+  "d0_6": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    -1500,
+    180
+   ],
+   "pars": {
+    "bgalpha": 1.0,
+    "bold": {
+     "expr": "not mod.paths.font('archivo')"
+    },
+    "fontautosize": "fitiffat",
+    "fontfile": {
+     "expr": "mod.paths.font('archivo')"
+    },
+    "fontsizex": 104.0,
+    "fontsizexunit": "pixels",
+    "linespacing": -14.0,
+    "outputresolution": "custom",
+    "resmult": false,
+    "resolutionw": 512,
+    "text": "BEAT MOVES\nTHE SMOKE"
+   }
+  },
+  "d0_7": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    -1500,
+    60
+   ],
+   "pars": {
+    "bgalpha": 1.0,
+    "bold": {
+     "expr": "not mod.paths.font('archivo')"
+    },
+    "fontautosize": "fitiffat",
+    "fontfile": {
+     "expr": "mod.paths.font('archivo')"
+    },
+    "fontsizex": 104.0,
+    "fontsizexunit": "pixels",
+    "linespacing": -14.0,
+    "outputresolution": "custom",
+    "resmult": false,
+    "resolutionw": 512,
+    "text": "SNARE =\nBRIGHTER"
+   }
+  },
+  "d4_0": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    -1660,
+    900
+   ],
+   "pars": {
+    "bgalpha": 1.0,
+    "bold": {
+     "expr": "not mod.paths.font('archivo')"
+    },
+    "fontautosize": "fitiffat",
+    "fontfile": {
+     "expr": "mod.paths.font('archivo')"
+    },
+    "fontsizex": 104.0,
+    "fontsizexunit": "pixels",
+    "linespacing": -14.0,
+    "outputresolution": "custom",
+    "resmult": false,
+    "resolutionw": 432,
+    "text": "TEXT AS\nA MASK"
+   }
+  },
+  "d4_1": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    -1660,
+    780
+   ],
+   "pars": {
+    "bgalpha": 1.0,
+    "bold": {
+     "expr": "not mod.paths.font('archivo')"
+    },
+    "fontautosize": "fitiffat",
+    "fontfile": {
+     "expr": "mod.paths.font('archivo')"
+    },
+    "fontsizex": 104.0,
+    "fontsizexunit": "pixels",
+    "linespacing": -14.0,
+    "outputresolution": "custom",
+    "resmult": false,
+    "resolutionw": 432,
+    "text": "PROJECTED\nON CARPET"
+   }
+  },
+  "d4_2": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    -1660,
+    660
+   ],
+   "pars": {
+    "bgalpha": 1.0,
+    "bold": {
+     "expr": "not mod.paths.font('archivo')"
+    },
+    "fontautosize": "fitiffat",
+    "fontfile": {
+     "expr": "mod.paths.font('archivo')"
+    },
+    "fontsizex": 104.0,
+    "fontsizexunit": "pixels",
+    "linespacing": -14.0,
+    "outputresolution": "custom",
+    "resmult": false,
+    "resolutionw": 432,
+    "text": "SEEN FROM\nABOVE"
+   }
+  },
+  "d4_3": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    -1660,
+    540
+   ],
+   "pars": {
+    "bgalpha": 1.0,
+    "bold": {
+     "expr": "not mod.paths.font('archivo')"
+    },
+    "fontautosize": "fitiffat",
+    "fontfile": {
+     "expr": "mod.paths.font('archivo')"
+    },
+    "fontsizex": 104.0,
+    "fontsizexunit": "pixels",
+    "linespacing": -14.0,
+    "outputresolution": "custom",
+    "resmult": false,
+    "resolutionw": 432,
+    "text": "RAKING\nLIGHT"
+   }
+  },
+  "d4_4": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    -1660,
+    420
+   ],
+   "pars": {
+    "bgalpha": 1.0,
+    "bold": {
+     "expr": "not mod.paths.font('archivo')"
+    },
+    "fontautosize": "fitiffat",
+    "fontfile": {
+     "expr": "mod.paths.font('archivo')"
+    },
+    "fontsizex": 104.0,
+    "fontsizexunit": "pixels",
+    "linespacing": -14.0,
+    "outputresolution": "custom",
+    "resmult": false,
+    "resolutionw": 432,
+    "text": "ROWS SLIDE\nON THE BEAT"
+   }
+  },
+  "d4_5": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    -1660,
+    300
+   ],
+   "pars": {
+    "bgalpha": 1.0,
+    "bold": {
+     "expr": "not mod.paths.font('archivo')"
+    },
+    "fontautosize": "fitiffat",
+    "fontfile": {
+     "expr": "mod.paths.font('archivo')"
+    },
+    "fontsizex": 104.0,
+    "fontsizexunit": "pixels",
+    "linespacing": -14.0,
+    "outputresolution": "custom",
+    "resmult": false,
+    "resolutionw": 432,
+    "text": "LONG\nSHADOWS"
+   }
+  },
+  "d4_6": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    -1660,
+    180
+   ],
+   "pars": {
+    "bgalpha": 1.0,
+    "bold": {
+     "expr": "not mod.paths.font('archivo')"
+    },
+    "fontautosize": "fitiffat",
+    "fontfile": {
+     "expr": "mod.paths.font('archivo')"
+    },
+    "fontsizex": 104.0,
+    "fontsizexunit": "pixels",
+    "linespacing": -14.0,
+    "outputresolution": "custom",
+    "resmult": false,
+    "resolutionw": 432,
+    "text": "64 FOG\nSTEPS"
+   }
+  },
+  "d4_7": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    -1660,
+    60
+   ],
+   "pars": {
+    "bgalpha": 1.0,
+    "bold": {
+     "expr": "not mod.paths.font('archivo')"
+    },
+    "fontautosize": "fitiffat",
+    "fontfile": {
+     "expr": "mod.paths.font('archivo')"
+    },
+    "fontsizex": 104.0,
+    "fontsizexunit": "pixels",
+    "linespacing": -14.0,
+    "outputresolution": "custom",
+    "resmult": false,
+    "resolutionw": 432,
+    "text": "SHADOW\nMAP"
+   }
+  },
+  "d8_0": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    -1820,
+    900
+   ],
+   "pars": {
+    "bgalpha": 1.0,
+    "bold": {
+     "expr": "not mod.paths.font('archivo')"
+    },
+    "fontautosize": "fitiffat",
+    "fontfile": {
+     "expr": "mod.paths.font('archivo')"
+    },
+    "fontsizex": 104.0,
+    "fontsizexunit": "pixels",
+    "linespacing": -14.0,
+    "outputresolution": "custom",
+    "resmult": false,
+    "resolutionw": 432,
+    "text": "INVERTED\nMASK"
+   }
+  },
+  "d8_1": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    -1820,
+    780
+   ],
+   "pars": {
+    "bgalpha": 1.0,
+    "bold": {
+     "expr": "not mod.paths.font('archivo')"
+    },
+    "fontautosize": "fitiffat",
+    "fontfile": {
+     "expr": "mod.paths.font('archivo')"
+    },
+    "fontsizex": 104.0,
+    "fontsizexunit": "pixels",
+    "linespacing": -14.0,
+    "outputresolution": "custom",
+    "resmult": false,
+    "resolutionw": 432,
+    "text": "WORDS ARE\nSHADOWS"
+   }
+  },
+  "d8_2": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    -1820,
+    660
+   ],
+   "pars": {
+    "bgalpha": 1.0,
+    "bold": {
+     "expr": "not mod.paths.font('archivo')"
+    },
+    "fontautosize": "fitiffat",
+    "fontfile": {
+     "expr": "mod.paths.font('archivo')"
+    },
+    "fontsizex": 104.0,
+    "fontsizexunit": "pixels",
+    "linespacing": -14.0,
+    "outputresolution": "custom",
+    "resmult": false,
+    "resolutionw": 432,
+    "text": "THE REST\nIS LIGHT"
+   }
+  },
+  "d8_3": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    -1820,
+    540
+   ],
+   "pars": {
+    "bgalpha": 1.0,
+    "bold": {
+     "expr": "not mod.paths.font('archivo')"
+    },
+    "fontautosize": "fitiffat",
+    "fontfile": {
+     "expr": "mod.paths.font('archivo')"
+    },
+    "fontsizex": 104.0,
+    "fontsizexunit": "pixels",
+    "linespacing": -14.0,
+    "outputresolution": "custom",
+    "resmult": false,
+    "resolutionw": 432,
+    "text": "ONE\nPROJECTOR"
+   }
+  },
+  "d8_4": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    -1820,
+    420
+   ],
+   "pars": {
+    "bgalpha": 1.0,
+    "bold": {
+     "expr": "not mod.paths.font('archivo')"
+    },
+    "fontautosize": "fitiffat",
+    "fontfile": {
+     "expr": "mod.paths.font('archivo')"
+    },
+    "fontsizex": 104.0,
+    "fontsizexunit": "pixels",
+    "linespacing": -14.0,
+    "outputresolution": "custom",
+    "resmult": false,
+    "resolutionw": 432,
+    "text": "CAGE TURNS\nIN THE BEAM"
+   }
+  },
+  "d8_5": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    -1820,
+    300
+   ],
+   "pars": {
+    "bgalpha": 1.0,
+    "bold": {
+     "expr": "not mod.paths.font('archivo')"
+    },
+    "fontautosize": "fitiffat",
+    "fontfile": {
+     "expr": "mod.paths.font('archivo')"
+    },
+    "fontsizex": 104.0,
+    "fontsizexunit": "pixels",
+    "linespacing": -14.0,
+    "outputresolution": "custom",
+    "resmult": false,
+    "resolutionw": 432,
+    "text": "64 FOG\nSTEPS"
+   }
+  },
+  "d8_6": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    -1820,
+    180
+   ],
+   "pars": {
+    "bgalpha": 1.0,
+    "bold": {
+     "expr": "not mod.paths.font('archivo')"
+    },
+    "fontautosize": "fitiffat",
+    "fontfile": {
+     "expr": "mod.paths.font('archivo')"
+    },
+    "fontsizex": 104.0,
+    "fontsizexunit": "pixels",
+    "linespacing": -14.0,
+    "outputresolution": "custom",
+    "resmult": false,
+    "resolutionw": 432,
+    "text": "SNARE =\nBRIGHTER"
+   }
+  },
+  "d8_7": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    -1820,
+    60
+   ],
+   "pars": {
+    "bgalpha": 1.0,
+    "bold": {
+     "expr": "not mod.paths.font('archivo')"
+    },
+    "fontautosize": "fitiffat",
+    "fontfile": {
+     "expr": "mod.paths.font('archivo')"
+    },
+    "fontsizex": 104.0,
+    "fontsizexunit": "pixels",
+    "linespacing": -14.0,
+    "outputresolution": "custom",
+    "resmult": false,
+    "resolutionw": 432,
+    "text": "FOG AND\nSHADOW"
+   }
+  },
+  "gb_cam": {
+   "type": "renderTOP",
+   "family": "TOP",
+   "pos": [
+    180,
+    200
+   ],
+   "pars": {
+    "antialias": "aa1",
+    "camera": "cam",
+    "format": "rgba32float",
+    "geometry": "amphora gramophone broken_column lander skeleton_key traffic_cone astrolabe balanced_solids pierced_stone rubber_duck hourglass crystal_cluster marble_bust wire_cage ribbon_loop",
+    "lights": "",
+    "overridemat": "m_cam",
+    "resolutionh": 720,
+    "resolutionw": 1280
+   }
+  },
+  "gb_lgt": {
+   "type": "renderTOP",
+   "family": "TOP",
+   "pos": [
+    180,
+    60
+   ],
+   "pars": {
+    "antialias": "aa1",
+    "camera": "cam",
+    "format": "rgba32float",
+    "geometry": "amphora gramophone broken_column lander skeleton_key traffic_cone astrolabe balanced_solids pierced_stone rubber_duck hourglass crystal_cluster marble_bust wire_cage ribbon_loop",
+    "lights": "",
+    "overridemat": "m_lgt",
+    "resolutionh": 1024,
+    "resolutionw": 1024
+   }
+  },
+  "gbuf_frag": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    0,
+    320
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.here('shaders/gbuf_frag.glsl')"
+    },
+    "language": "text",
+    "syncfile": true
+   },
+   "text_file": "experiments/sc_light_gobo/shaders/gbuf_frag.glsl"
+  },
+  "gbuf_vert": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    0,
+    420
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.here('shaders/gbuf_vert.glsl')"
+    },
+    "language": "text",
+    "syncfile": true
+   },
+   "text_file": "experiments/sc_light_gobo/shaders/gbuf_vert.glsl"
+  },
+  "glow": {
+   "type": "blurTOP",
+   "family": "TOP",
+   "pos": [
+    740,
+    -40
+   ],
+   "inputs": [
+    [
+     "beam"
+    ]
+   ],
+   "pars": {
+    "outputresolution": "quarter",
+    "size": 9
+   }
+  },
+  "grade": {
+   "type": "glslTOP",
+   "family": "TOP",
+   "pos": [
+    920,
+    60
+   ],
+   "inputs": [
+    [
+     "beam"
+    ],
+    [
+     "glow"
+    ],
+    [
+     "caption"
+    ]
+   ],
+   "pars": {
+    "computedat": "grade_compute",
+    "format": "rgba8fixed",
+    "outputresolution": "custom",
+    "pixeldat": "grade_frag",
+    "resolutionh": 720,
+    "resolutionw": 1280,
+    "vec0name": "uDesc",
+    "vec0valuew": {
+     "expr": "0.95"
+    },
+    "vec0valuex": {
+     "expr": "1 if parent().par.Describe else 0"
+    },
+    "vec0valuey": {
+     "expr": "0.133333"
+    },
+    "vec0valuez": {
+     "expr": "0.025"
+    },
+    "vec1name": "uMisc",
+    "vec1valuew": {
+     "expr": "op('tk')['onebit']"
+    },
+    "vec1valuex": {
+     "expr": "op('shot')['seed']"
+    },
+    "vec1valuey": {
+     "expr": "op('shot')['age']"
+    },
+    "vec1valuez": {
+     "expr": "op('tk')['exp']"
+    },
+    "vec2name": "uTime",
+    "vec2valuew": {
+     "expr": "0"
+    },
+    "vec2valuex": {
+     "expr": "absTime.seconds%1000"
+    },
+    "vec2valuey": {
+     "expr": "0"
+    },
+    "vec2valuez": {
+     "expr": "0"
+    }
+   }
+  },
+  "grade_frag": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    740,
+    380
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.here('shaders/grade.frag')"
+    },
+    "language": "text",
+    "syncfile": true
+   },
+   "text_file": "experiments/sc_light_gobo/shaders/grade.frag"
+  },
+  "grade_info": {
+   "type": "infoDAT",
+   "family": "DAT",
+   "pos": [
+    160,
+    -120
+   ],
+   "pars": {
+    "language": "text",
+    "op": "grade"
+   }
+  },
+  "gramophone": {
+   "type": "geometryCOMP",
+   "family": "COMP",
+   "pos": [
+    -640,
+    200
+   ],
+   "pars": {
+    "render": {
+     "expr": "(0,1,0,0,0,0,0,0,0,0,0)[int(parent().par.Take)%11]"
+    },
+    "ry": {
+     "expr": "(0,160,0,0,0,0,0,0,0,0,0)[int(parent().par.Take)%11] + (0,0.1,0,0,0,0,0,0,0,0,0)[int(parent().par.Take)%11]*op('hub')['evolve']*40 + op('shot')['seed']*(0,0.1,0,0,0,0,0,0,0,0,0)[int(parent().par.Take)%11]*360"
+    },
+    "scale": {
+     "expr": "(1,1.4,1,1,1,1,1,1,1,1,1)[int(parent().par.Take)%11]"
+    },
+    "tx": {
+     "expr": "(0,1.2,0,0,0,0,0,0,0,0,0)[int(parent().par.Take)%11]"
+    },
+    "ty": {
+     "expr": "(0.5,0.7,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5)[int(parent().par.Take)%11]"
+    },
+    "tz": {
+     "expr": "(0,2.2,0,0,0,0,0,0,0,0,0)[int(parent().par.Take)%11]"
+    }
+   }
+  },
+  "gramophone/fit": {
+   "type": "transformPOP",
+   "family": "POP",
+   "pos": [
+    160,
+    0
+   ],
+   "inputs": [
+    [
+     "gramophone/mesh"
+    ]
+   ],
+   "pars": {
+    "sx": {
+     "expr": "1 if mod.paths.have('models/gramophone/model.obj') else 0.37674"
+    },
+    "sy": {
+     "expr": "1 if mod.paths.have('models/gramophone/model.obj') else 1.092"
+    },
+    "sz": {
+     "expr": "1 if mod.paths.have('models/gramophone/model.obj') else 0.60375"
+    },
+    "tx": {
+     "expr": "0 if mod.paths.have('models/gramophone/model.obj') else 0.0052429"
+    },
+    "ty": {
+     "expr": "0 if mod.paths.have('models/gramophone/model.obj') else -0.5"
+    },
+    "tz": {
+     "expr": "0 if mod.paths.have('models/gramophone/model.obj') else -0"
+    }
+   }
+  },
+  "gramophone/mesh": {
+   "type": "fileinPOP",
+   "family": "POP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.model_file('gramophone')"
+    }
+   }
+  },
+  "hourglass": {
+   "type": "geometryCOMP",
+   "family": "COMP",
+   "pos": [
+    -480,
+    -80
+   ],
+   "pars": {
+    "render": {
+     "expr": "(0,0,0,0,0,1,0,0,0,0,1)[int(parent().par.Take)%11]"
+    },
+    "ry": {
+     "expr": "(0,0,0,0,0,20,0,0,0,0,40)[int(parent().par.Take)%11] + (0,0,0,0,0,0,0,0,0,0,0)[int(parent().par.Take)%11]*op('hub')['evolve']*40 + op('shot')['seed']*(0,0,0,0,0,0,0,0,0,0,0)[int(parent().par.Take)%11]*360"
+    },
+    "scale": {
+     "expr": "(1,1,1,1,1,1.5,1,1,1,1,0.4)[int(parent().par.Take)%11]"
+    },
+    "tx": {
+     "expr": "(0,0,0,0,0,-2.2,0,0,0,0,-0.3)[int(parent().par.Take)%11]"
+    },
+    "ty": {
+     "expr": "(0.5,0.5,0.5,0.5,0.5,0.75,0.5,0.5,0.5,0.5,0.2)[int(parent().par.Take)%11]"
+    },
+    "tz": {
+     "expr": "(0,0,0,0,0,-1,0,0,0,0,0.9)[int(parent().par.Take)%11]"
+    }
+   }
+  },
+  "hourglass/fit": {
+   "type": "transformPOP",
+   "family": "POP",
+   "pos": [
+    160,
+    0
+   ],
+   "inputs": [
+    [
+     "hourglass/mesh"
+    ]
+   ],
+   "pars": {
+    "sx": {
+     "expr": "1 if mod.paths.have('models/hourglass/model.obj') else 0.27913"
+    },
+    "sy": {
+     "expr": "1 if mod.paths.have('models/hourglass/model.obj') else 1.092"
+    },
+    "sz": {
+     "expr": "1 if mod.paths.have('models/hourglass/model.obj') else 0.44888"
+    },
+    "tx": {
+     "expr": "0 if mod.paths.have('models/hourglass/model.obj') else 0.0038845"
+    },
+    "ty": {
+     "expr": "0 if mod.paths.have('models/hourglass/model.obj') else -0.5"
+    },
+    "tz": {
+     "expr": "0 if mod.paths.have('models/hourglass/model.obj') else -0"
+    }
+   }
+  },
+  "hourglass/mesh": {
+   "type": "fileinPOP",
+   "family": "POP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.model_file('hourglass')"
+    }
+   }
+  },
+  "hub": {
+   "type": "selectCHOP",
+   "family": "CHOP",
+   "pos": [
+    -400,
+    200
+   ],
+   "pars": {
+    "chops": "/project1/sw_hub/feed"
+   }
+  },
+  "in_pic": {
+   "type": "selectTOP",
+   "family": "TOP",
+   "pos": [
+    -1200,
+    200
+   ],
+   "pars": {
+    "top": {
+     "expr": "parent().par.Input.eval() if op('inp')['valid'] else 'atlas'"
+    }
+   }
+  },
+  "inp": {
+   "type": "constantCHOP",
+   "family": "CHOP",
+   "pos": [
+    -1200,
+    330
+   ],
+   "pars": {
+    "const0name": "valid",
+    "const0value": {
+     "expr": "(1 if (parent().par.Input.eval() and op(parent().par.Input.eval()) is not None and op(parent().par.Input.eval()).isTOP and op(parent().par.Input.eval()).path != op('out1').path) else 0)"
+    },
+    "const1name": "on",
+    "const1value": {
+     "expr": "(1 if (parent().par.Input.eval() and op(parent().par.Input.eval()) is not None and op(parent().par.Input.eval()).isTOP and op(parent().par.Input.eval()).path != op('out1').path) else 0) * op('tk')['inp']"
+    }
+   }
+  },
+  "lander": {
+   "type": "geometryCOMP",
+   "family": "COMP",
+   "pos": [
+    -320,
+    200
+   ],
+   "pars": {
+    "render": {
+     "expr": "(0,0,1,0,0,1,0,0,0,0,0)[int(parent().par.Take)%11]"
+    },
+    "ry": {
+     "expr": "(0,0,40,0,0,0,0,0,0,0,0)[int(parent().par.Take)%11] + (0,0,0.4,0,0,0,0,0,0,0,0)[int(parent().par.Take)%11]*op('hub')['evolve']*40 + op('shot')['seed']*(0,0,0.4,0,0,0,0,0,0,0,0)[int(parent().par.Take)%11]*360"
+    },
+    "scale": {
+     "expr": "(1,1,1.2,1,1,1.2,1,1,1,1,1)[int(parent().par.Take)%11]"
+    },
+    "tx": {
+     "expr": "(0,0,-1.6,0,0,0.5,0,0,0,0,0)[int(parent().par.Take)%11]"
+    },
+    "ty": {
+     "expr": "(0.5,0.5,0.6,0.5,0.5,0.6,0.5,0.5,0.5,0.5,0.5)[int(parent().par.Take)%11]"
+    },
+    "tz": {
+     "expr": "(0,0,1.3,0,0,0.5,0,0,0,0,0)[int(parent().par.Take)%11]"
+    }
+   }
+  },
+  "lander/fit": {
+   "type": "transformPOP",
+   "family": "POP",
+   "pos": [
+    160,
+    0
+   ],
+   "inputs": [
+    [
+     "lander/mesh"
+    ]
+   ],
+   "pars": {
+    "sx": {
+     "expr": "1 if mod.paths.have('models/lander/model.obj') else 0.44924"
+    },
+    "sy": {
+     "expr": "1 if mod.paths.have('models/lander/model.obj') else 1.092"
+    },
+    "sz": {
+     "expr": "1 if mod.paths.have('models/lander/model.obj') else 0.72316"
+    },
+    "tx": {
+     "expr": "0 if mod.paths.have('models/lander/model.obj') else 0.0062519"
+    },
+    "ty": {
+     "expr": "0 if mod.paths.have('models/lander/model.obj') else -0.5"
+    },
+    "tz": {
+     "expr": "0 if mod.paths.have('models/lander/model.obj') else -0"
+    }
+   }
+  },
+  "lander/mesh": {
+   "type": "fileinPOP",
+   "family": "POP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.model_file('lander')"
+    }
+   }
+  },
+  "local": {
+   "type": "baseCOMP",
+   "family": "COMP",
+   "pos": [
+    -400,
+    460
+   ]
+  },
+  "local/modules": {
+   "type": "baseCOMP",
+   "family": "COMP",
+   "pos": [
+    0,
+    0
+   ]
+  },
+  "local/modules/paths": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "file": {
+     "expr": "project.folder.replace(chr(92), '/') + '/experiments/sw_hub/paths_module.py'"
+    },
+    "language": "text",
+    "syncfile": true
+   },
+   "text_file": "experiments/sw_hub/paths_module.py"
+  },
+  "m_cam": {
+   "type": "glslMAT",
+   "family": "MAT",
+   "pos": [
+    0,
+    200
+   ],
+   "pars": {
+    "pdat": "gbuf_frag",
+    "vdat": "gbuf_vert",
+    "vec0name": "uRo",
+    "vec0valuew": {
+     "expr": "op('tk')['ctan']"
+    },
+    "vec0valuex": {
+     "expr": "op('rig')['cpx']"
+    },
+    "vec0valuey": {
+     "expr": "op('rig')['cpy']"
+    },
+    "vec0valuez": {
+     "expr": "op('rig')['cpz']"
+    },
+    "vec1name": "uTa",
+    "vec1valuew": {
+     "expr": "1280.0/720.0"
+    },
+    "vec1valuex": {
+     "expr": "op('rig')['ctx']"
+    },
+    "vec1valuey": {
+     "expr": "op('rig')['cty']"
+    },
+    "vec1valuez": {
+     "expr": "op('rig')['ctz']"
+    }
+   }
+  },
+  "m_cam_info": {
+   "type": "infoDAT",
+   "family": "DAT",
+   "pos": [
+    320,
+    -120
+   ],
+   "pars": {
+    "language": "text",
+    "op": "m_cam"
+   }
+  },
+  "m_lgt": {
+   "type": "glslMAT",
+   "family": "MAT",
+   "pos": [
+    0,
+    60
+   ],
+   "pars": {
+    "pdat": "gbuf_frag",
+    "vdat": "gbuf_vert",
+    "vec0name": "uRo",
+    "vec0valuew": {
+     "expr": "op('tk')['ltan']"
+    },
+    "vec0valuex": {
+     "expr": "op('rig')['lpx']"
+    },
+    "vec0valuey": {
+     "expr": "op('rig')['lpy']"
+    },
+    "vec0valuez": {
+     "expr": "op('rig')['lpz']"
+    },
+    "vec1name": "uTa",
+    "vec1valuew": {
+     "expr": "1"
+    },
+    "vec1valuex": {
+     "expr": "op('rig')['ltx']"
+    },
+    "vec1valuey": {
+     "expr": "op('rig')['lty']"
+    },
+    "vec1valuez": {
+     "expr": "op('rig')['ltz']"
+    }
+   }
+  },
+  "m_lgt_info": {
+   "type": "infoDAT",
+   "family": "DAT",
+   "pos": [
+    320,
+    -120
+   ],
+   "pars": {
+    "language": "text",
+    "op": "m_lgt"
+   }
+  },
+  "marble_bust": {
+   "type": "geometryCOMP",
+   "family": "COMP",
+   "pos": [
+    -800,
+    -220
+   ],
+   "pars": {
+    "render": {
+     "expr": "(0,0,0,0,0,0,0,1,0,0,0)[int(parent().par.Take)%11]"
+    },
+    "ry": {
+     "expr": "(0,0,0,0,0,0,0,180,0,0,0)[int(parent().par.Take)%11] + (0,0,0,0,0,0,0,1,0,0,0)[int(parent().par.Take)%11]*op('hub')['evolve']*40 + op('shot')['seed']*(0,0,0,0,0,0,0,1,0,0,0)[int(parent().par.Take)%11]*360"
+    },
+    "scale": {
+     "expr": "(1,1,1,1,1,1,1,1.35,1,1,1)[int(parent().par.Take)%11]"
+    },
+    "tx": {
+     "expr": "(0,0,0,0,0,0,0,-0.4,0,0,0)[int(parent().par.Take)%11]"
+    },
+    "ty": {
+     "expr": "(0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.675,0.5,0.5,0.5)[int(parent().par.Take)%11]"
+    },
+    "tz": {
+     "expr": "(0,0,0,0,0,0,0,1.5,0,0,0)[int(parent().par.Take)%11]"
+    }
+   }
+  },
+  "marble_bust/fit": {
+   "type": "transformPOP",
+   "family": "POP",
+   "pos": [
+    160,
+    0
+   ],
+   "inputs": [
+    [
+     "marble_bust/mesh"
+    ]
+   ],
+   "pars": {
+    "sx": {
+     "expr": "1 if mod.paths.have('models/marble_bust/model.obj') else 0.28402"
+    },
+    "sy": {
+     "expr": "1 if mod.paths.have('models/marble_bust/model.obj') else 1.092"
+    },
+    "sz": {
+     "expr": "1 if mod.paths.have('models/marble_bust/model.obj') else 0.43701"
+    },
+    "tx": {
+     "expr": "0 if mod.paths.have('models/marble_bust/model.obj') else 0.0039525"
+    },
+    "ty": {
+     "expr": "0 if mod.paths.have('models/marble_bust/model.obj') else -0.5"
+    },
+    "tz": {
+     "expr": "0 if mod.paths.have('models/marble_bust/model.obj') else -0"
+    }
+   }
+  },
+  "marble_bust/mesh": {
+   "type": "fileinPOP",
+   "family": "POP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.model_file('marble_bust')"
+    }
+   }
+  },
+  "out1": {
+   "type": "outTOP",
+   "family": "TOP",
+   "pos": [
+    1200,
+    0
+   ],
+   "inputs": [
+    [
+     "grade"
+    ]
+   ]
+  },
+  "pierced_stone": {
+   "type": "geometryCOMP",
+   "family": "COMP",
+   "pos": [
+    -800,
+    -80
+   ],
+   "pars": {
+    "render": {
+     "expr": "(0,0,0,0,1,0,0,0,0,0,0)[int(parent().par.Take)%11]"
+    },
+    "ry": {
+     "expr": "(0,0,0,0,0,0,0,0,0,0,0)[int(parent().par.Take)%11] + (0,0,0,0,0.5,0,0,0,0,0,0)[int(parent().par.Take)%11]*op('hub')['evolve']*40 + op('shot')['seed']*(0,0,0,0,0.5,0,0,0,0,0,0)[int(parent().par.Take)%11]*360"
+    },
+    "scale": {
+     "expr": "(1,1,1,1,2,1,1,1,1,1,1)[int(parent().par.Take)%11]"
+    },
+    "tx": {
+     "expr": "(0,0,0,0,1.2,0,0,0,0,0,0)[int(parent().par.Take)%11]"
+    },
+    "ty": {
+     "expr": "(0.5,0.5,0.5,0.5,1,0.5,0.5,0.5,0.5,0.5,0.5)[int(parent().par.Take)%11]"
+    },
+    "tz": {
+     "expr": "(0,0,0,0,-0.3,0,0,0,0,0,0)[int(parent().par.Take)%11]"
+    }
+   }
+  },
+  "pierced_stone/fit": {
+   "type": "transformPOP",
+   "family": "POP",
+   "pos": [
+    160,
+    0
+   ],
+   "inputs": [
+    [
+     "pierced_stone/mesh"
+    ]
+   ],
+   "pars": {
+    "sx": {
+     "expr": "1 if mod.paths.have('models/pierced_stone/model.obj') else 0.4026"
+    },
+    "sy": {
+     "expr": "1 if mod.paths.have('models/pierced_stone/model.obj') else 1.092"
+    },
+    "sz": {
+     "expr": "1 if mod.paths.have('models/pierced_stone/model.obj') else 0.27567"
+    },
+    "tx": {
+     "expr": "0 if mod.paths.have('models/pierced_stone/model.obj') else 0.0056028"
+    },
+    "ty": {
+     "expr": "0 if mod.paths.have('models/pierced_stone/model.obj') else -0.5"
+    },
+    "tz": {
+     "expr": "0 if mod.paths.have('models/pierced_stone/model.obj') else -0"
+    }
+   }
+  },
+  "pierced_stone/mesh": {
+   "type": "fileinPOP",
+   "family": "POP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.model_file('pierced_stone')"
+    }
+   }
+  },
+  "ribbon_loop": {
+   "type": "geometryCOMP",
+   "family": "COMP",
+   "pos": [
+    -480,
+    -220
+   ],
+   "pars": {
+    "render": {
+     "expr": "(0,0,0,0,0,0,0,0,0,0,1)[int(parent().par.Take)%11]"
+    },
+    "ry": {
+     "expr": "(0,0,0,0,0,0,0,0,0,0,200)[int(parent().par.Take)%11] + (0,0,0,0,0,0,0,0,0,0,0.15)[int(parent().par.Take)%11]*op('hub')['evolve']*40 + op('shot')['seed']*(0,0,0,0,0,0,0,0,0,0,0.15)[int(parent().par.Take)%11]*360"
+    },
+    "scale": {
+     "expr": "(1,1,1,1,1,1,1,1,1,1,1.1)[int(parent().par.Take)%11]"
+    },
+    "tx": {
+     "expr": "(0,0,0,0,0,0,0,0,0,0,0.2)[int(parent().par.Take)%11]"
+    },
+    "ty": {
+     "expr": "(0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.55)[int(parent().par.Take)%11]"
+    },
+    "tz": {
+     "expr": "(0,0,0,0,0,0,0,0,0,0,-0.9)[int(parent().par.Take)%11]"
+    }
+   }
+  },
+  "ribbon_loop/fit": {
+   "type": "transformPOP",
+   "family": "POP",
+   "pos": [
+    160,
+    0
+   ],
+   "inputs": [
+    [
+     "ribbon_loop/mesh"
+    ]
+   ],
+   "pars": {
+    "sx": {
+     "expr": "1 if mod.paths.have('models/ribbon_loop/model.obj') else 0.36039"
+    },
+    "sy": {
+     "expr": "1 if mod.paths.have('models/ribbon_loop/model.obj') else 1.092"
+    },
+    "sz": {
+     "expr": "1 if mod.paths.have('models/ribbon_loop/model.obj') else 0.48246"
+    },
+    "tx": {
+     "expr": "0 if mod.paths.have('models/ribbon_loop/model.obj') else 0.0050154"
+    },
+    "ty": {
+     "expr": "0 if mod.paths.have('models/ribbon_loop/model.obj') else -0.5"
+    },
+    "tz": {
+     "expr": "0 if mod.paths.have('models/ribbon_loop/model.obj') else -0"
+    }
+   }
+  },
+  "ribbon_loop/mesh": {
+   "type": "fileinPOP",
+   "family": "POP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.model_file('ribbon_loop')"
+    }
+   }
+  },
+  "rig": {
+   "type": "constantCHOP",
+   "family": "CHOP",
+   "pos": [
+    -200,
+    500
+   ],
+   "pars": {
+    "const0name": "cpx",
+    "const0value": {
+     "expr": "op('tk')['tgt0'] + (op('tk')['cam0']-op('tk')['tgt0'])*(0.84+0.32*op('shot')['seed']) + op('tk')['cdrift']*math.sin(op('hub')['evolve']*0.6+(op('shot')['seed']*6.283))"
+    },
+    "const10name": "lty",
+    "const10value": {
+     "expr": "op('tk')['lt1'] + op('tk')['sweep1']*math.sin(op('hub')['bar_pos']*math.pi+(op('shot')['seed']*6.283))"
+    },
+    "const11name": "ltz",
+    "const11value": {
+     "expr": "op('tk')['lt2'] + op('tk')['sweep2']*math.cos(op('hub')['bar_pos']*math.pi/2+(op('shot')['seed']*6.283))"
+    },
+    "const1name": "cpy",
+    "const1value": {
+     "expr": "op('tk')['cam1'] + op('tk')['cdrift']*0.35*math.sin(op('hub')['evolve']*0.43+(op('shot')['seed']*6.283)*2)"
+    },
+    "const2name": "cpz",
+    "const2value": {
+     "expr": "op('tk')['tgt2'] + (op('tk')['cam2']-op('tk')['tgt2'])*(0.84+0.32*op('shot')['seed']) + op('tk')['cdrift']*math.cos(op('hub')['evolve']*0.5+(op('shot')['seed']*6.283))"
+    },
+    "const3name": "ctx",
+    "const3value": {
+     "expr": "op('tk')['tgt0']"
+    },
+    "const4name": "cty",
+    "const4value": {
+     "expr": "op('tk')['tgt1']"
+    },
+    "const5name": "ctz",
+    "const5value": {
+     "expr": "op('tk')['tgt2']"
+    },
+    "const6name": "lpx",
+    "const6value": {
+     "expr": "op('tk')['lp0']"
+    },
+    "const7name": "lpy",
+    "const7value": {
+     "expr": "op('tk')['lp1']"
+    },
+    "const8name": "lpz",
+    "const8value": {
+     "expr": "op('tk')['lp2']"
+    },
+    "const9name": "ltx",
+    "const9value": {
+     "expr": "op('tk')['lt0'] + op('tk')['sweep0']*math.sin(op('hub')['bar_pos']*math.pi/2+(op('shot')['seed']*6.283))"
+    }
+   }
+  },
+  "rubber_duck": {
+   "type": "geometryCOMP",
+   "family": "COMP",
+   "pos": [
+    -640,
+    -80
+   ],
+   "pars": {
+    "render": {
+     "expr": "(0,0,0,0,0,1,0,0,0,0,0)[int(parent().par.Take)%11]"
+    },
+    "ry": {
+     "expr": "(0,0,0,0,0,160,0,0,0,0,0)[int(parent().par.Take)%11] + (0,0,0,0,0,0,0,0,0,0,0)[int(parent().par.Take)%11]*op('hub')['evolve']*40 + op('shot')['seed']*(0,0,0,0,0,0,0,0,0,0,0)[int(parent().par.Take)%11]*360"
+    },
+    "scale": {
+     "expr": "(1,1,1,1,1,0.9,1,1,1,1,1)[int(parent().par.Take)%11]"
+    },
+    "tx": {
+     "expr": "(0,0,0,0,0,1.4,0,0,0,0,0)[int(parent().par.Take)%11]"
+    },
+    "ty": {
+     "expr": "(0.3901,0.3901,0.3901,0.3901,0.3901,0.35109,0.3901,0.3901,0.3901,0.3901,0.3901)[int(parent().par.Take)%11]"
+    },
+    "tz": {
+     "expr": "(0,0,0,0,0,1.5,0,0,0,0,0)[int(parent().par.Take)%11]"
+    }
+   }
+  },
+  "rubber_duck/fit": {
+   "type": "transformPOP",
+   "family": "POP",
+   "pos": [
+    160,
+    0
+   ],
+   "inputs": [
+    [
+     "rubber_duck/mesh"
+    ]
+   ],
+   "pars": {
+    "sx": {
+     "expr": "1 if mod.paths.have('models/rubber_duck/model.obj') else 0.50917"
+    },
+    "sy": {
+     "expr": "1 if mod.paths.have('models/rubber_duck/model.obj') else 0.85196"
+    },
+    "sz": {
+     "expr": "1 if mod.paths.have('models/rubber_duck/model.obj') else 0.68418"
+    },
+    "tx": {
+     "expr": "0 if mod.paths.have('models/rubber_duck/model.obj') else 0.0070859"
+    },
+    "ty": {
+     "expr": "0 if mod.paths.have('models/rubber_duck/model.obj') else -0.3901"
+    },
+    "tz": {
+     "expr": "0 if mod.paths.have('models/rubber_duck/model.obj') else -0"
+    }
+   }
+  },
+  "rubber_duck/mesh": {
+   "type": "fileinPOP",
+   "family": "POP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.model_file('rubber_duck')"
+    }
+   }
+  },
+  "sel_hits": {
+   "type": "selectCHOP",
+   "family": "CHOP",
+   "pos": [
+    -400,
+    -220
+   ],
+   "pars": {
+    "channames": "hit_low hit_mid",
+    "chops": "hub"
+   }
+  },
+  "shot": {
+   "type": "constantCHOP",
+   "family": "CHOP",
+   "pos": [
+    -400,
+    330
+   ],
+   "pars": {
+    "const0name": "take",
+    "const0value": {
+     "expr": "parent().par.Take"
+    },
+    "const1name": "seed",
+    "const1value": {
+     "expr": "parent().par.Seed"
+    },
+    "const2name": "age",
+    "const2value": {
+     "expr": "max(0, absTime.seconds - parent().par.Shotstart)"
+    }
+   }
+  },
+  "skeleton_key": {
+   "type": "geometryCOMP",
+   "family": "COMP",
+   "pos": [
+    -800,
+    60
+   ],
+   "pars": {
+    "render": {
+     "expr": "(0,0,1,0,0,0,0,0,0,0,0)[int(parent().par.Take)%11]"
+    },
+    "ry": {
+     "expr": "(0,0,-15,0,0,0,0,0,0,0,0)[int(parent().par.Take)%11] + (0,0,0,0,0,0,0,0,0,0,0)[int(parent().par.Take)%11]*op('hub')['evolve']*40 + op('shot')['seed']*(0,0,0,0,0,0,0,0,0,0,0)[int(parent().par.Take)%11]*360"
+    },
+    "scale": {
+     "expr": "(1,1,1.7,1,1,1,1,1,1,1,1)[int(parent().par.Take)%11]"
+    },
+    "tx": {
+     "expr": "(0,0,2.7,0,0,0,0,0,0,0,0)[int(parent().par.Take)%11]"
+    },
+    "ty": {
+     "expr": "(0.5,0.5,0.85,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5)[int(parent().par.Take)%11]"
+    },
+    "tz": {
+     "expr": "(0,0,-1.2,0,0,0,0,0,0,0,0)[int(parent().par.Take)%11]"
+    }
+   }
+  },
+  "skeleton_key/fit": {
+   "type": "transformPOP",
+   "family": "POP",
+   "pos": [
+    160,
+    0
+   ],
+   "inputs": [
+    [
+     "skeleton_key/mesh"
+    ]
+   ],
+   "pars": {
+    "sx": {
+     "expr": "1 if mod.paths.have('models/skeleton_key/model.obj') else 0.062272"
+    },
+    "sy": {
+     "expr": "1 if mod.paths.have('models/skeleton_key/model.obj') else 1.092"
+    },
+    "sz": {
+     "expr": "1 if mod.paths.have('models/skeleton_key/model.obj') else 0.35568"
+    },
+    "tx": {
+     "expr": "0 if mod.paths.have('models/skeleton_key/model.obj') else 0.00086661"
+    },
+    "ty": {
+     "expr": "0 if mod.paths.have('models/skeleton_key/model.obj') else -0.5"
+    },
+    "tz": {
+     "expr": "0 if mod.paths.have('models/skeleton_key/model.obj') else -0"
+    }
+   }
+  },
+  "skeleton_key/mesh": {
+   "type": "fileinPOP",
+   "family": "POP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.model_file('skeleton_key')"
+    }
+   }
+  },
+  "slide": {
+   "type": "switchTOP",
+   "family": "TOP",
+   "pos": [
+    -1000,
+    330
+   ],
+   "inputs": [
+    [
+     "atlas"
+    ],
+    [
+     "atlas_d0"
+    ],
+    [
+     "atlas_d4"
+    ],
+    [
+     "atlas_d8"
+    ],
+    [
+     "in_pic"
+    ]
+   ],
+   "pars": {
+    "index": {
+     "expr": "4 if op('inp')['on'] else ((1,0,0,0,2,0,0,0,3,0,0)[int(parent().par.Take)%11] if parent().par.Describe else 0)"
+    }
+   }
+  },
+  "slow": {
+   "type": "lagCHOP",
+   "family": "CHOP",
+   "pos": [
+    -240,
+    -220
+   ],
+   "inputs": [
+    [
+     "sel_hits"
+    ]
+   ],
+   "pars": {
+    "lag1": 0.0,
+    "lag2": 0.8,
+    "timeslice": true
+   }
+  },
+  "spectrum": {
+   "type": "selectTOP",
+   "family": "TOP",
+   "pos": [
+    -400,
+    60
+   ],
+   "pars": {
+    "top": "/project1/sw_hub/spectex"
+   }
+  },
+  "t0": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    -1000,
+    900
+   ],
+   "pars": {
+    "bgalpha": 1.0,
+    "bold": {
+     "expr": "not mod.paths.font('archivo')"
+    },
+    "fontautosize": "fitiffat",
+    "fontfile": {
+     "expr": "mod.paths.font('archivo')"
+    },
+    "fontsizex": 104.0,
+    "fontsizexunit": "pixels",
+    "linespacing": -14.0,
+    "outputresolution": "custom",
+    "resmult": false,
+    "resolutionw": 432,
+    "text": "REAL\nTIME."
+   }
+  },
+  "t1": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    -1000,
+    780
+   ],
+   "pars": {
+    "bgalpha": 1.0,
+    "bold": {
+     "expr": "not mod.paths.font('archivo')"
+    },
+    "fontautosize": "fitiffat",
+    "fontfile": {
+     "expr": "mod.paths.font('archivo')"
+    },
+    "fontsizex": 104.0,
+    "fontsizexunit": "pixels",
+    "linespacing": -14.0,
+    "outputresolution": "custom",
+    "resmult": false,
+    "resolutionw": 432,
+    "text": "DO NOT\nTOUCH"
+   }
+  },
+  "t2": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    -1000,
+    660
+   ],
+   "pars": {
+    "bgalpha": 1.0,
+    "bold": {
+     "expr": "not mod.paths.font('archivo')"
+    },
+    "fontautosize": "fitiffat",
+    "fontfile": {
+     "expr": "mod.paths.font('archivo')"
+    },
+    "fontsizex": 104.0,
+    "fontsizexunit": "pixels",
+    "linespacing": -14.0,
+    "outputresolution": "custom",
+    "resmult": false,
+    "resolutionw": 432,
+    "text": "EVERY FRAME\nIS MADE NOW."
+   }
+  },
+  "t3": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    -1000,
+    540
+   ],
+   "pars": {
+    "bgalpha": 1.0,
+    "bold": {
+     "expr": "not mod.paths.font('archivo')"
+    },
+    "fontautosize": "fitiffat",
+    "fontfile": {
+     "expr": "mod.paths.font('archivo')"
+    },
+    "fontsizex": 104.0,
+    "fontsizexunit": "pixels",
+    "linespacing": -14.0,
+    "outputresolution": "custom",
+    "resmult": false,
+    "resolutionw": 432,
+    "text": "NOTHING IS\nPRERENDERED."
+   }
+  },
+  "t4": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    -1000,
+    420
+   ],
+   "pars": {
+    "bgalpha": 1.0,
+    "bold": {
+     "expr": "not mod.paths.font('archivo')"
+    },
+    "fontautosize": "fitiffat",
+    "fontfile": {
+     "expr": "mod.paths.font('archivo')"
+    },
+    "fontsizex": 104.0,
+    "fontsizexunit": "pixels",
+    "linespacing": -14.0,
+    "outputresolution": "custom",
+    "resmult": false,
+    "resolutionw": 432,
+    "text": "LISTEN WITH\nYOUR EYES."
+   }
+  },
+  "t5": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    -1000,
+    300
+   ],
+   "pars": {
+    "bgalpha": 1.0,
+    "bold": {
+     "expr": "not mod.paths.font('archivo')"
+    },
+    "fontautosize": "fitiffat",
+    "fontfile": {
+     "expr": "mod.paths.font('archivo')"
+    },
+    "fontsizex": 104.0,
+    "fontsizexunit": "pixels",
+    "linespacing": -14.0,
+    "outputresolution": "custom",
+    "resmult": false,
+    "resolutionw": 432,
+    "text": "PLATE\n07"
+   }
+  },
+  "t6": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    -1000,
+    180
+   ],
+   "pars": {
+    "bgalpha": 1.0,
+    "bold": {
+     "expr": "not mod.paths.font('archivo')"
+    },
+    "fontautosize": "fitiffat",
+    "fontfile": {
+     "expr": "mod.paths.font('archivo')"
+    },
+    "fontsizex": 104.0,
+    "fontsizexunit": "pixels",
+    "linespacing": -14.0,
+    "outputresolution": "custom",
+    "resmult": false,
+    "resolutionw": 432,
+    "text": "FOUND,\nNOT MADE."
+   }
+  },
+  "t7": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    -1000,
+    60
+   ],
+   "pars": {
+    "bgalpha": 1.0,
+    "bold": {
+     "expr": "not mod.paths.font('archivo')"
+    },
+    "fontautosize": "fitiffat",
+    "fontfile": {
+     "expr": "mod.paths.font('archivo')"
+    },
+    "fontsizex": 104.0,
+    "fontsizexunit": "pixels",
+    "linespacing": -14.0,
+    "outputresolution": "custom",
+    "resmult": false,
+    "resolutionw": 432,
+    "text": "SOUND IN.\nPICTURE OUT."
+   }
+  },
+  "tk": {
+   "type": "constantCHOP",
+   "family": "CHOP",
+   "pos": [
+    -400,
+    500
+   ],
+   "pars": {
+    "const0name": "cam0",
+    "const0value": {
+     "expr": "(2.5,0.8,2.2,1,0.5,4.5,-1.5,-0.25,-2.5,0.5,1.9)[int(parent().par.Take)%11]"
+    },
+    "const10name": "lp2",
+    "const10value": {
+     "expr": "(4,0,0.6,-0.05,2.5,0.5,6,-4.5,7,6,0.5)[int(parent().par.Take)%11]"
+    },
+    "const11name": "lt0",
+    "const11value": {
+     "expr": "(3,2,2,0.15,1.5,1.5,1,0.1,-0.5,1,0.3)[int(parent().par.Take)%11]"
+    },
+    "const12name": "lt1",
+    "const12value": {
+     "expr": "(0.9,0,1.1,0.87,0,0,1.5,0.95,1.9,1.5,0.55)[int(parent().par.Take)%11]"
+    },
+    "const13name": "lt2",
+    "const13value": {
+     "expr": "(-4.5,0,-0.4,0.15,-0.5,-1,-4,6,-5,-4,-1)[int(parent().par.Take)%11]"
+    },
+    "const14name": "ltan",
+    "const14value": {
+     "expr": "(0.42,0.42,0.5,0.5,0.5,0.5,0.33,0.6,0.5,0.33,0.95)[int(parent().par.Take)%11]"
+    },
+    "const15name": "lcol0",
+    "const15value": {
+     "expr": "(0.2,0.62,1,1,0.62,0.2,0.2,0.9,0.86,0.2,0.62)[int(parent().par.Take)%11]"
+    },
+    "const16name": "lcol1",
+    "const16value": {
+     "expr": "(0.46,1,0.07,0.5,1,0.46,0.46,0.95,0.9,0.46,1)[int(parent().par.Take)%11]"
+    },
+    "const17name": "lcol2",
+    "const17value": {
+     "expr": "(1,0.5,0.04,0.15,0.5,1,1,1,0.7,1,0.5)[int(parent().par.Take)%11]"
+    },
+    "const18name": "lint",
+    "const18value": {
+     "expr": "(6,5,14,30,9,6,0,1,4,0,3.5)[int(parent().par.Take)%11]"
+    },
+    "const19name": "lfall",
+    "const19value": {
+     "expr": "(0.012,0.012,0.012,6,0.012,0.012,0.012,0.012,0.012,0.012,0.6)[int(parent().par.Take)%11]"
+    },
+    "const1name": "cam1",
+    "const1value": {
+     "expr": "(1.2,1,2.2,1.25,8.2,2.7,1,0.9,1.3,1.2,0.28)[int(parent().par.Take)%11]"
+    },
+    "const20name": "gobo",
+    "const20value": {
+     "expr": "(1,2,6,0,4,3,0,5,4,0,0)[int(parent().par.Take)%11]"
+    },
+    "const21name": "grot",
+    "const21value": {
+     "expr": "(0,0,0.35,0,0,0,0,0,0,0,0)[int(parent().par.Take)%11]"
+    },
+    "const22name": "ginv",
+    "const22value": {
+     "expr": "(0,0,0,0,0,0,0,0,1,0,0)[int(parent().par.Take)%11]"
+    },
+    "const23name": "gscale",
+    "const23value": {
+     "expr": "(1,1,1,1,1,1,1,1,0.8,1,1)[int(parent().par.Take)%11]"
+    },
+    "const24name": "sweep0",
+    "const24value": {
+     "expr": "(0.6,0.7,0.3,0,0,0.5,0,0,0.4,0,0)[int(parent().par.Take)%11]"
+    },
+    "const25name": "sweep1",
+    "const25value": {
+     "expr": "(0.1,0,0,0,0,0,0,0,0.1,0,0)[int(parent().par.Take)%11]"
+    },
+    "const26name": "sweep2",
+    "const26value": {
+     "expr": "(0,0,0.3,0,0,0.5,0,0,0,0,0)[int(parent().par.Take)%11]"
+    },
+    "const27name": "sheets",
+    "const27value": {
+     "expr": "(1,0,0,0,0,0,0,0,0,0,0)[int(parent().par.Take)%11]"
+    },
+    "const28name": "sheetsp",
+    "const28value": {
+     "expr": "(3.1,1.3,1.3,1.3,1.3,1.3,1.3,1.3,1.3,1.3,1.3)[int(parent().par.Take)%11]"
+    },
+    "const29name": "ntube",
+    "const29value": {
+     "expr": "(4,0,0,0,0,8,5,0,0,8,1)[int(parent().par.Take)%11]"
+    },
+    "const2name": "cam2",
+    "const2value": {
+     "expr": "(8.5,7,7,1.5,0.8,9,5,6,7.5,6.5,2.6)[int(parent().par.Take)%11]"
+    },
+    "const30name": "tlay",
+    "const30value": {
+     "expr": "(1,0,0,0,0,1,2,0,0,0,3)[int(parent().par.Take)%11]"
+    },
+    "const31name": "tint",
+    "const31value": {
+     "expr": "(0.6,1,1,1,1,0.5,0.6,1,1,1.6,0.25)[int(parent().par.Take)%11]"
+    },
+    "const32name": "tidle",
+    "const32value": {
+     "expr": "(0.05,0.25,0.25,0.25,0.25,0,0.22,0.25,0.25,0.03,0.6)[int(parent().par.Take)%11]"
+    },
+    "const33name": "tz0",
+    "const33value": {
+     "expr": "(-1,3.5,3.5,3.5,3.5,4,-2.2,3.5,3.5,3,0.2)[int(parent().par.Take)%11]"
+    },
+    "const34name": "tsp",
+    "const34value": {
+     "expr": "(5,3.2,3.2,3.2,3.2,4,0.9,3.2,3.2,3.4,3.2)[int(parent().par.Take)%11]"
+    },
+    "const35name": "lamp0",
+    "const35value": {
+     "expr": "(0,0,0,0,0,0.2,0,0,0,0,0)[int(parent().par.Take)%11]"
+    },
+    "const36name": "lamp1",
+    "const36value": {
+     "expr": "(0,0,0,0,0,1.45,0,0,0,0,0)[int(parent().par.Take)%11]"
+    },
+    "const37name": "lamp2",
+    "const37value": {
+     "expr": "(0,0,0,0,0,0.5,0,0,0,0,0)[int(parent().par.Take)%11]"
+    },
+    "const38name": "lampi",
+    "const38value": {
+     "expr": "(0,0,0,0,0,0.5,0,0,0,0,0)[int(parent().par.Take)%11]"
+    },
+    "const39name": "fog",
+    "const39value": {
+     "expr": "(0.11,0.07,0.09,0.3,0.07,0.05,0.03,0.06,0.04,0.04,0.05)[int(parent().par.Take)%11]"
+    },
+    "const3name": "tgt0",
+    "const3value": {
+     "expr": "(0.8,0.2,0.3,-0.15,0.5,0,0.3,0.5,0,-0.2,0.1)[int(parent().par.Take)%11]"
+    },
+    "const40name": "fnoise",
+    "const40value": {
+     "expr": "(0.9,0.9,1.5,1.2,0.9,0.9,0.9,0.9,0.9,0.9,0.9)[int(parent().par.Take)%11]"
+    },
+    "const41name": "fscale",
+    "const41value": {
+     "expr": "(1,1,3.2,5,1,1,1,1,1,1,2.5)[int(parent().par.Take)%11]"
+    },
+    "const42name": "amb",
+    "const42value": {
+     "expr": "(0.004,0.004,0.002,0.006,0.004,0.004,0.004,0.004,0.004,0.004,0.004)[int(parent().par.Take)%11]"
+    },
+    "const43name": "exp",
+    "const43value": {
+     "expr": "(1,1,1,1,1,1,1,1,1,1,1)[int(parent().par.Take)%11]"
+    },
+    "const44name": "onebit",
+    "const44value": {
+     "expr": "(0,0,0,0,0,0,0,1,0,0,0)[int(parent().par.Take)%11]"
+    },
+    "const45name": "room0",
+    "const45value": {
+     "expr": "(7,7,7,7,8,9,6,7,7,2.4,4)[int(parent().par.Take)%11]"
+    },
+    "const46name": "room1",
+    "const46value": {
+     "expr": "(3.2,3.2,3.2,3.2,9,5.5,3.4,3.2,3.2,2.7,3.2)[int(parent().par.Take)%11]"
+    },
+    "const47name": "room2",
+    "const47value": {
+     "expr": "(-5,-5,-5,-5,-7,-9,-2.5,-5,-5,-40,-2.2)[int(parent().par.Take)%11]"
+    },
+    "const48name": "room3",
+    "const48value": {
+     "expr": "(9,9,9,9,7,11,9,9,9,8,6)[int(parent().par.Take)%11]"
+    },
+    "const49name": "inp",
+    "const49value": {
+     "expr": "(1,1,0,1,1,1,0,0,1,0,1)[int(parent().par.Take)%11]"
+    },
+    "const4name": "tgt1",
+    "const4value": {
+     "expr": "(1.85,1.25,0.8,1.15,0,0.7,1.1,1.2,1.6,1.7,0.55)[int(parent().par.Take)%11]"
+    },
+    "const50name": "ing",
+    "const50value": {
+     "expr": "(1.25,1,1,1,1,1,1,1,1,1,1)[int(parent().par.Take)%11]"
+    },
+    "const51name": "inw",
+    "const51value": {
+     "expr": "(0.7,0.7,0.7,0.7,0.7,0.7,0.7,0.7,0.7,0.7,0.7)[int(parent().par.Take)%11]"
+    },
+    "const5name": "tgt2",
+    "const5value": {
+     "expr": "(0,0,0,0,0.3,-1,-2.5,-3,-5,-8,-0.4)[int(parent().par.Take)%11]"
+    },
+    "const6name": "ctan",
+    "const6value": {
+     "expr": "(0.55,0.55,0.55,0.5,0.5,0.7,0.55,0.55,0.55,0.6,0.5)[int(parent().par.Take)%11]"
+    },
+    "const7name": "cdrift",
+    "const7value": {
+     "expr": "(0.15,0.15,0.15,0.05,0.1,0.15,0.15,0.05,0.15,0.15,0.05)[int(parent().par.Take)%11]"
+    },
+    "const8name": "lp0",
+    "const8value": {
+     "expr": "(-5.5,-5.5,-6.5,-0.25,-4.5,-7.5,-2.5,-0.4,1.5,-2.5,-0.5)[int(parent().par.Take)%11]"
+    },
+    "const9name": "lp1",
+    "const9value": {
+     "expr": "(2.3,3.1,1.5,1.8,3.5,5,1.6,1,1,1.6,0.1)[int(parent().par.Take)%11]"
+    }
+   }
+  },
+  "traffic_cone": {
+   "type": "geometryCOMP",
+   "family": "COMP",
+   "pos": [
+    -640,
+    60
+   ],
+   "pars": {
+    "render": {
+     "expr": "(0,0,1,0,1,0,0,0,0,1,0)[int(parent().par.Take)%11]"
+    },
+    "ry": {
+     "expr": "(0,0,150,0,140,0,0,0,0,30,0)[int(parent().par.Take)%11] + (0,0,0,0,0,0,0,0,0,0,0)[int(parent().par.Take)%11]*op('hub')['evolve']*40 + op('shot')['seed']*(0,0,0,0,0,0,0,0,0,0,0)[int(parent().par.Take)%11]*360"
+    },
+    "scale": {
+     "expr": "(1,1,0.8,1,1,1,1,1,1,1,1)[int(parent().par.Take)%11]"
+    },
+    "tx": {
+     "expr": "(0,0,1.1,0,-1,0,0,0,0,-0.6,0)[int(parent().par.Take)%11]"
+    },
+    "ty": {
+     "expr": "(0.5,0.5,0.4,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5)[int(parent().par.Take)%11]"
+    },
+    "tz": {
+     "expr": "(0,0,1.6,0,1,0,0,0,0,-6.5,0)[int(parent().par.Take)%11]"
+    }
+   }
+  },
+  "traffic_cone/fit": {
+   "type": "transformPOP",
+   "family": "POP",
+   "pos": [
+    160,
+    0
+   ],
+   "inputs": [
+    [
+     "traffic_cone/mesh"
+    ]
+   ],
+   "pars": {
+    "sx": {
+     "expr": "1 if mod.paths.have('models/traffic_cone/model.obj') else 0.3082"
+    },
+    "sy": {
+     "expr": "1 if mod.paths.have('models/traffic_cone/model.obj') else 1.092"
+    },
+    "sz": {
+     "expr": "1 if mod.paths.have('models/traffic_cone/model.obj') else 0.49565"
+    },
+    "tx": {
+     "expr": "0 if mod.paths.have('models/traffic_cone/model.obj') else 0.0042891"
+    },
+    "ty": {
+     "expr": "0 if mod.paths.have('models/traffic_cone/model.obj') else -0.5"
+    },
+    "tz": {
+     "expr": "0 if mod.paths.have('models/traffic_cone/model.obj') else -0"
+    }
+   }
+  },
+  "traffic_cone/mesh": {
+   "type": "fileinPOP",
+   "family": "POP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.model_file('traffic_cone')"
+    }
+   }
+  },
+  "wire_cage": {
+   "type": "geometryCOMP",
+   "family": "COMP",
+   "pos": [
+    -640,
+    -220
+   ],
+   "pars": {
+    "render": {
+     "expr": "(0,0,0,0,0,0,0,0,1,0,0)[int(parent().par.Take)%11]"
+    },
+    "ry": {
+     "expr": "(0,0,0,0,0,0,0,0,0,0,0)[int(parent().par.Take)%11] + (0,0,0,0,0,0,0,0,1.2,0,0)[int(parent().par.Take)%11]*op('hub')['evolve']*40 + op('shot')['seed']*(0,0,0,0,0,0,0,0,1.2,0,0)[int(parent().par.Take)%11]*360"
+    },
+    "scale": {
+     "expr": "(1,1,1,1,1,1,1,1,1.5,1,1)[int(parent().par.Take)%11]"
+    },
+    "tx": {
+     "expr": "(0,0,0,0,0,0,0,0,0.6,0,0)[int(parent().par.Take)%11]"
+    },
+    "ty": {
+     "expr": "(0.485,0.485,0.485,0.485,0.485,0.485,0.485,0.485,0.7275,0.485,0.485)[int(parent().par.Take)%11]"
+    },
+    "tz": {
+     "expr": "(0,0,0,0,0,0,0,0,1,0,0)[int(parent().par.Take)%11]"
+    }
+   }
+  },
+  "wire_cage/fit": {
+   "type": "transformPOP",
+   "family": "POP",
+   "pos": [
+    160,
+    0
+   ],
+   "inputs": [
+    [
+     "wire_cage/mesh"
+    ]
+   ],
+   "pars": {
+    "sx": {
+     "expr": "1 if mod.paths.have('models/wire_cage/model.obj') else 0.5078"
+    },
+    "sy": {
+     "expr": "1 if mod.paths.have('models/wire_cage/model.obj') else 1.0592"
+    },
+    "sz": {
+     "expr": "1 if mod.paths.have('models/wire_cage/model.obj') else 0.81898"
+    },
+    "tx": {
+     "expr": "0 if mod.paths.have('models/wire_cage/model.obj') else 0.0070668"
+    },
+    "ty": {
+     "expr": "0 if mod.paths.have('models/wire_cage/model.obj') else -0.485"
+    },
+    "tz": {
+     "expr": "0 if mod.paths.have('models/wire_cage/model.obj') else -0"
+    }
+   }
+  },
+  "wire_cage/mesh": {
+   "type": "fileinPOP",
+   "family": "POP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.model_file('wire_cage')"
+    }
+   }
+  }
+ }
+}

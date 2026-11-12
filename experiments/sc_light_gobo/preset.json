@@ -1,0 +1,160 @@
+{
+  "title": "Fog and shadow type",
+  "technique": "A dark room full of drifting fog, lit by a projector, fluorescent tubes and a lamp, where patterned light and the shadows of objects hang as solid shafts in the air.",
+  "music": "Kick and snare hits strike the fluorescent tubes and kick the projector brighter, while the bass and kick make the fog thicken in puffs. The beat moves the patterns in the light, the bar slowly sweeps the projector, and each new section of the song changes the projected phrase.",
+  "takes": [
+    {
+      "name": "Words in air",
+      "description": "A blue projector beam seen at an angle, with a phrase repeated on layers of smoke that recede to the wall and an amphora cutting its shadow out of each copy.",
+      "words": [
+        "LIGHT IN FOG",
+        "A WORD IS A STENCIL",
+        "RAY-MARCHED FOG",
+        "LAYERS OF SMOKE",
+        "36 FOG STEPS PER PIXEL",
+        "SHADOW MAP",
+        "BEAT MOVES THE SMOKE",
+        "SNARE = BRIGHTER",
+        "A projector shines through a stencil of these words into ray-marched fog.",
+        "Thin layers of smoke catch the image and travel down the beam on the beat. A snare makes it brighter."
+      ],
+      "words_with_input": [
+        "A projector throws the incoming picture into ray-marched fog.",
+        "Thin layers of smoke each catch the whole picture and travel down the beam on the beat. A shadow map cuts out the amphora."
+      ],
+      "uses_input": true
+    },
+    {
+      "name": "Blinds",
+      "description": "Green light through venetian blinds, seen side-on so each shaft is a hard diagonal blade, with the slat pattern on the carpet and a backlit gramophone.",
+      "words": [
+        "Volumetric light: one shader steps 64 times through fog along each pixel's ray and asks if light reaches that point.",
+        "Here the mask is a venetian blind. The slats open and close over two bars. A shadow map cuts out the gramophone."
+      ],
+      "words_with_input": [
+        "The incoming picture is the light behind a venetian blind: its colours ride the shafts through ray-marched fog.",
+        "The slats open and close over two bars. A shadow map cuts out the gramophone."
+      ],
+      "uses_input": true
+    },
+    {
+      "name": "Red planes",
+      "description": "No beam at all: a comb of thin red planes of light, each showing a swirling slice of the smoke, with a row of objects as a black skyline below.",
+      "words": [
+        "No beam here: five thin planes of red light slice the fog, and each shows a cross-section of the drifting smoke.",
+        "Kick and snare choose which planes flare. The objects are only a black skyline."
+      ],
+      "uses_input": false
+    },
+    {
+      "name": "Lamp cone",
+      "description": "A close-up of one warm cone of lamp light with smoke curling in it over an astrolabe and a stack of solids, and everything else black.",
+      "words": [
+        "One cone of warm light, ray-marched through fine smoke over an astrolabe and a stack of solids.",
+        "The kick makes the smoke thicker. A shadow map cuts the objects' shadows out of the cone."
+      ],
+      "words_with_input": [
+        "The incoming picture is the lamp's light: one cone, ray-marched through fine smoke, landing on an astrolabe and a stack of solids.",
+        "The kick makes the smoke thicker. A shadow map cuts the objects' shadows out of the cone."
+      ],
+      "uses_input": true
+    },
+    {
+      "name": "Floor type",
+      "description": "Seen from straight above, tiled phrases are thrown across the carpet at a raking angle, with the long shadows of a pierced stone and a traffic cone.",
+      "words": [
+        "TEXT AS A MASK",
+        "PROJECTED ON CARPET",
+        "SEEN FROM ABOVE",
+        "RAKING LIGHT",
+        "ROWS SLIDE ON THE BEAT",
+        "LONG SHADOWS",
+        "64 FOG STEPS",
+        "SHADOW MAP",
+        "Seen from straight above: a projector throws these tiled words across the carpet at a raking angle.",
+        "Rows slide against each other on the beat. A shadow map gives the pierced stone and the cone their long shadows."
+      ],
+      "words_with_input": [
+        "Seen from straight above: a projector throws the incoming picture across the carpet at a raking angle.",
+        "Its beam streaks the ray-marched fog. A shadow map gives the pierced stone and the cone their long shadows."
+      ],
+      "uses_input": true
+    },
+    {
+      "name": "Grid window",
+      "description": "A wide, high view of a ruled grid thrown as planes of blue light over a big dark floor, with a small lander under a warm lamp and ceiling tubes above.",
+      "words": [
+        "The projector's mask is a printed grid: its ruled lines and filled boxes become planes of blue light in the fog.",
+        "Kick and snare strike the ceiling tubes. Each new section of the song fills different boxes."
+      ],
+      "words_with_input": [
+        "A projector high on the left throws the incoming picture across a big dark floor, through ray-marched fog.",
+        "Kick and snare strike the ceiling tubes. A shadow map cuts the objects' shadows out of the picture."
+      ],
+      "uses_input": true
+    },
+    {
+      "name": "Leaning tubes",
+      "description": "No projector: bare tubes in green, blue and one warm colour lean on a wall and mirror in a polished floor, with a crystal cluster in silhouette in front.",
+      "words": [
+        "No projector: five bare fluorescent tubes are line lights in thin fog, each mirrored in the floor by one reflected ray.",
+        "Kick and snare choose which tubes strike. They stutter like a ballast catching, then hold bright."
+      ],
+      "uses_input": false
+    },
+    {
+      "name": "One bit",
+      "description": "The whole picture reduced to black and white dots, with a spoked wheel of light turning behind a bust's silhouette and its shadow coming at the camera.",
+      "words": [
+        "The same fog and light, reduced to pure black and white dots by an ordered dither.",
+        "A spoked wheel turns in front of the lamp on the beat. The bust's shadow is a solid shape in the fog."
+      ],
+      "uses_input": false
+    },
+    {
+      "name": "Shadow play",
+      "description": "The negative of the others: a bright paper-coloured room printed with dark phrases over wall, floor and ceiling, with a turning wire cage and its shadow.",
+      "words": [
+        "INVERTED MASK",
+        "WORDS ARE SHADOWS",
+        "THE REST IS LIGHT",
+        "ONE PROJECTOR",
+        "CAGE TURNS IN THE BEAM",
+        "64 FOG STEPS",
+        "SNARE = BRIGHTER",
+        "FOG AND SHADOW",
+        "The mask is inverted: the projector lights the whole room and these words are its shadows.",
+        "The cage turns in the beam and a shadow map throws its shadow on the wall. A snare makes the lamp brighter."
+      ],
+      "words_with_input": [
+        "The projector lights the room with the negative of the incoming picture.",
+        "The cage turns in the beam and a shadow map throws its shadow on the wall. A snare makes the lamp brighter."
+      ],
+      "uses_input": true
+    },
+    {
+      "name": "Corridor",
+      "description": "No projector: ceiling tubes recede down a long narrow corridor and a pulse of light races toward the camera every two beats, past a stack of solids and a traffic cone in silhouette.",
+      "words": [
+        "No projector: eight ceiling tubes light the fog as line lights, sampled 12 times along each pixel's ray.",
+        "A pulse of light runs down the row toward the camera every two beats. Kick and snare strike single tubes."
+      ],
+      "uses_input": false
+    },
+    {
+      "name": "Floor tube",
+      "description": "A close-up at carpet level, where one green tube lying on the floor beside a small hourglass throws a looped ribbon's giant shadow up the wall.",
+      "words": [
+        "One fluorescent tube lies on the carpet. A hidden lamp beside it throws the looped ribbon's shadow up the wall.",
+        "Kick and snare strike the tube, and the tube and its light flicker together."
+      ],
+      "words_with_input": [
+        "A hidden projector beside the floor tube throws the incoming picture, and the looped ribbon's shadow, up the wall.",
+        "Kick and snare strike the tube, and the tube and the picture flicker together."
+      ],
+      "uses_input": true
+    }
+  ],
+  "accepts_input": true,
+  "as_processor": "Throws the picture from a projector into a dark, foggy room, so it hangs in colour on layers of smoke and lands on the walls and carpet with the shadows of objects cut out of it."
+}

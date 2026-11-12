@@ -1,0 +1,3609 @@
+{
+ "format": "tdh-snapshot/1",
+ "root": "/project1/sc_rutt_etra",
+ "ops": {
+  "black": {
+   "type": "constantTOP",
+   "family": "TOP",
+   "pos": [
+    460,
+    200
+   ],
+   "pars": {
+    "colorb": 0.0,
+    "colorg": 0.0,
+    "colorr": 0.0,
+    "format": "rgba16float",
+    "outputresolution": "custom",
+    "resolutionh": 720,
+    "resolutionw": 1280
+   }
+  },
+  "cam": {
+   "type": "cameraCOMP",
+   "family": "COMP",
+   "pos": [
+    460,
+    -460
+   ],
+   "pars": {
+    "far": 50.0,
+    "fov": 50.0,
+    "near": 0.05,
+    "tx": {
+     "expr": "op('ctl')['camx']"
+    },
+    "ty": {
+     "expr": "float(op('tk')['camy'])"
+    },
+    "tz": {
+     "expr": "op('ctl')['dist']"
+    }
+   }
+  },
+  "cam/file1": {
+   "type": "fileinPOP",
+   "family": "POP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "file": {
+     "expr": "app.samplesFolder + '/Geo/defcam.tog'"
+    }
+   }
+  },
+  "cook_driver": {
+   "type": "executeDAT",
+   "family": "DAT",
+   "pos": [
+    -400,
+    -80
+   ],
+   "pars": {
+    "framestart": true,
+    "language": "python"
+   },
+   "text": [
+    "def onFrameStart(frame):",
+    "    hub = op('/project1/sw_hub')",
+    "    me_on = parent().par.Preview.eval()",
+    "    if hub is not None:",
+    "        me_on = me_on or hub.par.Solo.eval() or hub.par.Scene.eval() == parent().name",
+    "    if me_on:",
+    "        op('hub').cook(force=True)",
+    "        op('out1').cook(force=True)",
+    "    return"
+   ]
+  },
+  "crt": {
+   "type": "glslTOP",
+   "family": "TOP",
+   "pos": [
+    1020,
+    -60
+   ],
+   "inputs": [
+    [
+     "loop"
+    ],
+    [
+     "glow"
+    ],
+    [
+     "srcblur"
+    ]
+   ],
+   "pars": {
+    "computedat": "crt_compute",
+    "format": "rgba16float",
+    "outputresolution": "custom",
+    "pixeldat": "crt_px",
+    "resolutionh": 720,
+    "resolutionw": 1280,
+    "vec0name": "uSync",
+    "vec0valuew": {
+     "expr": "op('ctl')['flag']"
+    },
+    "vec0valuex": {
+     "expr": "op('ctl')['tear']"
+    },
+    "vec0valuey": {
+     "expr": "op('ctl')['roll']"
+    },
+    "vec0valuez": {
+     "expr": "op('hub')['t']"
+    },
+    "vec1name": "uColz",
+    "vec1valuew": {
+     "expr": "float(op('tk')['key'])"
+    },
+    "vec1valuex": {
+     "expr": "float(op('tk')['colz'])"
+    },
+    "vec1valuey": {
+     "expr": "float(op('tk')['pal'])"
+    },
+    "vec1valuez": {
+     "expr": "float(op('tk')['bands'])"
+    },
+    "vec2name": "uLook",
+    "vec2valuew": {
+     "expr": "float(op('tk')['snow'])"
+    },
+    "vec2valuex": {
+     "expr": "float(op('tk')['neg'])"
+    },
+    "vec2valuey": {
+     "expr": "float(op('tk')['interlace'])"
+    },
+    "vec2valuez": {
+     "expr": "float(op('tk')['bleed'])"
+    },
+    "vec3name": "uAud",
+    "vec3valuew": {
+     "expr": "op('ctl')['field']"
+    },
+    "vec3valuex": {
+     "expr": "op('hub')['pulse']"
+    },
+    "vec3valuey": {
+     "expr": "op('hub')['hit_high']"
+    },
+    "vec3valuez": {
+     "expr": "op('ctl')['en']"
+    },
+    "vec4name": "uWall",
+    "vec4valuew": {
+     "expr": "float(op('tk')['expo'])"
+    },
+    "vec4valuex": {
+     "expr": "op('ctl')['wall']"
+    },
+    "vec4valuey": {
+     "expr": "float(op('shot')['seed'])"
+    },
+    "vec4valuez": {
+     "expr": "float(op('tk')['glow'])"
+    }
+   }
+  },
+  "crt_info": {
+   "type": "infoDAT",
+   "family": "DAT",
+   "pos": [
+    160,
+    -120
+   ],
+   "pars": {
+    "language": "text",
+    "op": "crt"
+   }
+  },
+  "crt_px": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    1020,
+    -190
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.here('shaders/crt.frag')"
+    },
+    "language": "text",
+    "syncfile": true
+   },
+   "text_file": "experiments/sc_rutt_etra/shaders/crt.frag"
+  },
+  "ctl": {
+   "type": "constantCHOP",
+   "family": "CHOP",
+   "pos": [
+    -550,
+    200
+   ],
+   "pars": {
+    "const0name": "lines",
+    "const0value": {
+     "expr": "min(300, max(8, round(float(op('tk')['lines']) * (0.85 + 0.3 * ((float(op('shot')['seed']) * 3.7) % 1.0)))))"
+    },
+    "const10name": "ry",
+    "const10value": {
+     "expr": "float(op('tk')['ry']) * (1.0 if ((float(op('shot')['seed']) * 5.3) % 1.0) > 0.5 else -1.0) + float(op('tk')['sway']) * ((((float(op('shot')['seed']) * 9.1) % 1.0) - 0.5) * 14.0 + 13.0 * math.sin(float(op('hub')['evolve']) * 0.9 + float(op('shot')['seed']) * 6.28) + ((int(op('hub')['section']) * 0.381) % 1.0 - 0.5) * 26.0)"
+    },
+    "const11name": "rz",
+    "const11value": {
+     "expr": "float(op('tk')['rz']) + float(op('tk')['sway']) * 2.0 * math.sin(float(op('hub')['bar_pos']) * 1.5708)"
+    },
+    "const12name": "dist",
+    "const12value": {
+     "expr": "float(op('tk')['dist']) - 0.05 * min(float(op('hub')['hit_low']), 1.2)"
+    },
+    "const13name": "camx",
+    "const13value": {
+     "expr": "float(op('tk')['camx']) * (1.0 if ((float(op('shot')['seed']) * 5.3) % 1.0) > 0.5 else -1.0)"
+    },
+    "const14name": "model",
+    "const14value": {
+     "expr": "(int(float(op('tk')['model'])) + 2 * (int(op('shot')['take']) // 10)) % 5"
+    },
+    "const15name": "fbhue",
+    "const15value": {
+     "expr": "float(op('tk')['fbhue']) * (0.3 + 1.7 * ((float(op('shot')['seed']) * 8.3) % 1.0))"
+    },
+    "const16name": "myaw",
+    "const16value": {
+     "expr": "float(op('tk')['myaw']) + float(op('tk')['mspin']) * float(op('hub')['evolve']) + (float(op('shot')['seed']) - 0.5) * float(op('tk')['yawr']) + float(op('tk')['mrock']) * math.sin(float(op('hub')['evolve']) * 0.8)"
+    },
+    "const17name": "phrase",
+    "const17value": {
+     "expr": "(int(float(op('shot')['seed']) * 14) + int(op('hub')['section'])) % 14"
+    },
+    "const18name": "oscf",
+    "const18value": {
+     "expr": "float(op('tk')['oscf']) * (0.7 + 0.6 * ((float(op('shot')['seed']) * 2.3) % 1.0))"
+    },
+    "const19name": "fbgain",
+    "const19value": {
+     "expr": "float(op('tk')['fb']) * (0.95 + 0.07 * min(max((float(op('hub')['energy']) - 0.33) / 0.32, 0.0), 1.0)) * min(float(op('shot')['age']) * 4.0, 1.0)"
+    },
+    "const1name": "arr",
+    "const1value": {
+     "expr": "1.0 - math.exp(-min(float(op('shot')['age']), 20.0) * 8.0)"
+    },
+    "const20name": "fbrot",
+    "const20value": {
+     "expr": "math.radians((360.0 / (3 + int(((float(op('shot')['seed']) * 4.1) % 1.0) * 5.99)) if float(op('tk')['fbsym']) > 0.5 else float(op('tk')['fbrot']) + (((float(op('shot')['seed']) * 4.1) % 1.0) - 0.5) * float(op('tk')['fbrotj'])) + 1.5 * math.sin(float(op('hub')['evolve']) * 0.9) + 2.0 * min(float(op('hub')['bass']), 1.7))"
+    },
+    "const21name": "fbzoom",
+    "const21value": {
+     "expr": "float(op('tk')['fbzoom']) + (0.03 * min(float(op('hub')['hit_low']), 1.2) if float(op('tk')['fb']) > 0 else 0.0)"
+    },
+    "const22name": "roll",
+    "const22value": {
+     "expr": "float(op('tk')['roll']) * 0.5 * float(op('hub')['bar_pulse']) ** 2 + (1.0 - min(float(op('hub')['section_pos']) / 0.035, 1.0)) ** 2"
+    },
+    "const23name": "flag",
+    "const23value": {
+     "expr": "float(op('tk')['flag']) * (0.25 + min(float(op('hub')['bass']), 1.7))"
+    },
+    "const24name": "field",
+    "const24value": {
+     "expr": "absTime.frame % 4096"
+    },
+    "const25name": "wall",
+    "const25value": {
+     "expr": "(2 + int(((float(op('shot')['seed']) * 7.9) % 1.0) * 2.99)) if float(op('tk')['wall']) > 1.5 else 1"
+    },
+    "const26name": "tsx",
+    "const26value": {
+     "expr": "float(op('tk')['tscroll']) * float(op('hub')['evolve']) + ((float(op('shot')['seed']) * 6.7) % 1.0)"
+    },
+    "const27name": "inp",
+    "const27value": {
+     "expr": "1 if (parent().par.Input.eval() and op(parent().par.Input.eval()) is not None and op(parent().par.Input.eval()).isTOP and op(parent().par.Input.eval()).path != op('out1').path) else 0"
+    },
+    "const28name": "dn",
+    "const28value": {
+     "expr": "max(1, int(op('dwords')[int(op('shot')['take']) % 10, 0]))"
+    },
+    "const29name": "dph",
+    "const29value": {
+     "expr": "(int(float(op('shot')['seed']) * 97) + int(op('hub')['section'])) % max(1, int(op('dwords')[int(op('shot')['take']) % 10, 0]))"
+    },
+    "const2name": "en",
+    "const2value": {
+     "expr": "min(max((float(op('hub')['energy']) - 0.33) / 0.32, 0.0), 1.0)"
+    },
+    "const30name": "sym",
+    "const30value": {
+     "expr": "3 + int(((float(op('shot')['seed']) * 4.1) % 1.0) * 5.99)"
+    },
+    "const3name": "dy",
+    "const3value": {
+     "expr": "float(op('tk')['dy']) * (0.65 + 0.5 * min(max((float(op('hub')['energy']) - 0.33) / 0.32, 0.0), 1.0)) * (1.0 + 0.8 * min(float(op('hub')['hit_low']), 1.2))"
+    },
+    "const4name": "dz",
+    "const4value": {
+     "expr": "float(op('tk')['dz']) * (0.65 + 0.5 * min(max((float(op('hub')['energy']) - 0.33) / 0.32, 0.0), 1.0)) * (1.0 + 0.8 * min(float(op('hub')['hit_low']), 1.2))"
+    },
+    "const5name": "bend",
+    "const5value": {
+     "expr": "float(op('tk')['bend']) * 0.03 * min(float(op('hub')['bass']), 1.7)"
+    },
+    "const6name": "tear",
+    "const6value": {
+     "expr": "float(op('tk')['tear']) * min(float(op('hub')['hit_mid']), 1.2)"
+    },
+    "const7name": "brk",
+    "const7value": {
+     "expr": "float(op('tk')['brk']) * min(float(op('hub')['hit_high']) * 1.3, 1.0)"
+    },
+    "const8name": "flash",
+    "const8value": {
+     "expr": "0.7 * min(float(op('hub')['hit_low']), 1.2) + 0.25 * float(op('hub')['pulse'])"
+    },
+    "const9name": "rx",
+    "const9value": {
+     "expr": "float(op('tk')['rx']) + float(op('tk')['sway']) * 4.0 * math.sin(float(op('hub')['evolve']) * 0.63)"
+    }
+   }
+  },
+  "dlabel": {
+   "type": "tableDAT",
+   "family": "DAT",
+   "pos": [
+    -700,
+    -60
+   ],
+   "text": [
+    "RUTT-ETRA SCAN PROCESSORA hidden picture of {src} is redrawn as {n} scan lines.The brighter the picture under a line, the higher it lifts.\tRUTT-ETRA SCAN PROCESSORAnother picture is redrawn as {n} scan lines, coloured by it.The brighter the picture under a line, the higher it lifts.",
+    "COLOURISER{n} scan lines seen face on. Brightness is cut into 5 bands,each given one flat colour. Bass bends the picture sideways.\tCOLOURISER{n} scan lines seen face on. Brightness is cut into 5 bands,each given one flat colour. Bass bends the picture sideways.",
+    "VIDEO FEEDBACK{n} lines of sine waves and words, fed back like a camera aimedat its own monitor. Each pass turns them 1/{sym} of a circle.\tPICTURE INTO FEEDBACK{n} lines lifted by another picture, fed back like a cameraaimed at its own monitor. Each pass turns them 1/{sym} of a circle.",
+    "TEXT AS TERRAIN{n} scan lines cross {page} that is never shown.Bright parts push the lines up off it. Kicks push further.\tPICTURE AS TERRAIN{n} scan lines cross another picture that is never shown.Bright parts push the lines up off it. Kicks push further.",
+    "SPECTRUM WATERFALLEach of {n} lines is the sound spectrum a moment ago: newestin front, low notes in the middle. Near ridges hide far ones.\tSPECTRUM OVER A PICTURE{n} scan lines lifted by another picture, with the last twoseconds of sound spectrum added. Near lines hide far ones.",
+    "NEGATIVE AND KEYERPolarity reversed: {n} scan lines of {src}, dark on alit field. A keyer prints these words flat in red behind.\tNEGATIVE AND KEYERPolarity reversed: {n} scan lines of {src}, dark on alit field. A keyer prints these words flat in red behind.",
+    "HIDDEN LINE, CLOSE UP{n} fat scan lines run top to bottom over {src}, veryclose. A black surface under the lines hides the ones behind.\tHIDDEN LINE, CLOSE UP{n} fat scan lines run top to bottom over {src}, veryclose. A black surface under the lines hides the ones behind.",
+    "MONITOR WALLOne scan-line signal on {tiles} tubes, no two set up alike:colour, brightness, hold, mirror, zoom and polarity differ.\tMONITOR WALLOne scan-line signal on {tiles} tubes, no two set up alike:colour, brightness, hold, mirror, zoom and polarity differ.",
+    "RING SCANThe scan is re-patched from rows to {n} rings over {src}.Each ring has its own hue. Brightness lifts it towards you.\tRING SCANThe scan is re-patched from rows to {n} rings over {src}.Each ring has its own hue. Brightness lifts it towards you.",
+    "DRUM SCAN{n} rings stacked into a cylinder, {page} wrapped round.Bright parts push the rings out. A black drum hides the back.\tDRUM SCAN{n} rings stacked into a cylinder, {page} wrapped round.Bright parts push the rings out. A black drum hides the back."
+   ]
+  },
+  "dwords": {
+   "type": "tableDAT",
+   "family": "DAT",
+   "pos": [
+    -700,
+    70
+   ],
+   "text": [
+    "0\t\t\t\t\t\t\t\t",
+    "0\t\t\t\t\t\t\t\t",
+    "4\tFEEDBACK\tOSCIL-LATORS\tCAMERAAT ITSMONITOR\tSINEWAVES\t\t\t\t",
+    "8\tSCANLINES\tBRIGHTLIFTSTHE LINE\tRUTT-ETRA\tTEXT ASTERRAIN\tKICK =TALLER\tSNARE =TEAR\tBASS =BEND\tNOTPIXELS",
+    "0\t\t\t\t\t\t\t\t",
+    "6\tKEYER\tNEGATIVE\tBLACKWIRES\tFLAT REDBEHIND\tPOLARITYREVERSED\tWORDSKEYEDIN\t\t",
+    "0\t\t\t\t\t\t\t\t",
+    "0\t\t\t\t\t\t\t\t",
+    "0\t\t\t\t\t\t\t\t",
+    "8\tSCANLINES\tDRUMSCAN\tRINGSNOTROWS\tWORDSPUSHOUT\tRUTT-ETRA\tSNARE =TEAR\tKICK =TALLER\tWRAPPEDROUND"
+   ]
+  },
+  "fbk": {
+   "type": "feedbackTOP",
+   "family": "TOP",
+   "pos": [
+    600,
+    200
+   ],
+   "inputs": [
+    [
+     "black"
+    ]
+   ],
+   "pars": {
+    "format": "rgba16float",
+    "top": "loop"
+   }
+  },
+  "fill": {
+   "type": "lightCOMP",
+   "family": "COMP",
+   "pos": [
+    -420,
+    -460
+   ],
+   "pars": {
+    "dimmer": 0.45,
+    "tx": -3.0,
+    "ty": -0.4,
+    "tz": 1.2
+   }
+  },
+  "fill/circle1": {
+   "type": "circlePOP",
+   "family": "POP",
+   "pos": [
+    780,
+    170
+   ],
+   "pars": {
+    "connectivity": "surface",
+    "scale": 0.2
+   }
+  },
+  "fill/circle_attenEnd": {
+   "type": "circlePOP",
+   "family": "POP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "bypass": {
+     "expr": "not parent().par.attenuated"
+    },
+    "connectivity": "surface",
+    "pageindex": 3,
+    "radx": 0.1,
+    "rady": 0.1,
+    "tz": {
+     "expr": "-parent().par.attenuationend"
+    }
+   }
+  },
+  "fill/circle_attenStart": {
+   "type": "circlePOP",
+   "family": "POP",
+   "pos": [
+    0,
+    120
+   ],
+   "pars": {
+    "bypass": {
+     "expr": "not parent().par.attenuated"
+    },
+    "connectivity": "surface",
+    "pageindex": 1,
+    "radx": 0.1,
+    "rady": 0.1,
+    "tz": {
+     "expr": "-parent().par.attenuationstart"
+    }
+   }
+  },
+  "fill/connectivity1": {
+   "type": "connectivityPOP",
+   "family": "POP",
+   "pos": [
+    780,
+    290
+   ],
+   "inputs": [
+    [
+     "fill/merge3"
+    ]
+   ],
+   "pars": {
+    "surftype": "lines"
+   }
+  },
+  "fill/copy1": {
+   "type": "copyPOP",
+   "family": "POP",
+   "pos": [
+    520,
+    670
+   ],
+   "inputs": [
+    [
+     "fill/tube_attenuated"
+    ]
+   ],
+   "pars": {
+    "ncy": 2,
+    "pageindex": 2,
+    "rx": 90.0
+   }
+  },
+  "fill/line_atten": {
+   "type": "linePOP",
+   "family": "POP",
+   "pos": [
+    0,
+    230
+   ],
+   "pars": {
+    "bypass": {
+     "expr": "not parent().par.attenuated"
+    },
+    "divs": 1,
+    "pageindex": 2,
+    "pt0posz": {
+     "expr": "-parent().par.attenuationstart"
+    },
+    "pt1posz": {
+     "expr": "-parent().par.attenuationend"
+    }
+   },
+   "custom_pars": [
+    "pt",
+    "pt0posx",
+    "pt0posy",
+    "pt0posz",
+    "pt1posx",
+    "pt1posy",
+    "pt1posz"
+   ]
+  },
+  "fill/merge1": {
+   "type": "mergePOP",
+   "family": "POP",
+   "pos": [
+    250,
+    500
+   ],
+   "inputs": [
+    [
+     "fill/rectangle1"
+    ],
+    [
+     "fill/tube_cone1"
+    ],
+    [
+     "fill/tube_cone2"
+    ],
+    [
+     "fill/primitive1"
+    ],
+    [
+     "fill/line_atten"
+    ],
+    [
+     "fill/circle_attenStart"
+    ],
+    [
+     "fill/circle_attenEnd"
+    ]
+   ],
+   "pars": {
+    "pageindex": 1
+   }
+  },
+  "fill/merge2": {
+   "type": "mergePOP",
+   "family": "POP",
+   "pos": [
+    950,
+    230
+   ],
+   "inputs": [
+    [
+     "fill/connectivity1"
+    ],
+    [
+     "fill/circle1"
+    ]
+   ]
+  },
+  "fill/merge3": {
+   "type": "mergePOP",
+   "family": "POP",
+   "pos": [
+    620,
+    290
+   ],
+   "inputs": [
+    [
+     "fill/pointgen1"
+    ],
+    [
+     "fill/transform1"
+    ]
+   ]
+  },
+  "fill/merge_pointLight": {
+   "type": "mergePOP",
+   "family": "POP",
+   "pos": [
+    760,
+    820
+   ],
+   "inputs": [
+    [
+     "fill/sphere1"
+    ],
+    [
+     "fill/primitive_quadrants"
+    ],
+    [
+     "fill/copy1"
+    ]
+   ],
+   "pars": {
+    "pageindex": 1
+   }
+  },
+  "fill/pointgen1": {
+   "type": "pointgeneratorPOP",
+   "family": "POP",
+   "pos": [
+    270,
+    290
+   ],
+   "pars": {
+    "numpoints": 17,
+    "pageindex": 1,
+    "shape": "circle",
+    "sx": 0.2,
+    "sy": 0.2,
+    "sz": 0.2
+   }
+  },
+  "fill/primitive1": {
+   "type": "primitivePOP",
+   "family": "POP",
+   "pos": [
+    0,
+    390
+   ],
+   "pars": {
+    "addpts": true,
+    "method": "pattern",
+    "pageindex": 1,
+    "prim0pattern": "0 1 0 2 0 3 0 4",
+    "prim0type": "lines",
+    "pt1posx": {
+     "expr": "mod.math.sin(mod.math.radians(parent().par.coneangle/2)) + mod.math.sin(mod.math.radians(parent().par.conedelta/2))"
+    },
+    "pt1posz": {
+     "expr": "-op('tube_cone1').par.height"
+    },
+    "pt2posx": {
+     "expr": "mod.math.sin(-mod.math.radians(parent().par.coneangle/2)) - mod.math.sin(mod.math.radians(parent().par.conedelta/2))"
+    },
+    "pt2posz": {
+     "expr": "0-op('tube_cone1').par.height"
+    },
+    "pt3posy": {
+     "expr": "-mod.math.sin(-mod.math.radians(parent().par.coneangle/2)) - mod.math.sin(mod.math.radians(parent().par.conedelta/2))"
+    },
+    "pt3posz": {
+     "expr": "-op('tube_cone1').par.height"
+    },
+    "pt4posy": {
+     "expr": "mod.math.sin(-mod.math.radians(parent().par.coneangle/2)) - mod.math.sin(mod.math.radians(parent().par.conedelta/2))"
+    },
+    "pt4posz": {
+     "expr": "-op('tube_cone1').par.height"
+    }
+   },
+   "custom_pars": [
+    "pt",
+    "pt0posx",
+    "pt0posy",
+    "pt0posz",
+    "pt1posx",
+    "pt1posy",
+    "pt1posz",
+    "pt2posx",
+    "pt2posy",
+    "pt2posz",
+    "pt3posx",
+    "pt3posy",
+    "pt3posz",
+    "pt4posx",
+    "pt4posy",
+    "pt4posz"
+   ]
+  },
+  "fill/primitive_cross": {
+   "type": "primitivePOP",
+   "family": "POP",
+   "pos": [
+    520,
+    1000
+   ],
+   "pars": {
+    "addpts": true,
+    "method": "set",
+    "pageindex": 1,
+    "pt0posx": -0.2,
+    "pt1posx": 0.2,
+    "pt2posy": -0.2,
+    "pt3posy": 0.2,
+    "pt4posz": -0.2,
+    "pt5posz": 0.2,
+    "setprimtype": "lines"
+   },
+   "custom_pars": [
+    "pt",
+    "pt0posx",
+    "pt0posy",
+    "pt0posz",
+    "pt1posx",
+    "pt1posy",
+    "pt1posz",
+    "pt2posx",
+    "pt2posy",
+    "pt2posz",
+    "pt3posx",
+    "pt3posy",
+    "pt3posz",
+    "pt4posx",
+    "pt4posy",
+    "pt4posz",
+    "pt5posx",
+    "pt5posy",
+    "pt5posz"
+   ]
+  },
+  "fill/primitive_quadrants": {
+   "type": "primitivePOP",
+   "family": "POP",
+   "pos": [
+    520,
+    780
+   ],
+   "pars": {
+    "addpts": true,
+    "method": "set",
+    "pageindex": 1,
+    "pt0posx": 0.07,
+    "pt0posy": 0.07,
+    "pt0posz": 0.07,
+    "pt1posx": -0.07,
+    "pt1posy": -0.07,
+    "pt1posz": -0.07,
+    "pt2posx": -0.07,
+    "pt2posy": 0.07,
+    "pt2posz": 0.07,
+    "pt3posx": 0.07,
+    "pt3posy": -0.07,
+    "pt3posz": -0.07,
+    "pt4posx": 0.07,
+    "pt4posy": 0.07,
+    "pt4posz": -0.07,
+    "pt5posx": -0.07,
+    "pt5posy": -0.07,
+    "pt5posz": 0.07,
+    "pt6posx": -0.07,
+    "pt6posy": 0.07,
+    "pt6posz": -0.07,
+    "pt7posx": 0.07,
+    "pt7posy": -0.07,
+    "pt7posz": 0.07,
+    "setprimtype": "lines"
+   },
+   "custom_pars": [
+    "pt",
+    "pt0posx",
+    "pt0posy",
+    "pt0posz",
+    "pt1posx",
+    "pt1posy",
+    "pt1posz",
+    "pt2posx",
+    "pt2posy",
+    "pt2posz",
+    "pt3posx",
+    "pt3posy",
+    "pt3posz",
+    "pt4posx",
+    "pt4posy",
+    "pt4posz",
+    "pt5posx",
+    "pt5posy",
+    "pt5posz",
+    "pt6posx",
+    "pt6posy",
+    "pt6posz",
+    "pt7posx",
+    "pt7posy",
+    "pt7posz"
+   ]
+  },
+  "fill/rectangle1": {
+   "type": "rectanglePOP",
+   "family": "POP",
+   "pos": [
+    0,
+    730
+   ],
+   "pars": {
+    "anchorv": 0.0,
+    "sizeu": 0.02,
+    "sizev": 0.5
+   }
+  },
+  "fill/sphere1": {
+   "type": "spherePOP",
+   "family": "POP",
+   "pos": [
+    520,
+    890
+   ],
+   "pars": {
+    "freq": 3,
+    "pageindex": 2,
+    "radx": 0.05,
+    "rady": 0.05,
+    "radz": 0.05
+   }
+  },
+  "fill/switch_lightType": {
+   "type": "switchPOP",
+   "family": "POP",
+   "pos": [
+    1140,
+    500
+   ],
+   "inputs": [
+    [
+     "fill/merge_pointLight"
+    ],
+    [
+     "fill/merge1"
+    ],
+    [
+     "fill/merge2"
+    ]
+   ],
+   "pars": {
+    "index": {
+     "expr": "parent().par.lighttype.menuIndex"
+    }
+   }
+  },
+  "fill/transform1": {
+   "type": "transformPOP",
+   "family": "POP",
+   "pos": [
+    450,
+    370
+   ],
+   "inputs": [
+    [
+     "fill/pointgen1"
+    ]
+   ],
+   "pars": {
+    "tz": 0.8
+   }
+  },
+  "fill/tube_attenuated": {
+   "type": "tubePOP",
+   "family": "POP",
+   "pos": [
+    368,
+    673
+   ],
+   "pars": {
+    "bypass": {
+     "expr": "not parent().par.attenuated"
+    },
+    "height": 0.0,
+    "orient": "z",
+    "radx": {
+     "expr": "parent().par.attenuationend"
+    },
+    "rady": {
+     "expr": "parent().par.attenuationstart"
+    },
+    "rows": 2,
+    "surftype": "rows"
+   }
+  },
+  "fill/tube_cone1": {
+   "type": "tubePOP",
+   "family": "POP",
+   "pos": [
+    0,
+    620
+   ],
+   "pars": {
+    "height": {
+     "expr": "mod.math.cos(mod.math.radians(parent().par.coneangle/2))"
+    },
+    "orient": "z",
+    "radx": {
+     "expr": "mod.math.sin(mod.math.radians(parent().par.coneangle/2))"
+    },
+    "rady": 0.01,
+    "rows": 2,
+    "tz": {
+     "expr": "-me.par.height*0.5"
+    }
+   }
+  },
+  "fill/tube_cone2": {
+   "type": "tubePOP",
+   "family": "POP",
+   "pos": [
+    0,
+    500
+   ],
+   "pars": {
+    "height": 0.0,
+    "orient": "z",
+    "radx": {
+     "expr": "mod.math.sin(mod.math.radians(parent().par.coneangle/2)) + mod.math.sin(mod.math.radians(parent().par.conedelta/2))"
+    },
+    "rady": {
+     "expr": "mod.math.sin(mod.math.radians(parent().par.coneangle/2))"
+    },
+    "rows": 2,
+    "tz": {
+     "expr": "-op('tube_cone1').par.height"
+    }
+   }
+  },
+  "fin": {
+   "type": "switchTOP",
+   "family": "TOP",
+   "pos": [
+    1110,
+    100
+   ],
+   "inputs": [
+    [
+     "crt"
+    ],
+    [
+     "title_b"
+    ]
+   ],
+   "pars": {
+    "index": {
+     "expr": "1 if parent().par.Describe else 0"
+    }
+   }
+  },
+  "glow": {
+   "type": "blurTOP",
+   "family": "TOP",
+   "pos": [
+    880,
+    100
+   ],
+   "inputs": [
+    [
+     "loop"
+    ]
+   ],
+   "pars": {
+    "outputresolution": "quarter",
+    "size": 9
+   }
+  },
+  "hub": {
+   "type": "selectCHOP",
+   "family": "CHOP",
+   "pos": [
+    -400,
+    200
+   ],
+   "pars": {
+    "chops": "/project1/sw_hub/feed"
+   }
+  },
+  "insel": {
+   "type": "selectTOP",
+   "family": "TOP",
+   "pos": [
+    -250,
+    80
+   ],
+   "pars": {
+    "outputresolution": "custom",
+    "resolutionh": 360,
+    "resolutionw": 640,
+    "top": {
+     "expr": "parent().par.Input.eval() if op('ctl')['inp'] > 0.5 else 'wblack'"
+    }
+   }
+  },
+  "key": {
+   "type": "lightCOMP",
+   "family": "COMP",
+   "pos": [
+    -550,
+    -460
+   ],
+   "pars": {
+    "dimmer": 2.2,
+    "tx": 2.2,
+    "ty": 2.4,
+    "tz": 2.6
+   }
+  },
+  "key/circle1": {
+   "type": "circlePOP",
+   "family": "POP",
+   "pos": [
+    780,
+    170
+   ],
+   "pars": {
+    "connectivity": "surface",
+    "scale": 0.2
+   }
+  },
+  "key/circle_attenEnd": {
+   "type": "circlePOP",
+   "family": "POP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "bypass": {
+     "expr": "not parent().par.attenuated"
+    },
+    "connectivity": "surface",
+    "pageindex": 3,
+    "radx": 0.1,
+    "rady": 0.1,
+    "tz": {
+     "expr": "-parent().par.attenuationend"
+    }
+   }
+  },
+  "key/circle_attenStart": {
+   "type": "circlePOP",
+   "family": "POP",
+   "pos": [
+    0,
+    120
+   ],
+   "pars": {
+    "bypass": {
+     "expr": "not parent().par.attenuated"
+    },
+    "connectivity": "surface",
+    "pageindex": 1,
+    "radx": 0.1,
+    "rady": 0.1,
+    "tz": {
+     "expr": "-parent().par.attenuationstart"
+    }
+   }
+  },
+  "key/connectivity1": {
+   "type": "connectivityPOP",
+   "family": "POP",
+   "pos": [
+    780,
+    290
+   ],
+   "inputs": [
+    [
+     "key/merge3"
+    ]
+   ],
+   "pars": {
+    "surftype": "lines"
+   }
+  },
+  "key/copy1": {
+   "type": "copyPOP",
+   "family": "POP",
+   "pos": [
+    520,
+    670
+   ],
+   "inputs": [
+    [
+     "key/tube_attenuated"
+    ]
+   ],
+   "pars": {
+    "ncy": 2,
+    "pageindex": 2,
+    "rx": 90.0
+   }
+  },
+  "key/line_atten": {
+   "type": "linePOP",
+   "family": "POP",
+   "pos": [
+    0,
+    230
+   ],
+   "pars": {
+    "bypass": {
+     "expr": "not parent().par.attenuated"
+    },
+    "divs": 1,
+    "pageindex": 2,
+    "pt0posz": {
+     "expr": "-parent().par.attenuationstart"
+    },
+    "pt1posz": {
+     "expr": "-parent().par.attenuationend"
+    }
+   },
+   "custom_pars": [
+    "pt",
+    "pt0posx",
+    "pt0posy",
+    "pt0posz",
+    "pt1posx",
+    "pt1posy",
+    "pt1posz"
+   ]
+  },
+  "key/merge1": {
+   "type": "mergePOP",
+   "family": "POP",
+   "pos": [
+    250,
+    500
+   ],
+   "inputs": [
+    [
+     "key/rectangle1"
+    ],
+    [
+     "key/tube_cone1"
+    ],
+    [
+     "key/tube_cone2"
+    ],
+    [
+     "key/primitive1"
+    ],
+    [
+     "key/line_atten"
+    ],
+    [
+     "key/circle_attenStart"
+    ],
+    [
+     "key/circle_attenEnd"
+    ]
+   ],
+   "pars": {
+    "pageindex": 1
+   }
+  },
+  "key/merge2": {
+   "type": "mergePOP",
+   "family": "POP",
+   "pos": [
+    950,
+    230
+   ],
+   "inputs": [
+    [
+     "key/connectivity1"
+    ],
+    [
+     "key/circle1"
+    ]
+   ]
+  },
+  "key/merge3": {
+   "type": "mergePOP",
+   "family": "POP",
+   "pos": [
+    620,
+    290
+   ],
+   "inputs": [
+    [
+     "key/pointgen1"
+    ],
+    [
+     "key/transform1"
+    ]
+   ]
+  },
+  "key/merge_pointLight": {
+   "type": "mergePOP",
+   "family": "POP",
+   "pos": [
+    760,
+    820
+   ],
+   "inputs": [
+    [
+     "key/sphere1"
+    ],
+    [
+     "key/primitive_quadrants"
+    ],
+    [
+     "key/copy1"
+    ]
+   ],
+   "pars": {
+    "pageindex": 1
+   }
+  },
+  "key/pointgen1": {
+   "type": "pointgeneratorPOP",
+   "family": "POP",
+   "pos": [
+    270,
+    290
+   ],
+   "pars": {
+    "numpoints": 17,
+    "pageindex": 1,
+    "shape": "circle",
+    "sx": 0.2,
+    "sy": 0.2,
+    "sz": 0.2
+   }
+  },
+  "key/primitive1": {
+   "type": "primitivePOP",
+   "family": "POP",
+   "pos": [
+    0,
+    390
+   ],
+   "pars": {
+    "addpts": true,
+    "method": "pattern",
+    "pageindex": 1,
+    "prim0pattern": "0 1 0 2 0 3 0 4",
+    "prim0type": "lines",
+    "pt1posx": {
+     "expr": "mod.math.sin(mod.math.radians(parent().par.coneangle/2)) + mod.math.sin(mod.math.radians(parent().par.conedelta/2))"
+    },
+    "pt1posz": {
+     "expr": "-op('tube_cone1').par.height"
+    },
+    "pt2posx": {
+     "expr": "mod.math.sin(-mod.math.radians(parent().par.coneangle/2)) - mod.math.sin(mod.math.radians(parent().par.conedelta/2))"
+    },
+    "pt2posz": {
+     "expr": "0-op('tube_cone1').par.height"
+    },
+    "pt3posy": {
+     "expr": "-mod.math.sin(-mod.math.radians(parent().par.coneangle/2)) - mod.math.sin(mod.math.radians(parent().par.conedelta/2))"
+    },
+    "pt3posz": {
+     "expr": "-op('tube_cone1').par.height"
+    },
+    "pt4posy": {
+     "expr": "mod.math.sin(-mod.math.radians(parent().par.coneangle/2)) - mod.math.sin(mod.math.radians(parent().par.conedelta/2))"
+    },
+    "pt4posz": {
+     "expr": "-op('tube_cone1').par.height"
+    }
+   },
+   "custom_pars": [
+    "pt",
+    "pt0posx",
+    "pt0posy",
+    "pt0posz",
+    "pt1posx",
+    "pt1posy",
+    "pt1posz",
+    "pt2posx",
+    "pt2posy",
+    "pt2posz",
+    "pt3posx",
+    "pt3posy",
+    "pt3posz",
+    "pt4posx",
+    "pt4posy",
+    "pt4posz"
+   ]
+  },
+  "key/primitive_cross": {
+   "type": "primitivePOP",
+   "family": "POP",
+   "pos": [
+    520,
+    1000
+   ],
+   "pars": {
+    "addpts": true,
+    "method": "set",
+    "pageindex": 1,
+    "pt0posx": -0.2,
+    "pt1posx": 0.2,
+    "pt2posy": -0.2,
+    "pt3posy": 0.2,
+    "pt4posz": -0.2,
+    "pt5posz": 0.2,
+    "setprimtype": "lines"
+   },
+   "custom_pars": [
+    "pt",
+    "pt0posx",
+    "pt0posy",
+    "pt0posz",
+    "pt1posx",
+    "pt1posy",
+    "pt1posz",
+    "pt2posx",
+    "pt2posy",
+    "pt2posz",
+    "pt3posx",
+    "pt3posy",
+    "pt3posz",
+    "pt4posx",
+    "pt4posy",
+    "pt4posz",
+    "pt5posx",
+    "pt5posy",
+    "pt5posz"
+   ]
+  },
+  "key/primitive_quadrants": {
+   "type": "primitivePOP",
+   "family": "POP",
+   "pos": [
+    520,
+    780
+   ],
+   "pars": {
+    "addpts": true,
+    "method": "set",
+    "pageindex": 1,
+    "pt0posx": 0.07,
+    "pt0posy": 0.07,
+    "pt0posz": 0.07,
+    "pt1posx": -0.07,
+    "pt1posy": -0.07,
+    "pt1posz": -0.07,
+    "pt2posx": -0.07,
+    "pt2posy": 0.07,
+    "pt2posz": 0.07,
+    "pt3posx": 0.07,
+    "pt3posy": -0.07,
+    "pt3posz": -0.07,
+    "pt4posx": 0.07,
+    "pt4posy": 0.07,
+    "pt4posz": -0.07,
+    "pt5posx": -0.07,
+    "pt5posy": -0.07,
+    "pt5posz": 0.07,
+    "pt6posx": -0.07,
+    "pt6posy": 0.07,
+    "pt6posz": -0.07,
+    "pt7posx": 0.07,
+    "pt7posy": -0.07,
+    "pt7posz": 0.07,
+    "setprimtype": "lines"
+   },
+   "custom_pars": [
+    "pt",
+    "pt0posx",
+    "pt0posy",
+    "pt0posz",
+    "pt1posx",
+    "pt1posy",
+    "pt1posz",
+    "pt2posx",
+    "pt2posy",
+    "pt2posz",
+    "pt3posx",
+    "pt3posy",
+    "pt3posz",
+    "pt4posx",
+    "pt4posy",
+    "pt4posz",
+    "pt5posx",
+    "pt5posy",
+    "pt5posz",
+    "pt6posx",
+    "pt6posy",
+    "pt6posz",
+    "pt7posx",
+    "pt7posy",
+    "pt7posz"
+   ]
+  },
+  "key/rectangle1": {
+   "type": "rectanglePOP",
+   "family": "POP",
+   "pos": [
+    0,
+    730
+   ],
+   "pars": {
+    "anchorv": 0.0,
+    "sizeu": 0.02,
+    "sizev": 0.5
+   }
+  },
+  "key/sphere1": {
+   "type": "spherePOP",
+   "family": "POP",
+   "pos": [
+    520,
+    890
+   ],
+   "pars": {
+    "freq": 3,
+    "pageindex": 2,
+    "radx": 0.05,
+    "rady": 0.05,
+    "radz": 0.05
+   }
+  },
+  "key/switch_lightType": {
+   "type": "switchPOP",
+   "family": "POP",
+   "pos": [
+    1140,
+    500
+   ],
+   "inputs": [
+    [
+     "key/merge_pointLight"
+    ],
+    [
+     "key/merge1"
+    ],
+    [
+     "key/merge2"
+    ]
+   ],
+   "pars": {
+    "index": {
+     "expr": "parent().par.lighttype.menuIndex"
+    }
+   }
+  },
+  "key/transform1": {
+   "type": "transformPOP",
+   "family": "POP",
+   "pos": [
+    450,
+    370
+   ],
+   "inputs": [
+    [
+     "key/pointgen1"
+    ]
+   ],
+   "pars": {
+    "tz": 0.8
+   }
+  },
+  "key/tube_attenuated": {
+   "type": "tubePOP",
+   "family": "POP",
+   "pos": [
+    368,
+    673
+   ],
+   "pars": {
+    "bypass": {
+     "expr": "not parent().par.attenuated"
+    },
+    "height": 0.0,
+    "orient": "z",
+    "radx": {
+     "expr": "parent().par.attenuationend"
+    },
+    "rady": {
+     "expr": "parent().par.attenuationstart"
+    },
+    "rows": 2,
+    "surftype": "rows"
+   }
+  },
+  "key/tube_cone1": {
+   "type": "tubePOP",
+   "family": "POP",
+   "pos": [
+    0,
+    620
+   ],
+   "pars": {
+    "height": {
+     "expr": "mod.math.cos(mod.math.radians(parent().par.coneangle/2))"
+    },
+    "orient": "z",
+    "radx": {
+     "expr": "mod.math.sin(mod.math.radians(parent().par.coneangle/2))"
+    },
+    "rady": 0.01,
+    "rows": 2,
+    "tz": {
+     "expr": "-me.par.height*0.5"
+    }
+   }
+  },
+  "key/tube_cone2": {
+   "type": "tubePOP",
+   "family": "POP",
+   "pos": [
+    0,
+    500
+   ],
+   "pars": {
+    "height": 0.0,
+    "orient": "z",
+    "radx": {
+     "expr": "mod.math.sin(mod.math.radians(parent().par.coneangle/2)) + mod.math.sin(mod.math.radians(parent().par.conedelta/2))"
+    },
+    "rady": {
+     "expr": "mod.math.sin(mod.math.radians(parent().par.coneangle/2))"
+    },
+    "rows": 2,
+    "tz": {
+     "expr": "-op('tube_cone1').par.height"
+    }
+   }
+  },
+  "label": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    600,
+    330
+   ],
+   "pars": {
+    "fontautosize": "fitiffat",
+    "fontfile": {
+     "expr": "mod.paths.font('archivo')"
+    },
+    "fontsizex": 24.0,
+    "outputresolution": "custom",
+    "resmult": false,
+    "resolutionh": 132,
+    "resolutionw": 1280,
+    "text": {
+     "expr": "op('dlabel')[int(op('shot')['take']) % 10, int(op('ctl')['inp'])].val.format(n=int(op('ctl')['lines']), sym=int(op('ctl')['sym']), tiles=int(op('ctl')['wall']) ** 2, src=('another picture' if op('ctl')['inp'] > 0.5 else 'a 3D model'), page=('another picture' if op('ctl')['inp'] > 0.5 else 'a page of words')) if parent().par.Describe else ''"
+    }
+   }
+  },
+  "line_mat": {
+   "type": "glslMAT",
+   "family": "MAT",
+   "pos": [
+    200,
+    -200
+   ],
+   "pars": {
+    "blending": true,
+    "cullface": "neither",
+    "depthwriting": false,
+    "destblend": "one",
+    "pdat": "raster_px",
+    "sampler0extendu": "zero",
+    "sampler0extendv": "zero",
+    "sampler0name": "sSrc",
+    "sampler0top": "/project1/sc_rutt_etra/srcblur",
+    "sampler1extendu": "hold",
+    "sampler1name": "sSpec",
+    "sampler1top": "/project1/sc_rutt_etra/spectrum",
+    "sampler2extendu": "zero",
+    "sampler2extendv": "zero",
+    "sampler2name": "sIn",
+    "sampler2top": "/project1/sc_rutt_etra/insel",
+    "vdat": "raster_vs",
+    "vec0name": "uRas",
+    "vec0valuew": 0.0,
+    "vec0valuex": {
+     "expr": "op('ctl')['lines']"
+    },
+    "vec0valuey": 384.0,
+    "vec0valuez": {
+     "expr": "float(op('tk')['width'])"
+    },
+    "vec1name": "uDisp",
+    "vec1valuew": {
+     "expr": "op('ctl')['arr']"
+    },
+    "vec1valuex": {
+     "expr": "op('ctl')['dy']"
+    },
+    "vec1valuey": {
+     "expr": "op('ctl')['dz']"
+    },
+    "vec1valuez": {
+     "expr": "float(op('tk')['spec'])"
+    },
+    "vec2name": "uWob",
+    "vec2valuew": {
+     "expr": "float(op('tk')['osc'])"
+    },
+    "vec2valuex": {
+     "expr": "op('ctl')['bend']"
+    },
+    "vec2valuey": {
+     "expr": "op('ctl')['tear'] * 0.04"
+    },
+    "vec2valuez": {
+     "expr": "op('hub')['evolve']"
+    },
+    "vec3name": "uSrcXf",
+    "vec3valuew": {
+     "expr": "float(op('tk')['vert'])"
+    },
+    "vec3valuex": {
+     "expr": "float(op('tk')['iz']) if op('ctl')['inp'] > 0.5 else float(op('tk')['szoom'])"
+    },
+    "vec3valuey": {
+     "expr": "0.0 if op('ctl')['inp'] > 0.5 else float(op('tk')['sox'])"
+    },
+    "vec3valuez": {
+     "expr": "0.0 if op('ctl')['inp'] > 0.5 else float(op('tk')['soy'])"
+    },
+    "vec4name": "uGeo",
+    "vec4valuew": {
+     "expr": "float(op('shot')['seed'])"
+    },
+    "vec4valuex": 1.7778,
+    "vec4valuey": {
+     "expr": "float(op('tk')['rh'])"
+    },
+    "vec4valuez": {
+     "expr": "float(op('tk')['dist'])"
+    },
+    "vec5name": "uCol",
+    "vec5valuew": {
+     "expr": "float(op('tk')['gain']) * (0.85 + 0.3 * op('ctl')['en'])"
+    },
+    "vec5valuex": {
+     "expr": "float(op('tk')['cr'])"
+    },
+    "vec5valuey": {
+     "expr": "float(op('tk')['cg'])"
+    },
+    "vec5valuez": {
+     "expr": "float(op('tk')['cb'])"
+    },
+    "vec6name": "uCol2",
+    "vec6valuew": {
+     "expr": "op('ctl')['flash']"
+    },
+    "vec6valuex": {
+     "expr": "float(op('tk')['hr'])"
+    },
+    "vec6valuey": {
+     "expr": "float(op('tk')['hg'])"
+    },
+    "vec6valuez": {
+     "expr": "float(op('tk')['hb'])"
+    },
+    "vec7name": "uHue",
+    "vec7valuew": 0.0,
+    "vec7valuex": {
+     "expr": "float(op('tk')['hspread'])"
+    },
+    "vec7valuey": {
+     "expr": "float(op('tk')['hoff']) + ((float(op('shot')['seed']) * 1.9) % 1.0) + 0.05 * float(op('hub')['evolve'])"
+    },
+    "vec7valuez": {
+     "expr": "float(op('tk')['hamt'])"
+    },
+    "vec8name": "uInt",
+    "vec8valuew": {
+     "expr": "op('hub')['evolve']"
+    },
+    "vec8valuex": {
+     "expr": "float(op('tk')['base'])"
+    },
+    "vec8valuey": {
+     "expr": "float(op('tk')['lumi'])"
+    },
+    "vec8valuez": {
+     "expr": "op('ctl')['brk']"
+    },
+    "vec9name": "uIn",
+    "vec9valuew": 0.0,
+    "vec9valuex": {
+     "expr": "float(op('tk')['icol']) * op('ctl')['inp']"
+    },
+    "vec9valuey": 0.0,
+    "vec9valuez": 0.0
+   }
+  },
+  "line_mat_info": {
+   "type": "infoDAT",
+   "family": "DAT",
+   "pos": [
+    320,
+    -120
+   ],
+   "pars": {
+    "language": "text",
+    "op": "line_mat"
+   }
+  },
+  "line_mat_pixel": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    160,
+    -120
+   ],
+   "pars": {
+    "extension": "frag",
+    "language": "glsl"
+   },
+   "text": [
+    "// Example Pixel Shader",
+    "",
+    "// uniform vec4 exampleUniform;",
+    "",
+    "out vec4 oFragColor;",
+    "void main()",
+    "{",
+    "\tTDCheckDiscard();",
+    "\tvec4 color = vec4(1.0);",
+    "\tTDAlphaTest(color.a);",
+    "\toFragColor = TDOutputSwizzle(color);",
+    "}",
+    ""
+   ]
+  },
+  "line_mat_vertex": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    0,
+    -120
+   ],
+   "pars": {
+    "extension": "vert",
+    "language": "glsl"
+   },
+   "text": [
+    "// Example Vertex Shader",
+    "",
+    "void main() ",
+    "{",
+    "\tvec3 pos = TDPos();",
+    "\tvec4 worldSpacePos = TDDeform(pos);",
+    "\tgl_Position = TDWorldToProj(worldSpacePos);",
+    "#ifndef TD_PICKING_ACTIVE",
+    "#else // TD_PICKING_ACTIVE",
+    "\t// This will automatically write out the nessessary values",
+    "\t// for this shader to work with picking.",
+    "\t// See the documentation if you want to write custom values for picking.",
+    "\tTDWritePickingValues();",
+    "#endif // TD_PICKING_ACTIVE",
+    "}",
+    ""
+   ]
+  },
+  "lines": {
+   "type": "geometryCOMP",
+   "family": "COMP",
+   "pos": [
+    200,
+    -460
+   ],
+   "pars": {
+    "drawpriority": -10.0,
+    "instancecountmode": "manual",
+    "instancing": true,
+    "material": "/project1/sc_rutt_etra/line_mat",
+    "numinstances": {
+     "expr": "int(op('ctl')['lines'])"
+    },
+    "rx": {
+     "expr": "op('ctl')['rx']"
+    },
+    "ry": {
+     "expr": "op('ctl')['ry']"
+    },
+    "rz": {
+     "expr": "op('ctl')['rz']"
+    }
+   }
+  },
+  "lines/ribbon": {
+   "type": "gridSOP",
+   "family": "SOP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "cols": 385,
+    "rows": 2
+   }
+  },
+  "local": {
+   "type": "baseCOMP",
+   "family": "COMP",
+   "pos": [
+    -400,
+    460
+   ]
+  },
+  "local/modules": {
+   "type": "baseCOMP",
+   "family": "COMP",
+   "pos": [
+    0,
+    0
+   ]
+  },
+  "local/modules/fit": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.here('fit_module.py')"
+    },
+    "language": "text",
+    "syncfile": true
+   },
+   "text_file": "experiments/sc_rutt_etra/fit_module.py"
+  },
+  "local/modules/paths": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "file": {
+     "expr": "project.folder.replace(chr(92), '/') + '/experiments/sw_hub/paths_module.py'"
+    },
+    "language": "text",
+    "syncfile": true
+   },
+   "text_file": "experiments/sw_hub/paths_module.py"
+  },
+  "loop": {
+   "type": "glslTOP",
+   "family": "TOP",
+   "pos": [
+    740,
+    -60
+   ],
+   "inputs": [
+    [
+     "render"
+    ],
+    [
+     "fbk"
+    ]
+   ],
+   "pars": {
+    "computedat": "loop_compute",
+    "format": "rgba16float",
+    "inputextenduv": "mirror",
+    "outputresolution": "custom",
+    "pixeldat": "loop_px",
+    "resolutionh": 720,
+    "resolutionw": 1280,
+    "vec0name": "uFb",
+    "vec0valuew": {
+     "expr": "op('ctl')['fbhue']"
+    },
+    "vec0valuex": {
+     "expr": "op('ctl')['fbgain']"
+    },
+    "vec0valuey": {
+     "expr": "op('ctl')['fbrot']"
+    },
+    "vec0valuez": {
+     "expr": "op('ctl')['fbzoom']"
+    },
+    "vec1name": "uFb2",
+    "vec1valuew": {
+     "expr": "float(op('tk')['fbmirror'])"
+    },
+    "vec1valuex": {
+     "expr": "float(op('tk')['fbcut'])"
+    },
+    "vec1valuey": 0.0,
+    "vec1valuez": {
+     "expr": "float(op('tk')['fbin'])"
+    }
+   }
+  },
+  "loop_info": {
+   "type": "infoDAT",
+   "family": "DAT",
+   "pos": [
+    160,
+    -120
+   ],
+   "pars": {
+    "language": "text",
+    "op": "loop"
+   }
+  },
+  "loop_px": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    740,
+    -190
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.here('shaders/loop.frag')"
+    },
+    "language": "text",
+    "syncfile": true
+   },
+   "text_file": "experiments/sc_rutt_etra/shaders/loop.frag"
+  },
+  "m0": {
+   "type": "geometryCOMP",
+   "family": "COMP",
+   "pos": [
+    -550,
+    -330
+   ],
+   "pars": {
+    "material": "/project1/sc_rutt_etra/m0/mat",
+    "render": {
+     "expr": "int(op('ctl')['model']) == 0"
+    },
+    "rx": {
+     "expr": "8.0 * math.sin(float(op('hub')['evolve']) * 0.5)"
+    },
+    "ry": {
+     "expr": "op('ctl')['myaw']"
+    },
+    "scale": {
+     "expr": "float(op('tk')['mscale'])"
+    },
+    "ty": {
+     "expr": "float(op('tk')['mty'])"
+    }
+   }
+  },
+  "m0/fit": {
+   "type": "transformPOP",
+   "family": "POP",
+   "pos": [
+    0,
+    0
+   ],
+   "inputs": [
+    [
+     "m0/mesh"
+    ]
+   ],
+   "pars": {
+    "px": {
+     "expr": "mod.fit.center(mod.paths.model_file('amphora'), 0)"
+    },
+    "py": {
+     "expr": "mod.fit.center(mod.paths.model_file('amphora'), 1)"
+    },
+    "pz": {
+     "expr": "mod.fit.center(mod.paths.model_file('amphora'), 2)"
+    },
+    "scale": {
+     "expr": "mod.fit.scale(mod.paths.model_file('amphora'))"
+    },
+    "tx": {
+     "expr": "0.0 - mod.fit.center(mod.paths.model_file('amphora'), 0)"
+    },
+    "ty": {
+     "expr": "0.0 - mod.fit.center(mod.paths.model_file('amphora'), 1)"
+    },
+    "tz": {
+     "expr": "0.0 - mod.fit.center(mod.paths.model_file('amphora'), 2)"
+    }
+   }
+  },
+  "m0/mat": {
+   "type": "pbrMAT",
+   "family": "MAT",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "basecolormap": {
+     "expr": "'tex' if mod.paths.model_texture('amphora') else ''"
+    },
+    "metallic": 0.0,
+    "roughness": 0.6
+   }
+  },
+  "m0/mesh": {
+   "type": "fileinPOP",
+   "family": "POP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.model_file('amphora')"
+    }
+   }
+  },
+  "m0/pick": {
+   "type": "switchPOP",
+   "family": "POP",
+   "pos": [
+    0,
+    0
+   ],
+   "inputs": [
+    [
+     "m0/mesh"
+    ],
+    [
+     "m0/fit"
+    ]
+   ],
+   "pars": {
+    "index": {
+     "expr": "0 if mod.paths.have('models/amphora/model.obj') else 1"
+    }
+   }
+  },
+  "m0/tex": {
+   "type": "moviefileinTOP",
+   "family": "TOP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.asset('models/amphora/basecolor.png', mod.paths.samples() + '/Map/GreyWedge.tif')"
+    }
+   }
+  },
+  "m1": {
+   "type": "geometryCOMP",
+   "family": "COMP",
+   "pos": [
+    -420,
+    -330
+   ],
+   "pars": {
+    "material": "/project1/sc_rutt_etra/m1/mat",
+    "render": {
+     "expr": "int(op('ctl')['model']) == 1"
+    },
+    "rx": {
+     "expr": "8.0 * math.sin(float(op('hub')['evolve']) * 0.5)"
+    },
+    "ry": {
+     "expr": "op('ctl')['myaw']"
+    },
+    "scale": {
+     "expr": "float(op('tk')['mscale'])"
+    },
+    "ty": {
+     "expr": "float(op('tk')['mty'])"
+    }
+   }
+  },
+  "m1/fit": {
+   "type": "transformPOP",
+   "family": "POP",
+   "pos": [
+    0,
+    0
+   ],
+   "inputs": [
+    [
+     "m1/mesh"
+    ]
+   ],
+   "pars": {
+    "px": {
+     "expr": "mod.fit.center(mod.paths.model_file('gramophone'), 0)"
+    },
+    "py": {
+     "expr": "mod.fit.center(mod.paths.model_file('gramophone'), 1)"
+    },
+    "pz": {
+     "expr": "mod.fit.center(mod.paths.model_file('gramophone'), 2)"
+    },
+    "rx": 28.0,
+    "scale": {
+     "expr": "mod.fit.scale(mod.paths.model_file('gramophone'))"
+    },
+    "tx": {
+     "expr": "0.0 - mod.fit.center(mod.paths.model_file('gramophone'), 0)"
+    },
+    "ty": {
+     "expr": "0.0 - mod.fit.center(mod.paths.model_file('gramophone'), 1)"
+    },
+    "tz": {
+     "expr": "0.0 - mod.fit.center(mod.paths.model_file('gramophone'), 2)"
+    }
+   }
+  },
+  "m1/mat": {
+   "type": "pbrMAT",
+   "family": "MAT",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "basecolormap": {
+     "expr": "'tex' if mod.paths.model_texture('gramophone') else ''"
+    },
+    "metallic": 0.0,
+    "roughness": 0.6
+   }
+  },
+  "m1/mesh": {
+   "type": "fileinPOP",
+   "family": "POP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.model_file('gramophone')"
+    }
+   }
+  },
+  "m1/pick": {
+   "type": "switchPOP",
+   "family": "POP",
+   "pos": [
+    0,
+    0
+   ],
+   "inputs": [
+    [
+     "m1/mesh"
+    ],
+    [
+     "m1/fit"
+    ]
+   ],
+   "pars": {
+    "index": {
+     "expr": "0 if mod.paths.have('models/gramophone/model.obj') else 1"
+    }
+   }
+  },
+  "m1/tex": {
+   "type": "moviefileinTOP",
+   "family": "TOP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.asset('models/gramophone/basecolor.png', mod.paths.samples() + '/Map/GreyWedge.tif')"
+    }
+   }
+  },
+  "m2": {
+   "type": "geometryCOMP",
+   "family": "COMP",
+   "pos": [
+    -290,
+    -330
+   ],
+   "pars": {
+    "material": "/project1/sc_rutt_etra/m2/mat",
+    "render": {
+     "expr": "int(op('ctl')['model']) == 2"
+    },
+    "rx": {
+     "expr": "8.0 * math.sin(float(op('hub')['evolve']) * 0.5)"
+    },
+    "ry": {
+     "expr": "op('ctl')['myaw']"
+    },
+    "scale": {
+     "expr": "float(op('tk')['mscale'])"
+    },
+    "ty": {
+     "expr": "float(op('tk')['mty'])"
+    }
+   }
+  },
+  "m2/fit": {
+   "type": "transformPOP",
+   "family": "POP",
+   "pos": [
+    0,
+    0
+   ],
+   "inputs": [
+    [
+     "m2/mesh"
+    ]
+   ],
+   "pars": {
+    "px": {
+     "expr": "mod.fit.center(mod.paths.model_file('marble_bust'), 0)"
+    },
+    "py": {
+     "expr": "mod.fit.center(mod.paths.model_file('marble_bust'), 1)"
+    },
+    "pz": {
+     "expr": "mod.fit.center(mod.paths.model_file('marble_bust'), 2)"
+    },
+    "rx": 18.0,
+    "scale": {
+     "expr": "mod.fit.scale(mod.paths.model_file('marble_bust'))"
+    },
+    "tx": {
+     "expr": "0.0 - mod.fit.center(mod.paths.model_file('marble_bust'), 0)"
+    },
+    "ty": {
+     "expr": "0.27 - mod.fit.center(mod.paths.model_file('marble_bust'), 1)"
+    },
+    "tz": {
+     "expr": "0.0 - mod.fit.center(mod.paths.model_file('marble_bust'), 2)"
+    }
+   }
+  },
+  "m2/mat": {
+   "type": "pbrMAT",
+   "family": "MAT",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "basecolormap": {
+     "expr": "'tex' if mod.paths.model_texture('marble_bust') else ''"
+    },
+    "metallic": 0.0,
+    "roughness": 0.6
+   }
+  },
+  "m2/mesh": {
+   "type": "fileinPOP",
+   "family": "POP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.model_file('marble_bust')"
+    }
+   }
+  },
+  "m2/pick": {
+   "type": "switchPOP",
+   "family": "POP",
+   "pos": [
+    0,
+    0
+   ],
+   "inputs": [
+    [
+     "m2/mesh"
+    ],
+    [
+     "m2/fit"
+    ]
+   ],
+   "pars": {
+    "index": {
+     "expr": "0 if mod.paths.have('models/marble_bust/model.obj') else 1"
+    }
+   }
+  },
+  "m2/tex": {
+   "type": "moviefileinTOP",
+   "family": "TOP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.asset('models/marble_bust/basecolor.png', mod.paths.samples() + '/Map/GreyWedge.tif')"
+    }
+   }
+  },
+  "m3": {
+   "type": "geometryCOMP",
+   "family": "COMP",
+   "pos": [
+    -160,
+    -330
+   ],
+   "pars": {
+    "material": "/project1/sc_rutt_etra/m3/mat",
+    "render": {
+     "expr": "int(op('ctl')['model']) == 3"
+    },
+    "rx": {
+     "expr": "8.0 * math.sin(float(op('hub')['evolve']) * 0.5)"
+    },
+    "ry": {
+     "expr": "op('ctl')['myaw']"
+    },
+    "scale": {
+     "expr": "float(op('tk')['mscale'])"
+    },
+    "ty": {
+     "expr": "float(op('tk')['mty'])"
+    }
+   }
+  },
+  "m3/fit": {
+   "type": "transformPOP",
+   "family": "POP",
+   "pos": [
+    0,
+    0
+   ],
+   "inputs": [
+    [
+     "m3/mesh"
+    ]
+   ],
+   "pars": {
+    "px": {
+     "expr": "mod.fit.center(mod.paths.model_file('space_helmet'), 0)"
+    },
+    "py": {
+     "expr": "mod.fit.center(mod.paths.model_file('space_helmet'), 1)"
+    },
+    "pz": {
+     "expr": "mod.fit.center(mod.paths.model_file('space_helmet'), 2)"
+    },
+    "rz": -32.0,
+    "scale": {
+     "expr": "mod.fit.scale(mod.paths.model_file('space_helmet'))"
+    },
+    "tx": {
+     "expr": "0.0 - mod.fit.center(mod.paths.model_file('space_helmet'), 0)"
+    },
+    "ty": {
+     "expr": "0.0 - mod.fit.center(mod.paths.model_file('space_helmet'), 1)"
+    },
+    "tz": {
+     "expr": "0.0 - mod.fit.center(mod.paths.model_file('space_helmet'), 2)"
+    }
+   }
+  },
+  "m3/mat": {
+   "type": "pbrMAT",
+   "family": "MAT",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "basecolormap": {
+     "expr": "'tex' if mod.paths.model_texture('space_helmet') else ''"
+    },
+    "metallic": 0.0,
+    "roughness": 0.6
+   }
+  },
+  "m3/mesh": {
+   "type": "fileinPOP",
+   "family": "POP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.model_file('space_helmet')"
+    }
+   }
+  },
+  "m3/pick": {
+   "type": "switchPOP",
+   "family": "POP",
+   "pos": [
+    0,
+    0
+   ],
+   "inputs": [
+    [
+     "m3/mesh"
+    ],
+    [
+     "m3/fit"
+    ]
+   ],
+   "pars": {
+    "index": {
+     "expr": "0 if mod.paths.have('models/space_helmet/model.obj') else 1"
+    }
+   }
+  },
+  "m3/tex": {
+   "type": "moviefileinTOP",
+   "family": "TOP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.asset('models/space_helmet/basecolor.png', mod.paths.samples() + '/Map/GreyWedge.tif')"
+    }
+   }
+  },
+  "m4": {
+   "type": "geometryCOMP",
+   "family": "COMP",
+   "pos": [
+    -30,
+    -330
+   ],
+   "pars": {
+    "material": "/project1/sc_rutt_etra/m4/mat",
+    "render": {
+     "expr": "int(op('ctl')['model']) == 4"
+    },
+    "rx": {
+     "expr": "8.0 * math.sin(float(op('hub')['evolve']) * 0.5)"
+    },
+    "ry": {
+     "expr": "op('ctl')['myaw']"
+    },
+    "scale": {
+     "expr": "float(op('tk')['mscale'])"
+    },
+    "ty": {
+     "expr": "float(op('tk')['mty'])"
+    }
+   }
+  },
+  "m4/fit": {
+   "type": "transformPOP",
+   "family": "POP",
+   "pos": [
+    0,
+    0
+   ],
+   "inputs": [
+    [
+     "m4/mesh"
+    ]
+   ],
+   "pars": {
+    "px": {
+     "expr": "mod.fit.center(mod.paths.model_file('lander'), 0)"
+    },
+    "py": {
+     "expr": "mod.fit.center(mod.paths.model_file('lander'), 1)"
+    },
+    "pz": {
+     "expr": "mod.fit.center(mod.paths.model_file('lander'), 2)"
+    },
+    "rx": 62.0,
+    "rz": 18.0,
+    "scale": {
+     "expr": "mod.fit.scale(mod.paths.model_file('lander'))"
+    },
+    "tx": {
+     "expr": "0.0 - mod.fit.center(mod.paths.model_file('lander'), 0)"
+    },
+    "ty": {
+     "expr": "0.0 - mod.fit.center(mod.paths.model_file('lander'), 1)"
+    },
+    "tz": {
+     "expr": "0.0 - mod.fit.center(mod.paths.model_file('lander'), 2)"
+    }
+   }
+  },
+  "m4/mat": {
+   "type": "pbrMAT",
+   "family": "MAT",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "basecolormap": {
+     "expr": "'tex' if mod.paths.model_texture('lander') else ''"
+    },
+    "metallic": 0.0,
+    "roughness": 0.6
+   }
+  },
+  "m4/mesh": {
+   "type": "fileinPOP",
+   "family": "POP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.model_file('lander')"
+    }
+   }
+  },
+  "m4/pick": {
+   "type": "switchPOP",
+   "family": "POP",
+   "pos": [
+    0,
+    0
+   ],
+   "inputs": [
+    [
+     "m4/mesh"
+    ],
+    [
+     "m4/fit"
+    ]
+   ],
+   "pars": {
+    "index": {
+     "expr": "0 if mod.paths.have('models/lander/model.obj') else 1"
+    }
+   }
+  },
+  "m4/tex": {
+   "type": "moviefileinTOP",
+   "family": "TOP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.asset('models/lander/basecolor.png', mod.paths.samples() + '/Map/GreyWedge.tif')"
+    }
+   }
+  },
+  "out1": {
+   "type": "outTOP",
+   "family": "TOP",
+   "pos": [
+    1200,
+    0
+   ],
+   "inputs": [
+    [
+     "fin"
+    ]
+   ]
+  },
+  "phrases": {
+   "type": "tableDAT",
+   "family": "DAT",
+   "pos": [
+    -700,
+    200
+   ],
+   "text": [
+    "SOUNDIN.PICTUREOUT.",
+    "NOTHINGISPRERENDERED.",
+    "THE KICKMOVESTHE LINE.",
+    "DO NOTTOUCH",
+    "PLATE07",
+    "OBJECTNO. 0047",
+    "LISTENWITHYOUR EYES.",
+    "EVERY FRAMEIS NEW",
+    "LOOP. LOOP.LOOPLOOP.",
+    "A SIGNAL ISARRIVING.",
+    "ORIGIN.......UNKNOWN",
+    "PAST.PRESENT.LATER.",
+    "REALTIME",
+    "SIXTYFRAMES"
+   ]
+  },
+  "raster_px": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    330,
+    -330
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.here('shaders/raster.frag')"
+    },
+    "language": "text",
+    "syncfile": true
+   },
+   "text_file": "experiments/sc_rutt_etra/shaders/raster.frag"
+  },
+  "raster_vs": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    200,
+    -330
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.here('shaders/raster.vert')"
+    },
+    "language": "text",
+    "syncfile": true
+   },
+   "text_file": "experiments/sc_rutt_etra/shaders/raster.vert"
+  },
+  "render": {
+   "type": "renderTOP",
+   "family": "TOP",
+   "pos": [
+    460,
+    -60
+   ],
+   "pars": {
+    "camera": "cam",
+    "format": "rgba16float",
+    "geometry": "lines solid",
+    "lights": "",
+    "resolutionh": 720,
+    "resolutionw": 1280
+   }
+  },
+  "scam": {
+   "type": "cameraCOMP",
+   "family": "COMP",
+   "pos": [
+    -290,
+    -460
+   ],
+   "pars": {
+    "fov": 30.0,
+    "tz": 3.3
+   }
+  },
+  "scam/file1": {
+   "type": "fileinPOP",
+   "family": "POP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "file": {
+     "expr": "app.samplesFolder + '/Geo/defcam.tog'"
+    }
+   }
+  },
+  "shot": {
+   "type": "constantCHOP",
+   "family": "CHOP",
+   "pos": [
+    -400,
+    330
+   ],
+   "pars": {
+    "const0name": "take",
+    "const0value": {
+     "expr": "parent().par.Take"
+    },
+    "const1name": "seed",
+    "const1value": {
+     "expr": "parent().par.Seed"
+    },
+    "const2name": "age",
+    "const2value": {
+     "expr": "max(0, absTime.seconds - parent().par.Shotstart)"
+    }
+   }
+  },
+  "solid": {
+   "type": "geometryCOMP",
+   "family": "COMP",
+   "pos": [
+    330,
+    -460
+   ],
+   "pars": {
+    "drawpriority": 10.0,
+    "material": "/project1/sc_rutt_etra/solid_mat",
+    "render": {
+     "expr": "float(op('tk')['hidden']) > 0.5"
+    },
+    "rx": {
+     "expr": "op('ctl')['rx']"
+    },
+    "ry": {
+     "expr": "op('ctl')['ry']"
+    },
+    "rz": {
+     "expr": "op('ctl')['rz']"
+    }
+   }
+  },
+  "solid/sheet": {
+   "type": "gridSOP",
+   "family": "SOP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "cols": 256,
+    "rows": 160
+   }
+  },
+  "solid_mat": {
+   "type": "glslMAT",
+   "family": "MAT",
+   "pos": [
+    330,
+    -200
+   ],
+   "pars": {
+    "cullface": "neither",
+    "pdat": "raster_px",
+    "sampler0extendu": "zero",
+    "sampler0extendv": "zero",
+    "sampler0name": "sSrc",
+    "sampler0top": "/project1/sc_rutt_etra/srcblur",
+    "sampler1extendu": "hold",
+    "sampler1name": "sSpec",
+    "sampler1top": "/project1/sc_rutt_etra/spectrum",
+    "sampler2extendu": "zero",
+    "sampler2extendv": "zero",
+    "sampler2name": "sIn",
+    "sampler2top": "/project1/sc_rutt_etra/insel",
+    "vdat": "raster_vs",
+    "vec0name": "uRas",
+    "vec0valuex": {
+     "expr": "op('ctl')['lines']"
+    },
+    "vec0valuey": 384.0,
+    "vec0valuez": {
+     "expr": "float(op('tk')['width'])"
+    },
+    "vec1name": "uDisp",
+    "vec1valuew": {
+     "expr": "op('ctl')['arr']"
+    },
+    "vec1valuex": {
+     "expr": "op('ctl')['dy']"
+    },
+    "vec1valuey": {
+     "expr": "op('ctl')['dz']"
+    },
+    "vec1valuez": {
+     "expr": "float(op('tk')['spec'])"
+    },
+    "vec2name": "uWob",
+    "vec2valuew": {
+     "expr": "float(op('tk')['osc'])"
+    },
+    "vec2valuex": {
+     "expr": "op('ctl')['bend']"
+    },
+    "vec2valuey": {
+     "expr": "op('ctl')['tear'] * 0.04"
+    },
+    "vec2valuez": {
+     "expr": "op('hub')['evolve']"
+    },
+    "vec3name": "uSrcXf",
+    "vec3valuew": {
+     "expr": "float(op('tk')['vert'])"
+    },
+    "vec3valuex": {
+     "expr": "float(op('tk')['iz']) if op('ctl')['inp'] > 0.5 else float(op('tk')['szoom'])"
+    },
+    "vec3valuey": {
+     "expr": "0.0 if op('ctl')['inp'] > 0.5 else float(op('tk')['sox'])"
+    },
+    "vec3valuez": {
+     "expr": "0.0 if op('ctl')['inp'] > 0.5 else float(op('tk')['soy'])"
+    },
+    "vec4name": "uGeo",
+    "vec4valuew": {
+     "expr": "float(op('shot')['seed'])"
+    },
+    "vec4valuex": 1.7778,
+    "vec4valuey": {
+     "expr": "float(op('tk')['rh'])"
+    },
+    "vec4valuez": {
+     "expr": "float(op('tk')['dist'])"
+    },
+    "vec5name": "uCol",
+    "vec5valuew": {
+     "expr": "float(op('tk')['gain']) * (0.85 + 0.3 * op('ctl')['en'])"
+    },
+    "vec5valuex": {
+     "expr": "float(op('tk')['cr'])"
+    },
+    "vec5valuey": {
+     "expr": "float(op('tk')['cg'])"
+    },
+    "vec5valuez": {
+     "expr": "float(op('tk')['cb'])"
+    },
+    "vec6name": "uCol2",
+    "vec6valuew": {
+     "expr": "op('ctl')['flash']"
+    },
+    "vec6valuex": {
+     "expr": "float(op('tk')['hr'])"
+    },
+    "vec6valuey": {
+     "expr": "float(op('tk')['hg'])"
+    },
+    "vec6valuez": {
+     "expr": "float(op('tk')['hb'])"
+    },
+    "vec7name": "uHue",
+    "vec7valuew": 0.0,
+    "vec7valuex": {
+     "expr": "float(op('tk')['hspread'])"
+    },
+    "vec7valuey": {
+     "expr": "float(op('tk')['hoff']) + ((float(op('shot')['seed']) * 1.9) % 1.0) + 0.05 * float(op('hub')['evolve'])"
+    },
+    "vec7valuez": {
+     "expr": "float(op('tk')['hamt'])"
+    },
+    "vec8name": "uInt",
+    "vec8valuew": {
+     "expr": "op('hub')['evolve']"
+    },
+    "vec8valuex": {
+     "expr": "float(op('tk')['base'])"
+    },
+    "vec8valuey": {
+     "expr": "float(op('tk')['lumi'])"
+    },
+    "vec8valuez": {
+     "expr": "op('ctl')['brk']"
+    },
+    "vec9name": "uIn",
+    "vec9valuew": 0.0,
+    "vec9valuex": {
+     "expr": "float(op('tk')['icol']) * op('ctl')['inp']"
+    },
+    "vec9valuey": 0.0,
+    "vec9valuez": 0.0
+   }
+  },
+  "solid_mat_info": {
+   "type": "infoDAT",
+   "family": "DAT",
+   "pos": [
+    320,
+    -120
+   ],
+   "pars": {
+    "language": "text",
+    "op": "solid_mat"
+   }
+  },
+  "solid_mat_pixel": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    160,
+    -120
+   ],
+   "pars": {
+    "extension": "frag",
+    "language": "glsl"
+   },
+   "text": [
+    "// Example Pixel Shader",
+    "",
+    "// uniform vec4 exampleUniform;",
+    "",
+    "out vec4 oFragColor;",
+    "void main()",
+    "{",
+    "\tTDCheckDiscard();",
+    "\tvec4 color = vec4(1.0);",
+    "\tTDAlphaTest(color.a);",
+    "\toFragColor = TDOutputSwizzle(color);",
+    "}",
+    ""
+   ]
+  },
+  "solid_mat_vertex": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    0,
+    -120
+   ],
+   "pars": {
+    "extension": "vert",
+    "language": "glsl"
+   },
+   "text": [
+    "// Example Vertex Shader",
+    "",
+    "void main() ",
+    "{",
+    "\tvec3 pos = TDPos();",
+    "\tvec4 worldSpacePos = TDDeform(pos);",
+    "\tgl_Position = TDWorldToProj(worldSpacePos);",
+    "#ifndef TD_PICKING_ACTIVE",
+    "#else // TD_PICKING_ACTIVE",
+    "\t// This will automatically write out the nessessary values",
+    "\t// for this shader to work with picking.",
+    "\t// See the documentation if you want to write custom values for picking.",
+    "\tTDWritePickingValues();",
+    "#endif // TD_PICKING_ACTIVE",
+    "}",
+    ""
+   ]
+  },
+  "spectrum": {
+   "type": "selectTOP",
+   "family": "TOP",
+   "pos": [
+    -400,
+    60
+   ],
+   "pars": {
+    "top": "/project1/sw_hub/specraw"
+   }
+  },
+  "src": {
+   "type": "glslTOP",
+   "family": "TOP",
+   "pos": [
+    -100,
+    -60
+   ],
+   "inputs": [
+    [
+     "srcsw"
+    ],
+    [
+     "text"
+    ],
+    [
+     "wfall"
+    ]
+   ],
+   "pars": {
+    "computedat": "src_compute",
+    "format": "rgba16float",
+    "inputextenduv": "repeat",
+    "outputresolution": "custom",
+    "pixeldat": "src_px",
+    "resolutionh": 360,
+    "resolutionw": 640,
+    "vec0name": "uMix",
+    "vec0valuew": {
+     "expr": "op('hub')['evolve']"
+    },
+    "vec0valuex": {
+     "expr": "float(op('tk')['wm']) * float(op('tk')['mgain'])"
+    },
+    "vec0valuey": {
+     "expr": "float(op('tk')['wt'])"
+    },
+    "vec0valuez": {
+     "expr": "float(op('tk')['wo'])"
+    },
+    "vec1name": "uTx",
+    "vec1valuew": {
+     "expr": "op('ctl')['oscf']"
+    },
+    "vec1valuex": {
+     "expr": "float(op('tk')['tzoom'])"
+    },
+    "vec1valuey": {
+     "expr": "op('ctl')['tsx']"
+    },
+    "vec1valuez": 0.0,
+    "vec2name": "uMix2",
+    "vec2valuew": 0.0,
+    "vec2valuex": {
+     "expr": "float(op('tk')['ww'])"
+    },
+    "vec2valuey": {
+     "expr": "float(op('tk')['wk'])"
+    },
+    "vec2valuez": 0.0,
+    "vec3name": "uAud",
+    "vec3valuew": {
+     "expr": "op('hub')['beat_pos']"
+    },
+    "vec3valuex": {
+     "expr": "min(float(op('hub')['bass']), 1.7)"
+    },
+    "vec3valuey": {
+     "expr": "op('ctl')['en']"
+    },
+    "vec3valuez": {
+     "expr": "float(op('shot')['seed'])"
+    },
+    "vec4name": "uIn",
+    "vec4valuew": 0.0,
+    "vec4valuex": {
+     "expr": "op('ctl')['inp']"
+    },
+    "vec4valuey": {
+     "expr": "float(op('tk')['igain'])"
+    },
+    "vec4valuez": {
+     "expr": "float(op('tk')['iscroll'])"
+    }
+   }
+  },
+  "src_info": {
+   "type": "infoDAT",
+   "family": "DAT",
+   "pos": [
+    160,
+    -120
+   ],
+   "pars": {
+    "language": "text",
+    "op": "src"
+   }
+  },
+  "src_px": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    -100,
+    -190
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.here('shaders/src.frag')"
+    },
+    "language": "text",
+    "syncfile": true
+   },
+   "text_file": "experiments/sc_rutt_etra/shaders/src.frag"
+  },
+  "srcblur": {
+   "type": "blurTOP",
+   "family": "TOP",
+   "pos": [
+    50,
+    -60
+   ],
+   "inputs": [
+    [
+     "src"
+    ]
+   ],
+   "pars": {
+    "size": {
+     "expr": "float(op('tk')['sblur'])"
+    }
+   }
+  },
+  "srcsw": {
+   "type": "switchTOP",
+   "family": "TOP",
+   "pos": [
+    -170,
+    -200
+   ],
+   "inputs": [
+    [
+     "srender"
+    ],
+    [
+     "insel"
+    ]
+   ],
+   "pars": {
+    "index": {
+     "expr": "int(op('ctl')['inp'])"
+    }
+   }
+  },
+  "srender": {
+   "type": "renderTOP",
+   "family": "TOP",
+   "pos": [
+    -250,
+    -200
+   ],
+   "pars": {
+    "camera": "scam",
+    "format": "rgba16float",
+    "geometry": "m[0-9]",
+    "lights": "key fill",
+    "resolutionh": 360,
+    "resolutionw": 640
+   }
+  },
+  "takes": {
+   "type": "tableDAT",
+   "family": "DAT",
+   "pos": [
+    -700,
+    330
+   ],
+   "text": [
+    "name\twm\twt\two\tww\twk\tmodel\tmscale\tmty\tmyaw\tmspin\tmgain\tyawr\tmrock\ttzoom\ttscroll\toscf\tsblur\tszoom\tsox\tsoy\tlines\twidth\tvert\thspread\thoff\thamt\tdy\tdz\tspec\tosc\tbend\ttear\tbrk\trx\try\trz\tsway\tdist\tcamx\tcamy\trh\tcr\tcg\tcb\thr\thg\thb\tbase\tlumi\tgain\tfb\tfbrot\tfbrotj\tfbzoom\tfbhue\tfbmirror\tfbin\tfbsym\tfbcut\tcolz\tpal\tbands\tkey\tneg\thidden\troll\tflag\twall\tinterlace\tbleed\tsnow\tglow\texpo\tiz\tigain\ticol\tiscroll",
+    "portrait\t1\t0.0\t0.0\t0.0\t0.0\t0\t1.1\t0.0\t0.0\t20.0\t2.4\t360.0\t0.0\t1.0\t0.0\t2.0\t4.0\t1.15\t0.0\t0.0\t110\t1.6\t0\t0.0\t0.0\t0.0\t0.09\t0.34\t0.05\t0.0\t1.0\t1.0\t0.8\t-26\t24\t0.0\t1.0\t2.2\t0.0\t0.08\t1.0\t0.25\t1.0\t0.45\t0.9\t1.0\t0.8\t0.1\t1.0\t2.6\t0.0\t0.0\t0.0\t1.0\t0.0\t0\t1.0\t0\t0.0\t0.0\t0\t5\t0.0\t0.0\t0\t0.0\t0.0\t1\t1.0\t2.5\t1.0\t0.9\t1.3\t1.0\t0.8\t0.7\t0.0",
+    "colouriser\t1\t0.0\t0.0\t0.0\t0.0\t2\t1.5\t-0.25\t0.0\t0\t2.3\t70\t32\t1.0\t0.0\t2.0\t4.0\t1.7\t0.06\t0.1\t230\t1.7\t0\t0.0\t0.0\t0.0\t0.05\t0.04\t0.05\t0.0\t1.5\t0.6\t0.8\t0.0\t0.0\t0.0\t0.2\t1.9\t0.0\t0.0\t1.0\t1\t1\t1\t1\t1\t1\t0.05\t1.0\t2.6\t0.0\t0.0\t0.0\t1.0\t0.0\t0\t1.0\t0\t0.0\t1\t0\t5\t0.0\t0.0\t0\t1\t0.6\t1\t1.0\t2.5\t1.0\t0.5\t1.0\t1.0\t1.2\t0.0\t0.0",
+    "mandala\t0.0\t0.5\t1\t0.0\t0.0\t0\t1.0\t0.0\t0.0\t20.0\t2.4\t360.0\t0.0\t0.8\t0.0\t2.0\t4.0\t1.0\t0.0\t0.0\t24\t2.4\t0\t0.0\t0.0\t0.0\t0.3\t0.0\t0.25\t0.0\t1.0\t0.4\t0.8\t0.0\t0.0\t0.0\t0.3\t3.3\t0.0\t0.0\t1.0\t1.0\t0.25\t0.08\t0.1\t0.5\t1.0\t0.25\t1.0\t2.6\t0.9\t0.0\t0.0\t1.2\t0.22\t1\t0.9\t1\t0.03\t0.0\t0\t5\t0.0\t0.0\t0\t0.0\t0.0\t1\t1.0\t2.5\t1.0\t0.5\t1.0\t1.0\t1.0\t0.5\t0.0",
+    "landscape\t0.0\t1\t0.0\t0.0\t0.0\t0\t1.0\t0.0\t0.0\t20.0\t2.4\t360.0\t0.0\t1.15\t0.05\t2.0\t3\t1.0\t0.0\t0.0\t90\t1.8\t0\t0.0\t0.0\t0.0\t0.0\t0.11\t0.05\t0.0\t1.0\t1.0\t0.8\t-32\t10\t0.0\t1.0\t1.45\t0.0\t0.0\t1.0\t1.0\t0.55\t0.1\t1.0\t0.9\t0.6\t0.12\t1.2\t2.6\t0.0\t0.0\t0.0\t1.0\t0.0\t0\t1.0\t0\t0.0\t0.0\t0\t5\t0.0\t0.0\t0\t0.0\t0.0\t1\t1.0\t2.5\t1.0\t0.9\t1.0\t1.0\t1.2\t0.45\t0.0",
+    "waterfall\t0.0\t0.0\t0.0\t1.0\t0.0\t0\t1.0\t0.0\t0.0\t0\t2.4\t360.0\t0.0\t1.0\t0.0\t2.0\t2\t1.0\t0.0\t0.0\t72\t2.0\t0\t0.0\t0.0\t0.0\t0.02\t0.15\t0.05\t0.0\t0.4\t0.5\t0.8\t-52\t0\t0.0\t0.35\t1.5\t0.0\t0.0\t1.9\t0.8\t0.85\t1.0\t1\t1\t1\t0.5\t0.7\t2.4\t0.0\t0.0\t0.0\t1.0\t0.0\t0\t1.0\t0\t0.0\t0.0\t0\t5\t0.0\t0.0\t1\t0.0\t0.0\t1\t1.0\t2.5\t1.0\t0.6\t1.0\t1.0\t0.6\t0.6\t0.0",
+    "negative\t1\t0.0\t0.0\t0.0\t1\t1\t1.2\t0.0\t0.0\t20.0\t2.4\t360.0\t0.0\t1.6\t0.12\t2.0\t4.0\t1.1\t0.0\t0.0\t110\t1.6\t0\t0.0\t0.0\t0.0\t0.14\t0.3\t0.05\t0.0\t1.0\t0.6\t0.8\t-18\t-26\t0.0\t1.0\t1.9\t-0.3\t0.0\t1.0\t1\t1\t1\t1\t1\t1\t0.32\t1.0\t2.6\t0.0\t0.0\t0.0\t1.0\t0.0\t0\t1.0\t0\t0.0\t0.0\t3\t5\t1.0\t1\t0\t0.0\t0.0\t1\t1.0\t2.5\t0.6\t0.3\t1.0\t1.0\t0.6\t0.0\t0.0",
+    "macro\t1\t0.0\t0.0\t0.0\t0.0\t3\t1.3\t0.0\t0.0\t20.0\t2.4\t360.0\t0.0\t1.0\t0.0\t2.0\t10\t1.5\t0.0\t0.0\t46\t3.4\t1\t0.0\t0.0\t0.0\t0.0\t0.6\t0.05\t0.0\t1.0\t0.5\t0.8\t-34\t32\t0.0\t1.0\t1.5\t0.0\t0.0\t1.0\t1.0\t0.16\t0.1\t1.0\t0.8\t0.55\t0.16\t1.3\t2.6\t0.0\t0.0\t0.0\t1.0\t0.0\t0\t1.0\t0\t0.0\t0.0\t0\t5\t0.0\t0.0\t1\t0.0\t0.0\t1\t1.0\t2.5\t1.0\t0.9\t1.0\t1.0\t0.5\t0.0\t0.0",
+    "wall\t1\t0.0\t0.0\t0.0\t0.0\t4\t1.1\t0.0\t0.0\t20.0\t2.4\t360.0\t0.0\t1.0\t0.0\t2.0\t4.0\t1.0\t0.0\t0.0\t44\t3.8\t0\t0.0\t0.0\t0.0\t0.2\t0.3\t0.05\t0.0\t1.0\t1.0\t0.8\t-22\t-18\t0.0\t1.0\t2.0\t0.0\t0.0\t1.0\t0.2\t1.0\t0.5\t0.9\t1.0\t0.8\t0.25\t1.0\t3.4\t0.0\t0.0\t0.0\t1.0\t0.0\t0\t1.0\t0\t0.0\t0.75\t4\t5\t0.0\t0.0\t0\t0.0\t0.5\t3\t1.0\t2.5\t1.0\t0.7\t1.5\t1.0\t0.7\t0.0\t0.0",
+    "rings\t1\t0.0\t0.0\t0.0\t0.0\t0\t1.2\t0.0\t0.0\t20.0\t2.4\t360.0\t0.0\t1.0\t0.0\t2.0\t4.0\t1.0\t0.0\t0.0\t72\t1.8\t2\t0.8\t0.0\t1.0\t0.0\t0.34\t0.05\t0.0\t1.0\t0.6\t0.8\t-38\t14\t0.0\t1.0\t2.35\t0.0\t0.2\t1.0\t0.25\t1.0\t0.45\t1\t1\t1\t0.16\t1.1\t2.6\t0.0\t0.0\t0.0\t1.0\t0.0\t0\t1.0\t0\t0.0\t0.0\t0\t5\t0.0\t0.0\t0\t0.0\t0.0\t1\t1.0\t2.5\t1.0\t0.9\t1.0\t1.0\t1.2\t0.0\t0.0",
+    "drum\t0.0\t1\t0.0\t0.0\t0.0\t0\t1.0\t0.0\t0.0\t20.0\t2.4\t360.0\t0.0\t0.5556\t0.25\t2.0\t2.5\t1.0\t0.0\t0.0\t130\t1.7\t3\t0.0\t0.0\t0.0\t0.02\t0.09\t0.05\t0.0\t1.0\t0.5\t0.8\t22\t0\t-8\t1.0\t1.8\t0.13\t-0.05\t1.0\t0.1\t0.8\t1.0\t1.0\t0.3\t0.7\t0.14\t1.3\t2.6\t0.0\t0.0\t0.0\t1.0\t0.0\t0\t1.0\t0\t0.0\t0.0\t0\t5\t0.0\t0.0\t1\t0.0\t0.0\t1\t1.0\t2.5\t1.0\t0.9\t1.0\t0.5\t1.0\t0.0\t1.0"
+   ]
+  },
+  "text": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    -250,
+    -60
+   ],
+   "pars": {
+    "bgalpha": 1.0,
+    "fontautosize": "fitiffat",
+    "fontfile": {
+     "expr": "mod.paths.font('archivo')"
+    },
+    "fontsizex": 50.0,
+    "outputresolution": "custom",
+    "resmult": false,
+    "resolutionh": 360,
+    "resolutionw": 384,
+    "text": {
+     "expr": "(op('dwords')[int(op('shot')['take']) % 10, 1 + int(op('ctl')['dph'])].val + chr(10) + op('dwords')[int(op('shot')['take']) % 10, 1 + (int(op('ctl')['dph']) + max(1, int(op('ctl')['dn']) // 2)) % int(op('ctl')['dn'])].val) if parent().par.Describe else (op('phrases')[int(op('ctl')['phrase']), 0].val + chr(10) + op('phrases')[(int(op('ctl')['phrase']) + 5) % 14, 0].val)"
+    }
+   }
+  },
+  "title_b": {
+   "type": "glslTOP",
+   "family": "TOP",
+   "pos": [
+    1020,
+    200
+   ],
+   "inputs": [
+    [
+     "crt"
+    ],
+    [
+     "label"
+    ]
+   ],
+   "pars": {
+    "computedat": "title_b_compute",
+    "format": "rgba16float",
+    "outputresolution": "custom",
+    "pixeldat": "title_b_px",
+    "resolutionh": 720,
+    "resolutionw": 1280,
+    "vec0name": "uT",
+    "vec0valuew": 1.0,
+    "vec0valuex": 0.18333333333333332,
+    "vec0valuey": 0.011111111111111112,
+    "vec0valuez": 0.82,
+    "vec1name": "uTc",
+    "vec1valuew": 0.0,
+    "vec1valuex": 0.93,
+    "vec1valuey": 0.89,
+    "vec1valuez": 0.8
+   }
+  },
+  "title_b_info": {
+   "type": "infoDAT",
+   "family": "DAT",
+   "pos": [
+    160,
+    -120
+   ],
+   "pars": {
+    "language": "text",
+    "op": "title_b"
+   }
+  },
+  "title_b_px": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    1020,
+    70
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.here('shaders/titler.frag')"
+    },
+    "language": "text",
+    "syncfile": true
+   },
+   "text_file": "experiments/sc_rutt_etra/shaders/titler.frag"
+  },
+  "tk": {
+   "type": "constantCHOP",
+   "family": "CHOP",
+   "pos": [
+    -550,
+    330
+   ],
+   "pars": {
+    "const0name": "wm",
+    "const0value": {
+     "expr": "float(op('takes')[int(op('shot')['take']) % 10 + 1, 'wm'])"
+    },
+    "const10name": "mgain",
+    "const10value": {
+     "expr": "float(op('takes')[int(op('shot')['take']) % 10 + 1, 'mgain'])"
+    },
+    "const11name": "yawr",
+    "const11value": {
+     "expr": "float(op('takes')[int(op('shot')['take']) % 10 + 1, 'yawr'])"
+    },
+    "const12name": "mrock",
+    "const12value": {
+     "expr": "float(op('takes')[int(op('shot')['take']) % 10 + 1, 'mrock'])"
+    },
+    "const13name": "tzoom",
+    "const13value": {
+     "expr": "float(op('takes')[int(op('shot')['take']) % 10 + 1, 'tzoom'])"
+    },
+    "const14name": "tscroll",
+    "const14value": {
+     "expr": "float(op('takes')[int(op('shot')['take']) % 10 + 1, 'tscroll'])"
+    },
+    "const15name": "oscf",
+    "const15value": {
+     "expr": "float(op('takes')[int(op('shot')['take']) % 10 + 1, 'oscf'])"
+    },
+    "const16name": "sblur",
+    "const16value": {
+     "expr": "float(op('takes')[int(op('shot')['take']) % 10 + 1, 'sblur'])"
+    },
+    "const17name": "szoom",
+    "const17value": {
+     "expr": "float(op('takes')[int(op('shot')['take']) % 10 + 1, 'szoom'])"
+    },
+    "const18name": "sox",
+    "const18value": {
+     "expr": "float(op('takes')[int(op('shot')['take']) % 10 + 1, 'sox'])"
+    },
+    "const19name": "soy",
+    "const19value": {
+     "expr": "float(op('takes')[int(op('shot')['take']) % 10 + 1, 'soy'])"
+    },
+    "const1name": "wt",
+    "const1value": {
+     "expr": "float(op('takes')[int(op('shot')['take']) % 10 + 1, 'wt'])"
+    },
+    "const20name": "lines",
+    "const20value": {
+     "expr": "float(op('takes')[int(op('shot')['take']) % 10 + 1, 'lines'])"
+    },
+    "const21name": "width",
+    "const21value": {
+     "expr": "float(op('takes')[int(op('shot')['take']) % 10 + 1, 'width'])"
+    },
+    "const22name": "vert",
+    "const22value": {
+     "expr": "float(op('takes')[int(op('shot')['take']) % 10 + 1, 'vert'])"
+    },
+    "const23name": "hspread",
+    "const23value": {
+     "expr": "float(op('takes')[int(op('shot')['take']) % 10 + 1, 'hspread'])"
+    },
+    "const24name": "hoff",
+    "const24value": {
+     "expr": "float(op('takes')[int(op('shot')['take']) % 10 + 1, 'hoff'])"
+    },
+    "const25name": "hamt",
+    "const25value": {
+     "expr": "float(op('takes')[int(op('shot')['take']) % 10 + 1, 'hamt'])"
+    },
+    "const26name": "dy",
+    "const26value": {
+     "expr": "float(op('takes')[int(op('shot')['take']) % 10 + 1, 'dy'])"
+    },
+    "const27name": "dz",
+    "const27value": {
+     "expr": "float(op('takes')[int(op('shot')['take']) % 10 + 1, 'dz'])"
+    },
+    "const28name": "spec",
+    "const28value": {
+     "expr": "float(op('takes')[int(op('shot')['take']) % 10 + 1, 'spec'])"
+    },
+    "const29name": "osc",
+    "const29value": {
+     "expr": "float(op('takes')[int(op('shot')['take']) % 10 + 1, 'osc'])"
+    },
+    "const2name": "wo",
+    "const2value": {
+     "expr": "float(op('takes')[int(op('shot')['take']) % 10 + 1, 'wo'])"
+    },
+    "const30name": "bend",
+    "const30value": {
+     "expr": "float(op('takes')[int(op('shot')['take']) % 10 + 1, 'bend'])"
+    },
+    "const31name": "tear",
+    "const31value": {
+     "expr": "float(op('takes')[int(op('shot')['take']) % 10 + 1, 'tear'])"
+    },
+    "const32name": "brk",
+    "const32value": {
+     "expr": "float(op('takes')[int(op('shot')['take']) % 10 + 1, 'brk'])"
+    },
+    "const33name": "rx",
+    "const33value": {
+     "expr": "float(op('takes')[int(op('shot')['take']) % 10 + 1, 'rx'])"
+    },
+    "const34name": "ry",
+    "const34value": {
+     "expr": "float(op('takes')[int(op('shot')['take']) % 10 + 1, 'ry'])"
+    },
+    "const35name": "rz",
+    "const35value": {
+     "expr": "float(op('takes')[int(op('shot')['take']) % 10 + 1, 'rz'])"
+    },
+    "const36name": "sway",
+    "const36value": {
+     "expr": "float(op('takes')[int(op('shot')['take']) % 10 + 1, 'sway'])"
+    },
+    "const37name": "dist",
+    "const37value": {
+     "expr": "float(op('takes')[int(op('shot')['take']) % 10 + 1, 'dist'])"
+    },
+    "const38name": "camx",
+    "const38value": {
+     "expr": "float(op('takes')[int(op('shot')['take']) % 10 + 1, 'camx'])"
+    },
+    "const39name": "camy",
+    "const39value": {
+     "expr": "float(op('takes')[int(op('shot')['take']) % 10 + 1, 'camy'])"
+    },
+    "const3name": "ww",
+    "const3value": {
+     "expr": "float(op('takes')[int(op('shot')['take']) % 10 + 1, 'ww'])"
+    },
+    "const40name": "rh",
+    "const40value": {
+     "expr": "float(op('takes')[int(op('shot')['take']) % 10 + 1, 'rh'])"
+    },
+    "const41name": "cr",
+    "const41value": {
+     "expr": "float(op('takes')[int(op('shot')['take']) % 10 + 1, 'cr'])"
+    },
+    "const42name": "cg",
+    "const42value": {
+     "expr": "float(op('takes')[int(op('shot')['take']) % 10 + 1, 'cg'])"
+    },
+    "const43name": "cb",
+    "const43value": {
+     "expr": "float(op('takes')[int(op('shot')['take']) % 10 + 1, 'cb'])"
+    },
+    "const44name": "hr",
+    "const44value": {
+     "expr": "float(op('takes')[int(op('shot')['take']) % 10 + 1, 'hr'])"
+    },
+    "const45name": "hg",
+    "const45value": {
+     "expr": "float(op('takes')[int(op('shot')['take']) % 10 + 1, 'hg'])"
+    },
+    "const46name": "hb",
+    "const46value": {
+     "expr": "float(op('takes')[int(op('shot')['take']) % 10 + 1, 'hb'])"
+    },
+    "const47name": "base",
+    "const47value": {
+     "expr": "float(op('takes')[int(op('shot')['take']) % 10 + 1, 'base'])"
+    },
+    "const48name": "lumi",
+    "const48value": {
+     "expr": "float(op('takes')[int(op('shot')['take']) % 10 + 1, 'lumi'])"
+    },
+    "const49name": "gain",
+    "const49value": {
+     "expr": "float(op('takes')[int(op('shot')['take']) % 10 + 1, 'gain'])"
+    },
+    "const4name": "wk",
+    "const4value": {
+     "expr": "float(op('takes')[int(op('shot')['take']) % 10 + 1, 'wk'])"
+    },
+    "const50name": "fb",
+    "const50value": {
+     "expr": "float(op('takes')[int(op('shot')['take']) % 10 + 1, 'fb'])"
+    },
+    "const51name": "fbrot",
+    "const51value": {
+     "expr": "float(op('takes')[int(op('shot')['take']) % 10 + 1, 'fbrot'])"
+    },
+    "const52name": "fbrotj",
+    "const52value": {
+     "expr": "float(op('takes')[int(op('shot')['take']) % 10 + 1, 'fbrotj'])"
+    },
+    "const53name": "fbzoom",
+    "const53value": {
+     "expr": "float(op('takes')[int(op('shot')['take']) % 10 + 1, 'fbzoom'])"
+    },
+    "const54name": "fbhue",
+    "const54value": {
+     "expr": "float(op('takes')[int(op('shot')['take']) % 10 + 1, 'fbhue'])"
+    },
+    "const55name": "fbmirror",
+    "const55value": {
+     "expr": "float(op('takes')[int(op('shot')['take']) % 10 + 1, 'fbmirror'])"
+    },
+    "const56name": "fbin",
+    "const56value": {
+     "expr": "float(op('takes')[int(op('shot')['take']) % 10 + 1, 'fbin'])"
+    },
+    "const57name": "fbsym",
+    "const57value": {
+     "expr": "float(op('takes')[int(op('shot')['take']) % 10 + 1, 'fbsym'])"
+    },
+    "const58name": "fbcut",
+    "const58value": {
+     "expr": "float(op('takes')[int(op('shot')['take']) % 10 + 1, 'fbcut'])"
+    },
+    "const59name": "colz",
+    "const59value": {
+     "expr": "float(op('takes')[int(op('shot')['take']) % 10 + 1, 'colz'])"
+    },
+    "const5name": "model",
+    "const5value": {
+     "expr": "float(op('takes')[int(op('shot')['take']) % 10 + 1, 'model'])"
+    },
+    "const60name": "pal",
+    "const60value": {
+     "expr": "float(op('takes')[int(op('shot')['take']) % 10 + 1, 'pal'])"
+    },
+    "const61name": "bands",
+    "const61value": {
+     "expr": "float(op('takes')[int(op('shot')['take']) % 10 + 1, 'bands'])"
+    },
+    "const62name": "key",
+    "const62value": {
+     "expr": "float(op('takes')[int(op('shot')['take']) % 10 + 1, 'key'])"
+    },
+    "const63name": "neg",
+    "const63value": {
+     "expr": "float(op('takes')[int(op('shot')['take']) % 10 + 1, 'neg'])"
+    },
+    "const64name": "hidden",
+    "const64value": {
+     "expr": "float(op('takes')[int(op('shot')['take']) % 10 + 1, 'hidden'])"
+    },
+    "const65name": "roll",
+    "const65value": {
+     "expr": "float(op('takes')[int(op('shot')['take']) % 10 + 1, 'roll'])"
+    },
+    "const66name": "flag",
+    "const66value": {
+     "expr": "float(op('takes')[int(op('shot')['take']) % 10 + 1, 'flag'])"
+    },
+    "const67name": "wall",
+    "const67value": {
+     "expr": "float(op('takes')[int(op('shot')['take']) % 10 + 1, 'wall'])"
+    },
+    "const68name": "interlace",
+    "const68value": {
+     "expr": "float(op('takes')[int(op('shot')['take']) % 10 + 1, 'interlace'])"
+    },
+    "const69name": "bleed",
+    "const69value": {
+     "expr": "float(op('takes')[int(op('shot')['take']) % 10 + 1, 'bleed'])"
+    },
+    "const6name": "mscale",
+    "const6value": {
+     "expr": "float(op('takes')[int(op('shot')['take']) % 10 + 1, 'mscale'])"
+    },
+    "const70name": "snow",
+    "const70value": {
+     "expr": "float(op('takes')[int(op('shot')['take']) % 10 + 1, 'snow'])"
+    },
+    "const71name": "glow",
+    "const71value": {
+     "expr": "float(op('takes')[int(op('shot')['take']) % 10 + 1, 'glow'])"
+    },
+    "const72name": "expo",
+    "const72value": {
+     "expr": "float(op('takes')[int(op('shot')['take']) % 10 + 1, 'expo'])"
+    },
+    "const73name": "iz",
+    "const73value": {
+     "expr": "float(op('takes')[int(op('shot')['take']) % 10 + 1, 'iz'])"
+    },
+    "const74name": "igain",
+    "const74value": {
+     "expr": "float(op('takes')[int(op('shot')['take']) % 10 + 1, 'igain'])"
+    },
+    "const75name": "icol",
+    "const75value": {
+     "expr": "float(op('takes')[int(op('shot')['take']) % 10 + 1, 'icol'])"
+    },
+    "const76name": "iscroll",
+    "const76value": {
+     "expr": "float(op('takes')[int(op('shot')['take']) % 10 + 1, 'iscroll'])"
+    },
+    "const7name": "mty",
+    "const7value": {
+     "expr": "float(op('takes')[int(op('shot')['take']) % 10 + 1, 'mty'])"
+    },
+    "const8name": "myaw",
+    "const8value": {
+     "expr": "float(op('takes')[int(op('shot')['take']) % 10 + 1, 'myaw'])"
+    },
+    "const9name": "mspin",
+    "const9value": {
+     "expr": "float(op('takes')[int(op('shot')['take']) % 10 + 1, 'mspin'])"
+    }
+   }
+  },
+  "wblack": {
+   "type": "constantTOP",
+   "family": "TOP",
+   "pos": [
+    -400,
+    500
+   ],
+   "pars": {
+    "colorb": 0.0,
+    "colorg": 0.0,
+    "colorr": 0.0,
+    "format": "rgba16float",
+    "outputresolution": "custom",
+    "resolutionh": 128
+   }
+  },
+  "wfall": {
+   "type": "glslTOP",
+   "family": "TOP",
+   "pos": [
+    -100,
+    500
+   ],
+   "inputs": [
+    [
+     "spectrum"
+    ],
+    [
+     "wfb"
+    ]
+   ],
+   "pars": {
+    "computedat": "wfall_compute",
+    "format": "rgba16float",
+    "outputresolution": "custom",
+    "pixeldat": "wfall_px",
+    "resolutionh": 128,
+    "vec0name": "uW",
+    "vec0valuex": 0.0,
+    "vec0valuez": 1.0
+   }
+  },
+  "wfall_info": {
+   "type": "infoDAT",
+   "family": "DAT",
+   "pos": [
+    160,
+    -120
+   ],
+   "pars": {
+    "language": "text",
+    "op": "wfall"
+   }
+  },
+  "wfall_px": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    -100,
+    370
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.here('shaders/wfall.frag')"
+    },
+    "language": "text",
+    "syncfile": true
+   },
+   "text_file": "experiments/sc_rutt_etra/shaders/wfall.frag"
+  },
+  "wfb": {
+   "type": "feedbackTOP",
+   "family": "TOP",
+   "pos": [
+    -250,
+    500
+   ],
+   "inputs": [
+    [
+     "wblack"
+    ]
+   ],
+   "pars": {
+    "format": "rgba16float",
+    "top": "wfall"
+   }
+  }
+ }
+}

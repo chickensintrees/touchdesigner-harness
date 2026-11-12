@@ -1,0 +1,2945 @@
+{
+ "format": "tdh-snapshot/1",
+ "root": "/project1/sc_point_morph",
+ "ops": {
+  "atlasA": {
+   "type": "switchTOP",
+   "family": "TOP",
+   "pos": [
+    -800,
+    400
+   ],
+   "inputs": [
+    [
+     "bake_ribbon_loop"
+    ],
+    [
+     "bake_word"
+    ],
+    [
+     "bake_marble_bust"
+    ],
+    [
+     "bake_gramophone"
+    ],
+    [
+     "bake_space_helmet"
+    ],
+    [
+     "bake_skeleton_key"
+    ],
+    [
+     "bake_astrolabe"
+    ],
+    [
+     "bake_amphora"
+    ],
+    [
+     "bake_hourglass"
+    ],
+    [
+     "bake_lander"
+    ],
+    [
+     "bake_word_made"
+    ],
+    [
+     "bake_word_out"
+    ],
+    [
+     "bake_mosaicA"
+    ],
+    [
+     "bake_mosaicB"
+    ],
+    [
+     "bake_word_d0"
+    ],
+    [
+     "bake_word_d1"
+    ],
+    [
+     "bake_word_d2"
+    ],
+    [
+     "bake_word_d3"
+    ],
+    [
+     "bake_word_pic"
+    ]
+   ],
+   "pars": {
+    "index": {
+     "expr": "int(op('sel')['a'])"
+    }
+   }
+  },
+  "atlasB": {
+   "type": "switchTOP",
+   "family": "TOP",
+   "pos": [
+    -800,
+    250
+   ],
+   "inputs": [
+    [
+     "bake_ribbon_loop"
+    ],
+    [
+     "bake_word"
+    ],
+    [
+     "bake_marble_bust"
+    ],
+    [
+     "bake_gramophone"
+    ],
+    [
+     "bake_space_helmet"
+    ],
+    [
+     "bake_skeleton_key"
+    ],
+    [
+     "bake_astrolabe"
+    ],
+    [
+     "bake_amphora"
+    ],
+    [
+     "bake_hourglass"
+    ],
+    [
+     "bake_lander"
+    ],
+    [
+     "bake_word_made"
+    ],
+    [
+     "bake_word_out"
+    ],
+    [
+     "bake_mosaicA"
+    ],
+    [
+     "bake_mosaicB"
+    ],
+    [
+     "bake_word_d0"
+    ],
+    [
+     "bake_word_d1"
+    ],
+    [
+     "bake_word_d2"
+    ],
+    [
+     "bake_word_d3"
+    ],
+    [
+     "bake_word_pic"
+    ]
+   ],
+   "pars": {
+    "index": {
+     "expr": "int(op('sel')['b'])"
+    }
+   }
+  },
+  "bake_amphora": {
+   "type": "scriptTOP",
+   "family": "TOP",
+   "pos": [
+    -1400,
+    -920
+   ],
+   "pars": {
+    "callbacks": "/project1/sc_point_morph/sample_surface"
+   }
+  },
+  "bake_astrolabe": {
+   "type": "scriptTOP",
+   "family": "TOP",
+   "pos": [
+    -1400,
+    -660
+   ],
+   "pars": {
+    "callbacks": "/project1/sc_point_morph/sample_surface"
+   }
+  },
+  "bake_gramophone": {
+   "type": "scriptTOP",
+   "family": "TOP",
+   "pos": [
+    -1400,
+    120
+   ],
+   "pars": {
+    "callbacks": "/project1/sc_point_morph/sample_surface"
+   }
+  },
+  "bake_hourglass": {
+   "type": "scriptTOP",
+   "family": "TOP",
+   "pos": [
+    -1400,
+    -1180
+   ],
+   "pars": {
+    "callbacks": "/project1/sc_point_morph/sample_surface"
+   }
+  },
+  "bake_lander": {
+   "type": "scriptTOP",
+   "family": "TOP",
+   "pos": [
+    -1400,
+    -1440
+   ],
+   "pars": {
+    "callbacks": "/project1/sc_point_morph/sample_surface"
+   }
+  },
+  "bake_marble_bust": {
+   "type": "scriptTOP",
+   "family": "TOP",
+   "pos": [
+    -1400,
+    380
+   ],
+   "pars": {
+    "callbacks": "/project1/sc_point_morph/sample_surface"
+   }
+  },
+  "bake_mosaicA": {
+   "type": "scriptTOP",
+   "family": "TOP",
+   "pos": [
+    -1400,
+    -2220
+   ],
+   "pars": {
+    "callbacks": "/project1/sc_point_morph/mosaic"
+   }
+  },
+  "bake_mosaicB": {
+   "type": "scriptTOP",
+   "family": "TOP",
+   "pos": [
+    -1400,
+    -2480
+   ],
+   "pars": {
+    "callbacks": "/project1/sc_point_morph/mosaic"
+   }
+  },
+  "bake_ribbon_loop": {
+   "type": "scriptTOP",
+   "family": "TOP",
+   "pos": [
+    -1400,
+    900
+   ],
+   "pars": {
+    "callbacks": "/project1/sc_point_morph/sample_surface"
+   }
+  },
+  "bake_skeleton_key": {
+   "type": "scriptTOP",
+   "family": "TOP",
+   "pos": [
+    -1400,
+    -400
+   ],
+   "pars": {
+    "callbacks": "/project1/sc_point_morph/sample_surface"
+   }
+  },
+  "bake_space_helmet": {
+   "type": "scriptTOP",
+   "family": "TOP",
+   "pos": [
+    -1400,
+    -140
+   ],
+   "pars": {
+    "callbacks": "/project1/sc_point_morph/sample_surface"
+   }
+  },
+  "bake_word": {
+   "type": "scriptTOP",
+   "family": "TOP",
+   "pos": [
+    -1400,
+    640
+   ],
+   "pars": {
+    "callbacks": "/project1/sc_point_morph/sample_surface"
+   }
+  },
+  "bake_word_d0": {
+   "type": "scriptTOP",
+   "family": "TOP",
+   "pos": [
+    -1400,
+    -2740
+   ],
+   "pars": {
+    "callbacks": "/project1/sc_point_morph/sample_surface"
+   }
+  },
+  "bake_word_d1": {
+   "type": "scriptTOP",
+   "family": "TOP",
+   "pos": [
+    -1400,
+    -3000
+   ],
+   "pars": {
+    "callbacks": "/project1/sc_point_morph/sample_surface"
+   }
+  },
+  "bake_word_d2": {
+   "type": "scriptTOP",
+   "family": "TOP",
+   "pos": [
+    -1400,
+    -3260
+   ],
+   "pars": {
+    "callbacks": "/project1/sc_point_morph/sample_surface"
+   }
+  },
+  "bake_word_d3": {
+   "type": "scriptTOP",
+   "family": "TOP",
+   "pos": [
+    -1400,
+    -3520
+   ],
+   "pars": {
+    "callbacks": "/project1/sc_point_morph/sample_surface"
+   }
+  },
+  "bake_word_made": {
+   "type": "scriptTOP",
+   "family": "TOP",
+   "pos": [
+    -1400,
+    -1700
+   ],
+   "pars": {
+    "callbacks": "/project1/sc_point_morph/sample_surface"
+   }
+  },
+  "bake_word_out": {
+   "type": "scriptTOP",
+   "family": "TOP",
+   "pos": [
+    -1400,
+    -1960
+   ],
+   "pars": {
+    "callbacks": "/project1/sc_point_morph/sample_surface"
+   }
+  },
+  "bake_word_pic": {
+   "type": "scriptTOP",
+   "family": "TOP",
+   "pos": [
+    -1400,
+    -3780
+   ],
+   "pars": {
+    "callbacks": "/project1/sc_point_morph/picture"
+   }
+  },
+  "cam": {
+   "type": "cameraCOMP",
+   "family": "COMP",
+   "pos": [
+    -400,
+    0
+   ],
+   "pars": {
+    "far": 50.0,
+    "fov": {
+     "expr": "op('ctl')['fov']"
+    },
+    "lookat": "/project1/sc_point_morph/target",
+    "near": 0.05,
+    "tx": {
+     "expr": "op('target').par.tx+op('camctl')['dist']*math.sin(op('camctl')['ang'])"
+    },
+    "ty": {
+     "expr": "op('camctl')['mid']+op('camctl')['hi']+0.12*math.sin(op('hub')['evolve']*0.09)"
+    },
+    "tz": {
+     "expr": "op('camctl')['dist']*math.cos(op('camctl')['ang'])"
+    }
+   }
+  },
+  "cam/file1": {
+   "type": "fileinPOP",
+   "family": "POP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "file": {
+     "expr": "app.samplesFolder + '/Geo/defcam.tog'"
+    }
+   }
+  },
+  "cam_in": {
+   "type": "cameraCOMP",
+   "family": "COMP",
+   "pos": [
+    -100,
+    0
+   ],
+   "pars": {
+    "far": 50.0,
+    "fov": 100.0,
+    "near": 0.05,
+    "rx": {
+     "expr": "14*math.sin(op('hub')['evolve']*0.21)"
+    },
+    "ry": {
+     "expr": "op('hub')['evolve']*22+op('shot')['seed']*360"
+    },
+    "tx": {
+     "expr": "0.3*math.sin(op('hub')['evolve']*0.3)"
+    },
+    "ty": {
+     "expr": "-0.5+op('ctl')['wscale']*(op('camctl')['mid']+0.5)"
+    },
+    "tz": {
+     "expr": "0.3*math.cos(op('hub')['evolve']*0.23)"
+    }
+   }
+  },
+  "cam_in/file1": {
+   "type": "fileinPOP",
+   "family": "POP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "file": {
+     "expr": "app.samplesFolder + '/Geo/defcam.tog'"
+    }
+   }
+  },
+  "cam_top": {
+   "type": "cameraCOMP",
+   "family": "COMP",
+   "pos": [
+    -250,
+    0
+   ],
+   "pars": {
+    "far": 50.0,
+    "fov": 14.0,
+    "near": 0.05,
+    "rx": -90.0,
+    "tx": {
+     "expr": "0.12*math.sin(op('hub')['evolve']*0.17)"
+    },
+    "ty": 8.0,
+    "tz": {
+     "expr": "0.08*math.cos(op('hub')['evolve']*0.13)"
+    }
+   }
+  },
+  "cam_top/file1": {
+   "type": "fileinPOP",
+   "family": "POP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "file": {
+     "expr": "app.samplesFolder + '/Geo/defcam.tog'"
+    }
+   }
+  },
+  "camctl": {
+   "type": "constantCHOP",
+   "family": "CHOP",
+   "pos": [
+    -800,
+    100
+   ],
+   "pars": {
+    "const0name": "mid",
+    "const0value": {
+     "expr": "((-0.0, -0.148, -0.0, -0.0, -0.045, -0.0, -0.0, -0.0, -0.0, -0.0, 0.022, 0.021, 0.0, 0.0, -0.168, -0.159, 0.014, 0.2, 0.394)[int(op('sel')['a'])]+((-0.0, -0.148, -0.0, -0.0, -0.045, -0.0, -0.0, -0.0, -0.0, -0.0, 0.022, 0.021, 0.0, 0.0, -0.168, -0.159, 0.014, 0.2, 0.394)[int(op('sel')['b'])]-(-0.0, -0.148, -0.0, -0.0, -0.045, -0.0, -0.0, -0.0, -0.0, -0.0, 0.022, 0.021, 0.0, 0.0, -0.168, -0.159, 0.014, 0.2, 0.394)[int(op('sel')['a'])])*(lambda p: p*p*(3-2*p))((parent().par.Morph if parent().par.Manual else min(1, op('hub')['section_pos']/op('ctl')['mdur']))))"
+    },
+    "const1name": "dist",
+    "const1value": {
+     "expr": "(op('ctl')['ddfix'] if op('ctl')['desc'] and op('ctl')['ddfix']>0 else op('ctl')['dfix'] if op('ctl')['dfix']>0 else (((4.357, 4.579, 4.267, 4.377, 4.811, 4.194, 4.317, 4.276, 4.261, 4.906, 4.579, 4.579, 3.0, 3.0, 4.579, 4.579, 4.579, 4.579, 4.139)[int(op('sel')['a'])]+((4.357, 4.579, 4.267, 4.377, 4.811, 4.194, 4.317, 4.276, 4.261, 4.906, 4.579, 4.579, 3.0, 3.0, 4.579, 4.579, 4.579, 4.579, 4.139)[int(op('sel')['b'])]-(4.357, 4.579, 4.267, 4.377, 4.811, 4.194, 4.317, 4.276, 4.261, 4.906, 4.579, 4.579, 3.0, 3.0, 4.579, 4.579, 4.579, 4.579, 4.139)[int(op('sel')['a'])])*(lambda p: p*p*(3-2*p))((parent().par.Morph if parent().par.Manual else min(1, op('hub')['section_pos']/op('ctl')['mdur']))))*(1-0.08*op('hub')['energy'])*(1+0.32*math.sin(math.pi*(parent().par.Morph if parent().par.Manual else min(1, op('hub')['section_pos']/op('ctl')['mdur'])))))*(op('ctl')['indmul'] if op('ctl')['inon'] and op('ctl')['indmul']>0 else op('ctl')['dmul']))"
+    },
+    "const2name": "tgtx",
+    "const2value": {
+     "expr": "(op('ctl')['intgtx'] if op('ctl')['inon'] and op('ctl')['intgtx']>-50 else op('ctl')['dtgtx'] if op('ctl')['desc'] and op('ctl')['dtgtx']>-50 else op('ctl')['tgtx'])"
+    },
+    "const3name": "tgty",
+    "const3value": {
+     "expr": "(op('ctl')['intgty'] if op('ctl')['inon'] and op('ctl')['intgty']>-50 else op('ctl')['dtgty'] if op('ctl')['desc'] and op('ctl')['dtgty']>-50 else op('ctl')['tgty'])"
+    },
+    "const4name": "ang",
+    "const4value": {
+     "expr": "(op('ctl')['dang'] if op('ctl')['desc'] and op('ctl')['dang']>0 else op('ctl')['ang'])*op('ctl')['side']+op('ctl')['swing']*0.30*math.sin(op('hub')['evolve']*0.13+op('shot')['seed']*6.283)"
+    },
+    "const5name": "hi",
+    "const5value": {
+     "expr": "(op('ctl')['hfix'] if op('ctl')['hfix']>-50 else ((0.32, 0.2, 0.32, 0.32, 0.32, 0.32, 0.32, 0.32, 0.32, 0.32, 0.2, 0.2, 0.32, 0.32, 0.2, 0.2, 0.2, 0.2, 0.2)[int(op('sel')['a'])]+((0.32, 0.2, 0.32, 0.32, 0.32, 0.32, 0.32, 0.32, 0.32, 0.32, 0.2, 0.2, 0.32, 0.32, 0.2, 0.2, 0.2, 0.2, 0.2)[int(op('sel')['b'])]-(0.32, 0.2, 0.32, 0.32, 0.32, 0.32, 0.32, 0.32, 0.32, 0.32, 0.2, 0.2, 0.32, 0.32, 0.2, 0.2, 0.2, 0.2, 0.2)[int(op('sel')['a'])])*(lambda p: p*p*(3-2*p))((parent().par.Morph if parent().par.Manual else min(1, op('hub')['section_pos']/op('ctl')['mdur'])))))"
+    },
+    "const6name": "wide",
+    "const6value": {
+     "expr": "((1.0, 0.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 0.0, 0.0, 1.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0)[int(op('sel')['a'])]+((1.0, 0.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 0.0, 0.0, 1.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0)[int(op('sel')['b'])]-(1.0, 0.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 0.0, 0.0, 1.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0)[int(op('sel')['a'])])*(lambda p: p*p*(3-2*p))((parent().par.Morph if parent().par.Manual else min(1, op('hub')['section_pos']/op('ctl')['mdur']))))"
+    }
+   }
+  },
+  "caption": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    800,
+    150
+   ],
+   "pars": {
+    "alignx": {
+     "expr": "'right' if op('ctl')['side']>0 else 'left'"
+    },
+    "aligny": {
+     "expr": "'top' if op('ctl')['captop'] else 'bottom'"
+    },
+    "borderspace1": 44.0,
+    "borderspace2": 34.0,
+    "fontcolorb": {
+     "expr": "op('ctl')['capb']"
+    },
+    "fontcolorg": {
+     "expr": "op('ctl')['capg']"
+    },
+    "fontcolorr": {
+     "expr": "op('ctl')['capr']"
+    },
+    "fontfile": {
+     "expr": "mod.paths.font('chicago')"
+    },
+    "fontsizex": {
+     "expr": "(op('ctl')['dcapsize'] if parent().par.Describe else op('ctl')['capsize'])"
+    },
+    "outputresolution": "custom",
+    "resmult": false,
+    "resolutionh": 720,
+    "resolutionw": 1280,
+    "text": {
+     "expr": "((('POINT CLOUD MORPH\\n123,904 POINTS SAMPLED FROM THE SURFACE\\nOF A 3D MODEL, EACH IN ITS TEXTURE COLOUR.', 'EVERY POINT HAS A PLACE ON TWO SHAPES.\\nWHEN THE SONG CHANGES SECTION\\nIT FLIES FROM ONE TO THE OTHER.', 'ONCE A BEAT A BRIGHT BAND CLIMBS THE CLOUD.\\nKICKS PUSH THE SURFACE OUTWARD.\\nVOCALS MAKE POINTS SHIMMER.'), ('ONE CLOUD DEALT INTO 15 CELLS: POINT i GOES TO CELL i MOD 15.', '15 SMALL CLOUDS OF ABOUT 8,260 POINTS EACH. NINE MODELS.', 'THE BEAT STEPS A HIGHLIGHT FROM CELL TO CELL.'), ('INSIDE THE CLOUD\\nTHE CAMERA STANDS WITHIN A MODEL ENLARGED\\nFIVE TIMES AND LOOKS OUT THROUGH ITS SKIN.', 'INSIDE THE CLOUD\\nEVERY DISC IS ONE SURFACE POINT OF A 3D MODEL,\\nSEEN FROM THE WRONG SIDE.', 'INSIDE THE CLOUD\\nKICKS THROW THE PICTURE OUTWARD\\nAS RAYS OF VIDEO FEEDBACK.'), ('PLAN VIEW: THE CLOUD SEEN FROM STRAIGHT ABOVE.\\nONLY POINTS NEAR A HEIGHT LEVEL ARE INKED,\\nSO THE MODEL DRAWS ITS OWN CONTOUR MAP.', 'CONTOUR LINES FROM POINTS\\n15 HEIGHT LEVELS PER UNIT, CLIMBING SLOWLY.\\nA BRIGHT CONTOUR RISES ON EVERY BEAT.', 'NO MESH, NO LINES: JUST 123,904 POINTS.\\nTHE ONES NEAR A HEIGHT LEVEL ARE DRAWN,\\nTHE REST LEFT DARK.'), ('LONG EXPOSURE\\nONLY 1 POINT IN 40 IS DRAWN. THE MODEL SPINS\\nAND THE FRAME FADES SLOWLY, SO POINTS DRAW LINES.', 'LONG EXPOSURE\\nEACH FRAME KEEPS ABOUT 99% OF THE LAST ONE.\\nA SPINNING POINT LEAVES ITS ORBIT BEHIND.', 'LONG EXPOSURE\\nABOUT 3,100 POINTS OF 123,904, TURNING FAST.\\nTHE TRAILS ARE VIDEO FEEDBACK.'), ('A HALFTONE\\nMADE OF POINTS.', 'DARKER SURFACE,\\nBIGGER DOT.', 'THE NEAREST POINT\\nWINS EACH CELL.'), ('TWO SHAPES, ONE CLOUD: HALF THE POINTS EACH.\\nA STRAND OF POINTS CROSSES FROM ONE TO THE OTHER.\\nKICKS TEAR MORE OF THEM LOOSE.', 'ONE INK PER SHAPE. A POINT IN THE STRAND\\nCHANGES INK AS IT CROSSES, IN FOUR BEATS.', '6% OF THE POINTS ARE ALWAYS IN TRANSIT.\\nA HARD KICK PULLS A QUARTER OF THEM\\nOUT OF THEIR SHAPE.'), ('LETTERS SAMPLED INTO 123,904 POINTS, IN ONE INK.\\nDISTANCE FADES THEM INTO THE PAPER.', 'LETTERS SAMPLED INTO 123,904 POINTS, IN ONE INK.\\nDISTANCE FADES THEM INTO THE PAPER.', 'LETTERS SAMPLED INTO 123,904 POINTS, IN ONE INK.\\nDISTANCE FADES THEM INTO THE PAPER.')) if parent().par.Describe else (('', '', ''), ('CATALOGUE NO. 47', 'OBJECT OF UNKNOWN USE', 'FOUND, NOT MADE.'), ('', '', ''), ('PLATE 07', 'PLAN 12-B', 'DO NOT TOUCH'), ('', '', ''), ('EVERY DOT IS LIVE.', 'LOUD IS BRIGHT.', 'NOT A RECORDING.'), ('PAST. PRESENT. LATER.', '', 'HANDLE WITH BOTH HANDS'), ('', '', '')))[int(op('shot')['take'])%8][int(op('shot')['seed']*2.999)]"
+    }
+   }
+  },
+  "cloud": {
+   "type": "geometryCOMP",
+   "family": "COMP",
+   "pos": [
+    -400,
+    300
+   ],
+   "pars": {
+    "instancecountmode": "manual",
+    "instancing": true,
+    "material": "/project1/sc_point_morph/cloud_mat",
+    "numinstances": {
+     "expr": "int(op('ctl')['inst'])"
+    }
+   }
+  },
+  "cloud/grid": {
+   "type": "gridPOP",
+   "family": "POP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "cols": 352,
+    "normal": "none",
+    "rows": 352,
+    "surftype": "points",
+    "texture": "none"
+   }
+  },
+  "cloud_mat": {
+   "type": "glslMAT",
+   "family": "MAT",
+   "pos": [
+    -400,
+    -300
+   ],
+   "pars": {
+    "pdat": "/project1/sc_point_morph/cloud_pixel",
+    "sampler0filter": "nearest",
+    "sampler0name": "sA",
+    "sampler0top": "/project1/sc_point_morph/atlasA",
+    "sampler1filter": "nearest",
+    "sampler1name": "sB",
+    "sampler1top": "/project1/sc_point_morph/atlasB",
+    "sampler2name": "sIn",
+    "sampler2top": "/project1/sc_point_morph/in_sel",
+    "vdat": "/project1/sc_point_morph/cloud_vertex",
+    "vec0name": "uMorph",
+    "vec0valuew": {
+     "expr": "((0.0, 0.0, 0.0, 0.5, 0.0, 1.57, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0)[int(op('sel')['b'])]+(parent().par.Yaw if parent().par.Manual else (op('ctl')['sway']*(0.24 if (int(op('sel')['b'])) in (1, 10, 11, 14, 15, 16, 17, 18) else 0.4)*math.sin(op('hub')['evolve']*0.55+(int(op('sel')['b']))*1.3)+op('ctl')['spin']*op('hub')['evolve']+op('ctl')['yawseed']*op('shot')['seed']*6.283)))"
+    },
+    "vec0valuex": {
+     "expr": "(parent().par.Morph if parent().par.Manual else min(1, op('hub')['section_pos']/op('ctl')['mdur']))"
+    },
+    "vec0valuey": {
+     "expr": "op('hub')['evolve']"
+    },
+    "vec0valuez": {
+     "expr": "((0.0, 0.0, 0.0, 0.5, 0.0, 1.57, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0)[int(op('sel')['a'])]+(parent().par.Yaw if parent().par.Manual else (op('ctl')['sway']*(0.24 if (int(op('sel')['a'])) in (1, 10, 11, 14, 15, 16, 17, 18) else 0.4)*math.sin(op('hub')['evolve']*0.55+(int(op('sel')['a']))*1.3)+op('ctl')['spin']*op('hub')['evolve']+op('ctl')['yawseed']*op('shot')['seed']*6.283)))"
+    },
+    "vec10name": "uInk2",
+    "vec10valuew": {
+     "expr": "op('ctl')['fog']"
+    },
+    "vec10valuex": {
+     "expr": "op('ctl')['inkbr']"
+    },
+    "vec10valuey": {
+     "expr": "op('ctl')['inkbg']"
+    },
+    "vec10valuez": {
+     "expr": "op('ctl')['inkbb']"
+    },
+    "vec11name": "uPaperM",
+    "vec11valuew": {
+     "expr": "1 if op('ctl')['bg'] in (1, 3) else 0"
+    },
+    "vec11valuex": {
+     "expr": "op('ctl')['paperr']"
+    },
+    "vec11valuey": {
+     "expr": "op('ctl')['paperg']"
+    },
+    "vec11valuez": {
+     "expr": "op('ctl')['paperb']"
+    },
+    "vec12name": "uGrid",
+    "vec12valuew": {
+     "expr": "int(op('hub')['beat_i'])%15"
+    },
+    "vec12valuex": 5.0,
+    "vec12valuey": 3.0,
+    "vec12valuez": {
+     "expr": "op('ctl')['keep']"
+    },
+    "vec13name": "uPic",
+    "vec13valuew": {
+     "expr": "op('ctl')['inmode']*op('ctl')['inon']"
+    },
+    "vec13valuex": {
+     "expr": "1 if int(op('sel')['a'])==18 else 0"
+    },
+    "vec13valuey": {
+     "expr": "1 if int(op('sel')['b'])==18 else 0"
+    },
+    "vec13valuez": {
+     "expr": "op('ctl')['inwear']"
+    },
+    "vec14name": "uDesc",
+    "vec14valuew": 0.0,
+    "vec14valuex": {
+     "expr": "op('ctl')['desc']"
+    },
+    "vec14valuey": 0.96,
+    "vec14valuez": 0.0,
+    "vec1name": "uAudio",
+    "vec1valuew": {
+     "expr": "op('hub')['pulse']"
+    },
+    "vec1valuex": {
+     "expr": "op('hub')['hit_low']"
+    },
+    "vec1valuey": {
+     "expr": "op('hub')['bass']"
+    },
+    "vec1valuez": {
+     "expr": "op('hub')['vocals']"
+    },
+    "vec2name": "uAudio2",
+    "vec2valuew": {
+     "expr": "op('hub')['beat_pos']"
+    },
+    "vec2valuex": {
+     "expr": "op('hub')['hit_high']"
+    },
+    "vec2valuey": {
+     "expr": "op('hub')['energy']"
+    },
+    "vec2valuez": {
+     "expr": "op('hub')['hit_mid']"
+    },
+    "vec3name": "uLook",
+    "vec3valuew": {
+     "expr": "1 if int(op('sel')['b']) in (1, 10, 11, 14, 15, 16, 17, 18) else 0"
+    },
+    "vec3valuex": 1.8,
+    "vec3valuey": -0.5,
+    "vec3valuez": {
+     "expr": "1 if int(op('sel')['a']) in (1, 10, 11, 14, 15, 16, 17, 18) else 0"
+    },
+    "vec4name": "uGain",
+    "vec4valuew": 0.0,
+    "vec4valuex": {
+     "expr": "op('ctl')['gain']"
+    },
+    "vec4valuey": 0.0,
+    "vec4valuez": 0.0,
+    "vec5name": "uAccent",
+    "vec5valuew": {
+     "expr": "op('hub')['section_pos']"
+    },
+    "vec5valuex": {
+     "expr": "((0.72, 0.13, 0.34), (0.72, 0.13, 0.34), (0.82, 0.6, 0.07), (0.4, 0.62, 0.16), (0.03, 0.38, 0.62), (0.9, 0.15, 0.07), (0.72, 0.13, 0.34), (0.03, 0.38, 0.62), (0.86, 0.42, 0.05), (0.03, 0.38, 0.62), (0.03, 0.38, 0.62), (0.9, 0.15, 0.07), (0.5, 0.5, 0.5), (0.5, 0.5, 0.5), (0.72, 0.13, 0.34), (0.03, 0.38, 0.62), (0.9, 0.15, 0.07), (0.03, 0.38, 0.62), (0.03, 0.38, 0.62))[int(op('sel')['b'])][0]"
+    },
+    "vec5valuey": {
+     "expr": "((0.72, 0.13, 0.34), (0.72, 0.13, 0.34), (0.82, 0.6, 0.07), (0.4, 0.62, 0.16), (0.03, 0.38, 0.62), (0.9, 0.15, 0.07), (0.72, 0.13, 0.34), (0.03, 0.38, 0.62), (0.86, 0.42, 0.05), (0.03, 0.38, 0.62), (0.03, 0.38, 0.62), (0.9, 0.15, 0.07), (0.5, 0.5, 0.5), (0.5, 0.5, 0.5), (0.72, 0.13, 0.34), (0.03, 0.38, 0.62), (0.9, 0.15, 0.07), (0.03, 0.38, 0.62), (0.03, 0.38, 0.62))[int(op('sel')['b'])][1]"
+    },
+    "vec5valuez": {
+     "expr": "((0.72, 0.13, 0.34), (0.72, 0.13, 0.34), (0.82, 0.6, 0.07), (0.4, 0.62, 0.16), (0.03, 0.38, 0.62), (0.9, 0.15, 0.07), (0.72, 0.13, 0.34), (0.03, 0.38, 0.62), (0.86, 0.42, 0.05), (0.03, 0.38, 0.62), (0.03, 0.38, 0.62), (0.9, 0.15, 0.07), (0.5, 0.5, 0.5), (0.5, 0.5, 0.5), (0.72, 0.13, 0.34), (0.03, 0.38, 0.62), (0.9, 0.15, 0.07), (0.03, 0.38, 0.62), (0.03, 0.38, 0.62))[int(op('sel')['b'])][2]"
+    },
+    "vec6name": "uTake",
+    "vec6valuew": {
+     "expr": "op('ctl')['nsign']"
+    },
+    "vec6valuex": {
+     "expr": "op('ctl')['layout']"
+    },
+    "vec6valuey": {
+     "expr": "op('ctl')['cmode']"
+    },
+    "vec6valuez": {
+     "expr": "op('ctl')['wscale']"
+    },
+    "vec7name": "uShot",
+    "vec7valuew": {
+     "expr": "640/math.tan(math.radians((op('ctl')['fov'],14,100)[int(op('ctl')['cam'])]/2))"
+    },
+    "vec7valuex": {
+     "expr": "op('shot')['age']"
+    },
+    "vec7valuey": {
+     "expr": "op('shot')['seed']"
+    },
+    "vec7valuez": {
+     "expr": "op('ctl')['burst']"
+    },
+    "vec8name": "uSize",
+    "vec8valuew": {
+     "expr": "(op('ctl')['incell'] if op('ctl')['inon'] and op('ctl')['incell']>0 else op('ctl')['cellpx'])"
+    },
+    "vec8valuex": {
+     "expr": "op('ctl')['sizemul']"
+    },
+    "vec8valuey": {
+     "expr": "op('ctl')['minpx']"
+    },
+    "vec8valuez": {
+     "expr": "op('ctl')['maxpx']"
+    },
+    "vec9name": "uInk",
+    "vec9valuew": {
+     "expr": "op('ctl')['mono']"
+    },
+    "vec9valuex": {
+     "expr": "op('ctl')['inkr']"
+    },
+    "vec9valuey": {
+     "expr": "op('ctl')['inkg']"
+    },
+    "vec9valuez": {
+     "expr": "op('ctl')['inkb']"
+    }
+   }
+  },
+  "cloud_pixel": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    -600,
+    -420
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.here('shaders/cloud_pixel.glsl')"
+    },
+    "language": "text",
+    "syncfile": true
+   },
+   "text_file": "experiments/sc_point_morph/shaders/cloud_pixel.glsl"
+  },
+  "cloud_vertex": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    -600,
+    -300
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.here('shaders/cloud_vertex.glsl')"
+    },
+    "language": "text",
+    "syncfile": true
+   },
+   "text_file": "experiments/sc_point_morph/shaders/cloud_vertex.glsl"
+  },
+  "cook_driver": {
+   "type": "executeDAT",
+   "family": "DAT",
+   "pos": [
+    -400,
+    -80
+   ],
+   "pars": {
+    "framestart": true,
+    "language": "python"
+   },
+   "text": [
+    "def onFrameStart(frame):",
+    "    hub = op('/project1/sw_hub')",
+    "    me_on = parent().par.Preview.eval()",
+    "    if hub is not None:",
+    "        me_on = me_on or hub.par.Solo.eval() or hub.par.Scene.eval() == parent().name",
+    "    if me_on:",
+    "        op('hub').cook(force=True)",
+    "        op('out1').cook(force=True)",
+    "    return"
+   ]
+  },
+  "ctl": {
+   "type": "constantCHOP",
+   "family": "CHOP",
+   "pos": [
+    -800,
+    700
+   ],
+   "pars": {
+    "const0name": "layout",
+    "const0value": {
+     "expr": "(0, 1, 0, 0, 0, 0, 2, 0)[int(op('shot')['take'])%8]"
+    },
+    "const10name": "inst",
+    "const10value": {
+     "expr": "(2, 1, 1, 1, 1, 1, 1, 1)[int(op('shot')['take'])%8]"
+    },
+    "const11name": "burst",
+    "const11value": {
+     "expr": "(1.0, 0.0, 0.5, 1.0, 0.6, 0.0, 0.7, 1.4)[int(op('shot')['take'])%8]"
+    },
+    "const12name": "mdur",
+    "const12value": {
+     "expr": "(0.5, 0.5, 0.3, 0.5, 0.5, 0.5, 0.5, 0.22)[int(op('shot')['take'])%8]"
+    },
+    "const13name": "captop",
+    "const13value": {
+     "expr": "(0, 0, 0, 0, 0, 1, 0, 0)[int(op('shot')['take'])%8]"
+    },
+    "const14name": "spin",
+    "const14value": {
+     "expr": "(0.0, 0.0, 0.0, 0.35, 14.0, 0.0, 0.0, 0.0)[int(op('shot')['take'])%8]"
+    },
+    "const15name": "sway",
+    "const15value": {
+     "expr": "(1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 1.0, 0.25)[int(op('shot')['take'])%8]"
+    },
+    "const16name": "yawseed",
+    "const16value": {
+     "expr": "(0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0)[int(op('shot')['take'])%8]"
+    },
+    "const17name": "mono",
+    "const17value": {
+     "expr": "(0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0)[int(op('shot')['take'])%8]"
+    },
+    "const18name": "fog",
+    "const18value": {
+     "expr": "(0.0, 0.0, 0.2, 0.0, 0.0, 0.0, 0.0, 0.36)[int(op('shot')['take'])%8]"
+    },
+    "const19name": "cam",
+    "const19value": {
+     "expr": "(0, 0, 2, 1, 0, 0, 0, 0)[int(op('shot')['take'])%8]"
+    },
+    "const1name": "cmode",
+    "const1value": {
+     "expr": "(0, 0, 0, 4, 0, 2, 3, 0)[int(op('shot')['take'])%8]"
+    },
+    "const20name": "dmul",
+    "const20value": {
+     "expr": "(1.0, 1.0, 1.0, 1.0, 0.72, 0.58, 1.0, 1.0)[int(op('shot')['take'])%8]"
+    },
+    "const21name": "dfix",
+    "const21value": {
+     "expr": "(0.0, 21.5, 0.0, 0.0, 0.0, 0.0, 3.9, 1.9)[int(op('shot')['take'])%8]"
+    },
+    "const22name": "hfix",
+    "const22value": {
+     "expr": "(-99.0, -0.3, -99.0, -99.0, 0.8, -99.0, -0.28, 0.04)[int(op('shot')['take'])%8]"
+    },
+    "const23name": "ang",
+    "const23value": {
+     "expr": "(0.0, 0.0, 0.0, 0.0, 0.0, 0.45, 0.0, 0.8)[int(op('shot')['take'])%8]"
+    },
+    "const24name": "swing",
+    "const24value": {
+     "expr": "(1.0, 0.5, 1.0, 1.0, 0.0, 1.0, 0.6, 0.5)[int(op('shot')['take'])%8]"
+    },
+    "const25name": "fov",
+    "const25value": {
+     "expr": "(40.0, 20.0, 40.0, 40.0, 40.0, 40.0, 52.0, 55.0)[int(op('shot')['take'])%8]"
+    },
+    "const26name": "drift",
+    "const26value": {
+     "expr": "(1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0)[int(op('shot')['take'])%8]"
+    },
+    "const27name": "tgtx",
+    "const27value": {
+     "expr": "(0.0, 0.0, 0.0, 0.0, 0.0, 0.35, 0.0, 0.5)[int(op('shot')['take'])%8]"
+    },
+    "const28name": "tgty",
+    "const28value": {
+     "expr": "(0.0, -0.3, 0.0, 0.0, 0.0, 0.0, 0.08, 0.0)[int(op('shot')['take'])%8]"
+    },
+    "const29name": "bg",
+    "const29value": {
+     "expr": "(0, 1, 2, 3, 2, 1, 2, 1)[int(op('shot')['take'])%8]"
+    },
+    "const2name": "wscale",
+    "const2value": {
+     "expr": "(1.0, 1.0, 5.0, 1.0, 1.0, 1.0, 1.0, 1.0)[int(op('shot')['take'])%8]"
+    },
+    "const30name": "glow",
+    "const30value": {
+     "expr": "(1.0, 0.0, 0.7, 0.35, 0.5, 0.0, 1.0, 0.0)[int(op('shot')['take'])%8]"
+    },
+    "const31name": "vig",
+    "const31value": {
+     "expr": "(1.0, 0.25, 0.6, 0.35, 0.7, 0.15, 0.8, 0.3)[int(op('shot')['take'])%8]"
+    },
+    "const32name": "echo",
+    "const32value": {
+     "expr": "(0.8, 0.0, 0.9, 0.0, 1.0, 0.0, 0.9, 0.0)[int(op('shot')['take'])%8]"
+    },
+    "const33name": "decay",
+    "const33value": {
+     "expr": "(0.8, 0.0, 0.84, 0.0, 0.988, 0.0, 0.86, 0.0)[int(op('shot')['take'])%8]"
+    },
+    "const34name": "decaye",
+    "const34value": {
+     "expr": "(0.1, 0.0, 0.08, 0.0, 0.006, 0.0, 0.06, 0.0)[int(op('shot')['take'])%8]"
+    },
+    "const35name": "zoom",
+    "const35value": {
+     "expr": "(1.0, 0.0, 1.6, 0.0, 0.0, 0.0, 0.5, 0.0)[int(op('shot')['take'])%8]"
+    },
+    "const36name": "capsize",
+    "const36value": {
+     "expr": "(24, 24, 24, 24, 24, 40, 24, 24)[int(op('shot')['take'])%8]"
+    },
+    "const37name": "dcapsize",
+    "const37value": {
+     "expr": "(24, 24, 24, 24, 24, 40, 24, 24)[int(op('shot')['take'])%8]"
+    },
+    "const38name": "capplate",
+    "const38value": {
+     "expr": "(0.5, 0.0, 0.72, 0.6, 0.7, 0.0, 0.7, 0.6)[int(op('shot')['take'])%8]"
+    },
+    "const39name": "dang",
+    "const39value": {
+     "expr": "(-1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, 0.45)[int(op('shot')['take'])%8]"
+    },
+    "const3name": "nsign",
+    "const3value": {
+     "expr": "(1.0, 1.0, -1.0, 1.0, 1.0, 1.0, 1.0, 1.0)[int(op('shot')['take'])%8]"
+    },
+    "const40name": "ddfix",
+    "const40value": {
+     "expr": "(-1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, 2.7)[int(op('shot')['take'])%8]"
+    },
+    "const41name": "dtgtx",
+    "const41value": {
+     "expr": "(-99.0, -99.0, -99.0, -99.0, -99.0, -99.0, -99.0, 0.1)[int(op('shot')['take'])%8]"
+    },
+    "const42name": "dtgty",
+    "const42value": {
+     "expr": "(-99.0, -99.0, -99.0, -99.0, -99.0, -99.0, -99.0, -0.1)[int(op('shot')['take'])%8]"
+    },
+    "const43name": "inmode",
+    "const43value": {
+     "expr": "(1, 0, 2, 3, 0, 1, 0, 1)[int(op('shot')['take'])%8]"
+    },
+    "const44name": "inwear",
+    "const44value": {
+     "expr": "(0.55, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0)[int(op('shot')['take'])%8]"
+    },
+    "const45name": "indmul",
+    "const45value": {
+     "expr": "(-1.0, -1.0, -1.0, -1.0, -1.0, 1.25, -1.0, -1.0)[int(op('shot')['take'])%8]"
+    },
+    "const46name": "intgtx",
+    "const46value": {
+     "expr": "(-99.0, -99.0, -99.0, -99.0, -99.0, 0.0, -99.0, -99.0)[int(op('shot')['take'])%8]"
+    },
+    "const47name": "intgty",
+    "const47value": {
+     "expr": "(-99.0, -99.0, -99.0, -99.0, -99.0, 0.27, -99.0, -99.0)[int(op('shot')['take'])%8]"
+    },
+    "const48name": "incell",
+    "const48value": {
+     "expr": "(-1.0, -1.0, -1.0, -1.0, -1.0, 12.0, -1.0, -1.0)[int(op('shot')['take'])%8]"
+    },
+    "const49name": "paperr",
+    "const49value": {
+     "expr": "(((0.006, 0.0199, 0.0399), (0.006, 0.0199, 0.0399), (0.006, 0.0199, 0.0399)), ((0.8592, 0.7818, 0.6121), (0.586, 0.5295, 0.3889), (0.7227, 0.7818, 0.5732)), ((0.006, 0.0199, 0.0399), (0.006, 0.0199, 0.0399), (0.006, 0.0199, 0.0399)), ((0.006, 0.0199, 0.0399), (0.002, 0.0385, 0.0658), (0.1975, 0.0097, 0.0072)), ((0.006, 0.0199, 0.0399), (0.006, 0.0199, 0.0399), (0.006, 0.0199, 0.0399)), ((0.7227, 0.4704, 0.043), (0.4878, 0.0939, 0.194), (0.8592, 0.7818, 0.6121)), ((0.006, 0.0199, 0.0399), (0.006, 0.0199, 0.0399), (0.006, 0.0199, 0.0399)), ((0.3993, 0.0278, 0.0199), (0.017, 0.212, 0.3345), (0.1511, 0.1905, 0.1166)))[int(op('shot')['take'])%8][int(op('shot')['seed']*2.999)][0]"
+    },
+    "const4name": "keep",
+    "const4value": {
+     "expr": "(1.0, 1.0, 0.75, 1.0, 0.025, 1.0, 1.0, 1.0)[int(op('shot')['take'])%8]"
+    },
+    "const50name": "paperg",
+    "const50value": {
+     "expr": "(((0.006, 0.0199, 0.0399), (0.006, 0.0199, 0.0399), (0.006, 0.0199, 0.0399)), ((0.8592, 0.7818, 0.6121), (0.586, 0.5295, 0.3889), (0.7227, 0.7818, 0.5732)), ((0.006, 0.0199, 0.0399), (0.006, 0.0199, 0.0399), (0.006, 0.0199, 0.0399)), ((0.006, 0.0199, 0.0399), (0.002, 0.0385, 0.0658), (0.1975, 0.0097, 0.0072)), ((0.006, 0.0199, 0.0399), (0.006, 0.0199, 0.0399), (0.006, 0.0199, 0.0399)), ((0.7227, 0.4704, 0.043), (0.4878, 0.0939, 0.194), (0.8592, 0.7818, 0.6121)), ((0.006, 0.0199, 0.0399), (0.006, 0.0199, 0.0399), (0.006, 0.0199, 0.0399)), ((0.3993, 0.0278, 0.0199), (0.017, 0.212, 0.3345), (0.1511, 0.1905, 0.1166)))[int(op('shot')['take'])%8][int(op('shot')['seed']*2.999)][1]"
+    },
+    "const51name": "paperb",
+    "const51value": {
+     "expr": "(((0.006, 0.0199, 0.0399), (0.006, 0.0199, 0.0399), (0.006, 0.0199, 0.0399)), ((0.8592, 0.7818, 0.6121), (0.586, 0.5295, 0.3889), (0.7227, 0.7818, 0.5732)), ((0.006, 0.0199, 0.0399), (0.006, 0.0199, 0.0399), (0.006, 0.0199, 0.0399)), ((0.006, 0.0199, 0.0399), (0.002, 0.0385, 0.0658), (0.1975, 0.0097, 0.0072)), ((0.006, 0.0199, 0.0399), (0.006, 0.0199, 0.0399), (0.006, 0.0199, 0.0399)), ((0.7227, 0.4704, 0.043), (0.4878, 0.0939, 0.194), (0.8592, 0.7818, 0.6121)), ((0.006, 0.0199, 0.0399), (0.006, 0.0199, 0.0399), (0.006, 0.0199, 0.0399)), ((0.3993, 0.0278, 0.0199), (0.017, 0.212, 0.3345), (0.1511, 0.1905, 0.1166)))[int(op('shot')['take'])%8][int(op('shot')['seed']*2.999)][2]"
+    },
+    "const52name": "inkr",
+    "const52value": {
+     "expr": "(((0.8592, 0.7818, 0.6121), (0.8592, 0.7818, 0.6121), (0.8592, 0.7818, 0.6121)), ((0.8592, 0.7818, 0.6121), (0.8592, 0.7818, 0.6121), (0.8592, 0.7818, 0.6121)), ((0.8592, 0.7818, 0.6121), (0.8592, 0.7818, 0.6121), (0.8592, 0.7818, 0.6121)), ((0.8592, 0.7818, 0.6121), (0.7227, 0.4704, 0.043), (0.8592, 0.7818, 0.6121)), ((0.8592, 0.7818, 0.6121), (0.8592, 0.7818, 0.6121), (0.8592, 0.7818, 0.6121)), ((0.006, 0.0199, 0.0399), (0.006, 0.0199, 0.0399), (0.006, 0.0199, 0.0399)), ((0.7227, 0.0915, 0.043), (0.7227, 0.4704, 0.043), (0.325, 0.4151, 0.0869)), ((0.8592, 0.7818, 0.6121), (0.8592, 0.7818, 0.6121), (0.7227, 0.7818, 0.5732)))[int(op('shot')['take'])%8][int(op('shot')['seed']*2.999)][0]"
+    },
+    "const53name": "inkg",
+    "const53value": {
+     "expr": "(((0.8592, 0.7818, 0.6121), (0.8592, 0.7818, 0.6121), (0.8592, 0.7818, 0.6121)), ((0.8592, 0.7818, 0.6121), (0.8592, 0.7818, 0.6121), (0.8592, 0.7818, 0.6121)), ((0.8592, 0.7818, 0.6121), (0.8592, 0.7818, 0.6121), (0.8592, 0.7818, 0.6121)), ((0.8592, 0.7818, 0.6121), (0.7227, 0.4704, 0.043), (0.8592, 0.7818, 0.6121)), ((0.8592, 0.7818, 0.6121), (0.8592, 0.7818, 0.6121), (0.8592, 0.7818, 0.6121)), ((0.006, 0.0199, 0.0399), (0.006, 0.0199, 0.0399), (0.006, 0.0199, 0.0399)), ((0.7227, 0.0915, 0.043), (0.7227, 0.4704, 0.043), (0.325, 0.4151, 0.0869)), ((0.8592, 0.7818, 0.6121), (0.8592, 0.7818, 0.6121), (0.7227, 0.7818, 0.5732)))[int(op('shot')['take'])%8][int(op('shot')['seed']*2.999)][1]"
+    },
+    "const54name": "inkb",
+    "const54value": {
+     "expr": "(((0.8592, 0.7818, 0.6121), (0.8592, 0.7818, 0.6121), (0.8592, 0.7818, 0.6121)), ((0.8592, 0.7818, 0.6121), (0.8592, 0.7818, 0.6121), (0.8592, 0.7818, 0.6121)), ((0.8592, 0.7818, 0.6121), (0.8592, 0.7818, 0.6121), (0.8592, 0.7818, 0.6121)), ((0.8592, 0.7818, 0.6121), (0.7227, 0.4704, 0.043), (0.8592, 0.7818, 0.6121)), ((0.8592, 0.7818, 0.6121), (0.8592, 0.7818, 0.6121), (0.8592, 0.7818, 0.6121)), ((0.006, 0.0199, 0.0399), (0.006, 0.0199, 0.0399), (0.006, 0.0199, 0.0399)), ((0.7227, 0.0915, 0.043), (0.7227, 0.4704, 0.043), (0.325, 0.4151, 0.0869)), ((0.8592, 0.7818, 0.6121), (0.8592, 0.7818, 0.6121), (0.7227, 0.7818, 0.5732)))[int(op('shot')['take'])%8][int(op('shot')['seed']*2.999)][2]"
+    },
+    "const55name": "inkbr",
+    "const55value": {
+     "expr": "(((0.7227, 0.0915, 0.043), (0.7227, 0.0915, 0.043), (0.7227, 0.0915, 0.043)), ((0.7227, 0.0915, 0.043), (0.7227, 0.0915, 0.043), (0.7227, 0.0915, 0.043)), ((0.7227, 0.0915, 0.043), (0.7227, 0.0915, 0.043), (0.7227, 0.0915, 0.043)), ((0.7227, 0.0915, 0.043), (0.8592, 0.7818, 0.6121), (0.7227, 0.4704, 0.043)), ((0.7227, 0.0915, 0.043), (0.7227, 0.0915, 0.043), (0.7227, 0.0915, 0.043)), ((0.7227, 0.0915, 0.043), (0.8592, 0.7818, 0.6121), (0.017, 0.212, 0.3345)), ((0.017, 0.212, 0.3345), (0.4878, 0.0939, 0.194), (0.8592, 0.7818, 0.6121)), ((0.7227, 0.0915, 0.043), (0.7227, 0.0915, 0.043), (0.7227, 0.0915, 0.043)))[int(op('shot')['take'])%8][int(op('shot')['seed']*2.999)][0]"
+    },
+    "const56name": "inkbg",
+    "const56value": {
+     "expr": "(((0.7227, 0.0915, 0.043), (0.7227, 0.0915, 0.043), (0.7227, 0.0915, 0.043)), ((0.7227, 0.0915, 0.043), (0.7227, 0.0915, 0.043), (0.7227, 0.0915, 0.043)), ((0.7227, 0.0915, 0.043), (0.7227, 0.0915, 0.043), (0.7227, 0.0915, 0.043)), ((0.7227, 0.0915, 0.043), (0.8592, 0.7818, 0.6121), (0.7227, 0.4704, 0.043)), ((0.7227, 0.0915, 0.043), (0.7227, 0.0915, 0.043), (0.7227, 0.0915, 0.043)), ((0.7227, 0.0915, 0.043), (0.8592, 0.7818, 0.6121), (0.017, 0.212, 0.3345)), ((0.017, 0.212, 0.3345), (0.4878, 0.0939, 0.194), (0.8592, 0.7818, 0.6121)), ((0.7227, 0.0915, 0.043), (0.7227, 0.0915, 0.043), (0.7227, 0.0915, 0.043)))[int(op('shot')['take'])%8][int(op('shot')['seed']*2.999)][1]"
+    },
+    "const57name": "inkbb",
+    "const57value": {
+     "expr": "(((0.7227, 0.0915, 0.043), (0.7227, 0.0915, 0.043), (0.7227, 0.0915, 0.043)), ((0.7227, 0.0915, 0.043), (0.7227, 0.0915, 0.043), (0.7227, 0.0915, 0.043)), ((0.7227, 0.0915, 0.043), (0.7227, 0.0915, 0.043), (0.7227, 0.0915, 0.043)), ((0.7227, 0.0915, 0.043), (0.8592, 0.7818, 0.6121), (0.7227, 0.4704, 0.043)), ((0.7227, 0.0915, 0.043), (0.7227, 0.0915, 0.043), (0.7227, 0.0915, 0.043)), ((0.7227, 0.0915, 0.043), (0.8592, 0.7818, 0.6121), (0.017, 0.212, 0.3345)), ((0.017, 0.212, 0.3345), (0.4878, 0.0939, 0.194), (0.8592, 0.7818, 0.6121)), ((0.7227, 0.0915, 0.043), (0.7227, 0.0915, 0.043), (0.7227, 0.0915, 0.043)))[int(op('shot')['take'])%8][int(op('shot')['seed']*2.999)][2]"
+    },
+    "const58name": "capr",
+    "const58value": {
+     "expr": "((0.9333, 0.8941, 0.8), (0.098, 0.1686, 0.2314), (0.9333, 0.8941, 0.8), (0.9333, 0.8941, 0.8), (0.9333, 0.8941, 0.8), (0.098, 0.1686, 0.2314), (0.9333, 0.8941, 0.8), (0.9333, 0.8941, 0.8))[int(op('shot')['take'])%8][0]"
+    },
+    "const59name": "capg",
+    "const59value": {
+     "expr": "((0.9333, 0.8941, 0.8), (0.098, 0.1686, 0.2314), (0.9333, 0.8941, 0.8), (0.9333, 0.8941, 0.8), (0.9333, 0.8941, 0.8), (0.098, 0.1686, 0.2314), (0.9333, 0.8941, 0.8), (0.9333, 0.8941, 0.8))[int(op('shot')['take'])%8][1]"
+    },
+    "const5name": "sizemul",
+    "const5value": {
+     "expr": "(1.0, 1.0, 0.32, 0.85, 0.6, 1.0, 1.0, 0.75)[int(op('shot')['take'])%8]"
+    },
+    "const60name": "capb",
+    "const60value": {
+     "expr": "((0.9333, 0.8941, 0.8), (0.098, 0.1686, 0.2314), (0.9333, 0.8941, 0.8), (0.9333, 0.8941, 0.8), (0.9333, 0.8941, 0.8), (0.098, 0.1686, 0.2314), (0.9333, 0.8941, 0.8), (0.9333, 0.8941, 0.8))[int(op('shot')['take'])%8][2]"
+    },
+    "const61name": "side",
+    "const61value": {
+     "expr": "1 if op('shot')['seed']>=0.5 else -1"
+    },
+    "const62name": "inon",
+    "const62value": {
+     "expr": "(lambda o: 1 if (o is not None and o.isTOP and not o.path.startswith(parent().path+'/')) else 0)(op(parent().par.Input.eval()) if parent().par.Input.eval() else None)"
+    },
+    "const63name": "desc",
+    "const63value": {
+     "expr": "1 if parent().par.Describe else 0"
+    },
+    "const6name": "minpx",
+    "const6value": {
+     "expr": "(1.5, 1.5, 1.5, 1.5, 2.0, 1.5, 1.5, 1.5)[int(op('shot')['take'])%8]"
+    },
+    "const7name": "maxpx",
+    "const7value": {
+     "expr": "(24.0, 24.0, 22.0, 24.0, 24.0, 24.0, 24.0, 12.0)[int(op('shot')['take'])%8]"
+    },
+    "const8name": "cellpx",
+    "const8value": {
+     "expr": "(16.0, 16.0, 16.0, 16.0, 16.0, 18.0, 16.0, 16.0)[int(op('shot')['take'])%8]"
+    },
+    "const9name": "gain",
+    "const9value": {
+     "expr": "(1.0, 1.0, 1.7, 1.0, 5.0, 1.0, 1.0, 1.0)[int(op('shot')['take'])%8]"
+    }
+   }
+  },
+  "glow": {
+   "type": "blurTOP",
+   "family": "TOP",
+   "pos": [
+    750,
+    -150
+   ],
+   "inputs": [
+    [
+     "glow_small"
+    ]
+   ],
+   "pars": {
+    "size": 14
+   }
+  },
+  "glow_small": {
+   "type": "resolutionTOP",
+   "family": "TOP",
+   "pos": [
+    600,
+    -150
+   ],
+   "inputs": [
+    [
+     "trail"
+    ]
+   ],
+   "pars": {
+    "outputresolution": "custom",
+    "resolutionh": 180,
+    "resolutionw": 320
+   }
+  },
+  "hub": {
+   "type": "selectCHOP",
+   "family": "CHOP",
+   "pos": [
+    -400,
+    200
+   ],
+   "pars": {
+    "chops": "/project1/sw_hub/feed"
+   }
+  },
+  "in_black": {
+   "type": "constantTOP",
+   "family": "TOP",
+   "pos": [
+    -1000,
+    -150
+   ],
+   "pars": {
+    "colorb": 0.0,
+    "colorg": 0.0,
+    "colorr": 0.0,
+    "outputresolution": "custom",
+    "resolutionh": 16,
+    "resolutionw": 16
+   }
+  },
+  "in_sel": {
+   "type": "selectTOP",
+   "family": "TOP",
+   "pos": [
+    -800,
+    -150
+   ],
+   "pars": {
+    "top": {
+     "expr": "parent().par.Input.eval() if op('ctl')['inon'] else 'in_black'"
+    }
+   }
+  },
+  "local": {
+   "type": "baseCOMP",
+   "family": "COMP",
+   "pos": [
+    -400,
+    460
+   ]
+  },
+  "local/modules": {
+   "type": "baseCOMP",
+   "family": "COMP",
+   "pos": [
+    0,
+    0
+   ]
+  },
+  "local/modules/paths": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "file": {
+     "expr": "project.folder.replace(chr(92), '/') + '/experiments/sw_hub/paths_module.py'"
+    },
+    "language": "text",
+    "syncfile": true
+   },
+   "text_file": "experiments/sw_hub/paths_module.py"
+  },
+  "mosaic": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    -1500,
+    1050
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.here('mosaic.py')"
+    },
+    "language": "text",
+    "syncfile": true
+   },
+   "text_file": "experiments/sc_point_morph/mosaic.py"
+  },
+  "out1": {
+   "type": "outTOP",
+   "family": "TOP",
+   "pos": [
+    1200,
+    0
+   ],
+   "inputs": [
+    [
+     "titled"
+    ]
+   ]
+  },
+  "picture": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    -1100,
+    1050
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.here('picture.py')"
+    },
+    "language": "text",
+    "syncfile": true
+   },
+   "text_file": "experiments/sc_point_morph/picture.py"
+  },
+  "post": {
+   "type": "glslTOP",
+   "family": "TOP",
+   "pos": [
+    800,
+    0
+   ],
+   "inputs": [
+    [
+     "trail"
+    ],
+    [
+     "glow"
+    ],
+    [
+     "render"
+    ]
+   ],
+   "pars": {
+    "computedat": "post_compute",
+    "format": "rgba8fixed",
+    "pixeldat": "/project1/sc_point_morph/post_frag",
+    "vec0name": "uRoom",
+    "vec0valuew": {
+     "expr": "op('hub')['evolve']"
+    },
+    "vec0valuex": 0.33,
+    "vec0valuey": {
+     "expr": "op('hub')['energy']"
+    },
+    "vec0valuez": {
+     "expr": "op('hub')['pulse']"
+    },
+    "vec1name": "uRoom2",
+    "vec1valuew": 0.0,
+    "vec1valuex": {
+     "expr": "op('hub')['hit_high']"
+    },
+    "vec1valuey": {
+     "expr": "op('hub')['vocals']"
+    },
+    "vec1valuez": {
+     "expr": "(0.5-op('target').par.tx/(0.728*max(1, op('cam').par.tz)) if op('ctl')['cam']==0 and op('ctl')['drift']>0 else 0.5)"
+    },
+    "vec2name": "uTint",
+    "vec2valuew": {
+     "expr": "op('hub')['hit_low']"
+    },
+    "vec2valuex": {
+     "expr": "((0.72, 0.13, 0.34), (0.72, 0.13, 0.34), (0.82, 0.6, 0.07), (0.4, 0.62, 0.16), (0.03, 0.38, 0.62), (0.9, 0.15, 0.07), (0.72, 0.13, 0.34), (0.03, 0.38, 0.62), (0.86, 0.42, 0.05), (0.03, 0.38, 0.62), (0.03, 0.38, 0.62), (0.9, 0.15, 0.07), (0.5, 0.5, 0.5), (0.5, 0.5, 0.5), (0.72, 0.13, 0.34), (0.03, 0.38, 0.62), (0.9, 0.15, 0.07), (0.03, 0.38, 0.62), (0.03, 0.38, 0.62))[int(op('sel')['b'])][0]"
+    },
+    "vec2valuey": {
+     "expr": "((0.72, 0.13, 0.34), (0.72, 0.13, 0.34), (0.82, 0.6, 0.07), (0.4, 0.62, 0.16), (0.03, 0.38, 0.62), (0.9, 0.15, 0.07), (0.72, 0.13, 0.34), (0.03, 0.38, 0.62), (0.86, 0.42, 0.05), (0.03, 0.38, 0.62), (0.03, 0.38, 0.62), (0.9, 0.15, 0.07), (0.5, 0.5, 0.5), (0.5, 0.5, 0.5), (0.72, 0.13, 0.34), (0.03, 0.38, 0.62), (0.9, 0.15, 0.07), (0.03, 0.38, 0.62), (0.03, 0.38, 0.62))[int(op('sel')['b'])][1]"
+    },
+    "vec2valuez": {
+     "expr": "((0.72, 0.13, 0.34), (0.72, 0.13, 0.34), (0.82, 0.6, 0.07), (0.4, 0.62, 0.16), (0.03, 0.38, 0.62), (0.9, 0.15, 0.07), (0.72, 0.13, 0.34), (0.03, 0.38, 0.62), (0.86, 0.42, 0.05), (0.03, 0.38, 0.62), (0.03, 0.38, 0.62), (0.9, 0.15, 0.07), (0.5, 0.5, 0.5), (0.5, 0.5, 0.5), (0.72, 0.13, 0.34), (0.03, 0.38, 0.62), (0.9, 0.15, 0.07), (0.03, 0.38, 0.62), (0.03, 0.38, 0.62))[int(op('sel')['b'])][2]"
+    },
+    "vec3name": "uSec",
+    "vec3valuew": 0.0,
+    "vec3valuex": {
+     "expr": "op('hub')['section_pos']"
+    },
+    "vec3valuey": {
+     "expr": "1 if int(op('sel')['b']) in (1, 10, 11, 14, 15, 16, 17, 18) else 0"
+    },
+    "vec3valuez": {
+     "expr": "op('hub')['beat_pos']"
+    },
+    "vec4name": "uPost",
+    "vec4valuew": {
+     "expr": "op('ctl')['echo']"
+    },
+    "vec4valuex": {
+     "expr": "op('ctl')['bg']"
+    },
+    "vec4valuey": {
+     "expr": "op('ctl')['glow']"
+    },
+    "vec4valuez": {
+     "expr": "op('ctl')['vig']"
+    },
+    "vec5name": "uPaper",
+    "vec5valuew": {
+     "expr": "op('shot')['age']"
+    },
+    "vec5valuex": {
+     "expr": "op('ctl')['paperr']"
+    },
+    "vec5valuey": {
+     "expr": "op('ctl')['paperg']"
+    },
+    "vec5valuez": {
+     "expr": "op('ctl')['paperb']"
+    },
+    "vec6name": "uCap",
+    "vec6valuew": 0.0,
+    "vec6valuex": {
+     "expr": "op('ctl')['capplate']*op('ctl')['desc']"
+    },
+    "vec6valuey": 0.0,
+    "vec6valuez": 0.0
+   }
+  },
+  "post_compute": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    320,
+    -120
+   ],
+   "pars": {
+    "language": "glsl"
+   },
+   "text": [
+    "// Example Compute Shader",
+    "",
+    "// uniform float exampleUniform;",
+    "",
+    "layout (local_size_x = 8, local_size_y = 4) in;",
+    "void main()",
+    "{",
+    "\t// This code is running 1:1 per pixel, so early-exit",
+    "\t// if this thread overhangs the edge of the output",
+    "\tif (any(greaterThanEqual(ivec2(gl_GlobalInvocationID.xy), ivec2(uTDOutputInfo.res.zw))))",
+    "\t\treturn;",
+    "",
+    "\tvec4 color;",
+    "\t//color = texelFetch(sTD2DInputs[0], ivec2(gl_GlobalInvocationID.xy), 0);",
+    "\tcolor = vec4(1.0);",
+    "\t// We need to use TDImageStoreOutput() so that 8-bit textures that are sRGB",
+    "\t// encoded can be written to correctly from incoming linear values.",
+    "\t// imageStore() does not do this automatically, while pixel shader outputs do.",
+    "\tTDImageStoreOutput(0, gl_GlobalInvocationID, color);",
+    "}"
+   ]
+  },
+  "post_frag": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    800,
+    -300
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.here('shaders/post.frag')"
+    },
+    "language": "text",
+    "syncfile": true
+   },
+   "text_file": "experiments/sc_point_morph/shaders/post.frag"
+  },
+  "post_info": {
+   "type": "infoDAT",
+   "family": "DAT",
+   "pos": [
+    160,
+    -120
+   ],
+   "pars": {
+    "language": "text",
+    "op": "post"
+   }
+  },
+  "post_pixel": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    0,
+    -120
+   ],
+   "pars": {
+    "extension": "frag",
+    "language": "glsl"
+   },
+   "text": [
+    "",
+    "// Example Pixel Shader",
+    "",
+    "// uniform float exampleUniform;",
+    "",
+    "out vec4 fragColor;",
+    "void main()",
+    "{",
+    "\t// vec4 color = texture(sTD2DInputs[0], vUV.st);",
+    "\tvec4 color = vec4(1.0);",
+    "\tfragColor = TDOutputSwizzle(color);",
+    "}"
+   ]
+  },
+  "render": {
+   "type": "renderTOP",
+   "family": "TOP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "antialias": "aa1",
+    "camera": {
+     "expr": "('cam','cam_top','cam_in')[int(op('ctl')['cam'])]"
+    },
+    "format": "rgba16float",
+    "geometry": "/project1/sc_point_morph/cloud",
+    "lights": "",
+    "resolutionh": 720,
+    "resolutionw": 1280
+   }
+  },
+  "sample_surface": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    -1700,
+    1050
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.here('sample_surface.py')"
+    },
+    "language": "text",
+    "syncfile": true
+   },
+   "text_file": "experiments/sc_point_morph/sample_surface.py"
+  },
+  "sel": {
+   "type": "constantCHOP",
+   "family": "CHOP",
+   "pos": [
+    -800,
+    600
+   ],
+   "pars": {
+    "const0name": "a",
+    "const0value": {
+     "expr": "(int(parent().par.Shape)-1)%19 if parent().par.Manual else (lambda L,n: L[n%len(L)])((((0, 1, 2, 6, 4, 10, 7, 5, 8, 3, 11, 9), (12, 13), (4, 7, 9, 2), (3, 6, 9, 4, 0, 2), (6, 3, 0, 7, 9, 5), (5, 7, 4, 3, 9, 6), (7, 2, 6, 8, 4, 9, 5), (10, 11, 1)),((0, 14, 2, 6, 4, 15, 7, 5, 8, 3, 16, 9), (12, 13), (4, 7, 9, 2), (3, 6, 9, 4, 0, 2), (6, 3, 0, 7, 9, 5), (5, 7, 4, 3, 9, 6), (7, 2, 6, 8, 4, 9, 5), (17, 14, 16)),((18, 0, 18, 2, 18, 6, 18, 4, 18, 7, 18, 5, 18, 8), (12, 13), (4, 7, 9, 2), (18,), (6, 3, 0, 7, 9, 5), (18,), (7, 2, 6, 8, 4, 9, 5), (18,)),((18, 0, 18, 2, 18, 6, 18, 4, 18, 7, 18, 5, 18, 8), (12, 13), (4, 7, 9, 2), (18,), (6, 3, 0, 7, 9, 5), (18,), (7, 2, 6, 8, 4, 9, 5), (18,)))[int(op('ctl')['inon'])*2+int(op('ctl')['desc'])][int(op('shot')['take'])%8],(int(op('hub')['section'])+int(op('shot')['seed']*89))-1)"
+    },
+    "const1name": "b",
+    "const1value": {
+     "expr": "int(parent().par.Shape)%19 if parent().par.Manual else (lambda L,n: L[n%len(L)])((((0, 1, 2, 6, 4, 10, 7, 5, 8, 3, 11, 9), (12, 13), (4, 7, 9, 2), (3, 6, 9, 4, 0, 2), (6, 3, 0, 7, 9, 5), (5, 7, 4, 3, 9, 6), (7, 2, 6, 8, 4, 9, 5), (10, 11, 1)),((0, 14, 2, 6, 4, 15, 7, 5, 8, 3, 16, 9), (12, 13), (4, 7, 9, 2), (3, 6, 9, 4, 0, 2), (6, 3, 0, 7, 9, 5), (5, 7, 4, 3, 9, 6), (7, 2, 6, 8, 4, 9, 5), (17, 14, 16)),((18, 0, 18, 2, 18, 6, 18, 4, 18, 7, 18, 5, 18, 8), (12, 13), (4, 7, 9, 2), (18,), (6, 3, 0, 7, 9, 5), (18,), (7, 2, 6, 8, 4, 9, 5), (18,)),((18, 0, 18, 2, 18, 6, 18, 4, 18, 7, 18, 5, 18, 8), (12, 13), (4, 7, 9, 2), (18,), (6, 3, 0, 7, 9, 5), (18,), (7, 2, 6, 8, 4, 9, 5), (18,)))[int(op('ctl')['inon'])*2+int(op('ctl')['desc'])][int(op('shot')['take'])%8],(int(op('hub')['section'])+int(op('shot')['seed']*89)))"
+    }
+   }
+  },
+  "shoot_code": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    -1300,
+    1050
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.here('shoot.py')"
+    },
+    "language": "text",
+    "syncfile": true
+   },
+   "text_file": "experiments/sc_point_morph/shoot.py"
+  },
+  "shot": {
+   "type": "constantCHOP",
+   "family": "CHOP",
+   "pos": [
+    -400,
+    330
+   ],
+   "pars": {
+    "const0name": "take",
+    "const0value": {
+     "expr": "parent().par.Take"
+    },
+    "const1name": "seed",
+    "const1value": {
+     "expr": "parent().par.Seed"
+    },
+    "const2name": "age",
+    "const2value": {
+     "expr": "max(0, absTime.seconds - parent().par.Shotstart)"
+    }
+   }
+  },
+  "spectrum": {
+   "type": "selectTOP",
+   "family": "TOP",
+   "pos": [
+    -400,
+    60
+   ],
+   "pars": {
+    "top": "/project1/sw_hub/spectex"
+   }
+  },
+  "src_amphora": {
+   "type": "fileinPOP",
+   "family": "POP",
+   "pos": [
+    -2400,
+    -920
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.model_file('amphora')"
+    }
+   }
+  },
+  "src_astrolabe": {
+   "type": "fileinPOP",
+   "family": "POP",
+   "pos": [
+    -2400,
+    -660
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.model_file('astrolabe')"
+    }
+   }
+  },
+  "src_gramophone": {
+   "type": "fileinPOP",
+   "family": "POP",
+   "pos": [
+    -2400,
+    120
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.model_file('gramophone')"
+    }
+   }
+  },
+  "src_hourglass": {
+   "type": "fileinPOP",
+   "family": "POP",
+   "pos": [
+    -2400,
+    -1180
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.model_file('hourglass')"
+    }
+   }
+  },
+  "src_lander": {
+   "type": "fileinPOP",
+   "family": "POP",
+   "pos": [
+    -2400,
+    -1440
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.model_file('lander')"
+    }
+   }
+  },
+  "src_marble_bust": {
+   "type": "fileinPOP",
+   "family": "POP",
+   "pos": [
+    -2400,
+    380
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.model_file('marble_bust')"
+    }
+   }
+  },
+  "src_ribbon_loop": {
+   "type": "fileinPOP",
+   "family": "POP",
+   "pos": [
+    -2400,
+    900
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.model_file('ribbon_loop')"
+    }
+   }
+  },
+  "src_skeleton_key": {
+   "type": "fileinPOP",
+   "family": "POP",
+   "pos": [
+    -2400,
+    -400
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.model_file('skeleton_key')"
+    }
+   }
+  },
+  "src_space_helmet": {
+   "type": "fileinPOP",
+   "family": "POP",
+   "pos": [
+    -2400,
+    -140
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.model_file('space_helmet')"
+    }
+   }
+  },
+  "src_word": {
+   "type": "textPOP",
+   "family": "POP",
+   "pos": [
+    -2400,
+    640
+   ],
+   "pars": {
+    "alignx": "center",
+    "aligny": "center",
+    "extrude": true,
+    "extrudedepth": 0.5,
+    "fontfile": {
+     "expr": "mod.paths.font('archivo')"
+    },
+    "linespacing": -0.12,
+    "text": "REAL TIME."
+   }
+  },
+  "src_word_d0": {
+   "type": "textPOP",
+   "family": "POP",
+   "pos": [
+    -2400,
+    -2740
+   ],
+   "pars": {
+    "alignx": "center",
+    "aligny": "center",
+    "extrude": true,
+    "extrudedepth": 0.5,
+    "fontfile": {
+     "expr": "mod.paths.font('archivo')"
+    },
+    "linespacing": -0.12,
+    "text": "POINT CLOUD"
+   }
+  },
+  "src_word_d1": {
+   "type": "textPOP",
+   "family": "POP",
+   "pos": [
+    -2400,
+    -3000
+   ],
+   "pars": {
+    "alignx": "center",
+    "aligny": "center",
+    "extrude": true,
+    "extrudedepth": 0.5,
+    "fontfile": {
+     "expr": "mod.paths.font('archivo')"
+    },
+    "linespacing": -0.12,
+    "text": "123,904 POINTS"
+   }
+  },
+  "src_word_d2": {
+   "type": "textPOP",
+   "family": "POP",
+   "pos": [
+    -2400,
+    -3260
+   ],
+   "pars": {
+    "alignx": "center",
+    "aligny": "center",
+    "extrude": true,
+    "extrudedepth": 0.5,
+    "fontfile": {
+     "expr": "mod.paths.font('archivo')"
+    },
+    "linespacing": -0.12,
+    "text": "ONE CLOUD\nMANY SHAPES"
+   }
+  },
+  "src_word_d3": {
+   "type": "textPOP",
+   "family": "POP",
+   "pos": [
+    -2400,
+    -3520
+   ],
+   "pars": {
+    "alignx": "center",
+    "aligny": "center",
+    "extrude": true,
+    "extrudedepth": 0.5,
+    "fontfile": {
+     "expr": "mod.paths.font('archivo')"
+    },
+    "linespacing": -0.12,
+    "text": "MADE OF\nPOINTS"
+   }
+  },
+  "src_word_made": {
+   "type": "textPOP",
+   "family": "POP",
+   "pos": [
+    -2400,
+    -1700
+   ],
+   "pars": {
+    "alignx": "center",
+    "aligny": "center",
+    "extrude": true,
+    "extrudedepth": 0.5,
+    "fontfile": {
+     "expr": "mod.paths.font('archivo')"
+    },
+    "linespacing": -0.12,
+    "text": "THIS FRAME\nIS MADE NOW."
+   }
+  },
+  "src_word_out": {
+   "type": "textPOP",
+   "family": "POP",
+   "pos": [
+    -2400,
+    -1960
+   ],
+   "pars": {
+    "alignx": "center",
+    "aligny": "center",
+    "extrude": true,
+    "extrudedepth": 0.5,
+    "fontfile": {
+     "expr": "mod.paths.font('archivo')"
+    },
+    "linespacing": -0.12,
+    "text": "SOUND IN.\nPICTURE OUT."
+   }
+  },
+  "stand_in": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    -900,
+    1050
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.here('stand_in.py')"
+    },
+    "language": "text",
+    "syncfile": true
+   },
+   "text_file": "experiments/sc_point_morph/stand_in.py"
+  },
+  "target": {
+   "type": "nullCOMP",
+   "family": "COMP",
+   "pos": [
+    -400,
+    100
+   ],
+   "pars": {
+    "tx": {
+     "expr": "0.28*math.sin(op('hub')['evolve']*0.11+1.0)*op('camctl')['wide']*op('ctl')['drift']+op('camctl')['tgtx']*op('ctl')['side']"
+    },
+    "ty": {
+     "expr": "op('camctl')['mid']+op('camctl')['tgty']"
+    }
+   }
+  },
+  "target/primitive1": {
+   "type": "primitivePOP",
+   "family": "POP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "addpts": true,
+    "attr0name": "color",
+    "method": "pattern",
+    "prim0pattern": "0 1",
+    "prim0type": "lines",
+    "prim1pattern": "2 3",
+    "prim1type": "lines",
+    "prim2pattern": "4 5",
+    "prim2type": "lines",
+    "pt0colorb": 0.0,
+    "pt0colorg": 0.0,
+    "pt0posx": -0.1,
+    "pt1colorb": 0.0,
+    "pt1colorg": 0.0,
+    "pt1posx": 0.1,
+    "pt2colorb": 0.0,
+    "pt2colorr": 0.0,
+    "pt2posy": -0.1,
+    "pt3colorb": 0.0,
+    "pt3colorr": 0.0,
+    "pt3posy": 0.1,
+    "pt4colorg": 0.0,
+    "pt4colorr": 0.0,
+    "pt4posz": -0.1,
+    "pt5colorg": 0.0,
+    "pt5colorr": 0.0,
+    "pt5posz": 0.1
+   }
+  },
+  "tex_amphora": {
+   "type": "moviefileinTOP",
+   "family": "TOP",
+   "pos": [
+    -2000,
+    -1030
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.model_texture('amphora') or mod.paths.here('stand_in.png')"
+    }
+   }
+  },
+  "tex_astrolabe": {
+   "type": "moviefileinTOP",
+   "family": "TOP",
+   "pos": [
+    -2000,
+    -770
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.model_texture('astrolabe') or mod.paths.here('stand_in.png')"
+    }
+   }
+  },
+  "tex_gramophone": {
+   "type": "moviefileinTOP",
+   "family": "TOP",
+   "pos": [
+    -2000,
+    10
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.model_texture('gramophone') or mod.paths.here('stand_in.png')"
+    }
+   }
+  },
+  "tex_hourglass": {
+   "type": "moviefileinTOP",
+   "family": "TOP",
+   "pos": [
+    -2000,
+    -1290
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.model_texture('hourglass') or mod.paths.here('stand_in.png')"
+    }
+   }
+  },
+  "tex_lander": {
+   "type": "moviefileinTOP",
+   "family": "TOP",
+   "pos": [
+    -2000,
+    -1550
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.model_texture('lander') or mod.paths.here('stand_in.png')"
+    }
+   }
+  },
+  "tex_marble_bust": {
+   "type": "moviefileinTOP",
+   "family": "TOP",
+   "pos": [
+    -2000,
+    270
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.model_texture('marble_bust') or mod.paths.here('stand_in.png')"
+    }
+   }
+  },
+  "tex_ribbon_loop": {
+   "type": "moviefileinTOP",
+   "family": "TOP",
+   "pos": [
+    -2000,
+    790
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.model_texture('ribbon_loop') or mod.paths.here('stand_in.png')"
+    }
+   }
+  },
+  "tex_skeleton_key": {
+   "type": "moviefileinTOP",
+   "family": "TOP",
+   "pos": [
+    -2000,
+    -510
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.model_texture('skeleton_key') or mod.paths.here('stand_in.png')"
+    }
+   }
+  },
+  "tex_space_helmet": {
+   "type": "moviefileinTOP",
+   "family": "TOP",
+   "pos": [
+    -2000,
+    -250
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.model_texture('space_helmet') or mod.paths.here('stand_in.png')"
+    }
+   }
+  },
+  "titled": {
+   "type": "overTOP",
+   "family": "TOP",
+   "pos": [
+    1000,
+    0
+   ],
+   "inputs": [
+    [
+     "caption"
+    ],
+    [
+     "post"
+    ]
+   ]
+  },
+  "trail": {
+   "type": "glslTOP",
+   "family": "TOP",
+   "pos": [
+    400,
+    0
+   ],
+   "inputs": [
+    [
+     "render"
+    ],
+    [
+     "trail_fb"
+    ]
+   ],
+   "pars": {
+    "computedat": "trail_compute",
+    "format": "rgba16float",
+    "pixeldat": "/project1/sc_point_morph/trail_frag",
+    "vec0name": "uTrail",
+    "vec0valuew": 0.47,
+    "vec0valuex": {
+     "expr": "(op('ctl')['decay']+op('ctl')['decaye']*min(1, op('hub')['energy']))*(1 if op('shot')['age']>0.07 else 0)"
+    },
+    "vec0valuey": {
+     "expr": "(0.004+0.016*op('hub')['hit_low']+0.008*op('hub')['pulse'])*(0.35 if int(op('sel')['b']) in (1, 10, 11, 14, 15, 16, 17, 18) else 1)*op('ctl')['zoom']"
+    },
+    "vec0valuez": {
+     "expr": "(0.5-op('target').par.tx/(0.728*max(1, op('cam').par.tz)) if op('ctl')['cam']==0 and op('ctl')['drift']>0 else 0.5)"
+    }
+   }
+  },
+  "trail_compute": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    320,
+    -120
+   ],
+   "pars": {
+    "language": "glsl"
+   },
+   "text": [
+    "// Example Compute Shader",
+    "",
+    "// uniform float exampleUniform;",
+    "",
+    "layout (local_size_x = 8, local_size_y = 4) in;",
+    "void main()",
+    "{",
+    "\t// This code is running 1:1 per pixel, so early-exit",
+    "\t// if this thread overhangs the edge of the output",
+    "\tif (any(greaterThanEqual(ivec2(gl_GlobalInvocationID.xy), ivec2(uTDOutputInfo.res.zw))))",
+    "\t\treturn;",
+    "",
+    "\tvec4 color;",
+    "\t//color = texelFetch(sTD2DInputs[0], ivec2(gl_GlobalInvocationID.xy), 0);",
+    "\tcolor = vec4(1.0);",
+    "\t// We need to use TDImageStoreOutput() so that 8-bit textures that are sRGB",
+    "\t// encoded can be written to correctly from incoming linear values.",
+    "\t// imageStore() does not do this automatically, while pixel shader outputs do.",
+    "\tTDImageStoreOutput(0, gl_GlobalInvocationID, color);",
+    "}"
+   ]
+  },
+  "trail_fb": {
+   "type": "feedbackTOP",
+   "family": "TOP",
+   "pos": [
+    200,
+    -150
+   ],
+   "inputs": [
+    [
+     "render"
+    ]
+   ],
+   "pars": {
+    "top": "/project1/sc_point_morph/trail"
+   }
+  },
+  "trail_frag": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    200,
+    -300
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.here('shaders/trail.frag')"
+    },
+    "language": "text",
+    "syncfile": true
+   },
+   "text_file": "experiments/sc_point_morph/shaders/trail.frag"
+  },
+  "trail_info": {
+   "type": "infoDAT",
+   "family": "DAT",
+   "pos": [
+    160,
+    -120
+   ],
+   "pars": {
+    "language": "text",
+    "op": "trail"
+   }
+  },
+  "trail_pixel": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    0,
+    -120
+   ],
+   "pars": {
+    "extension": "frag",
+    "language": "glsl"
+   },
+   "text": [
+    "",
+    "// Example Pixel Shader",
+    "",
+    "// uniform float exampleUniform;",
+    "",
+    "out vec4 fragColor;",
+    "void main()",
+    "{",
+    "\t// vec4 color = texture(sTD2DInputs[0], vUV.st);",
+    "\tvec4 color = vec4(1.0);",
+    "\tfragColor = TDOutputSwizzle(color);",
+    "}"
+   ]
+  },
+  "tri_amphora": {
+   "type": "facetPOP",
+   "family": "POP",
+   "pos": [
+    -2200,
+    -920
+   ],
+   "inputs": [
+    [
+     "src_amphora"
+    ]
+   ],
+   "pars": {
+    "computenormals": false,
+    "operation": "unique"
+   }
+  },
+  "tri_astrolabe": {
+   "type": "facetPOP",
+   "family": "POP",
+   "pos": [
+    -2200,
+    -660
+   ],
+   "inputs": [
+    [
+     "src_astrolabe"
+    ]
+   ],
+   "pars": {
+    "computenormals": false,
+    "operation": "unique"
+   }
+  },
+  "tri_gramophone": {
+   "type": "facetPOP",
+   "family": "POP",
+   "pos": [
+    -2200,
+    120
+   ],
+   "inputs": [
+    [
+     "src_gramophone"
+    ]
+   ],
+   "pars": {
+    "computenormals": false,
+    "operation": "unique"
+   }
+  },
+  "tri_hourglass": {
+   "type": "facetPOP",
+   "family": "POP",
+   "pos": [
+    -2200,
+    -1180
+   ],
+   "inputs": [
+    [
+     "src_hourglass"
+    ]
+   ],
+   "pars": {
+    "computenormals": false,
+    "operation": "unique"
+   }
+  },
+  "tri_lander": {
+   "type": "facetPOP",
+   "family": "POP",
+   "pos": [
+    -2200,
+    -1440
+   ],
+   "inputs": [
+    [
+     "src_lander"
+    ]
+   ],
+   "pars": {
+    "computenormals": false,
+    "operation": "unique"
+   }
+  },
+  "tri_marble_bust": {
+   "type": "facetPOP",
+   "family": "POP",
+   "pos": [
+    -2200,
+    380
+   ],
+   "inputs": [
+    [
+     "src_marble_bust"
+    ]
+   ],
+   "pars": {
+    "computenormals": false,
+    "operation": "unique"
+   }
+  },
+  "tri_ribbon_loop": {
+   "type": "facetPOP",
+   "family": "POP",
+   "pos": [
+    -2200,
+    900
+   ],
+   "inputs": [
+    [
+     "src_ribbon_loop"
+    ]
+   ],
+   "pars": {
+    "computenormals": false,
+    "operation": "unique"
+   }
+  },
+  "tri_skeleton_key": {
+   "type": "facetPOP",
+   "family": "POP",
+   "pos": [
+    -2200,
+    -400
+   ],
+   "inputs": [
+    [
+     "src_skeleton_key"
+    ]
+   ],
+   "pars": {
+    "computenormals": false,
+    "operation": "unique"
+   }
+  },
+  "tri_space_helmet": {
+   "type": "facetPOP",
+   "family": "POP",
+   "pos": [
+    -2200,
+    -140
+   ],
+   "inputs": [
+    [
+     "src_space_helmet"
+    ]
+   ],
+   "pars": {
+    "computenormals": false,
+    "operation": "unique"
+   }
+  },
+  "tri_word": {
+   "type": "facetPOP",
+   "family": "POP",
+   "pos": [
+    -2200,
+    640
+   ],
+   "inputs": [
+    [
+     "src_word"
+    ]
+   ],
+   "pars": {
+    "computenormals": false,
+    "operation": "unique"
+   }
+  },
+  "tri_word_d0": {
+   "type": "facetPOP",
+   "family": "POP",
+   "pos": [
+    -2200,
+    -2740
+   ],
+   "inputs": [
+    [
+     "src_word_d0"
+    ]
+   ],
+   "pars": {
+    "computenormals": false,
+    "operation": "unique"
+   }
+  },
+  "tri_word_d1": {
+   "type": "facetPOP",
+   "family": "POP",
+   "pos": [
+    -2200,
+    -3000
+   ],
+   "inputs": [
+    [
+     "src_word_d1"
+    ]
+   ],
+   "pars": {
+    "computenormals": false,
+    "operation": "unique"
+   }
+  },
+  "tri_word_d2": {
+   "type": "facetPOP",
+   "family": "POP",
+   "pos": [
+    -2200,
+    -3260
+   ],
+   "inputs": [
+    [
+     "src_word_d2"
+    ]
+   ],
+   "pars": {
+    "computenormals": false,
+    "operation": "unique"
+   }
+  },
+  "tri_word_d3": {
+   "type": "facetPOP",
+   "family": "POP",
+   "pos": [
+    -2200,
+    -3520
+   ],
+   "inputs": [
+    [
+     "src_word_d3"
+    ]
+   ],
+   "pars": {
+    "computenormals": false,
+    "operation": "unique"
+   }
+  },
+  "tri_word_made": {
+   "type": "facetPOP",
+   "family": "POP",
+   "pos": [
+    -2200,
+    -1700
+   ],
+   "inputs": [
+    [
+     "src_word_made"
+    ]
+   ],
+   "pars": {
+    "computenormals": false,
+    "operation": "unique"
+   }
+  },
+  "tri_word_out": {
+   "type": "facetPOP",
+   "family": "POP",
+   "pos": [
+    -2200,
+    -1960
+   ],
+   "inputs": [
+    [
+     "src_word_out"
+    ]
+   ],
+   "pars": {
+    "computenormals": false,
+    "operation": "unique"
+   }
+  },
+  "vn_amphora": {
+   "type": "poptoTOP",
+   "family": "TOP",
+   "pos": [
+    -1850,
+    -920
+   ],
+   "pars": {
+    "attribscope": "N",
+    "extract": "vertex",
+    "outputresolution": "custom",
+    "pop": "/project1/sc_point_morph/tri_amphora",
+    "resolutionh": 100,
+    "resolutionw": 100,
+    "rgbamode": "custom"
+   }
+  },
+  "vn_astrolabe": {
+   "type": "poptoTOP",
+   "family": "TOP",
+   "pos": [
+    -1850,
+    -660
+   ],
+   "pars": {
+    "attribscope": "N",
+    "extract": "vertex",
+    "outputresolution": "custom",
+    "pop": "/project1/sc_point_morph/tri_astrolabe",
+    "resolutionh": 100,
+    "resolutionw": 100,
+    "rgbamode": "custom"
+   }
+  },
+  "vn_gramophone": {
+   "type": "poptoTOP",
+   "family": "TOP",
+   "pos": [
+    -1850,
+    120
+   ],
+   "pars": {
+    "attribscope": "N",
+    "extract": "vertex",
+    "outputresolution": "custom",
+    "pop": "/project1/sc_point_morph/tri_gramophone",
+    "resolutionh": 100,
+    "resolutionw": 100,
+    "rgbamode": "custom"
+   }
+  },
+  "vn_hourglass": {
+   "type": "poptoTOP",
+   "family": "TOP",
+   "pos": [
+    -1850,
+    -1180
+   ],
+   "pars": {
+    "attribscope": "N",
+    "extract": "vertex",
+    "outputresolution": "custom",
+    "pop": "/project1/sc_point_morph/tri_hourglass",
+    "resolutionh": 100,
+    "resolutionw": 100,
+    "rgbamode": "custom"
+   }
+  },
+  "vn_lander": {
+   "type": "poptoTOP",
+   "family": "TOP",
+   "pos": [
+    -1850,
+    -1440
+   ],
+   "pars": {
+    "attribscope": "N",
+    "extract": "vertex",
+    "outputresolution": "custom",
+    "pop": "/project1/sc_point_morph/tri_lander",
+    "resolutionh": 100,
+    "resolutionw": 100,
+    "rgbamode": "custom"
+   }
+  },
+  "vn_marble_bust": {
+   "type": "poptoTOP",
+   "family": "TOP",
+   "pos": [
+    -1850,
+    380
+   ],
+   "pars": {
+    "attribscope": "N",
+    "extract": "vertex",
+    "outputresolution": "custom",
+    "pop": "/project1/sc_point_morph/tri_marble_bust",
+    "resolutionh": 100,
+    "resolutionw": 100,
+    "rgbamode": "custom"
+   }
+  },
+  "vn_ribbon_loop": {
+   "type": "poptoTOP",
+   "family": "TOP",
+   "pos": [
+    -1850,
+    900
+   ],
+   "pars": {
+    "attribscope": "N",
+    "extract": "vertex",
+    "outputresolution": "custom",
+    "pop": "/project1/sc_point_morph/tri_ribbon_loop",
+    "resolutionh": 100,
+    "resolutionw": 100,
+    "rgbamode": "custom"
+   }
+  },
+  "vn_skeleton_key": {
+   "type": "poptoTOP",
+   "family": "TOP",
+   "pos": [
+    -1850,
+    -400
+   ],
+   "pars": {
+    "attribscope": "N",
+    "extract": "vertex",
+    "outputresolution": "custom",
+    "pop": "/project1/sc_point_morph/tri_skeleton_key",
+    "resolutionh": 100,
+    "resolutionw": 100,
+    "rgbamode": "custom"
+   }
+  },
+  "vn_space_helmet": {
+   "type": "poptoTOP",
+   "family": "TOP",
+   "pos": [
+    -1850,
+    -140
+   ],
+   "pars": {
+    "attribscope": "N",
+    "extract": "vertex",
+    "outputresolution": "custom",
+    "pop": "/project1/sc_point_morph/tri_space_helmet",
+    "resolutionh": 100,
+    "resolutionw": 100,
+    "rgbamode": "custom"
+   }
+  },
+  "vp_amphora": {
+   "type": "poptoTOP",
+   "family": "TOP",
+   "pos": [
+    -2000,
+    -920
+   ],
+   "pars": {
+    "outputresolution": "custom",
+    "pop": "/project1/sc_point_morph/tri_amphora",
+    "resolutionh": 100,
+    "resolutionw": 100,
+    "rgbamode": "custom"
+   }
+  },
+  "vp_astrolabe": {
+   "type": "poptoTOP",
+   "family": "TOP",
+   "pos": [
+    -2000,
+    -660
+   ],
+   "pars": {
+    "outputresolution": "custom",
+    "pop": "/project1/sc_point_morph/tri_astrolabe",
+    "resolutionh": 100,
+    "resolutionw": 100,
+    "rgbamode": "custom"
+   }
+  },
+  "vp_gramophone": {
+   "type": "poptoTOP",
+   "family": "TOP",
+   "pos": [
+    -2000,
+    120
+   ],
+   "pars": {
+    "outputresolution": "custom",
+    "pop": "/project1/sc_point_morph/tri_gramophone",
+    "resolutionh": 100,
+    "resolutionw": 100,
+    "rgbamode": "custom"
+   }
+  },
+  "vp_hourglass": {
+   "type": "poptoTOP",
+   "family": "TOP",
+   "pos": [
+    -2000,
+    -1180
+   ],
+   "pars": {
+    "outputresolution": "custom",
+    "pop": "/project1/sc_point_morph/tri_hourglass",
+    "resolutionh": 100,
+    "resolutionw": 100,
+    "rgbamode": "custom"
+   }
+  },
+  "vp_lander": {
+   "type": "poptoTOP",
+   "family": "TOP",
+   "pos": [
+    -2000,
+    -1440
+   ],
+   "pars": {
+    "outputresolution": "custom",
+    "pop": "/project1/sc_point_morph/tri_lander",
+    "resolutionh": 100,
+    "resolutionw": 100,
+    "rgbamode": "custom"
+   }
+  },
+  "vp_marble_bust": {
+   "type": "poptoTOP",
+   "family": "TOP",
+   "pos": [
+    -2000,
+    380
+   ],
+   "pars": {
+    "outputresolution": "custom",
+    "pop": "/project1/sc_point_morph/tri_marble_bust",
+    "resolutionh": 100,
+    "resolutionw": 100,
+    "rgbamode": "custom"
+   }
+  },
+  "vp_ribbon_loop": {
+   "type": "poptoTOP",
+   "family": "TOP",
+   "pos": [
+    -2000,
+    900
+   ],
+   "pars": {
+    "outputresolution": "custom",
+    "pop": "/project1/sc_point_morph/tri_ribbon_loop",
+    "resolutionh": 100,
+    "resolutionw": 100,
+    "rgbamode": "custom"
+   }
+  },
+  "vp_skeleton_key": {
+   "type": "poptoTOP",
+   "family": "TOP",
+   "pos": [
+    -2000,
+    -400
+   ],
+   "pars": {
+    "outputresolution": "custom",
+    "pop": "/project1/sc_point_morph/tri_skeleton_key",
+    "resolutionh": 100,
+    "resolutionw": 100,
+    "rgbamode": "custom"
+   }
+  },
+  "vp_space_helmet": {
+   "type": "poptoTOP",
+   "family": "TOP",
+   "pos": [
+    -2000,
+    -140
+   ],
+   "pars": {
+    "outputresolution": "custom",
+    "pop": "/project1/sc_point_morph/tri_space_helmet",
+    "resolutionh": 100,
+    "resolutionw": 100,
+    "rgbamode": "custom"
+   }
+  },
+  "vp_word": {
+   "type": "poptoTOP",
+   "family": "TOP",
+   "pos": [
+    -2000,
+    640
+   ],
+   "pars": {
+    "outputresolution": "custom",
+    "pop": "/project1/sc_point_morph/tri_word",
+    "resolutionh": 100,
+    "resolutionw": 100,
+    "rgbamode": "custom"
+   }
+  },
+  "vp_word_d0": {
+   "type": "poptoTOP",
+   "family": "TOP",
+   "pos": [
+    -2000,
+    -2740
+   ],
+   "pars": {
+    "outputresolution": "custom",
+    "pop": "/project1/sc_point_morph/tri_word_d0",
+    "resolutionh": 100,
+    "resolutionw": 100,
+    "rgbamode": "custom"
+   }
+  },
+  "vp_word_d1": {
+   "type": "poptoTOP",
+   "family": "TOP",
+   "pos": [
+    -2000,
+    -3000
+   ],
+   "pars": {
+    "outputresolution": "custom",
+    "pop": "/project1/sc_point_morph/tri_word_d1",
+    "resolutionh": 100,
+    "resolutionw": 100,
+    "rgbamode": "custom"
+   }
+  },
+  "vp_word_d2": {
+   "type": "poptoTOP",
+   "family": "TOP",
+   "pos": [
+    -2000,
+    -3260
+   ],
+   "pars": {
+    "outputresolution": "custom",
+    "pop": "/project1/sc_point_morph/tri_word_d2",
+    "resolutionh": 100,
+    "resolutionw": 100,
+    "rgbamode": "custom"
+   }
+  },
+  "vp_word_d3": {
+   "type": "poptoTOP",
+   "family": "TOP",
+   "pos": [
+    -2000,
+    -3520
+   ],
+   "pars": {
+    "outputresolution": "custom",
+    "pop": "/project1/sc_point_morph/tri_word_d3",
+    "resolutionh": 100,
+    "resolutionw": 100,
+    "rgbamode": "custom"
+   }
+  },
+  "vp_word_made": {
+   "type": "poptoTOP",
+   "family": "TOP",
+   "pos": [
+    -2000,
+    -1700
+   ],
+   "pars": {
+    "outputresolution": "custom",
+    "pop": "/project1/sc_point_morph/tri_word_made",
+    "resolutionh": 100,
+    "resolutionw": 100,
+    "rgbamode": "custom"
+   }
+  },
+  "vp_word_out": {
+   "type": "poptoTOP",
+   "family": "TOP",
+   "pos": [
+    -2000,
+    -1960
+   ],
+   "pars": {
+    "outputresolution": "custom",
+    "pop": "/project1/sc_point_morph/tri_word_out",
+    "resolutionh": 100,
+    "resolutionw": 100,
+    "rgbamode": "custom"
+   }
+  },
+  "vt_amphora": {
+   "type": "poptoTOP",
+   "family": "TOP",
+   "pos": [
+    -1700,
+    -920
+   ],
+   "pars": {
+    "attribscope": "Tex",
+    "extract": "vertex",
+    "outputresolution": "custom",
+    "pop": "/project1/sc_point_morph/tri_amphora",
+    "resolutionh": 100,
+    "resolutionw": 100,
+    "rgbamode": "custom"
+   }
+  },
+  "vt_astrolabe": {
+   "type": "poptoTOP",
+   "family": "TOP",
+   "pos": [
+    -1700,
+    -660
+   ],
+   "pars": {
+    "attribscope": "Tex",
+    "extract": "vertex",
+    "outputresolution": "custom",
+    "pop": "/project1/sc_point_morph/tri_astrolabe",
+    "resolutionh": 100,
+    "resolutionw": 100,
+    "rgbamode": "custom"
+   }
+  },
+  "vt_gramophone": {
+   "type": "poptoTOP",
+   "family": "TOP",
+   "pos": [
+    -1700,
+    120
+   ],
+   "pars": {
+    "attribscope": "Tex",
+    "extract": "vertex",
+    "outputresolution": "custom",
+    "pop": "/project1/sc_point_morph/tri_gramophone",
+    "resolutionh": 100,
+    "resolutionw": 100,
+    "rgbamode": "custom"
+   }
+  },
+  "vt_hourglass": {
+   "type": "poptoTOP",
+   "family": "TOP",
+   "pos": [
+    -1700,
+    -1180
+   ],
+   "pars": {
+    "attribscope": "Tex",
+    "extract": "vertex",
+    "outputresolution": "custom",
+    "pop": "/project1/sc_point_morph/tri_hourglass",
+    "resolutionh": 100,
+    "resolutionw": 100,
+    "rgbamode": "custom"
+   }
+  },
+  "vt_lander": {
+   "type": "poptoTOP",
+   "family": "TOP",
+   "pos": [
+    -1700,
+    -1440
+   ],
+   "pars": {
+    "attribscope": "Tex",
+    "extract": "vertex",
+    "outputresolution": "custom",
+    "pop": "/project1/sc_point_morph/tri_lander",
+    "resolutionh": 100,
+    "resolutionw": 100,
+    "rgbamode": "custom"
+   }
+  },
+  "vt_marble_bust": {
+   "type": "poptoTOP",
+   "family": "TOP",
+   "pos": [
+    -1700,
+    380
+   ],
+   "pars": {
+    "attribscope": "Tex",
+    "extract": "vertex",
+    "outputresolution": "custom",
+    "pop": "/project1/sc_point_morph/tri_marble_bust",
+    "resolutionh": 100,
+    "resolutionw": 100,
+    "rgbamode": "custom"
+   }
+  },
+  "vt_ribbon_loop": {
+   "type": "poptoTOP",
+   "family": "TOP",
+   "pos": [
+    -1700,
+    900
+   ],
+   "pars": {
+    "attribscope": "Tex",
+    "extract": "vertex",
+    "outputresolution": "custom",
+    "pop": "/project1/sc_point_morph/tri_ribbon_loop",
+    "resolutionh": 100,
+    "resolutionw": 100,
+    "rgbamode": "custom"
+   }
+  },
+  "vt_skeleton_key": {
+   "type": "poptoTOP",
+   "family": "TOP",
+   "pos": [
+    -1700,
+    -400
+   ],
+   "pars": {
+    "attribscope": "Tex",
+    "extract": "vertex",
+    "outputresolution": "custom",
+    "pop": "/project1/sc_point_morph/tri_skeleton_key",
+    "resolutionh": 100,
+    "resolutionw": 100,
+    "rgbamode": "custom"
+   }
+  },
+  "vt_space_helmet": {
+   "type": "poptoTOP",
+   "family": "TOP",
+   "pos": [
+    -1700,
+    -140
+   ],
+   "pars": {
+    "attribscope": "Tex",
+    "extract": "vertex",
+    "outputresolution": "custom",
+    "pop": "/project1/sc_point_morph/tri_space_helmet",
+    "resolutionh": 100,
+    "resolutionw": 100,
+    "rgbamode": "custom"
+   }
+  }
+ }
+}

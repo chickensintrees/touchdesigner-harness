@@ -1,0 +1,31 @@
+{
+ "title": "Exploded technical drawing",
+ "technique": "3D models of unexplained objects are drawn as engineering line art: a shader traces outlines and creases, the objects come apart, and live dimension lines and labels sit around them.",
+ "music": "Each kick snaps the parts further apart or closer together, and the parts of a lunar lander fly out on the bar line and land one by one through the bar. Snares drop a rubber stamp, the beat thickens the lines, and a new section of the song swaps the object.",
+ "accepts_input": true,
+ "as_processor": "Redraws the picture it is given as a draughtsman would, in the take's paper and two inks: on five takes it is wrapped round the 3D parts as hatching, contour rings or tiles on the separate parts and comes apart with them, and on the other five its edges are traced and its tones hatched onto the sheet behind the parts.",
+ "input_by_take": ["sheet", "parts", "sheet", "parts", "sheet", "parts", "sheet", "parts", "sheet", "sheet"],
+ "words_note": "The words each take shows in Describe mode, in the order used. Numbers are live values from the scene and the music; the ones here are examples.",
+ "takes": [
+  {"name": "Blueprint parts", "description": "A lunar lander in an angled view on blueprint blue with white lines, its 63 parts exploding outward and landing again from the ground up while a phrase is typed along the top.",
+   "words": ["THE MODEL IS CUT INTO PARTS.", "PARTS FLY OUT ON THE BAR LINE.", "THE BAR SETS THE PARTS BACK IN.", "A SHADER TRACES EVERY LINE HERE.", "PART 61 OF 63 LANDING", "SPREAD X 1.00", "EXPLODED VIEW   LINE ART TRACED FROM A 3D MODEL", "MODEL: LANDER", "29095 TRIANGLES", "SONG SECTION 19 OF 43", "BAR 053", "BEAT 4", "SNARE", "SNARE HIT", "ON THE SNARE"]},
+  {"name": "Three-view sheet", "description": "Cream drafting film with dark and red ink, showing front, top and side views of one object beside an exploded sliced version with hatched cut faces.",
+   "words": ["FRONT VIEW", "TOP VIEW", "SIDE VIEW", "EXPLODED VIEW: SLICED IN 6, THE KICK SETS THE GAP", "A SHADER CAPS AND HATCHES THE CUT FACES", "BASS 0.01", "H 1.00", "EXPLODE 0.36", "EXPLODED VIEW   LINE ART TRACED FROM A 3D MODEL", "MODEL: HOURGLASS", "29577 TRIANGLES", "SONG SECTION 19 OF 43", "BAR 054", "BEAT 1", "SNARE", "SNARE HIT", "ON THE SNARE"]},
+  {"name": "Parts close-up", "description": "A close perspective view in among the lander's parts in amber on black with a soft glow and no lettering, each part lit solid as it lands.",
+   "words": ["EXPLODED VIEW: 63 PARTS, EACH A SEPARATE SHAPE.", "A SHADER TRACES THE EDGES. THE BAR SETS THE PARTS BACK IN."]},
+  {"name": "Contour scan", "description": "One huge cropped object on yellow drawn only as black rings where cutting planes meet its surface, with the kick setting the ring count and a red band scanning across once a bar.",
+   "words": ["NO OUTLINES.", "ONLY THE RINGS WHERE", "PLANES CUT THE SURFACE.", "68", "CUTTING PLANES, COUNT SET BY THE KICK", "PLANE 050"]},
+  {"name": "Parts sheet", "description": "Twelve small views of one object in a turntable grid on green dot-grid paper, the cells opening and closing with the beat and marked with balloon numbers.",
+   "words": ["01", "158 DEG", "ONE MODEL, 12 ANGLES", "CELLS OPEN AND CLOSE WITH THE BEAT.  PINK = OPEN.  THE SLICES ARE CUT IN THE SHADER, NOT IN THE MODEL."]},
+  {"name": "Section sweep", "description": "One huge object on red with its near end cut away and the cut face hatched in black, the cut plane jumping to a new depth on each kick.",
+   "words": ["SECTION CUT", "EACH KICK MOVES THE CUT PLANE.  NOW AT 71% OF THE LENGTH", "HATCHED CUT FACE"]},
+  {"name": "Rosette", "description": "Twelve copies of one sliced object arranged on a wheel as solid pink shapes on navy, the wheel clicking round one step per beat and bursting outward with the kick.",
+   "words": ["WHEEL STEP 07 OF 12", "ONE CLICK PER BEAT", "THE KICK WIDENS THE WHEEL", "12 COPIES OF ONE SPACE HELMET"]},
+  {"name": "Typed elevation", "description": "The lander seen square on from the front on a pink ruled slip in navy ink, its parts scattered and set back over two bars with the phrase in large type along the bottom.",
+   "words": ["PARTS SET BACK OVER TWO BARS.", "EVERY PART IS ITS OWN SHAPE.", "HI-HATS POP PARTS OUT OF PLACE.", "FRONT VIEW.  63 PARTS SCATTER, THEN LAND FROM THE GROUND UP", "NOTE ONSETS 00732"]},
+  {"name": "Slab strip", "description": "One object cut into up to fourteen numbered slabs laid out across a grey frame in white line with yellow hatching and one long dimension line.",
+   "words": ["BROKEN COLUMN CUT INTO 14 SLABS.  THE KICK SETS THE SPACING.", "BAR 056", "EXPLODE 0.60", "01", "SNARE", "SNARE HIT", "ON THE SNARE"]},
+  {"name": "Parts list", "description": "A green-on-black screen where a parts list is the picture, with a huge live number and a tall exploded stack of slabs at one side joined to it by leader lines.",
+   "words": ["0012.5", "BASS LEVEL X 100, LIVE", "RENDER: NORMAL, DEPTH, PART ID", "SHADER: A JUMP IN ANY IS A LINE", "NO LIGHTS: ONLY EDGES AND HATCHING", "SLABS ARE CUT IN THE SHADER", "CUT FACES GET CAPPED AND HATCHED", "KICK: SETS THE GAP, NOW 0.10", "BEAT: THICKENS THE OUTLINE", "NEW SONG SECTION: NEW MODEL", "SLAB 01"]}
+ ]
+}

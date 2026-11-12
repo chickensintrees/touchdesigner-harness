@@ -1,0 +1,22 @@
+{
+ "slug": "wire_cage",
+ "source": "wire_cage",
+ "parts_joined": 1,
+ "vertices": 27671,
+ "triangles": 28800,
+ "decimated": false,
+ "original_size_m": [
+  0.9962,
+  0.9988,
+  0.9688
+ ],
+ "size_units": [
+  0.9973,
+  0.97,
+  1.0
+ ],
+ "has_uv": true,
+ "has_texture": true,
+ "generator": "TRELLIS.2",
+ "prompt": "an abstract sculpture: an open spherical cage made of thick welded steel rods forming a geodesic lattice, with a smaller solid sphere suspended inside"
+}

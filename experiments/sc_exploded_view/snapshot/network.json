@@ -1,0 +1,2022 @@
+{
+ "format": "tdh-snapshot/1",
+ "root": "/project1/sc_exploded_view",
+ "ops": {
+  "cam": {
+   "type": "cameraCOMP",
+   "family": "COMP",
+   "pos": [
+    -600,
+    -150
+   ],
+   "pars": {
+    "far": 40.0,
+    "fov": {
+     "expr": "op('ctl')['fov']"
+    },
+    "near": 0.05,
+    "orthowidth": 3.5555555555555554,
+    "projection": {
+     "expr": "'perspective' if op('ctl')['persp'] > 0.5 else 'ortho'"
+    },
+    "tz": {
+     "expr": "op('ctl')['camz']"
+    }
+   }
+  },
+  "cam/file1": {
+   "type": "fileinPOP",
+   "family": "POP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "file": {
+     "expr": "app.samplesFolder + '/Geo/defcam.tog'"
+    }
+   }
+  },
+  "cook_driver": {
+   "type": "executeDAT",
+   "family": "DAT",
+   "pos": [
+    -400,
+    -80
+   ],
+   "pars": {
+    "framestart": true,
+    "language": "python"
+   },
+   "text": [
+    "def onFrameStart(frame):",
+    "    hub = op('/project1/sw_hub')",
+    "    me_on = parent().par.Preview.eval()",
+    "    if hub is not None:",
+    "        me_on = me_on or hub.par.Solo.eval() or hub.par.Scene.eval() == parent().name",
+    "    if me_on:",
+    "        op('hub').cook(force=True)",
+    "        op('out1').cook(force=True)",
+    "    return"
+   ]
+  },
+  "ctl": {
+   "type": "scriptCHOP",
+   "family": "CHOP",
+   "pos": [
+    -600,
+    600
+   ],
+   "pars": {
+    "callbacks": "/project1/sc_exploded_view/ctl_cb",
+    "exportmethod": "datname"
+   }
+  },
+  "ctl_cb": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    -600,
+    510
+   ],
+   "pars": {
+    "language": "text"
+   },
+   "text": [
+    "# Script OP callbacks: all the work is in the 'logic' DAT (logic.py).",
+    "def onCook(scriptOp):",
+    "    op('logic').module.cook_ctl(scriptOp)",
+    "    return"
+   ]
+  },
+  "draw": {
+   "type": "glslTOP",
+   "family": "TOP",
+   "pos": [
+    600,
+    0
+   ],
+   "inputs": [
+    [
+     "gbuffer"
+    ],
+    [
+     "gdata"
+    ],
+    [
+     "lettering"
+    ]
+   ],
+   "pars": {
+    "array0chop": "/project1/sc_exploded_view/line_a",
+    "array0name": "uL0",
+    "array0type": "vec4",
+    "array1chop": "/project1/sc_exploded_view/line_b",
+    "array1name": "uL1",
+    "array1type": "vec4",
+    "computedat": "draw_compute",
+    "format": "rgba8fixed",
+    "outputresolution": "custom",
+    "pixeldat": "/project1/sc_exploded_view/draw_frag",
+    "resolutionh": 720,
+    "resolutionw": 1280,
+    "tops": "/project1/sc_exploded_view/gpic /project1/sc_exploded_view/insel",
+    "vec0name": "uPaper",
+    "vec0valuew": {
+     "expr": "op('ctl')['paper_style']"
+    },
+    "vec0valuex": {
+     "expr": "op('ctl')['paper_r']"
+    },
+    "vec0valuey": {
+     "expr": "op('ctl')['paper_g']"
+    },
+    "vec0valuez": {
+     "expr": "op('ctl')['paper_b']"
+    },
+    "vec1name": "uInk",
+    "vec1valuew": {
+     "expr": "op('ctl')['ow']"
+    },
+    "vec1valuex": {
+     "expr": "op('ctl')['ink_r']"
+    },
+    "vec1valuey": {
+     "expr": "op('ctl')['ink_g']"
+    },
+    "vec1valuez": {
+     "expr": "op('ctl')['ink_b']"
+    },
+    "vec2name": "uAccent",
+    "vec2valuew": {
+     "expr": "op('ctl')['cw']"
+    },
+    "vec2valuex": {
+     "expr": "op('ctl')['acc_r']"
+    },
+    "vec2valuey": {
+     "expr": "op('ctl')['acc_g']"
+    },
+    "vec2valuez": {
+     "expr": "op('ctl')['acc_b']"
+    },
+    "vec3name": "uStyle",
+    "vec3valuew": {
+     "expr": "op('ctl')['vig']"
+    },
+    "vec3valuex": {
+     "expr": "op('ctl')['hatch']"
+    },
+    "vec3valuey": {
+     "expr": "op('ctl')['cutfill']"
+    },
+    "vec3valuez": {
+     "expr": "op('ctl')['shade']"
+    },
+    "vec4name": "uAudio",
+    "vec4valuew": {
+     "expr": "op('hub')['evolve']"
+    },
+    "vec4valuex": {
+     "expr": "op('hub')['pulse']"
+    },
+    "vec4valuey": {
+     "expr": "min(1.0, float(op('hub')['hit_mid']))"
+    },
+    "vec4valuez": {
+     "expr": "op('shot')['age']"
+    },
+    "vec5name": "uAudio2",
+    "vec5valuew": {
+     "expr": "op('ctl')['dthr']"
+    },
+    "vec5valuex": {
+     "expr": "min(1.0, float(op('hub')['hit_low']))"
+    },
+    "vec5valuey": {
+     "expr": "op('hub')['beat']"
+    },
+    "vec5valuez": {
+     "expr": "op('ctl')['reveal']"
+    },
+    "vec6name": "uStyle2",
+    "vec6valuew": {
+     "expr": "op('ctl')['scan']"
+    },
+    "vec6valuex": {
+     "expr": "op('ctl')['contours']"
+    },
+    "vec6valuey": {
+     "expr": "op('ctl')['fill']"
+    },
+    "vec6valuez": {
+     "expr": "op('ctl')['mode']"
+    },
+    "vec7name": "uPic",
+    "vec7valuew": 0.0,
+    "vec7valuex": {
+     "expr": "op('ctl')['pic']"
+    },
+    "vec7valuey": {
+     "expr": "op('ctl')['knock']"
+    },
+    "vec7valuez": {
+     "expr": "op('ctl')['sheet']"
+    }
+   }
+  },
+  "draw_frag": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    300,
+    -150
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.here('shaders/draw.frag')"
+    },
+    "language": "text",
+    "syncfile": true
+   },
+   "text_file": "experiments/sc_exploded_view/shaders/draw.frag"
+  },
+  "draw_info": {
+   "type": "infoDAT",
+   "family": "DAT",
+   "pos": [
+    600,
+    -150
+   ],
+   "pars": {
+    "language": "text",
+    "op": "/project1/sc_exploded_view/draw"
+   }
+  },
+  "final": {
+   "type": "glslTOP",
+   "family": "TOP",
+   "pos": [
+    930,
+    0
+   ],
+   "inputs": [
+    [
+     "draw"
+    ],
+    [
+     "glow_blur"
+    ]
+   ],
+   "pars": {
+    "computedat": "final_compute",
+    "format": "rgba8fixed",
+    "outputresolution": "custom",
+    "pixeldat": "/project1/sc_exploded_view/final_frag",
+    "resolutionh": 720,
+    "resolutionw": 1280,
+    "vec0name": "uGlow",
+    "vec0valuex": {
+     "expr": "op('ctl')['glow']"
+    },
+    "vec0valuey": {
+     "expr": "op('hub')['pulse']"
+    },
+    "vec0valuez": {
+     "expr": "min(1.0, float(op('hub')['hit_mid']))"
+    }
+   }
+  },
+  "final_frag": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    930,
+    -300
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.here('shaders/final.frag')"
+    },
+    "language": "text",
+    "syncfile": true
+   },
+   "text_file": "experiments/sc_exploded_view/shaders/final.frag"
+  },
+  "final_info": {
+   "type": "infoDAT",
+   "family": "DAT",
+   "pos": [
+    160,
+    -120
+   ],
+   "pars": {
+    "language": "text",
+    "op": "final"
+   }
+  },
+  "gbuffer": {
+   "type": "renderTOP",
+   "family": "TOP",
+   "pos": [
+    0,
+    100
+   ],
+   "pars": {
+    "camera": "/project1/sc_exploded_view/cam",
+    "format": "rgba32float",
+    "geometry": "part*",
+    "lights": "",
+    "numcolorbufs": 3,
+    "resolutionh": 720,
+    "resolutionw": 1280
+   }
+  },
+  "gdata": {
+   "type": "renderselectTOP",
+   "family": "TOP",
+   "pos": [
+    0,
+    -50
+   ],
+   "pars": {
+    "bufferindex": 1,
+    "top": "/project1/sc_exploded_view/gbuffer"
+   }
+  },
+  "glow_blur": {
+   "type": "blurTOP",
+   "family": "TOP",
+   "pos": [
+    930,
+    -150
+   ],
+   "inputs": [
+    [
+     "glow_small"
+    ]
+   ],
+   "pars": {
+    "size": 10
+   }
+  },
+  "glow_small": {
+   "type": "resolutionTOP",
+   "family": "TOP",
+   "pos": [
+    780,
+    -150
+   ],
+   "inputs": [
+    [
+     "draw"
+    ]
+   ],
+   "pars": {
+    "outputresolution": "custom",
+    "resolutionh": 180,
+    "resolutionw": 320
+   }
+  },
+  "gpic": {
+   "type": "renderselectTOP",
+   "family": "TOP",
+   "pos": [
+    150,
+    -50
+   ],
+   "pars": {
+    "bufferindex": 2,
+    "top": "/project1/sc_exploded_view/gbuffer"
+   }
+  },
+  "hub": {
+   "type": "selectCHOP",
+   "family": "CHOP",
+   "pos": [
+    -400,
+    200
+   ],
+   "pars": {
+    "chops": "/project1/sw_hub/feed"
+   }
+  },
+  "inblank": {
+   "type": "constantTOP",
+   "family": "TOP",
+   "pos": [
+    -1000,
+    250
+   ],
+   "pars": {
+    "alpha": 0.0,
+    "colorb": 0.0,
+    "colorg": 0.0,
+    "colorr": 0.0,
+    "outputresolution": "custom",
+    "resolutionh": 16,
+    "resolutionw": 16
+   }
+  },
+  "insel": {
+   "type": "selectTOP",
+   "family": "TOP",
+   "pos": [
+    -850,
+    250
+   ],
+   "pars": {
+    "top": {
+     "expr": "op('logic').module.input_path(parent()) or 'inblank'"
+    }
+   }
+  },
+  "lab_a": {
+   "type": "scriptDAT",
+   "family": "DAT",
+   "pos": [
+    -230,
+    -350
+   ],
+   "pars": {
+    "callbacks": "/project1/sc_exploded_view/lab_a_cb"
+   },
+   "text": [
+    "x\ty\ttext",
+    "389\t672\t088 DEG",
+    "699\t672\t118 DEG",
+    "80\t449\t178 DEG",
+    "389\t449\t208 DEG",
+    "1008\t449\t268 DEG",
+    "80\t226\t298 DEG",
+    "699\t226\t358 DEG",
+    "1008\t226\tCAT-0011"
+   ]
+  },
+  "lab_a_cb": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    -230,
+    -440
+   ],
+   "pars": {
+    "language": "text"
+   },
+   "text": [
+    "# Script OP callbacks: all the work is in the 'logic' DAT (logic.py).",
+    "def onCook(scriptOp):",
+    "    op('logic').module.cook_labels(scriptOp, 'a')",
+    "    return"
+   ]
+  },
+  "lab_l": {
+   "type": "scriptDAT",
+   "family": "DAT",
+   "pos": [
+    -60,
+    -350
+   ],
+   "pars": {
+    "callbacks": "/project1/sc_exploded_view/lab_l_cb"
+   },
+   "text": [
+    "x\ty\ttext"
+   ]
+  },
+  "lab_l_cb": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    -60,
+    -440
+   ],
+   "pars": {
+    "language": "text"
+   },
+   "text": [
+    "# Script OP callbacks: all the work is in the 'logic' DAT (logic.py).",
+    "def onCook(scriptOp):",
+    "    op('logic').module.cook_labels(scriptOp, 'l')",
+    "    return"
+   ]
+  },
+  "lab_s": {
+   "type": "scriptDAT",
+   "family": "DAT",
+   "pos": [
+    -400,
+    -350
+   ],
+   "pars": {
+    "callbacks": "/project1/sc_exploded_view/lab_s_cb"
+   },
+   "text": [
+    "x\ty\ttext",
+    "50\t672\t01",
+    "80\t672\t058 DEG",
+    "360\t672\t02",
+    "669\t672\t03",
+    "979\t672\t04",
+    "1008\t672\t148 DEG",
+    "50\t449\t05",
+    "360\t449\t06",
+    "669\t449\t07",
+    "699\t449\t238 DEG",
+    "979\t449\t08",
+    "50\t226\t09",
+    "360\t226\t10",
+    "389\t226\t328 DEG",
+    "669\t226\t11",
+    "979\t226\t12"
+   ]
+  },
+  "lab_s_cb": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    -400,
+    -440
+   ],
+   "pars": {
+    "language": "text"
+   },
+   "text": [
+    "# Script OP callbacks: all the work is in the 'logic' DAT (logic.py).",
+    "def onCook(scriptOp):",
+    "    op('logic').module.cook_labels(scriptOp, 's')",
+    "    return"
+   ]
+  },
+  "lab_x": {
+   "type": "scriptDAT",
+   "family": "DAT",
+   "pos": [
+    110,
+    -350
+   ],
+   "pars": {
+    "callbacks": "/project1/sc_exploded_view/lab_x_cb"
+   },
+   "text": [
+    "x\ty\ttext"
+   ]
+  },
+  "lab_x_cb": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    110,
+    -440
+   ],
+   "pars": {
+    "language": "text"
+   },
+   "text": [
+    "# Script OP callbacks: all the work is in the 'logic' DAT (logic.py).",
+    "def onCook(scriptOp):",
+    "    op('logic').module.cook_labels(scriptOp, 'x')",
+    "    return"
+   ]
+  },
+  "lettering": {
+   "type": "compositeTOP",
+   "family": "TOP",
+   "pos": [
+    300,
+    -560
+   ],
+   "inputs": [
+    [
+     "txt_s"
+    ],
+    [
+     "txt_a"
+    ],
+    [
+     "txt_l"
+    ],
+    [
+     "txt_x"
+    ]
+   ],
+   "pars": {
+    "operand": "over"
+   }
+  },
+  "line_a": {
+   "type": "selectCHOP",
+   "family": "CHOP",
+   "pos": [
+    -100,
+    420
+   ],
+   "pars": {
+    "channames": "x0 y0 x1 y1",
+    "chops": "/project1/sc_exploded_view/lines"
+   }
+  },
+  "line_b": {
+   "type": "selectCHOP",
+   "family": "CHOP",
+   "pos": [
+    50,
+    420
+   ],
+   "pars": {
+    "channames": "k c w u",
+    "chops": "/project1/sc_exploded_view/lines"
+   }
+  },
+  "lines": {
+   "type": "scriptCHOP",
+   "family": "CHOP",
+   "pos": [
+    -200,
+    600
+   ],
+   "pars": {
+    "callbacks": "/project1/sc_exploded_view/lines_cb",
+    "exportmethod": "datname"
+   }
+  },
+  "lines_cb": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    -200,
+    510
+   ],
+   "pars": {
+    "language": "text"
+   },
+   "text": [
+    "# Script OP callbacks: all the work is in the 'logic' DAT (logic.py).",
+    "def onCook(scriptOp):",
+    "    op('logic').module.cook_lines(scriptOp)",
+    "    return"
+   ]
+  },
+  "local": {
+   "type": "baseCOMP",
+   "family": "COMP",
+   "pos": [
+    -400,
+    460
+   ]
+  },
+  "local/modules": {
+   "type": "baseCOMP",
+   "family": "COMP",
+   "pos": [
+    0,
+    0
+   ]
+  },
+  "local/modules/paths": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "file": {
+     "expr": "project.folder.replace(chr(92), '/') + '/experiments/sw_hub/paths_module.py'"
+    },
+    "language": "text",
+    "syncfile": true
+   },
+   "text_file": "experiments/sw_hub/paths_module.py"
+  },
+  "logic": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    -800,
+    600
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.here('logic.py')"
+    },
+    "language": "text",
+    "syncfile": true
+   },
+   "text_file": "experiments/sc_exploded_view/logic.py"
+  },
+  "model_info": {
+   "type": "tableDAT",
+   "family": "DAT",
+   "pos": [
+    -800,
+    480
+   ],
+   "text": [
+    "index\tsx\tsy\tsz\ttris"
+   ]
+  },
+  "out1": {
+   "type": "outTOP",
+   "family": "TOP",
+   "pos": [
+    1200,
+    0
+   ],
+   "inputs": [
+    [
+     "final"
+    ]
+   ]
+  },
+  "part0": {
+   "type": "geometryCOMP",
+   "family": "COMP",
+   "pos": [
+    -400,
+    150
+   ],
+   "pars": {
+    "instancecountmode": "manual",
+    "instancing": true,
+    "material": "/project1/sc_exploded_view/part_mat",
+    "numinstances": {
+     "expr": "int(op('ctl')['ninst'])"
+    },
+    "render": {
+     "expr": "int(op('ctl')['model']) == 0"
+    }
+   }
+  },
+  "part0/mesh": {
+   "type": "fileinPOP",
+   "family": "POP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.scene_file('meshes/parts.obj')"
+    }
+   }
+  },
+  "part1": {
+   "type": "geometryCOMP",
+   "family": "COMP",
+   "pos": [
+    -270,
+    150
+   ],
+   "pars": {
+    "instancecountmode": "manual",
+    "instancing": true,
+    "material": "/project1/sc_exploded_view/part_mat",
+    "numinstances": {
+     "expr": "int(op('ctl')['ninst'])"
+    },
+    "render": {
+     "expr": "int(op('ctl')['model']) == 1"
+    }
+   }
+  },
+  "part1/mesh": {
+   "type": "fileinPOP",
+   "family": "POP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.model_file('gramophone')"
+    }
+   }
+  },
+  "part10": {
+   "type": "geometryCOMP",
+   "family": "COMP",
+   "pos": [
+    120,
+    40
+   ],
+   "pars": {
+    "instancecountmode": "manual",
+    "instancing": true,
+    "material": "/project1/sc_exploded_view/part_mat",
+    "numinstances": {
+     "expr": "int(op('ctl')['ninst'])"
+    },
+    "render": {
+     "expr": "int(op('ctl')['model']) == 10"
+    }
+   }
+  },
+  "part10/mesh": {
+   "type": "fileinPOP",
+   "family": "POP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.model_file('marble_bust')"
+    }
+   }
+  },
+  "part11": {
+   "type": "geometryCOMP",
+   "family": "COMP",
+   "pos": [
+    250,
+    40
+   ],
+   "pars": {
+    "instancecountmode": "manual",
+    "instancing": true,
+    "material": "/project1/sc_exploded_view/part_mat",
+    "numinstances": {
+     "expr": "int(op('ctl')['ninst'])"
+    },
+    "render": {
+     "expr": "int(op('ctl')['model']) == 11"
+    }
+   }
+  },
+  "part11/mesh": {
+   "type": "fileinPOP",
+   "family": "POP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.model_file('broken_column')"
+    }
+   }
+  },
+  "part12": {
+   "type": "geometryCOMP",
+   "family": "COMP",
+   "pos": [
+    -400,
+    -70
+   ],
+   "pars": {
+    "instancecountmode": "manual",
+    "instancing": true,
+    "material": "/project1/sc_exploded_view/part_mat",
+    "numinstances": {
+     "expr": "int(op('ctl')['ninst'])"
+    },
+    "render": {
+     "expr": "int(op('ctl')['model']) == 12"
+    }
+   }
+  },
+  "part12/mesh": {
+   "type": "fileinPOP",
+   "family": "POP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.model_file('rubber_duck')"
+    }
+   }
+  },
+  "part13": {
+   "type": "geometryCOMP",
+   "family": "COMP",
+   "pos": [
+    -270,
+    -70
+   ],
+   "pars": {
+    "instancecountmode": "manual",
+    "instancing": true,
+    "material": "/project1/sc_exploded_view/part_mat",
+    "numinstances": {
+     "expr": "int(op('ctl')['ninst'])"
+    },
+    "render": {
+     "expr": "int(op('ctl')['model']) == 13"
+    }
+   }
+  },
+  "part13/mesh": {
+   "type": "fileinPOP",
+   "family": "POP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.model_file('crystal_cluster')"
+    }
+   }
+  },
+  "part14": {
+   "type": "geometryCOMP",
+   "family": "COMP",
+   "pos": [
+    -140,
+    -70
+   ],
+   "pars": {
+    "instancecountmode": "manual",
+    "instancing": true,
+    "material": "/project1/sc_exploded_view/part_mat",
+    "numinstances": {
+     "expr": "int(op('ctl')['ninst'])"
+    },
+    "render": {
+     "expr": "int(op('ctl')['model']) == 14"
+    }
+   }
+  },
+  "part14/mesh": {
+   "type": "fileinPOP",
+   "family": "POP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.model_file('traffic_cone')"
+    }
+   }
+  },
+  "part15": {
+   "type": "geometryCOMP",
+   "family": "COMP",
+   "pos": [
+    -10,
+    -70
+   ],
+   "pars": {
+    "instancecountmode": "manual",
+    "instancing": true,
+    "material": "/project1/sc_exploded_view/part_mat",
+    "numinstances": {
+     "expr": "int(op('ctl')['ninst'])"
+    },
+    "render": {
+     "expr": "int(op('ctl')['model']) == 15"
+    }
+   }
+  },
+  "part15/mesh": {
+   "type": "fileinPOP",
+   "family": "POP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.model_file('pierced_stone')"
+    }
+   }
+  },
+  "part2": {
+   "type": "geometryCOMP",
+   "family": "COMP",
+   "pos": [
+    -140,
+    150
+   ],
+   "pars": {
+    "instancecountmode": "manual",
+    "instancing": true,
+    "material": "/project1/sc_exploded_view/part_mat",
+    "numinstances": {
+     "expr": "int(op('ctl')['ninst'])"
+    },
+    "render": {
+     "expr": "int(op('ctl')['model']) == 2"
+    }
+   }
+  },
+  "part2/mesh": {
+   "type": "fileinPOP",
+   "family": "POP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.model_file('space_helmet')"
+    }
+   }
+  },
+  "part3": {
+   "type": "geometryCOMP",
+   "family": "COMP",
+   "pos": [
+    -10,
+    150
+   ],
+   "pars": {
+    "instancecountmode": "manual",
+    "instancing": true,
+    "material": "/project1/sc_exploded_view/part_mat",
+    "numinstances": {
+     "expr": "int(op('ctl')['ninst'])"
+    },
+    "render": {
+     "expr": "int(op('ctl')['model']) == 3"
+    }
+   }
+  },
+  "part3/mesh": {
+   "type": "fileinPOP",
+   "family": "POP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.model_file('skeleton_key')"
+    }
+   }
+  },
+  "part4": {
+   "type": "geometryCOMP",
+   "family": "COMP",
+   "pos": [
+    120,
+    150
+   ],
+   "pars": {
+    "instancecountmode": "manual",
+    "instancing": true,
+    "material": "/project1/sc_exploded_view/part_mat",
+    "numinstances": {
+     "expr": "int(op('ctl')['ninst'])"
+    },
+    "render": {
+     "expr": "int(op('ctl')['model']) == 4"
+    }
+   }
+  },
+  "part4/mesh": {
+   "type": "fileinPOP",
+   "family": "POP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.model_file('astrolabe')"
+    }
+   }
+  },
+  "part5": {
+   "type": "geometryCOMP",
+   "family": "COMP",
+   "pos": [
+    250,
+    150
+   ],
+   "pars": {
+    "instancecountmode": "manual",
+    "instancing": true,
+    "material": "/project1/sc_exploded_view/part_mat",
+    "numinstances": {
+     "expr": "int(op('ctl')['ninst'])"
+    },
+    "render": {
+     "expr": "int(op('ctl')['model']) == 5"
+    }
+   }
+  },
+  "part5/mesh": {
+   "type": "fileinPOP",
+   "family": "POP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.model_file('hourglass')"
+    }
+   }
+  },
+  "part6": {
+   "type": "geometryCOMP",
+   "family": "COMP",
+   "pos": [
+    -400,
+    40
+   ],
+   "pars": {
+    "instancecountmode": "manual",
+    "instancing": true,
+    "material": "/project1/sc_exploded_view/part_mat",
+    "numinstances": {
+     "expr": "int(op('ctl')['ninst'])"
+    },
+    "render": {
+     "expr": "int(op('ctl')['model']) == 6"
+    }
+   }
+  },
+  "part6/mesh": {
+   "type": "fileinPOP",
+   "family": "POP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.model_file('ribbon_loop')"
+    }
+   }
+  },
+  "part7": {
+   "type": "geometryCOMP",
+   "family": "COMP",
+   "pos": [
+    -270,
+    40
+   ],
+   "pars": {
+    "instancecountmode": "manual",
+    "instancing": true,
+    "material": "/project1/sc_exploded_view/part_mat",
+    "numinstances": {
+     "expr": "int(op('ctl')['ninst'])"
+    },
+    "render": {
+     "expr": "int(op('ctl')['model']) == 7"
+    }
+   }
+  },
+  "part7/mesh": {
+   "type": "fileinPOP",
+   "family": "POP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.model_file('balanced_solids')"
+    }
+   }
+  },
+  "part8": {
+   "type": "geometryCOMP",
+   "family": "COMP",
+   "pos": [
+    -140,
+    40
+   ],
+   "pars": {
+    "instancecountmode": "manual",
+    "instancing": true,
+    "material": "/project1/sc_exploded_view/part_mat",
+    "numinstances": {
+     "expr": "int(op('ctl')['ninst'])"
+    },
+    "render": {
+     "expr": "int(op('ctl')['model']) == 8"
+    }
+   }
+  },
+  "part8/mesh": {
+   "type": "fileinPOP",
+   "family": "POP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.model_file('wire_cage')"
+    }
+   }
+  },
+  "part9": {
+   "type": "geometryCOMP",
+   "family": "COMP",
+   "pos": [
+    -10,
+    40
+   ],
+   "pars": {
+    "instancecountmode": "manual",
+    "instancing": true,
+    "material": "/project1/sc_exploded_view/part_mat",
+    "numinstances": {
+     "expr": "int(op('ctl')['ninst'])"
+    },
+    "render": {
+     "expr": "int(op('ctl')['model']) == 9"
+    }
+   }
+  },
+  "part9/mesh": {
+   "type": "fileinPOP",
+   "family": "POP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.model_file('amphora')"
+    }
+   }
+  },
+  "part_info": {
+   "type": "infoDAT",
+   "family": "DAT",
+   "pos": [
+    -600,
+    -50
+   ],
+   "pars": {
+    "language": "text",
+    "op": "/project1/sc_exploded_view/part_mat"
+   }
+  },
+  "part_mat": {
+   "type": "glslMAT",
+   "family": "MAT",
+   "pos": [
+    -600,
+    50
+   ],
+   "pars": {
+    "array0chop": "/project1/sc_exploded_view/view_a",
+    "array0name": "uViewA",
+    "array0type": "vec4",
+    "array1chop": "/project1/sc_exploded_view/view_b",
+    "array1name": "uViewB",
+    "array1type": "vec4",
+    "cullface": "neither",
+    "pdat": "/project1/sc_exploded_view/part_pixel",
+    "sampler0extendu": "hold",
+    "sampler0extendv": "hold",
+    "sampler0filter": "linear",
+    "sampler0name": "sPic",
+    "sampler0top": "/project1/sc_exploded_view/insel",
+    "vdat": "/project1/sc_exploded_view/part_vertex",
+    "vec0name": "uObj",
+    "vec0valuew": {
+     "expr": "op('ctl')['nviews']"
+    },
+    "vec0valuex": {
+     "expr": "op('ctl')['mode']"
+    },
+    "vec0valuey": {
+     "expr": "op('ctl')['slabs']"
+    },
+    "vec0valuez": {
+     "expr": "op('ctl')['axis']"
+    },
+    "vec1name": "uExt",
+    "vec1valuew": {
+     "expr": "op('ctl')['fan']"
+    },
+    "vec1valuex": {
+     "expr": "op('ctl')['ext_lo']"
+    },
+    "vec1valuey": {
+     "expr": "op('ctl')['ext_hi']"
+    },
+    "vec1valuez": {
+     "expr": "op('ctl')['gap']"
+    },
+    "vec2name": "uMisc",
+    "vec2valuew": {
+     "expr": "op('hub')['beat_pos']"
+    },
+    "vec2valuex": {
+     "expr": "op('hub')['evolve']"
+    },
+    "vec2valuey": {
+     "expr": "min(1.0, float(op('hub')['hit_high']))"
+    },
+    "vec2valuez": {
+     "expr": "op('shot')['seed']"
+    },
+    "vec3name": "uKeys",
+    "vec3valuew": {
+     "expr": "op('ctl')['rowlift']"
+    },
+    "vec3valuex": {
+     "expr": "op('ctl')['chaos']"
+    },
+    "vec3valuey": {
+     "expr": "op('ctl')['spread']"
+    },
+    "vec3valuez": {
+     "expr": "op('ctl')['lift']"
+    },
+    "vec4name": "uKeys2",
+    "vec4valuew": 0.0,
+    "vec4valuex": {
+     "expr": "op('ctl')['casesink']"
+    },
+    "vec4valuey": 0.0,
+    "vec4valuez": 0.0,
+    "vec5name": "uParts",
+    "vec5valuew": 0.0,
+    "vec5valuex": {
+     "expr": "op('ctl')['p_count']"
+    },
+    "vec5valuey": {
+     "expr": "op('ctl')['p_ylo']"
+    },
+    "vec5valuez": {
+     "expr": "op('ctl')['p_yspan']"
+    },
+    "vec6name": "uPartsUV",
+    "vec6valuew": 0.0,
+    "vec6valuex": {
+     "expr": "op('ctl')['p_sx']"
+    },
+    "vec6valuey": {
+     "expr": "op('ctl')['p_s2']"
+    },
+    "vec6valuez": {
+     "expr": "op('ctl')['p_plane']"
+    },
+    "vec7name": "uPicFit",
+    "vec7valuew": {
+     "expr": "op('ctl')['capin']"
+    },
+    "vec7valuex": {
+     "expr": "op('ctl')['pic']"
+    },
+    "vec7valuey": {
+     "expr": "op('ctl')['picw']"
+    },
+    "vec7valuez": {
+     "expr": "op('ctl')['pich']"
+    }
+   }
+  },
+  "part_pixel": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    -800,
+    0
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.here('shaders/part_pixel.glsl')"
+    },
+    "language": "text",
+    "syncfile": true
+   },
+   "text_file": "experiments/sc_exploded_view/shaders/part_pixel.glsl"
+  },
+  "part_vertex": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    -800,
+    100
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.here('shaders/part_vertex.glsl')"
+    },
+    "language": "text",
+    "syncfile": true
+   },
+   "text_file": "experiments/sc_exploded_view/shaders/part_vertex.glsl"
+  },
+  "shot": {
+   "type": "constantCHOP",
+   "family": "CHOP",
+   "pos": [
+    -400,
+    330
+   ],
+   "pars": {
+    "const0name": "take",
+    "const0value": {
+     "expr": "parent().par.Take"
+    },
+    "const1name": "seed",
+    "const1value": {
+     "expr": "parent().par.Seed"
+    },
+    "const2name": "age",
+    "const2value": {
+     "expr": "max(0, absTime.seconds - parent().par.Shotstart)"
+    }
+   }
+  },
+  "spectrum": {
+   "type": "selectTOP",
+   "family": "TOP",
+   "pos": [
+    -400,
+    60
+   ],
+   "pars": {
+    "top": "/project1/sw_hub/spectex"
+   }
+  },
+  "txt_a": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    -230,
+    -560
+   ],
+   "pars": {
+    "alignx": "left",
+    "aligny": "bottom",
+    "fontcolorb": 0.0,
+    "fontcolorg": 0.0,
+    "fontfile": {
+     "expr": "mod.paths.font('barlow')"
+    },
+    "fontsizex": {
+     "expr": "17 if mod.paths.font('barlow') else 13"
+    },
+    "fontsizexunit": "pixels",
+    "outputresolution": "custom",
+    "resmult": false,
+    "resolutionh": 720,
+    "resolutionw": 1280,
+    "specdat": "/project1/sc_exploded_view/lab_a"
+   }
+  },
+  "txt_l": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    -60,
+    -560
+   ],
+   "pars": {
+    "alignx": "left",
+    "aligny": "bottom",
+    "fontfile": {
+     "expr": "mod.paths.font(('chicago', 'archivo', 'barlow')[int(op('ctl')['bigfont'])])"
+    },
+    "fontsizex": {
+     "expr": "op('ctl')['big']"
+    },
+    "fontsizexunit": "pixels",
+    "outputresolution": "custom",
+    "resmult": false,
+    "resolutionh": 720,
+    "resolutionw": 1280,
+    "specdat": "/project1/sc_exploded_view/lab_l"
+   }
+  },
+  "txt_s": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    -400,
+    -560
+   ],
+   "pars": {
+    "alignx": "left",
+    "aligny": "bottom",
+    "fontfile": {
+     "expr": "mod.paths.font('barlow')"
+    },
+    "fontsizex": {
+     "expr": "17 if mod.paths.font('barlow') else 13"
+    },
+    "fontsizexunit": "pixels",
+    "outputresolution": "custom",
+    "resmult": false,
+    "resolutionh": 720,
+    "resolutionw": 1280,
+    "specdat": "/project1/sc_exploded_view/lab_s"
+   }
+  },
+  "txt_x": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    110,
+    -560
+   ],
+   "pars": {
+    "alignx": "left",
+    "aligny": "bottom",
+    "fontcolorb": 0.0,
+    "fontcolorg": 0.0,
+    "fontfile": {
+     "expr": "mod.paths.font(('chicago', 'archivo', 'barlow')[int(op('ctl')['bigfont'])])"
+    },
+    "fontsizex": {
+     "expr": "op('ctl')['huge']"
+    },
+    "fontsizexunit": "pixels",
+    "outputresolution": "custom",
+    "resmult": false,
+    "resolutionh": 720,
+    "resolutionw": 1280,
+    "specdat": "/project1/sc_exploded_view/lab_x"
+   }
+  },
+  "view_a": {
+   "type": "selectCHOP",
+   "family": "CHOP",
+   "pos": [
+    -400,
+    420
+   ],
+   "pars": {
+    "channames": "a*",
+    "chops": "/project1/sc_exploded_view/views"
+   }
+  },
+  "view_b": {
+   "type": "selectCHOP",
+   "family": "CHOP",
+   "pos": [
+    -250,
+    420
+   ],
+   "pars": {
+    "channames": "b*",
+    "chops": "/project1/sc_exploded_view/views"
+   }
+  },
+  "views": {
+   "type": "scriptCHOP",
+   "family": "CHOP",
+   "pos": [
+    -400,
+    600
+   ],
+   "pars": {
+    "callbacks": "/project1/sc_exploded_view/views_cb",
+    "exportmethod": "datname"
+   }
+  },
+  "views_cb": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    -400,
+    510
+   ],
+   "pars": {
+    "language": "text"
+   },
+   "text": [
+    "# Script OP callbacks: all the work is in the 'logic' DAT (logic.py).",
+    "def onCook(scriptOp):",
+    "    op('logic').module.cook_views(scriptOp)",
+    "    return"
+   ]
+  },
+  "words": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    -1000,
+    600
+   ],
+   "pars": {
+    "language": "text"
+   },
+   "text": [
+    "{",
+    " \"MODELS\": [",
+    "  [",
+    "   \"parts\",",
+    "   [",
+    "    0.8823,",
+    "    1.0,",
+    "    0.883",
+    "   ],",
+    "   29095,",
+    "   \"LANDER, FOUR LEG\",",
+    "   \"CAT-0047\",",
+    "   \"LANDER\"",
+    "  ],",
+    "  [",
+    "   \"gramophone\",",
+    "   [",
+    "    0.7399,",
+    "    1.0,",
+    "    0.7372",
+    "   ],",
+    "   29161,",
+    "   \"GRAMOPHONE, WIND-UP\",",
+    "   \"CAT-0011\",",
+    "   \"GRAMOPHONE\"",
+    "  ],",
+    "  [",
+    "   \"space_helmet\",",
+    "   [",
+    "    1.0,",
+    "    0.9112,",
+    "    0.9933",
+    "   ],",
+    "   29560,",
+    "   \"HELMET, PRESSURE\",",
+    "   \"CAT-0019\",",
+    "   \"SPACE HELMET\"",
+    "  ],",
+    "  [",
+    "   \"skeleton_key\",",
+    "   [",
+    "    0.1223,",
+    "    1.0,",
+    "    0.4343",
+    "   ],",
+    "   29544,",
+    "   \"KEY, SKELETON\",",
+    "   \"CAT-0002\",",
+    "   \"SKELETON KEY\"",
+    "  ],",
+    "  [",
+    "   \"astrolabe\",",
+    "   [",
+    "    0.6383,",
+    "    1.0,",
+    "    0.6387",
+    "   ],",
+    "   29403,",
+    "   \"SPHERE, ARMILLARY\",",
+    "   \"CAT-0012\",",
+    "   \"ASTROLABE\"",
+    "  ],",
+    "  [",
+    "   \"hourglass\",",
+    "   [",
+    "    0.5482,",
+    "    1.0,",
+    "    0.5481",
+    "   ],",
+    "   29577,",
+    "   \"HOURGLASS, THREE POST\",",
+    "   \"CAT-0027\",",
+    "   \"HOURGLASS\"",
+    "  ],",
+    "  [",
+    "   \"ribbon_loop\",",
+    "   [",
+    "    0.7078,",
+    "    1.0,",
+    "    0.5891",
+    "   ],",
+    "   29404,",
+    "   \"KNOT, BRONZE\",",
+    "   \"CAT-0001\",",
+    "   \"BRONZE KNOT\"",
+    "  ],",
+    "  [",
+    "   \"balanced_solids\",",
+    "   [",
+    "    0.2997,",
+    "    1.0,",
+    "    0.2996",
+    "   ],",
+    "   29390,",
+    "   \"SOLIDS, BALANCED\",",
+    "   \"CAT-0031\",",
+    "   \"BALANCED SOLIDS\"",
+    "  ],",
+    "  [",
+    "   \"wire_cage\",",
+    "   [",
+    "    0.9973,",
+    "    0.97,",
+    "    1.0",
+    "   ],",
+    "   28800,",
+    "   \"CAGE, GEODESIC\",",
+    "   \"CAT-0040\",",
+    "   \"WIRE CAGE\"",
+    "  ],",
+    "  [",
+    "   \"amphora\",",
+    "   [",
+    "    0.5717,",
+    "    1.0,",
+    "    0.5719",
+    "   ],",
+    "   29930,",
+    "   \"AMPHORA, TWO HANDLE\",",
+    "   \"CAT-0008\",",
+    "   \"AMPHORA\"",
+    "  ],",
+    "  [",
+    "   \"marble_bust\",",
+    "   [",
+    "    0.5578,",
+    "    1.0,",
+    "    0.5336",
+    "   ],",
+    "   28229,",
+    "   \"BUST, MARBLE\",",
+    "   \"CAT-0016\",",
+    "   \"MARBLE BUST\"",
+    "  ],",
+    "  [",
+    "   \"broken_column\",",
+    "   [",
+    "    0.7451,",
+    "    1.0,",
+    "    0.7748",
+    "   ],",
+    "   29853,",
+    "   \"COLUMN, BROKEN\",",
+    "   \"CAT-0006\",",
+    "   \"BROKEN COLUMN\"",
+    "  ],",
+    "  [",
+    "   \"rubber_duck\",",
+    "   [",
+    "    1.0,",
+    "    0.7802,",
+    "    0.8354",
+    "   ],",
+    "   29957,",
+    "   \"DUCK, RUBBER\",",
+    "   \"CAT-0004\",",
+    "   \"RUBBER DUCK\"",
+    "  ],",
+    "  [",
+    "   \"crystal_cluster\",",
+    "   [",
+    "    1.0,",
+    "    0.6487,",
+    "    0.8586",
+    "   ],",
+    "   29184,",
+    "   \"CRYSTALS, CLUSTER\",",
+    "   \"CAT-0022\",",
+    "   \"CRYSTAL CLUSTER\"",
+    "  ],",
+    "  [",
+    "   \"traffic_cone\",",
+    "   [",
+    "    0.6053,",
+    "    1.0,",
+    "    0.6052",
+    "   ],",
+    "   29872,",
+    "   \"CONE, TRAFFIC\",",
+    "   \"CAT-0035\",",
+    "   \"TRAFFIC CONE\"",
+    "  ],",
+    "  [",
+    "   \"pierced_stone\",",
+    "   [",
+    "    0.7907,",
+    "    1.0,",
+    "    0.3366",
+    "   ],",
+    "   28280,",
+    "   \"STONE, PIERCED\",",
+    "   \"CAT-0009\",",
+    "   \"PIERCED STONE\"",
+    "  ]",
+    " ],",
+    " \"POOLS\": {",
+    "  \"take_three_view\": [",
+    "   \"space_helmet\",",
+    "   \"gramophone\",",
+    "   \"astrolabe\",",
+    "   \"hourglass\",",
+    "   \"ribbon_loop\",",
+    "   \"wire_cage\",",
+    "   \"amphora\",",
+    "   \"rubber_duck\"",
+    "  ],",
+    "  \"take_parts_sheet\": [",
+    "   \"gramophone\",",
+    "   \"balanced_solids\",",
+    "   \"ribbon_loop\",",
+    "   \"traffic_cone\",",
+    "   \"hourglass\",",
+    "   \"marble_bust\"",
+    "  ],",
+    "  \"take_section_sweep\": [",
+    "   \"space_helmet\",",
+    "   \"rubber_duck\",",
+    "   \"amphora\",",
+    "   \"crystal_cluster\",",
+    "   \"marble_bust\"",
+    "  ],",
+    "  \"take_slab_strip\": [",
+    "   \"traffic_cone\",",
+    "   \"space_helmet\",",
+    "   \"marble_bust\",",
+    "   \"amphora\",",
+    "   \"broken_column\",",
+    "   \"balanced_solids\"",
+    "  ],",
+    "  \"take_contour_scan\": [",
+    "   \"marble_bust\",",
+    "   \"space_helmet\",",
+    "   \"amphora\",",
+    "   \"ribbon_loop\",",
+    "   \"broken_column\",",
+    "   \"gramophone\",",
+    "   \"pierced_stone\",",
+    "   \"rubber_duck\"",
+    "  ],",
+    "  \"take_rosette\": [",
+    "   \"skeleton_key\",",
+    "   \"gramophone\",",
+    "   \"rubber_duck\",",
+    "   \"amphora\",",
+    "   \"space_helmet\",",
+    "   \"astrolabe\"",
+    "  ],",
+    "  \"take_bill_of_materials\": [",
+    "   \"balanced_solids\",",
+    "   \"hourglass\",",
+    "   \"marble_bust\",",
+    "   \"amphora\",",
+    "   \"traffic_cone\",",
+    "   \"astrolabe\"",
+    "  ]",
+    " },",
+    " \"INPUT_POOLS\": {",
+    "  \"take_contour_scan\": [",
+    "   \"space_helmet\",",
+    "   \"amphora\",",
+    "   \"marble_bust\",",
+    "   \"rubber_duck\",",
+    "   \"pierced_stone\"",
+    "  ],",
+    "  \"take_section_sweep\": [",
+    "   \"space_helmet\",",
+    "   \"rubber_duck\",",
+    "   \"amphora\",",
+    "   \"marble_bust\"",
+    "  ],",
+    "  \"take_three_view\": [",
+    "   \"space_helmet\",",
+    "   \"marble_bust\",",
+    "   \"amphora\",",
+    "   \"rubber_duck\",",
+    "   \"gramophone\"",
+    "  ]",
+    " },",
+    " \"CAP_INSIDE\": [",
+    "  \"rubber_duck\",",
+    "  \"amphora\",",
+    "  \"marble_bust\",",
+    "  \"crystal_cluster\",",
+    "  \"traffic_cone\",",
+    "  \"balanced_solids\",",
+    "  \"broken_column\"",
+    " ],",
+    " \"PARTS\": {",
+    "  \"name\": \"parts\",",
+    "  \"obj\": \"meshes/parts.obj\",",
+    "  \"info\": \"meshes/parts.json\",",
+    "  \"iso\": {",
+    "   \"scale\": 1.1,",
+    "   \"ox\": -0.4,",
+    "   \"oy\": -0.02,",
+    "   \"yaw\": 0.62,",
+    "   \"yaw_sway\": 0.22,",
+    "   \"pitch\": 0.42,",
+    "   \"pitch_sway\": 0.08,",
+    "   \"chaos\": 0.35,",
+    "   \"spread\": 0.6,",
+    "   \"lift\": 0.06,",
+    "   \"rowlift\": 0.0,",
+    "   \"dim\": [",
+    "    0.4412,",
+    "    -0.5,",
+    "    0.4415",
+    "   ],",
+    "   \"mm\": 300.0",
+    "  },",
+    "  \"macro\": {",
+    "   \"scale\": 1.9,",
+    "   \"pitch\": 0.35,",
+    "   \"pitch_sway\": 0.2,",
+    "   \"drift\": [",
+    "    0.3,",
+    "    0.2",
+    "   ],",
+    "   \"chaos\": 0.75,",
+    "   \"spread\": 0.9,",
+    "   \"lift\": 0.05,",
+    "   \"casesink\": 0.22,",
+    "   \"camz\": 1.7,",
+    "   \"fov\": 70.0",
+    "  },",
+    "  \"plan\": {",
+    "   \"pitch\": 0.16,",
+    "   \"scale\": 1.15,",
+    "   \"oy\": 0.22,",
+    "   \"chaos\": 0.45,",
+    "   \"spread\": 0.8,",
+    "   \"lift\": 0.05",
+    "  }",
+    " },",
+    " \"PHRASES\": [",
+    "  \"NOTHING HERE IS PRERENDERED.\",",
+    "  \"EVERY FRAME IS MADE NOW.\",",
+    "  \"SOUND IN. PICTURE OUT.\",",
+    "  \"OBJECT OF UNKNOWN USE. DO NOT TOUCH.\",",
+    "  \"THE KICK MOVES THE PARTS.\",",
+    "  \"HANDLE WITH BOTH HANDS. THEN LISTEN.\",",
+    "  \"THIS PLATE IS MADE OF SOUND.\",",
+    "  \"CATALOGUE NO. 0047: FOUND.\",",
+    "  \"SIXTY FRAMES A SECOND, EVERY SECOND\",",
+    "  \"HERE. NOW. HERE. NOW.\",",
+    "  \"LISTEN WITH YOUR EYES.\",",
+    "  \"SIGNAL ....... FEEDBACK\",",
+    "  \"FOUND, NOT MADE.\"",
+    " ],",
+    " \"STAMPS\": [",
+    "  \"DO NOT TOUCH\",",
+    "  \"PLATE 07\",",
+    "  \"LOOP\",",
+    "  \"UNKNOWN USE\",",
+    "  \"EXHIBIT 12\",",
+    "  \"REAL TIME\",",
+    "  \"FOUND OBJECT\"",
+    " ],",
+    " \"TITLE\": {",
+    "  \"org\": \"CATALOGUE OF OBJECTS OF UNKNOWN USE\",",
+    "  \"sheet\": \"PLATE 07    SHEET %02d OF 43\"",
+    " },",
+    " \"PARTS_LABELS\": {",
+    "  \"leader\": \"PART %02d  \",",
+    "  \"count\": \"ONSET %05d\",",
+    "  \"head\": \"ELEVATION.  PLATE 12 / CAT-0047\"",
+    " },",
+    " \"PARTS_WORDS\": {",
+    "  \"take_iso_keys\": {",
+    "   \"typed\": [",
+    "    \"THE MODEL IS CUT INTO PARTS.\",",
+    "    \"PARTS FLY OUT ON THE BAR LINE.\",",
+    "    \"THE BAR SETS THE PARTS BACK IN.\",",
+    "    \"A SHADER TRACES EVERY LINE HERE.\"",
+    "   ],",
+    "   \"leader\": \"PART %02d OF %d LANDING\"",
+    "  },",
+    "  \"take_macro_keys\": {",
+    "   \"lines\": [",
+    "    \"EXPLODED VIEW: %d PARTS, EACH A SEPARATE SHAPE.\",",
+    "    \"A SHADER TRACES THE EDGES. THE BAR SETS THE PARTS BACK IN.\"",
+    "   ]",
+    "  },",
+    "  \"take_plan_typed\": {",
+    "   \"typed\": [",
+    "    \"PARTS SET BACK OVER TWO BARS.\",",
+    "    \"EVERY PART IS ITS OWN SHAPE.\",",
+    "    \"HI-HATS POP PARTS OUT OF PLACE.\"",
+    "   ],",
+    "   \"head\": \"FRONT VIEW.  %d PARTS SCATTER, THEN LAND FROM THE GROUND UP\"",
+    "  }",
+    " },",
+    " \"LABELS\": {",
+    "  \"dwg\": \"DWG \",",
+    "  \"rev\": \"REV %03d\",",
+    "  \"beat\": \"BEAT %d\",",
+    "  \"views\": [",
+    "   \"FRONT ELEVATION\",",
+    "   \"PLAN\",",
+    "   \"SIDE ELEVATION\"",
+    "  ],",
+    "  \"iso\": \"EXPLODED ISOMETRIC  %d SECTIONS\",",
+    "  \"deg\": \"%03d DEG\",",
+    "  \"section\": \"SECTION A-A\",",
+    "  \"cut_at\": \"CUT AT %05.1f MM   %s\",",
+    "  \"cut_face\": \"CUT FACE  %02d%%\",",
+    "  \"strip\": \"%s   %s   %d SECTIONS AT %.1f\",",
+    "  \"bar\": \"BAR %03d\",",
+    "  \"bass\": \"BASS DEFLECTION, MM\",",
+    "  \"list_row\": \"%s  %-22s QTY %02d\",",
+    "  \"slab\": \"S-%02d\",",
+    "  \"plane\": \"PLANE %03d\",",
+    "  \"planes\": \"PLANES   %s\",",
+    "  \"station\": \"STATION %02d OF 12\"",
+    " }",
+    "}"
+   ]
+  }
+ }
+}

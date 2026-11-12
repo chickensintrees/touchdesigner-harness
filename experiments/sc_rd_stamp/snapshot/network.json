@@ -1,0 +1,3754 @@
+{
+ "format": "tdh-snapshot/1",
+ "root": "/project1/sc_rd_stamp",
+ "ops": {
+  "atl_00": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    -600,
+    -500
+   ],
+   "pars": {
+    "bgalpha": 1.0,
+    "fontautosize": "alwaysfit",
+    "fontfile": {
+     "expr": "mod.paths.font('archivo')"
+    },
+    "fontsizex": 300.0,
+    "linespacing": -8.0,
+    "outputresolution": "custom",
+    "resmult": false,
+    "resolutionh": 240,
+    "resolutionw": 426,
+    "text": "DO NOT\nTOUCH",
+    "typeface": {
+     "expr": "'Regular' if mod.paths.font('archivo') else 'Bold'"
+    }
+   }
+  },
+  "atl_01": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    -470,
+    -500
+   ],
+   "pars": {
+    "bgalpha": 1.0,
+    "fontautosize": "alwaysfit",
+    "fontfile": {
+     "expr": "mod.paths.font('archivo')"
+    },
+    "fontsizex": 300.0,
+    "linespacing": -8.0,
+    "outputresolution": "custom",
+    "resmult": false,
+    "resolutionh": 240,
+    "resolutionw": 426,
+    "text": "PLATE\n07",
+    "typeface": {
+     "expr": "'Regular' if mod.paths.font('archivo') else 'Bold'"
+    }
+   }
+  },
+  "atl_02": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    -340,
+    -500
+   ],
+   "pars": {
+    "bgalpha": 1.0,
+    "fontautosize": "alwaysfit",
+    "fontfile": {
+     "expr": "mod.paths.font('archivo')"
+    },
+    "fontsizex": 300.0,
+    "linespacing": -8.0,
+    "outputresolution": "custom",
+    "resmult": false,
+    "resolutionh": 240,
+    "resolutionw": 426,
+    "text": "LOOP",
+    "typeface": {
+     "expr": "'Regular' if mod.paths.font('archivo') else 'Bold'"
+    }
+   }
+  },
+  "atl_03": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    -600,
+    -610
+   ],
+   "pars": {
+    "bgalpha": 1.0,
+    "fontautosize": "alwaysfit",
+    "fontfile": {
+     "expr": "mod.paths.font('archivo')"
+    },
+    "fontsizex": 300.0,
+    "linespacing": -8.0,
+    "outputresolution": "custom",
+    "resmult": false,
+    "resolutionh": 240,
+    "resolutionw": 426,
+    "text": "NO\nPLAYBACK",
+    "typeface": {
+     "expr": "'Regular' if mod.paths.font('archivo') else 'Bold'"
+    }
+   }
+  },
+  "atl_04": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    -470,
+    -610
+   ],
+   "pars": {
+    "bgalpha": 1.0,
+    "fontautosize": "alwaysfit",
+    "fontfile": {
+     "expr": "mod.paths.font('archivo')"
+    },
+    "fontsizex": 300.0,
+    "linespacing": -8.0,
+    "outputresolution": "custom",
+    "resmult": false,
+    "resolutionh": 240,
+    "resolutionw": 426,
+    "text": "INK",
+    "typeface": {
+     "expr": "'Regular' if mod.paths.font('archivo') else 'Bold'"
+    }
+   }
+  },
+  "atl_05": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    -340,
+    -610
+   ],
+   "pars": {
+    "bgalpha": 1.0,
+    "fontautosize": "alwaysfit",
+    "fontfile": {
+     "expr": "mod.paths.font('archivo')"
+    },
+    "fontsizex": 300.0,
+    "linespacing": -8.0,
+    "outputresolution": "custom",
+    "resmult": false,
+    "resolutionh": 240,
+    "resolutionw": 426,
+    "text": "NOW.",
+    "typeface": {
+     "expr": "'Regular' if mod.paths.font('archivo') else 'Bold'"
+    }
+   }
+  },
+  "atl_06": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    -600,
+    -720
+   ],
+   "pars": {
+    "bgalpha": 1.0,
+    "fontautosize": "alwaysfit",
+    "fontfile": {
+     "expr": "mod.paths.font('archivo')"
+    },
+    "fontsizex": 300.0,
+    "linespacing": -8.0,
+    "outputresolution": "custom",
+    "resmult": false,
+    "resolutionh": 240,
+    "resolutionw": 426,
+    "text": "FRAME\n60",
+    "typeface": {
+     "expr": "'Regular' if mod.paths.font('archivo') else 'Bold'"
+    }
+   }
+  },
+  "atl_07": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    -470,
+    -720
+   ],
+   "pars": {
+    "bgalpha": 1.0,
+    "fontautosize": "alwaysfit",
+    "fontfile": {
+     "expr": "mod.paths.font('archivo')"
+    },
+    "fontsizex": 300.0,
+    "linespacing": -8.0,
+    "outputresolution": "custom",
+    "resmult": false,
+    "resolutionh": 240,
+    "resolutionw": 426,
+    "text": "NOT\nMADE",
+    "typeface": {
+     "expr": "'Regular' if mod.paths.font('archivo') else 'Bold'"
+    }
+   }
+  },
+  "atl_08": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    -340,
+    -720
+   ],
+   "pars": {
+    "bgalpha": 1.0,
+    "fontautosize": "alwaysfit",
+    "fontfile": {
+     "expr": "mod.paths.font('archivo')"
+    },
+    "fontsizex": 300.0,
+    "linespacing": -8.0,
+    "outputresolution": "custom",
+    "resmult": false,
+    "resolutionh": 240,
+    "resolutionw": 426,
+    "text": "SIGNAL",
+    "typeface": {
+     "expr": "'Regular' if mod.paths.font('archivo') else 'Bold'"
+    }
+   }
+  },
+  "atl_09": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    -600,
+    -830
+   ],
+   "pars": {
+    "bgalpha": 1.0,
+    "fontautosize": "alwaysfit",
+    "fontfile": {
+     "expr": "mod.paths.font('archivo')"
+    },
+    "fontsizex": 300.0,
+    "linespacing": -8.0,
+    "outputresolution": "custom",
+    "resmult": false,
+    "resolutionh": 240,
+    "resolutionw": 426,
+    "text": "IN.",
+    "typeface": {
+     "expr": "'Regular' if mod.paths.font('archivo') else 'Bold'"
+    }
+   }
+  },
+  "atl_10": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    -470,
+    -830
+   ],
+   "pars": {
+    "bgalpha": 1.0,
+    "fontautosize": "alwaysfit",
+    "fontfile": {
+     "expr": "mod.paths.font('archivo')"
+    },
+    "fontsizex": 300.0,
+    "linespacing": -8.0,
+    "outputresolution": "custom",
+    "resmult": false,
+    "resolutionh": 240,
+    "resolutionw": 426,
+    "text": "FEEDBACK",
+    "typeface": {
+     "expr": "'Regular' if mod.paths.font('archivo') else 'Bold'"
+    }
+   }
+  },
+  "atl_11": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    -340,
+    -830
+   ],
+   "pars": {
+    "bgalpha": 1.0,
+    "fontautosize": "alwaysfit",
+    "fontfile": {
+     "expr": "mod.paths.font('archivo')"
+    },
+    "fontsizex": 300.0,
+    "linespacing": -8.0,
+    "outputresolution": "custom",
+    "resmult": false,
+    "resolutionh": 240,
+    "resolutionw": 426,
+    "text": "OUT OF\nPHASE",
+    "typeface": {
+     "expr": "'Regular' if mod.paths.font('archivo') else 'Bold'"
+    }
+   }
+  },
+  "atlas": {
+   "type": "layoutTOP",
+   "family": "TOP",
+   "pos": [
+    -200,
+    -500
+   ],
+   "pars": {
+    "align": "gridrows",
+    "numcols": 3,
+    "outputresolution": "custom",
+    "resolutionh": 960,
+    "resolutionw": 1278,
+    "tops": "atl_*"
+   }
+  },
+  "atlsw": {
+   "type": "switchTOP",
+   "family": "TOP",
+   "pos": [
+    -50,
+    -500
+   ],
+   "inputs": [
+    [
+     "atlas"
+    ],
+    [
+     "datlas0"
+    ],
+    [
+     "datlas1"
+    ],
+    [
+     "datlas2"
+    ]
+   ],
+   "pars": {
+    "index": {
+     "expr": "op('tk')['atl']"
+    }
+   }
+  },
+  "blank0": {
+   "type": "overTOP",
+   "family": "TOP",
+   "pos": [
+    -1240,
+    -300
+   ],
+   "inputs": [
+    [
+     "blank0_b"
+    ],
+    [
+     "blank0_h"
+    ]
+   ]
+  },
+  "blank0_b": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    -1370,
+    -300
+   ],
+   "pars": {
+    "alignx": "left",
+    "aligny": "top",
+    "borderspace1": 56.0,
+    "borderspace2": 155.0,
+    "fontcolorb": 0.26,
+    "fontcolorg": 0.22,
+    "fontcolorr": 0.2,
+    "fontfile": {
+     "expr": "mod.paths.font('barlow')"
+    },
+    "fontsizex": {
+     "expr": "22 if mod.paths.font('barlow') else 15"
+    },
+    "linespacing": 9.0,
+    "outputresolution": "custom",
+    "resmult": false,
+    "resolutionh": 1024,
+    "resolutionw": 1024,
+    "text": "CATALOGUE OF OBJECTS\n\nOBJECT  ____________________________      DATE  ______________\n\nORIGIN  ____________________________      CASE  ______________\n\nUSE  _______________________________________________________\n\n____________________________________________________________\n\nFOUND BY  __________________________      [   ]  INK HERE",
+    "wordwrap": true
+   }
+  },
+  "blank0_h": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    -1500,
+    -300
+   ],
+   "pars": {
+    "alignx": "left",
+    "aligny": "top",
+    "bgalpha": 1.0,
+    "bgcolorb": 0.8,
+    "bgcolorg": 0.9,
+    "bgcolorr": 0.93,
+    "borderspace1": 56.0,
+    "borderspace2": 60.0,
+    "fontcolorb": 0.26,
+    "fontcolorg": 0.22,
+    "fontcolorr": 0.2,
+    "fontfile": {
+     "expr": "mod.paths.font('archivo')"
+    },
+    "fontsizex": 76.0,
+    "outputresolution": "custom",
+    "resmult": false,
+    "resolutionh": 1024,
+    "resolutionw": 1024,
+    "text": "PLATE 07",
+    "typeface": {
+     "expr": "'Regular' if mod.paths.font('archivo') else 'Bold'"
+    },
+    "wordwrap": true
+   }
+  },
+  "blank1": {
+   "type": "overTOP",
+   "family": "TOP",
+   "pos": [
+    -1240,
+    -410
+   ],
+   "inputs": [
+    [
+     "blank1_b"
+    ],
+    [
+     "blank1_h"
+    ]
+   ]
+  },
+  "blank1_b": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    -1370,
+    -410
+   ],
+   "pars": {
+    "alignx": "left",
+    "aligny": "top",
+    "borderspace1": 56.0,
+    "borderspace2": 165.0,
+    "fontcolorb": 0.14,
+    "fontcolorg": 0.11,
+    "fontcolorr": 0.1,
+    "fontfile": {
+     "expr": "mod.paths.font('barlow')"
+    },
+    "fontsizex": {
+     "expr": "22 if mod.paths.font('barlow') else 15"
+    },
+    "linespacing": 9.0,
+    "outputresolution": "custom",
+    "resmult": false,
+    "resolutionh": 1024,
+    "resolutionw": 1024,
+    "text": "MACHINE OF UNKNOWN USE, ELEVATION\n\n\nPART  ______________________________________________________\n\nDRAWN BY  __________________________________________________\n\nSCALE  _____________________________________________________\n\n[   ]  CHECKED         [   ]  TRACED          [   ]  FILED",
+    "wordwrap": true
+   }
+  },
+  "blank1_h": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    -1500,
+    -410
+   ],
+   "pars": {
+    "alignx": "left",
+    "aligny": "top",
+    "bgalpha": 1.0,
+    "bgcolorb": 0.93,
+    "bgcolorg": 0.95,
+    "bgcolorr": 0.96,
+    "borderspace1": 56.0,
+    "borderspace2": 60.0,
+    "fontcolorb": 0.14,
+    "fontcolorg": 0.11,
+    "fontcolorr": 0.1,
+    "fontfile": {
+     "expr": "mod.paths.font('archivo')"
+    },
+    "fontsizex": 84.0,
+    "outputresolution": "custom",
+    "resmult": false,
+    "resolutionh": 1024,
+    "resolutionw": 1024,
+    "text": "SHEET 12-B",
+    "typeface": {
+     "expr": "'Regular' if mod.paths.font('archivo') else 'Bold'"
+    },
+    "wordwrap": true
+   }
+  },
+  "blank2": {
+   "type": "overTOP",
+   "family": "TOP",
+   "pos": [
+    -1240,
+    -520
+   ],
+   "inputs": [
+    [
+     "blank2_b"
+    ],
+    [
+     "blank2_h"
+    ]
+   ]
+  },
+  "blank2_b": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    -1370,
+    -520
+   ],
+   "pars": {
+    "alignx": "left",
+    "aligny": "top",
+    "borderspace1": 56.0,
+    "borderspace2": 190.0,
+    "fontcolorb": 0.12,
+    "fontcolorg": 0.05,
+    "fontcolorr": 0.6,
+    "fontfile": {
+     "expr": "mod.paths.font('barlow')"
+    },
+    "fontsizex": {
+     "expr": "22 if mod.paths.font('barlow') else 15"
+    },
+    "linespacing": 9.0,
+    "outputresolution": "custom",
+    "resmult": false,
+    "resolutionh": 1024,
+    "resolutionw": 1024,
+    "text": "\n\n\nNO.  _________________________________\n\n[   ]  TODAY       [   ]  NOT TRANSFERABLE",
+    "wordwrap": true
+   }
+  },
+  "blank2_h": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    -1500,
+    -520
+   ],
+   "pars": {
+    "alignx": "left",
+    "aligny": "top",
+    "bgalpha": 1.0,
+    "bgcolorb": 0.773,
+    "bgcolorg": 0.718,
+    "bgcolorr": 0.945,
+    "borderspace1": 56.0,
+    "borderspace2": 60.0,
+    "fontcolorb": 0.12,
+    "fontcolorg": 0.05,
+    "fontcolorr": 0.6,
+    "fontfile": {
+     "expr": "mod.paths.font('archivo')"
+    },
+    "fontsizex": 104.0,
+    "outputresolution": "custom",
+    "resmult": false,
+    "resolutionh": 1024,
+    "resolutionw": 1024,
+    "text": "ADMIT\nONE",
+    "typeface": {
+     "expr": "'Regular' if mod.paths.font('archivo') else 'Bold'"
+    },
+    "wordwrap": true
+   }
+  },
+  "bright": {
+   "type": "glslTOP",
+   "family": "TOP",
+   "pos": [
+    1200,
+    -200
+   ],
+   "inputs": [
+    [
+     "pic"
+    ]
+   ],
+   "pars": {
+    "computedat": "bright_compute",
+    "format": "rgba16float",
+    "outputresolution": "custom",
+    "pixeldat": "bright_frag",
+    "resolutionh": 180,
+    "resolutionw": 320
+   }
+  },
+  "bright_frag": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    1200,
+    -330
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.here('shaders/bright.frag')"
+    },
+    "language": "text",
+    "syncfile": true
+   },
+   "text_file": "experiments/sc_rd_stamp/shaders/bright.frag"
+  },
+  "bright_info": {
+   "type": "infoDAT",
+   "family": "DAT",
+   "pos": [
+    160,
+    -120
+   ],
+   "pars": {
+    "language": "text",
+    "op": "bright"
+   }
+  },
+  "captext": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    1600,
+    -200
+   ],
+   "pars": {
+    "alignx": "left",
+    "aligny": "bottom",
+    "borderspace1": 40.0,
+    "borderspace2": 22.0,
+    "fontfile": {
+     "expr": "mod.paths.font('barlow')"
+    },
+    "fontsizex": {
+     "expr": "27 if mod.paths.font('barlow') else 19"
+    },
+    "linespacing": 4.0,
+    "outputresolution": "custom",
+    "resmult": false,
+    "resolutionh": 720,
+    "resolutionw": 1280,
+    "text": {
+     "expr": "(lambda c: c.split(chr(10))[0] + ' + INPUT' + chr(10) + 'The bright shapes of another picture are the stamp. Each kick drum presses them again.' if op('mode')['hasin'] > 0.5 else c)(op('takes')[int(op('tsel')['take']) % 7 + 1 + 7 * int(op('mode')['describe']), 'caption'].val)"
+    }
+   }
+  },
+  "cook_driver": {
+   "type": "executeDAT",
+   "family": "DAT",
+   "pos": [
+    -400,
+    -80
+   ],
+   "pars": {
+    "framestart": true,
+    "language": "python"
+   },
+   "text": [
+    "def onFrameStart(frame):",
+    "    hub = op('/project1/sw_hub')",
+    "    me_on = parent().par.Preview.eval()",
+    "    if hub is not None:",
+    "        me_on = me_on or hub.par.Solo.eval() or hub.par.Scene.eval() == parent().name",
+    "    if me_on:",
+    "        op('hub').cook(force=True)",
+    "        op('out1').cook(force=True)",
+    "    return"
+   ]
+  },
+  "ctl": {
+   "type": "constantCHOP",
+   "family": "CHOP",
+   "pos": [
+    100,
+    200
+   ],
+   "pars": {
+    "const0name": "hold",
+    "const0value": {
+     "expr": "1 if abs(op('hub')['section'] - op('secdelay')['section']) > 0.5 or op('shot')['age'] < 0.22 else 0"
+    },
+    "const1name": "boot",
+    "const1value": {
+     "expr": "1 if absTime.frame - op('sim').cookAbsFrame > 3 or abs(op('tsel')['take'] - op('tdel')['take']) > 0.5 or abs(op('tsel')['seed'] - op('tdel')['seed']) > 1e-5 or abs(op('mode')['describe'] - op('mdel')['describe']) > 0.5 or abs(op('mode')['hasin'] - op('mdel')['hasin']) > 0.5 else 0"
+    },
+    "const2name": "kick",
+    "const2value": {
+     "expr": "min(1, max(0, op('hub')['hit_low'] - 0.06) * 2.6)"
+    },
+    "const3name": "ang",
+    "const3value": {
+     "expr": "(((math.sin((op('hub')['section'] + op('tsel')['seed'] * 57.0) * 12.9898) * 43758.5453) % 1) - 0.5) * 0.24 * op('tk')['angs']"
+    },
+    "const4name": "ox",
+    "const4value": {
+     "expr": "(((math.sin((op('hub')['section'] + op('tsel')['seed'] * 57.0) * 39.346) * 43758.5453) % 1) - 0.5) * 0.16 * op('tk')['spread']"
+    },
+    "const5name": "oy",
+    "const5value": {
+     "expr": "(((math.sin((op('hub')['section'] + op('tsel')['seed'] * 57.0) * 93.989) * 43758.5453) % 1) - 0.5) * 0.14 * op('tk')['spread']"
+    },
+    "const6name": "scale",
+    "const6value": {
+     "expr": "(0.94 + 0.14 * ((math.sin((op('hub')['section'] + op('tsel')['seed'] * 57.0) * 5.631) * 43758.5453) % 1)) * op('tk')['sscale']"
+    },
+    "const7name": "mat",
+    "const7value": {
+     "expr": "(int(op('hub')['section']) + int(op('tsel')['seed'] * 3)) % 3 if op('tk')['ink'] < 0 else op('tk')['ink']"
+    }
+   }
+  },
+  "dat0_00": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    -1100,
+    -500
+   ],
+   "pars": {
+    "bgalpha": 1.0,
+    "fontautosize": "alwaysfit",
+    "fontfile": {
+     "expr": "mod.paths.font('archivo')"
+    },
+    "fontsizex": 300.0,
+    "linespacing": -8.0,
+    "outputresolution": "custom",
+    "resmult": false,
+    "resolutionh": 240,
+    "resolutionw": 426,
+    "text": "FEED",
+    "typeface": {
+     "expr": "'Regular' if mod.paths.font('archivo') else 'Bold'"
+    }
+   }
+  },
+  "dat0_01": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    -970,
+    -500
+   ],
+   "pars": {
+    "bgalpha": 1.0,
+    "fontautosize": "alwaysfit",
+    "fontfile": {
+     "expr": "mod.paths.font('archivo')"
+    },
+    "fontsizex": 300.0,
+    "linespacing": -8.0,
+    "outputresolution": "custom",
+    "resmult": false,
+    "resolutionh": 240,
+    "resolutionw": 426,
+    "text": "KILL",
+    "typeface": {
+     "expr": "'Regular' if mod.paths.font('archivo') else 'Bold'"
+    }
+   }
+  },
+  "dat0_02": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    -840,
+    -500
+   ],
+   "pars": {
+    "bgalpha": 1.0,
+    "fontautosize": "alwaysfit",
+    "fontfile": {
+     "expr": "mod.paths.font('archivo')"
+    },
+    "fontsizex": 300.0,
+    "linespacing": -8.0,
+    "outputresolution": "custom",
+    "resmult": false,
+    "resolutionh": 240,
+    "resolutionw": 426,
+    "text": "GROW",
+    "typeface": {
+     "expr": "'Regular' if mod.paths.font('archivo') else 'Bold'"
+    }
+   }
+  },
+  "dat0_03": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    -1100,
+    -610
+   ],
+   "pars": {
+    "bgalpha": 1.0,
+    "fontautosize": "alwaysfit",
+    "fontfile": {
+     "expr": "mod.paths.font('archivo')"
+    },
+    "fontsizex": 300.0,
+    "linespacing": -8.0,
+    "outputresolution": "custom",
+    "resmult": false,
+    "resolutionh": 240,
+    "resolutionw": 426,
+    "text": "WORMS",
+    "typeface": {
+     "expr": "'Regular' if mod.paths.font('archivo') else 'Bold'"
+    }
+   }
+  },
+  "dat0_04": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    -970,
+    -610
+   ],
+   "pars": {
+    "bgalpha": 1.0,
+    "fontautosize": "alwaysfit",
+    "fontfile": {
+     "expr": "mod.paths.font('archivo')"
+    },
+    "fontsizex": 300.0,
+    "linespacing": -8.0,
+    "outputresolution": "custom",
+    "resmult": false,
+    "resolutionh": 240,
+    "resolutionw": 426,
+    "text": "SPOTS",
+    "typeface": {
+     "expr": "'Regular' if mod.paths.font('archivo') else 'Bold'"
+    }
+   }
+  },
+  "dat0_05": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    -840,
+    -610
+   ],
+   "pars": {
+    "bgalpha": 1.0,
+    "fontautosize": "alwaysfit",
+    "fontfile": {
+     "expr": "mod.paths.font('archivo')"
+    },
+    "fontsizex": 300.0,
+    "linespacing": -8.0,
+    "outputresolution": "custom",
+    "resmult": false,
+    "resolutionh": 240,
+    "resolutionw": 426,
+    "text": "1-BIT",
+    "typeface": {
+     "expr": "'Regular' if mod.paths.font('archivo') else 'Bold'"
+    }
+   }
+  },
+  "dat0_06": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    -1100,
+    -720
+   ],
+   "pars": {
+    "bgalpha": 1.0,
+    "fontautosize": "alwaysfit",
+    "fontfile": {
+     "expr": "mod.paths.font('archivo')"
+    },
+    "fontsizex": 300.0,
+    "linespacing": -8.0,
+    "outputresolution": "custom",
+    "resmult": false,
+    "resolutionh": 240,
+    "resolutionw": 426,
+    "text": "KICK",
+    "typeface": {
+     "expr": "'Regular' if mod.paths.font('archivo') else 'Bold'"
+    }
+   }
+  },
+  "dat0_07": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    -970,
+    -720
+   ],
+   "pars": {
+    "bgalpha": 1.0,
+    "fontautosize": "alwaysfit",
+    "fontfile": {
+     "expr": "mod.paths.font('archivo')"
+    },
+    "fontsizex": 300.0,
+    "linespacing": -8.0,
+    "outputresolution": "custom",
+    "resmult": false,
+    "resolutionh": 240,
+    "resolutionw": 426,
+    "text": "INK",
+    "typeface": {
+     "expr": "'Regular' if mod.paths.font('archivo') else 'Bold'"
+    }
+   }
+  },
+  "dat0_08": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    -840,
+    -720
+   ],
+   "pars": {
+    "bgalpha": 1.0,
+    "fontautosize": "alwaysfit",
+    "fontfile": {
+     "expr": "mod.paths.font('archivo')"
+    },
+    "fontsizex": 300.0,
+    "linespacing": -8.0,
+    "outputresolution": "custom",
+    "resmult": false,
+    "resolutionh": 240,
+    "resolutionw": 426,
+    "text": "GRAY-\nSCOTT",
+    "typeface": {
+     "expr": "'Regular' if mod.paths.font('archivo') else 'Bold'"
+    }
+   }
+  },
+  "dat0_09": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    -1100,
+    -830
+   ],
+   "pars": {
+    "bgalpha": 1.0,
+    "fontautosize": "alwaysfit",
+    "fontfile": {
+     "expr": "mod.paths.font('archivo')"
+    },
+    "fontsizex": 300.0,
+    "linespacing": -8.0,
+    "outputresolution": "custom",
+    "resmult": false,
+    "resolutionh": 240,
+    "resolutionw": 426,
+    "text": "640\nx 360",
+    "typeface": {
+     "expr": "'Regular' if mod.paths.font('archivo') else 'Bold'"
+    }
+   }
+  },
+  "dat0_10": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    -970,
+    -830
+   ],
+   "pars": {
+    "bgalpha": 1.0,
+    "fontautosize": "alwaysfit",
+    "fontfile": {
+     "expr": "mod.paths.font('archivo')"
+    },
+    "fontsizex": 300.0,
+    "linespacing": -8.0,
+    "outputresolution": "custom",
+    "resmult": false,
+    "resolutionh": 240,
+    "resolutionw": 426,
+    "text": "SEED",
+    "typeface": {
+     "expr": "'Regular' if mod.paths.font('archivo') else 'Bold'"
+    }
+   }
+  },
+  "dat0_11": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    -840,
+    -830
+   ],
+   "pars": {
+    "bgalpha": 1.0,
+    "fontautosize": "alwaysfit",
+    "fontfile": {
+     "expr": "mod.paths.font('archivo')"
+    },
+    "fontsizex": 300.0,
+    "linespacing": -8.0,
+    "outputresolution": "custom",
+    "resmult": false,
+    "resolutionh": 240,
+    "resolutionw": 426,
+    "text": "DITHER",
+    "typeface": {
+     "expr": "'Regular' if mod.paths.font('archivo') else 'Bold'"
+    }
+   }
+  },
+  "dat1_00": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    -1100,
+    -1000
+   ],
+   "pars": {
+    "bgalpha": 1.0,
+    "fontautosize": "alwaysfit",
+    "fontfile": {
+     "expr": "mod.paths.font('archivo')"
+    },
+    "fontsizex": 300.0,
+    "linespacing": -8.0,
+    "outputresolution": "custom",
+    "resmult": false,
+    "resolutionh": 240,
+    "resolutionw": 426,
+    "text": "KICK",
+    "typeface": {
+     "expr": "'Regular' if mod.paths.font('archivo') else 'Bold'"
+    }
+   }
+  },
+  "dat1_01": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    -970,
+    -1000
+   ],
+   "pars": {
+    "bgalpha": 1.0,
+    "fontautosize": "alwaysfit",
+    "fontfile": {
+     "expr": "mod.paths.font('archivo')"
+    },
+    "fontsizex": 300.0,
+    "linespacing": -8.0,
+    "outputresolution": "custom",
+    "resmult": false,
+    "resolutionh": 240,
+    "resolutionw": 426,
+    "text": "SNARE",
+    "typeface": {
+     "expr": "'Regular' if mod.paths.font('archivo') else 'Bold'"
+    }
+   }
+  },
+  "dat1_02": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    -840,
+    -1000
+   ],
+   "pars": {
+    "bgalpha": 1.0,
+    "fontautosize": "alwaysfit",
+    "fontfile": {
+     "expr": "mod.paths.font('archivo')"
+    },
+    "fontsizex": 300.0,
+    "linespacing": -8.0,
+    "outputresolution": "custom",
+    "resmult": false,
+    "resolutionh": 240,
+    "resolutionw": 426,
+    "text": "BASS",
+    "typeface": {
+     "expr": "'Regular' if mod.paths.font('archivo') else 'Bold'"
+    }
+   }
+  },
+  "dat1_03": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    -1100,
+    -1110
+   ],
+   "pars": {
+    "bgalpha": 1.0,
+    "fontautosize": "alwaysfit",
+    "fontfile": {
+     "expr": "mod.paths.font('archivo')"
+    },
+    "fontsizex": 300.0,
+    "linespacing": -8.0,
+    "outputresolution": "custom",
+    "resmult": false,
+    "resolutionh": 240,
+    "resolutionw": 426,
+    "text": "HATS",
+    "typeface": {
+     "expr": "'Regular' if mod.paths.font('archivo') else 'Bold'"
+    }
+   }
+  },
+  "dat1_04": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    -970,
+    -1110
+   ],
+   "pars": {
+    "bgalpha": 1.0,
+    "fontautosize": "alwaysfit",
+    "fontfile": {
+     "expr": "mod.paths.font('archivo')"
+    },
+    "fontsizex": 300.0,
+    "linespacing": -8.0,
+    "outputresolution": "custom",
+    "resmult": false,
+    "resolutionh": 240,
+    "resolutionw": 426,
+    "text": "FEED",
+    "typeface": {
+     "expr": "'Regular' if mod.paths.font('archivo') else 'Bold'"
+    }
+   }
+  },
+  "dat1_05": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    -840,
+    -1110
+   ],
+   "pars": {
+    "bgalpha": 1.0,
+    "fontautosize": "alwaysfit",
+    "fontfile": {
+     "expr": "mod.paths.font('archivo')"
+    },
+    "fontsizex": 300.0,
+    "linespacing": -8.0,
+    "outputresolution": "custom",
+    "resmult": false,
+    "resolutionh": 240,
+    "resolutionw": 426,
+    "text": "KILL",
+    "typeface": {
+     "expr": "'Regular' if mod.paths.font('archivo') else 'Bold'"
+    }
+   }
+  },
+  "dat1_06": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    -1100,
+    -1220
+   ],
+   "pars": {
+    "bgalpha": 1.0,
+    "fontautosize": "alwaysfit",
+    "fontfile": {
+     "expr": "mod.paths.font('archivo')"
+    },
+    "fontsizex": 300.0,
+    "linespacing": -8.0,
+    "outputresolution": "custom",
+    "resmult": false,
+    "resolutionh": 240,
+    "resolutionw": 426,
+    "text": "SEED",
+    "typeface": {
+     "expr": "'Regular' if mod.paths.font('archivo') else 'Bold'"
+    }
+   }
+  },
+  "dat1_07": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    -970,
+    -1220
+   ],
+   "pars": {
+    "bgalpha": 1.0,
+    "fontautosize": "alwaysfit",
+    "fontfile": {
+     "expr": "mod.paths.font('archivo')"
+    },
+    "fontsizex": 300.0,
+    "linespacing": -8.0,
+    "outputresolution": "custom",
+    "resmult": false,
+    "resolutionh": 240,
+    "resolutionw": 426,
+    "text": "GROW",
+    "typeface": {
+     "expr": "'Regular' if mod.paths.font('archivo') else 'Bold'"
+    }
+   }
+  },
+  "dat1_08": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    -840,
+    -1220
+   ],
+   "pars": {
+    "bgalpha": 1.0,
+    "fontautosize": "alwaysfit",
+    "fontfile": {
+     "expr": "mod.paths.font('archivo')"
+    },
+    "fontsizex": 300.0,
+    "linespacing": -8.0,
+    "outputresolution": "custom",
+    "resmult": false,
+    "resolutionh": 240,
+    "resolutionw": 426,
+    "text": "BURN",
+    "typeface": {
+     "expr": "'Regular' if mod.paths.font('archivo') else 'Bold'"
+    }
+   }
+  },
+  "dat1_09": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    -1100,
+    -1330
+   ],
+   "pars": {
+    "bgalpha": 1.0,
+    "fontautosize": "alwaysfit",
+    "fontfile": {
+     "expr": "mod.paths.font('archivo')"
+    },
+    "fontsizex": 300.0,
+    "linespacing": -8.0,
+    "outputresolution": "custom",
+    "resmult": false,
+    "resolutionh": 240,
+    "resolutionw": 426,
+    "text": "GLINT",
+    "typeface": {
+     "expr": "'Regular' if mod.paths.font('archivo') else 'Bold'"
+    }
+   }
+  },
+  "dat1_10": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    -970,
+    -1330
+   ],
+   "pars": {
+    "bgalpha": 1.0,
+    "fontautosize": "alwaysfit",
+    "fontfile": {
+     "expr": "mod.paths.font('archivo')"
+    },
+    "fontsizex": 300.0,
+    "linespacing": -8.0,
+    "outputresolution": "custom",
+    "resmult": false,
+    "resolutionh": 240,
+    "resolutionw": 426,
+    "text": "3 INKS",
+    "typeface": {
+     "expr": "'Regular' if mod.paths.font('archivo') else 'Bold'"
+    }
+   }
+  },
+  "dat1_11": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    -840,
+    -1330
+   ],
+   "pars": {
+    "bgalpha": 1.0,
+    "fontautosize": "alwaysfit",
+    "fontfile": {
+     "expr": "mod.paths.font('archivo')"
+    },
+    "fontsizex": 300.0,
+    "linespacing": -8.0,
+    "outputresolution": "custom",
+    "resmult": false,
+    "resolutionh": 240,
+    "resolutionw": 426,
+    "text": "STAMP",
+    "typeface": {
+     "expr": "'Regular' if mod.paths.font('archivo') else 'Bold'"
+    }
+   }
+  },
+  "dat2_00": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    -1100,
+    -1500
+   ],
+   "pars": {
+    "bgalpha": 1.0,
+    "fontautosize": "alwaysfit",
+    "fontfile": {
+     "expr": "mod.paths.font('archivo')"
+    },
+    "fontsizex": 300.0,
+    "linespacing": -8.0,
+    "outputresolution": "custom",
+    "resmult": false,
+    "resolutionh": 240,
+    "resolutionw": 426,
+    "text": "TRI-\nPLANAR",
+    "typeface": {
+     "expr": "'Regular' if mod.paths.font('archivo') else 'Bold'"
+    }
+   }
+  },
+  "dat2_01": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    -970,
+    -1500
+   ],
+   "pars": {
+    "bgalpha": 1.0,
+    "fontautosize": "alwaysfit",
+    "fontfile": {
+     "expr": "mod.paths.font('archivo')"
+    },
+    "fontsizex": 300.0,
+    "linespacing": -8.0,
+    "outputresolution": "custom",
+    "resmult": false,
+    "resolutionh": 240,
+    "resolutionw": 426,
+    "text": "3D\nMODEL",
+    "typeface": {
+     "expr": "'Regular' if mod.paths.font('archivo') else 'Bold'"
+    }
+   }
+  },
+  "dat2_02": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    -840,
+    -1500
+   ],
+   "pars": {
+    "bgalpha": 1.0,
+    "fontautosize": "alwaysfit",
+    "fontfile": {
+     "expr": "mod.paths.font('archivo')"
+    },
+    "fontsizex": 300.0,
+    "linespacing": -8.0,
+    "outputresolution": "custom",
+    "resmult": false,
+    "resolutionh": 240,
+    "resolutionw": 426,
+    "text": "NO UVS",
+    "typeface": {
+     "expr": "'Regular' if mod.paths.font('archivo') else 'Bold'"
+    }
+   }
+  },
+  "dat2_03": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    -1100,
+    -1610
+   ],
+   "pars": {
+    "bgalpha": 1.0,
+    "fontautosize": "alwaysfit",
+    "fontfile": {
+     "expr": "mod.paths.font('archivo')"
+    },
+    "fontsizex": 300.0,
+    "linespacing": -8.0,
+    "outputresolution": "custom",
+    "resmult": false,
+    "resolutionh": 240,
+    "resolutionw": 426,
+    "text": "GLSL\nMAT",
+    "typeface": {
+     "expr": "'Regular' if mod.paths.font('archivo') else 'Bold'"
+    }
+   }
+  },
+  "dat2_04": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    -970,
+    -1610
+   ],
+   "pars": {
+    "bgalpha": 1.0,
+    "fontautosize": "alwaysfit",
+    "fontfile": {
+     "expr": "mod.paths.font('archivo')"
+    },
+    "fontsizex": 300.0,
+    "linespacing": -8.0,
+    "outputresolution": "custom",
+    "resmult": false,
+    "resolutionh": 240,
+    "resolutionw": 426,
+    "text": "SAME\nINK",
+    "typeface": {
+     "expr": "'Regular' if mod.paths.font('archivo') else 'Bold'"
+    }
+   }
+  },
+  "dat2_05": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    -840,
+    -1610
+   ],
+   "pars": {
+    "bgalpha": 1.0,
+    "fontautosize": "alwaysfit",
+    "fontfile": {
+     "expr": "mod.paths.font('archivo')"
+    },
+    "fontsizex": 300.0,
+    "linespacing": -8.0,
+    "outputresolution": "custom",
+    "resmult": false,
+    "resolutionh": 240,
+    "resolutionw": 426,
+    "text": "GRAY-\nSCOTT",
+    "typeface": {
+     "expr": "'Regular' if mod.paths.font('archivo') else 'Bold'"
+    }
+   }
+  },
+  "dat2_06": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    -1100,
+    -1720
+   ],
+   "pars": {
+    "bgalpha": 1.0,
+    "fontautosize": "alwaysfit",
+    "fontfile": {
+     "expr": "mod.paths.font('archivo')"
+    },
+    "fontsizex": 300.0,
+    "linespacing": -8.0,
+    "outputresolution": "custom",
+    "resmult": false,
+    "resolutionh": 240,
+    "resolutionw": 426,
+    "text": "REACTION",
+    "typeface": {
+     "expr": "'Regular' if mod.paths.font('archivo') else 'Bold'"
+    }
+   }
+  },
+  "dat2_07": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    -970,
+    -1720
+   ],
+   "pars": {
+    "bgalpha": 1.0,
+    "fontautosize": "alwaysfit",
+    "fontfile": {
+     "expr": "mod.paths.font('archivo')"
+    },
+    "fontsizex": 300.0,
+    "linespacing": -8.0,
+    "outputresolution": "custom",
+    "resmult": false,
+    "resolutionh": 240,
+    "resolutionw": 426,
+    "text": "DIFFUSION",
+    "typeface": {
+     "expr": "'Regular' if mod.paths.font('archivo') else 'Bold'"
+    }
+   }
+  },
+  "dat2_08": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    -840,
+    -1720
+   ],
+   "pars": {
+    "bgalpha": 1.0,
+    "fontautosize": "alwaysfit",
+    "fontfile": {
+     "expr": "mod.paths.font('archivo')"
+    },
+    "fontsizex": 300.0,
+    "linespacing": -8.0,
+    "outputresolution": "custom",
+    "resmult": false,
+    "resolutionh": 240,
+    "resolutionw": 426,
+    "text": "KICK",
+    "typeface": {
+     "expr": "'Regular' if mod.paths.font('archivo') else 'Bold'"
+    }
+   }
+  },
+  "dat2_09": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    -1100,
+    -1830
+   ],
+   "pars": {
+    "bgalpha": 1.0,
+    "fontautosize": "alwaysfit",
+    "fontfile": {
+     "expr": "mod.paths.font('archivo')"
+    },
+    "fontsizex": 300.0,
+    "linespacing": -8.0,
+    "outputresolution": "custom",
+    "resmult": false,
+    "resolutionh": 240,
+    "resolutionw": 426,
+    "text": "FEED",
+    "typeface": {
+     "expr": "'Regular' if mod.paths.font('archivo') else 'Bold'"
+    }
+   }
+  },
+  "dat2_10": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    -970,
+    -1830
+   ],
+   "pars": {
+    "bgalpha": 1.0,
+    "fontautosize": "alwaysfit",
+    "fontfile": {
+     "expr": "mod.paths.font('archivo')"
+    },
+    "fontsizex": 300.0,
+    "linespacing": -8.0,
+    "outputresolution": "custom",
+    "resmult": false,
+    "resolutionh": 240,
+    "resolutionw": 426,
+    "text": "KILL",
+    "typeface": {
+     "expr": "'Regular' if mod.paths.font('archivo') else 'Bold'"
+    }
+   }
+  },
+  "dat2_11": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    -840,
+    -1830
+   ],
+   "pars": {
+    "bgalpha": 1.0,
+    "fontautosize": "alwaysfit",
+    "fontfile": {
+     "expr": "mod.paths.font('archivo')"
+    },
+    "fontsizex": 300.0,
+    "linespacing": -8.0,
+    "outputresolution": "custom",
+    "resmult": false,
+    "resolutionh": 240,
+    "resolutionw": 426,
+    "text": "SKIN",
+    "typeface": {
+     "expr": "'Regular' if mod.paths.font('archivo') else 'Bold'"
+    }
+   }
+  },
+  "datlas0": {
+   "type": "layoutTOP",
+   "family": "TOP",
+   "pos": [
+    -700,
+    -500
+   ],
+   "pars": {
+    "align": "gridrows",
+    "numcols": 3,
+    "outputresolution": "custom",
+    "resolutionh": 960,
+    "resolutionw": 1278,
+    "tops": "dat0_*"
+   }
+  },
+  "datlas1": {
+   "type": "layoutTOP",
+   "family": "TOP",
+   "pos": [
+    -700,
+    -1000
+   ],
+   "pars": {
+    "align": "gridrows",
+    "numcols": 3,
+    "outputresolution": "custom",
+    "resolutionh": 960,
+    "resolutionw": 1278,
+    "tops": "dat1_*"
+   }
+  },
+  "datlas2": {
+   "type": "layoutTOP",
+   "family": "TOP",
+   "pos": [
+    -700,
+    -1500
+   ],
+   "pars": {
+    "align": "gridrows",
+    "numcols": 3,
+    "outputresolution": "custom",
+    "resolutionh": 960,
+    "resolutionw": 1278,
+    "tops": "dat2_*"
+   }
+  },
+  "fb": {
+   "type": "feedbackTOP",
+   "family": "TOP",
+   "pos": [
+    200,
+    0
+   ],
+   "inputs": [
+    [
+     "zero"
+    ]
+   ],
+   "pars": {
+    "format": "rgba16float",
+    "top": "sim"
+   }
+  },
+  "fin": {
+   "type": "switchTOP",
+   "family": "TOP",
+   "pos": [
+    1900,
+    0
+   ],
+   "inputs": [
+    [
+     "grade"
+    ],
+    [
+     "label"
+    ]
+   ],
+   "pars": {
+    "index": {
+     "expr": "op('mode')['describe']"
+    }
+   }
+  },
+  "form0": {
+   "type": "moviefileinTOP",
+   "family": "TOP",
+   "pos": [
+    600,
+    -300
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.model_texture('star_chart')"
+    }
+   }
+  },
+  "form1": {
+   "type": "moviefileinTOP",
+   "family": "TOP",
+   "pos": [
+    600,
+    -410
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.model_texture('blueprint')"
+    }
+   }
+  },
+  "form2": {
+   "type": "moviefileinTOP",
+   "family": "TOP",
+   "pos": [
+    600,
+    -520
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.model_texture('ticket')"
+    }
+   }
+  },
+  "forms": {
+   "type": "switchTOP",
+   "family": "TOP",
+   "pos": [
+    800,
+    -300
+   ],
+   "inputs": [
+    [
+     "formsw0"
+    ],
+    [
+     "formsw1"
+    ],
+    [
+     "formsw2"
+    ],
+    [
+     "sheet0"
+    ],
+    [
+     "sheet1"
+    ],
+    [
+     "sheet2"
+    ],
+    [
+     "inp"
+    ]
+   ],
+   "pars": {
+    "index": {
+     "expr": "6 if (op('mode')['hasin'] > 0.5 and op('tk')['inpaper'] > 0.5) else (3 + op('tk')['form'] if op('mode')['describe'] > 0.5 else op('tk')['form'])"
+    }
+   }
+  },
+  "formsw0": {
+   "type": "switchTOP",
+   "family": "TOP",
+   "pos": [
+    700,
+    -300
+   ],
+   "inputs": [
+    [
+     "form0"
+    ],
+    [
+     "blank0"
+    ]
+   ],
+   "pars": {
+    "index": {
+     "expr": "0 if mod.paths.model_texture('star_chart') else 1"
+    }
+   }
+  },
+  "formsw1": {
+   "type": "switchTOP",
+   "family": "TOP",
+   "pos": [
+    700,
+    -410
+   ],
+   "inputs": [
+    [
+     "form1"
+    ],
+    [
+     "blank1"
+    ]
+   ],
+   "pars": {
+    "index": {
+     "expr": "0 if mod.paths.model_texture('blueprint') else 1"
+    }
+   }
+  },
+  "formsw2": {
+   "type": "switchTOP",
+   "family": "TOP",
+   "pos": [
+    700,
+    -520
+   ],
+   "inputs": [
+    [
+     "form2"
+    ],
+    [
+     "blank2"
+    ]
+   ],
+   "pars": {
+    "index": {
+     "expr": "0 if mod.paths.model_texture('ticket') else 1"
+    }
+   }
+  },
+  "glow": {
+   "type": "blurTOP",
+   "family": "TOP",
+   "pos": [
+    1400,
+    -200
+   ],
+   "inputs": [
+    [
+     "bright"
+    ]
+   ],
+   "pars": {
+    "format": "rgba16float",
+    "size": 9
+   }
+  },
+  "grade": {
+   "type": "glslTOP",
+   "family": "TOP",
+   "pos": [
+    1600,
+    0
+   ],
+   "inputs": [
+    [
+     "pic"
+    ],
+    [
+     "glow"
+    ]
+   ],
+   "pars": {
+    "computedat": "grade_compute",
+    "format": "rgba8fixed",
+    "outputresolution": "custom",
+    "pixeldat": "grade_frag",
+    "resolutionh": 720,
+    "resolutionw": 1280,
+    "vec0name": "uGrade",
+    "vec0valuew": {
+     "expr": "op('shot')['age']"
+    },
+    "vec0valuex": 0.42,
+    "vec0valuey": {
+     "expr": "op('ctl')['kick']"
+    },
+    "vec0valuez": {
+     "expr": "op('hub')['hit_high']"
+    },
+    "vec1name": "uFx",
+    "vec1valuew": {
+     "expr": "op('tk')['vig']"
+    },
+    "vec1valuex": {
+     "expr": "op('tk')['dofpx']"
+    },
+    "vec1valuey": {
+     "expr": "op('tk')['onebit']"
+    },
+    "vec1valuez": {
+     "expr": "op('tk')['expo']"
+    }
+   }
+  },
+  "grade_frag": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    1600,
+    -130
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.here('shaders/grade.frag')"
+    },
+    "language": "text",
+    "syncfile": true
+   },
+   "text_file": "experiments/sc_rd_stamp/shaders/grade.frag"
+  },
+  "grade_info": {
+   "type": "infoDAT",
+   "family": "DAT",
+   "pos": [
+    160,
+    -120
+   ],
+   "pars": {
+    "language": "text",
+    "op": "grade"
+   }
+  },
+  "hmap": {
+   "type": "blurTOP",
+   "family": "TOP",
+   "pos": [
+    800,
+    100
+   ],
+   "inputs": [
+    [
+     "sim"
+    ]
+   ],
+   "pars": {
+    "format": "rgba16float",
+    "outputresolution": "custom",
+    "resolutionh": 720,
+    "resolutionw": 1280
+   }
+  },
+  "hub": {
+   "type": "selectCHOP",
+   "family": "CHOP",
+   "pos": [
+    -400,
+    200
+   ],
+   "pars": {
+    "chops": "/project1/sw_hub/feed"
+   }
+  },
+  "inblur": {
+   "type": "blurTOP",
+   "family": "TOP",
+   "pos": [
+    -250,
+    -1100
+   ],
+   "inputs": [
+    [
+     "inp"
+    ]
+   ],
+   "pars": {
+    "outputresolution": "custom",
+    "resolutionh": 180,
+    "resolutionw": 320,
+    "size": 22
+   }
+  },
+  "inject": {
+   "type": "glslTOP",
+   "family": "TOP",
+   "pos": [
+    400,
+    0
+   ],
+   "inputs": [
+    [
+     "fb"
+    ],
+    [
+     "stamp"
+    ]
+   ],
+   "pars": {
+    "computedat": "inject_compute",
+    "format": "rgba16float",
+    "outputresolution": "custom",
+    "pixeldat": "inject_frag",
+    "resolutionh": 360,
+    "resolutionw": 640,
+    "vec0name": "uStamp",
+    "vec0valuew": 0.9982,
+    "vec0valuex": {
+     "expr": "op('ctl')['hold']"
+    },
+    "vec0valuey": {
+     "expr": "op('ctl')['kick']"
+    },
+    "vec0valuez": 0.985,
+    "vec1name": "uBoot",
+    "vec1valuew": 0.0,
+    "vec1valuex": {
+     "expr": "op('ctl')['boot']"
+    },
+    "vec1valuey": {
+     "expr": "op('mode')['hasin'] if op('tk')['smode'] < 1.5 else 0"
+    },
+    "vec1valuez": 0.0
+   }
+  },
+  "inject_frag": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    400,
+    -130
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.here('shaders/inject.frag')"
+    },
+    "language": "text",
+    "syncfile": true
+   },
+   "text_file": "experiments/sc_rd_stamp/shaders/inject.frag"
+  },
+  "inject_info": {
+   "type": "infoDAT",
+   "family": "DAT",
+   "pos": [
+    160,
+    -120
+   ],
+   "pars": {
+    "language": "text",
+    "op": "inject"
+   }
+  },
+  "inmask": {
+   "type": "glslTOP",
+   "family": "TOP",
+   "pos": [
+    -100,
+    -1000
+   ],
+   "inputs": [
+    [
+     "inp"
+    ],
+    [
+     "inblur"
+    ]
+   ],
+   "pars": {
+    "computedat": "inmask_compute",
+    "format": "rgba8fixed",
+    "outputresolution": "custom",
+    "pixeldat": "inmask_frag",
+    "resolutionh": 720,
+    "resolutionw": 1280
+   }
+  },
+  "inmask_frag": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    -100,
+    -1130
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.here('shaders/inmask.frag')"
+    },
+    "language": "text",
+    "syncfile": true
+   },
+   "text_file": "experiments/sc_rd_stamp/shaders/inmask.frag"
+  },
+  "inmask_info": {
+   "type": "infoDAT",
+   "family": "DAT",
+   "pos": [
+    160,
+    -120
+   ],
+   "pars": {
+    "language": "text",
+    "op": "inmask"
+   }
+  },
+  "inp": {
+   "type": "selectTOP",
+   "family": "TOP",
+   "pos": [
+    -400,
+    -1000
+   ],
+   "pars": {
+    "outputresolution": "custom",
+    "resolutionh": 720,
+    "resolutionw": 1280,
+    "top": {
+     "expr": "parent().par.Input.eval().strip() if op('mode')['hasin'] > 0.5 else 'zero'"
+    }
+   }
+  },
+  "insw": {
+   "type": "switchTOP",
+   "family": "TOP",
+   "pos": [
+    50,
+    -1000
+   ],
+   "inputs": [
+    [
+     "zero"
+    ],
+    [
+     "inmask"
+    ]
+   ],
+   "pars": {
+    "index": {
+     "expr": "op('mode')['hasin']"
+    }
+   }
+  },
+  "label": {
+   "type": "glslTOP",
+   "family": "TOP",
+   "pos": [
+    1750,
+    -100
+   ],
+   "inputs": [
+    [
+     "grade"
+    ],
+    [
+     "captext"
+    ]
+   ],
+   "pars": {
+    "computedat": "label_compute",
+    "format": "rgba8fixed",
+    "outputresolution": "custom",
+    "pixeldat": "label_frag",
+    "resolutionh": 720,
+    "resolutionw": 1280
+   }
+  },
+  "label_frag": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    1750,
+    -230
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.here('shaders/label.frag')"
+    },
+    "language": "text",
+    "syncfile": true
+   },
+   "text_file": "experiments/sc_rd_stamp/shaders/label.frag"
+  },
+  "label_info": {
+   "type": "infoDAT",
+   "family": "DAT",
+   "pos": [
+    160,
+    -120
+   ],
+   "pars": {
+    "language": "text",
+    "op": "label"
+   }
+  },
+  "local": {
+   "type": "baseCOMP",
+   "family": "COMP",
+   "pos": [
+    -400,
+    460
+   ]
+  },
+  "local/modules": {
+   "type": "baseCOMP",
+   "family": "COMP",
+   "pos": [
+    0,
+    0
+   ]
+  },
+  "local/modules/paths": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "file": {
+     "expr": "project.folder.replace(chr(92), '/') + '/experiments/sw_hub/paths_module.py'"
+    },
+    "language": "text",
+    "syncfile": true
+   },
+   "text_file": "experiments/sw_hub/paths_module.py"
+  },
+  "mbg": {
+   "type": "glslTOP",
+   "family": "TOP",
+   "pos": [
+    1600,
+    400
+   ],
+   "inputs": [
+    [
+     "mrend"
+    ]
+   ],
+   "pars": {
+    "computedat": "mbg_compute",
+    "format": "rgba16float",
+    "outputresolution": "custom",
+    "pixeldat": "mbg_frag",
+    "resolutionh": 720,
+    "resolutionw": 1280,
+    "vec0name": "uBg",
+    "vec0valuew": {
+     "expr": "op('hub')['pulse']"
+    },
+    "vec0valuex": {
+     "expr": "op('hub')['evolve']"
+    },
+    "vec0valuey": {
+     "expr": "op('ctl')['kick']"
+    },
+    "vec0valuez": {
+     "expr": "op('tsel')['seed']"
+    }
+   }
+  },
+  "mbg_frag": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    1600,
+    270
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.here('shaders/mbg.frag')"
+    },
+    "language": "text",
+    "syncfile": true
+   },
+   "text_file": "experiments/sc_rd_stamp/shaders/mbg.frag"
+  },
+  "mbg_info": {
+   "type": "infoDAT",
+   "family": "DAT",
+   "pos": [
+    160,
+    -120
+   ],
+   "pars": {
+    "language": "text",
+    "op": "mbg"
+   }
+  },
+  "mcam": {
+   "type": "cameraCOMP",
+   "family": "COMP",
+   "pos": [
+    1400,
+    560
+   ],
+   "pars": {
+    "fov": 30.0,
+    "tx": {
+     "expr": "0.42 * (1 if (op('tsel')['seed'] * 17) % 1 > 0.5 else -1)"
+    },
+    "tz": {
+     "expr": "3.5 + 1.0 * ((op('tsel')['seed'] * 31) % 1) + 2.5 * math.exp(-op('shot')['age'] * 6.0)"
+    }
+   }
+  },
+  "mcam/file1": {
+   "type": "fileinPOP",
+   "family": "POP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "file": {
+     "expr": "app.samplesFolder + '/Geo/defcam.tog'"
+    }
+   }
+  },
+  "mdel": {
+   "type": "delayCHOP",
+   "family": "CHOP",
+   "pos": [
+    -200,
+    620
+   ],
+   "inputs": [
+    [
+     "mode"
+    ]
+   ],
+   "pars": {
+    "delay": 0.05,
+    "timeslice": true
+   }
+  },
+  "mode": {
+   "type": "constantCHOP",
+   "family": "CHOP",
+   "pos": [
+    -400,
+    620
+   ],
+   "pars": {
+    "const0name": "describe",
+    "const0value": {
+     "expr": "1 if parent().par.Describe else 0"
+    },
+    "const1name": "hasin",
+    "const1value": {
+     "expr": "(lambda p: 1 if p and op(p) is not None and op(p).isTOP and not op(p).path.startswith(parent().path + '/') else 0)(parent().par.Input.eval().strip())"
+    }
+   }
+  },
+  "mrend": {
+   "type": "renderTOP",
+   "family": "TOP",
+   "pos": [
+    1400,
+    400
+   ],
+   "pars": {
+    "camera": "mcam",
+    "format": "rgba16float",
+    "geometry": "relic*",
+    "resolutionh": 720,
+    "resolutionw": 1280
+   }
+  },
+  "near": {
+   "type": "blurTOP",
+   "family": "TOP",
+   "pos": [
+    400,
+    -300
+   ],
+   "inputs": [
+    [
+     "stamp"
+    ]
+   ],
+   "pars": {
+    "format": "rgba16float",
+    "outputresolution": "custom",
+    "resolutionh": 360,
+    "resolutionw": 640,
+    "size": 60
+   }
+  },
+  "out1": {
+   "type": "outTOP",
+   "family": "TOP",
+   "pos": [
+    2050,
+    0
+   ],
+   "inputs": [
+    [
+     "fin"
+    ]
+   ]
+  },
+  "phrase": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    -200,
+    -300
+   ],
+   "pars": {
+    "bgalpha": 1.0,
+    "fontautosize": "alwaysfit",
+    "fontfile": {
+     "expr": "mod.paths.font('archivo')"
+    },
+    "fontsizex": 300.0,
+    "linespacing": -8.0,
+    "outputresolution": "custom",
+    "resmult": false,
+    "resolutionh": 400,
+    "resolutionw": 1152,
+    "text": {
+     "expr": "op('phrases')[int(op('pick')['phrase']) % op('phrases').numRows, 0].val"
+    },
+    "typeface": {
+     "expr": "'Regular' if mod.paths.font('archivo') else 'Bold'"
+    }
+   }
+  },
+  "phrases": {
+   "type": "tableDAT",
+   "family": "DAT",
+   "pos": [
+    -400,
+    -300
+   ],
+   "text": [
+    "REAL TIME.",
+    "DO NOT TOUCH",
+    "PLATE 07",
+    "THE SIGNAL:NOTHING STORED.",
+    "NO RENDERINGIN ADVANCE.",
+    "HERE. NOW.REAL TIME.",
+    "EVERY FRAMEIS MADE NOW.",
+    "THERE IS NOPLAYBACK.",
+    "LOUD ISBRIGHT.",
+    "EXHIBIT 12-B",
+    "EVERYTHINGIS LIVE",
+    "OBJECT OFUNKNOWN USE",
+    "LOOP. LOOP.LOOPLOOP.",
+    "SOUND GOES IN.PICTURE OUT.",
+    "LISTEN WITHYOUR EYES.",
+    "FOUND, NOT MADE",
+    "SIGNAL IN....... LIVE",
+    "SIXTY FRAMES EVERYSECOND",
+    "FEEDBACKENGAGED...",
+    "REACTION-DIFFUSION",
+    "KICK DRUM =FRESH STAMP",
+    "GRAY-SCOTTSIMULATION",
+    "THE LETTERSARE THE SEED",
+    "ONE CHEMICALEATS ANOTHER",
+    "LOUD MUSICSPREADS THE INK",
+    "SNARES BURNIT BACK",
+    "10 SIM STEPSPER FRAME",
+    "REACTION-DIFFUSION",
+    "THE INK ISA HEIGHT MAP",
+    "MACRO VIEWOF THE INK",
+    "SHALLOWFOCUS",
+    "GRAY-SCOTTSIMULATION",
+    "WHITE INKON CARBON",
+    "GRAY-SCOTTSIMULATION",
+    "REACTION-DIFFUSION",
+    "KICK DRUM =FRESH INK",
+    "THE SAME INKIN NEGATIVE",
+    "KICK = STAMP",
+    "ONE PER KICK",
+    "GRAY-SCOTT",
+    "LIVING INK",
+    "KICK DRUM"
+   ]
+  },
+  "pic": {
+   "type": "switchTOP",
+   "family": "TOP",
+   "pos": [
+    1200,
+    0
+   ],
+   "inputs": [
+    [
+     "shade"
+    ],
+    [
+     "mbg"
+    ]
+   ],
+   "pars": {
+    "index": {
+     "expr": "op('tk')['relic']"
+    }
+   }
+  },
+  "pick": {
+   "type": "constantCHOP",
+   "family": "CHOP",
+   "pos": [
+    -50,
+    480
+   ],
+   "pars": {
+    "const0name": "phrase",
+    "const0value": {
+     "expr": "(lambda l: int(l[(int(op('sec')['section']) * int(op('tk')['psec']) + int(op('tsel')['seed'] * 997)) % len(l)]))(op('takes')[int(op('tsel')['take']) % 7 + 1 + 7 * int(op('mode')['describe']), 'plist'].val.split())"
+    }
+   }
+  },
+  "relic0": {
+   "type": "geometryCOMP",
+   "family": "COMP",
+   "pos": [
+    1000,
+    560
+   ],
+   "pars": {
+    "material": "/project1/sc_rd_stamp/skinmat",
+    "render": {
+     "expr": "((0, 1, 2)[int(op('tsel')['seed'] * 997) % 3] if op('mode')['describe'] > 0.5 else int(op('tsel')['seed'] * 997) % 3) == 0 and op('tk')['relic'] > 0.5"
+    },
+    "rx": {
+     "expr": "10 * math.sin(op('hub')['evolve'] * 0.35)"
+    },
+    "ry": {
+     "expr": "0 + op('hub')['beat_pos'] * 11.25 + op('tsel')['seed'] * 360 + 200 * math.exp(-op('shot')['age'] * 6.0)"
+    },
+    "scale": {
+     "expr": "0.9 * (1.0 + 0.07 * op('ctl')['kick'])"
+    }
+   }
+  },
+  "relic0/fit": {
+   "type": "transformPOP",
+   "family": "POP",
+   "pos": [
+    200,
+    0
+   ],
+   "inputs": [
+    [
+     "relic0/mesh"
+    ]
+   ],
+   "pars": {
+    "alignscale": {
+     "expr": "'peraxis' if mod.paths.have('models/amphora/model.obj') else 'unity'"
+    },
+    "aligntx": {
+     "expr": "'off' if mod.paths.have('models/amphora/model.obj') else 'origin'"
+    },
+    "alignty": {
+     "expr": "'off' if mod.paths.have('models/amphora/model.obj') else 'origin'"
+    },
+    "aligntz": {
+     "expr": "'off' if mod.paths.have('models/amphora/model.obj') else 'origin'"
+    },
+    "alignxformorder": "aligntransform",
+    "scale": {
+     "expr": "1 if mod.paths.have('models/amphora/model.obj') else 1.4"
+    }
+   }
+  },
+  "relic0/mesh": {
+   "type": "fileinPOP",
+   "family": "POP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.model_file('amphora')"
+    }
+   }
+  },
+  "relic1": {
+   "type": "geometryCOMP",
+   "family": "COMP",
+   "pos": [
+    1130,
+    560
+   ],
+   "pars": {
+    "material": "/project1/sc_rd_stamp/skinmat",
+    "render": {
+     "expr": "((0, 1, 2)[int(op('tsel')['seed'] * 997) % 3] if op('mode')['describe'] > 0.5 else int(op('tsel')['seed'] * 997) % 3) == 1 and op('tk')['relic'] > 0.5"
+    },
+    "rx": {
+     "expr": "10 * math.sin(op('hub')['evolve'] * 0.35)"
+    },
+    "ry": {
+     "expr": "0 + op('hub')['beat_pos'] * 11.25 + op('tsel')['seed'] * 360 + 200 * math.exp(-op('shot')['age'] * 6.0)"
+    },
+    "scale": {
+     "expr": "0.9 * (1.0 + 0.07 * op('ctl')['kick'])"
+    }
+   }
+  },
+  "relic1/fit": {
+   "type": "transformPOP",
+   "family": "POP",
+   "pos": [
+    200,
+    0
+   ],
+   "inputs": [
+    [
+     "relic1/mesh"
+    ]
+   ],
+   "pars": {
+    "alignscale": {
+     "expr": "'peraxis' if mod.paths.have('models/pierced_stone/model.obj') else 'unity'"
+    },
+    "aligntx": {
+     "expr": "'off' if mod.paths.have('models/pierced_stone/model.obj') else 'origin'"
+    },
+    "alignty": {
+     "expr": "'off' if mod.paths.have('models/pierced_stone/model.obj') else 'origin'"
+    },
+    "aligntz": {
+     "expr": "'off' if mod.paths.have('models/pierced_stone/model.obj') else 'origin'"
+    },
+    "alignxformorder": "aligntransform",
+    "scale": {
+     "expr": "1 if mod.paths.have('models/pierced_stone/model.obj') else 1.4"
+    }
+   }
+  },
+  "relic1/mesh": {
+   "type": "fileinPOP",
+   "family": "POP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.model_file('pierced_stone')"
+    }
+   }
+  },
+  "relic2": {
+   "type": "geometryCOMP",
+   "family": "COMP",
+   "pos": [
+    1260,
+    560
+   ],
+   "pars": {
+    "material": "/project1/sc_rd_stamp/skinmat",
+    "render": {
+     "expr": "((0, 1, 2)[int(op('tsel')['seed'] * 997) % 3] if op('mode')['describe'] > 0.5 else int(op('tsel')['seed'] * 997) % 3) == 2 and op('tk')['relic'] > 0.5"
+    },
+    "rx": {
+     "expr": "10 * math.sin(op('hub')['evolve'] * 0.35)"
+    },
+    "ry": {
+     "expr": "0 + op('hub')['beat_pos'] * 11.25 + op('tsel')['seed'] * 360 + 200 * math.exp(-op('shot')['age'] * 6.0)"
+    },
+    "scale": {
+     "expr": "1.0 * (1.0 + 0.07 * op('ctl')['kick'])"
+    }
+   }
+  },
+  "relic2/fit": {
+   "type": "transformPOP",
+   "family": "POP",
+   "pos": [
+    200,
+    0
+   ],
+   "inputs": [
+    [
+     "relic2/mesh"
+    ]
+   ],
+   "pars": {
+    "alignscale": {
+     "expr": "'peraxis' if mod.paths.have('models/space_helmet/model.obj') else 'unity'"
+    },
+    "aligntx": {
+     "expr": "'off' if mod.paths.have('models/space_helmet/model.obj') else 'origin'"
+    },
+    "alignty": {
+     "expr": "'off' if mod.paths.have('models/space_helmet/model.obj') else 'origin'"
+    },
+    "aligntz": {
+     "expr": "'off' if mod.paths.have('models/space_helmet/model.obj') else 'origin'"
+    },
+    "alignxformorder": "aligntransform",
+    "scale": {
+     "expr": "1 if mod.paths.have('models/space_helmet/model.obj') else 1.4"
+    }
+   }
+  },
+  "relic2/mesh": {
+   "type": "fileinPOP",
+   "family": "POP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.model_file('space_helmet')"
+    }
+   }
+  },
+  "relic_frag": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    1130,
+    270
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.here('shaders/relic.frag')"
+    },
+    "language": "text",
+    "syncfile": true
+   },
+   "text_file": "experiments/sc_rd_stamp/shaders/relic.frag"
+  },
+  "relic_vert": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    1000,
+    270
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.here('shaders/relic.vert')"
+    },
+    "language": "text",
+    "syncfile": true
+   },
+   "text_file": "experiments/sc_rd_stamp/shaders/relic.vert"
+  },
+  "sec": {
+   "type": "selectCHOP",
+   "family": "CHOP",
+   "pos": [
+    -200,
+    200
+   ],
+   "pars": {
+    "channames": "section",
+    "chops": "hub"
+   }
+  },
+  "secdelay": {
+   "type": "delayCHOP",
+   "family": "CHOP",
+   "pos": [
+    -50,
+    200
+   ],
+   "inputs": [
+    [
+     "sec"
+    ]
+   ],
+   "pars": {
+    "delay": 0.3,
+    "timeslice": true
+   }
+  },
+  "shade": {
+   "type": "glslTOP",
+   "family": "TOP",
+   "pos": [
+    1000,
+    0
+   ],
+   "inputs": [
+    [
+     "hmap"
+    ],
+    [
+     "stamp"
+    ],
+    [
+     "forms"
+    ]
+   ],
+   "pars": {
+    "computedat": "shade_compute",
+    "format": "rgba16float",
+    "outputresolution": "custom",
+    "pixeldat": "shade_frag",
+    "resolutionh": 720,
+    "resolutionw": 1280,
+    "vec0name": "uCam",
+    "vec0valuew": {
+     "expr": "op('hub')['pulse']"
+    },
+    "vec0valuex": {
+     "expr": "op('hub')['evolve']"
+    },
+    "vec0valuey": {
+     "expr": "op('hub')['beat_pos']"
+    },
+    "vec0valuez": {
+     "expr": "op('hub')['bar_pulse']"
+    },
+    "vec1name": "uHit",
+    "vec1valuew": {
+     "expr": "op('hub')['energy']"
+    },
+    "vec1valuex": {
+     "expr": "op('hub')['hit_low']"
+    },
+    "vec1valuey": {
+     "expr": "op('hub')['hit_mid']"
+    },
+    "vec1valuez": {
+     "expr": "op('hub')['hit_high']"
+    },
+    "vec2name": "uSec",
+    "vec2valuew": {
+     "expr": "op('ctl')['mat']"
+    },
+    "vec2valuex": {
+     "expr": "op('hub')['section']"
+    },
+    "vec2valuey": {
+     "expr": "op('ctl')['kick']"
+    },
+    "vec2valuez": {
+     "expr": "op('ctl')['hold']"
+    },
+    "vec3name": "uPose",
+    "vec3valuew": {
+     "expr": "op('hub')['section_pos']"
+    },
+    "vec3valuex": {
+     "expr": "op('ctl')['ang']"
+    },
+    "vec3valuey": {
+     "expr": "op('ctl')['ox']"
+    },
+    "vec3valuez": {
+     "expr": "op('ctl')['oy']"
+    },
+    "vec4name": "uTake",
+    "vec4valuew": {
+     "expr": "1.0 if (op('mode')['describe'] > 0.5 or (op('mode')['hasin'] > 0.5 and op('tk')['inpaper'] > 0.5)) else op('tk')['formv']"
+    },
+    "vec4valuex": {
+     "expr": "op('tk')['cam']"
+    },
+    "vec4valuey": {
+     "expr": "op('tk')['smode']"
+    },
+    "vec4valuez": {
+     "expr": "1 if op('tk')['paper'] < 0.5 and (op('mode')['describe'] > 0.5 or (op('mode')['hasin'] > 0.5 and op('tk')['inpaper'] > 0.5)) else op('tk')['paper']"
+    },
+    "vec5name": "uShot",
+    "vec5valuew": {
+     "expr": "op('tk')['rows']"
+    },
+    "vec5valuex": {
+     "expr": "op('tsel')['seed']"
+    },
+    "vec5valuey": {
+     "expr": "op('shot')['age']"
+    },
+    "vec5valuez": {
+     "expr": "op('tk')['cols']"
+    },
+    "vec6name": "uPaper",
+    "vec6valuew": {
+     "expr": "op('tk')['frame']"
+    },
+    "vec6valuex": {
+     "expr": "op('tk')['pr']"
+    },
+    "vec6valuey": {
+     "expr": "op('tk')['pg']"
+    },
+    "vec6valuez": {
+     "expr": "op('tk')['pb']"
+    },
+    "vec7name": "uCamP",
+    "vec7valuew": {
+     "expr": "op('tk')['light']"
+    },
+    "vec7valuex": {
+     "expr": "op('tk')['zoom']"
+    },
+    "vec7valuey": {
+     "expr": "op('tk')['roll']"
+    },
+    "vec7valuez": {
+     "expr": "op('tk')['dof']"
+    },
+    "vec8name": "uInk",
+    "vec8valuew": 0.0,
+    "vec8valuex": {
+     "expr": "op('tk')['imp']"
+    },
+    "vec8valuey": {
+     "expr": "op('tk')['chalk']"
+    },
+    "vec8valuez": 0.0
+   }
+  },
+  "shade_frag": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    1000,
+    -130
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.here('shaders/shade.frag')"
+    },
+    "language": "text",
+    "syncfile": true
+   },
+   "text_file": "experiments/sc_rd_stamp/shaders/shade.frag"
+  },
+  "shade_info": {
+   "type": "infoDAT",
+   "family": "DAT",
+   "pos": [
+    160,
+    -120
+   ],
+   "pars": {
+    "language": "text",
+    "op": "shade"
+   }
+  },
+  "sheet0": {
+   "type": "overTOP",
+   "family": "TOP",
+   "pos": [
+    460,
+    -700
+   ],
+   "inputs": [
+    [
+     "sheet0_b"
+    ],
+    [
+     "sheet0_h"
+    ]
+   ]
+  },
+  "sheet0_b": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    330,
+    -700
+   ],
+   "pars": {
+    "alignx": "left",
+    "aligny": "top",
+    "borderspace1": 56.0,
+    "borderspace2": 118.0,
+    "fontcolorb": 0.23,
+    "fontcolorg": 0.17,
+    "fontcolorr": 0.13,
+    "fontfile": {
+     "expr": "mod.paths.font('barlow')"
+    },
+    "fontsizex": {
+     "expr": "31 if mod.paths.font('barlow') else 22"
+    },
+    "linespacing": 9.0,
+    "outputresolution": "custom",
+    "resmult": false,
+    "resolutionh": 720,
+    "resolutionw": 1280,
+    "text": "Two simulated chemicals on a 640 x 360 grid. One feeds on the other, and both spread.\n\n1   The stamped letters are poured in as chemical.\n2   It grows outward from them as worms, beads and coral.\n3   Each kick drum presses the letters solid again.\n4   Snare hits burn the growth back.\n5   Louder, bassier music lets it spread further.\n\nGray-Scott model, 10 steps per frame, in a GLSL shader. The pattern is lit as a height map.",
+    "wordwrap": true
+   }
+  },
+  "sheet0_h": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    200,
+    -700
+   ],
+   "pars": {
+    "alignx": "left",
+    "aligny": "top",
+    "bgalpha": 1.0,
+    "bgcolorb": 0.784,
+    "bgcolorg": 0.89,
+    "bgcolorr": 0.929,
+    "borderspace1": 56.0,
+    "borderspace2": 34.0,
+    "fontcolorb": 0.23,
+    "fontcolorg": 0.17,
+    "fontcolorr": 0.13,
+    "fontfile": {
+     "expr": "mod.paths.font('archivo')"
+    },
+    "fontsizex": 58.0,
+    "outputresolution": "custom",
+    "resmult": false,
+    "resolutionh": 720,
+    "resolutionw": 1280,
+    "text": "REACTION-DIFFUSION",
+    "typeface": {
+     "expr": "'Regular' if mod.paths.font('archivo') else 'Bold'"
+    },
+    "wordwrap": true
+   }
+  },
+  "sheet1": {
+   "type": "overTOP",
+   "family": "TOP",
+   "pos": [
+    460,
+    -810
+   ],
+   "inputs": [
+    [
+     "sheet1_b"
+    ],
+    [
+     "sheet1_h"
+    ]
+   ]
+  },
+  "sheet1_b": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    330,
+    -810
+   ],
+   "pars": {
+    "alignx": "left",
+    "aligny": "top",
+    "borderspace1": 56.0,
+    "borderspace2": 118.0,
+    "fontcolorb": 0.13,
+    "fontcolorg": 0.11,
+    "fontcolorr": 0.1,
+    "fontfile": {
+     "expr": "mod.paths.font('barlow')"
+    },
+    "fontsizex": {
+     "expr": "31 if mod.paths.font('barlow') else 22"
+    },
+    "linespacing": 9.0,
+    "outputresolution": "custom",
+    "resmult": false,
+    "resolutionh": 720,
+    "resolutionw": 1280,
+    "text": "Every stamp is a seed for the same reaction-diffusion simulation.\n\nGold leaf, red enamel and black tar are three ways of lighting one pattern.\n\nEach kick drum presses about a third of the stamps again.\n\nSnare hits burn the growth back. Hi-hats make the ink glint.\n\nLouder, bassier music lets the ink creep further from the letters.",
+    "wordwrap": true
+   }
+  },
+  "sheet1_h": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    200,
+    -810
+   ],
+   "pars": {
+    "alignx": "left",
+    "aligny": "top",
+    "bgalpha": 1.0,
+    "bgcolorb": 0.929,
+    "bgcolorg": 0.953,
+    "bgcolorr": 0.961,
+    "borderspace1": 56.0,
+    "borderspace2": 34.0,
+    "fontcolorb": 0.13,
+    "fontcolorg": 0.11,
+    "fontcolorr": 0.1,
+    "fontfile": {
+     "expr": "mod.paths.font('archivo')"
+    },
+    "fontsizex": 46.0,
+    "outputresolution": "custom",
+    "resmult": false,
+    "resolutionh": 720,
+    "resolutionw": 1280,
+    "text": "SIX STAMPS, ONE SIMULATION",
+    "typeface": {
+     "expr": "'Regular' if mod.paths.font('archivo') else 'Bold'"
+    },
+    "wordwrap": true
+   }
+  },
+  "sheet2": {
+   "type": "overTOP",
+   "family": "TOP",
+   "pos": [
+    460,
+    -920
+   ],
+   "inputs": [
+    [
+     "sheet2_b"
+    ],
+    [
+     "sheet2_h"
+    ]
+   ]
+  },
+  "sheet2_b": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    330,
+    -920
+   ],
+   "pars": {
+    "alignx": "left",
+    "aligny": "top",
+    "borderspace1": 56.0,
+    "borderspace2": 118.0,
+    "fontcolorb": 0.1,
+    "fontcolorg": 0.05,
+    "fontcolorr": 0.55,
+    "fontfile": {
+     "expr": "mod.paths.font('barlow')"
+    },
+    "fontsizex": {
+     "expr": "31 if mod.paths.font('barlow') else 22"
+    },
+    "linespacing": 9.0,
+    "outputresolution": "custom",
+    "resmult": false,
+    "resolutionh": 720,
+    "resolutionw": 1280,
+    "text": "Every kick drum lands a new stamp in a new place.\n\nThe black ink is a reaction-diffusion simulation:\nit keeps growing and breaking up after it lands.\n\nThe red marks are where earlier stamps were pressed.\n\nGray-Scott model on a 640 x 360 grid, 10 steps per frame.",
+    "wordwrap": true
+   }
+  },
+  "sheet2_h": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    200,
+    -920
+   ],
+   "pars": {
+    "alignx": "left",
+    "aligny": "top",
+    "bgalpha": 1.0,
+    "bgcolorb": 0.773,
+    "bgcolorg": 0.718,
+    "bgcolorr": 0.945,
+    "borderspace1": 56.0,
+    "borderspace2": 34.0,
+    "fontcolorb": 0.1,
+    "fontcolorg": 0.05,
+    "fontcolorr": 0.55,
+    "fontfile": {
+     "expr": "mod.paths.font('archivo')"
+    },
+    "fontsizex": 58.0,
+    "outputresolution": "custom",
+    "resmult": false,
+    "resolutionh": 720,
+    "resolutionw": 1280,
+    "text": "ONE KICK, ONE STAMP",
+    "typeface": {
+     "expr": "'Regular' if mod.paths.font('archivo') else 'Bold'"
+    },
+    "wordwrap": true
+   }
+  },
+  "shot": {
+   "type": "constantCHOP",
+   "family": "CHOP",
+   "pos": [
+    -400,
+    330
+   ],
+   "pars": {
+    "const0name": "take",
+    "const0value": {
+     "expr": "parent().par.Take"
+    },
+    "const1name": "seed",
+    "const1value": {
+     "expr": "parent().par.Seed"
+    },
+    "const2name": "age",
+    "const2value": {
+     "expr": "max(0, absTime.seconds - parent().par.Shotstart)"
+    }
+   }
+  },
+  "sim": {
+   "type": "glslTOP",
+   "family": "TOP",
+   "pos": [
+    600,
+    0
+   ],
+   "inputs": [
+    [
+     "inject"
+    ],
+    [
+     "near"
+    ],
+    [
+     "stamp"
+    ]
+   ],
+   "pars": {
+    "computedat": "sim_compute",
+    "format": "rgba16float",
+    "npasses": 10,
+    "outputresolution": "custom",
+    "pixeldat": "sim_frag",
+    "resolutionh": 360,
+    "resolutionw": 640,
+    "vec0name": "uAudio",
+    "vec0valuew": {
+     "expr": "op('hub')['hit_mid']"
+    },
+    "vec0valuex": {
+     "expr": "op('hub')['energy']"
+    },
+    "vec0valuey": {
+     "expr": "op('hub')['bass']"
+    },
+    "vec0valuez": {
+     "expr": "op('hub')['vocals']"
+    },
+    "vec1name": "uDrift",
+    "vec1valuew": 0.0,
+    "vec1valuex": {
+     "expr": "op('hub')['evolve']"
+    },
+    "vec1valuey": {
+     "expr": "op('ctl')['hold']"
+    },
+    "vec1valuez": {
+     "expr": "op('ctl')['kick']"
+    },
+    "vec2name": "uZone",
+    "vec2valuew": 0.0,
+    "vec2valuex": {
+     "expr": "op('tk')['alive']"
+    },
+    "vec2valuey": {
+     "expr": "op('tk')['mbias']"
+    },
+    "vec2valuez": 0.0
+   }
+  },
+  "sim_frag": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    600,
+    -130
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.here('shaders/sim.frag')"
+    },
+    "language": "text",
+    "syncfile": true
+   },
+   "text_file": "experiments/sc_rd_stamp/shaders/sim.frag"
+  },
+  "sim_info": {
+   "type": "infoDAT",
+   "family": "DAT",
+   "pos": [
+    160,
+    -120
+   ],
+   "pars": {
+    "language": "text",
+    "op": "sim"
+   }
+  },
+  "skinmat": {
+   "type": "glslMAT",
+   "family": "MAT",
+   "pos": [
+    1200,
+    400
+   ],
+   "pars": {
+    "pdat": "relic_frag",
+    "sampler0extendu": "mirror",
+    "sampler0extendv": "mirror",
+    "sampler0name": "sSim",
+    "sampler0top": "/project1/sc_rd_stamp/hmap",
+    "vdat": "relic_vert",
+    "vec0name": "uInk",
+    "vec0valuew": {
+     "expr": "op('hub')['pulse']"
+    },
+    "vec0valuex": {
+     "expr": "op('ctl')['mat']"
+    },
+    "vec0valuey": {
+     "expr": "op('ctl')['kick']"
+    },
+    "vec0valuez": {
+     "expr": "op('hub')['hit_high']"
+    },
+    "vec1name": "uLight",
+    "vec1valuew": {
+     "expr": "max(op('mode')['describe'], op('mode')['hasin'])"
+    },
+    "vec1valuex": {
+     "expr": "op('hub')['beat_pos']"
+    },
+    "vec1valuey": {
+     "expr": "op('hub')['evolve']"
+    },
+    "vec1valuez": {
+     "expr": "op('tsel')['seed']"
+    }
+   }
+  },
+  "skinmat_info": {
+   "type": "infoDAT",
+   "family": "DAT",
+   "pos": [
+    320,
+    -120
+   ],
+   "pars": {
+    "language": "text",
+    "op": "skinmat"
+   }
+  },
+  "skinmat_pixel": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    160,
+    -120
+   ],
+   "pars": {
+    "extension": "frag",
+    "language": "glsl"
+   },
+   "text": [
+    "// Example Pixel Shader",
+    "",
+    "// uniform vec4 exampleUniform;",
+    "",
+    "out vec4 oFragColor;",
+    "void main()",
+    "{",
+    "\tTDCheckDiscard();",
+    "\tvec4 color = vec4(1.0);",
+    "\tTDAlphaTest(color.a);",
+    "\toFragColor = TDOutputSwizzle(color);",
+    "}",
+    ""
+   ]
+  },
+  "skinmat_vertex": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    0,
+    -120
+   ],
+   "pars": {
+    "extension": "vert",
+    "language": "glsl"
+   },
+   "text": [
+    "// Example Vertex Shader",
+    "",
+    "void main() ",
+    "{",
+    "\tvec3 pos = TDPos();",
+    "\tvec4 worldSpacePos = TDDeform(pos);",
+    "\tgl_Position = TDWorldToProj(worldSpacePos);",
+    "#ifndef TD_PICKING_ACTIVE",
+    "#else // TD_PICKING_ACTIVE",
+    "\t// This will automatically write out the nessessary values",
+    "\t// for this shader to work with picking.",
+    "\t// See the documentation if you want to write custom values for picking.",
+    "\tTDWritePickingValues();",
+    "#endif // TD_PICKING_ACTIVE",
+    "}",
+    ""
+   ]
+  },
+  "spectrum": {
+   "type": "selectTOP",
+   "family": "TOP",
+   "pos": [
+    -400,
+    60
+   ],
+   "pars": {
+    "top": "/project1/sw_hub/spectex"
+   }
+  },
+  "stamp": {
+   "type": "glslTOP",
+   "family": "TOP",
+   "pos": [
+    0,
+    -300
+   ],
+   "inputs": [
+    [
+     "phrase"
+    ],
+    [
+     "atlsw"
+    ],
+    [
+     "insw"
+    ]
+   ],
+   "pars": {
+    "computedat": "stamp_compute",
+    "format": "rgba8fixed",
+    "outputresolution": "custom",
+    "pixeldat": "stamp_frag",
+    "resolutionh": 720,
+    "resolutionw": 1280,
+    "vec0name": "uPose",
+    "vec0valuew": {
+     "expr": "op('ctl')['scale']"
+    },
+    "vec0valuex": {
+     "expr": "op('ctl')['ang']"
+    },
+    "vec0valuey": {
+     "expr": "op('ctl')['ox']"
+    },
+    "vec0valuez": {
+     "expr": "op('ctl')['oy']"
+    },
+    "vec1name": "uBox",
+    "vec1valuew": 0.05,
+    "vec1valuex": 0.64,
+    "vec1valuey": 0.255,
+    "vec1valuez": 0.022,
+    "vec2name": "uMode",
+    "vec2valuew": {
+     "expr": "op('tk')['frame']"
+    },
+    "vec2valuex": {
+     "expr": "op('tk')['smode']"
+    },
+    "vec2valuey": {
+     "expr": "op('tk')['cols']"
+    },
+    "vec2valuez": {
+     "expr": "op('tk')['rows']"
+    },
+    "vec3name": "uShot",
+    "vec3valuew": {
+     "expr": "op('tk')['jit']"
+    },
+    "vec3valuex": {
+     "expr": "op('tsel')['seed']"
+    },
+    "vec3valuey": {
+     "expr": "op('hub')['hits_low']"
+    },
+    "vec3valuez": {
+     "expr": "op('tk')['gshare']"
+    },
+    "vec4name": "uIn",
+    "vec4valuew": 0.0,
+    "vec4valuex": {
+     "expr": "op('mode')['hasin']"
+    },
+    "vec4valuey": {
+     "expr": "op('mode')['describe']"
+    },
+    "vec4valuez": 0.0
+   }
+  },
+  "stamp_frag": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    0,
+    -430
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.here('shaders/stamp.frag')"
+    },
+    "language": "text",
+    "syncfile": true
+   },
+   "text_file": "experiments/sc_rd_stamp/shaders/stamp.frag"
+  },
+  "stamp_info": {
+   "type": "infoDAT",
+   "family": "DAT",
+   "pos": [
+    160,
+    -120
+   ],
+   "pars": {
+    "language": "text",
+    "op": "stamp"
+   }
+  },
+  "takes": {
+   "type": "tableDAT",
+   "family": "DAT",
+   "pos": [
+    -400,
+    480
+   ],
+   "text": [
+    "name\tcam\tsmode\tpaper\tform\tformv\tink\tcols\trows\tframe\tgshare\tjit\talive\tmbias\tsscale\tspread\tangs\tzoom\troll\tdof\tdofpx\tlight\texpo\tvig\tonebit\timp\tchalk\tpr\tpg\tpb\trelic\tinpaper\tpsec\tplist\tatl\tcaption",
+    "desk\t0\t0\t0\t0\t0.5625\t-1\t1\t1\t1\t1.0\t0.0\t0.0\t0.0\t1.0\t1.0\t1.0\t0.5\t0.0\t0.0\t0.0\t1.0\t1.0\t0.42\t0\t1.0\t0.0\t0.85\t0.77\t0.58\t0\t1\t1\t0 1 2 3 0 4 5 6 0 7 8 9 0 10 11 12 0 13 14 15\t0\t",
+    "macro\t1\t0\t0\t0\t0.5625\t-1\t1\t1\t1\t1.0\t0.0\t0.0\t0.0\t1.0\t1.0\t1.0\t0.5\t0.0\t1.8\t16\t1.15\t1.0\t0.6\t0\t1.0\t0.0\t0.85\t0.77\t0.58\t0\t1\t1\t1 3 4 6 7 10 12 13 14\t0\t",
+    "field\t2\t1\t3\t0\t0.5625\t2\t3\t4\t0\t0.45\t0.0\t1.0\t0.0\t1.0\t1.0\t1.0\t0.4\t0.0\t0.0\t0.0\t1.5\t1.0\t0.15\t1\t0.6\t0.0\t0.8\t0.8\t0.78\t0\t0\t1\t0\t0\t",
+    "approvals\t2\t1\t1\t1\t0.75\t4\t3\t2\t1\t0.34\t0.5\t0.0\t0.0\t1.0\t1.0\t1.0\t0.56\t0.07\t0.0\t0.0\t1.25\t1.0\t0.3\t0\t1.0\t1.0\t0.85\t0.77\t0.58\t0\t0\t1\t0\t0\t",
+    "carbon\t3\t0\t2\t0\t0.5625\t3\t1\t1\t0\t1.0\t0.0\t0.0\t0.0\t1.7\t0.4\t0.3\t0.5\t0.0\t1.5\t12\t1.1\t1.0\t0.5\t0\t1.0\t0.0\t0.01\t0.013\t0.022\t0\t0\t1\t12 3 16 13 7 18 4 6\t0\t",
+    "ticket\t2\t2\t1\t2\t1.0\t2\t1\t1\t1\t1.0\t0.0\t0.0\t0.0\t0.52\t1.0\t1.0\t0.53\t0.12\t0.0\t0.0\t1.2\t1.0\t0.3\t0\t1.0\t0.0\t0.85\t0.77\t0.58\t0\t0\t0\t1 9 15 2 8 10\t0\t",
+    "relic\t0\t1\t0\t0\t0.5625\t-1\t4\t5\t0\t0.5\t0.0\t1.0\t0.0\t1.0\t1.0\t1.0\t0.5\t0.0\t0.0\t0.0\t1.0\t1.1\t0.5\t0\t1.0\t0.0\t0.85\t0.77\t0.58\t1\t0\t1\t0\t0\t",
+    "desk_d\t0\t0\t0\t0\t0.5625\t-1\t1\t1\t1\t1.0\t0.0\t0.0\t0.0\t1.0\t1.0\t1.0\t0.5\t0.0\t0.0\t0.0\t1.0\t1.0\t0.42\t0\t1.0\t0.0\t0.85\t0.77\t0.58\t0\t1\t1\t19 20 21 22 23 24 25 26\t0\tREACTION-DIFFUSION / DESKStamped letters seed a Gray-Scott simulation. Each kick drum presses them solid again.",
+    "macro_d\t1\t0\t0\t0\t0.5625\t-1\t1\t1\t1\t1.0\t0.0\t0.0\t0.0\t1.0\t1.0\t1.0\t0.5\t0.0\t1.8\t16\t1.15\t1.0\t0.6\t0\t1.0\t0.0\t0.85\t0.77\t0.58\t0\t1\t1\t27 28 29 30 31\t0\tREACTION-DIFFUSION / MACROThe simulation is read as a height map, so the ink stands up and catches the light.",
+    "field_d\t2\t1\t3\t0\t0.5625\t2\t3\t3\t0\t0.45\t0.0\t1.0\t0.0\t1.0\t1.0\t1.0\t0.4\t0.0\t0.0\t0.0\t1.5\t1.0\t0.15\t1\t1.0\t0.0\t0.8\t0.8\t0.78\t0\t0\t1\t19\t1\tREACTION-DIFFUSION / FIELDShort words dissolve into worms and spots, in 1-bit dither. Kick drums re-ink about half.",
+    "approvals_d\t2\t1\t1\t1\t0.75\t4\t3\t2\t1\t0.34\t0.5\t0.0\t0.0\t1.0\t1.0\t1.0\t0.56\t0.07\t0.0\t0.0\t1.25\t1.0\t0.3\t0\t1.0\t1.0\t0.85\t0.77\t0.58\t0\t0\t1\t19\t2\tREACTION-DIFFUSION / APPROVALSSix stamps in three inks, all one simulation. Each kick drum presses a third of them again.",
+    "carbon_d\t3\t0\t2\t0\t0.5625\t3\t1\t1\t0\t1.0\t0.0\t0.0\t0.0\t1.25\t0.4\t0.3\t0.5\t0.0\t1.5\t12\t1.1\t1.0\t0.5\t0\t1.0\t0.0\t0.01\t0.013\t0.022\t0\t0\t1\t32 33 34 35 36\t0\tREACTION-DIFFUSION / CARBONThe same simulation as white ink on dark carbon paper, seen from one end of the phrase.",
+    "ticket_d\t2\t2\t1\t2\t1.0\t2\t1\t1\t1\t1.0\t0.0\t0.0\t0.0\t0.52\t1.0\t1.0\t0.53\t0.12\t0.0\t0.0\t1.2\t1.0\t0.3\t0\t1.0\t0.0\t0.85\t0.77\t0.58\t0\t0\t0\t37 38 39 40 41\t0\tREACTION-DIFFUSION / TICKETEvery kick drum lands a new stamp. The black ink keeps growing; red marks are old stamps.",
+    "relic_d\t0\t1\t0\t0\t0.5625\t-1\t4\t5\t0\t0.5\t0.0\t1.0\t0.0\t1.0\t1.0\t1.0\t0.5\t0.0\t0.0\t0.0\t1.0\t1.1\t0.5\t0\t1.0\t0.0\t0.85\t0.77\t0.58\t1\t0\t1\t19\t3\tREACTION-DIFFUSION / RELICThe same living ink projected onto a 3D model from three sides. Kick drums re-ink it."
+   ]
+  },
+  "tdel": {
+   "type": "delayCHOP",
+   "family": "CHOP",
+   "pos": [
+    -50,
+    330
+   ],
+   "inputs": [
+    [
+     "tsel"
+    ]
+   ],
+   "pars": {
+    "delay": 0.05,
+    "timeslice": true
+   }
+  },
+  "tk": {
+   "type": "constantCHOP",
+   "family": "CHOP",
+   "pos": [
+    -200,
+    480
+   ],
+   "pars": {
+    "const0name": "cam",
+    "const0value": {
+     "expr": "float(op('takes')[int(op('tsel')['take']) % 7 + 1 + 7 * int(op('mode')['describe']), 'cam'])"
+    },
+    "const10name": "jit",
+    "const10value": {
+     "expr": "float(op('takes')[int(op('tsel')['take']) % 7 + 1 + 7 * int(op('mode')['describe']), 'jit'])"
+    },
+    "const11name": "alive",
+    "const11value": {
+     "expr": "float(op('takes')[int(op('tsel')['take']) % 7 + 1 + 7 * int(op('mode')['describe']), 'alive'])"
+    },
+    "const12name": "mbias",
+    "const12value": {
+     "expr": "float(op('takes')[int(op('tsel')['take']) % 7 + 1 + 7 * int(op('mode')['describe']), 'mbias'])"
+    },
+    "const13name": "sscale",
+    "const13value": {
+     "expr": "float(op('takes')[int(op('tsel')['take']) % 7 + 1 + 7 * int(op('mode')['describe']), 'sscale'])"
+    },
+    "const14name": "spread",
+    "const14value": {
+     "expr": "float(op('takes')[int(op('tsel')['take']) % 7 + 1 + 7 * int(op('mode')['describe']), 'spread'])"
+    },
+    "const15name": "angs",
+    "const15value": {
+     "expr": "float(op('takes')[int(op('tsel')['take']) % 7 + 1 + 7 * int(op('mode')['describe']), 'angs'])"
+    },
+    "const16name": "zoom",
+    "const16value": {
+     "expr": "float(op('takes')[int(op('tsel')['take']) % 7 + 1 + 7 * int(op('mode')['describe']), 'zoom'])"
+    },
+    "const17name": "roll",
+    "const17value": {
+     "expr": "float(op('takes')[int(op('tsel')['take']) % 7 + 1 + 7 * int(op('mode')['describe']), 'roll'])"
+    },
+    "const18name": "dof",
+    "const18value": {
+     "expr": "float(op('takes')[int(op('tsel')['take']) % 7 + 1 + 7 * int(op('mode')['describe']), 'dof'])"
+    },
+    "const19name": "dofpx",
+    "const19value": {
+     "expr": "float(op('takes')[int(op('tsel')['take']) % 7 + 1 + 7 * int(op('mode')['describe']), 'dofpx'])"
+    },
+    "const1name": "smode",
+    "const1value": {
+     "expr": "float(op('takes')[int(op('tsel')['take']) % 7 + 1 + 7 * int(op('mode')['describe']), 'smode'])"
+    },
+    "const20name": "light",
+    "const20value": {
+     "expr": "float(op('takes')[int(op('tsel')['take']) % 7 + 1 + 7 * int(op('mode')['describe']), 'light'])"
+    },
+    "const21name": "expo",
+    "const21value": {
+     "expr": "float(op('takes')[int(op('tsel')['take']) % 7 + 1 + 7 * int(op('mode')['describe']), 'expo'])"
+    },
+    "const22name": "vig",
+    "const22value": {
+     "expr": "float(op('takes')[int(op('tsel')['take']) % 7 + 1 + 7 * int(op('mode')['describe']), 'vig'])"
+    },
+    "const23name": "onebit",
+    "const23value": {
+     "expr": "float(op('takes')[int(op('tsel')['take']) % 7 + 1 + 7 * int(op('mode')['describe']), 'onebit'])"
+    },
+    "const24name": "imp",
+    "const24value": {
+     "expr": "float(op('takes')[int(op('tsel')['take']) % 7 + 1 + 7 * int(op('mode')['describe']), 'imp'])"
+    },
+    "const25name": "chalk",
+    "const25value": {
+     "expr": "float(op('takes')[int(op('tsel')['take']) % 7 + 1 + 7 * int(op('mode')['describe']), 'chalk'])"
+    },
+    "const26name": "pr",
+    "const26value": {
+     "expr": "float(op('takes')[int(op('tsel')['take']) % 7 + 1 + 7 * int(op('mode')['describe']), 'pr'])"
+    },
+    "const27name": "pg",
+    "const27value": {
+     "expr": "float(op('takes')[int(op('tsel')['take']) % 7 + 1 + 7 * int(op('mode')['describe']), 'pg'])"
+    },
+    "const28name": "pb",
+    "const28value": {
+     "expr": "float(op('takes')[int(op('tsel')['take']) % 7 + 1 + 7 * int(op('mode')['describe']), 'pb'])"
+    },
+    "const29name": "relic",
+    "const29value": {
+     "expr": "float(op('takes')[int(op('tsel')['take']) % 7 + 1 + 7 * int(op('mode')['describe']), 'relic'])"
+    },
+    "const2name": "paper",
+    "const2value": {
+     "expr": "float(op('takes')[int(op('tsel')['take']) % 7 + 1 + 7 * int(op('mode')['describe']), 'paper'])"
+    },
+    "const30name": "inpaper",
+    "const30value": {
+     "expr": "float(op('takes')[int(op('tsel')['take']) % 7 + 1 + 7 * int(op('mode')['describe']), 'inpaper'])"
+    },
+    "const31name": "psec",
+    "const31value": {
+     "expr": "float(op('takes')[int(op('tsel')['take']) % 7 + 1 + 7 * int(op('mode')['describe']), 'psec'])"
+    },
+    "const32name": "atl",
+    "const32value": {
+     "expr": "float(op('takes')[int(op('tsel')['take']) % 7 + 1 + 7 * int(op('mode')['describe']), 'atl'])"
+    },
+    "const3name": "form",
+    "const3value": {
+     "expr": "float(op('takes')[int(op('tsel')['take']) % 7 + 1 + 7 * int(op('mode')['describe']), 'form'])"
+    },
+    "const4name": "formv",
+    "const4value": {
+     "expr": "float(op('takes')[int(op('tsel')['take']) % 7 + 1 + 7 * int(op('mode')['describe']), 'formv'])"
+    },
+    "const5name": "ink",
+    "const5value": {
+     "expr": "float(op('takes')[int(op('tsel')['take']) % 7 + 1 + 7 * int(op('mode')['describe']), 'ink'])"
+    },
+    "const6name": "cols",
+    "const6value": {
+     "expr": "float(op('takes')[int(op('tsel')['take']) % 7 + 1 + 7 * int(op('mode')['describe']), 'cols'])"
+    },
+    "const7name": "rows",
+    "const7value": {
+     "expr": "float(op('takes')[int(op('tsel')['take']) % 7 + 1 + 7 * int(op('mode')['describe']), 'rows'])"
+    },
+    "const8name": "frame",
+    "const8value": {
+     "expr": "float(op('takes')[int(op('tsel')['take']) % 7 + 1 + 7 * int(op('mode')['describe']), 'frame'])"
+    },
+    "const9name": "gshare",
+    "const9value": {
+     "expr": "float(op('takes')[int(op('tsel')['take']) % 7 + 1 + 7 * int(op('mode')['describe']), 'gshare'])"
+    }
+   }
+  },
+  "tsel": {
+   "type": "selectCHOP",
+   "family": "CHOP",
+   "pos": [
+    -200,
+    330
+   ],
+   "pars": {
+    "channames": "take seed",
+    "chops": "shot"
+   }
+  },
+  "zero": {
+   "type": "constantTOP",
+   "family": "TOP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "alpha": 0.0,
+    "colorb": 0.0,
+    "colorg": 0.0,
+    "colorr": 0.0,
+    "format": "rgba16float",
+    "outputresolution": "custom",
+    "resolutionh": 360,
+    "resolutionw": 640
+   }
+  }
+ }
+}

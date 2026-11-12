@@ -3,27 +3,27 @@
 Every picture here was captured from the running network, driven by the same music track.
 A **preset** is a scene, one of its takes, and optionally a treatment: 18 scenes, 169 takes, 10 treatments.
 
-The scenes were built with this harness as an example project. Their source is not in this repository yet, because they still load models, fonts and music from local folders.
+To call one up by hand, open the `sw_cut` component's **Manual** page, turn **Cut With The Music** off, and set Scene, Take, Seed and Treatment. With it on, the cutter picks presets itself, in time with the music.
 
 | Scene | Technique | Takes |
 |---|---|---|
-| [Monitor showing itself](#sc_droste_crt) | A 3D office desk with an old tube monitor whose screen displays the previous frame of the same camera, so real video feedback builds a tunnel of monitors inside monitors. | 9 |
-| [Exploded technical drawing](#sc_exploded_view) | 3D models of office hardware are drawn as engineering line art: a shader traces outlines and creases, the parts come apart, and live dimension lines and labels sit around them. | 10 |
+| [Monitor showing itself](#sc_droste_crt) | A 3D desk of found objects with a monitor whose screen displays the previous frame of the same camera, so real video feedback builds a tunnel of monitors inside monitors. | 9 |
+| [Exploded technical drawing](#sc_exploded_view) | 3D models of unexplained objects are drawn as engineering line art: a shader traces outlines and creases, the objects come apart, and live dimension lines and labels sit around them. | 10 |
 | [Melting poster datamosh](#sc_flow_mosh) | A deliberate video-compression glitch: a clean picture flashes for an instant, then its own hidden motion drags blocks of the last frame around until the next clean flash. | 7 |
 | [Ink in water](#sc_fluid_ink) | A two-dimensional fluid simulation in shaders, where words, pages of small print and 3D model silhouettes are laid down as three inks and lit like a wet surface over paper. | 10 |
 | [Pictures made of type](#sc_glyph_render) | A 3D scene is redrawn from letters of one bitmap font in pure black and white, with brightness deciding how each letter is inked while the letters spell running sentences. | 8 |
-| [Letter architecture](#sc_kifs_office) | A single ray-marched shader draws an endless folded fractal lattice of steel blocks, with office signage lettering embossed into its surfaces as real relief that catches light. | 7 |
+| [Letter architecture](#sc_kifs_office) | A single ray-marched shader draws an endless folded fractal lattice of steel blocks, with sign lettering embossed into its surfaces as real relief that catches light. | 7 |
 | [Kinetic type machine](#sc_kinetic_type) | Moving poster typography in flat colours: every letter, rule and bar is its own small rectangle cut from a font sheet, placed and animated by a shader. | 12 |
-| [Fog and shadow type](#sc_light_gobo) | A dark office full of drifting fog, lit by a projector, fluorescent tubes and a desk lamp, where patterned light and furniture shadows hang as solid shafts in the air. | 11 |
-| [Office paper storm](#sc_paper_storm) | Thousands of copies of a sheet of office paperwork, plus a few hundred desk objects, are each placed and turned by one shader that arranges them into different formations. | 8 |
-| [Slime mould paperwork](#sc_physarum) | A slime mould simulation: about 230,000 tiny agents follow each other's trails and grow veins over office props, printed forms and short phrases. | 11 |
+| [Fog and shadow type](#sc_light_gobo) | A dark room full of drifting fog, lit by a projector, fluorescent tubes and a lamp, where patterned light and the shadows of objects hang as solid shafts in the air. | 11 |
+| [Paper storm](#sc_paper_storm) | Thousands of copies of a printed sheet of paper, plus a couple of hundred objects, are each placed and turned by one shader that arranges them into different formations. | 8 |
+| [Slime mould](#sc_physarum) | A slime mould simulation: about 230,000 tiny agents follow each other's trails and grow veins over turning 3D objects, printed sheets and short phrases. | 11 |
 | [Point cloud shapeshifter](#sc_point_morph) | One cloud of about 124,000 coloured points, sampled from the surfaces of 3D models and lettering, that streams from one shape into the next on a noise wind. | 8 |
-| [Living rubber stamp](#sc_rd_stamp) | Stamped phrases feed a reaction-diffusion simulation, so the letters grow coral-like tendrils and beads, lit as raised gold, red enamel or black tar ink on paper office forms. | 7 |
+| [Living rubber stamp](#sc_rd_stamp) | Stamped phrases feed a reaction-diffusion simulation, so the letters grow coral-like tendrils and beads, lit as raised gold, red enamel or black tar ink on printed paper sheets. | 7 |
 | [Misregistered print shop](#sc_riso_press) | A 3D object lit by red, green and blue lights is split into spot-colour plates, each screened into dots, lines or grain and overprinted out of register on moving paper. | 14 |
 | [Scan line video synth](#sc_rutt_etra) | A 1970s-style analogue video synthesizer: a hidden source picture is redrawn as glowing scan lines in 3D, each line pushed up and back by the brightness beneath it. | 10 |
-| [Shatter and reassemble](#sc_shatter) | 3D models of office objects and extruded phrases are pre-cut into rigid shards, and a shader bursts them apart and pulls them back together exactly, like footage run backwards. | 10 |
+| [Shatter and reassemble](#sc_shatter) | 3D models and extruded phrases are pre-cut into rigid shards, and a shader bursts them apart and pulls them back together exactly, like footage run backwards. | 10 |
 | [Spectrogram terrain](#sc_spectral_terrain) | A scrolling history of the last few seconds of the sound spectrum becomes a height map, drawn as a landscape of glowing ridge lines that recede from the viewer. | 8 |
-| [Time-sliced office props](#sc_time_slab) | A slit-scan effect: a spinning 3D office prop is recorded for about a second, and every part of the picture shows a different moment of that recording. | 8 |
+| [Time-sliced objects](#sc_time_slab) | A slit-scan effect: a spinning 3D object is recorded for about a second, and every part of the picture shows a different moment of that recording. | 8 |
 | [Oscilloscope beam drawings](#sc_vector_scope) | A simulated oscilloscope tube: one glowing beam traces word outlines, 3D model wireframes and waveforms, with fading phosphor afterglow, soft glow and a measuring grid. | 11 |
 
 ## Scenes
@@ -31,20 +31,20 @@ The scenes were built with this harness as an example project. Their source is n
 <a id="sc_droste_crt"></a>
 ### Monitor showing itself
 
-`sc_droste_crt` · A 3D office desk with an old tube monitor whose screen displays the previous frame of the same camera, so real video feedback builds a tunnel of monitors inside monitors.
+`sc_droste_crt` · A 3D desk of found objects with a monitor whose screen displays the previous frame of the same camera, so real video feedback builds a tunnel of monitors inside monitors.
 
-**Follows the music:** Kicks flash the desk lamp, light up the screen and nudge the camera in, snares make the mug jump and hi-hats rattle the stapler and phone, and each of these events then travels down the tunnel as a delayed echo. Each nested copy shifts in colour, and the direction of that shift reverses when the song changes section.
+**Follows the music:** Kicks flash the lamp light, make the brass astrolabe glow, light up the screen and nudge the camera in, snares make the amphora jump and hi-hats rattle the gramophone and the little lander, and each of these events then travels down the tunnel as a delayed echo. Each nested copy shifts in colour, and the direction of that shift reverses when the song changes section.
 
 ![Monitor showing itself in motion](media/gallery/sc_droste_crt.webp)
 
 ![Monitor showing itself takes](media/gallery/sc_droste_crt_takes.jpg)
 
-- **0 Desk at night**: A three-quarter view of the whole desk in a blue room with a warm pool of lamp light and a rainbow tunnel on the screen.
-- **1 Dolly into the screen**: A head-on view of a brightly lit office with a red wall, where the camera travels into the screen and seamlessly re-emerges every two bars.
+- **0 Desk at night**: A three-quarter view of the whole desk in a blue room with a warm pool of lamp light on the objects and a rainbow tunnel on the screen.
+- **1 Dolly into the screen**: A head-on view of a brightly lit room with a red wall, where the camera travels into the screen and seamlessly re-emerges every two bars.
 - **2 Spiral twist**: The head-on picture is bent into a continuously zooming spiral in which the nested monitors wind around the centre, lit in amber and blue.
 - **3 One-bit negative**: A closer view from the left in pure black and white, where each nested copy inverts the one before it and every kick flips the whole frame.
 - **4 Wall of monitors**: The desk is gone and fifteen stacked monitors, lit in salmon and blue, all show the same view of the wall, with the colours jumping on kicks.
-- **5 Terminal**: A close view of a dark green screen where a text message types itself out and repeats down the nested copies a few frames apart.
+- **5 Terminal**: A close view of a dark green screen where a short message types itself out and repeats down the nested copies a few frames apart.
 - **6 Spiral tunnel**: The screen fills most of the frame and each nested copy is turned a little more, with extra turn from the bass, making a twisting corridor of monitor frames in pink and blue.
 - **7 Phosphor macro**: An extreme close-up of the screen itself, broken into red, green and blue stripes and slowly panning, with the nested monitor only just readable.
 - **8 Words out**: There is no room, only the feedback loop running outward, so a short amber phrase drawn in the centre on each beat flies toward the viewer while changing colour.
@@ -52,22 +52,22 @@ The scenes were built with this harness as an example project. Their source is n
 <a id="sc_exploded_view"></a>
 ### Exploded technical drawing
 
-`sc_exploded_view` · 3D models of office hardware are drawn as engineering line art: a shader traces outlines and creases, the parts come apart, and live dimension lines and labels sit around them.
+`sc_exploded_view` · 3D models of unexplained objects are drawn as engineering line art: a shader traces outlines and creases, the objects come apart, and live dimension lines and labels sit around them.
 
-**Follows the music:** Each kick snaps the parts further apart or closer together, and the keyboard's keys fly out on the bar line and land one by one through the bar. Snares drop a rubber stamp, the beat thickens the lines, and a new section of the song swaps the object.
+**Follows the music:** Each kick snaps the parts further apart or closer together, and the parts of a lunar lander fly out on the bar line and land one by one through the bar. Snares drop a rubber stamp, the beat thickens the lines, and a new section of the song swaps the object.
 
 ![Exploded technical drawing in motion](media/gallery/sc_exploded_view.webp)
 
 ![Exploded technical drawing takes](media/gallery/sc_exploded_view_takes.jpg)
 
-- **0 Blueprint keyboard**: A keyboard in an angled view on blueprint blue with white lines, its keys exploding outward and being typed back while a phrase is typed along the top.
+- **0 Blueprint parts**: A lunar lander in an angled view on blueprint blue with white lines, its 63 parts exploding outward and landing again from the ground up while a phrase is typed along the top.
 - **1 Three-view sheet**: Cream drafting film with dark and red ink, showing front, top and side views of one object beside an exploded sliced version with hatched cut faces.
-- **2 Key field close-up**: A close perspective view over the keys in amber on black with a soft glow and no lettering, each key lit solid as it lands.
+- **2 Parts close-up**: A close perspective view in among the lander's parts in amber on black with a soft glow and no lettering, each part lit solid as it lands.
 - **3 Contour scan**: One huge cropped object on yellow drawn only as black rings where cutting planes meet its surface, with the kick setting the ring count and a red band scanning across once a bar.
 - **4 Parts sheet**: Twelve small views of one object in a turntable grid on green dot-grid paper, the cells opening and closing with the beat and marked with balloon numbers.
 - **5 Section sweep**: One huge object on red with its near end cut away and the cut face hatched in black, the cut plane jumping to a new depth on each kick.
 - **6 Rosette**: Twelve copies of one sliced object arranged on a wheel as solid pink shapes on navy, the wheel clicking round one step per beat and bursting outward with the kick.
-- **7 Typed plan**: The keyboard seen from directly above on a pink ruled slip in navy ink, its keys scattered and typed back over two bars with the phrase in large type along the bottom.
+- **7 Typed elevation**: The lander seen square on from the front on a pink ruled slip in navy ink, its parts scattered and set back over two bars with the phrase in large type along the bottom.
 - **8 Slab strip**: One object cut into up to fourteen numbered slabs laid out across a grey frame in white line with yellow hatching and one long dimension line.
 - **9 Parts list**: A green-on-black screen where a parts list is the picture, with a huge live number and a tall exploded stack of slabs at one side joined to it by leader lines.
 
@@ -83,12 +83,12 @@ The scenes were built with this harness as an example project. Their source is n
 ![Melting poster datamosh takes](media/gallery/sc_flow_mosh_takes.jpg)
 
 - **0 Poster**: The original look: a bold wordmark, one lit 3D model turning on a disc and flat colour fields, shown clean on the kick and melting in between.
-- **1 Aisle**: A sideways tracking shot with no text through rows of office props under fluorescent tubes, where near objects smear faster than far ones.
+- **1 Aisle**: A sideways tracking shot with no text through rows of objects standing on carpet tiles under strip lights, where near ones smear faster than far ones.
 - **2 Transplant**: The clean frames are a big off-centre card of bold type, but the motion comes from a huge turning model that is never shown, so the lettering gets carved into the model's shape.
 - **3 Macro**: A fast five-times zoom into the glitched picture with a grid of blocks and a motion arrow drawn on each one, turning letters and dots into huge torn shapes.
 - **4 One-bit**: Pure black and white: rows of phrases slide in opposite directions with a dithered model punched through, and new pictures arrive as a scan from the top.
-- **5 Void**: A nearly black frame with a small prop, a caption and five floating tubes in one hot colour, where every light thing grows into a rising column until a strong kick clears it.
-- **6 Floor plan**: The same field of office props seen from straight above on checkered tiles, with a phrase painted across the floor and a camera that turns with the bar and drops in.
+- **5 Void**: A nearly black frame with a small object, a caption and five floating tubes in one hot colour, where every light thing grows into a rising column until a strong kick clears it.
+- **6 Floor plan**: The same field of objects seen from straight above on checkered tiles, with a phrase painted across the floor and a camera that turns with the bar and drops in.
 
 <a id="sc_fluid_ink"></a>
 ### Ink in water
@@ -110,7 +110,7 @@ The scenes were built with this harness as an example project. Their source is n
 - **6 Sinking**: Seen from the side, a row of three small model silhouettes at the top sinks as plumes while kicks fall as red drops from above.
 - **7 Survey**: One model is drawn only as contour lines of ink thickness on green graph paper, with no gloss and barely any fill.
 - **8 Macro**: Letters three times the height of the frame leave only fragments in view, in thick red, yellow and blue inks that mix under a strongly rippled surface.
-- **9 Form**: A printed office form is seen bent through the water, with a small red stamped phrase on it, black kick stars and blue ink from the voice.
+- **9 Sheet**: A printed star chart lies under the water and bends with every ripple, with a small red stamped phrase on it, black kick stars and blue ink from the voice.
 
 <a id="sc_glyph_render"></a>
 ### Pictures made of type
@@ -135,7 +135,7 @@ The scenes were built with this harness as an example project. Their source is n
 <a id="sc_kifs_office"></a>
 ### Letter architecture
 
-`sc_kifs_office` · A single ray-marched shader draws an endless folded fractal lattice of steel blocks, with office signage lettering embossed into its surfaces as real relief that catches light.
+`sc_kifs_office` · A single ray-marched shader draws an endless folded fractal lattice of steel blocks, with sign lettering embossed into its surfaces as real relief that catches light.
 
 **Follows the music:** Bass and vocal pitch change the fold angles so each note reshapes the building, the bar line opens the gaps between blocks, and every kick sends a pulse of light travelling through the space. Snares make the red lettering flare, hi-hats knock lights out or flash random blocks, and the camera never stops moving.
 
@@ -143,8 +143,8 @@ The scenes were built with this harness as an example project. Their source is n
 
 ![Letter architecture takes](media/gallery/sc_kifs_office_takes.jpg)
 
-- **0 Nave**: A flight down an arched corridor under fluorescent tube lights in office green, with a steel band of whole readable sign words on both walls and occasional power cuts where only the red lettering glows.
-- **1 Block**: The view moves outside into daylight, where a finite chunk of the lattice stands like a dark filing-cabinet monolith on an endless cream printed form under a beige sky.
+- **0 Nave**: A flight down an arched corridor under fluorescent tube lights in fluorescent green, with a steel band of whole readable sign words on both walls and occasional power cuts where only the red lettering glows.
+- **1 Block**: The view moves outside into daylight, where a finite chunk of the lattice stands like a dark monolith on an endless cream printed sheet under a beige sky.
 - **2 Shaft**: A plunge down a square shaft lined with huge extruded phrase letters and square ring lights, drawn in dithered 1-bit black and white that flips to its negative on the snare.
 - **3 Macro**: An extreme close-up skims sideways over a sliced plate where ink-blue and red letters stand up off ivory tiles under a low raking sun.
 - **4 Rotunda**: The camera sits inside a sphere carved from a more strongly folded lattice, where a glowing amber orb at the centre throws radial shadows over a dome of words, amber on black.
@@ -173,12 +173,12 @@ The scenes were built with this harness as an example project. Their source is n
 - **8 Swiss columns**: A grid layout with a bar number as tall as the frame beside a headline that types itself out above a rule and a small numbered list.
 - **9 Exploded letters**: A sentence holds together for one bar, then every letter jumps to its own cell of a coarse grid, turned and rescaled, before assembling again.
 - **10 Ticker wall**: Nine to eighteen rows of scrolling phrases at different speeds and directions over one huge beat numeral, with an inverted band sweeping across each bar.
-- **11 Typewriter**: A sentence typed one character per sixteenth note in large retro computer lettering with a block cursor, filling the frame over a huge cropped phone number scrolling behind.
+- **11 Typewriter**: A sentence typed one character per sixteenth note in a large fixed-width face with a block cursor, filling the frame over a huge cropped catalogue number scrolling behind.
 
 <a id="sc_light_gobo"></a>
 ### Fog and shadow type
 
-`sc_light_gobo` · A dark office full of drifting fog, lit by a projector, fluorescent tubes and a desk lamp, where patterned light and furniture shadows hang as solid shafts in the air.
+`sc_light_gobo` · A dark room full of drifting fog, lit by a projector, fluorescent tubes and a lamp, where patterned light and the shadows of objects hang as solid shafts in the air.
 
 **Follows the music:** Kick and snare hits strike the fluorescent tubes and kick the projector brighter, while the bass and kick make the fog thicken in puffs. The beat moves the patterns in the light, the bar slowly sweeps the projector, and each new section of the song changes the projected phrase.
 
@@ -186,58 +186,58 @@ The scenes were built with this harness as an example project. Their source is n
 
 ![Fog and shadow type takes](media/gallery/sc_light_gobo_takes.jpg)
 
-- **0 Words in air**: A blue projector beam seen at an angle, with a phrase repeated on layers of smoke that recede to the wall and a chair cutting its shadow out of each copy.
-- **1 Blinds**: Green light through venetian blinds, seen side-on so each shaft is a hard diagonal blade, with the slat pattern on the carpet and a backlit chair.
-- **2 Copier**: No beam at all: a comb of thin red planes of light, each showing a swirling slice of the smoke, with the furniture as a black skyline below.
-- **3 Desk lamp**: A close-up of one warm cone of lamp light with smoke curling in it over a desk and a phone, and everything else black.
-- **4 Floor type**: Seen from straight above, tiled phrases are thrown across the carpet at a raking angle, with the long shadows of a mascot figure and a chair.
-- **5 Form window**: A wide, high view of a printed form's grid thrown as planes of blue light over a big dark floor, with tiny furniture, a warm desk lamp and ceiling tubes.
-- **6 Leaning tubes**: No projector: bare tubes in green, blue and one warm colour lean on a wall and mirror in a polished floor, with a plant in silhouette in front.
-- **7 One bit**: The whole picture reduced to black and white dots, with a spoked wheel of light turning behind the mascot's silhouette and its shadow coming at the camera.
-- **8 Shadow play**: The negative of the others: a bright paper-coloured room printed with dark phrases over wall, floor and ceiling, with a turning chair and its shadow.
-- **9 Corridor**: No projector: ceiling tubes recede down a long narrow corridor and a pulse of light races toward the camera every two beats, past a chair and a cabinet in silhouette.
-- **10 Floor tube**: A close-up at carpet level, where one green tube lying on the floor beside a stapler throws the mascot's giant shadow up the wall.
+- **0 Words in air**: A blue projector beam seen at an angle, with a phrase repeated on layers of smoke that recede to the wall and an amphora cutting its shadow out of each copy.
+- **1 Blinds**: Green light through venetian blinds, seen side-on so each shaft is a hard diagonal blade, with the slat pattern on the carpet and a backlit gramophone.
+- **2 Red planes**: No beam at all: a comb of thin red planes of light, each showing a swirling slice of the smoke, with a row of objects as a black skyline below.
+- **3 Lamp cone**: A close-up of one warm cone of lamp light with smoke curling in it over an astrolabe and a stack of solids, and everything else black.
+- **4 Floor type**: Seen from straight above, tiled phrases are thrown across the carpet at a raking angle, with the long shadows of a pierced stone and a traffic cone.
+- **5 Grid window**: A wide, high view of a ruled grid thrown as planes of blue light over a big dark floor, with a small lander under a warm lamp and ceiling tubes above.
+- **6 Leaning tubes**: No projector: bare tubes in green, blue and one warm colour lean on a wall and mirror in a polished floor, with a crystal cluster in silhouette in front.
+- **7 One bit**: The whole picture reduced to black and white dots, with a spoked wheel of light turning behind a bust's silhouette and its shadow coming at the camera.
+- **8 Shadow play**: The negative of the others: a bright paper-coloured room printed with dark phrases over wall, floor and ceiling, with a turning wire cage and its shadow.
+- **9 Corridor**: No projector: ceiling tubes recede down a long narrow corridor and a pulse of light races toward the camera every two beats, past a stack of solids and a traffic cone in silhouette.
+- **10 Floor tube**: A close-up at carpet level, where one green tube lying on the floor beside a small hourglass throws a looped ribbon's giant shadow up the wall.
 
 <a id="sc_paper_storm"></a>
-### Office paper storm
+### Paper storm
 
-`sc_paper_storm` · Thousands of copies of a sheet of office paperwork, plus a few hundred desk objects, are each placed and turned by one shader that arranges them into different formations.
+`sc_paper_storm` · Thousands of copies of a printed sheet of paper, plus a couple of hundred objects, are each placed and turned by one shader that arranges them into different formations.
 
 **Follows the music:** The bar turns the formations and the beat flips sheets, changes pages and steps the falling paper. Each kick drum throws things outward and sends an amber shockwave ring through the paper, while overall loudness brightens the lamp and glow.
 
-![Office paper storm in motion](media/gallery/sc_paper_storm.webp)
+![Paper storm in motion](media/gallery/sc_paper_storm.webp)
 
-![Office paper storm takes](media/gallery/sc_paper_storm_takes.jpg)
+![Paper storm takes](media/gallery/sc_paper_storm_takes.jpg)
 
-- **0 Tunnel**: A flight down a tube of office forms towards a filing cabinet in a dark void, with a ring of sheets flipping to a red reverse on each beat.
+- **0 Tunnel**: A flight down a tube of printed sheets (blueprints, star charts and pink tickets) towards a marble bust in a dark void, with a ring of sheets flipping to a red reverse on each beat.
 - **1 Board**: A flat wall of sheets seen square-on, where sheets turned to their yellow reverse spell short three-line phrases in pixel letters and a new phrase flaps in every two beats.
-- **2 Murmuration**: The sheets become dark silhouettes folding like a flock of birds in a pale cream sky, with the cabinet small beneath them and no readable text.
-- **3 Ritual**: No paper at all: rings of rubber stamps, cassette dominoes, staplers and mugs turn around a gold cat on a red background, seen low and close with soft focus.
-- **4 Rain**: A fixed camera in pale green fluorescent haze watches sheets fall past like leaves, one step per beat, with the nearest ones out of focus.
-- **5 Floor**: A view straight down on a tidy floor of forms drawn in chunky black-and-white pixels, where a ring of sheets turning to black spreads out every two beats.
-- **6 One form**: A single large form turns close to the camera, sharp and readable, while the whole swirl of paper is a red and cream blur far behind it.
+- **2 Murmuration**: The sheets become dark silhouettes folding like a flock of birds in a pale cream sky, with the bust small beneath them and no readable text.
+- **3 Ritual**: No paper at all: rings of rubber ducks, a fence of brass keys that fall like dominoes, traffic cones and amphorae turn around a gold lunar lander on a red background, seen low and close with soft focus.
+- **4 Rain**: A fixed camera in pale green haze watches sheets fall like leaves past a marble bust, one step per beat, with the nearest ones out of focus.
+- **5 Floor**: A view straight down on a tidy floor of printed sheets drawn in chunky black-and-white pixels, where a ring of sheets turning to black spreads out every two beats.
+- **6 One sheet**: A single large sheet turns close to the camera, sharp and readable, while the whole swirl of paper is a red and blue blur far behind it.
 - **7 Oculus**: A view from inside a dome looking up through rings of paper turning against each other, whose blue reverses carry a short phrase.
 
 <a id="sc_physarum"></a>
-### Slime mould paperwork
+### Slime mould
 
-`sc_physarum` · A slime mould simulation: about 230,000 tiny agents follow each other's trails and grow veins over office props, printed forms and short phrases.
+`sc_physarum` · A slime mould simulation: about 230,000 tiny agents follow each other's trails and grow veins over turning 3D objects, printed sheets and short phrases.
 
 **Follows the music:** Bass sets how coarse the vein mesh is, vocals make it more cellular, and drums and overall energy speed the agents up. Each kick scatters a share of the agents, each snare briefly makes them flee what they were tracing, and a new section of the song swaps the subject so the veins abandon it and find the next one.
 
-![Slime mould paperwork in motion](media/gallery/sc_physarum.webp)
+![Slime mould in motion](media/gallery/sc_physarum.webp)
 
-![Slime mould paperwork takes](media/gallery/sc_physarum_takes.jpg)
+![Slime mould takes](media/gallery/sc_physarum_takes.jpg)
 
-- **0 X-ray**: A large turning office prop sits off-centre and is traced in fine lace, like blue X-ray film on a lightbox.
+- **0 X-ray**: A large turning object sits off-centre and is traced in fine lace, like blue X-ray film on a lightbox.
 - **1 Bleed**: A phrase at the top of a coloured sheet runs downward in merging rivulets of ink, so this take is a flow rather than a network.
 - **2 Marble**: With no subject at all, gold veins spread through black marble seen as an endless floor at a low angle while the camera travels over it.
 - **3 Toner**: The agents leave no trail and are drawn as loose toner specks on copier glass, packed onto a block of phrases that kicks blow to dust.
 - **4 Dishes**: A grid of walled petri dishes on a light table each grows its own red culture, giving many small subjects instead of one.
 - **5 Blot**: A folded, mirrored inkblot in red or black ink sits on a card on a green blotter and spatters on kicks.
-- **6 Form**: Seen from directly above, teal mould starts from a few blots and follows the printed lines of a paper form.
+- **6 Sheet**: Seen from directly above, teal mould starts from a few blots and follows the printed lines of a paper sheet: a star chart, a machine drawing or a ticket.
 - **7 One-bit**: A fragment of a word larger than the frame is drawn in coarse black-and-white dither that flips to negative on snares.
-- **8 Poster**: A tiny yellow prop sits in a wide navy field and the colony bursts out of it, printed in three flat screenprint inks.
+- **8 Poster**: A tiny yellow object sits in a wide navy field and the colony bursts out of it, printed in three flat screenprint inks.
 - **9 CRT**: A wall of small text on a curved green monitor in a beige case is eaten away line by line into bone-like letters.
 - **10 Rust**: An extreme close-up shows rust spreading under blistering putty-coloured paint, with only a few letter strokes crossing the frame.
 
@@ -264,7 +264,7 @@ The scenes were built with this harness as an example project. Their source is n
 <a id="sc_rd_stamp"></a>
 ### Living rubber stamp
 
-`sc_rd_stamp` · Stamped phrases feed a reaction-diffusion simulation, so the letters grow coral-like tendrils and beads, lit as raised gold, red enamel or black tar ink on paper office forms.
+`sc_rd_stamp` · Stamped phrases feed a reaction-diffusion simulation, so the letters grow coral-like tendrils and beads, lit as raised gold, red enamel or black tar ink on printed paper sheets.
 
 **Follows the music:** Each kick drum presses the letters solid again, and between kicks they hollow into outlines, worms and beads; a new song section brings a new phrase and ink. Louder, bassier passages let the growth spread further from the letters, snares burn it back, and high hits make the ink glint.
 
@@ -272,13 +272,13 @@ The scenes were built with this harness as an example project. Their source is n
 
 ![Living rubber stamp takes](media/gallery/sc_rd_stamp_takes.jpg)
 
-- **0 Desk**: A tilted cream form with one framed phrase stamped on it, seen wide and then slowly closing in, with the ink changing between gold, red and black by song section.
+- **0 Desk**: A tilted cream star chart with one framed phrase stamped on it, seen wide and then slowly closing in, with the ink changing between gold, red and black by song section.
 - **1 Macro**: The same paper from a few centimetres up with shallow focus, so the edge of the ink becomes a landscape and no word can be read.
 - **2 Field**: No page at all: seen from above, the whole frame is twelve short words dissolving into worms, in dithered pure black and white.
-- **3 Approvals**: A different form seen from straight above with six small crooked stamps in gold, red and black, and each kick presses about a third of them again.
+- **3 Approvals**: A blueprint seen from straight above with six small crooked stamps in gold, red and black, and each kick presses about a third of them again.
 - **4 Carbon**: A negative version with white ink on dark carbon paper, where an oversized unframed phrase is seen from one end like road markings, in shallow focus.
-- **5 Pink slip**: A pink phone-message slip from above, where one small black stamp lands somewhere new on every kick and leaves its red impressions behind.
-- **6 Relic**: No paper: the same living ink is wrapped around a 3D object (a gold mascot, a rubber stamp or an old monitor) turning in a dark void.
+- **5 Ticket**: A pink admission ticket from above, where one small black stamp lands somewhere new on every kick and leaves its red impressions behind.
+- **6 Relic**: No paper: the same living ink is wrapped around a 3D object (an amphora, a pierced stone sculpture or a space helmet) turning in the dark.
 
 <a id="sc_riso_press"></a>
 ### Misregistered print shop
@@ -303,7 +303,7 @@ The scenes were built with this harness as an example project. Their source is n
 - **9 Pile**: On every beat a finished sheet is slapped onto a heap on a brown table, each landing at its own angle.
 - **10 Conveyor**: A low, tilted view down the press bed, with lanes of sheets stepping toward and away from the camera each beat and fading into haze.
 - **11 Bond**: Banknote-style printing on green-grey paper, where wavy engraved lines draw the object and a big word over a faint pink ring pattern.
-- **12 Xerox**: A black-and-white photocopy look with a cross-hatched object, a chunky pixel-style word and heavy streaks, where every second copy is a negative.
+- **12 Xerox**: A black-and-white photocopy look with a cross-hatched object, a big typewriter-style word and heavy streaks, where every second copy is a negative.
 - **13 Target**: Orange and blue screens made of concentric rings with different centres overlap into bullseye moire on yellow paper, with the object enlarged.
 
 <a id="sc_rutt_etra"></a>
@@ -331,7 +331,7 @@ The scenes were built with this harness as an example project. Their source is n
 <a id="sc_shatter"></a>
 ### Shatter and reassemble
 
-`sc_shatter` · 3D models of office objects and extruded phrases are pre-cut into rigid shards, and a shader bursts them apart and pulls them back together exactly, like footage run backwards.
+`sc_shatter` · 3D models and extruded phrases are pre-cut into rigid shards, and a shader bursts them apart and pulls them back together exactly, like footage run backwards.
 
 **Follows the music:** Each bar bursts the object apart and pulls it back so it locks together on a bar or beat line, with louder passages throwing the shards further. Kick drums crack the object open for a moment, vocals brighten the glow inside the cracks, and a new section of the song swaps in a different object.
 
@@ -339,12 +339,12 @@ The scenes were built with this harness as an example project. Their source is n
 
 ![Shatter and reassemble takes](media/gallery/sc_shatter_takes.jpg)
 
-- **0 Porcelain**: One statuette seen close in a dark blue room breaks into a few big pieces that drift apart from an impact point and close on every bar, with the cracks glowing gold from inside.
-- **1 Cutting mat**: Forty rotary phones or wall clocks laid out on a green cutting mat are seen from straight above while a wave of detonations crosses the grid, showing red insides and hard shadows.
-- **2 Tidy grid**: Instead of exploding, one object takes itself apart into a neat grid of its own pieces lying flat on ink blue, then the pieces fly home.
+- **0 Porcelain**: One statuette (a marble bust, an amphora or a pierced stone) seen close in a dark blue room breaks into a few big pieces that drift apart from an impact point and close on every bar, with the cracks glowing gold from inside.
+- **1 Cutting mat**: Forty rubber ducks or forty amphorae lying on their sides are laid out on a green cutting mat and seen from straight above while a wave of detonations crosses the grid, showing red insides and hard shadows.
+- **2 Tidy grid**: Instead of exploding, one object (a gramophone, a space helmet, a lander, an astrolabe, an hourglass or a traffic cone) takes itself apart into a neat grid of its own pieces lying flat on ink blue, then the pieces fly home.
 - **3 Flocking sentence**: A sentence made of thousands of white chips on black, in pure black and white, swirls like a flock of birds and then locks into place from left to right.
-- **4 Gilded chorus line**: A receding line of seven gold cats on a red floor with reflections cracks open one after another down the line, showing plaster-white insides.
-- **5 Slabs**: One object is sliced into horizontal slabs that slide apart from the top down, seen side-on through a long lens against flat yellow with blue insides.
+- **4 Gilded chorus line**: A receding line of seven gilded busts on a red floor with reflections cracks open one after another down the line, showing plaster-white insides.
+- **5 Slabs**: One object (a broken column, a stack of painted solids, a traffic cone or an hourglass) is sliced into horizontal slabs that slide apart from the top down, seen side-on through a long lens against flat yellow with blue insides.
 - **6 Green glass**: The object becomes a ghost of green glass in the dark, visible only as glowing rims, glints and overlaps, while its shards drift apart and back.
 - **7 Falling phrase**: A red phrase seen low and close from one end falls from the top down into a heap of blocks on cream, then rises back into place.
 - **8 Inside the cloud**: The camera sits inside a slow, four-bar burst of chunky shards in a black room, with red insides and a wide lens.
@@ -371,24 +371,24 @@ The scenes were built with this harness as an example project. Their source is n
 - **7 Pond**: A spiral disc of cream ripples on black spreads outward from a red phrase at its centre, each kick leaving the middle as a new ring.
 
 <a id="sc_time_slab"></a>
-### Time-sliced office props
+### Time-sliced objects
 
-`sc_time_slab` · A slit-scan effect: a spinning 3D office prop is recorded for about a second, and every part of the picture shows a different moment of that recording.
+`sc_time_slab` · A slit-scan effect: a spinning 3D object is recorded for about a second, and every part of the picture shows a different moment of that recording.
 
 **Follows the music:** Kick drums snap the prop round, pulse its size and throw parts of the picture further into the past, while snares make it nod and flash the rim light. Bass and overall loudness set how deep into the past the picture reaches, and the tempo drives the bounce, the sweeps and the crawl.
 
-![Time-sliced office props in motion](media/gallery/sc_time_slab.webp)
+![Time-sliced objects in motion](media/gallery/sc_time_slab.webp)
 
-![Time-sliced office props takes](media/gallery/sc_time_slab_takes.jpg)
+![Time-sliced objects takes](media/gallery/sc_time_slab_takes.jpg)
 
 - **0 Word tear**: A prop sits off centre in a dark room and a giant phrase appears only as a tear in time across it, where the prop is a few frames older and turned differently.
-- **1 Twist**: In an empty void seen from a low camera, a smooth ramp of time is cut into slices so the fast-spinning prop becomes a stack of discs each turned a different amount, with no text.
+- **1 Twist**: In an empty black room seen from a low camera, a smooth ramp of time is cut into slices so the fast-spinning prop becomes a stack of discs each turned a different amount, with no text.
 - **2 Strip photo**: A scrolling canvas is fed from one thin vertical slit of the picture, so the turning prop is unrolled sideways into a long frieze that wipes across the ordinary view after each cut.
 - **3 Rings**: Seen from high above, a large prop is cut by stepped rings of the past that leave an off-centre point on every beat, with kicks throwing alternate rings further back.
 - **4 Triptych**: Three to five tall panels show the same view at evenly spaced moments of the last second, each under its own colour, and every kick moves the present one panel along.
 - **5 Contact sheet**: A grid of small frames, each the whole picture a little older than the last, drawn in pure black and white dots and filling in cell by cell after a cut.
 - **6 Blades macro**: A long lens close on part of the prop is cut by slanted blades of time with the widest colour fringes, reshuffled by every kick into abstract chrome and rainbow.
-- **7 Phrase crawl**: In a daylit beige office, lines of small text crawl up the frame and act as the time pattern, so the words read as a texture across a large prop set to one side.
+- **7 Phrase crawl**: Against a daylit beige wall, lines of small text crawl up the frame and act as the time pattern, so the words read as a texture across a large prop set to one side.
 
 <a id="sc_vector_scope"></a>
 ### Oscilloscope beam drawings
@@ -423,10 +423,6 @@ A treatment re-sees the shot's picture for as long as the shot lasts.
 
 Some shots run two scenes at once.
 
-![layer modes](media/gallery/layers.jpg)
-
 ## Transitions
 
 How a shot arrives over the last one (each caught part-way through).
-
-![transitions](media/gallery/transitions.jpg)

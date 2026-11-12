@@ -27,3 +27,9 @@ node_modules/
 
 # FBX COMP import cache
 TDImportCache/
+
+# A pack of your own, kept outside the repo: this file names its folder (see assets/README.md).
+/assets.local.txt
+# Leftover working copies from switching packs (safe to delete).
+/assets_generic/
+/assets_private_old/

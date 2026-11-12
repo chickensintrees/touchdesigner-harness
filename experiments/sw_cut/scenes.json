@@ -1,0 +1,92 @@
+{
+ "sc_droste_crt": {
+  "energy_min": 0.4,
+  "energy_max": 9.0,
+  "takes": 9
+ },
+ "sc_exploded_view": {
+  "energy_min": 0.4,
+  "energy_max": 0.58,
+  "takes": 10
+ },
+ "sc_flow_mosh": {
+  "energy_min": 0.42,
+  "energy_max": 9.0,
+  "takes": 7
+ },
+ "sc_fluid_ink": {
+  "energy_min": 0.42,
+  "energy_max": 9.0,
+  "takes": 10
+ },
+ "sc_glyph_render": {
+  "energy_min": 0.4,
+  "energy_max": 9.0,
+  "takes": 8
+ },
+ "sc_kifs_office": {
+  "energy_min": 0.0,
+  "energy_max": 9.0,
+  "takes": 7
+ },
+ "sc_kinetic_type": {
+  "energy_min": 0.42,
+  "energy_max": 9.0,
+  "takes": 12
+ },
+ "sc_light_gobo": {
+  "energy_min": 0.0,
+  "energy_max": 0.55,
+  "takes": 11
+ },
+ "sc_paper_storm": {
+  "energy_min": 0.4,
+  "energy_max": 9.0,
+  "takes": 8
+ },
+ "sc_physarum": {
+  "energy_min": 0.0,
+  "energy_max": 0.56,
+  "takes": 11
+ },
+ "sc_point_morph": {
+  "energy_min": 0.4,
+  "energy_max": 9.0,
+  "takes": 8
+ },
+ "sc_rd_stamp": {
+  "energy_min": 0.0,
+  "energy_max": 9.0,
+  "takes": 7
+ },
+ "sc_riso_press": {
+  "energy_min": 0.42,
+  "energy_max": 9.0,
+  "takes": 14
+ },
+ "sc_rutt_etra": {
+  "energy_min": 0.4,
+  "energy_max": 9.0,
+  "takes": 10
+ },
+ "sc_shatter": {
+  "energy_min": 0.42,
+  "energy_max": 9.0,
+  "takes": 10
+ },
+ "sc_spectral_terrain": {
+  "energy_min": 0.0,
+  "energy_max": 9.0,
+  "takes": 8
+ },
+ "sc_time_slab": {
+  "energy_min": 0.42,
+  "energy_max": 9.0,
+  "takes": 8
+ },
+ "sc_vector_scope": {
+  "energy_min": 0.0,
+  "energy_max": 9.0,
+  "takes": 11
+ }
+}

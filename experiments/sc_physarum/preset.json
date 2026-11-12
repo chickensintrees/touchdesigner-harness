@@ -1,0 +1,31 @@
+{
+  "title": "Slime mould",
+  "technique": "A slime mould simulation: about 230,000 tiny agents follow each other's trails and grow veins over turning 3D objects, printed sheets and short phrases.",
+  "music": "Bass sets how coarse the vein mesh is, vocals make it more cellular, and drums and overall energy speed the agents up. Each kick scatters a share of the agents, each snare briefly makes them flee what they were tracing, and a new section of the song swaps the subject so the veins abandon it and find the next one.",
+  "accepts_input": true,
+  "as_processor": "Treats the picture it is given as food: 230,400 slime mould agents sniff out its bright shapes and edges and redraw it in veins, drips or toner grains, in whichever take is showing.",
+  "takes": [
+    {"name": "X-ray", "description": "A large turning object sits off-centre and is traced in fine lace, like blue X-ray film on a lightbox.",
+     "words": ["SLIME MOULD SIMULATION\n230,400 agents sniff out the X-ray of a turning\n3D model and lay trails along it. A kick throws a ring."]},
+    {"name": "Bleed", "description": "A phrase at the top of a coloured sheet runs downward in merging rivulets of ink, so this take is a flow rather than a network.",
+     "words": ["EVERY DRIP IS\nA TRAIL OF AGENTS.", "230,400 AGENTS,\nALL PULLED DOWNHILL.", "DRIPS MERGE WHERE\nTHEIR TRAILS MEET.", "A KICK SENDS MANY\nBACK TO THE LETTERS.", "SLIME MOULD AGENTS\nWITH A DOWNHILL PULL.", "OFF THE PAGE, THEY\nSTART AGAIN HERE."]},
+    {"name": "Marble", "description": "With no subject at all, gold veins spread through black marble seen as an endless floor at a low angle while the camera travels over it.",
+     "words": ["SLIME MOULD SIMULATION\nNo subject: 230,400 agents follow each other's\ntrails over faint noise. Bass makes the mesh coarser."]},
+    {"name": "Toner", "description": "The agents leave no trail and are drawn as loose toner specks on copier glass, packed onto a block of phrases that kicks blow to dust.",
+     "words": ["EVERY SPECK IS ONE AGENT. 230,400 OF THEM SNIFF OUT THESE LETTERS AND CROWD ONTO THEM. NO TRAILS ARE DRAWN HERE. A KICK BLOWS THEM LOOSE AND THEY SETTLE BACK.", "A SLIME MOULD SIMULATION WITH THE TRAILS SWITCHED OFF. WHAT IS LEFT IS 230,400 GRAINS HUNTING FOR LETTERS. THE SNARE LOOSENS THEM. THE BAR OF LIGHT CROSSES ONCE EVERY BAR."]},
+    {"name": "Dishes", "description": "A grid of walled petri dishes on a light table each grows its own red culture, giving many small subjects instead of one.",
+     "words": ["SLIME\nMOULD", "TRAIL\nMAP", "AGENTS", "WALLED\nIN", "SLIME MOULD SIMULATION\nEvery dish is walled: agents cannot cross the glass.\nEach kick drops some of them back onto the food."]},
+    {"name": "Blot", "description": "A folded, mirrored inkblot in red or black ink sits on a card on a green blotter and spatters on kicks.",
+     "words": ["SLIME MOULD SIMULATION, FOLDED\nOne half of the trail map is shown twice, like an\ninkblot. Kicks spatter it. A new section, a new blot."]},
+    {"name": "Sheet", "description": "Seen from directly above, teal mould starts from a few blots and follows the printed lines of a paper sheet: a star chart, a machine drawing or a ticket.",
+     "words": ["HOW THIS PICTURE IS MADE\n\n1. 230,400 AGENTS START IN FIVE BLOTS.\n2. EACH ONE SNIFFS THREE POINTS AHEAD.\n3. IT TURNS TOWARD THE STRONGEST SMELL,\n    STEPS, AND LEAVES A TRAIL.\n4. PRINTED INK SMELLS LIKE FOOD,\n    SO THE MOULD FOLLOWS THESE LINES.\n5. TRAILS BLUR AND FADE."]},
+    {"name": "One-bit", "description": "A fragment of a word larger than the frame is drawn in coarse black-and-white dither that flips to negative on snares.",
+     "words": ["TRAIL", "AGENT", "SLIME", "MOULD", "SNIFF", "TURN", "STEP", "1-BIT", "SLIME MOULD SIMULATION\nTrails of 230,400 agents, cut to pure\nblack or white by a 4x4 dither."]},
+    {"name": "Poster", "description": "A tiny yellow object sits in a wide navy field and the colony bursts out of it, printed in three flat screenprint inks.",
+     "words": ["SLIME MOULD SIMULATION\n230,400 agents burst out of one small 3D model,\nthen crawl back to it along its scent."]},
+    {"name": "CRT", "description": "A wall of small text on a curved green monitor in a beige case is eaten away line by line into bone-like letters.",
+     "words": ["THIS IS A SLIME MOULD SIMULATION. 230,400 AGENTS EACH SNIFF LEFT, AHEAD AND RIGHT, TURN TOWARD THE STRONGEST SMELL, STEP, AND LEAVE A TRAIL. THIS TEXT IS THE FOOD, SO THE VEINS GATHER ON THE LETTERS.", "NOBODY DREW THESE VEINS. 230,400 AGENTS START ON NINE ROWS AND MARCH UP AND DOWN. EACH ONE STEERS TOWARD THE STRONGEST TRAIL. THESE WORDS ARE FOOD. A KICK THROWS RINGS. A SNARE MAKES THE MOULD FLEE."]},
+    {"name": "Rust", "description": "An extreme close-up shows rust spreading under blistering putty-coloured paint, with only a few letter strokes crossing the frame.",
+     "words": ["SLIME\nMOULD", "TRAIL\nMAP", "230,400\nAGENTS", "SLIME MOULD SIMULATION, 3x CLOSE-UP\nThe trail map lit as a height field: thick trails\nread as rust, thin ones as blistered paint."]}
+  ]
+}

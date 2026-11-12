@@ -1,0 +1,310 @@
+{
+ "n": 4096,
+ "rows": 91,
+ "names": [
+  "LIVE SIGNAL",
+  "HERE. NOW.",
+  "DO NOT TOUCH",
+  "PLATE 07",
+  "CATALOGUE 0047",
+  "FEEDBACK",
+  "LOUD IS BRIGHT.",
+  "LOOP. LOOP.",
+  "EVERY FRAME / IS MADE NOW.",
+  "SOUND IN. / PICTURE OUT.",
+  "ORIGIN UNKNOWN. / DO NOT TOUCH.",
+  "HANDLE WITH / BOTH HANDS.",
+  "SIGNAL / ACQUIRED...",
+  "AN OBJECT WAS FOUND. / IT HAS NO NAME.",
+  "NOTHING ON THIS TUBE / IS PRERENDERED.",
+  "BEAM LINK / ....... OPEN",
+  "&",
+  "?",
+  "R",
+  "07",
+  "S",
+  "O",
+  "CATALOGUE CARD",
+  "amphora",
+  "lander",
+  "marble_bust",
+  "gramophone",
+  "hourglass",
+  "space_helmet",
+  "ribbon_loop",
+  "skeleton_key",
+  "traffic_cone",
+  "astrolabe",
+  "rubber_duck",
+  "broken_column",
+  "pierced_stone",
+  "wire_cage",
+  "balanced_solids",
+  "crystal_cluster",
+  "VECTOR SCOPE",
+  "ONE BEAM / DRAWS THIS",
+  "AUDIO SHAKES / THE LINE",
+  "SLOW BEAM = / BRIGHT LINE",
+  "EVERY 4 BEATS / IT LETS GO",
+  "THE GLOW IS / FADING PHOSPHOR",
+  "STEREO FIELD",
+  "RAW AUDIO / SAMPLES",
+  "LEFT AGAINST / RIGHT",
+  "800 SAMPLES / PER FRAME",
+  "A 3D MODEL / TRACED BY THE BEAM",
+  "ONE TURNING VIEW / FRONT AND TOP",
+  "NEW MODEL / EVERY 8 BEATS",
+  "X",
+  "Y",
+  "XY",
+  "S",
+  "O",
+  "MACRO: ONE LETTER / OUTLINE, VERY CLOSE",
+  "A WIDE BEAM / OUT OF FOCUS",
+  "BLUE FLASH / YELLOW AFTERGLOW",
+  "EIGHT BEAMS, EIGHT 3D MODELS",
+  "THE BOARD SHUFFLES EVERY BAR",
+  "4096 POINTS PER MODEL",
+  "LEFT AND RIGHT / WAVEFORMS",
+  "TIME RUNS / LEFT TO RIGHT",
+  "ONE FRAME / OF AUDIO",
+  "LISSAJOUS KNOTS",
+  "SINE WAVES / ON X, Y AND Z",
+  "NEW RATIOS / EVERY 8 BEATS",
+  "ONE BEAM / DRAWS IT ALL.",
+  "SLOW BEAM: / BRIGHT LINE.",
+  "CORNERS BURN / AS DOTS.",
+  "THE SCREEN / IS INVERTED.",
+  "4096 POINTS / PER BLOCK.",
+  "LEFT AUDIO / MOVES X.",
+  "RIGHT AUDIO / MOVES Y.",
+  "EIGHT BLOCKS, / EIGHT BEAMS.",
+  "TEXT BENT ROUND A RING",
+  "ONE NOTCH PER BEAT",
+  "THREE RINGS",
+  "KICKS PART THE RINGS",
+  "WAVEFORM AT THE HUB",
+  "POLAR COORDINATES",
+  "SIX BEAMS",
+  "MIDDLE RING TURNS BACK",
+  "PICTURE BRIGHTNESS / LIFTS 64 SCAN LINES",
+  "A RUTT-ETRA SCAN / SEEN AT A SLANT",
+  "WATERFALL",
+  "ONE TRACE / CLIMBS",
+  "AFTERGLOW / KEEPS THE PAST",
+  "30 STEPS / PER 4 BEATS"
+ ],
+ "groups": {
+  "word": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6,
+   7
+  ],
+  "block": [
+   8,
+   9,
+   10,
+   11,
+   12,
+   13,
+   14,
+   15
+  ],
+  "glyph": [
+   16,
+   17,
+   18,
+   19,
+   20,
+   21
+  ],
+  "form": [
+   22
+  ],
+  "model": [
+   23,
+   24,
+   25,
+   26,
+   27,
+   28,
+   29,
+   30,
+   31,
+   32,
+   33,
+   34,
+   35,
+   36,
+   37,
+   38
+  ],
+  "d_word": [
+   39,
+   40,
+   41,
+   42,
+   43,
+   44
+  ],
+  "d_gonio": [
+   45,
+   46,
+   47,
+   48
+  ],
+  "d_wire": [
+   49,
+   50,
+   51
+  ],
+  "d_macro_glyph": [
+   52,
+   53,
+   54,
+   55,
+   56
+  ],
+  "d_macro": [
+   57,
+   58,
+   59
+  ],
+  "d_arcade": [
+   60,
+   61,
+   62
+  ],
+  "d_timebase": [
+   63,
+   64,
+   65
+  ],
+  "d_lissajous": [
+   66,
+   67,
+   68
+  ],
+  "d_wall": [
+   69,
+   70,
+   71,
+   72,
+   73,
+   74,
+   75,
+   76
+  ],
+  "d_dial": [
+   77,
+   78,
+   79,
+   80,
+   81,
+   82,
+   83,
+   84
+  ],
+  "d_scan": [
+   85,
+   86
+  ],
+  "d_waterfall": [
+   87,
+   88,
+   89,
+   90
+  ]
+ },
+ "models": {
+  "amphora": {
+   "method": "slices",
+   "strokes": 58,
+   "points": 1182
+  },
+  "lander": {
+   "method": "edges",
+   "edges": 460,
+   "strokes": 83,
+   "cells": 9,
+   "angle": 52
+  },
+  "marble_bust": {
+   "method": "slices",
+   "strokes": 43,
+   "points": 1237
+  },
+  "gramophone": {
+   "method": "slices",
+   "strokes": 83,
+   "points": 876
+  },
+  "hourglass": {
+   "method": "slices",
+   "strokes": 85,
+   "points": 1148
+  },
+  "space_helmet": {
+   "method": "slices",
+   "strokes": 31,
+   "points": 378
+  },
+  "ribbon_loop": {
+   "method": "slices",
+   "strokes": 109,
+   "points": 1135
+  },
+  "skeleton_key": {
+   "method": "slices",
+   "strokes": 55,
+   "points": 587
+  },
+  "traffic_cone": {
+   "method": "slices",
+   "strokes": 53,
+   "points": 731
+  },
+  "astrolabe": {
+   "method": "slices",
+   "strokes": 59,
+   "points": 1009
+  },
+  "rubber_duck": {
+   "method": "slices",
+   "strokes": 34,
+   "points": 816
+  },
+  "broken_column": {
+   "method": "slices",
+   "strokes": 34,
+   "points": 1192
+  },
+  "pierced_stone": {
+   "method": "slices",
+   "strokes": 52,
+   "points": 891
+  },
+  "wire_cage": {
+   "method": "edges",
+   "edges": 466,
+   "strokes": 65,
+   "cells": 8,
+   "angle": 52
+  },
+  "balanced_solids": {
+   "method": "slices",
+   "strokes": 42,
+   "points": 505
+  },
+  "crystal_cluster": {
+   "method": "slices",
+   "strokes": 29,
+   "points": 1141
+  }
+ }
+}

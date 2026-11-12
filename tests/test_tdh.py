@@ -177,6 +177,19 @@ def test_snapshot_synced_dat_points_to_file(td):
     assert ops["notes"]["text_file"] == "experiments/x/notes.txt" and "text" not in ops["notes"]
 
 
+def test_snapshot_never_records_the_machines_folder(td):
+    from tdh import _td
+
+    inside = (_td.REPO_ROOT / "experiments" / "x" / "shaders" / "a.frag").as_posix()
+    td.op("/project1/notes").par.file.val = inside
+    ops = snapshot.build("/project1")["ops"]
+    assert ops["notes"]["text_file"] == "experiments/x/shaders/a.frag"
+    td.op("/project1/notes").par.file.val = inside.replace("/", "\\")  # Windows spelling
+    assert snapshot.build("/project1")["ops"]["notes"]["text_file"] == "experiments/x/shaders/a.frag"
+    td.op("/project1/notes").par.file.val = "D:/elsewhere/notes.txt"  # outside the repo: left as it is
+    assert snapshot.build("/project1")["ops"]["notes"]["text_file"] == "D:/elsewhere/notes.txt"
+
+
 def test_save_tox(td, tmp_path):
     res = tdh.save_tox("/project1", tmp_path / "x" / "x.tox")
     assert res["comp"] == "/project1"

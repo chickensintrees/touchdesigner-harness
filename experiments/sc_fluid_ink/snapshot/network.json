@@ -1,0 +1,2978 @@
+{
+ "format": "tdh-snapshot/1",
+ "root": "/project1/sc_fluid_ink",
+ "ops": {
+  "bright": {
+   "type": "glslTOP",
+   "family": "TOP",
+   "pos": [
+    1600,
+    -220
+   ],
+   "inputs": [
+    [
+     "shade"
+    ]
+   ],
+   "pars": {
+    "computedat": "bright_compute",
+    "format": "rgba16float",
+    "outputresolution": "custom",
+    "pixeldat": "bright_frag",
+    "resolutionh": 180,
+    "resolutionw": 320,
+    "vec0name": "uGlow",
+    "vec0valuew": {
+     "expr": "op('ctl')['capl']"
+    },
+    "vec0valuex": {
+     "expr": "op('tk')['glow']"
+    },
+    "vec0valuey": {
+     "expr": "op('tk')['glowth']"
+    },
+    "vec0valuez": {
+     "expr": "op('ctl')['cap']"
+    }
+   }
+  },
+  "bright_frag": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    1600,
+    -350
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.here('shaders/bright.frag')"
+    },
+    "language": "text",
+    "syncfile": true
+   },
+   "text_file": "experiments/sc_fluid_ink/shaders/bright.frag"
+  },
+  "bright_info": {
+   "type": "infoDAT",
+   "family": "DAT",
+   "pos": [
+    160,
+    -120
+   ],
+   "pars": {
+    "language": "text",
+    "op": "bright"
+   }
+  },
+  "cam": {
+   "type": "cameraCOMP",
+   "family": "COMP",
+   "pos": [
+    -400,
+    -620
+   ],
+   "pars": {
+    "fov": 30.0,
+    "tz": 2.7
+   }
+  },
+  "cam/file1": {
+   "type": "fileinPOP",
+   "family": "POP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "file": {
+     "expr": "app.samplesFolder + '/Geo/defcam.tog'"
+    }
+   }
+  },
+  "caption": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    1800,
+    -450
+   ],
+   "pars": {
+    "aligny": "bottom",
+    "bgalpha": 1.0,
+    "fontfile": {
+     "expr": "mod.paths.font('chicago')"
+    },
+    "fontsizex": 24.0,
+    "outputresolution": "custom",
+    "positiony": {
+     "expr": "11 if parent().par.Describe else 0"
+    },
+    "resmult": false,
+    "resolutionh": 720,
+    "resolutionw": 1280,
+    "text": {
+     "expr": "op('dcaps')[int(op('shot')['take']) % 10, (int(op('shot')['seed'] * 31) + int(op('hub')['section'])) % op('dcaps').numCols].val if parent().par.Describe else 'PLATE %d.   ' % (1 + int(op('shot')['seed'] * 89) % 12) + op('captions')[(int(op('shot')['seed'] * 31) + int(op('hub')['section'])) % op('captions').numRows, 0].val"
+    }
+   }
+  },
+  "captions": {
+   "type": "tableDAT",
+   "family": "DAT",
+   "pos": [
+    -400,
+    -450
+   ],
+   "text": [
+    "OBJECT OF UNKNOWN USE. DO NOT TOUCH.",
+    "ORIGIN: UNRECORDED. ____________",
+    "CATALOGUE OF UNEXPLAINED OBJECTS",
+    "FOUND, NOT MADE. UNDATED.",
+    "HANDLE WITH BOTH HANDS.",
+    "EXHIBIT 12-B"
+   ]
+  },
+  "cook_driver": {
+   "type": "executeDAT",
+   "family": "DAT",
+   "pos": [
+    -400,
+    -80
+   ],
+   "pars": {
+    "framestart": true,
+    "language": "python"
+   },
+   "text": [
+    "def onFrameStart(frame):",
+    "    hub = op('/project1/sw_hub')",
+    "    me_on = parent().par.Preview.eval()",
+    "    if hub is not None:",
+    "        me_on = me_on or hub.par.Solo.eval() or hub.par.Scene.eval() == parent().name",
+    "    if me_on:",
+    "        op('hub').cook(force=True)",
+    "        op('out1').cook(force=True)",
+    "    return"
+   ]
+  },
+  "ctl": {
+   "type": "constantCHOP",
+   "family": "CHOP",
+   "pos": [
+    100,
+    200
+   ],
+   "pars": {
+    "const0name": "id",
+    "const0value": {
+     "expr": "(op('shot')['seed'] * 0.618 + op('shot')['take'] * 0.137 + parent().par.Shotstart * 0.0137) % 1"
+    },
+    "const10name": "k3",
+    "const10value": {
+     "expr": "((math.sin((op('hub')['hits_low'] + op('shot')['seed'] * 61.7) * 39.346) * 43758.5453) % 1)"
+    },
+    "const11name": "s1",
+    "const11value": {
+     "expr": "((math.sin((op('hub')['hits_mid'] + op('shot')['seed'] * 61.7) * 45.164) * 43758.5453) % 1) * (0.5 if op('tk')['mirror'] > 0.5 else 1)"
+    },
+    "const12name": "s2",
+    "const12value": {
+     "expr": "((math.sin((op('hub')['hits_mid'] + op('shot')['seed'] * 61.7) * 94.673) * 43758.5453) % 1)"
+    },
+    "const13name": "s3",
+    "const13value": {
+     "expr": "((math.sin((op('hub')['hits_mid'] + op('shot')['seed'] * 61.7) * 27.719) * 43758.5453) % 1)"
+    },
+    "const14name": "h1",
+    "const14value": {
+     "expr": "((math.sin((op('hub')['hits_high'] + op('shot')['seed'] * 61.7) * 63.726) * 43758.5453) % 1) * (0.5 if op('tk')['mirror'] > 0.5 else 1)"
+    },
+    "const15name": "h2",
+    "const15value": {
+     "expr": "((math.sin((op('hub')['hits_high'] + op('shot')['seed'] * 61.7) * 10.873) * 43758.5453) % 1)"
+    },
+    "const16name": "h3",
+    "const16value": {
+     "expr": "((math.sin((op('hub')['hits_high'] + op('shot')['seed'] * 61.7) * 51.031) * 43758.5453) % 1)"
+    },
+    "const17name": "nx",
+    "const17value": {
+     "expr": "(1.7778 * (0.5 if op('tk')['mirror'] > 0.5 else 1) * (0.5 + 0.36 * math.sin(op('hub')['beat_pos'] * 0.39 + op('shot')['seed'] * 6.283)))"
+    },
+    "const18name": "ny",
+    "const18value": {
+     "expr": "(0.15 + 0.7 * min(1, max(0, (op('tune')['pitch'] - 40) / 24)))"
+    },
+    "const19name": "ns",
+    "const19value": {
+     "expr": "min(1.2, max(0, op('hub')['vocals'] - 0.15) * 1.4) * op('tk')['ngain']"
+    },
+    "const1name": "boot",
+    "const20name": "na",
+    "const20value": {
+     "expr": "math.atan2(0.5 - (0.15 + 0.7 * min(1, max(0, (op('tune')['pitch'] - 40) / 24))), 0.8889 - (1.7778 * (0.5 if op('tk')['mirror'] > 0.5 else 1) * (0.5 + 0.36 * math.sin(op('hub')['beat_pos'] * 0.39 + op('shot')['seed'] * 6.283)))) + 0.7 * math.sin(op('hub')['beat_pos'] * 0.8)"
+    },
+    "const21name": "zoom",
+    "const21value": {
+     "expr": "op('tk')['zoom'] * (1 + 0.22 * math.exp(-op('shot')['age'] * 8))"
+    },
+    "const22name": "inv",
+    "const22value": {
+     "expr": "1 if (op('tk')['inv'] > 0.5 and (op('shot')['seed'] * 11.3) % 1 > 0.5) else 0"
+    },
+    "const23name": "vx",
+    "const23value": {
+     "expr": "op('tk')['vx'] + op('tk')['drift'] * math.sin(op('hub')['evolve'] * 0.11 + op('shot')['seed'] * 6.283)"
+    },
+    "const24name": "vy",
+    "const24value": {
+     "expr": "op('tk')['vy'] + op('tk')['drift'] * math.cos(op('hub')['evolve'] * 0.09 + op('shot')['seed'] * 4.1)"
+    },
+    "const25name": "vrot",
+    "const25value": {
+     "expr": "op('tk')['vrot'] + 0.02 * math.sin(op('hub')['evolve'] * 0.07 + op('shot')['seed'] * 9.0)"
+    },
+    "const26name": "hasin",
+    "const26value": {
+     "expr": "1 if (parent().par.Input.eval() and op(parent().par.Input.eval()) is not None and op(parent().par.Input.eval()).isTOP and op(parent().par.Input.eval()).path != op('out1').path) else 0"
+    },
+    "const27name": "cap",
+    "const27value": {
+     "expr": "1 if (op('tk')['caption'] > 0.5 or (parent().par.Describe and op('tk')['dcap'] > 0.5)) else 0"
+    },
+    "const28name": "capl",
+    "const28value": {
+     "expr": "(2 if op('tk')['style'] in (1, 3) else 1) if parent().par.Describe else 0"
+    },
+    "const2name": "stamp",
+    "const2value": {
+     "expr": "1 if (op('shot')['age'] < op('tk')['hold'] or (op('tk')['restamp'] > 0.5 and abs(op('hub')['section'] - op('secdelay')['section']) > 0.5) or (op('tk')['restamp'] > 1.5 and op('hub')['bar'] < 0.05)) else 0"
+    },
+    "const3name": "phrase",
+    "const3value": {
+     "expr": "int(op('shot')['seed'] * 97) + int(op('hub')['section'])"
+    },
+    "const4name": "model",
+    "const4value": {
+     "expr": "(int(op('shot')['seed'] * 53) + int(op('hub')['section'])) % 6"
+    },
+    "const5name": "px",
+    "const5value": {
+     "expr": "op('tk')['px'] + (((op('shot')['seed'] + int(op('hub')['section']) * 0.37) * 7.13) % 1 - 0.5) * op('tk')['jit']"
+    },
+    "const6name": "py",
+    "const6value": {
+     "expr": "op('tk')['py'] + (((op('shot')['seed'] + int(op('hub')['section']) * 0.37) * 3.71) % 1 - 0.5) * op('tk')['jit'] * 0.5"
+    },
+    "const7name": "rot",
+    "const7value": {
+     "expr": "op('tk')['rot'] + (((op('shot')['seed'] + int(op('hub')['section']) * 0.37) * 5.37) % 1 - 0.5) * op('tk')['rotj']"
+    },
+    "const8name": "k1",
+    "const8value": {
+     "expr": "((math.sin((op('hub')['hits_low'] + op('shot')['seed'] * 61.7) * 12.9898) * 43758.5453) % 1) * (0.5 if op('tk')['mirror'] > 0.5 else 1)"
+    },
+    "const9name": "k2",
+    "const9value": {
+     "expr": "((math.sin((op('hub')['hits_low'] + op('shot')['seed'] * 61.7) * 78.233) * 43758.5453) % 1)"
+    }
+   }
+  },
+  "ctl2": {
+   "type": "constantCHOP",
+   "family": "CHOP",
+   "pos": [
+    250,
+    200
+   ],
+   "pars": {
+    "const0name": "inink",
+    "const0value": {
+     "expr": "1 if (op('ctl')['hasin'] > 0.5 and op('tk')['inmode'] == 1) else 0"
+    },
+    "const1name": "infeed",
+    "const1value": {
+     "expr": "(op('tk')['infeed'] + op('tk')['inbeat'] * math.exp(-12 * op('hub')['beat'])) if (op('ctl')['hasin'] > 0.5 and op('tk')['inmode'] == 1) else (op('tk')['dfeed'] if parent().par.Describe else 0)"
+    },
+    "const2name": "refr",
+    "const2value": {
+     "expr": "op('tk')['inrefr'] if (op('ctl')['hasin'] > 0.5 and op('tk')['inmode'] == 2) else op('tk')['refr']"
+    },
+    "const3name": "paper",
+    "const3value": {
+     "expr": "3 if (op('ctl')['hasin'] > 0.5 and op('tk')['inmode'] == 2) else op('tk')['paper']"
+    },
+    "const4name": "clean",
+    "const4value": {
+     "expr": "1 if ((parent().par.Describe or (op('ctl')['hasin'] > 0.5 and op('tk')['inmode'] == 1)) and op('tk')['restamp'] > 1.5) else 0"
+    },
+    "const5name": "shasp",
+    "const5value": {
+     "expr": "1.0 if (mod.paths.model_texture('star_chart') and not parent().par.Describe) else 1.29"
+    },
+    "const6name": "shsize",
+    "const6value": {
+     "expr": "1.62 if (mod.paths.model_texture('star_chart') and not parent().par.Describe) else 1.25"
+    }
+   }
+  },
+  "dcaps": {
+   "type": "tableDAT",
+   "family": "DAT",
+   "pos": [
+    -600,
+    -450
+   ],
+   "text": [
+    "THE WORDS ARE INK IN A FLUID SIMULATION MADE OF SHADERS.\tEACH KICK DRUM FIRES A RED STAR OF JETS INTO THE WATER.\tTHE WORDS ARE INK IN A FLUID SIMULATION MADE OF SHADERS.",
+    "THIS IS MARBLING: THREE INKS IN ONE SIMULATED FLUID.\tEVERY KICK DRUM COMBS THE BANDS WITH A JET FROM THE EDGE.\tWHERE TWO INKS OVERLAP, THE COLOUR GOES DARKER.",
+    "A 3D MODEL IS POURED INTO A FLUID SIMULATION AS GLOWING INK.\tKICKS ARE PINK JETS. SNARES ARE YELLOW VORTEX PAIRS.\tA 3D MODEL IS POURED INTO A FLUID SIMULATION AS GLOWING INK.",
+    "THIS IS HALF A TANK OF SIMULATED INK, MIRRORED DOWN THE FOLD.\tDRUM HITS DROP INK ON THE LEFT. THE RIGHT IS A REFLECTION.\tKICKS ARE BLACK STARS. SNARES ARE RED VORTEX PAIRS.",
+    "\t\t",
+    "THIS IS AN OIL FILM: ITS COLOUR COMES FROM HOW THICK IT IS.\tTHE LETTERS CHANGE COLOUR AS THE FLUID STRETCHES THEM.\tTHIS IS AN OIL FILM: ITS COLOUR COMES FROM HOW THICK IT IS.",
+    "THIS IS A SIDE VIEW: THE INK IS HEAVIER THAN WATER AND SINKS.\tEACH KICK DRUM IS A RED DROP FALLING FROM THE TOP.\tTHIS IS A SIDE VIEW: THE INK IS HEAVIER THAN WATER AND SINKS.",
+    "THE SAME FLUID IS DRAWN AS A MAP OF INK THICKNESS.\tEVERY LINE JOINS POINTS HOLDING THE SAME AMOUNT OF INK.\tTHE SAME FLUID IS DRAWN AS A MAP OF INK THICKNESS.",
+    "UP CLOSE, THE THREE INKS MIX LIKE COLOURED FILTERS.\tTHE GLOSS IS LIGHT ON THE SLOPES OF THE THICK INK.\tUP CLOSE, THE THREE INKS MIX LIKE COLOURED FILTERS.",
+    "THE SHEET LIES UNDER SIMULATED WATER, AND RIPPLES BEND IT.\tTHE SHEET LIES UNDER SIMULATED WATER, AND RIPPLES BEND IT.\tTHE SHEET LIES UNDER SIMULATED WATER, AND RIPPLES BEND IT."
+   ]
+  },
+  "diverge": {
+   "type": "glslTOP",
+   "family": "TOP",
+   "pos": [
+    600,
+    0
+   ],
+   "inputs": [
+    [
+     "vstep"
+    ]
+   ],
+   "pars": {
+    "computedat": "diverge_compute",
+    "format": "rgba32float",
+    "inputextenduv": "hold",
+    "outputresolution": "custom",
+    "pixeldat": "diverge_frag",
+    "resolutionh": 180,
+    "resolutionw": 320
+   }
+  },
+  "diverge_frag": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    600,
+    -130
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.here('shaders/diverge.frag')"
+    },
+    "language": "text",
+    "syncfile": true
+   },
+   "text_file": "experiments/sc_fluid_ink/shaders/diverge.frag"
+  },
+  "diverge_info": {
+   "type": "infoDAT",
+   "family": "DAT",
+   "pos": [
+    160,
+    -120
+   ],
+   "pars": {
+    "language": "text",
+    "op": "diverge"
+   }
+  },
+  "dwords": {
+   "type": "tableDAT",
+   "family": "DAT",
+   "pos": [
+    -600,
+    -300
+   ],
+   "text": [
+    "FLUIDSIMULATION\tINK INWATER\tKICKS FIREJETS\tSNARES SPINVORTICES\tBASS STIRSTHE TANK",
+    "\t\t\t\t",
+    "\t\t\t\t",
+    "\t\t\t\t",
+    "\t\t\t\t",
+    "OIL FILM\tCOLOUR ISTHICKNESS\tTHIN FILM\tINK INWATER\tOIL FILM",
+    "\t\t\t\t",
+    "\t\t\t\t",
+    "FLUID\tINK\tFLOW\tVORTEX\tJET",
+    "SIMULATEDINK\tFLUIDSOLVER\tINK INWATER\tSIMULATEDINK\tFLUIDSOLVER"
+   ]
+  },
+  "dye": {
+   "type": "glslTOP",
+   "family": "TOP",
+   "pos": [
+    1200,
+    -220
+   ],
+   "inputs": [
+    [
+     "fbd"
+    ],
+    [
+     "proj"
+    ],
+    [
+     "src"
+    ]
+   ],
+   "pars": {
+    "computedat": "dye_compute",
+    "format": "rgba16float",
+    "inputextenduv": "hold",
+    "outputresolution": "custom",
+    "pixeldat": "dye_frag",
+    "resolutionh": 720,
+    "resolutionw": 1280,
+    "vec0name": "uTime",
+    "vec0valuew": {
+     "expr": "op('ctl')['boot']"
+    },
+    "vec0valuex": {
+     "expr": "op('hub')['evolve'] % 1000"
+    },
+    "vec0valuey": {
+     "expr": "op('shot')['age']"
+    },
+    "vec0valuez": {
+     "expr": "op('ctl')['id']"
+    },
+    "vec1name": "uStamp",
+    "vec1valuew": {
+     "expr": "op('tk')['hamt']"
+    },
+    "vec1valuex": {
+     "expr": "op('ctl')['stamp']"
+    },
+    "vec1valuey": {
+     "expr": "op('tk')['diss']"
+    },
+    "vec1valuez": {
+     "expr": "op('tk')['kamt']"
+    },
+    "vec2name": "uHits",
+    "vec2valuew": {
+     "expr": "op('hub')['bass']"
+    },
+    "vec2valuex": {
+     "expr": "op('hub')['hit_low']"
+    },
+    "vec2valuey": {
+     "expr": "op('hub')['hit_mid']"
+    },
+    "vec2valuez": {
+     "expr": "op('hub')['hit_high']"
+    },
+    "vec3name": "uK",
+    "vec3valuew": {
+     "expr": "op('tk')['kmode']"
+    },
+    "vec3valuex": {
+     "expr": "op('ctl')['k1']"
+    },
+    "vec3valuey": {
+     "expr": "op('ctl')['k2']"
+    },
+    "vec3valuez": {
+     "expr": "op('ctl')['k3']"
+    },
+    "vec4name": "uS",
+    "vec4valuew": {
+     "expr": "op('hub')['vocals']"
+    },
+    "vec4valuex": {
+     "expr": "op('ctl')['s1']"
+    },
+    "vec4valuey": {
+     "expr": "op('ctl')['s2']"
+    },
+    "vec4valuez": {
+     "expr": "op('ctl')['s3']"
+    },
+    "vec5name": "uNoz",
+    "vec5valuew": {
+     "expr": "op('ctl')['na']"
+    },
+    "vec5valuex": {
+     "expr": "op('ctl')['nx']"
+    },
+    "vec5valuey": {
+     "expr": "op('ctl')['ny']"
+    },
+    "vec5valuez": {
+     "expr": "op('ctl')['ns']"
+    },
+    "vec6name": "uInk",
+    "vec6valuew": {
+     "expr": "op('tk')['hink']"
+    },
+    "vec6valuex": {
+     "expr": "op('tk')['kink']"
+    },
+    "vec6valuey": {
+     "expr": "op('tk')['sink']"
+    },
+    "vec6valuez": {
+     "expr": "op('tk')['nink']"
+    },
+    "vec7name": "uH",
+    "vec7valuew": {
+     "expr": "op('tk')['samt']"
+    },
+    "vec7valuex": {
+     "expr": "op('ctl')['h1']"
+    },
+    "vec7valuey": {
+     "expr": "op('ctl')['h2']"
+    },
+    "vec7valuez": {
+     "expr": "op('ctl')['h3']"
+    },
+    "vec8name": "uIn",
+    "vec8valuew": 0.0,
+    "vec8valuex": {
+     "expr": "op('ctl2')['infeed']"
+    },
+    "vec8valuey": {
+     "expr": "op('ctl2')['clean']"
+    },
+    "vec8valuez": 0.0
+   }
+  },
+  "dye_frag": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    1200,
+    -350
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.here('shaders/dye.frag')"
+    },
+    "language": "text",
+    "syncfile": true
+   },
+   "text_file": "experiments/sc_fluid_ink/shaders/dye.frag"
+  },
+  "dye_info": {
+   "type": "infoDAT",
+   "family": "DAT",
+   "pos": [
+    160,
+    -120
+   ],
+   "pars": {
+    "language": "text",
+    "op": "dye"
+   }
+  },
+  "fbd": {
+   "type": "feedbackTOP",
+   "family": "TOP",
+   "pos": [
+    200,
+    -220
+   ],
+   "inputs": [
+    [
+     "fbd_zero"
+    ]
+   ],
+   "pars": {
+    "format": "rgba16float",
+    "top": "dye"
+   }
+  },
+  "fbd_zero": {
+   "type": "constantTOP",
+   "family": "TOP",
+   "pos": [
+    0,
+    -220
+   ],
+   "pars": {
+    "alpha": 0.0,
+    "colorb": 0.0,
+    "colorg": 0.0,
+    "colorr": 0.0,
+    "format": "rgba16float",
+    "outputresolution": "custom",
+    "resolutionh": 720,
+    "resolutionw": 1280
+   }
+  },
+  "fbv": {
+   "type": "feedbackTOP",
+   "family": "TOP",
+   "pos": [
+    200,
+    0
+   ],
+   "inputs": [
+    [
+     "fbv_zero"
+    ]
+   ],
+   "pars": {
+    "format": "rgba32float",
+    "top": "proj"
+   }
+  },
+  "fbv_zero": {
+   "type": "constantTOP",
+   "family": "TOP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "alpha": 0.0,
+    "colorb": 0.0,
+    "colorg": 0.0,
+    "colorr": 0.0,
+    "format": "rgba32float",
+    "outputresolution": "custom",
+    "resolutionh": 180,
+    "resolutionw": 320
+   }
+  },
+  "form": {
+   "type": "switchTOP",
+   "family": "TOP",
+   "pos": [
+    1200,
+    -450
+   ],
+   "inputs": [
+    [
+     "form_file"
+    ],
+    [
+     "form_gen"
+    ]
+   ],
+   "pars": {
+    "index": {
+     "expr": "0 if mod.paths.model_texture('star_chart') else 1"
+    }
+   }
+  },
+  "form_d": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    1200,
+    -560
+   ],
+   "pars": {
+    "alignx": "left",
+    "aligny": "top",
+    "bgalpha": 1.0,
+    "bgcolorb": 0.955,
+    "bgcolorg": 0.955,
+    "bgcolorr": 0.955,
+    "borderspace1": 195.0,
+    "borderspace2": 150.0,
+    "fontcolorb": 0.12,
+    "fontcolorg": 0.12,
+    "fontcolorr": 0.12,
+    "fontfile": {
+     "expr": "mod.paths.font('chicago')"
+    },
+    "fontsizex": 25.0,
+    "outputresolution": "custom",
+    "resmult": false,
+    "resolutionh": 800,
+    "resolutionw": 1032,
+    "text": "INK IN WATER\nTECHNIQUE:  2D FLUID SIMULATION\nWATER:  320 X 180 VELOCITY GRID\nINK:  1280 X 720, THREE INKS\nSOLVER:  22 PASSES A FRAME\n\nKICK:  JETS + INK\nSNARE:  TWO VORTICES\nHI-HAT:  A DROPLET\nBASS:  STIRS THE TANK\nVOICE:  A NOZZLE"
+   }
+  },
+  "form_file": {
+   "type": "moviefileinTOP",
+   "family": "TOP",
+   "pos": [
+    1050,
+    -340
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.model_texture('star_chart')"
+    }
+   }
+  },
+  "form_gen": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    1050,
+    -450
+   ],
+   "pars": {
+    "alignx": "left",
+    "aligny": "top",
+    "bgalpha": 1.0,
+    "bgcolorb": 0.955,
+    "bgcolorg": 0.955,
+    "bgcolorr": 0.955,
+    "borderspace1": 60.0,
+    "borderspace2": 130.0,
+    "fontcolorb": 0.12,
+    "fontcolorg": 0.12,
+    "fontcolorr": 0.12,
+    "fontfile": {
+     "expr": "mod.paths.font('chicago')"
+    },
+    "linespacing": 14.0,
+    "outputresolution": "custom",
+    "resmult": false,
+    "resolutionh": 800,
+    "resolutionw": 1032,
+    "text": "CATALOGUE OF UNEXPLAINED OBJECTS\nPLATE 07\n\nOBJECT  __________________________\nORIGIN  __________________________\nPERIOD  __________________________\nUSE  _____________________________\nDATE  ____________________________\n\nPLATE 07  REV. 3  DO NOT TOUCH"
+   }
+  },
+  "glow": {
+   "type": "blurTOP",
+   "family": "TOP",
+   "pos": [
+    1800,
+    -220
+   ],
+   "inputs": [
+    [
+     "bright"
+    ]
+   ],
+   "pars": {
+    "format": "rgba16float",
+    "size": 10
+   }
+  },
+  "grade": {
+   "type": "glslTOP",
+   "family": "TOP",
+   "pos": [
+    2000,
+    0
+   ],
+   "inputs": [
+    [
+     "shade"
+    ],
+    [
+     "glow"
+    ],
+    [
+     "caption"
+    ]
+   ],
+   "pars": {
+    "computedat": "grade_compute",
+    "format": "rgba8fixed",
+    "outputresolution": "custom",
+    "pixeldat": "grade_frag",
+    "resolutionh": 720,
+    "resolutionw": 1280,
+    "vec0name": "uGlow",
+    "vec0valuew": {
+     "expr": "op('ctl')['capl']"
+    },
+    "vec0valuex": {
+     "expr": "op('tk')['glow']"
+    },
+    "vec0valuey": {
+     "expr": "op('tk')['glowth']"
+    },
+    "vec0valuez": {
+     "expr": "op('ctl')['cap']"
+    }
+   }
+  },
+  "grade_frag": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    2000,
+    -130
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.here('shaders/grade.frag')"
+    },
+    "language": "text",
+    "syncfile": true
+   },
+   "text_file": "experiments/sc_fluid_ink/shaders/grade.frag"
+  },
+  "grade_info": {
+   "type": "infoDAT",
+   "family": "DAT",
+   "pos": [
+    160,
+    -120
+   ],
+   "pars": {
+    "language": "text",
+    "op": "grade"
+   }
+  },
+  "hub": {
+   "type": "selectCHOP",
+   "family": "CHOP",
+   "pos": [
+    -400,
+    200
+   ],
+   "pars": {
+    "chops": "/project1/sw_hub/feed"
+   }
+  },
+  "inmean": {
+   "type": "resolutionTOP",
+   "family": "TOP",
+   "pos": [
+    300,
+    -1000
+   ],
+   "inputs": [
+    [
+     "insmall"
+    ]
+   ],
+   "pars": {
+    "inputfiltertype": "mipmap",
+    "outputresolution": "custom",
+    "resolutionh": 1,
+    "resolutionw": 1
+   }
+  },
+  "inp": {
+   "type": "selectTOP",
+   "family": "TOP",
+   "pos": [
+    0,
+    -900
+   ],
+   "pars": {
+    "top": {
+     "expr": "parent().par.Input.eval() if op('ctl')['hasin'] > 0.5 else 'inp_none'"
+    }
+   }
+  },
+  "inp_none": {
+   "type": "constantTOP",
+   "family": "TOP",
+   "pos": [
+    -200,
+    -900
+   ],
+   "pars": {
+    "colorb": 0.0,
+    "colorg": 0.0,
+    "colorr": 0.0,
+    "outputresolution": "custom",
+    "resolutionh": 16,
+    "resolutionw": 16
+   }
+  },
+  "insmall": {
+   "type": "resolutionTOP",
+   "family": "TOP",
+   "pos": [
+    150,
+    -1000
+   ],
+   "inputs": [
+    [
+     "inp"
+    ]
+   ],
+   "pars": {
+    "inputfiltertype": "mipmap",
+    "outputresolution": "custom",
+    "resolutionh": 36,
+    "resolutionw": 64
+   }
+  },
+  "jacobi": {
+   "type": "glslTOP",
+   "family": "TOP",
+   "pos": [
+    800,
+    0
+   ],
+   "inputs": [
+    [
+     "diverge"
+    ]
+   ],
+   "pars": {
+    "computedat": "jacobi_compute",
+    "format": "rgba32float",
+    "inputextenduv": "hold",
+    "npasses": 22,
+    "outputresolution": "custom",
+    "pixeldat": "jacobi_frag",
+    "resolutionh": 180,
+    "resolutionw": 320
+   }
+  },
+  "jacobi_frag": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    800,
+    -130
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.here('shaders/jacobi.frag')"
+    },
+    "language": "text",
+    "syncfile": true
+   },
+   "text_file": "experiments/sc_fluid_ink/shaders/jacobi.frag"
+  },
+  "jacobi_info": {
+   "type": "infoDAT",
+   "family": "DAT",
+   "pos": [
+    160,
+    -120
+   ],
+   "pars": {
+    "language": "text",
+    "op": "jacobi"
+   }
+  },
+  "light": {
+   "type": "lightCOMP",
+   "family": "COMP",
+   "pos": [
+    -400,
+    -740
+   ],
+   "pars": {
+    "dimmer": 1.6,
+    "tx": -2.5,
+    "ty": 3.0,
+    "tz": 3.0
+   }
+  },
+  "light/circle1": {
+   "type": "circlePOP",
+   "family": "POP",
+   "pos": [
+    780,
+    170
+   ],
+   "pars": {
+    "connectivity": "surface",
+    "scale": 0.2
+   }
+  },
+  "light/circle_attenEnd": {
+   "type": "circlePOP",
+   "family": "POP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "bypass": {
+     "expr": "not parent().par.attenuated"
+    },
+    "connectivity": "surface",
+    "pageindex": 3,
+    "radx": 0.1,
+    "rady": 0.1,
+    "tz": {
+     "expr": "-parent().par.attenuationend"
+    }
+   }
+  },
+  "light/circle_attenStart": {
+   "type": "circlePOP",
+   "family": "POP",
+   "pos": [
+    0,
+    120
+   ],
+   "pars": {
+    "bypass": {
+     "expr": "not parent().par.attenuated"
+    },
+    "connectivity": "surface",
+    "pageindex": 1,
+    "radx": 0.1,
+    "rady": 0.1,
+    "tz": {
+     "expr": "-parent().par.attenuationstart"
+    }
+   }
+  },
+  "light/connectivity1": {
+   "type": "connectivityPOP",
+   "family": "POP",
+   "pos": [
+    780,
+    290
+   ],
+   "inputs": [
+    [
+     "light/merge3"
+    ]
+   ],
+   "pars": {
+    "surftype": "lines"
+   }
+  },
+  "light/copy1": {
+   "type": "copyPOP",
+   "family": "POP",
+   "pos": [
+    520,
+    670
+   ],
+   "inputs": [
+    [
+     "light/tube_attenuated"
+    ]
+   ],
+   "pars": {
+    "ncy": 2,
+    "pageindex": 2,
+    "rx": 90.0
+   }
+  },
+  "light/line_atten": {
+   "type": "linePOP",
+   "family": "POP",
+   "pos": [
+    0,
+    230
+   ],
+   "pars": {
+    "bypass": {
+     "expr": "not parent().par.attenuated"
+    },
+    "divs": 1,
+    "pageindex": 2,
+    "pt0posz": {
+     "expr": "-parent().par.attenuationstart"
+    },
+    "pt1posz": {
+     "expr": "-parent().par.attenuationend"
+    }
+   },
+   "custom_pars": [
+    "pt",
+    "pt0posx",
+    "pt0posy",
+    "pt0posz",
+    "pt1posx",
+    "pt1posy",
+    "pt1posz"
+   ]
+  },
+  "light/merge1": {
+   "type": "mergePOP",
+   "family": "POP",
+   "pos": [
+    250,
+    500
+   ],
+   "inputs": [
+    [
+     "light/rectangle1"
+    ],
+    [
+     "light/tube_cone1"
+    ],
+    [
+     "light/tube_cone2"
+    ],
+    [
+     "light/primitive1"
+    ],
+    [
+     "light/line_atten"
+    ],
+    [
+     "light/circle_attenStart"
+    ],
+    [
+     "light/circle_attenEnd"
+    ]
+   ],
+   "pars": {
+    "pageindex": 1
+   }
+  },
+  "light/merge2": {
+   "type": "mergePOP",
+   "family": "POP",
+   "pos": [
+    950,
+    230
+   ],
+   "inputs": [
+    [
+     "light/connectivity1"
+    ],
+    [
+     "light/circle1"
+    ]
+   ]
+  },
+  "light/merge3": {
+   "type": "mergePOP",
+   "family": "POP",
+   "pos": [
+    620,
+    290
+   ],
+   "inputs": [
+    [
+     "light/pointgen1"
+    ],
+    [
+     "light/transform1"
+    ]
+   ]
+  },
+  "light/merge_pointLight": {
+   "type": "mergePOP",
+   "family": "POP",
+   "pos": [
+    760,
+    820
+   ],
+   "inputs": [
+    [
+     "light/sphere1"
+    ],
+    [
+     "light/primitive_quadrants"
+    ],
+    [
+     "light/copy1"
+    ]
+   ],
+   "pars": {
+    "pageindex": 1
+   }
+  },
+  "light/pointgen1": {
+   "type": "pointgeneratorPOP",
+   "family": "POP",
+   "pos": [
+    270,
+    290
+   ],
+   "pars": {
+    "numpoints": 17,
+    "pageindex": 1,
+    "shape": "circle",
+    "sx": 0.2,
+    "sy": 0.2,
+    "sz": 0.2
+   }
+  },
+  "light/primitive1": {
+   "type": "primitivePOP",
+   "family": "POP",
+   "pos": [
+    0,
+    390
+   ],
+   "pars": {
+    "addpts": true,
+    "method": "pattern",
+    "pageindex": 1,
+    "prim0pattern": "0 1 0 2 0 3 0 4",
+    "prim0type": "lines",
+    "pt1posx": {
+     "expr": "mod.math.sin(mod.math.radians(parent().par.coneangle/2)) + mod.math.sin(mod.math.radians(parent().par.conedelta/2))"
+    },
+    "pt1posz": {
+     "expr": "-op('tube_cone1').par.height"
+    },
+    "pt2posx": {
+     "expr": "mod.math.sin(-mod.math.radians(parent().par.coneangle/2)) - mod.math.sin(mod.math.radians(parent().par.conedelta/2))"
+    },
+    "pt2posz": {
+     "expr": "0-op('tube_cone1').par.height"
+    },
+    "pt3posy": {
+     "expr": "-mod.math.sin(-mod.math.radians(parent().par.coneangle/2)) - mod.math.sin(mod.math.radians(parent().par.conedelta/2))"
+    },
+    "pt3posz": {
+     "expr": "-op('tube_cone1').par.height"
+    },
+    "pt4posy": {
+     "expr": "mod.math.sin(-mod.math.radians(parent().par.coneangle/2)) - mod.math.sin(mod.math.radians(parent().par.conedelta/2))"
+    },
+    "pt4posz": {
+     "expr": "-op('tube_cone1').par.height"
+    }
+   },
+   "custom_pars": [
+    "pt",
+    "pt0posx",
+    "pt0posy",
+    "pt0posz",
+    "pt1posx",
+    "pt1posy",
+    "pt1posz",
+    "pt2posx",
+    "pt2posy",
+    "pt2posz",
+    "pt3posx",
+    "pt3posy",
+    "pt3posz",
+    "pt4posx",
+    "pt4posy",
+    "pt4posz"
+   ]
+  },
+  "light/primitive_cross": {
+   "type": "primitivePOP",
+   "family": "POP",
+   "pos": [
+    520,
+    1000
+   ],
+   "pars": {
+    "addpts": true,
+    "method": "set",
+    "pageindex": 1,
+    "pt0posx": -0.2,
+    "pt1posx": 0.2,
+    "pt2posy": -0.2,
+    "pt3posy": 0.2,
+    "pt4posz": -0.2,
+    "pt5posz": 0.2,
+    "setprimtype": "lines"
+   },
+   "custom_pars": [
+    "pt",
+    "pt0posx",
+    "pt0posy",
+    "pt0posz",
+    "pt1posx",
+    "pt1posy",
+    "pt1posz",
+    "pt2posx",
+    "pt2posy",
+    "pt2posz",
+    "pt3posx",
+    "pt3posy",
+    "pt3posz",
+    "pt4posx",
+    "pt4posy",
+    "pt4posz",
+    "pt5posx",
+    "pt5posy",
+    "pt5posz"
+   ]
+  },
+  "light/primitive_quadrants": {
+   "type": "primitivePOP",
+   "family": "POP",
+   "pos": [
+    520,
+    780
+   ],
+   "pars": {
+    "addpts": true,
+    "method": "set",
+    "pageindex": 1,
+    "pt0posx": 0.07,
+    "pt0posy": 0.07,
+    "pt0posz": 0.07,
+    "pt1posx": -0.07,
+    "pt1posy": -0.07,
+    "pt1posz": -0.07,
+    "pt2posx": -0.07,
+    "pt2posy": 0.07,
+    "pt2posz": 0.07,
+    "pt3posx": 0.07,
+    "pt3posy": -0.07,
+    "pt3posz": -0.07,
+    "pt4posx": 0.07,
+    "pt4posy": 0.07,
+    "pt4posz": -0.07,
+    "pt5posx": -0.07,
+    "pt5posy": -0.07,
+    "pt5posz": 0.07,
+    "pt6posx": -0.07,
+    "pt6posy": 0.07,
+    "pt6posz": -0.07,
+    "pt7posx": 0.07,
+    "pt7posy": -0.07,
+    "pt7posz": 0.07,
+    "setprimtype": "lines"
+   },
+   "custom_pars": [
+    "pt",
+    "pt0posx",
+    "pt0posy",
+    "pt0posz",
+    "pt1posx",
+    "pt1posy",
+    "pt1posz",
+    "pt2posx",
+    "pt2posy",
+    "pt2posz",
+    "pt3posx",
+    "pt3posy",
+    "pt3posz",
+    "pt4posx",
+    "pt4posy",
+    "pt4posz",
+    "pt5posx",
+    "pt5posy",
+    "pt5posz",
+    "pt6posx",
+    "pt6posy",
+    "pt6posz",
+    "pt7posx",
+    "pt7posy",
+    "pt7posz"
+   ]
+  },
+  "light/rectangle1": {
+   "type": "rectanglePOP",
+   "family": "POP",
+   "pos": [
+    0,
+    730
+   ],
+   "pars": {
+    "anchorv": 0.0,
+    "sizeu": 0.02,
+    "sizev": 0.5
+   }
+  },
+  "light/sphere1": {
+   "type": "spherePOP",
+   "family": "POP",
+   "pos": [
+    520,
+    890
+   ],
+   "pars": {
+    "freq": 3,
+    "pageindex": 2,
+    "radx": 0.05,
+    "rady": 0.05,
+    "radz": 0.05
+   }
+  },
+  "light/switch_lightType": {
+   "type": "switchPOP",
+   "family": "POP",
+   "pos": [
+    1140,
+    500
+   ],
+   "inputs": [
+    [
+     "light/merge_pointLight"
+    ],
+    [
+     "light/merge1"
+    ],
+    [
+     "light/merge2"
+    ]
+   ],
+   "pars": {
+    "index": {
+     "expr": "parent().par.lighttype.menuIndex"
+    }
+   }
+  },
+  "light/transform1": {
+   "type": "transformPOP",
+   "family": "POP",
+   "pos": [
+    450,
+    370
+   ],
+   "inputs": [
+    [
+     "light/pointgen1"
+    ]
+   ],
+   "pars": {
+    "tz": 0.8
+   }
+  },
+  "light/tube_attenuated": {
+   "type": "tubePOP",
+   "family": "POP",
+   "pos": [
+    368,
+    673
+   ],
+   "pars": {
+    "bypass": {
+     "expr": "not parent().par.attenuated"
+    },
+    "height": 0.0,
+    "orient": "z",
+    "radx": {
+     "expr": "parent().par.attenuationend"
+    },
+    "rady": {
+     "expr": "parent().par.attenuationstart"
+    },
+    "rows": 2,
+    "surftype": "rows"
+   }
+  },
+  "light/tube_cone1": {
+   "type": "tubePOP",
+   "family": "POP",
+   "pos": [
+    0,
+    620
+   ],
+   "pars": {
+    "height": {
+     "expr": "mod.math.cos(mod.math.radians(parent().par.coneangle/2))"
+    },
+    "orient": "z",
+    "radx": {
+     "expr": "mod.math.sin(mod.math.radians(parent().par.coneangle/2))"
+    },
+    "rady": 0.01,
+    "rows": 2,
+    "tz": {
+     "expr": "-me.par.height*0.5"
+    }
+   }
+  },
+  "light/tube_cone2": {
+   "type": "tubePOP",
+   "family": "POP",
+   "pos": [
+    0,
+    500
+   ],
+   "pars": {
+    "height": 0.0,
+    "orient": "z",
+    "radx": {
+     "expr": "mod.math.sin(mod.math.radians(parent().par.coneangle/2)) + mod.math.sin(mod.math.radians(parent().par.conedelta/2))"
+    },
+    "rady": {
+     "expr": "mod.math.sin(mod.math.radians(parent().par.coneangle/2))"
+    },
+    "rows": 2,
+    "tz": {
+     "expr": "-op('tube_cone1').par.height"
+    }
+   }
+  },
+  "local": {
+   "type": "baseCOMP",
+   "family": "COMP",
+   "pos": [
+    -400,
+    460
+   ]
+  },
+  "local/modules": {
+   "type": "baseCOMP",
+   "family": "COMP",
+   "pos": [
+    0,
+    0
+   ]
+  },
+  "local/modules/paths": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "file": {
+     "expr": "project.folder.replace(chr(92), '/') + '/experiments/sw_hub/paths_module.py'"
+    },
+    "language": "text",
+    "syncfile": true
+   },
+   "text_file": "experiments/sw_hub/paths_module.py"
+  },
+  "m_amphora": {
+   "type": "geometryCOMP",
+   "family": "COMP",
+   "pos": [
+    -70,
+    -740
+   ],
+   "pars": {
+    "material": "/project1/sc_fluid_ink/m_amphora/mat",
+    "render": {
+     "expr": "int(op('ctl')['model']) == 1"
+    },
+    "rx": 8.0,
+    "ry": {
+     "expr": "op('shot')['seed'] * 360 + op('hub')['section'] * 47 + 0.0"
+    },
+    "scale": 0.92
+   }
+  },
+  "m_amphora/mat": {
+   "type": "pbrMAT",
+   "family": "MAT",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "basecolormap": "/project1/sc_fluid_ink/m_amphora/tex",
+    "metallic": 0.0,
+    "roughness": 0.6
+   }
+  },
+  "m_amphora/mesh": {
+   "type": "fileinPOP",
+   "family": "POP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.model_file('amphora')"
+    }
+   }
+  },
+  "m_amphora/tex": {
+   "type": "moviefileinTOP",
+   "family": "TOP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.model_texture('amphora')"
+    }
+   }
+  },
+  "m_gramophone": {
+   "type": "geometryCOMP",
+   "family": "COMP",
+   "pos": [
+    -200,
+    -740
+   ],
+   "pars": {
+    "material": "/project1/sc_fluid_ink/m_gramophone/mat",
+    "render": {
+     "expr": "int(op('ctl')['model']) == 0"
+    },
+    "rx": 10.0,
+    "ry": {
+     "expr": "op('shot')['seed'] * 360 + op('hub')['section'] * 47 + 0.0"
+    }
+   }
+  },
+  "m_gramophone/mat": {
+   "type": "pbrMAT",
+   "family": "MAT",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "basecolormap": "/project1/sc_fluid_ink/m_gramophone/tex",
+    "metallic": 0.0,
+    "roughness": 0.6
+   }
+  },
+  "m_gramophone/mesh": {
+   "type": "fileinPOP",
+   "family": "POP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.model_file('gramophone')"
+    }
+   }
+  },
+  "m_gramophone/tex": {
+   "type": "moviefileinTOP",
+   "family": "TOP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.model_texture('gramophone')"
+    }
+   }
+  },
+  "m_hourglass": {
+   "type": "geometryCOMP",
+   "family": "COMP",
+   "pos": [
+    450,
+    -740
+   ],
+   "pars": {
+    "material": "/project1/sc_fluid_ink/m_hourglass/mat",
+    "render": {
+     "expr": "int(op('ctl')['model']) == 5"
+    },
+    "rx": 10.0,
+    "ry": {
+     "expr": "op('shot')['seed'] * 360 + op('hub')['section'] * 47 + 0.0"
+    },
+    "scale": 0.85
+   }
+  },
+  "m_hourglass/mat": {
+   "type": "pbrMAT",
+   "family": "MAT",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "basecolormap": "/project1/sc_fluid_ink/m_hourglass/tex",
+    "metallic": 0.0,
+    "roughness": 0.6
+   }
+  },
+  "m_hourglass/mesh": {
+   "type": "fileinPOP",
+   "family": "POP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.model_file('hourglass')"
+    }
+   }
+  },
+  "m_hourglass/tex": {
+   "type": "moviefileinTOP",
+   "family": "TOP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.model_texture('hourglass')"
+    }
+   }
+  },
+  "m_lander": {
+   "type": "geometryCOMP",
+   "family": "COMP",
+   "pos": [
+    60,
+    -740
+   ],
+   "pars": {
+    "material": "/project1/sc_fluid_ink/m_lander/mat",
+    "render": {
+     "expr": "int(op('ctl')['model']) == 2"
+    },
+    "rx": 14.0,
+    "ry": {
+     "expr": "op('shot')['seed'] * 360 + op('hub')['section'] * 47 + 0.0"
+    },
+    "scale": 0.9
+   }
+  },
+  "m_lander/mat": {
+   "type": "pbrMAT",
+   "family": "MAT",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "basecolormap": "/project1/sc_fluid_ink/m_lander/tex",
+    "metallic": 0.0,
+    "roughness": 0.6
+   }
+  },
+  "m_lander/mesh": {
+   "type": "fileinPOP",
+   "family": "POP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.model_file('lander')"
+    }
+   }
+  },
+  "m_lander/tex": {
+   "type": "moviefileinTOP",
+   "family": "TOP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.model_texture('lander')"
+    }
+   }
+  },
+  "m_rubber_duck": {
+   "type": "geometryCOMP",
+   "family": "COMP",
+   "pos": [
+    320,
+    -740
+   ],
+   "pars": {
+    "material": "/project1/sc_fluid_ink/m_rubber_duck/mat",
+    "render": {
+     "expr": "int(op('ctl')['model']) == 4"
+    },
+    "rx": 10.0,
+    "ry": {
+     "expr": "op('shot')['seed'] * 360 + op('hub')['section'] * 47 + 0.0"
+    },
+    "scale": 0.8
+   }
+  },
+  "m_rubber_duck/mat": {
+   "type": "pbrMAT",
+   "family": "MAT",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "basecolormap": "/project1/sc_fluid_ink/m_rubber_duck/tex",
+    "metallic": 0.0,
+    "roughness": 0.6
+   }
+  },
+  "m_rubber_duck/mesh": {
+   "type": "fileinPOP",
+   "family": "POP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.model_file('rubber_duck')"
+    }
+   }
+  },
+  "m_rubber_duck/tex": {
+   "type": "moviefileinTOP",
+   "family": "TOP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.model_texture('rubber_duck')"
+    }
+   }
+  },
+  "m_skeleton_key": {
+   "type": "geometryCOMP",
+   "family": "COMP",
+   "pos": [
+    190,
+    -740
+   ],
+   "pars": {
+    "material": "/project1/sc_fluid_ink/m_skeleton_key/mat",
+    "render": {
+     "expr": "int(op('ctl')['model']) == 3"
+    },
+    "rx": 6.0,
+    "ry": {
+     "expr": "op('shot')['seed'] * 360 + op('hub')['section'] * 47 + 0.0"
+    },
+    "rz": -24.0,
+    "scale": 1.1
+   }
+  },
+  "m_skeleton_key/mat": {
+   "type": "pbrMAT",
+   "family": "MAT",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "basecolormap": "/project1/sc_fluid_ink/m_skeleton_key/tex",
+    "metallic": 0.0,
+    "roughness": 0.6
+   }
+  },
+  "m_skeleton_key/mesh": {
+   "type": "fileinPOP",
+   "family": "POP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.model_file('skeleton_key')"
+    }
+   }
+  },
+  "m_skeleton_key/tex": {
+   "type": "moviefileinTOP",
+   "family": "TOP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.model_texture('skeleton_key')"
+    }
+   }
+  },
+  "model": {
+   "type": "renderTOP",
+   "family": "TOP",
+   "pos": [
+    -200,
+    -620
+   ],
+   "pars": {
+    "camera": "/project1/sc_fluid_ink/cam",
+    "geometry": "/project1/sc_fluid_ink/m_gramophone /project1/sc_fluid_ink/m_amphora /project1/sc_fluid_ink/m_lander /project1/sc_fluid_ink/m_skeleton_key /project1/sc_fluid_ink/m_rubber_duck /project1/sc_fluid_ink/m_hourglass",
+    "lights": "/project1/sc_fluid_ink/light",
+    "resolutionh": 640,
+    "resolutionw": 640
+   }
+  },
+  "out1": {
+   "type": "outTOP",
+   "family": "TOP",
+   "pos": [
+    2200,
+    0
+   ],
+   "inputs": [
+    [
+     "grade"
+    ]
+   ]
+  },
+  "page": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    -200,
+    -450
+   ],
+   "pars": {
+    "alignx": "left",
+    "aligny": "top",
+    "bgalpha": 1.0,
+    "fontfile": {
+     "expr": "mod.paths.font('chicago')"
+    },
+    "fontsizex": 24.0,
+    "outputresolution": "custom",
+    "resmult": false,
+    "resolutionh": 720,
+    "resolutionw": 1280,
+    "text": "CATALOGUE OF UNEXPLAINED OBJECTS  PLATE 07  REV. 3  DO NOT TOUCH\nSIGNAL RECEIVED...  FEEDBACK LOOP ....... OPEN\nORIGIN: UNRECORDED.  A PICTURE IS FORMING. IT HAS NO NAME YET.\nNOTHING HERE IS PRERENDERED.  EVERY FRAME IS MADE NOW.\nSOUND IN. PICTURE OUT.  LOUD IS BRIGHT.  HANDLE WITH BOTH HANDS\nOBJECT OF THE DAY: EXHIBIT 12-B.  CATALOGUE NO. 0047\nSIXTY FRAMES A SECOND, EVERY SECOND.\nTHE KICK MOVES THE WATER.  THE PICTURE IS MADE OF SOUND AND INK.\nLISTEN WITH YOUR EYES.  EVERYTHING IS SIGNAL\nFOUND BY: ____________  DATE: ____________  PAST. PRESENT. LATER.\nAMPHORA  ASTROLABE  HOURGLASS  GRAMOPHONE  LANDER\nHERE. NOW. IN REAL TIME.\nCATALOGUE OF UNEXPLAINED OBJECTS  PLATE 07  REV. 3  DO NOT TOUCH\nSIGNAL RECEIVED...  FEEDBACK LOOP ....... OPEN\nORIGIN: UNRECORDED.  A PICTURE IS FORMING. IT HAS NO NAME YET.\nNOTHING HERE IS PRERENDERED.  EVERY FRAME IS MADE NOW.\nSOUND IN. PICTURE OUT.  LOUD IS BRIGHT.  HANDLE WITH BOTH HANDS\nOBJECT OF THE DAY: EXHIBIT 12-B.  CATALOGUE NO. 0047\nSIXTY FRAMES A SECOND, EVERY SECOND.\nTHE KICK MOVES THE WATER.  THE PICTURE IS MADE OF SOUND AND INK.\nLISTEN WITH YOUR EYES.  EVERYTHING IS SIGNAL\nFOUND BY: ____________  DATE: ____________  PAST. PRESENT. LATER.\nAMPHORA  ASTROLABE  HOURGLASS  GRAMOPHONE  LANDER\nHERE. NOW. IN REAL TIME.\nCATALOGUE OF UNEXPLAINED OBJECTS  PLATE 07  REV. 3  DO NOT TOUCH\nSIGNAL RECEIVED...  FEEDBACK LOOP ....... OPEN"
+   }
+  },
+  "page_d": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    -200,
+    -560
+   ],
+   "pars": {
+    "alignx": "left",
+    "aligny": "top",
+    "bgalpha": 1.0,
+    "borderspace1": 98.0,
+    "borderspace2": 60.0,
+    "fontfile": {
+     "expr": "mod.paths.font('chicago')"
+    },
+    "fontsizex": {
+     "expr": "27 if mod.paths.font('chicago') else 23"
+    },
+    "linespacing": {
+     "expr": "-10 if mod.paths.font('chicago') else -1"
+    },
+    "outputresolution": "custom",
+    "resmult": false,
+    "resolutionh": 720,
+    "resolutionw": 1280,
+    "text": "THIS PAGE IS INK IN A SIMULATED TANK OF WATER.\nTHE WATER IS A GRID OF 320 X 180 ARROWS THAT SAY\nHOW FAST IT MOVES AT EACH POINT.\nEVERY FRAME THE ARROWS CARRY THEMSELVES ALONG,\nTHEN A SOLVER RUNS 22 PASSES SO THAT WATER\nNEVER PILES UP ANYWHERE.\nTHE INK IS A 1280 X 720 PICTURE THAT THE\nARROWS DRAG ALONG.\nA KICK DRUM FIRES A STAR OF JETS AND A DROP OF INK.\nA SNARE SPINS TWO VORTICES IN OPPOSITE WAYS.\nA HI-HAT ADDS ONE FINE DROPLET.\nTHE BASS SLOWLY STIRS THE WHOLE TANK.\nTHE VOICE IS A NOZZLE: A HIGHER NOTE SITS HIGHER UP.\nEVERY BAR OF THE SONG PRINTS THIS PAGE AGAIN.\nTHE PICTURE IS ONLY BLACK AND WHITE DOTS.\nNOTHING HERE IS VIDEO. NINE SHADERS RUN EVERY FRAME."
+   }
+  },
+  "paper": {
+   "type": "switchTOP",
+   "family": "TOP",
+   "pos": [
+    1350,
+    -450
+   ],
+   "inputs": [
+    [
+     "form"
+    ],
+    [
+     "form_d"
+    ],
+    [
+     "inp"
+    ]
+   ],
+   "pars": {
+    "index": {
+     "expr": "2 if op('ctl2')['paper'] > 2.5 else (1 if parent().par.Describe else 0)"
+    }
+   }
+  },
+  "phrase": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    -200,
+    -300
+   ],
+   "pars": {
+    "bgalpha": 1.0,
+    "bold": {
+     "expr": "not mod.paths.font(('archivo', 'chicago', 'barlow')[int(op('tk')['font'])])"
+    },
+    "fontautosize": "fitiffat",
+    "fontfile": {
+     "expr": "mod.paths.font(('archivo', 'chicago', 'barlow')[int(op('tk')['font'])])"
+    },
+    "fontsizex": 230.0,
+    "linespacing": -10.0,
+    "outputresolution": "custom",
+    "resmult": false,
+    "resolutionh": 720,
+    "resolutionw": 1280,
+    "text": {
+     "expr": "op('dwords')[int(op('shot')['take']) % 10, int(op('ctl')['phrase']) % op('dwords').numCols].val if parent().par.Describe else op('phrases')[int(op('ctl')['phrase']) % op('phrases').numRows, 0].val"
+    }
+   }
+  },
+  "phrases": {
+   "type": "tableDAT",
+   "family": "DAT",
+   "pos": [
+    -400,
+    -300
+   ],
+   "text": [
+    "REAL TIME.",
+    "DO NOTTOUCH",
+    "EXHIBIT 12-B:USE UNKNOWN.",
+    "EVERY FRAMEIS MADE NOW.",
+    "PLATE 07",
+    "SOUND IN.PICTURE OUT.",
+    "NOTHING ISPRERENDERED.",
+    "HERE. NOW.",
+    "OBJECTNO. 0047",
+    "EVERYTHINGIS SIGNAL",
+    "ORIGIN:UNRECORDED",
+    "SIXTY FRAMESA SECOND.",
+    "PAST. PRESENT.LATER.",
+    "LISTEN WITHYOUR EYES.",
+    "LOUD ISBRIGHT",
+    "FOUND,NOT MADE",
+    "FEEDBACK....... LOOP",
+    "HANDLE THIS OBJECTWITH BOTH HANDS.",
+    "MADE OFSOUND."
+   ]
+  },
+  "pitch": {
+   "type": "selectCHOP",
+   "family": "CHOP",
+   "pos": [
+    -200,
+    60
+   ],
+   "pars": {
+    "channames": "pitch",
+    "chops": "hub"
+   }
+  },
+  "pitch_gate": {
+   "type": "logicCHOP",
+   "family": "CHOP",
+   "pos": [
+    -50,
+    0
+   ],
+   "inputs": [
+    [
+     "pitch"
+    ]
+   ],
+   "pars": {
+    "boundmax": 90.0,
+    "boundmin": 36.0,
+    "convert": "bound",
+    "timeslice": true
+   }
+  },
+  "pitch_hold": {
+   "type": "holdCHOP",
+   "family": "CHOP",
+   "pos": [
+    100,
+    60
+   ],
+   "inputs": [
+    [
+     "pitch"
+    ],
+    [
+     "pitch_gate"
+    ]
+   ],
+   "pars": {
+    "sample": "whileon",
+    "timeslice": true
+   }
+  },
+  "proj": {
+   "type": "glslTOP",
+   "family": "TOP",
+   "pos": [
+    1000,
+    0
+   ],
+   "inputs": [
+    [
+     "vstep"
+    ],
+    [
+     "jacobi"
+    ]
+   ],
+   "pars": {
+    "computedat": "proj_compute",
+    "format": "rgba32float",
+    "inputextenduv": "hold",
+    "outputresolution": "custom",
+    "pixeldat": "proj_frag",
+    "resolutionh": 180,
+    "resolutionw": 320,
+    "vec0name": "uTime",
+    "vec0valuew": {
+     "expr": "op('ctl')['boot']"
+    },
+    "vec0valuex": {
+     "expr": "op('hub')['evolve'] % 1000"
+    },
+    "vec0valuey": {
+     "expr": "op('shot')['age']"
+    },
+    "vec0valuez": {
+     "expr": "op('ctl')['id']"
+    }
+   }
+  },
+  "proj_frag": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    1000,
+    -130
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.here('shaders/proj.frag')"
+    },
+    "language": "text",
+    "syncfile": true
+   },
+   "text_file": "experiments/sc_fluid_ink/shaders/proj.frag"
+  },
+  "proj_info": {
+   "type": "infoDAT",
+   "family": "DAT",
+   "pos": [
+    160,
+    -120
+   ],
+   "pars": {
+    "language": "text",
+    "op": "proj"
+   }
+  },
+  "sec": {
+   "type": "selectCHOP",
+   "family": "CHOP",
+   "pos": [
+    -200,
+    200
+   ],
+   "pars": {
+    "channames": "section",
+    "chops": "hub"
+   }
+  },
+  "secdelay": {
+   "type": "delayCHOP",
+   "family": "CHOP",
+   "pos": [
+    -50,
+    200
+   ],
+   "inputs": [
+    [
+     "sec"
+    ]
+   ],
+   "pars": {
+    "delay": 0.25,
+    "timeslice": true
+   }
+  },
+  "shade": {
+   "type": "glslTOP",
+   "family": "TOP",
+   "pos": [
+    1400,
+    0
+   ],
+   "inputs": [
+    [
+     "dye"
+    ],
+    [
+     "proj"
+    ],
+    [
+     "paper"
+    ]
+   ],
+   "pars": {
+    "computedat": "shade_compute",
+    "format": "rgba8fixed",
+    "inputextenduv": "hold",
+    "outputresolution": "custom",
+    "pixeldat": "shade_frag",
+    "resolutionh": 720,
+    "resolutionw": 1280,
+    "vec0name": "uView",
+    "vec0valuew": {
+     "expr": "op('ctl')['vrot']"
+    },
+    "vec0valuex": {
+     "expr": "op('ctl')['zoom']"
+    },
+    "vec0valuey": {
+     "expr": "op('ctl')['vx']"
+    },
+    "vec0valuez": {
+     "expr": "op('ctl')['vy']"
+    },
+    "vec1name": "uStyle",
+    "vec1valuew": {
+     "expr": "op('tk')['bump']"
+    },
+    "vec1valuex": {
+     "expr": "op('tk')['style']"
+    },
+    "vec1valuey": {
+     "expr": "op('ctl2')['paper']"
+    },
+    "vec1valuez": {
+     "expr": "op('ctl2')['refr']"
+    },
+    "vec2name": "uPaper",
+    "vec2valuew": {
+     "expr": "op('ctl2')['shasp']"
+    },
+    "vec2valuex": {
+     "expr": "op('tk')['p_r']"
+    },
+    "vec2valuey": {
+     "expr": "op('tk')['p_g']"
+    },
+    "vec2valuez": {
+     "expr": "op('tk')['p_b']"
+    },
+    "vec3name": "uInk0",
+    "vec3valuew": {
+     "expr": "op('ctl2')['shsize']"
+    },
+    "vec3valuex": {
+     "expr": "op('tk')['a_r']"
+    },
+    "vec3valuey": {
+     "expr": "op('tk')['a_g']"
+    },
+    "vec3valuez": {
+     "expr": "op('tk')['a_b']"
+    },
+    "vec4name": "uInk1",
+    "vec4valuex": {
+     "expr": "op('tk')['b_r']"
+    },
+    "vec4valuey": {
+     "expr": "op('tk')['b_g']"
+    },
+    "vec4valuez": {
+     "expr": "op('tk')['b_b']"
+    },
+    "vec5name": "uInk2",
+    "vec5valuex": {
+     "expr": "op('tk')['c_r']"
+    },
+    "vec5valuey": {
+     "expr": "op('tk')['c_g']"
+    },
+    "vec5valuez": {
+     "expr": "op('tk')['c_b']"
+    },
+    "vec6name": "uMore",
+    "vec6valuew": {
+     "expr": "op('tk')['bands']"
+    },
+    "vec6valuex": {
+     "expr": "op('ctl')['inv']"
+    },
+    "vec6valuey": {
+     "expr": "op('tk')['sharp']"
+    },
+    "vec6valuez": {
+     "expr": "op('tk')['mirror']"
+    },
+    "vec7name": "uFx",
+    "vec7valuew": {
+     "expr": "op('hub')['energy']"
+    },
+    "vec7valuex": {
+     "expr": "op('hub')['pulse']"
+    },
+    "vec7valuey": {
+     "expr": "op('hub')['hit_low']"
+    },
+    "vec7valuez": {
+     "expr": "op('hub')['hit_high']"
+    },
+    "vec8name": "uTime",
+    "vec8valuew": {
+     "expr": "op('shot')['seed']"
+    },
+    "vec8valuex": {
+     "expr": "op('hub')['evolve'] % 1000"
+    },
+    "vec8valuey": {
+     "expr": "op('shot')['age']"
+    },
+    "vec8valuez": {
+     "expr": "op('hub')['beat_pos']"
+    }
+   }
+  },
+  "shade_frag": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    1400,
+    -130
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.here('shaders/shade.frag')"
+    },
+    "language": "text",
+    "syncfile": true
+   },
+   "text_file": "experiments/sc_fluid_ink/shaders/shade.frag"
+  },
+  "shade_info": {
+   "type": "infoDAT",
+   "family": "DAT",
+   "pos": [
+    160,
+    -120
+   ],
+   "pars": {
+    "language": "text",
+    "op": "shade"
+   }
+  },
+  "shape": {
+   "type": "switchTOP",
+   "family": "TOP",
+   "pos": [
+    0,
+    -450
+   ],
+   "inputs": [
+    [
+     "phrase"
+    ],
+    [
+     "model"
+    ],
+    [
+     "page"
+    ],
+    [
+     "page_d"
+    ]
+   ],
+   "pars": {
+    "index": {
+     "expr": "3 if (op('tk')['shape'] == 2 and parent().par.Describe) else op('tk')['shape']"
+    }
+   }
+  },
+  "shot": {
+   "type": "constantCHOP",
+   "family": "CHOP",
+   "pos": [
+    -400,
+    330
+   ],
+   "pars": {
+    "const0name": "take",
+    "const0value": {
+     "expr": "parent().par.Take"
+    },
+    "const1name": "seed",
+    "const1value": {
+     "expr": "parent().par.Seed"
+    },
+    "const2name": "age",
+    "const2value": {
+     "expr": "max(0, absTime.seconds - parent().par.Shotstart)"
+    }
+   }
+  },
+  "spectrum": {
+   "type": "selectTOP",
+   "family": "TOP",
+   "pos": [
+    -400,
+    60
+   ],
+   "pars": {
+    "top": "/project1/sw_hub/spectex"
+   }
+  },
+  "src": {
+   "type": "glslTOP",
+   "family": "TOP",
+   "pos": [
+    200,
+    -450
+   ],
+   "inputs": [
+    [
+     "shape"
+    ],
+    [
+     "inp"
+    ],
+    [
+     "inmean"
+    ]
+   ],
+   "pars": {
+    "computedat": "src_compute",
+    "format": "rgba8fixed",
+    "outputresolution": "custom",
+    "pixeldat": "src_frag",
+    "resolutionh": 720,
+    "resolutionw": 1280,
+    "vec0name": "uSrc",
+    "vec0valuew": {
+     "expr": "op('tk')['copies']"
+    },
+    "vec0valuex": {
+     "expr": "op('tk')['src']"
+    },
+    "vec0valuey": {
+     "expr": "op('tk')['scale']"
+    },
+    "vec0valuez": {
+     "expr": "op('ctl')['rot']"
+    },
+    "vec1name": "uPos",
+    "vec1valuew": {
+     "expr": "op('hub')['section']"
+    },
+    "vec1valuex": {
+     "expr": "op('ctl')['px']"
+    },
+    "vec1valuey": {
+     "expr": "op('ctl')['py']"
+    },
+    "vec1valuez": {
+     "expr": "op('shot')['seed']"
+    },
+    "vec2name": "uSel",
+    "vec2valuew": 0.0,
+    "vec2valuex": {
+     "expr": "op('tk')['inka']"
+    },
+    "vec2valuey": {
+     "expr": "op('tk')['inkb']"
+    },
+    "vec2valuez": {
+     "expr": "op('hub')['evolve'] % 1000"
+    },
+    "vec3name": "uIn",
+    "vec3valuew": 0.0,
+    "vec3valuex": {
+     "expr": "op('ctl2')['inink']"
+    },
+    "vec3valuey": {
+     "expr": "op('tk')['incol']"
+    },
+    "vec3valuez": {
+     "expr": "op('tk')['ingain']"
+    },
+    "vec4name": "uInR",
+    "vec4valuew": 0.0,
+    "vec4valuex": {
+     "expr": "op('tk')['inlo']"
+    },
+    "vec4valuey": {
+     "expr": "op('tk')['inhi']"
+    },
+    "vec4valuez": 0.0
+   }
+  },
+  "src_frag": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    200,
+    -580
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.here('shaders/src.frag')"
+    },
+    "language": "text",
+    "syncfile": true
+   },
+   "text_file": "experiments/sc_fluid_ink/shaders/src.frag"
+  },
+  "src_info": {
+   "type": "infoDAT",
+   "family": "DAT",
+   "pos": [
+    160,
+    -120
+   ],
+   "pars": {
+    "language": "text",
+    "op": "src"
+   }
+  },
+  "takes": {
+   "type": "tableDAT",
+   "family": "DAT",
+   "pos": [
+    -400,
+    500
+   ],
+   "text": [
+    "name\tsrc\tshape\tfont\tscale\tpx\tpy\trot\tjit\trotj\tcopies\tinka\tinkb\trestamp\thold\tzoom\tvx\tvy\tvrot\tdrift\tstyle\tpaper\trefr\tbump\tsharp\tinv\tglow\tglowth\tmirror\tbands\tcaption\tstir\tbuoy\tvort\tdamp\tdiss\tarr\tkmode\tkgain\tsgain\tngain\tkink\tsink\tnink\think\tkamt\tsamt\thamt\tdcap\tdfeed\tinmode\tinfeed\tinbeat\tincol\tingain\tinlo\tinhi\tinrefr\tp_r\tp_g\tp_b\ta_r\ta_g\ta_b\tb_r\tb_g\tb_b\tc_r\tc_g\tc_b",
+    "phrase\t0\t0\t0\t0.62\t-0.12\t0.05\t0.0\t0.4\t0.12\t1\t0\t0\t1\t0.3\t1.0\t0.0\t0.0\t0.0\t0.015\t0\t0\t0.012\t5.0\t0.7\t0\t0.2\t0.72\t0\t6.0\t0\t0.8\t0.0\t0.3\t0.25\t0.1\t1.0\t0\t1.0\t1.0\t1.0\t1\t0\t1\t0\t0.5\t0.3\t0.4\t1\t0.0\t1\t0.012\t0.6\t0.7\t1.0\t0.06\t0.6\t0.1\t0.9294\t0.8902\t0.7843\t0.0667\t0.0824\t0.1059\t0.7804\t0.1569\t0.1098\t0.1569\t0.4941\t0.6078",
+    "marbling\t3\t0\t0\t1.0\t0.0\t0.0\t0.0\t0.0\t3.0\t1\t0\t1\t0\t0.12\t1.0\t0.0\t0.0\t0.0\t0.015\t0\t0\t0.012\t3.5\t0.7\t0\t0.2\t0.72\t0\t6.0\t0\t0.8\t0.0\t0.1\t0.25\t0.0\t1.0\t1\t1.6\t1.5\t1.0\t-1\t-1\t-1\t-1\t0.5\t0.3\t0.4\t1\t0.0\t1\t0.012\t0.6\t0.7\t1.0\t0.06\t0.6\t0.1\t0.9333\t0.8941\t0.8\t0.8\t0.1608\t0.0784\t0.9216\t0.698\t0.051\t0.051\t0.3608\t0.549",
+    "night\t1\t1\t0\t0.8\t0.3\t0.0\t0.0\t0.5\t0.12\t1\t0\t0\t1\t0.3\t1.0\t0.0\t0.0\t0.0\t0.015\t1\t0\t0.012\t4.0\t0.7\t0\t0.55\t0.55\t0\t6.0\t0\t0.9\t0.0\t0.3\t0.25\t0.04\t1.0\t1\t1.0\t1.0\t1.0\t2\t1\t1\t0\t0.8\t0.5\t0.4\t1\t0.0\t1\t0.012\t0.6\t0.7\t1.0\t0.06\t0.6\t0.1\t0.0431\t0.0863\t0.1255\t0.9333\t0.8941\t0.8\t0.8627\t0.7098\t0.2392\t0.8784\t0.3765\t0.5608",
+    "inkblot\t6\t0\t0\t1.0\t0.0\t0.0\t0.0\t0.0\t0.0\t1\t0\t1\t1\t0.35\t1.0\t0.0\t0.0\t0.0\t0.004\t0\t0\t0.012\t6.0\t0.7\t0\t0.2\t0.72\t1\t6.0\t1\t0.5\t0.0\t0.3\t0.25\t0.1\t1.0\t0\t1.0\t1.0\t1.0\t0\t1\t0\t0\t0.9\t0.6\t0.5\t1\t0.0\t1\t0.012\t0.6\t0.7\t1.0\t0.06\t0.6\t0.1\t0.9529\t0.9333\t0.8784\t0.0549\t0.0627\t0.0784\t0.702\t0.149\t0.1098\t0.0549\t0.0627\t0.0784",
+    "page\t2\t2\t0\t1.06\t0.0\t0.0\t-0.05\t0.06\t0.12\t1\t0\t0\t2\t0.45\t1.0\t0.0\t0.0\t0.0\t0.015\t2\t0\t0.012\t5.0\t1.0\t1\t0.0\t0.72\t0\t6.0\t0\t0.45\t0.0\t0.3\t0.25\t0.3\t1.0\t0\t1.0\t1.0\t1.0\t0\t0\t0\t0\t0.7\t0.3\t0.4\t0\t0.07\t1\t0.004\t0.0\t0.7\t1.0\t0.06\t0.6\t0.1\t1.0\t1.0\t1.0\t0.0\t0.0\t0.0\t0.0\t0.0\t0.0\t0.0\t0.0\t0.0",
+    "oil\t0\t0\t2\t1.5\t0.0\t0.0\t0.12\t0.7\t0.5\t1\t0\t2\t1\t0.3\t1.0\t0.0\t0.0\t0.0\t0.015\t3\t0\t0.01\t6.0\t0.0\t0\t0.5\t0.6\t0\t0.85\t0\t0.9\t0.0\t0.3\t0.25\t0.03\t1.0\t1\t1.3\t1.0\t1.0\t4\t1\t2\t0\t1.0\t0.7\t0.8\t1\t0.0\t1\t0.012\t0.6\t0.7\t1.0\t0.06\t0.6\t0.1\t0.0353\t0.0431\t0.0588\t1.0\t1.0\t1.0\t1.0\t1.0\t1.0\t1.0\t1.0\t1.0",
+    "sinking\t1\t1\t0\t0.34\t0.0\t0.27\t0.0\t0.25\t0.12\t3\t0\t1\t1\t0.5\t1.0\t0.0\t0.0\t0.0\t0.015\t0\t0\t0.012\t5.0\t0.7\t0\t0.2\t0.72\t0\t6.0\t0\t0.1\t1.0\t0.3\t0.25\t0.02\t0.0\t2\t1.0\t1.0\t1.0\t2\t1\t0\t0\t0.9\t0.3\t0.4\t1\t0.0\t1\t0.012\t0.6\t0.7\t1.0\t0.06\t0.6\t0.1\t0.8627\t0.8941\t0.7765\t0.1647\t0.2078\t0.149\t0.6039\t0.4196\t0.1216\t0.6588\t0.1961\t0.1686",
+    "survey\t1\t1\t0\t1.15\t-0.25\t0.0\t0.0\t0.5\t0.12\t1\t2\t2\t1\t0.3\t1.0\t0.0\t0.0\t0.0\t0.015\t4\t2\t0.0\t0.0\t0.0\t0\t0.0\t0.72\t0\t7.0\t0\t0.7\t0.0\t0.3\t0.25\t0.03\t1.0\t0\t1.0\t1.0\t1.0\t0\t1\t2\t1\t0.9\t0.6\t0.4\t1\t0.0\t1\t0.012\t0.6\t0.7\t1.0\t0.06\t0.6\t0.1\t0.8941\t0.9137\t0.8314\t0.6588\t0.1961\t0.1686\t0.7098\t0.4392\t0.1176\t0.1216\t0.3059\t0.4745",
+    "macro\t0\t0\t0\t3.0\t0.0\t0.0\t0.0\t1.2\t0.6\t1\t0\t2\t1\t0.3\t1.35\t0.0\t0.0\t0.0\t0.05\t0\t0\t0.02\t8.0\t0.7\t0\t0.2\t0.72\t0\t6.0\t0\t1.0\t0.0\t0.3\t0.25\t0.04\t1.0\t0\t1.0\t1.0\t1.0\t1\t2\t1\t0\t0.9\t0.6\t0.4\t1\t0.0\t1\t0.012\t0.6\t0.7\t1.0\t0.06\t0.6\t0.1\t0.9333\t0.8941\t0.8\t0.8\t0.1608\t0.0784\t0.9216\t0.698\t0.051\t0.051\t0.3608\t0.549",
+    "sheet\t0\t0\t2\t0.36\t0.42\t-0.1\t-0.2\t0.08\t0.12\t1\t0\t0\t1\t0.3\t1.15\t0.1\t0.0\t0.0\t0.015\t0\t1\t0.03\t5.0\t0.7\t0\t0.2\t0.72\t0\t6.0\t0\t0.4\t0.0\t0.3\t0.25\t0.04\t1.0\t0\t1.0\t1.0\t1.0\t1\t2\t2\t1\t0.4\t0.3\t0.4\t1\t0.0\t2\t0.012\t0.6\t0.7\t1.0\t0.06\t0.6\t0.1\t0.9451\t0.9255\t0.8667\t0.6588\t0.098\t0.0588\t0.0667\t0.0824\t0.1059\t0.1569\t0.4941\t0.6078"
+   ]
+  },
+  "tk": {
+   "type": "constantCHOP",
+   "family": "CHOP",
+   "pos": [
+    -200,
+    500
+   ],
+   "pars": {
+    "const0name": "src",
+    "const0value": {
+     "expr": "float(op('takes')[int(op('shot')['take']) % 10 + 1, 'src'])"
+    },
+    "const10name": "inka",
+    "const10value": {
+     "expr": "float(op('takes')[int(op('shot')['take']) % 10 + 1, 'inka'])"
+    },
+    "const11name": "inkb",
+    "const11value": {
+     "expr": "float(op('takes')[int(op('shot')['take']) % 10 + 1, 'inkb'])"
+    },
+    "const12name": "restamp",
+    "const12value": {
+     "expr": "float(op('takes')[int(op('shot')['take']) % 10 + 1, 'restamp'])"
+    },
+    "const13name": "hold",
+    "const13value": {
+     "expr": "float(op('takes')[int(op('shot')['take']) % 10 + 1, 'hold'])"
+    },
+    "const14name": "zoom",
+    "const14value": {
+     "expr": "float(op('takes')[int(op('shot')['take']) % 10 + 1, 'zoom'])"
+    },
+    "const15name": "vx",
+    "const15value": {
+     "expr": "float(op('takes')[int(op('shot')['take']) % 10 + 1, 'vx'])"
+    },
+    "const16name": "vy",
+    "const16value": {
+     "expr": "float(op('takes')[int(op('shot')['take']) % 10 + 1, 'vy'])"
+    },
+    "const17name": "vrot",
+    "const17value": {
+     "expr": "float(op('takes')[int(op('shot')['take']) % 10 + 1, 'vrot'])"
+    },
+    "const18name": "drift",
+    "const18value": {
+     "expr": "float(op('takes')[int(op('shot')['take']) % 10 + 1, 'drift'])"
+    },
+    "const19name": "style",
+    "const19value": {
+     "expr": "float(op('takes')[int(op('shot')['take']) % 10 + 1, 'style'])"
+    },
+    "const1name": "shape",
+    "const1value": {
+     "expr": "float(op('takes')[int(op('shot')['take']) % 10 + 1, 'shape'])"
+    },
+    "const20name": "paper",
+    "const20value": {
+     "expr": "float(op('takes')[int(op('shot')['take']) % 10 + 1, 'paper'])"
+    },
+    "const21name": "refr",
+    "const21value": {
+     "expr": "float(op('takes')[int(op('shot')['take']) % 10 + 1, 'refr'])"
+    },
+    "const22name": "bump",
+    "const22value": {
+     "expr": "float(op('takes')[int(op('shot')['take']) % 10 + 1, 'bump'])"
+    },
+    "const23name": "sharp",
+    "const23value": {
+     "expr": "float(op('takes')[int(op('shot')['take']) % 10 + 1, 'sharp'])"
+    },
+    "const24name": "inv",
+    "const24value": {
+     "expr": "float(op('takes')[int(op('shot')['take']) % 10 + 1, 'inv'])"
+    },
+    "const25name": "glow",
+    "const25value": {
+     "expr": "float(op('takes')[int(op('shot')['take']) % 10 + 1, 'glow'])"
+    },
+    "const26name": "glowth",
+    "const26value": {
+     "expr": "float(op('takes')[int(op('shot')['take']) % 10 + 1, 'glowth'])"
+    },
+    "const27name": "mirror",
+    "const27value": {
+     "expr": "float(op('takes')[int(op('shot')['take']) % 10 + 1, 'mirror'])"
+    },
+    "const28name": "bands",
+    "const28value": {
+     "expr": "float(op('takes')[int(op('shot')['take']) % 10 + 1, 'bands'])"
+    },
+    "const29name": "caption",
+    "const29value": {
+     "expr": "float(op('takes')[int(op('shot')['take']) % 10 + 1, 'caption'])"
+    },
+    "const2name": "font",
+    "const2value": {
+     "expr": "float(op('takes')[int(op('shot')['take']) % 10 + 1, 'font'])"
+    },
+    "const30name": "stir",
+    "const30value": {
+     "expr": "float(op('takes')[int(op('shot')['take']) % 10 + 1, 'stir'])"
+    },
+    "const31name": "buoy",
+    "const31value": {
+     "expr": "float(op('takes')[int(op('shot')['take']) % 10 + 1, 'buoy'])"
+    },
+    "const32name": "vort",
+    "const32value": {
+     "expr": "float(op('takes')[int(op('shot')['take']) % 10 + 1, 'vort'])"
+    },
+    "const33name": "damp",
+    "const33value": {
+     "expr": "float(op('takes')[int(op('shot')['take']) % 10 + 1, 'damp'])"
+    },
+    "const34name": "diss",
+    "const34value": {
+     "expr": "float(op('takes')[int(op('shot')['take']) % 10 + 1, 'diss'])"
+    },
+    "const35name": "arr",
+    "const35value": {
+     "expr": "float(op('takes')[int(op('shot')['take']) % 10 + 1, 'arr'])"
+    },
+    "const36name": "kmode",
+    "const36value": {
+     "expr": "float(op('takes')[int(op('shot')['take']) % 10 + 1, 'kmode'])"
+    },
+    "const37name": "kgain",
+    "const37value": {
+     "expr": "float(op('takes')[int(op('shot')['take']) % 10 + 1, 'kgain'])"
+    },
+    "const38name": "sgain",
+    "const38value": {
+     "expr": "float(op('takes')[int(op('shot')['take']) % 10 + 1, 'sgain'])"
+    },
+    "const39name": "ngain",
+    "const39value": {
+     "expr": "float(op('takes')[int(op('shot')['take']) % 10 + 1, 'ngain'])"
+    },
+    "const3name": "scale",
+    "const3value": {
+     "expr": "float(op('takes')[int(op('shot')['take']) % 10 + 1, 'scale'])"
+    },
+    "const40name": "kink",
+    "const40value": {
+     "expr": "float(op('takes')[int(op('shot')['take']) % 10 + 1, 'kink'])"
+    },
+    "const41name": "sink",
+    "const41value": {
+     "expr": "float(op('takes')[int(op('shot')['take']) % 10 + 1, 'sink'])"
+    },
+    "const42name": "nink",
+    "const42value": {
+     "expr": "float(op('takes')[int(op('shot')['take']) % 10 + 1, 'nink'])"
+    },
+    "const43name": "hink",
+    "const43value": {
+     "expr": "float(op('takes')[int(op('shot')['take']) % 10 + 1, 'hink'])"
+    },
+    "const44name": "kamt",
+    "const44value": {
+     "expr": "float(op('takes')[int(op('shot')['take']) % 10 + 1, 'kamt'])"
+    },
+    "const45name": "samt",
+    "const45value": {
+     "expr": "float(op('takes')[int(op('shot')['take']) % 10 + 1, 'samt'])"
+    },
+    "const46name": "hamt",
+    "const46value": {
+     "expr": "float(op('takes')[int(op('shot')['take']) % 10 + 1, 'hamt'])"
+    },
+    "const47name": "dcap",
+    "const47value": {
+     "expr": "float(op('takes')[int(op('shot')['take']) % 10 + 1, 'dcap'])"
+    },
+    "const48name": "dfeed",
+    "const48value": {
+     "expr": "float(op('takes')[int(op('shot')['take']) % 10 + 1, 'dfeed'])"
+    },
+    "const49name": "inmode",
+    "const49value": {
+     "expr": "float(op('takes')[int(op('shot')['take']) % 10 + 1, 'inmode'])"
+    },
+    "const4name": "px",
+    "const4value": {
+     "expr": "float(op('takes')[int(op('shot')['take']) % 10 + 1, 'px'])"
+    },
+    "const50name": "infeed",
+    "const50value": {
+     "expr": "float(op('takes')[int(op('shot')['take']) % 10 + 1, 'infeed'])"
+    },
+    "const51name": "inbeat",
+    "const51value": {
+     "expr": "float(op('takes')[int(op('shot')['take']) % 10 + 1, 'inbeat'])"
+    },
+    "const52name": "incol",
+    "const52value": {
+     "expr": "float(op('takes')[int(op('shot')['take']) % 10 + 1, 'incol'])"
+    },
+    "const53name": "ingain",
+    "const53value": {
+     "expr": "float(op('takes')[int(op('shot')['take']) % 10 + 1, 'ingain'])"
+    },
+    "const54name": "inlo",
+    "const54value": {
+     "expr": "float(op('takes')[int(op('shot')['take']) % 10 + 1, 'inlo'])"
+    },
+    "const55name": "inhi",
+    "const55value": {
+     "expr": "float(op('takes')[int(op('shot')['take']) % 10 + 1, 'inhi'])"
+    },
+    "const56name": "inrefr",
+    "const56value": {
+     "expr": "float(op('takes')[int(op('shot')['take']) % 10 + 1, 'inrefr'])"
+    },
+    "const57name": "p_r",
+    "const57value": {
+     "expr": "float(op('takes')[int(op('shot')['take']) % 10 + 1, 'p_r'])"
+    },
+    "const58name": "p_g",
+    "const58value": {
+     "expr": "float(op('takes')[int(op('shot')['take']) % 10 + 1, 'p_g'])"
+    },
+    "const59name": "p_b",
+    "const59value": {
+     "expr": "float(op('takes')[int(op('shot')['take']) % 10 + 1, 'p_b'])"
+    },
+    "const5name": "py",
+    "const5value": {
+     "expr": "float(op('takes')[int(op('shot')['take']) % 10 + 1, 'py'])"
+    },
+    "const60name": "a_r",
+    "const60value": {
+     "expr": "float(op('takes')[int(op('shot')['take']) % 10 + 1, 'a_r'])"
+    },
+    "const61name": "a_g",
+    "const61value": {
+     "expr": "float(op('takes')[int(op('shot')['take']) % 10 + 1, 'a_g'])"
+    },
+    "const62name": "a_b",
+    "const62value": {
+     "expr": "float(op('takes')[int(op('shot')['take']) % 10 + 1, 'a_b'])"
+    },
+    "const63name": "b_r",
+    "const63value": {
+     "expr": "float(op('takes')[int(op('shot')['take']) % 10 + 1, 'b_r'])"
+    },
+    "const64name": "b_g",
+    "const64value": {
+     "expr": "float(op('takes')[int(op('shot')['take']) % 10 + 1, 'b_g'])"
+    },
+    "const65name": "b_b",
+    "const65value": {
+     "expr": "float(op('takes')[int(op('shot')['take']) % 10 + 1, 'b_b'])"
+    },
+    "const66name": "c_r",
+    "const66value": {
+     "expr": "float(op('takes')[int(op('shot')['take']) % 10 + 1, 'c_r'])"
+    },
+    "const67name": "c_g",
+    "const67value": {
+     "expr": "float(op('takes')[int(op('shot')['take']) % 10 + 1, 'c_g'])"
+    },
+    "const68name": "c_b",
+    "const68value": {
+     "expr": "float(op('takes')[int(op('shot')['take']) % 10 + 1, 'c_b'])"
+    },
+    "const6name": "rot",
+    "const6value": {
+     "expr": "float(op('takes')[int(op('shot')['take']) % 10 + 1, 'rot'])"
+    },
+    "const7name": "jit",
+    "const7value": {
+     "expr": "float(op('takes')[int(op('shot')['take']) % 10 + 1, 'jit'])"
+    },
+    "const8name": "rotj",
+    "const8value": {
+     "expr": "float(op('takes')[int(op('shot')['take']) % 10 + 1, 'rotj'])"
+    },
+    "const9name": "copies",
+    "const9value": {
+     "expr": "float(op('takes')[int(op('shot')['take']) % 10 + 1, 'copies'])"
+    }
+   }
+  },
+  "tune": {
+   "type": "lagCHOP",
+   "family": "CHOP",
+   "pos": [
+    250,
+    60
+   ],
+   "inputs": [
+    [
+     "pitch_hold"
+    ]
+   ],
+   "pars": {
+    "lag1": 0.25,
+    "lag2": 0.25,
+    "timeslice": true
+   }
+  },
+  "vstep": {
+   "type": "glslTOP",
+   "family": "TOP",
+   "pos": [
+    400,
+    0
+   ],
+   "inputs": [
+    [
+     "fbv"
+    ],
+    [
+     "fbd"
+    ]
+   ],
+   "pars": {
+    "computedat": "vstep_compute",
+    "format": "rgba32float",
+    "inputextenduv": "hold",
+    "outputresolution": "custom",
+    "pixeldat": "vstep_frag",
+    "resolutionh": 180,
+    "resolutionw": 320,
+    "vec0name": "uTime",
+    "vec0valuew": {
+     "expr": "op('ctl')['boot']"
+    },
+    "vec0valuex": {
+     "expr": "op('hub')['evolve'] % 1000"
+    },
+    "vec0valuey": {
+     "expr": "op('shot')['age']"
+    },
+    "vec0valuez": {
+     "expr": "op('ctl')['id']"
+    },
+    "vec1name": "uHits",
+    "vec1valuew": {
+     "expr": "op('hub')['bass']"
+    },
+    "vec1valuex": {
+     "expr": "op('hub')['hit_low']"
+    },
+    "vec1valuey": {
+     "expr": "op('hub')['hit_mid']"
+    },
+    "vec1valuez": {
+     "expr": "op('hub')['hit_high']"
+    },
+    "vec2name": "uK",
+    "vec2valuew": {
+     "expr": "op('tk')['kmode']"
+    },
+    "vec2valuex": {
+     "expr": "op('ctl')['k1']"
+    },
+    "vec2valuey": {
+     "expr": "op('ctl')['k2']"
+    },
+    "vec2valuez": {
+     "expr": "op('ctl')['k3']"
+    },
+    "vec3name": "uS",
+    "vec3valuew": {
+     "expr": "op('hub')['vocals']"
+    },
+    "vec3valuex": {
+     "expr": "op('ctl')['s1']"
+    },
+    "vec3valuey": {
+     "expr": "op('ctl')['s2']"
+    },
+    "vec3valuez": {
+     "expr": "op('ctl')['s3']"
+    },
+    "vec4name": "uNoz",
+    "vec4valuew": {
+     "expr": "op('ctl')['na']"
+    },
+    "vec4valuex": {
+     "expr": "op('ctl')['nx']"
+    },
+    "vec4valuey": {
+     "expr": "op('ctl')['ny']"
+    },
+    "vec4valuez": {
+     "expr": "op('ctl')['ns']"
+    },
+    "vec5name": "uTake",
+    "vec5valuew": {
+     "expr": "op('tk')['damp']"
+    },
+    "vec5valuex": {
+     "expr": "op('tk')['stir']"
+    },
+    "vec5valuey": {
+     "expr": "op('tk')['buoy']"
+    },
+    "vec5valuez": {
+     "expr": "op('tk')['vort']"
+    },
+    "vec6name": "uGain",
+    "vec6valuew": {
+     "expr": "op('tk')['arr']"
+    },
+    "vec6valuex": {
+     "expr": "op('tk')['kgain']"
+    },
+    "vec6valuey": {
+     "expr": "op('tk')['sgain']"
+    }
+   }
+  },
+  "vstep_frag": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    400,
+    -130
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.here('shaders/vstep.frag')"
+    },
+    "language": "text",
+    "syncfile": true
+   },
+   "text_file": "experiments/sc_fluid_ink/shaders/vstep.frag"
+  },
+  "vstep_info": {
+   "type": "infoDAT",
+   "family": "DAT",
+   "pos": [
+    160,
+    -120
+   ],
+   "pars": {
+    "language": "text",
+    "op": "vstep"
+   }
+  }
+ }
+}

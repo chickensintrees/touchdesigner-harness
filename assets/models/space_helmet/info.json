@@ -1,0 +1,22 @@
+{
+ "slug": "space_helmet",
+ "source": "space_helmet",
+ "parts_joined": 1,
+ "vertices": 25434,
+ "triangles": 29560,
+ "decimated": false,
+ "original_size_m": [
+  0.9996,
+  0.9929,
+  0.9108
+ ],
+ "size_units": [
+  1.0,
+  0.9112,
+  0.9933
+ ],
+ "has_uv": true,
+ "has_texture": true,
+ "generator": "TRELLIS.2",
+ "prompt": "a white astronaut helmet with a large gold reflective visor, hose connectors and a neck ring, sitting on a surface"
+}

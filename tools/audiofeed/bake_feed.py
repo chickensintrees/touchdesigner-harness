@@ -180,7 +180,8 @@ def bake(score: dict) -> tuple[list[str], list[list[float]], dict]:
         "beats": len(beats),
         "bars": len(bars),
         "section_starts": section_starts,
-        "source": score["source"].get("path"),
+        # The file's name only: a feed must not record a folder on the machine that baked it.
+        "source": Path(str(score["source"].get("path") or "")).name,
         "score_status": score.get("status"),
     }
     return CHANNELS, rows, meta

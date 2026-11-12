@@ -1,0 +1,22 @@
+{
+ "slug": "astrolabe",
+ "source": "astrolabe",
+ "parts_joined": 1,
+ "vertices": 24564,
+ "triangles": 29403,
+ "decimated": false,
+ "original_size_m": [
+  0.6391,
+  0.6395,
+  1.0014
+ ],
+ "size_units": [
+  0.6383,
+  1.0,
+  0.6387
+ ],
+ "has_uv": true,
+ "has_texture": true,
+ "generator": "TRELLIS.2",
+ "prompt": "a brass armillary sphere on a turned stand: nested engraved rings around a small central globe, an antique astronomical instrument"
+}

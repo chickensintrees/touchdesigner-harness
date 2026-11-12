@@ -1,0 +1,2137 @@
+{
+ "format": "tdh-snapshot/1",
+ "root": "/project1/sc_kifs_office",
+ "ops": {
+  "cook_driver": {
+   "type": "executeDAT",
+   "family": "DAT",
+   "pos": [
+    -400,
+    -80
+   ],
+   "pars": {
+    "framestart": true,
+    "language": "python"
+   },
+   "text": [
+    "def onFrameStart(frame):",
+    "    hub = op('/project1/sw_hub')",
+    "    me_on = parent().par.Preview.eval()",
+    "    if hub is not None:",
+    "        me_on = me_on or hub.par.Solo.eval() or hub.par.Scene.eval() == parent().name",
+    "    if me_on:",
+    "        op('hub').cook(force=True)",
+    "        op('out1').cook(force=True)",
+    "    return"
+   ]
+  },
+  "d0": {
+   "type": "blurTOP",
+   "family": "TOP",
+   "pos": [
+    -2200,
+    450
+   ],
+   "inputs": [
+    [
+     "d0_comp"
+    ]
+   ],
+   "pars": {
+    "extend": "repeat",
+    "filtertype": "mipmap",
+    "size": 5
+   }
+  },
+  "d0_comp": {
+   "type": "layoutTOP",
+   "family": "TOP",
+   "pos": [
+    -2200,
+    560
+   ],
+   "pars": {
+    "align": "verttb",
+    "bgcolora": 1.0,
+    "fit": "fill",
+    "outputresolution": "custom",
+    "resolutionh": 1024,
+    "resolutionw": 1024,
+    "tops": "d0r[0-9]"
+   }
+  },
+  "d0r0": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    -2200,
+    1500
+   ],
+   "pars": {
+    "font": "Impact",
+    "fontfile": {
+     "expr": "mod.paths.font('archivo')"
+    },
+    "fontsizex": 100.87512523232189,
+    "fontsizexunit": "pixels",
+    "outputresolution": "custom",
+    "resmult": false,
+    "resolutionw": 1024,
+    "text": "RAY MARCHING"
+   }
+  },
+  "d0r1": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    -2200,
+    1390
+   ],
+   "pars": {
+    "font": "Impact",
+    "fontcolorb": 0.0,
+    "fontcolorg": 0.0,
+    "fontfile": {
+     "expr": "mod.paths.font('archivo')"
+    },
+    "fontsizex": 108.94963933087521,
+    "fontsizexunit": "pixels",
+    "outputresolution": "custom",
+    "resmult": false,
+    "resolutionw": 1024,
+    "text": "NO POLYGONS"
+   }
+  },
+  "d0r2": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    -2200,
+    1280
+   ],
+   "pars": {
+    "font": "Impact",
+    "fontfile": {
+     "expr": "mod.paths.font('archivo')"
+    },
+    "fontsizex": 110.0,
+    "fontsizexunit": "pixels",
+    "outputresolution": "custom",
+    "resmult": false,
+    "resolutionw": 1024,
+    "text": "ONE SHADER"
+   }
+  },
+  "d0r3": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    -2200,
+    1170
+   ],
+   "pars": {
+    "font": "Impact",
+    "fontfile": {
+     "expr": "mod.paths.font('archivo')"
+    },
+    "fontsizex": 108.58691040039287,
+    "fontsizexunit": "pixels",
+    "outputresolution": "custom",
+    "resmult": false,
+    "resolutionw": 1024,
+    "text": "80 STEPS MAX"
+   }
+  },
+  "d1": {
+   "type": "blurTOP",
+   "family": "TOP",
+   "pos": [
+    -1980,
+    450
+   ],
+   "inputs": [
+    [
+     "d1_comp"
+    ]
+   ],
+   "pars": {
+    "extend": "repeat",
+    "filtertype": "mipmap",
+    "size": 5
+   }
+  },
+  "d1_comp": {
+   "type": "layoutTOP",
+   "family": "TOP",
+   "pos": [
+    -1980,
+    560
+   ],
+   "pars": {
+    "align": "verttb",
+    "bgcolora": 1.0,
+    "fit": "fill",
+    "outputresolution": "custom",
+    "resolutionh": 1024,
+    "resolutionw": 1024,
+    "tops": "d1r[0-9]"
+   }
+  },
+  "d1r0": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    -1980,
+    1500
+   ],
+   "pars": {
+    "font": "Impact",
+    "fontfile": {
+     "expr": "mod.paths.font('archivo')"
+    },
+    "fontsizex": 94.82501221664887,
+    "fontsizexunit": "pixels",
+    "outputresolution": "custom",
+    "resmult": false,
+    "resolutionw": 1024,
+    "text": "FRACTAL BLOCK"
+   }
+  },
+  "d1r1": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    -1980,
+    1390
+   ],
+   "pars": {
+    "font": "Impact",
+    "fontcolorb": 0.0,
+    "fontcolorg": 0.0,
+    "fontfile": {
+     "expr": "mod.paths.font('archivo')"
+    },
+    "fontsizex": 107.3427520790868,
+    "fontsizexunit": "pixels",
+    "outputresolution": "custom",
+    "resmult": false,
+    "resolutionw": 1024,
+    "text": "SOFT SHADOW"
+   }
+  },
+  "d1r2": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    -1980,
+    1280
+   ],
+   "pars": {
+    "font": "Impact",
+    "fontfile": {
+     "expr": "mod.paths.font('archivo')"
+    },
+    "fontsizex": 94.92721374619939,
+    "fontsizexunit": "pixels",
+    "outputresolution": "custom",
+    "resmult": false,
+    "resolutionw": 1024,
+    "text": "FOLDED 3 TIMES"
+   }
+  },
+  "d1r3": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    -1980,
+    1170
+   ],
+   "pars": {
+    "font": "Impact",
+    "fontfile": {
+     "expr": "mod.paths.font('archivo')"
+    },
+    "fontsizex": 107.72352546592535,
+    "fontsizexunit": "pixels",
+    "outputresolution": "custom",
+    "resmult": false,
+    "resolutionw": 1024,
+    "text": "RAY MARCHED"
+   }
+  },
+  "d2": {
+   "type": "blurTOP",
+   "family": "TOP",
+   "pos": [
+    -1760,
+    450
+   ],
+   "inputs": [
+    [
+     "d2_comp"
+    ]
+   ],
+   "pars": {
+    "extend": "repeat",
+    "filtertype": "mipmap",
+    "size": 5
+   }
+  },
+  "d2_comp": {
+   "type": "layoutTOP",
+   "family": "TOP",
+   "pos": [
+    -1760,
+    560
+   ],
+   "pars": {
+    "align": "verttb",
+    "bgcolora": 1.0,
+    "fit": "fill",
+    "outputresolution": "custom",
+    "resolutionh": 1280,
+    "resolutionw": 1280,
+    "tops": "d2r[0-9]"
+   }
+  },
+  "d2r0": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    -1760,
+    1500
+   ],
+   "pars": {
+    "font": "Impact",
+    "fontfile": {
+     "expr": "mod.paths.font('barlow')"
+    },
+    "fontsizex": 128.0,
+    "fontsizexunit": "pixels",
+    "outputresolution": "custom",
+    "resmult": false,
+    "resolutionh": 160,
+    "resolutionw": 1280,
+    "text": "1-BIT 1-BIT 1-BIT 1-BIT"
+   }
+  },
+  "d2r1": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    -1760,
+    1390
+   ],
+   "pars": {
+    "font": "Impact",
+    "fontcolorb": 0.0,
+    "fontcolorg": 0.0,
+    "fontfile": {
+     "expr": "mod.paths.font('barlow')"
+    },
+    "fontsizex": 128.0,
+    "fontsizexunit": "pixels",
+    "outputresolution": "custom",
+    "resmult": false,
+    "resolutionh": 160,
+    "resolutionw": 1280,
+    "text": "DITHER DITHER DITHER"
+   }
+  },
+  "d2r2": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    -1760,
+    1280
+   ],
+   "pars": {
+    "font": "Impact",
+    "fontfile": {
+     "expr": "mod.paths.font('barlow')"
+    },
+    "fontsizex": 128.0,
+    "fontsizexunit": "pixels",
+    "outputresolution": "custom",
+    "resmult": false,
+    "resolutionh": 160,
+    "resolutionw": 1280,
+    "text": "RAY MARCH RAY MARCH"
+   }
+  },
+  "d2r3": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    -1760,
+    1170
+   ],
+   "pars": {
+    "font": "Impact",
+    "fontfile": {
+     "expr": "mod.paths.font('barlow')"
+    },
+    "fontsizex": 123.17665260145274,
+    "fontsizexunit": "pixels",
+    "outputresolution": "custom",
+    "resmult": false,
+    "resolutionh": 160,
+    "resolutionw": 1280,
+    "text": "BLACK WHITE BLACK WHITE"
+   }
+  },
+  "d2r4": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    -1760,
+    1060
+   ],
+   "pars": {
+    "font": "Impact",
+    "fontfile": {
+     "expr": "mod.paths.font('barlow')"
+    },
+    "fontsizex": 128.0,
+    "fontsizexunit": "pixels",
+    "outputresolution": "custom",
+    "resmult": false,
+    "resolutionh": 160,
+    "resolutionw": 1280,
+    "text": "1-BIT 1-BIT 1-BIT 1-BIT"
+   }
+  },
+  "d2r5": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    -1760,
+    950
+   ],
+   "pars": {
+    "font": "Impact",
+    "fontcolorb": 0.0,
+    "fontcolorg": 0.0,
+    "fontfile": {
+     "expr": "mod.paths.font('barlow')"
+    },
+    "fontsizex": 127.85193955524753,
+    "fontsizexunit": "pixels",
+    "outputresolution": "custom",
+    "resmult": false,
+    "resolutionh": 160,
+    "resolutionw": 1280,
+    "text": "NO GREY NO GREY NO GREY"
+   }
+  },
+  "d2r6": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    -1760,
+    840
+   ],
+   "pars": {
+    "font": "Impact",
+    "fontfile": {
+     "expr": "mod.paths.font('barlow')"
+    },
+    "fontsizex": 128.0,
+    "fontsizexunit": "pixels",
+    "outputresolution": "custom",
+    "resmult": false,
+    "resolutionh": 160,
+    "resolutionw": 1280,
+    "text": "DITHER DITHER DITHER"
+   }
+  },
+  "d2r7": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    -1760,
+    730
+   ],
+   "pars": {
+    "font": "Impact",
+    "fontfile": {
+     "expr": "mod.paths.font('barlow')"
+    },
+    "fontsizex": 128.0,
+    "fontsizexunit": "pixels",
+    "outputresolution": "custom",
+    "resmult": false,
+    "resolutionh": 160,
+    "resolutionw": 1280,
+    "text": "SNARE = NEGATIVE"
+   }
+  },
+  "d3": {
+   "type": "blurTOP",
+   "family": "TOP",
+   "pos": [
+    -1540,
+    450
+   ],
+   "inputs": [
+    [
+     "d3_comp"
+    ]
+   ],
+   "pars": {
+    "extend": "repeat",
+    "filtertype": "mipmap",
+    "size": 5
+   }
+  },
+  "d3_comp": {
+   "type": "layoutTOP",
+   "family": "TOP",
+   "pos": [
+    -1540,
+    560
+   ],
+   "pars": {
+    "align": "verttb",
+    "bgcolora": 1.0,
+    "fit": "fill",
+    "outputresolution": "custom",
+    "resolutionh": 1280,
+    "resolutionw": 1280,
+    "tops": "d3r[0-9]"
+   }
+  },
+  "d3r0": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    -1540,
+    1500
+   ],
+   "pars": {
+    "font": "Impact",
+    "fontfile": {
+     "expr": "mod.paths.font('barlow')"
+    },
+    "fontsizex": 83.63137112233618,
+    "fontsizexunit": "pixels",
+    "outputresolution": "custom",
+    "resmult": false,
+    "resolutionh": 160,
+    "resolutionw": 1280,
+    "text": "RAISED TYPE  RAISED TYPE  RAISED TYPE"
+   }
+  },
+  "d3r1": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    -1540,
+    1390
+   ],
+   "pars": {
+    "font": "Impact",
+    "fontcolorb": 0.0,
+    "fontcolorg": 0.0,
+    "fontfile": {
+     "expr": "mod.paths.font('barlow')"
+    },
+    "fontsizex": 89.64245504841217,
+    "fontsizexunit": "pixels",
+    "outputresolution": "custom",
+    "resmult": false,
+    "resolutionh": 160,
+    "resolutionw": 1280,
+    "text": "HEIGHT MAP  HEIGHT MAP  HEIGHT MAP"
+   }
+  },
+  "d3r2": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    -1540,
+    1280
+   ],
+   "pars": {
+    "font": "Impact",
+    "fontfile": {
+     "expr": "mod.paths.font('barlow')"
+    },
+    "fontsizex": 90.0,
+    "fontsizexunit": "pixels",
+    "outputresolution": "custom",
+    "resmult": false,
+    "resolutionh": 160,
+    "resolutionw": 1280,
+    "text": "SIDE LIGHT  SIDE LIGHT  SIDE LIGHT"
+   }
+  },
+  "d3r3": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    -1540,
+    1170
+   ],
+   "pars": {
+    "font": "Impact",
+    "fontfile": {
+     "expr": "mod.paths.font('barlow')"
+    },
+    "fontsizex": 89.49071496348333,
+    "fontsizexunit": "pixels",
+    "outputresolution": "custom",
+    "resmult": false,
+    "resolutionh": 160,
+    "resolutionw": 1280,
+    "text": "NO MESH  NO MESH  NO MESH  NO MESH"
+   }
+  },
+  "d3r4": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    -1540,
+    1060
+   ],
+   "pars": {
+    "font": "Impact",
+    "fontfile": {
+     "expr": "mod.paths.font('barlow')"
+    },
+    "fontsizex": 83.63137112233618,
+    "fontsizexunit": "pixels",
+    "outputresolution": "custom",
+    "resmult": false,
+    "resolutionh": 160,
+    "resolutionw": 1280,
+    "text": "RAISED TYPE  RAISED TYPE  RAISED TYPE"
+   }
+  },
+  "d3r5": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    -1540,
+    950
+   ],
+   "pars": {
+    "font": "Impact",
+    "fontcolorb": 0.0,
+    "fontcolorg": 0.0,
+    "fontfile": {
+     "expr": "mod.paths.font('barlow')"
+    },
+    "fontsizex": 90.0,
+    "fontsizexunit": "pixels",
+    "outputresolution": "custom",
+    "resmult": false,
+    "resolutionh": 160,
+    "resolutionw": 1280,
+    "text": "RAY MARCH  RAY MARCH  RAY MARCH"
+   }
+  },
+  "d3r6": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    -1540,
+    840
+   ],
+   "pars": {
+    "font": "Impact",
+    "fontfile": {
+     "expr": "mod.paths.font('barlow')"
+    },
+    "fontsizex": 88.93440013713158,
+    "fontsizexunit": "pixels",
+    "outputresolution": "custom",
+    "resmult": false,
+    "resolutionh": 160,
+    "resolutionw": 1280,
+    "text": "RAKING SUN  RAKING SUN  RAKING SUN"
+   }
+  },
+  "d3r7": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    -1540,
+    730
+   ],
+   "pars": {
+    "font": "Impact",
+    "fontfile": {
+     "expr": "mod.paths.font('barlow')"
+    },
+    "fontsizex": 88.79150865024762,
+    "fontsizexunit": "pixels",
+    "outputresolution": "custom",
+    "resmult": false,
+    "resolutionh": 160,
+    "resolutionw": 1280,
+    "text": "MACRO  MACRO  MACRO  MACRO  MACRO"
+   }
+  },
+  "d4": {
+   "type": "blurTOP",
+   "family": "TOP",
+   "pos": [
+    -1320,
+    450
+   ],
+   "inputs": [
+    [
+     "d4_comp"
+    ]
+   ],
+   "pars": {
+    "extend": "repeat",
+    "filtertype": "mipmap",
+    "size": 5
+   }
+  },
+  "d4_comp": {
+   "type": "layoutTOP",
+   "family": "TOP",
+   "pos": [
+    -1320,
+    560
+   ],
+   "pars": {
+    "align": "verttb",
+    "bgcolora": 1.0,
+    "fit": "fill",
+    "outputresolution": "custom",
+    "resolutionh": 1024,
+    "resolutionw": 1024,
+    "tops": "d4r[0-9]"
+   }
+  },
+  "d4r0": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    -1320,
+    1500
+   ],
+   "pars": {
+    "font": "Impact",
+    "fontfile": {
+     "expr": "mod.paths.font('archivo')"
+    },
+    "fontsizex": 93.41676223033693,
+    "fontsizexunit": "pixels",
+    "outputresolution": "custom",
+    "resmult": false,
+    "resolutionw": 1024,
+    "text": "CARVED SPHERE"
+   }
+  },
+  "d4r1": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    -1320,
+    1390
+   ],
+   "pars": {
+    "font": "Impact",
+    "fontcolorb": 0.0,
+    "fontcolorg": 0.0,
+    "fontfile": {
+     "expr": "mod.paths.font('archivo')"
+    },
+    "fontsizex": 99.09303797144321,
+    "fontsizexunit": "pixels",
+    "outputresolution": "custom",
+    "resmult": false,
+    "resolutionw": 1024,
+    "text": "ONE ORB LIGHT"
+   }
+  },
+  "d4r2": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    -1320,
+    1280
+   ],
+   "pars": {
+    "font": "Impact",
+    "fontfile": {
+     "expr": "mod.paths.font('archivo')"
+    },
+    "fontsizex": 94.92721374619939,
+    "fontsizexunit": "pixels",
+    "outputresolution": "custom",
+    "resmult": false,
+    "resolutionw": 1024,
+    "text": "FOLDED 4 TIMES"
+   }
+  },
+  "d4r3": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    -1320,
+    1170
+   ],
+   "pars": {
+    "font": "Impact",
+    "fontfile": {
+     "expr": "mod.paths.font('archivo')"
+    },
+    "fontsizex": 107.72352546592535,
+    "fontsizexunit": "pixels",
+    "outputresolution": "custom",
+    "resmult": false,
+    "resolutionw": 1024,
+    "text": "RAY MARCHED"
+   }
+  },
+  "d5": {
+   "type": "blurTOP",
+   "family": "TOP",
+   "pos": [
+    -1100,
+    450
+   ],
+   "inputs": [
+    [
+     "d5_comp"
+    ]
+   ],
+   "pars": {
+    "extend": "repeat",
+    "filtertype": "mipmap",
+    "size": 5
+   }
+  },
+  "d5_comp": {
+   "type": "layoutTOP",
+   "family": "TOP",
+   "pos": [
+    -1100,
+    560
+   ],
+   "pars": {
+    "align": "verttb",
+    "bgcolora": 1.0,
+    "fit": "fill",
+    "outputresolution": "custom",
+    "resolutionh": 1280,
+    "resolutionw": 1280,
+    "tops": "d5r[0-9]"
+   }
+  },
+  "d5r0": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    -1100,
+    1500
+   ],
+   "pars": {
+    "font": "Impact",
+    "fontfile": {
+     "expr": "mod.paths.font('barlow')"
+    },
+    "fontsizex": 128.0,
+    "fontsizexunit": "pixels",
+    "outputresolution": "custom",
+    "resmult": false,
+    "resolutionh": 160,
+    "resolutionw": 1280,
+    "text": "THIS IS NOT A 3D MODEL."
+   }
+  },
+  "d5r1": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    -1100,
+    1390
+   ],
+   "pars": {
+    "font": "Impact",
+    "fontcolorb": 0.0,
+    "fontcolorg": 0.0,
+    "fontfile": {
+     "expr": "mod.paths.font('barlow')"
+    },
+    "fontsizex": 122.44486085200342,
+    "fontsizexunit": "pixels",
+    "outputresolution": "custom",
+    "resmult": false,
+    "resolutionh": 160,
+    "resolutionw": 1280,
+    "text": "ONE SHADER MEASURES THE"
+   }
+  },
+  "d5r2": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    -1100,
+    1280
+   ],
+   "pars": {
+    "font": "Impact",
+    "fontfile": {
+     "expr": "mod.paths.font('barlow')"
+    },
+    "fontsizex": 124.46262275626675,
+    "fontsizexunit": "pixels",
+    "outputresolution": "custom",
+    "resmult": false,
+    "resolutionh": 160,
+    "resolutionw": 1280,
+    "text": "DISTANCE TO A FOLDED BOX"
+   }
+  },
+  "d5r3": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    -1100,
+    1170
+   ],
+   "pars": {
+    "font": "Impact",
+    "fontfile": {
+     "expr": "mod.paths.font('barlow')"
+    },
+    "fontsizex": 128.0,
+    "fontsizexunit": "pixels",
+    "outputresolution": "custom",
+    "resmult": false,
+    "resolutionh": 160,
+    "resolutionw": 1280,
+    "text": "FOR EVERY PIXEL."
+   }
+  },
+  "d5r4": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    -1100,
+    1060
+   ],
+   "pars": {
+    "font": "Impact",
+    "fontfile": {
+     "expr": "mod.paths.font('barlow')"
+    },
+    "fontsizex": 128.0,
+    "fontsizexunit": "pixels",
+    "outputresolution": "custom",
+    "resmult": false,
+    "resolutionh": 160,
+    "resolutionw": 1280,
+    "text": "THIS IS A FLAT SLICE"
+   }
+  },
+  "d5r5": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    -1100,
+    950
+   ],
+   "pars": {
+    "font": "Impact",
+    "fontcolorb": 0.0,
+    "fontcolorg": 0.0,
+    "fontfile": {
+     "expr": "mod.paths.font('barlow')"
+    },
+    "fontsizex": 128.0,
+    "fontsizexunit": "pixels",
+    "outputresolution": "custom",
+    "resmult": false,
+    "resolutionh": 160,
+    "resolutionw": 1280,
+    "text": "THROUGH THAT FRACTAL."
+   }
+  },
+  "d5r6": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    -1100,
+    840
+   ],
+   "pars": {
+    "font": "Impact",
+    "fontfile": {
+     "expr": "mod.paths.font('barlow')"
+    },
+    "fontsizex": 128.0,
+    "fontsizexunit": "pixels",
+    "outputresolution": "custom",
+    "resmult": false,
+    "resolutionh": 160,
+    "resolutionw": 1280,
+    "text": "EACH KICK DRUM PUSHES"
+   }
+  },
+  "d5r7": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    -1100,
+    730
+   ],
+   "pars": {
+    "font": "Impact",
+    "fontfile": {
+     "expr": "mod.paths.font('barlow')"
+    },
+    "fontsizex": 128.0,
+    "fontsizexunit": "pixels",
+    "outputresolution": "custom",
+    "resmult": false,
+    "resolutionh": 160,
+    "resolutionw": 1280,
+    "text": "THE SLICE DEEPER."
+   }
+  },
+  "d6": {
+   "type": "blurTOP",
+   "family": "TOP",
+   "pos": [
+    -880,
+    450
+   ],
+   "inputs": [
+    [
+     "d6_comp"
+    ]
+   ],
+   "pars": {
+    "extend": "repeat",
+    "filtertype": "mipmap",
+    "size": 5
+   }
+  },
+  "d6_comp": {
+   "type": "layoutTOP",
+   "family": "TOP",
+   "pos": [
+    -880,
+    560
+   ],
+   "pars": {
+    "align": "verttb",
+    "bgcolora": 1.0,
+    "fit": "fill",
+    "outputresolution": "custom",
+    "resolutionh": 1280,
+    "resolutionw": 1280,
+    "tops": "d6r[0-9]"
+   }
+  },
+  "d6r0": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    -880,
+    1500
+   ],
+   "pars": {
+    "font": "Impact",
+    "fontfile": {
+     "expr": "mod.paths.font('barlow')"
+    },
+    "fontsizex": 100.0,
+    "fontsizexunit": "pixels",
+    "outputresolution": "custom",
+    "resmult": false,
+    "resolutionh": 160,
+    "resolutionw": 1280,
+    "text": "ONE SHADER."
+   }
+  },
+  "d6r1": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    -880,
+    1390
+   ],
+   "pars": {
+    "font": "Impact",
+    "fontcolorb": 0.0,
+    "fontcolorg": 0.0,
+    "fontfile": {
+     "expr": "mod.paths.font('barlow')"
+    },
+    "fontsizex": 100.0,
+    "fontsizexunit": "pixels",
+    "outputresolution": "custom",
+    "resmult": false,
+    "resolutionh": 160,
+    "resolutionw": 1280,
+    "text": "NO POLYGONS."
+   }
+  },
+  "d6r2": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    -880,
+    1280
+   ],
+   "pars": {
+    "font": "Impact",
+    "fontfile": {
+     "expr": "mod.paths.font('barlow')"
+    },
+    "fontsizex": 100.0,
+    "fontsizexunit": "pixels",
+    "outputresolution": "custom",
+    "resmult": false,
+    "resolutionh": 160,
+    "resolutionw": 1280,
+    "text": "UP TO 80 STEPS."
+   }
+  },
+  "d6r3": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    -880,
+    1170
+   ],
+   "pars": {
+    "font": "Impact",
+    "fontfile": {
+     "expr": "mod.paths.font('barlow')"
+    },
+    "fontsizex": 100.0,
+    "fontsizexunit": "pixels",
+    "outputresolution": "custom",
+    "resmult": false,
+    "resolutionh": 160,
+    "resolutionw": 1280,
+    "text": "NOTES BEND WALLS."
+   }
+  },
+  "d6r4": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    -880,
+    1060
+   ],
+   "pars": {
+    "font": "Impact",
+    "fontfile": {
+     "expr": "mod.paths.font('barlow')"
+    },
+    "fontsizex": 100.0,
+    "fontsizexunit": "pixels",
+    "outputresolution": "custom",
+    "resmult": false,
+    "resolutionh": 160,
+    "resolutionw": 1280,
+    "text": "KICK FIRES TUBES."
+   }
+  },
+  "d6r5": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    -880,
+    950
+   ],
+   "pars": {
+    "font": "Impact",
+    "fontcolorb": 0.0,
+    "fontcolorg": 0.0,
+    "fontfile": {
+     "expr": "mod.paths.font('barlow')"
+    },
+    "fontsizex": 100.0,
+    "fontsizexunit": "pixels",
+    "outputresolution": "custom",
+    "resmult": false,
+    "resolutionh": 160,
+    "resolutionw": 1280,
+    "text": "BEAT SWAPS LIGHTS."
+   }
+  },
+  "d6r6": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    -880,
+    840
+   ],
+   "pars": {
+    "font": "Impact",
+    "fontfile": {
+     "expr": "mod.paths.font('barlow')"
+    },
+    "fontsizex": 100.0,
+    "fontsizexunit": "pixels",
+    "outputresolution": "custom",
+    "resmult": false,
+    "resolutionh": 160,
+    "resolutionw": 1280,
+    "text": "TEXT IS THE WALL."
+   }
+  },
+  "d6r7": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    -880,
+    730
+   ],
+   "pars": {
+    "font": "Impact",
+    "fontfile": {
+     "expr": "mod.paths.font('barlow')"
+    },
+    "fontsizex": 100.0,
+    "fontsizexunit": "pixels",
+    "outputresolution": "custom",
+    "resmult": false,
+    "resolutionh": 160,
+    "resolutionw": 1280,
+    "text": "EMERGENCY RED."
+   }
+  },
+  "hub": {
+   "type": "selectCHOP",
+   "family": "CHOP",
+   "pos": [
+    -400,
+    200
+   ],
+   "pars": {
+    "chops": "/project1/sw_hub/feed"
+   }
+  },
+  "in_blank": {
+   "type": "constantTOP",
+   "family": "TOP",
+   "pos": [
+    100,
+    460
+   ],
+   "pars": {
+    "colorb": 0.0,
+    "colorg": 0.0,
+    "colorr": 0.0,
+    "outputresolution": "custom",
+    "resolutionh": 9,
+    "resolutionw": 16
+   }
+  },
+  "in_sel": {
+   "type": "selectTOP",
+   "family": "TOP",
+   "pos": [
+    280,
+    460
+   ],
+   "pars": {
+    "filtertype": "mipmap",
+    "top": {
+     "expr": "parent().par.Input.eval().strip() if (lambda p: bool(p) and op(p) is not None and op(p).isTOP and not op(p).path.startswith(parent().path + '/'))(parent().par.Input.eval().strip()) else 'in_blank'"
+    }
+   }
+  },
+  "kifs": {
+   "type": "glslTOP",
+   "family": "TOP",
+   "pos": [
+    500,
+    100
+   ],
+   "inputs": [
+    [
+     "wall_sw"
+    ],
+    [
+     "phr_sw"
+    ],
+    [
+     "in_sel"
+    ]
+   ],
+   "pars": {
+    "computedat": "kifs_compute",
+    "format": "rgba16float",
+    "inputextenduv": "repeat",
+    "inputfiltertype": "mipmap",
+    "outputresolution": "custom",
+    "pixeldat": "kifs_frag",
+    "resolutionh": 720,
+    "resolutionw": 1280,
+    "vec0name": "uCam",
+    "vec0valuew": {
+     "expr": "op('hub')['energy']"
+    },
+    "vec0valuex": {
+     "expr": "op('hub')['evolve']"
+    },
+    "vec0valuey": {
+     "expr": "op('hub')['beat_pos']"
+    },
+    "vec0valuez": {
+     "expr": "op('hub')['section']"
+    },
+    "vec1name": "uFold",
+    "vec1valuew": {
+     "expr": "op('hub')['pulse']"
+    },
+    "vec1valuex": {
+     "expr": "0.16 * math.sin(op('tune')['bass_pitch'] * math.pi / 6)"
+    },
+    "vec1valuey": {
+     "expr": "0.11 * math.sin(op('tune')['pitch'] * math.pi / 6)"
+    },
+    "vec1valuez": {
+     "expr": "op('hub')['bar_pulse']"
+    },
+    "vec2name": "uHit",
+    "vec2valuew": {
+     "expr": "op('hub')['hit_high']"
+    },
+    "vec2valuex": {
+     "expr": "1 - op('ring')[0]"
+    },
+    "vec2valuey": {
+     "expr": "op('ring')[0]"
+    },
+    "vec2valuez": {
+     "expr": "op('hub')['hit_mid']"
+    },
+    "vec3name": "uShot",
+    "vec3valuew": {
+     "expr": "max(0, 1 - op('shot')['age'] / 0.5)"
+    },
+    "vec3valuex": {
+     "expr": "op('shot')['seed']"
+    },
+    "vec3valuey": {
+     "expr": "op('shot')['age']"
+    },
+    "vec3valuez": {
+     "expr": "op('shot')['take']"
+    },
+    "vec4name": "uTakeA",
+    "vec4valuew": {
+     "expr": "float(op('takes')[int(op('shot')['take']) % 7 + 1, 'grade'])"
+    },
+    "vec4valuex": {
+     "expr": "float(op('takes')[int(op('shot')['take']) % 7 + 1, 'arch'])"
+    },
+    "vec4valuey": {
+     "expr": "float(op('takes')[int(op('shot')['take']) % 7 + 1, 'cam'])"
+    },
+    "vec4valuez": {
+     "expr": "float(op('takes')[int(op('shot')['take']) % 7 + 1, 'light'])"
+    },
+    "vec5name": "uTakeB",
+    "vec5valuew": {
+     "expr": "float(op('takes')[int(op('shot')['take']) % 7 + 1, 'relief'])"
+    },
+    "vec5valuex": {
+     "expr": "float(op('takes')[int(op('shot')['take']) % 7 + 1, 'folda'])"
+    },
+    "vec5valuey": {
+     "expr": "float(op('takes')[int(op('shot')['take']) % 7 + 1, 'foldb'])"
+    },
+    "vec5valuez": {
+     "expr": "float(op('takes')[int(op('shot')['take']) % 7 + 1, 'atlas'])"
+    },
+    "vec6name": "uTakeC",
+    "vec6valuew": {
+     "expr": "float(op('takes')[int(op('shot')['take']) % 7 + 1, 'tscale'])"
+    },
+    "vec6valuex": {
+     "expr": "float(op('takes')[int(op('shot')['take']) % 7 + 1, 'speed'])"
+    },
+    "vec6valuey": {
+     "expr": "float(op('takes')[int(op('shot')['take']) % 7 + 1, 'focal'])"
+    },
+    "vec6valuez": {
+     "expr": "float(op('takes')[int(op('shot')['take']) % 7 + 1, 'fog'])"
+    },
+    "vec7name": "uTakeD",
+    "vec7valuew": {
+     "expr": "0"
+    },
+    "vec7valuex": {
+     "expr": "float(op('takes')[int(op('shot')['take']) % 7 + 1, 'iters'])"
+    },
+    "vec7valuey": {
+     "expr": "float(op('takes')[int(op('shot')['take']) % 7 + 1, 'shrink'])"
+    },
+    "vec7valuez": {
+     "expr": "0"
+    },
+    "vec8name": "uIn",
+    "vec8valuew": {
+     "expr": "0"
+    },
+    "vec8valuex": {
+     "expr": "1 if (lambda p: bool(p) and op(p) is not None and op(p).isTOP and not op(p).path.startswith(parent().path + '/'))(parent().par.Input.eval().strip()) else 0"
+    },
+    "vec8valuey": {
+     "expr": "int(parent().par.Describe)"
+    },
+    "vec8valuez": {
+     "expr": "0"
+    }
+   }
+  },
+  "kifs_compute": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    320,
+    -120
+   ],
+   "pars": {
+    "language": "glsl"
+   },
+   "text": [
+    "// Example Compute Shader",
+    "",
+    "// uniform float exampleUniform;",
+    "",
+    "layout (local_size_x = 8, local_size_y = 4) in;",
+    "void main()",
+    "{",
+    "\t// This code is running 1:1 per pixel, so early-exit",
+    "\t// if this thread overhangs the edge of the output",
+    "\tif (any(greaterThanEqual(ivec2(gl_GlobalInvocationID.xy), ivec2(uTDOutputInfo.res.zw))))",
+    "\t\treturn;",
+    "",
+    "\tvec4 color;",
+    "\t//color = texelFetch(sTD2DInputs[0], ivec2(gl_GlobalInvocationID.xy), 0);",
+    "\tcolor = vec4(1.0);",
+    "\t// We need to use TDImageStoreOutput() so that 8-bit textures that are sRGB",
+    "\t// encoded can be written to correctly from incoming linear values.",
+    "\t// imageStore() does not do this automatically, while pixel shader outputs do.",
+    "\tTDImageStoreOutput(0, gl_GlobalInvocationID, color);",
+    "}"
+   ]
+  },
+  "kifs_frag": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    280,
+    40
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.here('shaders/kifs.frag')"
+    },
+    "language": "text",
+    "syncfile": true
+   },
+   "text_file": "experiments/sc_kifs_office/shaders/kifs.frag"
+  },
+  "kifs_info": {
+   "type": "infoDAT",
+   "family": "DAT",
+   "pos": [
+    160,
+    -120
+   ],
+   "pars": {
+    "language": "text",
+    "op": "kifs"
+   }
+  },
+  "kifs_pixel": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    0,
+    -120
+   ],
+   "pars": {
+    "extension": "frag",
+    "language": "glsl"
+   },
+   "text": [
+    "",
+    "// Example Pixel Shader",
+    "",
+    "// uniform float exampleUniform;",
+    "",
+    "out vec4 fragColor;",
+    "void main()",
+    "{",
+    "\t// vec4 color = texture(sTD2DInputs[0], vUV.st);",
+    "\tvec4 color = vec4(1.0);",
+    "\tfragColor = TDOutputSwizzle(color);",
+    "}"
+   ]
+  },
+  "label2": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    500,
+    -60
+   ],
+   "pars": {
+    "bgalpha": 1.0,
+    "fontfile": {
+     "expr": "mod.paths.font('chicago')"
+    },
+    "fontsizex": 24.0,
+    "fontsizexunit": "pixels",
+    "outputresolution": "custom",
+    "resmult": false,
+    "resolutionh": 148,
+    "resolutionw": 600,
+    "text": "1-BIT RAY MARCH\nEACH DOT IS BLACK OR WHITE.\n4 BY 4 ORDERED DITHER, DOTS DOUBLED.\nTHE SNARE SWAPS BLACK AND WHITE."
+   }
+  },
+  "label2_over": {
+   "type": "overTOP",
+   "family": "TOP",
+   "pos": [
+    680,
+    -60
+   ],
+   "inputs": [
+    [
+     "label2"
+    ],
+    [
+     "kifs"
+    ]
+   ],
+   "pars": {
+    "justifyh": "left",
+    "justifyv": "bottom",
+    "prefit": "nativeres",
+    "tunit": "pixels",
+    "tx": 40.0,
+    "ty": 40.0
+   }
+  },
+  "local": {
+   "type": "baseCOMP",
+   "family": "COMP",
+   "pos": [
+    -400,
+    460
+   ]
+  },
+  "local/modules": {
+   "type": "baseCOMP",
+   "family": "COMP",
+   "pos": [
+    0,
+    0
+   ]
+  },
+  "local/modules/paths": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "file": {
+     "expr": "project.folder.replace(chr(92), '/') + '/experiments/sw_hub/paths_module.py'"
+    },
+    "language": "text",
+    "syncfile": true
+   },
+   "text_file": "experiments/sw_hub/paths_module.py"
+  },
+  "out1": {
+   "type": "outTOP",
+   "family": "TOP",
+   "pos": [
+    1200,
+    0
+   ],
+   "inputs": [
+    [
+     "post_sw"
+    ]
+   ]
+  },
+  "phr0": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    -520,
+    420
+   ],
+   "pars": {
+    "font": "Impact",
+    "fontautosize": "fitiffat",
+    "fontfile": {
+     "expr": "mod.paths.font('barlow')"
+    },
+    "fontsizex": 128.0,
+    "fontsizexunit": "pixels",
+    "outputresolution": "custom",
+    "resmult": false,
+    "resolutionh": 160,
+    "resolutionw": 1280,
+    "text": "LISTEN WITH YOUR EYES."
+   }
+  },
+  "phr1": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    -520,
+    310
+   ],
+   "pars": {
+    "font": "Impact",
+    "fontautosize": "fitiffat",
+    "fontcolorb": 0.0,
+    "fontcolorg": 0.0,
+    "fontfile": {
+     "expr": "mod.paths.font('barlow')"
+    },
+    "fontsizex": 128.0,
+    "fontsizexunit": "pixels",
+    "outputresolution": "custom",
+    "resmult": false,
+    "resolutionh": 160,
+    "resolutionw": 1280,
+    "text": "NOTHING IS PRERENDERED."
+   }
+  },
+  "phr2": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    -520,
+    200
+   ],
+   "pars": {
+    "font": "Impact",
+    "fontautosize": "fitiffat",
+    "fontfile": {
+     "expr": "mod.paths.font('barlow')"
+    },
+    "fontsizex": 128.0,
+    "fontsizexunit": "pixels",
+    "outputresolution": "custom",
+    "resmult": false,
+    "resolutionh": 160,
+    "resolutionw": 1280,
+    "text": "KICK MOVES THE CAMERA."
+   }
+  },
+  "phr3": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    -520,
+    90
+   ],
+   "pars": {
+    "font": "Impact",
+    "fontautosize": "fitiffat",
+    "fontfile": {
+     "expr": "mod.paths.font('barlow')"
+    },
+    "fontsizex": 128.0,
+    "fontsizexunit": "pixels",
+    "outputresolution": "custom",
+    "resmult": false,
+    "resolutionh": 160,
+    "resolutionw": 1280,
+    "text": "FOUND, NOT MADE."
+   }
+  },
+  "phr4": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    -520,
+    -20
+   ],
+   "pars": {
+    "font": "Impact",
+    "fontautosize": "fitiffat",
+    "fontfile": {
+     "expr": "mod.paths.font('barlow')"
+    },
+    "fontsizex": 128.0,
+    "fontsizexunit": "pixels",
+    "outputresolution": "custom",
+    "resmult": false,
+    "resolutionh": 160,
+    "resolutionw": 1280,
+    "text": "EACH FRAME IS MADE NOW."
+   }
+  },
+  "phr5": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    -520,
+    -130
+   ],
+   "pars": {
+    "font": "Impact",
+    "fontautosize": "fitiffat",
+    "fontcolorb": 0.0,
+    "fontcolorg": 0.0,
+    "fontfile": {
+     "expr": "mod.paths.font('barlow')"
+    },
+    "fontsizex": 128.0,
+    "fontsizexunit": "pixels",
+    "outputresolution": "custom",
+    "resmult": false,
+    "resolutionh": 160,
+    "resolutionw": 1280,
+    "text": "LOUD IS BRIGHT."
+   }
+  },
+  "phr6": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    -520,
+    -240
+   ],
+   "pars": {
+    "font": "Impact",
+    "fontautosize": "fitiffat",
+    "fontfile": {
+     "expr": "mod.paths.font('barlow')"
+    },
+    "fontsizex": 128.0,
+    "fontsizexunit": "pixels",
+    "outputresolution": "custom",
+    "resmult": false,
+    "resolutionh": 160,
+    "resolutionw": 1280,
+    "text": "PAST. PRESENT. LATER."
+   }
+  },
+  "phr7": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    -520,
+    -350
+   ],
+   "pars": {
+    "font": "Impact",
+    "fontautosize": "fitiffat",
+    "fontfile": {
+     "expr": "mod.paths.font('barlow')"
+    },
+    "fontsizex": 128.0,
+    "fontsizexunit": "pixels",
+    "outputresolution": "custom",
+    "resmult": false,
+    "resolutionh": 160,
+    "resolutionw": 1280,
+    "text": "SIGNAL AND NOISE"
+   }
+  },
+  "phr_sw": {
+   "type": "switchTOP",
+   "family": "TOP",
+   "pos": [
+    400,
+    320
+   ],
+   "inputs": [
+    [
+     "phrases"
+    ],
+    [
+     "d2"
+    ],
+    [
+     "d3"
+    ],
+    [
+     "d5"
+    ],
+    [
+     "d6"
+    ]
+   ],
+   "pars": {
+    "filtertype": "mipmap",
+    "index": {
+     "expr": "(0, 0, 1, 2, 0, 3, 4)[int(op('shot')['take']) % 7] if parent().par.Describe else 0"
+    }
+   }
+  },
+  "phrases": {
+   "type": "blurTOP",
+   "family": "TOP",
+   "pos": [
+    280,
+    320
+   ],
+   "inputs": [
+    [
+     "phrases_comp"
+    ]
+   ],
+   "pars": {
+    "extend": "repeat",
+    "filtertype": "mipmap",
+    "size": 5
+   }
+  },
+  "phrases_comp": {
+   "type": "layoutTOP",
+   "family": "TOP",
+   "pos": [
+    100,
+    320
+   ],
+   "pars": {
+    "align": "verttb",
+    "bgcolora": 1.0,
+    "fit": "fill",
+    "outputresolution": "custom",
+    "resolutionh": 1280,
+    "resolutionw": 1280,
+    "tops": "phr[0-9]"
+   }
+  },
+  "pitch_gate": {
+   "type": "logicCHOP",
+   "family": "CHOP",
+   "pos": [
+    60,
+    -200
+   ],
+   "inputs": [
+    [
+     "sel_pitch"
+    ]
+   ],
+   "pars": {
+    "timeslice": true
+   }
+  },
+  "pitch_hold": {
+   "type": "holdCHOP",
+   "family": "CHOP",
+   "pos": [
+    220,
+    -200
+   ],
+   "inputs": [
+    [
+     "sel_pitch"
+    ],
+    [
+     "pitch_gate"
+    ]
+   ],
+   "pars": {
+    "sample": "whileon",
+    "timeslice": true
+   }
+  },
+  "post_sw": {
+   "type": "switchTOP",
+   "family": "TOP",
+   "pos": [
+    860,
+    100
+   ],
+   "inputs": [
+    [
+     "kifs"
+    ],
+    [
+     "label2_over"
+    ]
+   ],
+   "pars": {
+    "index": {
+     "expr": "(0, 0, 1, 0, 0, 0, 0)[int(op('shot')['take']) % 7] if parent().par.Describe else 0"
+    }
+   }
+  },
+  "ring": {
+   "type": "triggerCHOP",
+   "family": "CHOP",
+   "pos": [
+    60,
+    -320
+   ],
+   "inputs": [
+    [
+     "sel_kick"
+    ]
+   ],
+   "pars": {
+    "attack": 0.0,
+    "decay": 0.45,
+    "dshape": "linear",
+    "peaklen": 0.0,
+    "release": 0.0,
+    "sustain": 0.0,
+    "threshdown": 0.06,
+    "threshup": 0.12,
+    "timeslice": true
+   }
+  },
+  "row0": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    -300,
+    420
+   ],
+   "pars": {
+    "font": "Impact",
+    "fontfile": {
+     "expr": "mod.paths.font('archivo')"
+    },
+    "fontsizex": 110.0,
+    "fontsizexunit": "pixels",
+    "outputresolution": "custom",
+    "resmult": false,
+    "resolutionw": 1024,
+    "text": "REAL TIME"
+   }
+  },
+  "row1": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    -300,
+    310
+   ],
+   "pars": {
+    "font": "Impact",
+    "fontcolorb": 0.0,
+    "fontcolorg": 0.0,
+    "fontfile": {
+     "expr": "mod.paths.font('archivo')"
+    },
+    "fontsizex": 110.0,
+    "fontsizexunit": "pixels",
+    "outputresolution": "custom",
+    "resmult": false,
+    "resolutionw": 1024,
+    "text": "DO NOT TOUCH"
+   }
+  },
+  "row2": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    -300,
+    200
+   ],
+   "pars": {
+    "font": "Impact",
+    "fontfile": {
+     "expr": "mod.paths.font('archivo')"
+    },
+    "fontsizex": 110.0,
+    "fontsizexunit": "pixels",
+    "outputresolution": "custom",
+    "resmult": false,
+    "resolutionw": 1024,
+    "text": "PLATE 07"
+   }
+  },
+  "row3": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    -300,
+    90
+   ],
+   "pars": {
+    "font": "Impact",
+    "fontfile": {
+     "expr": "mod.paths.font('archivo')"
+    },
+    "fontsizex": 110.0,
+    "fontsizexunit": "pixels",
+    "outputresolution": "custom",
+    "resmult": false,
+    "resolutionw": 1024,
+    "text": "EXHIBIT 12"
+   }
+  },
+  "sel_kick": {
+   "type": "selectCHOP",
+   "family": "CHOP",
+   "pos": [
+    -100,
+    -320
+   ],
+   "pars": {
+    "channames": "hit_low",
+    "chops": "hub"
+   }
+  },
+  "sel_pitch": {
+   "type": "selectCHOP",
+   "family": "CHOP",
+   "pos": [
+    -100,
+    -200
+   ],
+   "pars": {
+    "channames": "bass_pitch pitch",
+    "chops": "hub"
+   }
+  },
+  "shot": {
+   "type": "constantCHOP",
+   "family": "CHOP",
+   "pos": [
+    -400,
+    330
+   ],
+   "pars": {
+    "const0name": "take",
+    "const0value": {
+     "expr": "parent().par.Take"
+    },
+    "const1name": "seed",
+    "const1value": {
+     "expr": "parent().par.Seed"
+    },
+    "const2name": "age",
+    "const2value": {
+     "expr": "max(0, absTime.seconds - parent().par.Shotstart)"
+    }
+   }
+  },
+  "spectrum": {
+   "type": "selectTOP",
+   "family": "TOP",
+   "pos": [
+    -400,
+    60
+   ],
+   "pars": {
+    "top": "/project1/sw_hub/spectex"
+   }
+  },
+  "takes": {
+   "type": "tableDAT",
+   "family": "DAT",
+   "pos": [
+    -400,
+    460
+   ],
+   "text": [
+    "name\tarch\tcam\tlight\tgrade\tfolda\tfoldb\tatlas\trelief\tspeed\tfocal\tfog\ttscale\titers\tshrink",
+    "nave\t0\t0\t0\t0\t0.0\t0.0\t0\t1.0\t1.0\t0.72\t0.16\t1.0\t4\t0.0",
+    "block\t2\t2\t2\t2\t0.0\t0.0\t0\t1.6\t1.0\t1.15\t0.007\t0.5\t3\t0.22",
+    "shaft\t1\t1\t1\t1\t0.0\t0.0\t1\t2.0\t1.8\t0.55\t0.1\t0.5\t2\t0.0",
+    "macro\t3\t3\t2\t3\t0.0\t0.0\t1\t2.5\t1.0\t0.8\t0.25\t0.5\t2\t0.0",
+    "rotunda\t4\t4\t3\t4\t0.25\t0.15\t0\t1.5\t1.0\t0.6\t0.1\t1.0\t4\t0.0",
+    "cut\t5\t5\t4\t5\t0.0\t0.0\t1\t2.0\t1.0\t1.0\t0.6\t0.25\t4\t0.0",
+    "strafe\t0\t6\t0\t6\t0.0\t0.0\t1\t1.3\t2.2\t0.72\t0.16\t1.0\t4\t0.0"
+   ]
+  },
+  "tune": {
+   "type": "lagCHOP",
+   "family": "CHOP",
+   "pos": [
+    380,
+    -200
+   ],
+   "inputs": [
+    [
+     "pitch_hold"
+    ]
+   ],
+   "pars": {
+    "lag1": 0.18,
+    "lag2": 0.18,
+    "timeslice": true
+   }
+  },
+  "wall": {
+   "type": "blurTOP",
+   "family": "TOP",
+   "pos": [
+    280,
+    180
+   ],
+   "inputs": [
+    [
+     "wall_comp"
+    ]
+   ],
+   "pars": {
+    "extend": "repeat",
+    "filtertype": "mipmap",
+    "size": 5
+   }
+  },
+  "wall_comp": {
+   "type": "layoutTOP",
+   "family": "TOP",
+   "pos": [
+    100,
+    180
+   ],
+   "pars": {
+    "align": "verttb",
+    "bgcolora": 1.0,
+    "fit": "fill",
+    "outputresolution": "custom",
+    "resolutionh": 1024,
+    "resolutionw": 1024,
+    "tops": "row[0-9]"
+   }
+  },
+  "wall_sw": {
+   "type": "switchTOP",
+   "family": "TOP",
+   "pos": [
+    400,
+    180
+   ],
+   "inputs": [
+    [
+     "wall"
+    ],
+    [
+     "d0"
+    ],
+    [
+     "d1"
+    ],
+    [
+     "d4"
+    ]
+   ],
+   "pars": {
+    "filtertype": "mipmap",
+    "index": {
+     "expr": "(1, 2, 0, 0, 3, 0, 0)[int(op('shot')['take']) % 7] if parent().par.Describe else 0"
+    }
+   }
+  }
+ }
+}

@@ -1,0 +1,4436 @@
+{
+ "format": "tdh-snapshot/1",
+ "root": "/project1/sc_spectral_terrain",
+ "ops": {
+  "bloom": {
+   "type": "bloomTOP",
+   "family": "TOP",
+   "pos": [
+    950,
+    -130
+   ],
+   "inputs": [
+    [
+     "over"
+    ]
+   ],
+   "pars": {
+    "output": "bloom",
+    "preblacklevel": 0.25
+   }
+  },
+  "cam": {
+   "type": "cameraCOMP",
+   "family": "COMP",
+   "pos": [
+    700,
+    -130
+   ],
+   "pars": {
+    "far": 200.0,
+    "fov": {
+     "expr": "op('tk')['fov'] + op('tk')['fovg'] * op('tk')['g']"
+    },
+    "rx": {
+     "expr": "op('tk')['camrx'] + op('tk')['camrxs'] * op('tk')['s3'] + op('tk')['drift'] * 1.2 * math.sin(op('hub')['evolve'] * 0.27)"
+    },
+    "ry": {
+     "expr": "op('tk')['camry'] + op('tk')['camrys'] * (2.0 * op('tk')['s2'] - 1.0) + op('tk')['ridgery'] * op('ctl')['xmap'] + op('tk')['drift'] * 4.0 * math.sin(op('hub')['evolve'] * 0.17)"
+    },
+    "rz": {
+     "expr": "op('tk')['camrz'] + op('tk')['camrzg'] * op('tk')['g'] + op('tk')['roll'] * math.sin(op('hub')['bar_pos'] * math.pi * 0.5)"
+    },
+    "tx": {
+     "expr": "op('ctl')['cx'] + op('tk')['drift'] * 1.1 * math.sin(op('hub')['evolve'] * 0.21)"
+    },
+    "ty": {
+     "expr": "op('tk')['camy'] + op('tk')['camys'] * op('tk')['s3'] + op('tk')['drift'] * (0.25 * math.sin(op('hub')['evolve'] * 0.33) + 0.12 * float(op('hub')['pulse']))"
+    },
+    "tz": {
+     "expr": "op('tk')['camz'] + op('tk')['camzg'] * op('tk')['g'] - op('tk')['punch'] * float(op('ctl')['flash']) + op('tk')['arrz'] * (1.0 - float(op('ctl')['arr']))"
+    }
+   }
+  },
+  "cam/file1": {
+   "type": "fileinPOP",
+   "family": "POP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "file": {
+     "expr": "app.samplesFolder + '/Geo/defcam.tog'"
+    }
+   }
+  },
+  "comet": {
+   "type": "geometryCOMP",
+   "family": "COMP",
+   "pos": [
+    100,
+    -520
+   ],
+   "pars": {
+    "drawpriority": -10.0,
+    "material": "/project1/sc_spectral_terrain/comet_mat",
+    "render": {
+     "expr": "op('tk')['comet'] > 0.5"
+    }
+   }
+  },
+  "comet/strip": {
+   "type": "gridSOP",
+   "family": "SOP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "cols": 2,
+    "orient": "zx",
+    "rows": 192
+   }
+  },
+  "comet_mat": {
+   "type": "glslMAT",
+   "family": "MAT",
+   "pos": [
+    250,
+    -780
+   ],
+   "pars": {
+    "blending": true,
+    "cullface": "neither",
+    "depthwriting": false,
+    "destblend": "one",
+    "pdat": "comet_px",
+    "sampler0filter": "nearest",
+    "sampler0name": "sNotes",
+    "sampler0top": "/project1/sc_spectral_terrain/notes",
+    "vdat": "comet_vs",
+    "vec0name": "uDim",
+    "vec0valuew": 0.45,
+    "vec0valuex": 18.0,
+    "vec0valuey": 44.0,
+    "vec0valuez": 192.0,
+    "vec1name": "uRib",
+    "vec1valuew": 0.0,
+    "vec1valuex": 1.5,
+    "vec1valuey": 1.9,
+    "vec1valuez": 4.2,
+    "vec2name": "uCol",
+    "vec2valuex": {
+     "expr": "op('ctl')['wr']"
+    },
+    "vec2valuey": {
+     "expr": "op('ctl')['wg']"
+    },
+    "vec2valuez": {
+     "expr": "op('ctl')['wb']"
+    },
+    "vec3name": "uFx",
+    "vec3valuew": 0.0,
+    "vec3valuex": {
+     "expr": "op('tk')['fog'] * 0.8"
+    },
+    "vec3valuey": {
+     "expr": "op('hub')['beat_pos']"
+    },
+    "vec3valuez": 0.0
+   }
+  },
+  "comet_mat_info": {
+   "type": "infoDAT",
+   "family": "DAT",
+   "pos": [
+    320,
+    -120
+   ],
+   "pars": {
+    "language": "text",
+    "op": "comet_mat"
+   }
+  },
+  "comet_mat_pixel": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    160,
+    -120
+   ],
+   "pars": {
+    "extension": "frag",
+    "language": "glsl"
+   },
+   "text": [
+    "// Example Pixel Shader",
+    "",
+    "// uniform vec4 exampleUniform;",
+    "",
+    "out vec4 oFragColor;",
+    "void main()",
+    "{",
+    "\tTDCheckDiscard();",
+    "\tvec4 color = vec4(1.0);",
+    "\tTDAlphaTest(color.a);",
+    "\toFragColor = TDOutputSwizzle(color);",
+    "}",
+    ""
+   ]
+  },
+  "comet_mat_vertex": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    0,
+    -120
+   ],
+   "pars": {
+    "extension": "vert",
+    "language": "glsl"
+   },
+   "text": [
+    "// Example Vertex Shader",
+    "",
+    "void main() ",
+    "{",
+    "\tvec3 pos = TDPos();",
+    "\tvec4 worldSpacePos = TDDeform(pos);",
+    "\tgl_Position = TDWorldToProj(worldSpacePos);",
+    "#ifndef TD_PICKING_ACTIVE",
+    "#else // TD_PICKING_ACTIVE",
+    "\t// This will automatically write out the nessessary values",
+    "\t// for this shader to work with picking.",
+    "\t// See the documentation if you want to write custom values for picking.",
+    "\tTDWritePickingValues();",
+    "#endif // TD_PICKING_ACTIVE",
+    "}",
+    ""
+   ]
+  },
+  "comet_px": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    250,
+    -650
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.here('shaders/comet.frag')"
+    },
+    "language": "text",
+    "syncfile": true
+   },
+   "text_file": "experiments/sc_spectral_terrain/shaders/comet.frag"
+  },
+  "comet_vs": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    100,
+    -650
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.here('shaders/comet.vert')"
+    },
+    "language": "text",
+    "syncfile": true
+   },
+   "text_file": "experiments/sc_spectral_terrain/shaders/comet.vert"
+  },
+  "cook_driver": {
+   "type": "executeDAT",
+   "family": "DAT",
+   "pos": [
+    -400,
+    -80
+   ],
+   "pars": {
+    "framestart": true,
+    "language": "python"
+   },
+   "text": [
+    "def onFrameStart(frame):",
+    "    hub = op('/project1/sw_hub')",
+    "    me_on = parent().par.Preview.eval()",
+    "    if hub is not None:",
+    "        me_on = me_on or hub.par.Solo.eval() or hub.par.Scene.eval() == parent().name",
+    "    if me_on:",
+    "        op('hub').cook(force=True)",
+    "        op('out1').cook(force=True)",
+    "    return"
+   ]
+  },
+  "crt": {
+   "type": "glslTOP",
+   "family": "TOP",
+   "pos": [
+    1050,
+    0
+   ],
+   "inputs": [
+    [
+     "over"
+    ],
+    [
+     "bloom"
+    ],
+    [
+     "label"
+    ]
+   ],
+   "pars": {
+    "computedat": "crt_compute",
+    "format": "rgba16float",
+    "outputresolution": "custom",
+    "pixeldat": "crt_px",
+    "resolutionh": 720,
+    "resolutionw": 1280,
+    "vec0name": "uFx",
+    "vec0valuew": {
+     "expr": "op('hub')['energy']"
+    },
+    "vec0valuex": {
+     "expr": "op('hub')['pulse']"
+    },
+    "vec0valuey": {
+     "expr": "op('hub')['hit_mid']"
+    },
+    "vec0valuez": {
+     "expr": "op('hub')['t']"
+    },
+    "vec1name": "uAmt",
+    "vec1valuew": 0.0035,
+    "vec1valuex": {
+     "expr": "op('tk')['bloom']"
+    },
+    "vec1valuey": {
+     "expr": "op('tk')['scan']"
+    },
+    "vec1valuez": {
+     "expr": "op('tk')['barrel']"
+    },
+    "vec2name": "uPost",
+    "vec2valuew": {
+     "expr": "op('tk')['expo']"
+    },
+    "vec2valuex": {
+     "expr": "op('tk')['post']"
+    },
+    "vec2valuey": {
+     "expr": "op('tk')['inverts'] * (1.0 if op('tk')['s2'] > 0.5 else 0.0)"
+    },
+    "vec2valuez": {
+     "expr": "op('tk')['lab']"
+    },
+    "vec3name": "uLab",
+    "vec3valuew": 0.0,
+    "vec3valuex": {
+     "expr": "op('tk')['labcolr']"
+    },
+    "vec3valuey": {
+     "expr": "op('tk')['labcolg']"
+    },
+    "vec3valuez": {
+     "expr": "op('tk')['labcolb']"
+    },
+    "vec4name": "uPaper",
+    "vec4valuew": 0.0,
+    "vec4valuex": {
+     "expr": "op('tk')['bgr']"
+    },
+    "vec4valuey": {
+     "expr": "op('tk')['bgg']"
+    },
+    "vec4valuez": {
+     "expr": "op('tk')['bgb']"
+    },
+    "vec5name": "uDesc",
+    "vec5valuew": 0.0,
+    "vec5valuex": {
+     "expr": "op('tk')['strip']"
+    },
+    "vec5valuey": {
+     "expr": "op('tk')['halo'] * op('tk')['desc']"
+    },
+    "vec5valuez": 0.0
+   }
+  },
+  "crt_compute": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    320,
+    -120
+   ],
+   "pars": {
+    "language": "glsl"
+   },
+   "text": [
+    "// Example Compute Shader",
+    "",
+    "// uniform float exampleUniform;",
+    "",
+    "layout (local_size_x = 8, local_size_y = 4) in;",
+    "void main()",
+    "{",
+    "\t// This code is running 1:1 per pixel, so early-exit",
+    "\t// if this thread overhangs the edge of the output",
+    "\tif (any(greaterThanEqual(ivec2(gl_GlobalInvocationID.xy), ivec2(uTDOutputInfo.res.zw))))",
+    "\t\treturn;",
+    "",
+    "\tvec4 color;",
+    "\t//color = texelFetch(sTD2DInputs[0], ivec2(gl_GlobalInvocationID.xy), 0);",
+    "\tcolor = vec4(1.0);",
+    "\t// We need to use TDImageStoreOutput() so that 8-bit textures that are sRGB",
+    "\t// encoded can be written to correctly from incoming linear values.",
+    "\t// imageStore() does not do this automatically, while pixel shader outputs do.",
+    "\tTDImageStoreOutput(0, gl_GlobalInvocationID, color);",
+    "}"
+   ]
+  },
+  "crt_info": {
+   "type": "infoDAT",
+   "family": "DAT",
+   "pos": [
+    160,
+    -120
+   ],
+   "pars": {
+    "language": "text",
+    "op": "crt"
+   }
+  },
+  "crt_pixel": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    0,
+    -120
+   ],
+   "pars": {
+    "extension": "frag",
+    "language": "glsl"
+   },
+   "text": [
+    "",
+    "// Example Pixel Shader",
+    "",
+    "// uniform float exampleUniform;",
+    "",
+    "out vec4 fragColor;",
+    "void main()",
+    "{",
+    "\t// vec4 color = texture(sTD2DInputs[0], vUV.st);",
+    "\tvec4 color = vec4(1.0);",
+    "\tfragColor = TDOutputSwizzle(color);",
+    "}"
+   ]
+  },
+  "crt_px": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    1050,
+    -130
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.here('shaders/crt.frag')"
+    },
+    "language": "text",
+    "syncfile": true
+   },
+   "text_file": "experiments/sc_spectral_terrain/shaders/crt.frag"
+  },
+  "ctl": {
+   "type": "constantCHOP",
+   "family": "CHOP",
+   "pos": [
+    -100,
+    330
+   ],
+   "pars": {
+    "const0name": "tr",
+    "const0value": {
+     "expr": "op('tk')['colr'] + (op('tk')['wcolr'] - op('tk')['colr']) * (op('tk')['swap'] * (1.0 if op('tk')['s1'] > 0.5 else 0.0))"
+    },
+    "const10name": "arr",
+    "const10value": {
+     "expr": "(lambda a: 1.0 + 2.70158 * (a - 1.0) ** 3 + 1.70158 * (a - 1.0) ** 2)(min(float(op('shot')['age']) / 0.5, 1.0))"
+    },
+    "const11name": "spring",
+    "const11value": {
+     "expr": "0.35 + 0.65 * (lambda a: 1.0 + 4.0 * (a - 1.0) ** 3 + 3.0 * (a - 1.0) ** 2)(min(float(op('shot')['age']) / 0.5, 1.0))"
+    },
+    "const12name": "sweep",
+    "const12value": {
+     "expr": "min(float(op('shot')['age']) * 2.6, 2.0)"
+    },
+    "const13name": "rise",
+    "const13value": {
+     "expr": "(lambda u: u * u * (3.0 - 2.0 * u))(min(float(op('shot')['age']) / 0.4, 1.0))"
+    },
+    "const14name": "bhue",
+    "const14value": {
+     "expr": "(op('hub')['bass_pitch'] % 12) / 12.0"
+    },
+    "const15name": "bon",
+    "const15value": {
+     "expr": "1.0 if op('hub')['bass_pitch'] > 0 else 0.0"
+    },
+    "const16name": "cx",
+    "const16value": {
+     "expr": "op('tk')['camx'] + op('tk')['camxs'] * (2.0 * op('tk')['s2'] - 1.0) + op('tk')['ridgex'] * max(op('tk')['xmap'], op('tk')['xmaps'] * (1.0 if op('tk')['s3'] > 0.5 else 0.0)) + op('tk')['camxg'] * op('tk')['g']"
+    },
+    "const17name": "wx",
+    "const17value": {
+     "expr": "op('tk')['wx'] + op('tk')['wxs'] * (2.0 * op('tk')['s3'] - 1.0)"
+    },
+    "const18name": "sunaz",
+    "const18value": {
+     "expr": "op('tk')['sunaz'] + op('tk')['sunazs'] * (2.0 * op('tk')['s2'] - 1.0)"
+    },
+    "const19name": "spin",
+    "const19value": {
+     "expr": "op('tk')['spin'] * float(op('hub')['evolve'])"
+    },
+    "const1name": "wr",
+    "const1value": {
+     "expr": "op('tk')['wcolr'] + (op('tk')['colr'] - op('tk')['wcolr']) * (op('tk')['swap'] * (1.0 if op('tk')['s1'] > 0.5 else 0.0))"
+    },
+    "const20name": "twist",
+    "const20value": {
+     "expr": "op('tk')['twist'] + op('tk')['twists'] * (2.0 * op('tk')['s2'] - 1.0)"
+    },
+    "const2name": "tg",
+    "const2value": {
+     "expr": "op('tk')['colg'] + (op('tk')['wcolg'] - op('tk')['colg']) * (op('tk')['swap'] * (1.0 if op('tk')['s1'] > 0.5 else 0.0))"
+    },
+    "const3name": "wg",
+    "const3value": {
+     "expr": "op('tk')['wcolg'] + (op('tk')['colg'] - op('tk')['wcolg']) * (op('tk')['swap'] * (1.0 if op('tk')['s1'] > 0.5 else 0.0))"
+    },
+    "const4name": "tb",
+    "const4value": {
+     "expr": "op('tk')['colb'] + (op('tk')['wcolb'] - op('tk')['colb']) * (op('tk')['swap'] * (1.0 if op('tk')['s1'] > 0.5 else 0.0))"
+    },
+    "const5name": "wb",
+    "const5value": {
+     "expr": "op('tk')['wcolb'] + (op('tk')['colb'] - op('tk')['wcolb']) * (op('tk')['swap'] * (1.0 if op('tk')['s1'] > 0.5 else 0.0))"
+    },
+    "const6name": "xmap",
+    "const6value": {
+     "expr": "max(op('tk')['xmap'], op('tk')['xmaps'] * (1.0 if op('tk')['s3'] > 0.5 else 0.0))"
+    },
+    "const7name": "pitchn",
+    "const7value": {
+     "expr": "(min(max((op('hub')['pitch'] - 40.0) / 24.0, 0.03), 1.0) if (op('hub')['pitch'] > 0 and op('hub')['pitch_conf'] > 0.2) else 0.0)"
+    },
+    "const8name": "cometx",
+    "const8value": {
+     "expr": "math.sin(op('hub')['beat_pos'] * 1.5708) * 0.42 + math.sin(op('hub')['evolve'] * 0.7) * 0.4"
+    },
+    "const9name": "flash",
+    "const9value": {
+     "expr": "min(float(op('hub')['hit_low']) * 1.9, 1.6)"
+    }
+   }
+  },
+  "hub": {
+   "type": "selectCHOP",
+   "family": "CHOP",
+   "pos": [
+    -400,
+    200
+   ],
+   "pars": {
+    "chops": "/project1/sw_hub/feed"
+   }
+  },
+  "in_none": {
+   "type": "constantTOP",
+   "family": "TOP",
+   "pos": [
+    -400,
+    -780
+   ],
+   "pars": {
+    "colorb": 0.0,
+    "colorg": 0.0,
+    "colorr": 0.0,
+    "outputresolution": "custom",
+    "resolutionh": 16,
+    "resolutionw": 16
+   }
+  },
+  "in_pic": {
+   "type": "selectTOP",
+   "family": "TOP",
+   "pos": [
+    -250,
+    -780
+   ],
+   "pars": {
+    "outputresolution": "custom",
+    "resolutionh": 360,
+    "resolutionw": 640,
+    "top": {
+     "expr": "parent().par.Input.eval() if op('tk')['inon'] > 0.5 else 'in_none'"
+    }
+   }
+  },
+  "in_soft": {
+   "type": "blurTOP",
+   "family": "TOP",
+   "pos": [
+    -100,
+    -780
+   ],
+   "inputs": [
+    [
+     "in_pic"
+    ]
+   ],
+   "pars": {
+    "outputresolution": "custom",
+    "resolutionh": 180,
+    "resolutionw": 320,
+    "size": 3
+   }
+  },
+  "label": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    950,
+    150
+   ],
+   "pars": {
+    "alignx": "left",
+    "aligny": "bottom",
+    "fontfile": {
+     "expr": "mod.paths.font('chicago')"
+    },
+    "fontsizex": {
+     "expr": "op('tk')['labsize']"
+    },
+    "fontsizexunit": "pixels",
+    "outputresolution": "custom",
+    "positionx": {
+     "expr": "op('tk')['labx']"
+    },
+    "positiony": {
+     "expr": "op('tk')['laby']"
+    },
+    "resmult": false,
+    "resolutionh": 720,
+    "resolutionw": 1280,
+    "text": {
+     "expr": "(lambda L, s: L[min(int(s * len(L)), len(L) - 1)])(((('EVERY FRAME THE SOUND SPECTRUM BECOMES THE FRONT ROW OF A HEIGHT MAP.\\nOLDER ROWS SLIDE AWAY. BASS BUILDS THE WALLS, A KICK IS A WHITE RIDGE.',), ('256 BY 192 HEIGHT MAP OF THE SPECTRUM, ONE NEW ROW EVERY FRAME.\\nTHE HORIZON IS NOW. THE ROWS FLYING PAST ARE THE LAST FEW SECONDS.', 'EACH LINE RUSHING AT THE LENS IS ONE FRAME OF SOUND, NEWEST AT THE\\nHORIZON. THE RIBBON OVERHEAD HANGS AT THE PITCH OF THE VOICE.'), ('THE SAME HEIGHT MAP ROLLED INTO A TUBE: FREQUENCY RUNS ROUND THE WALL,\\nTIME RUNS DOWN THE BORE. KICKS ARE WHITE RINGS. THE BAR ROLLS THE CAMERA.',), ('CONTOUR MAP OF SOUND FROM STRAIGHT ABOVE: LINES JOIN EQUAL LOUDNESS,\\nBLUER IS LOUDER. RED HATCHED BANDS ARE KICK DRUMS CROSSING THE SHEET.', 'THE SPECTRUM HISTORY PRINTED AS A SURVEY SHEET: TIME ALONG ONE AXIS,\\nFREQUENCY ALONG THE OTHER. A SNARE KNOCKS THE INK OUT OF REGISTER.'), ('THE SAME SPECTRUM HEIGHT MAP SHADED AS SOLID ROCK: ONE SUN, DISTANCE FOG.\\nTHE THIN STRATA ARE ITS ROWS. A KICK DRUM IS A GLOWING BAND ROLLING AWAY.',), ('ONE TRACE PER FRAME OF SOUND, STACKED FLAT WITH NO PERSPECTIVE.\\nBASS IS IN THE MIDDLE. EACH TRACE HIDES THE ONES BEHIND IT.', 'THE SPECTRUM HISTORY AS A SEISMOGRAPH IN PURE BLACK AND WHITE:\\nORDERED DITHER AT 640 BY 360. THE BEAT THICKENS THE DOTS.'), ('THE HEIGHT MAP WRAPPED ON A SPHERE: FREQUENCY IS LONGITUDE, NEW SOUND\\nENTERS AT THE NORTH POLE AND TRAVELS SOUTH. A KICK SWELLS ONE LATITUDE.', 'SPECTRUM PLANET: A 256 BY 192 GRID PUSHED OUT BY THE LAST SECONDS OF\\nSOUND. IT TURNS FASTER WHEN THE MUSIC IS LOUD.'), ('THE HEIGHT MAP AS A SPIRAL DISC: FREQUENCY IS THE ANGLE, NEW SOUND STARTS\\nAT THE CENTRE AND SPREADS OUT. EACH KICK DRUM LEAVES THE MIDDLE AS A RING.',)) if parent().par.Describe else (('',), ('SIGNAL LINK ..... OPEN', 'SOUND IN. PICTURE OUT.', 'CHANNEL 07 OPEN'), ('',), ('PLATE 07   SURVEY OF A SOUND, FROM ABOVE.', 'SHEET 12-B   LOUD GROUND IS HIGH GROUND.', 'CATALOGUE NO. 0047   TERRAIN OF UNKNOWN USE'), ('',), ('PLATE 07', 'FRAME. FRAME. FRAME.', 'FOUND, NOT MADE.', 'LISTEN WITH YOUR EYES.'), ('EXHIBIT 12-B: UNRECORDED.', 'OBJECT OF UNKNOWN USE. HANDLE WITH CARE.', 'PAST. PRESENT. LATER. STILL TURNING.'), ('',)))[int(op('shot')['take']) % 8], op('tk')['s2'])[:int(float(op('shot')['age']) * 150.0 if parent().par.Describe else min(float(op('shot')['age']), 2.0) * 50.0)]"
+    }
+   }
+  },
+  "local": {
+   "type": "baseCOMP",
+   "family": "COMP",
+   "pos": [
+    -400,
+    460
+   ]
+  },
+  "local/modules": {
+   "type": "baseCOMP",
+   "family": "COMP",
+   "pos": [
+    0,
+    0
+   ]
+  },
+  "local/modules/paths": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "file": {
+     "expr": "project.folder.replace(chr(92), '/') + '/experiments/sw_hub/paths_module.py'"
+    },
+    "language": "text",
+    "syncfile": true
+   },
+   "text_file": "experiments/sw_hub/paths_module.py"
+  },
+  "notes": {
+   "type": "glslTOP",
+   "family": "TOP",
+   "pos": [
+    -100,
+    -520
+   ],
+   "inputs": [
+    [
+     "notes_fb"
+    ]
+   ],
+   "pars": {
+    "computedat": "notes_compute",
+    "format": "rgba16float",
+    "inputfiltertype": "nearest",
+    "outputresolution": "custom",
+    "pixeldat": "notes_px",
+    "resolutionh": 192,
+    "resolutionw": 2,
+    "vec0name": "uLive",
+    "vec0valuex": {
+     "expr": "op('ctl')['pitchn']"
+    },
+    "vec0valuey": {
+     "expr": "op('ctl')['cometx']"
+    },
+    "vec0valuez": {
+     "expr": "min(float(op('hub')['vocals']), 1.5)"
+    },
+    "vec1name": "uBass",
+    "vec1valuew": 0.0,
+    "vec1valuex": {
+     "expr": "op('ctl')['bhue']"
+    },
+    "vec1valuey": {
+     "expr": "op('ctl')['bon']"
+    },
+    "vec1valuez": {
+     "expr": "min(float(op('hub')['bass']), 1.5)"
+    }
+   }
+  },
+  "notes_compute": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    320,
+    -120
+   ],
+   "pars": {
+    "language": "glsl"
+   },
+   "text": [
+    "// Example Compute Shader",
+    "",
+    "// uniform float exampleUniform;",
+    "",
+    "layout (local_size_x = 8, local_size_y = 4) in;",
+    "void main()",
+    "{",
+    "\t// This code is running 1:1 per pixel, so early-exit",
+    "\t// if this thread overhangs the edge of the output",
+    "\tif (any(greaterThanEqual(ivec2(gl_GlobalInvocationID.xy), ivec2(uTDOutputInfo.res.zw))))",
+    "\t\treturn;",
+    "",
+    "\tvec4 color;",
+    "\t//color = texelFetch(sTD2DInputs[0], ivec2(gl_GlobalInvocationID.xy), 0);",
+    "\tcolor = vec4(1.0);",
+    "\t// We need to use TDImageStoreOutput() so that 8-bit textures that are sRGB",
+    "\t// encoded can be written to correctly from incoming linear values.",
+    "\t// imageStore() does not do this automatically, while pixel shader outputs do.",
+    "\tTDImageStoreOutput(0, gl_GlobalInvocationID, color);",
+    "}"
+   ]
+  },
+  "notes_fb": {
+   "type": "feedbackTOP",
+   "family": "TOP",
+   "pos": [
+    -250,
+    -520
+   ],
+   "inputs": [
+    [
+     "notes_init"
+    ]
+   ],
+   "pars": {
+    "format": "rgba16float",
+    "top": "notes"
+   }
+  },
+  "notes_info": {
+   "type": "infoDAT",
+   "family": "DAT",
+   "pos": [
+    160,
+    -120
+   ],
+   "pars": {
+    "language": "text",
+    "op": "notes"
+   }
+  },
+  "notes_init": {
+   "type": "constantTOP",
+   "family": "TOP",
+   "pos": [
+    -400,
+    -520
+   ],
+   "pars": {
+    "alpha": 0.0,
+    "colorb": 0.0,
+    "colorg": 0.0,
+    "colorr": 0.5,
+    "format": "rgba16float",
+    "outputresolution": "custom",
+    "resolutionh": 192,
+    "resolutionw": 2
+   }
+  },
+  "notes_pixel": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    0,
+    -120
+   ],
+   "pars": {
+    "extension": "frag",
+    "language": "glsl"
+   },
+   "text": [
+    "",
+    "// Example Pixel Shader",
+    "",
+    "// uniform float exampleUniform;",
+    "",
+    "out vec4 fragColor;",
+    "void main()",
+    "{",
+    "\t// vec4 color = texture(sTD2DInputs[0], vUV.st);",
+    "\tvec4 color = vec4(1.0);",
+    "\tfragColor = TDOutputSwizzle(color);",
+    "}"
+   ]
+  },
+  "notes_px": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    -100,
+    -650
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.here('shaders/notes.frag')"
+    },
+    "language": "text",
+    "syncfile": true
+   },
+   "text_file": "experiments/sc_spectral_terrain/shaders/notes.frag"
+  },
+  "out1": {
+   "type": "outTOP",
+   "family": "TOP",
+   "pos": [
+    1200,
+    0
+   ],
+   "inputs": [
+    [
+     "crt"
+    ]
+   ]
+  },
+  "over": {
+   "type": "overTOP",
+   "family": "TOP",
+   "pos": [
+    850,
+    0
+   ],
+   "inputs": [
+    [
+     "render"
+    ],
+    [
+     "sky"
+    ]
+   ],
+   "pars": {
+    "format": "rgba16float"
+   }
+  },
+  "render": {
+   "type": "renderTOP",
+   "family": "TOP",
+   "pos": [
+    700,
+    0
+   ],
+   "pars": {
+    "camera": "cam",
+    "format": "rgba16float",
+    "geometry": "terrain comet w_*",
+    "lights": "",
+    "resolutionh": 720,
+    "resolutionw": 1280
+   }
+  },
+  "shot": {
+   "type": "constantCHOP",
+   "family": "CHOP",
+   "pos": [
+    -400,
+    330
+   ],
+   "pars": {
+    "const0name": "take",
+    "const0value": {
+     "expr": "parent().par.Take"
+    },
+    "const1name": "seed",
+    "const1value": {
+     "expr": "parent().par.Seed"
+    },
+    "const2name": "age",
+    "const2value": {
+     "expr": "max(0, absTime.seconds - parent().par.Shotstart)"
+    }
+   }
+  },
+  "sky": {
+   "type": "glslTOP",
+   "family": "TOP",
+   "pos": [
+    550,
+    150
+   ],
+   "inputs": [
+    [
+     "notes"
+    ],
+    [
+     "wf"
+    ]
+   ],
+   "pars": {
+    "computedat": "sky_compute",
+    "format": "rgba16float",
+    "outputresolution": "custom",
+    "pixeldat": "sky_px",
+    "resolutionh": 720,
+    "resolutionw": 1280,
+    "vec0name": "uCam",
+    "vec0valuew": {
+     "expr": "math.tan(math.radians(op('cam').par.fov) * 0.5) * 720.0 / 1280.0"
+    },
+    "vec0valuex": {
+     "expr": "op('cam').par.rx"
+    },
+    "vec0valuey": {
+     "expr": "op('cam').par.ry"
+    },
+    "vec0valuez": {
+     "expr": "op('cam').par.rz"
+    },
+    "vec1name": "uFx",
+    "vec1valuew": {
+     "expr": "op('hub')['energy']"
+    },
+    "vec1valuex": {
+     "expr": "op('hub')['bar_pulse']"
+    },
+    "vec1valuey": {
+     "expr": "op('hub')['hit_high']"
+    },
+    "vec1valuez": {
+     "expr": "op('hub')['evolve']"
+    },
+    "vec2name": "uCol",
+    "vec2valuex": {
+     "expr": "op('ctl')['tr']"
+    },
+    "vec2valuey": {
+     "expr": "op('ctl')['tg']"
+    },
+    "vec2valuez": {
+     "expr": "op('ctl')['tb']"
+    },
+    "vec3name": "uHit",
+    "vec3valuew": 0.0,
+    "vec3valuex": {
+     "expr": "op('ctl')['flash']"
+    },
+    "vec3valuey": {
+     "expr": "op('hub')['hit_mid']"
+    },
+    "vec3valuez": 0.0,
+    "vec4name": "uSkyM",
+    "vec4valuew": 0.0,
+    "vec4valuex": {
+     "expr": "op('tk')['sky']"
+    },
+    "vec4valuey": {
+     "expr": "op('ctl')['sunaz']"
+    },
+    "vec4valuez": 0.0,
+    "vec5name": "uBg",
+    "vec5valuew": 0.0,
+    "vec5valuex": {
+     "expr": "op('tk')['bgr']"
+    },
+    "vec5valuey": {
+     "expr": "op('tk')['bgg']"
+    },
+    "vec5valuez": {
+     "expr": "op('tk')['bgb']"
+    }
+   }
+  },
+  "sky_compute": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    320,
+    -120
+   ],
+   "pars": {
+    "language": "glsl"
+   },
+   "text": [
+    "// Example Compute Shader",
+    "",
+    "// uniform float exampleUniform;",
+    "",
+    "layout (local_size_x = 8, local_size_y = 4) in;",
+    "void main()",
+    "{",
+    "\t// This code is running 1:1 per pixel, so early-exit",
+    "\t// if this thread overhangs the edge of the output",
+    "\tif (any(greaterThanEqual(ivec2(gl_GlobalInvocationID.xy), ivec2(uTDOutputInfo.res.zw))))",
+    "\t\treturn;",
+    "",
+    "\tvec4 color;",
+    "\t//color = texelFetch(sTD2DInputs[0], ivec2(gl_GlobalInvocationID.xy), 0);",
+    "\tcolor = vec4(1.0);",
+    "\t// We need to use TDImageStoreOutput() so that 8-bit textures that are sRGB",
+    "\t// encoded can be written to correctly from incoming linear values.",
+    "\t// imageStore() does not do this automatically, while pixel shader outputs do.",
+    "\tTDImageStoreOutput(0, gl_GlobalInvocationID, color);",
+    "}"
+   ]
+  },
+  "sky_info": {
+   "type": "infoDAT",
+   "family": "DAT",
+   "pos": [
+    160,
+    -120
+   ],
+   "pars": {
+    "language": "text",
+    "op": "sky"
+   }
+  },
+  "sky_pixel": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    0,
+    -120
+   ],
+   "pars": {
+    "extension": "frag",
+    "language": "glsl"
+   },
+   "text": [
+    "",
+    "// Example Pixel Shader",
+    "",
+    "// uniform float exampleUniform;",
+    "",
+    "out vec4 fragColor;",
+    "void main()",
+    "{",
+    "\t// vec4 color = texture(sTD2DInputs[0], vUV.st);",
+    "\tvec4 color = vec4(1.0);",
+    "\tfragColor = TDOutputSwizzle(color);",
+    "}"
+   ]
+  },
+  "sky_px": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    550,
+    20
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.here('shaders/sky.frag')"
+    },
+    "language": "text",
+    "syncfile": true
+   },
+   "text_file": "experiments/sc_spectral_terrain/shaders/sky.frag"
+  },
+  "spectrum": {
+   "type": "selectTOP",
+   "family": "TOP",
+   "pos": [
+    -400,
+    60
+   ],
+   "pars": {
+    "top": "/project1/sw_hub/specraw"
+   }
+  },
+  "terrain": {
+   "type": "geometryCOMP",
+   "family": "COMP",
+   "pos": [
+    250,
+    -520
+   ],
+   "pars": {
+    "material": "/project1/sc_spectral_terrain/terrain_mat"
+   }
+  },
+  "terrain/grid": {
+   "type": "gridSOP",
+   "family": "SOP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "cols": 256,
+    "orient": "zx",
+    "rows": 192
+   }
+  },
+  "terrain_mat": {
+   "type": "glslMAT",
+   "family": "MAT",
+   "pos": [
+    250,
+    -260
+   ],
+   "pars": {
+    "cullface": "neither",
+    "pdat": "terrain_px",
+    "sampler0extendu": "hold",
+    "sampler0extendv": "hold",
+    "sampler0name": "sWF",
+    "sampler0top": "/project1/sc_spectral_terrain/wf",
+    "sampler1name": "sIn",
+    "sampler1top": "/project1/sc_spectral_terrain/in_pic",
+    "sampler2name": "sInH",
+    "sampler2top": "/project1/sc_spectral_terrain/in_soft",
+    "vdat": "terrain_vs",
+    "vec0name": "uDim",
+    "vec0valuew": {
+     "expr": "(op('tk')['inlines'] if (op('tk')['inon'] > 0.5 and op('tk')['inlines'] > 0) else op('tk')['lines'])"
+    },
+    "vec0valuex": 18.0,
+    "vec0valuey": 44.0,
+    "vec0valuez": {
+     "expr": "op('tk')['amp']"
+    },
+    "vec10name": "uCamP",
+    "vec10valuew": 0.0,
+    "vec10valuex": {
+     "expr": "op('cam').par.tx"
+    },
+    "vec10valuey": {
+     "expr": "op('cam').par.ty"
+    },
+    "vec10valuez": {
+     "expr": "op('cam').par.tz"
+    },
+    "vec11name": "uIn",
+    "vec11valuew": {
+     "expr": "op('tk')['ingain']"
+    },
+    "vec11valuex": {
+     "expr": "op('tk')['inon']"
+    },
+    "vec11valuey": {
+     "expr": "op('tk')['inamp']"
+    },
+    "vec11valuez": {
+     "expr": "op('tk')['inmix']"
+    },
+    "vec12name": "uInM",
+    "vec12valuew": {
+     "expr": "(op('tk')['gvb'] if (op('tk')['ingate'] > 0.5 and op('tk')['g'] > 0.5) else op('tk')['invb'])"
+    },
+    "vec12valuex": {
+     "expr": "(op('tk')['gua'] if (op('tk')['ingate'] > 0.5 and op('tk')['g'] > 0.5) else op('tk')['inua'])"
+    },
+    "vec12valuey": {
+     "expr": "(op('tk')['gub'] if (op('tk')['ingate'] > 0.5 and op('tk')['g'] > 0.5) else op('tk')['inub'])"
+    },
+    "vec12valuez": {
+     "expr": "(op('tk')['gva'] if (op('tk')['ingate'] > 0.5 and op('tk')['g'] > 0.5) else op('tk')['inva'])"
+    },
+    "vec13name": "uInO",
+    "vec13valuew": {
+     "expr": "op('tk')['inplanar']"
+    },
+    "vec13valuex": {
+     "expr": "(op('tk')['guo'] if (op('tk')['ingate'] > 0.5 and op('tk')['g'] > 0.5) else op('tk')['inuo'])"
+    },
+    "vec13valuey": {
+     "expr": "(op('tk')['gvo'] if (op('tk')['ingate'] > 0.5 and op('tk')['g'] > 0.5) else op('tk')['invo'])"
+    },
+    "vec13valuez": {
+     "expr": "op('tk')['inpk']"
+    },
+    "vec1name": "uMono0",
+    "vec1valuew": {
+     "expr": "op('tk')['floor']"
+    },
+    "vec1valuex": {
+     "expr": "op('ctl')['wx']"
+    },
+    "vec1valuey": {
+     "expr": "op('tk')['wz'] if op('tk')['hero'] >= 0 else 500.0"
+    },
+    "vec1valuez": {
+     "expr": "((4.699999999999999, 3.6, 3.1, 3.6, 3.6, 4.1, 3.85, 3.85, 4.699999999999999, 4.3999999999999995, 4.6, 3.85, 3.85, 3.35, 4.1, 4.1)[int(op('tk')['hero'])] * float(op('tk')['wscale']) if op('tk')['hero'] >= 0 else 1.2)"
+    },
+    "vec2name": "uShape",
+    "vec2valuew": {
+     "expr": "op('ctl')['spin']"
+    },
+    "vec2valuex": {
+     "expr": "op('tk')['shape']"
+    },
+    "vec2valuey": {
+     "expr": "op('tk')['radius']"
+    },
+    "vec2valuez": {
+     "expr": "op('ctl')['twist']"
+    },
+    "vec3name": "uMap",
+    "vec3valuew": 0.0,
+    "vec3valuex": {
+     "expr": "op('ctl')['xmap']"
+    },
+    "vec3valuey": {
+     "expr": "op('ctl')['arr']"
+    },
+    "vec3valuez": {
+     "expr": "op('ctl')['spring']"
+    },
+    "vec4name": "uCol",
+    "vec4valuew": {
+     "expr": "1.1 + 0.8 * float(op('hub')['energy'])"
+    },
+    "vec4valuex": {
+     "expr": "op('ctl')['tr']"
+    },
+    "vec4valuey": {
+     "expr": "op('ctl')['tg']"
+    },
+    "vec4valuez": {
+     "expr": "op('ctl')['tb']"
+    },
+    "vec5name": "uCol2",
+    "vec5valuew": {
+     "expr": "op('hub')['pulse']"
+    },
+    "vec5valuex": {
+     "expr": "op('tk')['accr']"
+    },
+    "vec5valuey": {
+     "expr": "op('tk')['accg']"
+    },
+    "vec5valuez": {
+     "expr": "op('tk')['accb']"
+    },
+    "vec6name": "uFx",
+    "vec6valuew": {
+     "expr": "op('hub')['hit_high']"
+    },
+    "vec6valuex": {
+     "expr": "op('tk')['fog']"
+    },
+    "vec6valuey": {
+     "expr": "op('hub')['energy']"
+    },
+    "vec6valuez": {
+     "expr": "op('hub')['beat_pos']"
+    },
+    "vec7name": "uLook",
+    "vec7valuew": {
+     "expr": "op('ctl')['sweep']"
+    },
+    "vec7valuex": {
+     "expr": "op('tk')['look']"
+    },
+    "vec7valuey": {
+     "expr": "op('tk')['contours']"
+    },
+    "vec7valuez": {
+     "expr": "op('tk')['shape']"
+    },
+    "vec8name": "uBg",
+    "vec8valuew": {
+     "expr": "op('tk')['fogd']"
+    },
+    "vec8valuex": {
+     "expr": "op('tk')['bgr']"
+    },
+    "vec8valuey": {
+     "expr": "op('tk')['bgg']"
+    },
+    "vec8valuez": {
+     "expr": "op('tk')['bgb']"
+    },
+    "vec9name": "uSun",
+    "vec9valuew": 0.0,
+    "vec9valuex": {
+     "expr": "math.sin(op('ctl')['sunaz'])"
+    },
+    "vec9valuey": {
+     "expr": "op('tk')['sunel']"
+    },
+    "vec9valuez": {
+     "expr": "-math.cos(op('ctl')['sunaz'])"
+    }
+   }
+  },
+  "terrain_mat_info": {
+   "type": "infoDAT",
+   "family": "DAT",
+   "pos": [
+    320,
+    -120
+   ],
+   "pars": {
+    "language": "text",
+    "op": "terrain_mat"
+   }
+  },
+  "terrain_mat_pixel": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    160,
+    -120
+   ],
+   "pars": {
+    "extension": "frag",
+    "language": "glsl"
+   },
+   "text": [
+    "// Example Pixel Shader",
+    "",
+    "// uniform vec4 exampleUniform;",
+    "",
+    "out vec4 oFragColor;",
+    "void main()",
+    "{",
+    "\tTDCheckDiscard();",
+    "\tvec4 color = vec4(1.0);",
+    "\tTDAlphaTest(color.a);",
+    "\toFragColor = TDOutputSwizzle(color);",
+    "}",
+    ""
+   ]
+  },
+  "terrain_mat_vertex": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    0,
+    -120
+   ],
+   "pars": {
+    "extension": "vert",
+    "language": "glsl"
+   },
+   "text": [
+    "// Example Vertex Shader",
+    "",
+    "void main() ",
+    "{",
+    "\tvec3 pos = TDPos();",
+    "\tvec4 worldSpacePos = TDDeform(pos);",
+    "\tgl_Position = TDWorldToProj(worldSpacePos);",
+    "#ifndef TD_PICKING_ACTIVE",
+    "#else // TD_PICKING_ACTIVE",
+    "\t// This will automatically write out the nessessary values",
+    "\t// for this shader to work with picking.",
+    "\t// See the documentation if you want to write custom values for picking.",
+    "\tTDWritePickingValues();",
+    "#endif // TD_PICKING_ACTIVE",
+    "}",
+    ""
+   ]
+  },
+  "terrain_px": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    250,
+    -390
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.here('shaders/terrain.frag')"
+    },
+    "language": "text",
+    "syncfile": true
+   },
+   "text_file": "experiments/sc_spectral_terrain/shaders/terrain.frag"
+  },
+  "terrain_vs": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    100,
+    -390
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.here('shaders/terrain.vert')"
+    },
+    "language": "text",
+    "syncfile": true
+   },
+   "text_file": "experiments/sc_spectral_terrain/shaders/terrain.vert"
+  },
+  "tk": {
+   "type": "constantCHOP",
+   "family": "CHOP",
+   "pos": [
+    -250,
+    330
+   ],
+   "pars": {
+    "const0name": "shape",
+    "const0value": {
+     "expr": "(0.0, 0.0, 1.0, 0.0, 0.0, 4.0, 2.0, 3.0)[int(op('shot')['take']) % 8]"
+    },
+    "const10name": "fogd",
+    "const10value": {
+     "expr": "(0.05, 0.05, 0.05, 0.05, 0.032, 0.05, 0.05, 0.05)[int(op('shot')['take']) % 8]"
+    },
+    "const11name": "radius",
+    "const11value": {
+     "expr": "(4.5, 4.5, 4.6, 4.5, 4.5, 10.5, 5.0, 15.0)[int(op('shot')['take']) % 8]"
+    },
+    "const12name": "twist",
+    "const12value": {
+     "expr": "(0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.6)[int(op('shot')['take']) % 8]"
+    },
+    "const13name": "twists",
+    "const13value": {
+     "expr": "(0.0, 0.0, 3.0, 0.0, 0.0, 0.0, 0.0, 0.0)[int(op('shot')['take']) % 8]"
+    },
+    "const14name": "spin",
+    "const14value": {
+     "expr": "(0.0, 0.0, 0.5, 0.0, 0.0, 0.0, 0.35, 0.22)[int(op('shot')['take']) % 8]"
+    },
+    "const15name": "contours",
+    "const15value": {
+     "expr": "(2.2, 2.2, 2.2, 1.5, 2.2, 2.2, 2.2, 2.2)[int(op('shot')['take']) % 8]"
+    },
+    "const16name": "colr",
+    "const16value": {
+     "expr": "(0.22, 0.5, 1.0, 0.1, 1.0, 1.0, 1.0, 0.93)[int(op('shot')['take']) % 8]"
+    },
+    "const17name": "colg",
+    "const17value": {
+     "expr": "(1.0, 0.8, 0.17, 0.17, 0.7, 1.0, 0.74, 0.85)[int(op('shot')['take']) % 8]"
+    },
+    "const18name": "colb",
+    "const18value": {
+     "expr": "(0.42, 1.0, 0.1, 0.23, 0.4, 1.0, 0.36, 0.66)[int(op('shot')['take']) % 8]"
+    },
+    "const19name": "accr",
+    "const19value": {
+     "expr": "(1.0, 1.0, 1.0, 0.36, 1.0, 1.0, 1.0, 1.0)[int(op('shot')['take']) % 8]"
+    },
+    "const1name": "look",
+    "const1value": {
+     "expr": "(0.0, 0.0, 0.0, 2.0, 1.0, 0.0, 0.0, 0.0)[int(op('shot')['take']) % 8]"
+    },
+    "const20name": "accg",
+    "const20value": {
+     "expr": "(0.95, 1.0, 0.9, 0.52, 0.8, 1.0, 1.0, 0.17)[int(op('shot')['take']) % 8]"
+    },
+    "const21name": "accb",
+    "const21value": {
+     "expr": "(0.8, 1.0, 0.6, 0.62, 0.3, 1.0, 1.0, 0.1)[int(op('shot')['take']) % 8]"
+    },
+    "const22name": "wcolr",
+    "const22value": {
+     "expr": "(1.0, 0.5, 1.0, 1.0, 1.0, 1.0, 1.0, 0.95)[int(op('shot')['take']) % 8]"
+    },
+    "const23name": "wcolg",
+    "const23value": {
+     "expr": "(0.58, 0.8, 0.58, 0.58, 0.86, 0.58, 0.58, 0.16)[int(op('shot')['take']) % 8]"
+    },
+    "const24name": "wcolb",
+    "const24value": {
+     "expr": "(0.1, 1.0, 0.1, 0.1, 0.55, 0.1, 0.1, 0.1)[int(op('shot')['take']) % 8]"
+    },
+    "const25name": "bgr",
+    "const25value": {
+     "expr": "(0.0, 0.0, 0.0, 0.93, 0.8, 0.0, 0.0, 0.0)[int(op('shot')['take']) % 8]"
+    },
+    "const26name": "bgg",
+    "const26value": {
+     "expr": "(0.0, 0.0, 0.0, 0.89, 0.4, 0.0, 0.0, 0.0)[int(op('shot')['take']) % 8]"
+    },
+    "const27name": "bgb",
+    "const27value": {
+     "expr": "(0.0, 0.0, 0.0, 0.78, 0.4, 0.0, 0.0, 0.0)[int(op('shot')['take']) % 8]"
+    },
+    "const28name": "labcolr",
+    "const28value": {
+     "expr": "(1.0, 0.5, 1.0, 0.1, 1.0, 1.0, 1.0, 1.0)[int(op('shot')['take']) % 8]"
+    },
+    "const29name": "labcolg",
+    "const29value": {
+     "expr": "((1.0, 0.8, 0.9, 0.17, 1.0, 1.0, 0.86, 1.0) if parent().par.Describe else (1.0, 0.8, 1.0, 0.17, 1.0, 1.0, 0.74, 1.0))[int(op('shot')['take']) % 8]"
+    },
+    "const2name": "sky",
+    "const2value": {
+     "expr": "(0.0, 0.0, 4.0, 1.0, 2.0, 1.0, 3.0, 3.0)[int(op('shot')['take']) % 8]"
+    },
+    "const30name": "labcolb",
+    "const30value": {
+     "expr": "((1.0, 1.0, 0.6, 0.23, 1.0, 1.0, 0.56, 1.0) if parent().par.Describe else (1.0, 1.0, 1.0, 0.23, 1.0, 1.0, 0.36, 1.0))[int(op('shot')['take']) % 8]"
+    },
+    "const31name": "swap",
+    "const31value": {
+     "expr": "(1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0)[int(op('shot')['take']) % 8]"
+    },
+    "const32name": "camx",
+    "const32value": {
+     "expr": "(0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0)[int(op('shot')['take']) % 8]"
+    },
+    "const33name": "camxs",
+    "const33value": {
+     "expr": "(3.3, 1.2, 1.3, 0.0, 2.0, 0.0, 3.0, 2.5)[int(op('shot')['take']) % 8]"
+    },
+    "const34name": "camxg",
+    "const34value": {
+     "expr": "(0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 3.5, 0.0)[int(op('shot')['take']) % 8]"
+    },
+    "const35name": "ridgex",
+    "const35value": {
+     "expr": "(0.0, 5.4, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0)[int(op('shot')['take']) % 8]"
+    },
+    "const36name": "camy",
+    "const36value": {
+     "expr": "(1.5, 1.5, -1.1, 30.0, 2.6, 0.5, 3.5, 8.0)[int(op('shot')['take']) % 8]"
+    },
+    "const37name": "camys",
+    "const37value": {
+     "expr": "(2.7, 0.7, 0.0, 0.0, 2.2, 0.0, 0.0, 7.0)[int(op('shot')['take']) % 8]"
+    },
+    "const38name": "camz",
+    "const38value": {
+     "expr": "(4.3, -37.5, -0.6, -17.0, 4.6, 40.0, 23.0, 17.0)[int(op('shot')['take']) % 8]"
+    },
+    "const39name": "camzg",
+    "const39value": {
+     "expr": "(0.0, 0.0, 0.0, 6.0, 0.0, 0.0, -11.5, 0.0)[int(op('shot')['take']) % 8]"
+    },
+    "const3name": "post",
+    "const3value": {
+     "expr": "(0.0, 0.0, 0.0, 1.0, 0.0, 2.0, 0.0, 0.0)[int(op('shot')['take']) % 8]"
+    },
+    "const40name": "camrx",
+    "const40value": {
+     "expr": "(-4.0, 2.0, 0.0, -90.0, -4.0, 0.0, -8.0, -23.0)[int(op('shot')['take']) % 8]"
+    },
+    "const41name": "camrxs",
+    "const41value": {
+     "expr": "(-8.0, 0.0, 0.0, 0.0, -5.0, 0.0, 0.0, -17.0)[int(op('shot')['take']) % 8]"
+    },
+    "const42name": "camry",
+    "const42value": {
+     "expr": "(0.0, 180.0, 0.0, 90.0, 0.0, 0.0, 0.0, 0.0)[int(op('shot')['take']) % 8]"
+    },
+    "const43name": "camrys",
+    "const43value": {
+     "expr": "(13.0, 0.0, 0.0, 0.0, 6.0, 0.0, 6.0, 8.0)[int(op('shot')['take']) % 8]"
+    },
+    "const44name": "ridgery",
+    "const44value": {
+     "expr": "(0.0, -13.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0)[int(op('shot')['take']) % 8]"
+    },
+    "const45name": "camrz",
+    "const45value": {
+     "expr": "(0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0)[int(op('shot')['take']) % 8]"
+    },
+    "const46name": "camrzg",
+    "const46value": {
+     "expr": "(0.0, 0.0, 0.0, 0.0, 0.0, 90.0, 0.0, 0.0)[int(op('shot')['take']) % 8]"
+    },
+    "const47name": "fov",
+    "const47value": {
+     "expr": "(62.0, 100.0, 104.0, 59.0, 58.0, 28.0, 50.0, 62.0)[int(op('shot')['take']) % 8]"
+    },
+    "const48name": "fovg",
+    "const48value": {
+     "expr": "(0.0, 0.0, 0.0, -25.0, 0.0, -9.0, 0.0, 0.0)[int(op('shot')['take']) % 8]"
+    },
+    "const49name": "drift",
+    "const49value": {
+     "expr": "(1.0, 0.5, 0.5, 0.25, 0.8, 0.0, 0.4, 0.6)[int(op('shot')['take']) % 8]"
+    },
+    "const4name": "xmap",
+    "const4value": {
+     "expr": "(0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0)[int(op('shot')['take']) % 8]"
+    },
+    "const50name": "roll",
+    "const50value": {
+     "expr": "(2.5, 6.0, 16.0, 0.0, 2.5, 0.0, 4.0, 3.0)[int(op('shot')['take']) % 8]"
+    },
+    "const51name": "punch",
+    "const51value": {
+     "expr": "(0.45, -0.8, 1.4, 0.0, 0.45, 2.0, 0.8, 0.9)[int(op('shot')['take']) % 8]"
+    },
+    "const52name": "arrz",
+    "const52value": {
+     "expr": "(1.5, -3.0, 4.0, 0.0, 1.5, 0.0, 6.0, 5.0)[int(op('shot')['take']) % 8]"
+    },
+    "const53name": "sunaz",
+    "const53value": {
+     "expr": "(0.0, 0.0, 0.0, 2.3, 0.0, 0.0, 0.0, 0.0)[int(op('shot')['take']) % 8]"
+    },
+    "const54name": "sunazs",
+    "const54value": {
+     "expr": "(0.0, 0.0, 0.0, 0.0, 0.42, 0.0, 0.0, 0.0)[int(op('shot')['take']) % 8]"
+    },
+    "const55name": "sunel",
+    "const55value": {
+     "expr": "(0.22, 0.22, 0.22, 0.8, 0.2, 0.22, 0.22, 0.22)[int(op('shot')['take']) % 8]"
+    },
+    "const56name": "comet",
+    "const56value": {
+     "expr": "(1.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0)[int(op('shot')['take']) % 8]"
+    },
+    "const57name": "bloom",
+    "const57value": {
+     "expr": "(0.6, 0.7, 0.8, 0.0, 0.1, 0.5, 0.7, 0.65)[int(op('shot')['take']) % 8]"
+    },
+    "const58name": "scan",
+    "const58value": {
+     "expr": "(0.28, 0.28, 0.28, 0.28, 0.06, 0.28, 0.28, 0.28)[int(op('shot')['take']) % 8]"
+    },
+    "const59name": "barrel",
+    "const59value": {
+     "expr": "(0.16, 0.16, 0.16, 0.16, 0.05, 0.16, 0.16, 0.16)[int(op('shot')['take']) % 8]"
+    },
+    "const5name": "xmaps",
+    "const5value": {
+     "expr": "(0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0)[int(op('shot')['take']) % 8]"
+    },
+    "const60name": "expo",
+    "const60value": {
+     "expr": "(1.0, 1.0, 1.0, 1.0, 1.0, 1.3, 1.0, 1.0)[int(op('shot')['take']) % 8]"
+    },
+    "const61name": "inverts",
+    "const61value": {
+     "expr": "(0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0)[int(op('shot')['take']) % 8]"
+    },
+    "const62name": "wscale",
+    "const62value": {
+     "expr": "((1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 0.95) if parent().par.Describe else (1.0, 1.0, 1.0, 1.0, 0.8, 1.0, 1.0, 0.8))[int(op('shot')['take']) % 8]"
+    },
+    "const63name": "wx",
+    "const63value": {
+     "expr": "(0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0)[int(op('shot')['take']) % 8]"
+    },
+    "const64name": "wxs",
+    "const64value": {
+     "expr": "(0.0, 0.0, 0.0, 0.0, 2.2, 0.0, 0.0, 0.0)[int(op('shot')['take']) % 8]"
+    },
+    "const65name": "wz",
+    "const65value": {
+     "expr": "(-12.5, -12.5, -12.5, -12.5, -19.0, -12.5, -12.5, 0.0)[int(op('shot')['take']) % 8]"
+    },
+    "const66name": "wlift",
+    "const66value": {
+     "expr": "((2.4, 0.7, 0.7, 0.7, 2.6, 0.7, 0.7, 2.6) if parent().par.Describe else (0.7, 0.7, 0.7, 0.7, 2.1, 0.7, 0.7, 0.9))[int(op('shot')['take']) % 8]"
+    },
+    "const67name": "lab",
+    "const67value": {
+     "expr": "((1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0) if parent().par.Describe else (0.0, 0.8, 0.0, 1.0, 0.0, 1.0, 0.7, 0.0))[int(op('shot')['take']) % 8]"
+    },
+    "const68name": "labx",
+    "const68value": {
+     "expr": "((40.0, 40.0, 40.0, 40.0, 40.0, 40.0, 40.0, 40.0) if parent().par.Describe else (40.0, 44.0, 40.0, 40.0, 40.0, 36.0, 44.0, 40.0))[int(op('shot')['take']) % 8]"
+    },
+    "const69name": "laby",
+    "const69value": {
+     "expr": "((30.0, 636.0, 30.0, 16.0, 30.0, 14.0, 30.0, 30.0) if parent().par.Describe else (34.0, 660.0, 34.0, 30.0, 34.0, 28.0, 40.0, 34.0))[int(op('shot')['take']) % 8]"
+    },
+    "const6name": "floor",
+    "const6value": {
+     "expr": "(0.18, 0.3, 0.45, 0.55, 0.22, 0.1, 0.4, 0.5)[int(op('shot')['take']) % 8]"
+    },
+    "const70name": "labsize",
+    "const70value": {
+     "expr": "((24.0, 24.0, 24.0, 24.0, 24.0, 24.0, 24.0, 24.0) if parent().par.Describe else (22.0, 18.0, 22.0, 24.0, 22.0, 24.0, 18.0, 22.0))[int(op('shot')['take']) % 8]"
+    },
+    "const71name": "strip",
+    "const71value": {
+     "expr": "((0.125, 0.125, 0.125, 0.125, 0.125, 0.125, 0.125, 0.125) if parent().par.Describe else (0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1))[int(op('shot')['take']) % 8]"
+    },
+    "const72name": "halo",
+    "const72value": {
+     "expr": "(0.85, 0.85, 0.85, 0.85, 0.85, 0.85, 0.85, 0.85)[int(op('shot')['take']) % 8]"
+    },
+    "const73name": "inua",
+    "const73value": {
+     "expr": "(1.0, -1.0, 2.0, 0.0, 1.0, 1.0, -2.0, 0.0294)[int(op('shot')['take']) % 8]"
+    },
+    "const74name": "inub",
+    "const74value": {
+     "expr": "(0.0, 0.0, 0.0, 1.37, 0.0, 0.0, 0.0, 0.0)[int(op('shot')['take']) % 8]"
+    },
+    "const75name": "inuo",
+    "const75value": {
+     "expr": "(0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.5)[int(op('shot')['take']) % 8]"
+    },
+    "const76name": "inva",
+    "const76value": {
+     "expr": "(0.0, 0.0, 0.0, -1.0, 0.0, 0.0, 0.0, 0.0)[int(op('shot')['take']) % 8]"
+    },
+    "const77name": "invb",
+    "const77value": {
+     "expr": "(1.67, -1.67, 3.0, 0.0, 1.67, 1.0, -1.0, -0.0385)[int(op('shot')['take']) % 8]"
+    },
+    "const78name": "invo",
+    "const78value": {
+     "expr": "(0.0, 1.67, 0.0, 1.0, 0.0, 0.0, 1.0, 0.5)[int(op('shot')['take']) % 8]"
+    },
+    "const79name": "inamp",
+    "const79value": {
+     "expr": "(0.22, 0.06, 0.1, 0.5, 0.3, 0.12, 0.25, 0.35)[int(op('shot')['take']) % 8]"
+    },
+    "const7name": "amp",
+    "const7value": {
+     "expr": "(3.0, 3.6, 1.9, 3.0, 3.5, 1.7, 1.25, 1.8)[int(op('shot')['take']) % 8]"
+    },
+    "const80name": "inmix",
+    "const80value": {
+     "expr": "(0.3, 0.35, 0.3, 0.2, 0.35, 0.18, 0.2, 0.15)[int(op('shot')['take']) % 8]"
+    },
+    "const81name": "inpk",
+    "const81value": {
+     "expr": "(0.6, 0.6, 0.5, 0.3, 1.0, 0.1, 0.35, 0.25)[int(op('shot')['take']) % 8]"
+    },
+    "const82name": "ingain",
+    "const82value": {
+     "expr": "(1.2, 1.2, 1.2, 1.2, 1.6, 1.6, 1.2, 1.2)[int(op('shot')['take']) % 8]"
+    },
+    "const83name": "inlines",
+    "const83value": {
+     "expr": "(0.0, 0.0, 0.0, 0.0, 0.0, 96.0, 0.0, 0.0)[int(op('shot')['take']) % 8]"
+    },
+    "const84name": "inplanar",
+    "const84value": {
+     "expr": "(0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0)[int(op('shot')['take']) % 8]"
+    },
+    "const85name": "ingate",
+    "const85value": {
+     "expr": "(0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0)[int(op('shot')['take']) % 8]"
+    },
+    "const86name": "gua",
+    "const86value": {
+     "expr": "(0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0)[int(op('shot')['take']) % 8]"
+    },
+    "const87name": "gub",
+    "const87value": {
+     "expr": "(0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0)[int(op('shot')['take']) % 8]"
+    },
+    "const88name": "guo",
+    "const88value": {
+     "expr": "(0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0)[int(op('shot')['take']) % 8]"
+    },
+    "const89name": "gva",
+    "const89value": {
+     "expr": "(0.0, 0.0, 0.0, 0.0, 0.0, -2.38, 0.0, 0.0)[int(op('shot')['take']) % 8]"
+    },
+    "const8name": "lines",
+    "const8value": {
+     "expr": "(96.0, 128.0, 96.0, 96.0, 96.0, 48.0, 96.0, 64.0)[int(op('shot')['take']) % 8]"
+    },
+    "const90name": "gvb",
+    "const90value": {
+     "expr": "(0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0)[int(op('shot')['take']) % 8]"
+    },
+    "const91name": "gvo",
+    "const91value": {
+     "expr": "(0.0, 0.0, 0.0, 0.0, 0.0, 1.69, 0.0, 0.0)[int(op('shot')['take']) % 8]"
+    },
+    "const92name": "s1",
+    "const92value": {
+     "expr": "float(op('shot')['seed'])"
+    },
+    "const93name": "s2",
+    "const93value": {
+     "expr": "(float(op('shot')['seed']) * 7.31 + 0.13) % 1.0"
+    },
+    "const94name": "s3",
+    "const94value": {
+     "expr": "(float(op('shot')['seed']) * 13.77 + 0.61) % 1.0"
+    },
+    "const95name": "g",
+    "const95value": {
+     "expr": "1.0 if (float(op('shot')['seed']) * 13.77 + 0.61) % 1.0 > 0.6 else 0.0"
+    },
+    "const96name": "hero",
+    "const96value": {
+     "expr": "(lambda L, s: L[min(int(s * len(L)), len(L) - 1)])((((8, 9, 10), (-1,), (-1,), (-1,), (11, 12, 13), (-1,), (-1,), (14, 15)) if parent().par.Describe else ((0, 1, 2), (-1,), (-1,), (-1,), (4, 6, 7), (-1,), (-1,), (3, 5)))[int(op('shot')['take']) % 8], float(op('shot')['seed']))"
+    },
+    "const97name": "desc",
+    "const97value": {
+     "expr": "1.0 if parent().par.Describe else 0.0"
+    },
+    "const98name": "inon",
+    "const98value": {
+     "expr": "(lambda o: 1.0 if (o is not None and o.isTOP and o.path != parent().path + '/out1') else 0.0)(op(parent().par.Input.eval()) if parent().par.Input.eval() else None)"
+    },
+    "const9name": "fog",
+    "const9value": {
+     "expr": "(2.3, 0.35, 2.4, 2.3, 2.3, 0.0, 0.0, 1.3)[int(op('shot')['take']) % 8]"
+    }
+   }
+  },
+  "w_d_bass": {
+   "type": "geometryCOMP",
+   "family": "COMP",
+   "pos": [
+    750,
+    -820
+   ],
+   "pars": {
+    "material": "/project1/sc_spectral_terrain/word_mat10",
+    "render": {
+     "expr": "int(op('tk')['hero']) == 10"
+    },
+    "ry": {
+     "expr": "max(-25.0, min(25.0, (float(op('ctl')['cx']) - float(op('ctl')['wx'])) * 4.0))"
+    },
+    "scale": {
+     "expr": "0.9142857142857143 * op('tk')['wscale'] * (1.0 + 0.05 * float(op('ctl')['flash']))"
+    },
+    "tx": {
+     "expr": "op('ctl')['wx']"
+    },
+    "ty": {
+     "expr": "-0.36727610996791293 * op('tk')['wscale'] + op('tk')['wlift'] - (2.3189208984375 * op('tk')['wscale'] + 1.0) * (1.0 - float(op('ctl')['rise']))"
+    },
+    "tz": {
+     "expr": "op('tk')['wz']"
+    }
+   }
+  },
+  "w_d_bass/text": {
+   "type": "textPOP",
+   "family": "POP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "alignx": "center",
+    "aligny": "bottom",
+    "extrude": true,
+    "extrudedepth": 1.0828125,
+    "fontfile": {
+     "expr": "mod.paths.font('archivo')"
+    },
+    "linespacing": -0.22,
+    "text": "BASS BUILDS\nWALLS"
+   }
+  },
+  "w_d_height": {
+   "type": "geometryCOMP",
+   "family": "COMP",
+   "pos": [
+    900,
+    -820
+   ],
+   "pars": {
+    "material": "/project1/sc_spectral_terrain/word_mat11",
+    "render": {
+     "expr": "int(op('tk')['hero']) == 11"
+    },
+    "ry": {
+     "expr": "max(-25.0, min(25.0, (float(op('ctl')['cx']) - float(op('ctl')['wx'])) * 4.0))"
+    },
+    "scale": {
+     "expr": "0.9362808471092017 * op('tk')['wscale'] * (1.0 + 0.05 * float(op('ctl')['flash']))"
+    },
+    "tx": {
+     "expr": "op('ctl')['wx']"
+    },
+    "ty": {
+     "expr": "-0.3761117361790795 * op('tk')['wscale'] + op('tk')['wlift'] - (2.374707587840321 * op('tk')['wscale'] + 1.0) * (1.0 - float(op('ctl')['rise']))"
+    },
+    "tz": {
+     "expr": "op('tk')['wz']"
+    }
+   }
+  },
+  "w_d_height/text": {
+   "type": "textPOP",
+   "family": "POP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "alignx": "center",
+    "aligny": "bottom",
+    "extrude": true,
+    "extrudedepth": 0.8811458683013916,
+    "fontfile": {
+     "expr": "mod.paths.font('archivo')"
+    },
+    "linespacing": -0.22,
+    "text": "HEIGHT IS\nLOUDNESS"
+   }
+  },
+  "w_d_loud": {
+   "type": "geometryCOMP",
+   "family": "COMP",
+   "pos": [
+    600,
+    -820
+   ],
+   "pars": {
+    "material": "/project1/sc_spectral_terrain/word_mat9",
+    "render": {
+     "expr": "int(op('tk')['hero']) == 9"
+    },
+    "ry": {
+     "expr": "max(-25.0, min(25.0, (float(op('ctl')['cx']) - float(op('ctl')['wx'])) * 4.0))"
+    },
+    "scale": {
+     "expr": "1.08488828310896 * op('tk')['wscale'] * (1.0 + 0.05 * float(op('ctl')['flash']))"
+    },
+    "tx": {
+     "expr": "op('ctl')['wx']"
+    },
+    "ty": {
+     "expr": "-0.4358085685297166 * op('tk')['wscale'] + op('tk')['wlift'] - (2.7516235601874097 * op('tk')['wscale'] + 1.0) * (1.0 - float(op('ctl')['rise']))"
+    },
+    "tz": {
+     "expr": "op('tk')['wz']"
+    }
+   }
+  },
+  "w_d_loud/text": {
+   "type": "textPOP",
+   "family": "POP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "alignx": "center",
+    "aligny": "bottom",
+    "extrude": true,
+    "extrudedepth": 0.8719791841506958,
+    "fontfile": {
+     "expr": "mod.paths.font('archivo')"
+    },
+    "linespacing": -0.22,
+    "text": "LOUDER IS\nHIGHER"
+   }
+  },
+  "w_d_name": {
+   "type": "geometryCOMP",
+   "family": "COMP",
+   "pos": [
+    450,
+    -820
+   ],
+   "pars": {
+    "material": "/project1/sc_spectral_terrain/word_mat8",
+    "render": {
+     "expr": "int(op('tk')['hero']) == 8"
+    },
+    "ry": {
+     "expr": "max(-25.0, min(25.0, (float(op('ctl')['cx']) - float(op('ctl')['wx'])) * 4.0))"
+    },
+    "scale": {
+     "expr": "1.1250954539230869 * op('tk')['wscale'] * (1.0 + 0.05 * float(op('ctl')['flash']))"
+    },
+    "tx": {
+     "expr": "op('ctl')['wx']"
+    },
+    "ty": {
+     "expr": "-0.4695397370325767 * op('tk')['wscale'] + op('tk')['wlift'] - (2.836022184450405 * op('tk')['wscale'] + 1.0) * (1.0 - float(op('ctl')['rise']))"
+    },
+    "tz": {
+     "expr": "op('tk')['wz']"
+    }
+   }
+  },
+  "w_d_name/text": {
+   "type": "textPOP",
+   "family": "POP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "alignx": "center",
+    "aligny": "bottom",
+    "extrude": true,
+    "extrudedepth": 0.8994792366027832,
+    "fontfile": {
+     "expr": "mod.paths.font('archivo')"
+    },
+    "linespacing": -0.22,
+    "text": "SPECTRUM\nTERRAIN"
+   }
+  },
+  "w_d_now": {
+   "type": "geometryCOMP",
+   "family": "COMP",
+   "pos": [
+    1350,
+    -820
+   ],
+   "pars": {
+    "material": "/project1/sc_spectral_terrain/word_mat14",
+    "render": {
+     "expr": "int(op('tk')['hero']) == 14"
+    },
+    "ry": {
+     "expr": "max(-25.0, min(25.0, (float(op('ctl')['cx']) - float(op('ctl')['wx'])) * 4.0))"
+    },
+    "scale": {
+     "expr": "0.8438015109872838 * op('tk')['wscale'] * (1.0 + 0.05 * float(op('ctl')['flash']))"
+    },
+    "tx": {
+     "expr": "op('ctl')['wx']"
+    },
+    "ty": {
+     "expr": "-0.3389620243411246 * op('tk')['wscale'] + op('tk')['wlift'] - (2.1401504227704478 * op('tk')['wscale'] + 1.0) * (1.0 - float(op('ctl')['rise']))"
+    },
+    "tz": {
+     "expr": "op('tk')['wz']"
+    }
+   }
+  },
+  "w_d_now/text": {
+   "type": "textPOP",
+   "family": "POP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "alignx": "center",
+    "aligny": "bottom",
+    "extrude": true,
+    "extrudedepth": 1.042899293899536,
+    "fontfile": {
+     "expr": "mod.paths.font('archivo')"
+    },
+    "linespacing": -0.22,
+    "text": "NOW IS\nTHE CENTRE"
+   }
+  },
+  "w_d_rings": {
+   "type": "geometryCOMP",
+   "family": "COMP",
+   "pos": [
+    1500,
+    -820
+   ],
+   "pars": {
+    "material": "/project1/sc_spectral_terrain/word_mat15",
+    "render": {
+     "expr": "int(op('tk')['hero']) == 15"
+    },
+    "ry": {
+     "expr": "max(-25.0, min(25.0, (float(op('ctl')['cx']) - float(op('ctl')['wx'])) * 4.0))"
+    },
+    "scale": {
+     "expr": "0.852386295255861 * op('tk')['wscale'] * (1.0 + 0.05 * float(op('ctl')['flash']))"
+    },
+    "tx": {
+     "expr": "op('ctl')['wx']"
+    },
+    "ty": {
+     "expr": "-0.3424106029657398 * op('tk')['wscale'] + op('tk')['wlift'] - (2.161924180511521 * op('tk')['wscale'] + 1.0) * (1.0 - float(op('ctl')['rise']))"
+    },
+    "tz": {
+     "expr": "op('tk')['wz']"
+    }
+   }
+  },
+  "w_d_rings/text": {
+   "type": "textPOP",
+   "family": "POP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "alignx": "center",
+    "aligny": "bottom",
+    "extrude": true,
+    "extrudedepth": 1.0323957633972167,
+    "fontfile": {
+     "expr": "mod.paths.font('archivo')"
+    },
+    "linespacing": -0.22,
+    "text": "KICKS MAKE\nRINGS"
+   }
+  },
+  "w_d_row": {
+   "type": "geometryCOMP",
+   "family": "COMP",
+   "pos": [
+    1050,
+    -820
+   ],
+   "pars": {
+    "material": "/project1/sc_spectral_terrain/word_mat12",
+    "render": {
+     "expr": "int(op('tk')['hero']) == 12"
+    },
+    "ry": {
+     "expr": "max(-25.0, min(25.0, (float(op('ctl')['cx']) - float(op('ctl')['wx'])) * 4.0))"
+    },
+    "scale": {
+     "expr": "0.8914568491909995 * op('tk')['wscale'] * (1.0 + 0.05 * float(op('ctl')['flash']))"
+    },
+    "tx": {
+     "expr": "op('ctl')['wx']"
+    },
+    "ty": {
+     "expr": "-0.3720345798976499 * op('tk')['wscale'] + op('tk')['wlift'] - (2.2470905841547952 * op('tk')['wscale'] + 1.0) * (1.0 - float(op('ctl')['rise']))"
+    },
+    "tz": {
+     "expr": "op('tk')['wz']"
+    }
+   }
+  },
+  "w_d_row/text": {
+   "type": "textPOP",
+   "family": "POP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "alignx": "center",
+    "aligny": "bottom",
+    "extrude": true,
+    "extrudedepth": 0.9254514122009277,
+    "fontfile": {
+     "expr": "mod.paths.font('archivo')"
+    },
+    "linespacing": -0.22,
+    "text": "ONE ROW\nPER FRAME"
+   }
+  },
+  "w_d_solid": {
+   "type": "geometryCOMP",
+   "family": "COMP",
+   "pos": [
+    1200,
+    -820
+   ],
+   "pars": {
+    "material": "/project1/sc_spectral_terrain/word_mat13",
+    "render": {
+     "expr": "int(op('tk')['hero']) == 13"
+    },
+    "ry": {
+     "expr": "max(-25.0, min(25.0, (float(op('ctl')['cx']) - float(op('ctl')['wx'])) * 4.0))"
+    },
+    "scale": {
+     "expr": "1.077720207253886 * op('tk')['wscale'] * (1.0 + 0.05 * float(op('ctl')['flash']))"
+    },
+    "tx": {
+     "expr": "op('ctl')['wx']"
+    },
+    "ty": {
+     "expr": "-0.4329290933559596 * op('tk')['wscale'] + op('tk')['wlift'] - (2.733443027950939 * op('tk')['wscale'] + 1.0) * (1.0 - float(op('ctl')['rise']))"
+    },
+    "tz": {
+     "expr": "op('tk')['wz']"
+    }
+   }
+  },
+  "w_d_solid/text": {
+   "type": "textPOP",
+   "family": "POP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "alignx": "center",
+    "aligny": "bottom",
+    "extrude": true,
+    "extrudedepth": 0.6634375,
+    "fontfile": {
+     "expr": "mod.paths.font('archivo')"
+    },
+    "linespacing": -0.22,
+    "text": "SHADED\nSOLID"
+   }
+  },
+  "w_frame": {
+   "type": "geometryCOMP",
+   "family": "COMP",
+   "pos": [
+    1050,
+    -520
+   ],
+   "pars": {
+    "material": "/project1/sc_spectral_terrain/word_mat4",
+    "render": {
+     "expr": "int(op('tk')['hero']) == 4"
+    },
+    "ry": {
+     "expr": "max(-25.0, min(25.0, (float(op('ctl')['cx']) - float(op('ctl')['wx'])) * 4.0))"
+    },
+    "scale": {
+     "expr": "0.8175182481751825 * op('tk')['wscale'] * (1.0 + 0.05 * float(op('ctl')['flash']))"
+    },
+    "tx": {
+     "expr": "op('ctl')['wx']"
+    },
+    "ty": {
+     "expr": "-0.32840391841248007 * op('tk')['wscale'] + op('tk')['wlift'] - (3.3564234824076187 * op('tk')['wscale'] + 1.0) * (1.0 - float(op('ctl')['rise']))"
+    },
+    "tz": {
+     "expr": "op('tk')['wz']"
+    }
+   }
+  },
+  "w_frame/text": {
+   "type": "textPOP",
+   "family": "POP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "alignx": "center",
+    "aligny": "bottom",
+    "extrude": true,
+    "extrudedepth": 0.941875,
+    "fontfile": {
+     "expr": "mod.paths.font('archivo')"
+    },
+    "linespacing": -0.22,
+    "text": "EVERY\nFRAME IS\nMADE NOW."
+   }
+  },
+  "w_here": {
+   "type": "geometryCOMP",
+   "family": "COMP",
+   "pos": [
+    600,
+    -520
+   ],
+   "pars": {
+    "material": "/project1/sc_spectral_terrain/word_mat1",
+    "render": {
+     "expr": "int(op('tk')['hero']) == 1"
+    },
+    "ry": {
+     "expr": "max(-25.0, min(25.0, (float(op('ctl')['cx']) - float(op('ctl')['wx'])) * 4.0))"
+    },
+    "scale": {
+     "expr": "1.6095807794963986 * op('tk')['wscale'] * (1.0 + 0.05 * float(op('ctl')['flash']))"
+    },
+    "tx": {
+     "expr": "op('ctl')['wx']"
+    },
+    "ty": {
+     "expr": "-0.6465818705637356 * op('tk')['wscale'] + op('tk')['wlift'] - (4.0544672963228585 * op('tk')['wscale'] + 1.0) * (1.0 - float(op('ctl')['rise']))"
+    },
+    "tz": {
+     "expr": "op('tk')['wz']"
+    }
+   }
+  },
+  "w_here/text": {
+   "type": "textPOP",
+   "family": "POP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "alignx": "center",
+    "aligny": "bottom",
+    "extrude": true,
+    "extrudedepth": 0.4783854341506958,
+    "fontfile": {
+     "expr": "mod.paths.font('archivo')"
+    },
+    "linespacing": -0.22,
+    "text": "HERE.\nNOW."
+   }
+  },
+  "w_loud": {
+   "type": "geometryCOMP",
+   "family": "COMP",
+   "pos": [
+    1200,
+    -520
+   ],
+   "pars": {
+    "material": "/project1/sc_spectral_terrain/word_mat5",
+    "render": {
+     "expr": "int(op('tk')['hero']) == 5"
+    },
+    "ry": {
+     "expr": "max(-25.0, min(25.0, (float(op('ctl')['cx']) - float(op('ctl')['wx'])) * 4.0))"
+    },
+    "scale": {
+     "expr": "1.3497363434176763 * op('tk')['wscale'] * (1.0 + 0.05 * float(op('ctl')['flash']))"
+    },
+    "tx": {
+     "expr": "op('ctl')['wx']"
+    },
+    "ty": {
+     "expr": "-0.5422002181014554 * op('tk')['wscale'] + op('tk')['wlift'] - (3.4233629217067265 * op('tk')['wscale'] + 1.0) * (1.0 - float(op('ctl')['rise']))"
+    },
+    "tz": {
+     "expr": "op('tk')['wz']"
+    }
+   }
+  },
+  "w_loud/text": {
+   "type": "textPOP",
+   "family": "POP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "alignx": "center",
+    "aligny": "bottom",
+    "extrude": true,
+    "extrudedepth": 0.6519791841506958,
+    "fontfile": {
+     "expr": "mod.paths.font('archivo')"
+    },
+    "linespacing": -0.22,
+    "text": "LOUD IS\nBRIGHT"
+   }
+  },
+  "w_nothing": {
+   "type": "geometryCOMP",
+   "family": "COMP",
+   "pos": [
+    1500,
+    -520
+   ],
+   "pars": {
+    "material": "/project1/sc_spectral_terrain/word_mat7",
+    "render": {
+     "expr": "int(op('tk')['hero']) == 7"
+    },
+    "ry": {
+     "expr": "max(-25.0, min(25.0, (float(op('ctl')['cx']) - float(op('ctl')['wx'])) * 4.0))"
+    },
+    "scale": {
+     "expr": "0.6592400672893761 * op('tk')['wscale'] * (1.0 + 0.05 * float(op('ctl')['flash']))"
+    },
+    "tx": {
+     "expr": "op('ctl')['wx']"
+    },
+    "ty": {
+     "expr": "-0.27512287528631013 * op('tk')['wscale'] + op('tk')['wlift'] - (2.707736836440342 * op('tk')['wscale'] + 1.0) * (1.0 - float(op('ctl')['rise']))"
+    },
+    "tz": {
+     "expr": "op('tk')['wz']"
+    }
+   }
+  },
+  "w_nothing/text": {
+   "type": "textPOP",
+   "family": "POP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "alignx": "center",
+    "aligny": "bottom",
+    "extrude": true,
+    "extrudedepth": 1.2514409255981445,
+    "fontfile": {
+     "expr": "mod.paths.font('archivo')"
+    },
+    "linespacing": -0.22,
+    "text": "NOTHING\nIS\nPRERENDERED."
+   }
+  },
+  "w_origin": {
+   "type": "geometryCOMP",
+   "family": "COMP",
+   "pos": [
+    1350,
+    -520
+   ],
+   "pars": {
+    "material": "/project1/sc_spectral_terrain/word_mat6",
+    "render": {
+     "expr": "int(op('tk')['hero']) == 6"
+    },
+    "ry": {
+     "expr": "max(-25.0, min(25.0, (float(op('ctl')['cx']) - float(op('ctl')['wx'])) * 4.0))"
+    },
+    "scale": {
+     "expr": "0.961281630611516 * op('tk')['wscale'] * (1.0 + 0.05 * float(op('ctl')['flash']))"
+    },
+    "tx": {
+     "expr": "op('ctl')['wx']"
+    },
+    "ty": {
+     "expr": "-0.38615475705035446 * op('tk')['wscale'] + op('tk')['wlift'] - (2.4381175683693517 * op('tk')['wscale'] + 1.0) * (1.0 - float(op('ctl')['rise']))"
+    },
+    "tz": {
+     "expr": "op('tk')['wz']"
+    }
+   }
+  },
+  "w_origin/text": {
+   "type": "textPOP",
+   "family": "POP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "alignx": "center",
+    "aligny": "bottom",
+    "extrude": true,
+    "extrudedepth": 0.8582292366027832,
+    "fontfile": {
+     "expr": "mod.paths.font('archivo')"
+    },
+    "linespacing": -0.22,
+    "text": "ORIGIN:\nUNKNOWN"
+   }
+  },
+  "w_signal": {
+   "type": "geometryCOMP",
+   "family": "COMP",
+   "pos": [
+    450,
+    -520
+   ],
+   "pars": {
+    "material": "/project1/sc_spectral_terrain/word_mat0",
+    "render": {
+     "expr": "int(op('tk')['hero']) == 0"
+    },
+    "ry": {
+     "expr": "max(-25.0, min(25.0, (float(op('ctl')['cx']) - float(op('ctl')['wx'])) * 4.0))"
+    },
+    "scale": {
+     "expr": "1.6554825669703492 * op('tk')['wscale'] * (1.0 + 0.05 * float(op('ctl')['flash']))"
+    },
+    "tx": {
+     "expr": "op('ctl')['wx']"
+    },
+    "ty": {
+     "expr": "-0.6650209970649927 * op('tk')['wscale'] + op('tk')['wlift'] - (4.198833101691485 * op('tk')['wscale'] + 1.0) * (1.0 - float(op('ctl')['rise']))"
+    },
+    "tz": {
+     "expr": "op('tk')['wz']"
+    }
+   }
+  },
+  "w_signal/text": {
+   "type": "textPOP",
+   "family": "POP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "alignx": "center",
+    "aligny": "bottom",
+    "extrude": true,
+    "extrudedepth": 0.6113021183013916,
+    "fontfile": {
+     "expr": "mod.paths.font('archivo')"
+    },
+    "linespacing": -0.22,
+    "text": "SIGNAL\nNOISE"
+   }
+  },
+  "w_sound": {
+   "type": "geometryCOMP",
+   "family": "COMP",
+   "pos": [
+    750,
+    -520
+   ],
+   "pars": {
+    "material": "/project1/sc_spectral_terrain/word_mat2",
+    "render": {
+     "expr": "int(op('tk')['hero']) == 2"
+    },
+    "ry": {
+     "expr": "max(-25.0, min(25.0, (float(op('ctl')['cx']) - float(op('ctl')['wx'])) * 4.0))"
+    },
+    "scale": {
+     "expr": "0.8466437704097043 * op('tk')['wscale'] * (1.0 + 0.05 * float(op('ctl')['flash']))"
+    },
+    "tx": {
+     "expr": "op('ctl')['wx']"
+    },
+    "ty": {
+     "expr": "-0.3401036824585259 * op('tk')['wscale'] + op('tk')['wlift'] - (4.834042059575798 * op('tk')['wscale'] + 1.0) * (1.0 - float(op('ctl')['rise']))"
+    },
+    "tz": {
+     "expr": "op('tk')['wz']"
+    }
+   }
+  },
+  "w_sound/text": {
+   "type": "textPOP",
+   "family": "POP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "alignx": "center",
+    "aligny": "bottom",
+    "extrude": true,
+    "extrudedepth": 0.7795486402511597,
+    "fontfile": {
+     "expr": "mod.paths.font('archivo')"
+    },
+    "linespacing": -0.22,
+    "text": "NO\nPICTURE\nWITHOUT\nSOUND"
+   }
+  },
+  "w_touch": {
+   "type": "geometryCOMP",
+   "family": "COMP",
+   "pos": [
+    900,
+    -520
+   ],
+   "pars": {
+    "material": "/project1/sc_spectral_terrain/word_mat3",
+    "render": {
+     "expr": "int(op('tk')['hero']) == 3"
+    },
+    "ry": {
+     "expr": "max(-25.0, min(25.0, (float(op('ctl')['cx']) - float(op('ctl')['wx'])) * 4.0))"
+    },
+    "scale": {
+     "expr": "1.2425269061341881 * op('tk')['wscale'] * (1.0 + 0.05 * float(op('ctl')['flash']))"
+    },
+    "tx": {
+     "expr": "op('ctl')['wx']"
+    },
+    "ty": {
+     "expr": "-0.4991333031731274 * op('tk')['wscale'] + op('tk')['wlift'] - (3.1514455103965955 * op('tk')['wscale'] + 1.0) * (1.0 - float(op('ctl')['rise']))"
+    },
+    "tz": {
+     "expr": "op('tk')['wz']"
+    }
+   }
+  },
+  "w_touch/text": {
+   "type": "textPOP",
+   "family": "POP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "alignx": "center",
+    "aligny": "bottom",
+    "extrude": true,
+    "extrudedepth": 0.6197048902511597,
+    "fontfile": {
+     "expr": "mod.paths.font('archivo')"
+    },
+    "linespacing": -0.22,
+    "text": "DO NOT\nTOUCH"
+   }
+  },
+  "wf": {
+   "type": "glslTOP",
+   "family": "TOP",
+   "pos": [
+    -100,
+    -260
+   ],
+   "inputs": [
+    [
+     "wf_fb"
+    ],
+    [
+     "spectrum"
+    ]
+   ],
+   "pars": {
+    "computedat": "wf_compute",
+    "format": "rgba16float",
+    "inputfiltertype": "nearest",
+    "outputresolution": "custom",
+    "pixeldat": "wf_px",
+    "resolutionh": 192,
+    "vec0name": "uLive",
+    "vec0valuew": 4.0,
+    "vec0valuex": 0.0,
+    "vec0valuez": {
+     "expr": "op('ctl')['flash']"
+    },
+    "vec1name": "uRes",
+    "vec1valuew": 0.0,
+    "vec1valuex": 0.005208333333333333,
+    "vec1valuey": 0.6,
+    "vec1valuez": 0.6
+   }
+  },
+  "wf_compute": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    320,
+    -120
+   ],
+   "pars": {
+    "language": "glsl"
+   },
+   "text": [
+    "// Example Compute Shader",
+    "",
+    "// uniform float exampleUniform;",
+    "",
+    "layout (local_size_x = 8, local_size_y = 4) in;",
+    "void main()",
+    "{",
+    "\t// This code is running 1:1 per pixel, so early-exit",
+    "\t// if this thread overhangs the edge of the output",
+    "\tif (any(greaterThanEqual(ivec2(gl_GlobalInvocationID.xy), ivec2(uTDOutputInfo.res.zw))))",
+    "\t\treturn;",
+    "",
+    "\tvec4 color;",
+    "\t//color = texelFetch(sTD2DInputs[0], ivec2(gl_GlobalInvocationID.xy), 0);",
+    "\tcolor = vec4(1.0);",
+    "\t// We need to use TDImageStoreOutput() so that 8-bit textures that are sRGB",
+    "\t// encoded can be written to correctly from incoming linear values.",
+    "\t// imageStore() does not do this automatically, while pixel shader outputs do.",
+    "\tTDImageStoreOutput(0, gl_GlobalInvocationID, color);",
+    "}"
+   ]
+  },
+  "wf_fb": {
+   "type": "feedbackTOP",
+   "family": "TOP",
+   "pos": [
+    -250,
+    -260
+   ],
+   "inputs": [
+    [
+     "wf_init"
+    ]
+   ],
+   "pars": {
+    "format": "rgba16float",
+    "top": "wf"
+   }
+  },
+  "wf_info": {
+   "type": "infoDAT",
+   "family": "DAT",
+   "pos": [
+    160,
+    -120
+   ],
+   "pars": {
+    "language": "text",
+    "op": "wf"
+   }
+  },
+  "wf_init": {
+   "type": "constantTOP",
+   "family": "TOP",
+   "pos": [
+    -400,
+    -260
+   ],
+   "pars": {
+    "alpha": 0.0,
+    "colorb": 0.0,
+    "colorg": 0.0,
+    "colorr": 0.0,
+    "format": "rgba16float",
+    "outputresolution": "custom",
+    "resolutionh": 192
+   }
+  },
+  "wf_pixel": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    0,
+    -120
+   ],
+   "pars": {
+    "extension": "frag",
+    "language": "glsl"
+   },
+   "text": [
+    "",
+    "// Example Pixel Shader",
+    "",
+    "// uniform float exampleUniform;",
+    "",
+    "out vec4 fragColor;",
+    "void main()",
+    "{",
+    "\t// vec4 color = texture(sTD2DInputs[0], vUV.st);",
+    "\tvec4 color = vec4(1.0);",
+    "\tfragColor = TDOutputSwizzle(color);",
+    "}"
+   ]
+  },
+  "wf_px": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    -100,
+    -390
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.here('shaders/waterfall.frag')"
+    },
+    "language": "text",
+    "syncfile": true
+   },
+   "text_file": "experiments/sc_spectral_terrain/shaders/waterfall.frag"
+  },
+  "word_mat0": {
+   "type": "glslMAT",
+   "family": "MAT",
+   "pos": [
+    450,
+    -390
+   ],
+   "pars": {
+    "cullface": "neither",
+    "pdat": "word_px",
+    "vdat": "word_vs",
+    "vec0name": "uCol",
+    "vec0valuew": {
+     "expr": "op('ctl')['flash']"
+    },
+    "vec0valuex": {
+     "expr": "op('ctl')['wr']"
+    },
+    "vec0valuey": {
+     "expr": "op('ctl')['wg']"
+    },
+    "vec0valuez": {
+     "expr": "op('ctl')['wb']"
+    },
+    "vec1name": "uFx",
+    "vec1valuew": 2.5363197326660156,
+    "vec1valuex": {
+     "expr": "op('hub')['beat_pos']"
+    },
+    "vec1valuey": {
+     "expr": "op('hub')['energy']"
+    },
+    "vec1valuez": 0.6113021183013916
+   }
+  },
+  "word_mat0_info": {
+   "type": "infoDAT",
+   "family": "DAT",
+   "pos": [
+    320,
+    -120
+   ],
+   "pars": {
+    "language": "text",
+    "op": "word_mat0"
+   }
+  },
+  "word_mat0_pixel": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    160,
+    -120
+   ],
+   "pars": {
+    "extension": "frag",
+    "language": "glsl"
+   },
+   "text": [
+    "// Example Pixel Shader",
+    "",
+    "// uniform vec4 exampleUniform;",
+    "",
+    "out vec4 oFragColor;",
+    "void main()",
+    "{",
+    "\tTDCheckDiscard();",
+    "\tvec4 color = vec4(1.0);",
+    "\tTDAlphaTest(color.a);",
+    "\toFragColor = TDOutputSwizzle(color);",
+    "}",
+    ""
+   ]
+  },
+  "word_mat0_vertex": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    0,
+    -120
+   ],
+   "pars": {
+    "extension": "vert",
+    "language": "glsl"
+   },
+   "text": [
+    "// Example Vertex Shader",
+    "",
+    "void main() ",
+    "{",
+    "\tvec3 pos = TDPos();",
+    "\tvec4 worldSpacePos = TDDeform(pos);",
+    "\tgl_Position = TDWorldToProj(worldSpacePos);",
+    "#ifndef TD_PICKING_ACTIVE",
+    "#else // TD_PICKING_ACTIVE",
+    "\t// This will automatically write out the nessessary values",
+    "\t// for this shader to work with picking.",
+    "\t// See the documentation if you want to write custom values for picking.",
+    "\tTDWritePickingValues();",
+    "#endif // TD_PICKING_ACTIVE",
+    "}",
+    ""
+   ]
+  },
+  "word_mat1": {
+   "type": "glslMAT",
+   "family": "MAT",
+   "pos": [
+    600,
+    -390
+   ],
+   "pars": {
+    "cullface": "neither",
+    "pdat": "word_px",
+    "vdat": "word_vs",
+    "vec0name": "uCol",
+    "vec0valuew": {
+     "expr": "op('ctl')['flash']"
+    },
+    "vec0valuex": {
+     "expr": "op('ctl')['wr']"
+    },
+    "vec0valuey": {
+     "expr": "op('ctl')['wg']"
+    },
+    "vec0valuez": {
+     "expr": "op('ctl')['wb']"
+    },
+    "vec1name": "uFx",
+    "vec1valuew": 2.518958568572998,
+    "vec1valuex": {
+     "expr": "op('hub')['beat_pos']"
+    },
+    "vec1valuey": {
+     "expr": "op('hub')['energy']"
+    },
+    "vec1valuez": 0.4783854341506958
+   }
+  },
+  "word_mat10": {
+   "type": "glslMAT",
+   "family": "MAT",
+   "pos": [
+    750,
+    -690
+   ],
+   "pars": {
+    "cullface": "neither",
+    "pdat": "word_px",
+    "vdat": "word_vs",
+    "vec0name": "uCol",
+    "vec0valuew": {
+     "expr": "op('ctl')['flash']"
+    },
+    "vec0valuex": {
+     "expr": "op('ctl')['wr']"
+    },
+    "vec0valuey": {
+     "expr": "op('ctl')['wg']"
+    },
+    "vec0valuez": {
+     "expr": "op('ctl')['wb']"
+    },
+    "vec1name": "uFx",
+    "vec1valuew": 2.5363197326660156,
+    "vec1valuex": {
+     "expr": "op('hub')['beat_pos']"
+    },
+    "vec1valuey": {
+     "expr": "op('hub')['energy']"
+    },
+    "vec1valuez": 1.0828125
+   }
+  },
+  "word_mat10_info": {
+   "type": "infoDAT",
+   "family": "DAT",
+   "pos": [
+    320,
+    -120
+   ],
+   "pars": {
+    "language": "text",
+    "op": "word_mat10"
+   }
+  },
+  "word_mat10_pixel": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    160,
+    -120
+   ],
+   "pars": {
+    "extension": "frag",
+    "language": "glsl"
+   },
+   "text": [
+    "// Example Pixel Shader",
+    "",
+    "// uniform vec4 exampleUniform;",
+    "",
+    "out vec4 oFragColor;",
+    "void main()",
+    "{",
+    "\tTDCheckDiscard();",
+    "\tvec4 color = vec4(1.0);",
+    "\tTDAlphaTest(color.a);",
+    "\toFragColor = TDOutputSwizzle(color);",
+    "}",
+    ""
+   ]
+  },
+  "word_mat10_vertex": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    0,
+    -120
+   ],
+   "pars": {
+    "extension": "vert",
+    "language": "glsl"
+   },
+   "text": [
+    "// Example Vertex Shader",
+    "",
+    "void main() ",
+    "{",
+    "\tvec3 pos = TDPos();",
+    "\tvec4 worldSpacePos = TDDeform(pos);",
+    "\tgl_Position = TDWorldToProj(worldSpacePos);",
+    "#ifndef TD_PICKING_ACTIVE",
+    "#else // TD_PICKING_ACTIVE",
+    "\t// This will automatically write out the nessessary values",
+    "\t// for this shader to work with picking.",
+    "\t// See the documentation if you want to write custom values for picking.",
+    "\tTDWritePickingValues();",
+    "#endif // TD_PICKING_ACTIVE",
+    "}",
+    ""
+   ]
+  },
+  "word_mat11": {
+   "type": "glslMAT",
+   "family": "MAT",
+   "pos": [
+    900,
+    -690
+   ],
+   "pars": {
+    "cullface": "neither",
+    "pdat": "word_px",
+    "vdat": "word_vs",
+    "vec0name": "uCol",
+    "vec0valuew": {
+     "expr": "op('ctl')['flash']"
+    },
+    "vec0valuex": {
+     "expr": "op('ctl')['wr']"
+    },
+    "vec0valuey": {
+     "expr": "op('ctl')['wg']"
+    },
+    "vec0valuez": {
+     "expr": "op('ctl')['wb']"
+    },
+    "vec1name": "uFx",
+    "vec1valuew": 2.5363197326660156,
+    "vec1valuex": {
+     "expr": "op('hub')['beat_pos']"
+    },
+    "vec1valuey": {
+     "expr": "op('hub')['energy']"
+    },
+    "vec1valuez": 0.8811458683013916
+   }
+  },
+  "word_mat11_info": {
+   "type": "infoDAT",
+   "family": "DAT",
+   "pos": [
+    320,
+    -120
+   ],
+   "pars": {
+    "language": "text",
+    "op": "word_mat11"
+   }
+  },
+  "word_mat11_pixel": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    160,
+    -120
+   ],
+   "pars": {
+    "extension": "frag",
+    "language": "glsl"
+   },
+   "text": [
+    "// Example Pixel Shader",
+    "",
+    "// uniform vec4 exampleUniform;",
+    "",
+    "out vec4 oFragColor;",
+    "void main()",
+    "{",
+    "\tTDCheckDiscard();",
+    "\tvec4 color = vec4(1.0);",
+    "\tTDAlphaTest(color.a);",
+    "\toFragColor = TDOutputSwizzle(color);",
+    "}",
+    ""
+   ]
+  },
+  "word_mat11_vertex": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    0,
+    -120
+   ],
+   "pars": {
+    "extension": "vert",
+    "language": "glsl"
+   },
+   "text": [
+    "// Example Vertex Shader",
+    "",
+    "void main() ",
+    "{",
+    "\tvec3 pos = TDPos();",
+    "\tvec4 worldSpacePos = TDDeform(pos);",
+    "\tgl_Position = TDWorldToProj(worldSpacePos);",
+    "#ifndef TD_PICKING_ACTIVE",
+    "#else // TD_PICKING_ACTIVE",
+    "\t// This will automatically write out the nessessary values",
+    "\t// for this shader to work with picking.",
+    "\t// See the documentation if you want to write custom values for picking.",
+    "\tTDWritePickingValues();",
+    "#endif // TD_PICKING_ACTIVE",
+    "}",
+    ""
+   ]
+  },
+  "word_mat12": {
+   "type": "glslMAT",
+   "family": "MAT",
+   "pos": [
+    1050,
+    -690
+   ],
+   "pars": {
+    "cullface": "neither",
+    "pdat": "word_px",
+    "vdat": "word_vs",
+    "vec0name": "uCol",
+    "vec0valuew": {
+     "expr": "op('ctl')['flash']"
+    },
+    "vec0valuex": {
+     "expr": "op('ctl')['wr']"
+    },
+    "vec0valuey": {
+     "expr": "op('ctl')['wg']"
+    },
+    "vec0valuez": {
+     "expr": "op('ctl')['wb']"
+    },
+    "vec1name": "uFx",
+    "vec1valuew": 2.5206947326660156,
+    "vec1valuex": {
+     "expr": "op('hub')['beat_pos']"
+    },
+    "vec1valuey": {
+     "expr": "op('hub')['energy']"
+    },
+    "vec1valuez": 0.9254514122009277
+   }
+  },
+  "word_mat12_info": {
+   "type": "infoDAT",
+   "family": "DAT",
+   "pos": [
+    320,
+    -120
+   ],
+   "pars": {
+    "language": "text",
+    "op": "word_mat12"
+   }
+  },
+  "word_mat12_pixel": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    160,
+    -120
+   ],
+   "pars": {
+    "extension": "frag",
+    "language": "glsl"
+   },
+   "text": [
+    "// Example Pixel Shader",
+    "",
+    "// uniform vec4 exampleUniform;",
+    "",
+    "out vec4 oFragColor;",
+    "void main()",
+    "{",
+    "\tTDCheckDiscard();",
+    "\tvec4 color = vec4(1.0);",
+    "\tTDAlphaTest(color.a);",
+    "\toFragColor = TDOutputSwizzle(color);",
+    "}",
+    ""
+   ]
+  },
+  "word_mat12_vertex": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    0,
+    -120
+   ],
+   "pars": {
+    "extension": "vert",
+    "language": "glsl"
+   },
+   "text": [
+    "// Example Vertex Shader",
+    "",
+    "void main() ",
+    "{",
+    "\tvec3 pos = TDPos();",
+    "\tvec4 worldSpacePos = TDDeform(pos);",
+    "\tgl_Position = TDWorldToProj(worldSpacePos);",
+    "#ifndef TD_PICKING_ACTIVE",
+    "#else // TD_PICKING_ACTIVE",
+    "\t// This will automatically write out the nessessary values",
+    "\t// for this shader to work with picking.",
+    "\t// See the documentation if you want to write custom values for picking.",
+    "\tTDWritePickingValues();",
+    "#endif // TD_PICKING_ACTIVE",
+    "}",
+    ""
+   ]
+  },
+  "word_mat13": {
+   "type": "glslMAT",
+   "family": "MAT",
+   "pos": [
+    1200,
+    -690
+   ],
+   "pars": {
+    "cullface": "neither",
+    "pdat": "word_px",
+    "vdat": "word_vs",
+    "vec0name": "uCol",
+    "vec0valuew": {
+     "expr": "op('ctl')['flash']"
+    },
+    "vec0valuex": {
+     "expr": "op('ctl')['wr']"
+    },
+    "vec0valuey": {
+     "expr": "op('ctl')['wg']"
+    },
+    "vec0valuez": {
+     "expr": "op('ctl')['wb']"
+    },
+    "vec1name": "uFx",
+    "vec1valuew": 2.5363197326660156,
+    "vec1valuex": {
+     "expr": "op('hub')['beat_pos']"
+    },
+    "vec1valuey": {
+     "expr": "op('hub')['energy']"
+    },
+    "vec1valuez": 0.6634375
+   }
+  },
+  "word_mat13_info": {
+   "type": "infoDAT",
+   "family": "DAT",
+   "pos": [
+    320,
+    -120
+   ],
+   "pars": {
+    "language": "text",
+    "op": "word_mat13"
+   }
+  },
+  "word_mat13_pixel": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    160,
+    -120
+   ],
+   "pars": {
+    "extension": "frag",
+    "language": "glsl"
+   },
+   "text": [
+    "// Example Pixel Shader",
+    "",
+    "// uniform vec4 exampleUniform;",
+    "",
+    "out vec4 oFragColor;",
+    "void main()",
+    "{",
+    "\tTDCheckDiscard();",
+    "\tvec4 color = vec4(1.0);",
+    "\tTDAlphaTest(color.a);",
+    "\toFragColor = TDOutputSwizzle(color);",
+    "}",
+    ""
+   ]
+  },
+  "word_mat13_vertex": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    0,
+    -120
+   ],
+   "pars": {
+    "extension": "vert",
+    "language": "glsl"
+   },
+   "text": [
+    "// Example Vertex Shader",
+    "",
+    "void main() ",
+    "{",
+    "\tvec3 pos = TDPos();",
+    "\tvec4 worldSpacePos = TDDeform(pos);",
+    "\tgl_Position = TDWorldToProj(worldSpacePos);",
+    "#ifndef TD_PICKING_ACTIVE",
+    "#else // TD_PICKING_ACTIVE",
+    "\t// This will automatically write out the nessessary values",
+    "\t// for this shader to work with picking.",
+    "\t// See the documentation if you want to write custom values for picking.",
+    "\tTDWritePickingValues();",
+    "#endif // TD_PICKING_ACTIVE",
+    "}",
+    ""
+   ]
+  },
+  "word_mat14": {
+   "type": "glslMAT",
+   "family": "MAT",
+   "pos": [
+    1350,
+    -690
+   ],
+   "pars": {
+    "cullface": "neither",
+    "pdat": "word_px",
+    "vdat": "word_vs",
+    "vec0name": "uCol",
+    "vec0valuew": {
+     "expr": "op('ctl')['flash']"
+    },
+    "vec0valuex": {
+     "expr": "op('ctl')['wr']"
+    },
+    "vec0valuey": {
+     "expr": "op('ctl')['wg']"
+    },
+    "vec0valuez": {
+     "expr": "op('ctl')['wb']"
+    },
+    "vec1name": "uFx",
+    "vec1valuew": 2.5363197326660156,
+    "vec1valuex": {
+     "expr": "op('hub')['beat_pos']"
+    },
+    "vec1valuey": {
+     "expr": "op('hub')['energy']"
+    },
+    "vec1valuez": 1.042899293899536
+   }
+  },
+  "word_mat14_info": {
+   "type": "infoDAT",
+   "family": "DAT",
+   "pos": [
+    320,
+    -120
+   ],
+   "pars": {
+    "language": "text",
+    "op": "word_mat14"
+   }
+  },
+  "word_mat14_pixel": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    160,
+    -120
+   ],
+   "pars": {
+    "extension": "frag",
+    "language": "glsl"
+   },
+   "text": [
+    "// Example Pixel Shader",
+    "",
+    "// uniform vec4 exampleUniform;",
+    "",
+    "out vec4 oFragColor;",
+    "void main()",
+    "{",
+    "\tTDCheckDiscard();",
+    "\tvec4 color = vec4(1.0);",
+    "\tTDAlphaTest(color.a);",
+    "\toFragColor = TDOutputSwizzle(color);",
+    "}",
+    ""
+   ]
+  },
+  "word_mat14_vertex": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    0,
+    -120
+   ],
+   "pars": {
+    "extension": "vert",
+    "language": "glsl"
+   },
+   "text": [
+    "// Example Vertex Shader",
+    "",
+    "void main() ",
+    "{",
+    "\tvec3 pos = TDPos();",
+    "\tvec4 worldSpacePos = TDDeform(pos);",
+    "\tgl_Position = TDWorldToProj(worldSpacePos);",
+    "#ifndef TD_PICKING_ACTIVE",
+    "#else // TD_PICKING_ACTIVE",
+    "\t// This will automatically write out the nessessary values",
+    "\t// for this shader to work with picking.",
+    "\t// See the documentation if you want to write custom values for picking.",
+    "\tTDWritePickingValues();",
+    "#endif // TD_PICKING_ACTIVE",
+    "}",
+    ""
+   ]
+  },
+  "word_mat15": {
+   "type": "glslMAT",
+   "family": "MAT",
+   "pos": [
+    1500,
+    -690
+   ],
+   "pars": {
+    "cullface": "neither",
+    "pdat": "word_px",
+    "vdat": "word_vs",
+    "vec0name": "uCol",
+    "vec0valuew": {
+     "expr": "op('ctl')['flash']"
+    },
+    "vec0valuex": {
+     "expr": "op('ctl')['wr']"
+    },
+    "vec0valuey": {
+     "expr": "op('ctl')['wg']"
+    },
+    "vec0valuez": {
+     "expr": "op('ctl')['wb']"
+    },
+    "vec1name": "uFx",
+    "vec1valuew": 2.5363197326660156,
+    "vec1valuex": {
+     "expr": "op('hub')['beat_pos']"
+    },
+    "vec1valuey": {
+     "expr": "op('hub')['energy']"
+    },
+    "vec1valuez": 1.0323957633972167
+   }
+  },
+  "word_mat15_info": {
+   "type": "infoDAT",
+   "family": "DAT",
+   "pos": [
+    320,
+    -120
+   ],
+   "pars": {
+    "language": "text",
+    "op": "word_mat15"
+   }
+  },
+  "word_mat15_pixel": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    160,
+    -120
+   ],
+   "pars": {
+    "extension": "frag",
+    "language": "glsl"
+   },
+   "text": [
+    "// Example Pixel Shader",
+    "",
+    "// uniform vec4 exampleUniform;",
+    "",
+    "out vec4 oFragColor;",
+    "void main()",
+    "{",
+    "\tTDCheckDiscard();",
+    "\tvec4 color = vec4(1.0);",
+    "\tTDAlphaTest(color.a);",
+    "\toFragColor = TDOutputSwizzle(color);",
+    "}",
+    ""
+   ]
+  },
+  "word_mat15_vertex": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    0,
+    -120
+   ],
+   "pars": {
+    "extension": "vert",
+    "language": "glsl"
+   },
+   "text": [
+    "// Example Vertex Shader",
+    "",
+    "void main() ",
+    "{",
+    "\tvec3 pos = TDPos();",
+    "\tvec4 worldSpacePos = TDDeform(pos);",
+    "\tgl_Position = TDWorldToProj(worldSpacePos);",
+    "#ifndef TD_PICKING_ACTIVE",
+    "#else // TD_PICKING_ACTIVE",
+    "\t// This will automatically write out the nessessary values",
+    "\t// for this shader to work with picking.",
+    "\t// See the documentation if you want to write custom values for picking.",
+    "\tTDWritePickingValues();",
+    "#endif // TD_PICKING_ACTIVE",
+    "}",
+    ""
+   ]
+  },
+  "word_mat1_info": {
+   "type": "infoDAT",
+   "family": "DAT",
+   "pos": [
+    320,
+    -120
+   ],
+   "pars": {
+    "language": "text",
+    "op": "word_mat1"
+   }
+  },
+  "word_mat1_pixel": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    160,
+    -120
+   ],
+   "pars": {
+    "extension": "frag",
+    "language": "glsl"
+   },
+   "text": [
+    "// Example Pixel Shader",
+    "",
+    "// uniform vec4 exampleUniform;",
+    "",
+    "out vec4 oFragColor;",
+    "void main()",
+    "{",
+    "\tTDCheckDiscard();",
+    "\tvec4 color = vec4(1.0);",
+    "\tTDAlphaTest(color.a);",
+    "\toFragColor = TDOutputSwizzle(color);",
+    "}",
+    ""
+   ]
+  },
+  "word_mat1_vertex": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    0,
+    -120
+   ],
+   "pars": {
+    "extension": "vert",
+    "language": "glsl"
+   },
+   "text": [
+    "// Example Vertex Shader",
+    "",
+    "void main() ",
+    "{",
+    "\tvec3 pos = TDPos();",
+    "\tvec4 worldSpacePos = TDDeform(pos);",
+    "\tgl_Position = TDWorldToProj(worldSpacePos);",
+    "#ifndef TD_PICKING_ACTIVE",
+    "#else // TD_PICKING_ACTIVE",
+    "\t// This will automatically write out the nessessary values",
+    "\t// for this shader to work with picking.",
+    "\t// See the documentation if you want to write custom values for picking.",
+    "\tTDWritePickingValues();",
+    "#endif // TD_PICKING_ACTIVE",
+    "}",
+    ""
+   ]
+  },
+  "word_mat2": {
+   "type": "glslMAT",
+   "family": "MAT",
+   "pos": [
+    750,
+    -390
+   ],
+   "pars": {
+    "cullface": "neither",
+    "pdat": "word_px",
+    "vdat": "word_vs",
+    "vec0name": "uCol",
+    "vec0valuew": {
+     "expr": "op('ctl')['flash']"
+    },
+    "vec0valuex": {
+     "expr": "op('ctl')['wr']"
+    },
+    "vec0valuey": {
+     "expr": "op('ctl')['wg']"
+    },
+    "vec0valuez": {
+     "expr": "op('ctl')['wb']"
+    },
+    "vec1name": "uFx",
+    "vec1valuew": 5.709652900695801,
+    "vec1valuex": {
+     "expr": "op('hub')['beat_pos']"
+    },
+    "vec1valuey": {
+     "expr": "op('hub')['energy']"
+    },
+    "vec1valuez": 0.7795486402511597
+   }
+  },
+  "word_mat2_info": {
+   "type": "infoDAT",
+   "family": "DAT",
+   "pos": [
+    320,
+    -120
+   ],
+   "pars": {
+    "language": "text",
+    "op": "word_mat2"
+   }
+  },
+  "word_mat2_pixel": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    160,
+    -120
+   ],
+   "pars": {
+    "extension": "frag",
+    "language": "glsl"
+   },
+   "text": [
+    "// Example Pixel Shader",
+    "",
+    "// uniform vec4 exampleUniform;",
+    "",
+    "out vec4 oFragColor;",
+    "void main()",
+    "{",
+    "\tTDCheckDiscard();",
+    "\tvec4 color = vec4(1.0);",
+    "\tTDAlphaTest(color.a);",
+    "\toFragColor = TDOutputSwizzle(color);",
+    "}",
+    ""
+   ]
+  },
+  "word_mat2_vertex": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    0,
+    -120
+   ],
+   "pars": {
+    "extension": "vert",
+    "language": "glsl"
+   },
+   "text": [
+    "// Example Vertex Shader",
+    "",
+    "void main() ",
+    "{",
+    "\tvec3 pos = TDPos();",
+    "\tvec4 worldSpacePos = TDDeform(pos);",
+    "\tgl_Position = TDWorldToProj(worldSpacePos);",
+    "#ifndef TD_PICKING_ACTIVE",
+    "#else // TD_PICKING_ACTIVE",
+    "\t// This will automatically write out the nessessary values",
+    "\t// for this shader to work with picking.",
+    "\t// See the documentation if you want to write custom values for picking.",
+    "\tTDWritePickingValues();",
+    "#endif // TD_PICKING_ACTIVE",
+    "}",
+    ""
+   ]
+  },
+  "word_mat3": {
+   "type": "glslMAT",
+   "family": "MAT",
+   "pos": [
+    900,
+    -390
+   ],
+   "pars": {
+    "cullface": "neither",
+    "pdat": "word_px",
+    "vdat": "word_vs",
+    "vec0name": "uCol",
+    "vec0valuew": {
+     "expr": "op('ctl')['flash']"
+    },
+    "vec0valuex": {
+     "expr": "op('ctl')['wr']"
+    },
+    "vec0valuey": {
+     "expr": "op('ctl')['wg']"
+    },
+    "vec0valuez": {
+     "expr": "op('ctl')['wb']"
+    },
+    "vec1name": "uFx",
+    "vec1valuew": 2.5363197326660156,
+    "vec1valuex": {
+     "expr": "op('hub')['beat_pos']"
+    },
+    "vec1valuey": {
+     "expr": "op('hub')['energy']"
+    },
+    "vec1valuez": 0.6197048902511597
+   }
+  },
+  "word_mat3_info": {
+   "type": "infoDAT",
+   "family": "DAT",
+   "pos": [
+    320,
+    -120
+   ],
+   "pars": {
+    "language": "text",
+    "op": "word_mat3"
+   }
+  },
+  "word_mat3_pixel": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    160,
+    -120
+   ],
+   "pars": {
+    "extension": "frag",
+    "language": "glsl"
+   },
+   "text": [
+    "// Example Pixel Shader",
+    "",
+    "// uniform vec4 exampleUniform;",
+    "",
+    "out vec4 oFragColor;",
+    "void main()",
+    "{",
+    "\tTDCheckDiscard();",
+    "\tvec4 color = vec4(1.0);",
+    "\tTDAlphaTest(color.a);",
+    "\toFragColor = TDOutputSwizzle(color);",
+    "}",
+    ""
+   ]
+  },
+  "word_mat3_vertex": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    0,
+    -120
+   ],
+   "pars": {
+    "extension": "vert",
+    "language": "glsl"
+   },
+   "text": [
+    "// Example Vertex Shader",
+    "",
+    "void main() ",
+    "{",
+    "\tvec3 pos = TDPos();",
+    "\tvec4 worldSpacePos = TDDeform(pos);",
+    "\tgl_Position = TDWorldToProj(worldSpacePos);",
+    "#ifndef TD_PICKING_ACTIVE",
+    "#else // TD_PICKING_ACTIVE",
+    "\t// This will automatically write out the nessessary values",
+    "\t// for this shader to work with picking.",
+    "\t// See the documentation if you want to write custom values for picking.",
+    "\tTDWritePickingValues();",
+    "#endif // TD_PICKING_ACTIVE",
+    "}",
+    ""
+   ]
+  },
+  "word_mat4": {
+   "type": "glslMAT",
+   "family": "MAT",
+   "pos": [
+    1050,
+    -390
+   ],
+   "pars": {
+    "cullface": "neither",
+    "pdat": "word_px",
+    "vdat": "word_vs",
+    "vec0name": "uCol",
+    "vec0valuew": {
+     "expr": "op('ctl')['flash']"
+    },
+    "vec0valuex": {
+     "expr": "op('ctl')['wr']"
+    },
+    "vec0valuey": {
+     "expr": "op('ctl')['wg']"
+    },
+    "vec0valuez": {
+     "expr": "op('ctl')['wb']"
+    },
+    "vec1name": "uFx",
+    "vec1valuew": 4.105625152587891,
+    "vec1valuex": {
+     "expr": "op('hub')['beat_pos']"
+    },
+    "vec1valuey": {
+     "expr": "op('hub')['energy']"
+    },
+    "vec1valuez": 0.941875
+   }
+  },
+  "word_mat4_info": {
+   "type": "infoDAT",
+   "family": "DAT",
+   "pos": [
+    320,
+    -120
+   ],
+   "pars": {
+    "language": "text",
+    "op": "word_mat4"
+   }
+  },
+  "word_mat4_pixel": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    160,
+    -120
+   ],
+   "pars": {
+    "extension": "frag",
+    "language": "glsl"
+   },
+   "text": [
+    "// Example Pixel Shader",
+    "",
+    "// uniform vec4 exampleUniform;",
+    "",
+    "out vec4 oFragColor;",
+    "void main()",
+    "{",
+    "\tTDCheckDiscard();",
+    "\tvec4 color = vec4(1.0);",
+    "\tTDAlphaTest(color.a);",
+    "\toFragColor = TDOutputSwizzle(color);",
+    "}",
+    ""
+   ]
+  },
+  "word_mat4_vertex": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    0,
+    -120
+   ],
+   "pars": {
+    "extension": "vert",
+    "language": "glsl"
+   },
+   "text": [
+    "// Example Vertex Shader",
+    "",
+    "void main() ",
+    "{",
+    "\tvec3 pos = TDPos();",
+    "\tvec4 worldSpacePos = TDDeform(pos);",
+    "\tgl_Position = TDWorldToProj(worldSpacePos);",
+    "#ifndef TD_PICKING_ACTIVE",
+    "#else // TD_PICKING_ACTIVE",
+    "\t// This will automatically write out the nessessary values",
+    "\t// for this shader to work with picking.",
+    "\t// See the documentation if you want to write custom values for picking.",
+    "\tTDWritePickingValues();",
+    "#endif // TD_PICKING_ACTIVE",
+    "}",
+    ""
+   ]
+  },
+  "word_mat5": {
+   "type": "glslMAT",
+   "family": "MAT",
+   "pos": [
+    1200,
+    -390
+   ],
+   "pars": {
+    "cullface": "neither",
+    "pdat": "word_px",
+    "vdat": "word_vs",
+    "vec0name": "uCol",
+    "vec0valuew": {
+     "expr": "op('ctl')['flash']"
+    },
+    "vec0valuex": {
+     "expr": "op('ctl')['wr']"
+    },
+    "vec0valuey": {
+     "expr": "op('ctl')['wg']"
+    },
+    "vec0valuez": {
+     "expr": "op('ctl')['wb']"
+    },
+    "vec1name": "uFx",
+    "vec1valuew": 2.5363197326660156,
+    "vec1valuex": {
+     "expr": "op('hub')['beat_pos']"
+    },
+    "vec1valuey": {
+     "expr": "op('hub')['energy']"
+    },
+    "vec1valuez": 0.6519791841506958
+   }
+  },
+  "word_mat5_info": {
+   "type": "infoDAT",
+   "family": "DAT",
+   "pos": [
+    320,
+    -120
+   ],
+   "pars": {
+    "language": "text",
+    "op": "word_mat5"
+   }
+  },
+  "word_mat5_pixel": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    160,
+    -120
+   ],
+   "pars": {
+    "extension": "frag",
+    "language": "glsl"
+   },
+   "text": [
+    "// Example Pixel Shader",
+    "",
+    "// uniform vec4 exampleUniform;",
+    "",
+    "out vec4 oFragColor;",
+    "void main()",
+    "{",
+    "\tTDCheckDiscard();",
+    "\tvec4 color = vec4(1.0);",
+    "\tTDAlphaTest(color.a);",
+    "\toFragColor = TDOutputSwizzle(color);",
+    "}",
+    ""
+   ]
+  },
+  "word_mat5_vertex": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    0,
+    -120
+   ],
+   "pars": {
+    "extension": "vert",
+    "language": "glsl"
+   },
+   "text": [
+    "// Example Vertex Shader",
+    "",
+    "void main() ",
+    "{",
+    "\tvec3 pos = TDPos();",
+    "\tvec4 worldSpacePos = TDDeform(pos);",
+    "\tgl_Position = TDWorldToProj(worldSpacePos);",
+    "#ifndef TD_PICKING_ACTIVE",
+    "#else // TD_PICKING_ACTIVE",
+    "\t// This will automatically write out the nessessary values",
+    "\t// for this shader to work with picking.",
+    "\t// See the documentation if you want to write custom values for picking.",
+    "\tTDWritePickingValues();",
+    "#endif // TD_PICKING_ACTIVE",
+    "}",
+    ""
+   ]
+  },
+  "word_mat6": {
+   "type": "glslMAT",
+   "family": "MAT",
+   "pos": [
+    1350,
+    -390
+   ],
+   "pars": {
+    "cullface": "neither",
+    "pdat": "word_px",
+    "vdat": "word_vs",
+    "vec0name": "uCol",
+    "vec0valuew": {
+     "expr": "op('ctl')['flash']"
+    },
+    "vec0valuex": {
+     "expr": "op('ctl')['wr']"
+    },
+    "vec0valuey": {
+     "expr": "op('ctl')['wg']"
+    },
+    "vec0valuez": {
+     "expr": "op('ctl')['wb']"
+    },
+    "vec1name": "uFx",
+    "vec1valuew": 2.5363197326660156,
+    "vec1valuex": {
+     "expr": "op('hub')['beat_pos']"
+    },
+    "vec1valuey": {
+     "expr": "op('hub')['energy']"
+    },
+    "vec1valuez": 0.8582292366027832
+   }
+  },
+  "word_mat6_info": {
+   "type": "infoDAT",
+   "family": "DAT",
+   "pos": [
+    320,
+    -120
+   ],
+   "pars": {
+    "language": "text",
+    "op": "word_mat6"
+   }
+  },
+  "word_mat6_pixel": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    160,
+    -120
+   ],
+   "pars": {
+    "extension": "frag",
+    "language": "glsl"
+   },
+   "text": [
+    "// Example Pixel Shader",
+    "",
+    "// uniform vec4 exampleUniform;",
+    "",
+    "out vec4 oFragColor;",
+    "void main()",
+    "{",
+    "\tTDCheckDiscard();",
+    "\tvec4 color = vec4(1.0);",
+    "\tTDAlphaTest(color.a);",
+    "\toFragColor = TDOutputSwizzle(color);",
+    "}",
+    ""
+   ]
+  },
+  "word_mat6_vertex": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    0,
+    -120
+   ],
+   "pars": {
+    "extension": "vert",
+    "language": "glsl"
+   },
+   "text": [
+    "// Example Vertex Shader",
+    "",
+    "void main() ",
+    "{",
+    "\tvec3 pos = TDPos();",
+    "\tvec4 worldSpacePos = TDDeform(pos);",
+    "\tgl_Position = TDWorldToProj(worldSpacePos);",
+    "#ifndef TD_PICKING_ACTIVE",
+    "#else // TD_PICKING_ACTIVE",
+    "\t// This will automatically write out the nessessary values",
+    "\t// for this shader to work with picking.",
+    "\t// See the documentation if you want to write custom values for picking.",
+    "\tTDWritePickingValues();",
+    "#endif // TD_PICKING_ACTIVE",
+    "}",
+    ""
+   ]
+  },
+  "word_mat7": {
+   "type": "glslMAT",
+   "family": "MAT",
+   "pos": [
+    1500,
+    -390
+   ],
+   "pars": {
+    "cullface": "neither",
+    "pdat": "word_px",
+    "vdat": "word_vs",
+    "vec0name": "uCol",
+    "vec0valuew": {
+     "expr": "op('ctl')['flash']"
+    },
+    "vec0valuex": {
+     "expr": "op('ctl')['wr']"
+    },
+    "vec0valuey": {
+     "expr": "op('ctl')['wg']"
+    },
+    "vec0valuez": {
+     "expr": "op('ctl')['wb']"
+    },
+    "vec1name": "uFx",
+    "vec1valuew": 4.10736083984375,
+    "vec1valuex": {
+     "expr": "op('hub')['beat_pos']"
+    },
+    "vec1valuey": {
+     "expr": "op('hub')['energy']"
+    },
+    "vec1valuez": 1.2514409255981445
+   }
+  },
+  "word_mat7_info": {
+   "type": "infoDAT",
+   "family": "DAT",
+   "pos": [
+    320,
+    -120
+   ],
+   "pars": {
+    "language": "text",
+    "op": "word_mat7"
+   }
+  },
+  "word_mat7_pixel": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    160,
+    -120
+   ],
+   "pars": {
+    "extension": "frag",
+    "language": "glsl"
+   },
+   "text": [
+    "// Example Pixel Shader",
+    "",
+    "// uniform vec4 exampleUniform;",
+    "",
+    "out vec4 oFragColor;",
+    "void main()",
+    "{",
+    "\tTDCheckDiscard();",
+    "\tvec4 color = vec4(1.0);",
+    "\tTDAlphaTest(color.a);",
+    "\toFragColor = TDOutputSwizzle(color);",
+    "}",
+    ""
+   ]
+  },
+  "word_mat7_vertex": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    0,
+    -120
+   ],
+   "pars": {
+    "extension": "vert",
+    "language": "glsl"
+   },
+   "text": [
+    "// Example Vertex Shader",
+    "",
+    "void main() ",
+    "{",
+    "\tvec3 pos = TDPos();",
+    "\tvec4 worldSpacePos = TDDeform(pos);",
+    "\tgl_Position = TDWorldToProj(worldSpacePos);",
+    "#ifndef TD_PICKING_ACTIVE",
+    "#else // TD_PICKING_ACTIVE",
+    "\t// This will automatically write out the nessessary values",
+    "\t// for this shader to work with picking.",
+    "\t// See the documentation if you want to write custom values for picking.",
+    "\tTDWritePickingValues();",
+    "#endif // TD_PICKING_ACTIVE",
+    "}",
+    ""
+   ]
+  },
+  "word_mat8": {
+   "type": "glslMAT",
+   "family": "MAT",
+   "pos": [
+    450,
+    -690
+   ],
+   "pars": {
+    "cullface": "neither",
+    "pdat": "word_px",
+    "vdat": "word_vs",
+    "vec0name": "uCol",
+    "vec0valuew": {
+     "expr": "op('ctl')['flash']"
+    },
+    "vec0valuex": {
+     "expr": "op('ctl')['wr']"
+    },
+    "vec0valuey": {
+     "expr": "op('ctl')['wg']"
+    },
+    "vec0valuez": {
+     "expr": "op('ctl')['wb']"
+    },
+    "vec1name": "uFx",
+    "vec1valuew": 2.5206947326660156,
+    "vec1valuex": {
+     "expr": "op('hub')['beat_pos']"
+    },
+    "vec1valuey": {
+     "expr": "op('hub')['energy']"
+    },
+    "vec1valuez": 0.8994792366027832
+   }
+  },
+  "word_mat8_info": {
+   "type": "infoDAT",
+   "family": "DAT",
+   "pos": [
+    320,
+    -120
+   ],
+   "pars": {
+    "language": "text",
+    "op": "word_mat8"
+   }
+  },
+  "word_mat8_pixel": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    160,
+    -120
+   ],
+   "pars": {
+    "extension": "frag",
+    "language": "glsl"
+   },
+   "text": [
+    "// Example Pixel Shader",
+    "",
+    "// uniform vec4 exampleUniform;",
+    "",
+    "out vec4 oFragColor;",
+    "void main()",
+    "{",
+    "\tTDCheckDiscard();",
+    "\tvec4 color = vec4(1.0);",
+    "\tTDAlphaTest(color.a);",
+    "\toFragColor = TDOutputSwizzle(color);",
+    "}",
+    ""
+   ]
+  },
+  "word_mat8_vertex": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    0,
+    -120
+   ],
+   "pars": {
+    "extension": "vert",
+    "language": "glsl"
+   },
+   "text": [
+    "// Example Vertex Shader",
+    "",
+    "void main() ",
+    "{",
+    "\tvec3 pos = TDPos();",
+    "\tvec4 worldSpacePos = TDDeform(pos);",
+    "\tgl_Position = TDWorldToProj(worldSpacePos);",
+    "#ifndef TD_PICKING_ACTIVE",
+    "#else // TD_PICKING_ACTIVE",
+    "\t// This will automatically write out the nessessary values",
+    "\t// for this shader to work with picking.",
+    "\t// See the documentation if you want to write custom values for picking.",
+    "\tTDWritePickingValues();",
+    "#endif // TD_PICKING_ACTIVE",
+    "}",
+    ""
+   ]
+  },
+  "word_mat9": {
+   "type": "glslMAT",
+   "family": "MAT",
+   "pos": [
+    600,
+    -690
+   ],
+   "pars": {
+    "cullface": "neither",
+    "pdat": "word_px",
+    "vdat": "word_vs",
+    "vec0name": "uCol",
+    "vec0valuew": {
+     "expr": "op('ctl')['flash']"
+    },
+    "vec0valuex": {
+     "expr": "op('ctl')['wr']"
+    },
+    "vec0valuey": {
+     "expr": "op('ctl')['wg']"
+    },
+    "vec0valuez": {
+     "expr": "op('ctl')['wb']"
+    },
+    "vec1name": "uFx",
+    "vec1valuew": 2.5363197326660156,
+    "vec1valuex": {
+     "expr": "op('hub')['beat_pos']"
+    },
+    "vec1valuey": {
+     "expr": "op('hub')['energy']"
+    },
+    "vec1valuez": 0.8719791841506958
+   }
+  },
+  "word_mat9_info": {
+   "type": "infoDAT",
+   "family": "DAT",
+   "pos": [
+    320,
+    -120
+   ],
+   "pars": {
+    "language": "text",
+    "op": "word_mat9"
+   }
+  },
+  "word_mat9_pixel": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    160,
+    -120
+   ],
+   "pars": {
+    "extension": "frag",
+    "language": "glsl"
+   },
+   "text": [
+    "// Example Pixel Shader",
+    "",
+    "// uniform vec4 exampleUniform;",
+    "",
+    "out vec4 oFragColor;",
+    "void main()",
+    "{",
+    "\tTDCheckDiscard();",
+    "\tvec4 color = vec4(1.0);",
+    "\tTDAlphaTest(color.a);",
+    "\toFragColor = TDOutputSwizzle(color);",
+    "}",
+    ""
+   ]
+  },
+  "word_mat9_vertex": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    0,
+    -120
+   ],
+   "pars": {
+    "extension": "vert",
+    "language": "glsl"
+   },
+   "text": [
+    "// Example Vertex Shader",
+    "",
+    "void main() ",
+    "{",
+    "\tvec3 pos = TDPos();",
+    "\tvec4 worldSpacePos = TDDeform(pos);",
+    "\tgl_Position = TDWorldToProj(worldSpacePos);",
+    "#ifndef TD_PICKING_ACTIVE",
+    "#else // TD_PICKING_ACTIVE",
+    "\t// This will automatically write out the nessessary values",
+    "\t// for this shader to work with picking.",
+    "\t// See the documentation if you want to write custom values for picking.",
+    "\tTDWritePickingValues();",
+    "#endif // TD_PICKING_ACTIVE",
+    "}",
+    ""
+   ]
+  },
+  "word_px": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    600,
+    -260
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.here('shaders/word.frag')"
+    },
+    "language": "text",
+    "syncfile": true
+   },
+   "text_file": "experiments/sc_spectral_terrain/shaders/word.frag"
+  },
+  "word_vs": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    450,
+    -260
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.here('shaders/word.vert')"
+    },
+    "language": "text",
+    "syncfile": true
+   },
+   "text_file": "experiments/sc_spectral_terrain/shaders/word.vert"
+  }
+ }
+}

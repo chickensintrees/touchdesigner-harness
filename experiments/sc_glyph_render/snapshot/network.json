@@ -1,0 +1,3835 @@
+{
+ "format": "tdh-snapshot/1",
+ "root": "/project1/sc_glyph_render",
+ "ops": {
+  "atlas": {
+   "type": "scriptTOP",
+   "family": "TOP",
+   "pos": [
+    650,
+    -300
+   ],
+   "pars": {
+    "callbacks": "atlas_callbacks",
+    "filtertype": "nearest"
+   }
+  },
+  "atlas0": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    400,
+    -300
+   ],
+   "pars": {
+    "alignx": "left",
+    "aligny": "bottom",
+    "bgalpha": 1.0,
+    "filtertype": "nearest",
+    "fontfile": {
+     "expr": "mod.paths.font('chicago')"
+    },
+    "fontsizex": 58.0,
+    "fontsizexunit": "pixels",
+    "format": "mono8fixed",
+    "outputresolution": "custom",
+    "resmult": false,
+    "resolutionw": 768,
+    "specdat": "atlas0_spec"
+   }
+  },
+  "atlas0_spec": {
+   "type": "tableDAT",
+   "family": "DAT",
+   "pos": [
+    200,
+    -300
+   ],
+   "text": [
+    "x\ty\ttext",
+    "54\t208\t!",
+    "102\t208\t\"",
+    "150\t208\t#",
+    "198\t208\t$",
+    "246\t208\t%",
+    "294\t208\t&",
+    "342\t208\t'",
+    "390\t208\t(",
+    "438\t208\t)",
+    "486\t208\t*",
+    "534\t208\t+",
+    "582\t208\t,",
+    "630\t208\t-",
+    "678\t208\t.",
+    "726\t208\t/",
+    "6\t144\t0",
+    "54\t144\t1",
+    "102\t144\t2",
+    "150\t144\t3",
+    "198\t144\t4",
+    "246\t144\t5",
+    "294\t144\t6",
+    "342\t144\t7",
+    "390\t144\t8",
+    "438\t144\t9",
+    "486\t144\t:",
+    "534\t144\t;",
+    "582\t144\t<",
+    "630\t144\t=",
+    "678\t144\t>",
+    "726\t144\t?",
+    "6\t80\t@",
+    "54\t80\tA",
+    "102\t80\tB",
+    "150\t80\tC",
+    "198\t80\tD",
+    "246\t80\tE",
+    "294\t80\tF",
+    "342\t80\tG",
+    "390\t80\tH",
+    "438\t80\tI",
+    "486\t80\tJ",
+    "534\t80\tK",
+    "582\t80\tL",
+    "630\t80\tM",
+    "678\t80\tN",
+    "726\t80\tO",
+    "6\t16\tP",
+    "54\t16\tQ",
+    "102\t16\tR",
+    "150\t16\tS",
+    "198\t16\tT",
+    "246\t16\tU",
+    "294\t16\tV",
+    "342\t16\tW",
+    "390\t16\tX",
+    "438\t16\tY",
+    "486\t16\tZ",
+    "534\t16\t[",
+    "582\t16\t\\",
+    "630\t16\t]",
+    "678\t16\t^",
+    "726\t16\t_"
+   ]
+  },
+  "atlas1": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    400,
+    -410
+   ],
+   "pars": {
+    "alignx": "left",
+    "aligny": "bottom",
+    "bgalpha": 1.0,
+    "filtertype": "nearest",
+    "fontfile": {
+     "expr": "mod.paths.font('chicago')"
+    },
+    "fontsizex": 43.0,
+    "fontsizexunit": "pixels",
+    "format": "mono8fixed",
+    "outputresolution": "custom",
+    "resmult": false,
+    "resolutionh": 192,
+    "resolutionw": 576,
+    "specdat": "atlas1_spec"
+   }
+  },
+  "atlas1_spec": {
+   "type": "tableDAT",
+   "family": "DAT",
+   "pos": [
+    200,
+    -410
+   ],
+   "text": [
+    "x\ty\ttext",
+    "41\t156\t!",
+    "77\t156\t\"",
+    "113\t156\t#",
+    "149\t156\t$",
+    "185\t156\t%",
+    "221\t156\t&",
+    "257\t156\t'",
+    "293\t156\t(",
+    "329\t156\t)",
+    "365\t156\t*",
+    "401\t156\t+",
+    "437\t156\t,",
+    "473\t156\t-",
+    "509\t156\t.",
+    "545\t156\t/",
+    "5\t108\t0",
+    "41\t108\t1",
+    "77\t108\t2",
+    "113\t108\t3",
+    "149\t108\t4",
+    "185\t108\t5",
+    "221\t108\t6",
+    "257\t108\t7",
+    "293\t108\t8",
+    "329\t108\t9",
+    "365\t108\t:",
+    "401\t108\t;",
+    "437\t108\t<",
+    "473\t108\t=",
+    "509\t108\t>",
+    "545\t108\t?",
+    "5\t60\t@",
+    "41\t60\tA",
+    "77\t60\tB",
+    "113\t60\tC",
+    "149\t60\tD",
+    "185\t60\tE",
+    "221\t60\tF",
+    "257\t60\tG",
+    "293\t60\tH",
+    "329\t60\tI",
+    "365\t60\tJ",
+    "401\t60\tK",
+    "437\t60\tL",
+    "473\t60\tM",
+    "509\t60\tN",
+    "545\t60\tO",
+    "5\t12\tP",
+    "41\t12\tQ",
+    "77\t12\tR",
+    "113\t12\tS",
+    "149\t12\tT",
+    "185\t12\tU",
+    "221\t12\tV",
+    "257\t12\tW",
+    "293\t12\tX",
+    "329\t12\tY",
+    "365\t12\tZ",
+    "401\t12\t[",
+    "437\t12\t\\",
+    "473\t12\t]",
+    "509\t12\t^",
+    "545\t12\t_"
+   ]
+  },
+  "atlas2": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    400,
+    -520
+   ],
+   "pars": {
+    "alignx": "left",
+    "aligny": "bottom",
+    "bgalpha": 1.0,
+    "filtertype": "nearest",
+    "fontfile": {
+     "expr": "mod.paths.font('chicago')"
+    },
+    "fontsizex": 29.0,
+    "fontsizexunit": "pixels",
+    "format": "mono8fixed",
+    "outputresolution": "custom",
+    "resmult": false,
+    "resolutionh": 128,
+    "resolutionw": 384,
+    "specdat": "atlas2_spec"
+   }
+  },
+  "atlas2_spec": {
+   "type": "tableDAT",
+   "family": "DAT",
+   "pos": [
+    200,
+    -520
+   ],
+   "text": [
+    "x\ty\ttext",
+    "27\t104\t!",
+    "51\t104\t\"",
+    "75\t104\t#",
+    "99\t104\t$",
+    "123\t104\t%",
+    "147\t104\t&",
+    "171\t104\t'",
+    "195\t104\t(",
+    "219\t104\t)",
+    "243\t104\t*",
+    "267\t104\t+",
+    "291\t104\t,",
+    "315\t104\t-",
+    "339\t104\t.",
+    "363\t104\t/",
+    "3\t72\t0",
+    "27\t72\t1",
+    "51\t72\t2",
+    "75\t72\t3",
+    "99\t72\t4",
+    "123\t72\t5",
+    "147\t72\t6",
+    "171\t72\t7",
+    "195\t72\t8",
+    "219\t72\t9",
+    "243\t72\t:",
+    "267\t72\t;",
+    "291\t72\t<",
+    "315\t72\t=",
+    "339\t72\t>",
+    "363\t72\t?",
+    "3\t40\t@",
+    "27\t40\tA",
+    "51\t40\tB",
+    "75\t40\tC",
+    "99\t40\tD",
+    "123\t40\tE",
+    "147\t40\tF",
+    "171\t40\tG",
+    "195\t40\tH",
+    "219\t40\tI",
+    "243\t40\tJ",
+    "267\t40\tK",
+    "291\t40\tL",
+    "315\t40\tM",
+    "339\t40\tN",
+    "363\t40\tO",
+    "3\t8\tP",
+    "27\t8\tQ",
+    "51\t8\tR",
+    "75\t8\tS",
+    "99\t8\tT",
+    "123\t8\tU",
+    "147\t8\tV",
+    "171\t8\tW",
+    "195\t8\tX",
+    "219\t8\tY",
+    "243\t8\tZ",
+    "267\t8\t[",
+    "291\t8\t\\",
+    "315\t8\t]",
+    "339\t8\t^",
+    "363\t8\t_"
+   ]
+  },
+  "atlas3": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    400,
+    -630
+   ],
+   "pars": {
+    "alignx": "left",
+    "aligny": "bottom",
+    "bgalpha": 1.0,
+    "filtertype": "nearest",
+    "fontfile": {
+     "expr": "mod.paths.font('chicago')"
+    },
+    "fontsizex": 22.0,
+    "fontsizexunit": "pixels",
+    "format": "mono8fixed",
+    "outputresolution": "custom",
+    "resmult": false,
+    "resolutionh": 96,
+    "resolutionw": 288,
+    "specdat": "atlas3_spec"
+   }
+  },
+  "atlas3_spec": {
+   "type": "tableDAT",
+   "family": "DAT",
+   "pos": [
+    200,
+    -630
+   ],
+   "text": [
+    "x\ty\ttext",
+    "20\t78\t!",
+    "38\t78\t\"",
+    "56\t78\t#",
+    "74\t78\t$",
+    "92\t78\t%",
+    "110\t78\t&",
+    "128\t78\t'",
+    "146\t78\t(",
+    "164\t78\t)",
+    "182\t78\t*",
+    "200\t78\t+",
+    "218\t78\t,",
+    "236\t78\t-",
+    "254\t78\t.",
+    "272\t78\t/",
+    "2\t54\t0",
+    "20\t54\t1",
+    "38\t54\t2",
+    "56\t54\t3",
+    "74\t54\t4",
+    "92\t54\t5",
+    "110\t54\t6",
+    "128\t54\t7",
+    "146\t54\t8",
+    "164\t54\t9",
+    "182\t54\t:",
+    "200\t54\t;",
+    "218\t54\t<",
+    "236\t54\t=",
+    "254\t54\t>",
+    "272\t54\t?",
+    "2\t30\t@",
+    "20\t30\tA",
+    "38\t30\tB",
+    "56\t30\tC",
+    "74\t30\tD",
+    "92\t30\tE",
+    "110\t30\tF",
+    "128\t30\tG",
+    "146\t30\tH",
+    "164\t30\tI",
+    "182\t30\tJ",
+    "200\t30\tK",
+    "218\t30\tL",
+    "236\t30\tM",
+    "254\t30\tN",
+    "272\t30\tO",
+    "2\t6\tP",
+    "20\t6\tQ",
+    "38\t6\tR",
+    "56\t6\tS",
+    "74\t6\tT",
+    "92\t6\tU",
+    "110\t6\tV",
+    "128\t6\tW",
+    "146\t6\tX",
+    "164\t6\tY",
+    "182\t6\tZ",
+    "200\t6\t[",
+    "218\t6\t\\",
+    "236\t6\t]",
+    "254\t6\t^",
+    "272\t6\t_"
+   ]
+  },
+  "atlas4": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    400,
+    -740
+   ],
+   "pars": {
+    "alignx": "left",
+    "aligny": "bottom",
+    "bgalpha": 1.0,
+    "filtertype": "nearest",
+    "fontfile": {
+     "expr": "mod.paths.font('chicago')"
+    },
+    "fontsizex": 18.0,
+    "fontsizexunit": "pixels",
+    "format": "mono8fixed",
+    "outputresolution": "custom",
+    "resmult": false,
+    "resolutionh": 80,
+    "resolutionw": 240,
+    "specdat": "atlas4_spec"
+   }
+  },
+  "atlas4_spec": {
+   "type": "tableDAT",
+   "family": "DAT",
+   "pos": [
+    200,
+    -740
+   ],
+   "text": [
+    "x\ty\ttext",
+    "17\t65\t!",
+    "32\t65\t\"",
+    "47\t65\t#",
+    "62\t65\t$",
+    "77\t65\t%",
+    "92\t65\t&",
+    "107\t65\t'",
+    "122\t65\t(",
+    "137\t65\t)",
+    "152\t65\t*",
+    "167\t65\t+",
+    "182\t65\t,",
+    "197\t65\t-",
+    "212\t65\t.",
+    "227\t65\t/",
+    "2\t45\t0",
+    "17\t45\t1",
+    "32\t45\t2",
+    "47\t45\t3",
+    "62\t45\t4",
+    "77\t45\t5",
+    "92\t45\t6",
+    "107\t45\t7",
+    "122\t45\t8",
+    "137\t45\t9",
+    "152\t45\t:",
+    "167\t45\t;",
+    "182\t45\t<",
+    "197\t45\t=",
+    "212\t45\t>",
+    "227\t45\t?",
+    "2\t25\t@",
+    "17\t25\tA",
+    "32\t25\tB",
+    "47\t25\tC",
+    "62\t25\tD",
+    "77\t25\tE",
+    "92\t25\tF",
+    "107\t25\tG",
+    "122\t25\tH",
+    "137\t25\tI",
+    "152\t25\tJ",
+    "167\t25\tK",
+    "182\t25\tL",
+    "197\t25\tM",
+    "212\t25\tN",
+    "227\t25\tO",
+    "2\t5\tP",
+    "17\t5\tQ",
+    "32\t5\tR",
+    "47\t5\tS",
+    "62\t5\tT",
+    "77\t5\tU",
+    "92\t5\tV",
+    "107\t5\tW",
+    "122\t5\tX",
+    "137\t5\tY",
+    "152\t5\tZ",
+    "167\t5\t[",
+    "182\t5\t\\",
+    "197\t5\t]",
+    "212\t5\t^",
+    "227\t5\t_"
+   ]
+  },
+  "atlas5": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    400,
+    -850
+   ],
+   "pars": {
+    "alignx": "left",
+    "aligny": "bottom",
+    "bgalpha": 1.0,
+    "filtertype": "nearest",
+    "fontfile": {
+     "expr": "mod.paths.font('chicago')"
+    },
+    "fontsizex": 14.0,
+    "fontsizexunit": "pixels",
+    "format": "mono8fixed",
+    "outputresolution": "custom",
+    "resmult": false,
+    "resolutionh": 64,
+    "resolutionw": 192,
+    "specdat": "atlas5_spec"
+   }
+  },
+  "atlas5_spec": {
+   "type": "tableDAT",
+   "family": "DAT",
+   "pos": [
+    200,
+    -850
+   ],
+   "text": [
+    "x\ty\ttext",
+    "13\t52\t!",
+    "25\t52\t\"",
+    "37\t52\t#",
+    "49\t52\t$",
+    "61\t52\t%",
+    "73\t52\t&",
+    "85\t52\t'",
+    "97\t52\t(",
+    "109\t52\t)",
+    "121\t52\t*",
+    "133\t52\t+",
+    "145\t52\t,",
+    "157\t52\t-",
+    "169\t52\t.",
+    "181\t52\t/",
+    "1\t36\t0",
+    "13\t36\t1",
+    "25\t36\t2",
+    "37\t36\t3",
+    "49\t36\t4",
+    "61\t36\t5",
+    "73\t36\t6",
+    "85\t36\t7",
+    "97\t36\t8",
+    "109\t36\t9",
+    "121\t36\t:",
+    "133\t36\t;",
+    "145\t36\t<",
+    "157\t36\t=",
+    "169\t36\t>",
+    "181\t36\t?",
+    "1\t20\t@",
+    "13\t20\tA",
+    "25\t20\tB",
+    "37\t20\tC",
+    "49\t20\tD",
+    "61\t20\tE",
+    "73\t20\tF",
+    "85\t20\tG",
+    "97\t20\tH",
+    "109\t20\tI",
+    "121\t20\tJ",
+    "133\t20\tK",
+    "145\t20\tL",
+    "157\t20\tM",
+    "169\t20\tN",
+    "181\t20\tO",
+    "1\t4\tP",
+    "13\t4\tQ",
+    "25\t4\tR",
+    "37\t4\tS",
+    "49\t4\tT",
+    "61\t4\tU",
+    "73\t4\tV",
+    "85\t4\tW",
+    "97\t4\tX",
+    "109\t4\tY",
+    "121\t4\tZ",
+    "133\t4\t[",
+    "145\t4\t\\",
+    "157\t4\t]",
+    "169\t4\t^",
+    "181\t4\t_"
+   ]
+  },
+  "atlas_callbacks": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    650,
+    -410
+   ],
+   "pars": {
+    "language": "python"
+   },
+   "text": [
+    "# Stacks atlas0..N (one per cell size) into one mono texture, bottom up.",
+    "import numpy as np",
+    "",
+    "def onCook(scriptOp):",
+    "    out = np.zeros((816, 768, 1), dtype=np.float32)",
+    "    y = 0",
+    "    for k in range(6):",
+    "        a = op('atlas%d' % k).numpyArray()",
+    "        h, w = a.shape[0], a.shape[1]",
+    "        out[y:y + h, 0:w, 0] = a[:, :, 0]",
+    "        y += h",
+    "    scriptOp.copyNumpyArray(out)",
+    "    return"
+   ]
+  },
+  "bar_gate": {
+   "type": "constantCHOP",
+   "family": "CHOP",
+   "pos": [
+    -400,
+    -300
+   ],
+   "pars": {
+    "const0name": "gate",
+    "const0value": {
+     "expr": "1 if op('hub')['bar'] < 0.5 else 0"
+    }
+   }
+  },
+  "cam": {
+   "type": "cameraCOMP",
+   "family": "COMP",
+   "pos": [
+    -200,
+    -380
+   ],
+   "pars": {
+    "fov": 42.0,
+    "rx": {
+     "expr": "op('tk')['crx']"
+    },
+    "rz": {
+     "expr": "op('tk')['dutch'] * (2 * ((float(op('shot')['seed']) * 13.77 + 0.41) % 1) - 1)"
+    },
+    "ty": {
+     "expr": "op('tk')['cty'] + 0.3 * op('tk')['dutch'] / 30 * (((float(op('shot')['seed']) * 7.31 + 0.13) % 1) - 0.5)"
+    },
+    "tz": {
+     "expr": "op('tk')['tz']"
+    }
+   }
+  },
+  "cam/file1": {
+   "type": "fileinPOP",
+   "family": "POP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "file": {
+     "expr": "app.samplesFolder + '/Geo/defcam.tog'"
+    }
+   }
+  },
+  "codes": {
+   "type": "scriptTOP",
+   "family": "TOP",
+   "pos": [
+    400,
+    -1000
+   ],
+   "pars": {
+    "callbacks": "codes_callbacks"
+   }
+  },
+  "codes_callbacks": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    400,
+    -1110
+   ],
+   "pars": {
+    "language": "python"
+   },
+   "text": [
+    "# Writes the running texts as one texel per character (ASCII code - 32), one row",
+    "# per text: row 0 the scene's phrases, then one row per take for Describe mode, then",
+    "# the Describe text used when Input is set. Rows are padded with spaces; the shader",
+    "# is told each row's real length.",
+    "import numpy as np",
+    "",
+    "def onCook(scriptOp):",
+    "    rows = [op('phrase_text').text] + op('describe_text').text.split(chr(10))",
+    "    w = max(len(s) for s in rows)",
+    "    a = np.zeros((len(rows), w, 1), dtype=np.float32)",
+    "    for i, s in enumerate(rows):",
+    "        a[i, :len(s), 0] = [min(63, max(0, ord(ch) - 32)) for ch in s]",
+    "    scriptOp.copyNumpyArray(a)",
+    "    return"
+   ]
+  },
+  "cook_driver": {
+   "type": "executeDAT",
+   "family": "DAT",
+   "pos": [
+    -400,
+    -80
+   ],
+   "pars": {
+    "framestart": true,
+    "language": "python"
+   },
+   "text": [
+    "def onFrameStart(frame):",
+    "    hub = op('/project1/sw_hub')",
+    "    me_on = parent().par.Preview.eval()",
+    "    if hub is not None:",
+    "        me_on = me_on or hub.par.Solo.eval() or hub.par.Scene.eval() == parent().name",
+    "    if me_on:",
+    "        op('hub').cook(force=True)",
+    "        op('out1').cook(force=True)",
+    "    return"
+   ]
+  },
+  "describe_text": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    0,
+    -1000
+   ],
+   "pars": {
+    "language": "text"
+   },
+   "text": [
+    "THIS PICTURE IS MADE OF TYPE. A 3D MODEL IS RENDERED, THEN A SHADER REDRAWS IT AS MONOSPACE BITMAP LETTERS IN PURE BLACK AND WHITE. BRIGHTNESS NEVER PICKS THE LETTER, ONLY ITS WEIGHT: BLANK, GREYED, REGULAR OR BOLD. LIT AREAS FLIP TO BLACK TYPE ON WHITE. THE TEXT MOVES TWO CHARACTERS A BEAT. LOUDER BARS USE SMALLER LETTERS. THE SNARE INVERTS THE FRAME. THE KICK FLASHES THE BIG WORD WHITE.   ",
+    "EVERY ROW IS ITS OWN TICKER. ALTERNATE ROWS RUN OPPOSITE WAYS. A ROW MOVES 2, 4 OR 6 CHARACTERS A BEAT. THE 3D MODEL IS NOT DRAWN: WHERE IT IS LIT, THE WALL OF TYPE TURNS TO INVERSE VIDEO. THIS IS 12 X 16 PIXEL MONOSPACE, THE SMALLEST SIZE USED HERE. THE SNARE FLIPS THE WHOLE WALL.   ",
+    "MACRO: EVERY FONT PIXEL IS DRAWN 2 OR 3 SCREEN PIXELS WIDE. LIGHT TURNS THE TYPE TO BLACK ON WHITE.   ",
+    "THE SAME SHADER WITH THE FRAME INVERTED: A WHITE PAGE OF BLACK TYPE. THREE 3D MODELS SEEN FROM ABOVE ARE REDRAWN AS BLOCKS OF MONOSPACE BITMAP TEXT. THEIR LIT SIDES PRINT BLACK, THE EMPTY SPACE AROUND THEM IS PAPER. THE PAGE IS TYPED IN FROM THE LEFT AT EACH CUT. THE SNARE TURNS IT BLACK.   ",
+    "NO 3D MODEL HERE. THIS CORRIDOR IS A FEW LINES OF SHADER MATHS: ONE DIVIDE GIVES DEPTH, THEN STRIPES BECOME CEILING TUBES, A CHECKER BECOMES CARPET AND RECTANGLES BECOME DOORS. THE RESULT IS A BRIGHTNESS MAP, REDRAWN AS MONOSPACE BITMAP TYPE. IT TRAVELS HALF A TUBE EVERY BEAT. THE KICK MAKES THE TUBES SURGE.   ",
+    "QUADTREE: THE FRAME STARTS AS 96 X 128 PIXEL LETTERS. A BLOCK SPLITS IN FOUR WHEREVER THE PICTURE INSIDE IT HAS CONTRAST, DOWN TO 12 X 16. FLAT AREAS KEEP HUGE LETTERS, EDGES GET TINY ONES. A KICK SPLITS MORE BLOCKS.   ",
+    "ONE RENDER OF A 3D MODEL, REPEATED AS A GRID OF 3 TO 5 TILES A SIDE. EVERY OTHER COLUMN IS MIRRORED. EVERY OTHER TILE IS DRAWN IN NEGATIVE, AND THAT CHECKER SWAPS ON EACH BEAT. THE LETTERS ARE NOT TILED: ONE PAGE OF 12 PIXEL TYPE RUNS ACROSS ALL OF THEM.   ",
+    "THE BIG WORD IS A WINDOW. THE PAGE OF TYPE EXISTS ONLY INSIDE ITS LETTERS. THE 3D MODEL IS A BLACK HOLE IN THAT PAGE, WITH A WHITE OUTLINE THAT CARRIES ON OUTSIDE THE WORD. KICKS AND BEATS FILL THE DARK AROUND IT WITH GREYED TYPE FOR A MOMENT.   ",
+    "THIS IS ANOTHER SCENE'S PICTURE, REDRAWN AS TYPE. ITS BRIGHTNESS IS CUT TO PURE BLACK AND WHITE AND EVERY CELL BECOMES A MONOSPACE BITMAP LETTER. BRIGHTNESS NEVER PICKS THE LETTER, ONLY ITS WEIGHT: BLANK, GREYED, REGULAR OR BOLD. THE TEXT MOVES TWO CHARACTERS A BEAT. THE SNARE INVERTS THE FRAME.   "
+   ]
+  },
+  "dsc": {
+   "type": "constantCHOP",
+   "family": "CHOP",
+   "pos": [
+    -800,
+    200
+   ],
+   "pars": {
+    "const0name": "on",
+    "const0value": {
+     "expr": "1 if parent().par.Describe else 0"
+    },
+    "const1name": "row",
+    "const1value": {
+     "expr": "0 if not parent().par.Describe else (9 if op('inp')['on'] else 1 + int(op('shot')['take']) % 8)"
+    }
+   }
+  },
+  "energy_bar": {
+   "type": "holdCHOP",
+   "family": "CHOP",
+   "pos": [
+    -250,
+    -250
+   ],
+   "inputs": [
+    [
+     "energy_now"
+    ],
+    [
+     "bar_gate"
+    ]
+   ],
+   "pars": {
+    "timeslice": true
+   }
+  },
+  "energy_now": {
+   "type": "selectCHOP",
+   "family": "CHOP",
+   "pos": [
+    -400,
+    -200
+   ],
+   "pars": {
+    "channames": "energy",
+    "chops": "hub"
+   }
+  },
+  "fill": {
+   "type": "lightCOMP",
+   "family": "COMP",
+   "pos": [
+    -200,
+    -670
+   ],
+   "pars": {
+    "dimmer": 0.22,
+    "tz": 3.3
+   }
+  },
+  "fill/circle1": {
+   "type": "circlePOP",
+   "family": "POP",
+   "pos": [
+    780,
+    170
+   ],
+   "pars": {
+    "connectivity": "surface",
+    "scale": 0.2
+   }
+  },
+  "fill/circle_attenEnd": {
+   "type": "circlePOP",
+   "family": "POP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "bypass": {
+     "expr": "not parent().par.attenuated"
+    },
+    "connectivity": "surface",
+    "pageindex": 3,
+    "radx": 0.1,
+    "rady": 0.1,
+    "tz": {
+     "expr": "-parent().par.attenuationend"
+    }
+   }
+  },
+  "fill/circle_attenStart": {
+   "type": "circlePOP",
+   "family": "POP",
+   "pos": [
+    0,
+    120
+   ],
+   "pars": {
+    "bypass": {
+     "expr": "not parent().par.attenuated"
+    },
+    "connectivity": "surface",
+    "pageindex": 1,
+    "radx": 0.1,
+    "rady": 0.1,
+    "tz": {
+     "expr": "-parent().par.attenuationstart"
+    }
+   }
+  },
+  "fill/connectivity1": {
+   "type": "connectivityPOP",
+   "family": "POP",
+   "pos": [
+    780,
+    290
+   ],
+   "inputs": [
+    [
+     "fill/merge3"
+    ]
+   ],
+   "pars": {
+    "surftype": "lines"
+   }
+  },
+  "fill/copy1": {
+   "type": "copyPOP",
+   "family": "POP",
+   "pos": [
+    520,
+    670
+   ],
+   "inputs": [
+    [
+     "fill/tube_attenuated"
+    ]
+   ],
+   "pars": {
+    "ncy": 2,
+    "pageindex": 2,
+    "rx": 90.0
+   }
+  },
+  "fill/line_atten": {
+   "type": "linePOP",
+   "family": "POP",
+   "pos": [
+    0,
+    230
+   ],
+   "pars": {
+    "bypass": {
+     "expr": "not parent().par.attenuated"
+    },
+    "divs": 1,
+    "pageindex": 2,
+    "pt0posz": {
+     "expr": "-parent().par.attenuationstart"
+    },
+    "pt1posz": {
+     "expr": "-parent().par.attenuationend"
+    }
+   },
+   "custom_pars": [
+    "pt",
+    "pt0posx",
+    "pt0posy",
+    "pt0posz",
+    "pt1posx",
+    "pt1posy",
+    "pt1posz"
+   ]
+  },
+  "fill/merge1": {
+   "type": "mergePOP",
+   "family": "POP",
+   "pos": [
+    250,
+    500
+   ],
+   "inputs": [
+    [
+     "fill/rectangle1"
+    ],
+    [
+     "fill/tube_cone1"
+    ],
+    [
+     "fill/tube_cone2"
+    ],
+    [
+     "fill/primitive1"
+    ],
+    [
+     "fill/line_atten"
+    ],
+    [
+     "fill/circle_attenStart"
+    ],
+    [
+     "fill/circle_attenEnd"
+    ]
+   ],
+   "pars": {
+    "pageindex": 1
+   }
+  },
+  "fill/merge2": {
+   "type": "mergePOP",
+   "family": "POP",
+   "pos": [
+    950,
+    230
+   ],
+   "inputs": [
+    [
+     "fill/connectivity1"
+    ],
+    [
+     "fill/circle1"
+    ]
+   ]
+  },
+  "fill/merge3": {
+   "type": "mergePOP",
+   "family": "POP",
+   "pos": [
+    620,
+    290
+   ],
+   "inputs": [
+    [
+     "fill/pointgen1"
+    ],
+    [
+     "fill/transform1"
+    ]
+   ]
+  },
+  "fill/merge_pointLight": {
+   "type": "mergePOP",
+   "family": "POP",
+   "pos": [
+    760,
+    820
+   ],
+   "inputs": [
+    [
+     "fill/sphere1"
+    ],
+    [
+     "fill/primitive_quadrants"
+    ],
+    [
+     "fill/copy1"
+    ]
+   ],
+   "pars": {
+    "pageindex": 1
+   }
+  },
+  "fill/pointgen1": {
+   "type": "pointgeneratorPOP",
+   "family": "POP",
+   "pos": [
+    270,
+    290
+   ],
+   "pars": {
+    "numpoints": 17,
+    "pageindex": 1,
+    "shape": "circle",
+    "sx": 0.2,
+    "sy": 0.2,
+    "sz": 0.2
+   }
+  },
+  "fill/primitive1": {
+   "type": "primitivePOP",
+   "family": "POP",
+   "pos": [
+    0,
+    390
+   ],
+   "pars": {
+    "addpts": true,
+    "method": "pattern",
+    "pageindex": 1,
+    "prim0pattern": "0 1 0 2 0 3 0 4",
+    "prim0type": "lines",
+    "pt1posx": {
+     "expr": "mod.math.sin(mod.math.radians(parent().par.coneangle/2)) + mod.math.sin(mod.math.radians(parent().par.conedelta/2))"
+    },
+    "pt1posz": {
+     "expr": "-op('tube_cone1').par.height"
+    },
+    "pt2posx": {
+     "expr": "mod.math.sin(-mod.math.radians(parent().par.coneangle/2)) - mod.math.sin(mod.math.radians(parent().par.conedelta/2))"
+    },
+    "pt2posz": {
+     "expr": "0-op('tube_cone1').par.height"
+    },
+    "pt3posy": {
+     "expr": "-mod.math.sin(-mod.math.radians(parent().par.coneangle/2)) - mod.math.sin(mod.math.radians(parent().par.conedelta/2))"
+    },
+    "pt3posz": {
+     "expr": "-op('tube_cone1').par.height"
+    },
+    "pt4posy": {
+     "expr": "mod.math.sin(-mod.math.radians(parent().par.coneangle/2)) - mod.math.sin(mod.math.radians(parent().par.conedelta/2))"
+    },
+    "pt4posz": {
+     "expr": "-op('tube_cone1').par.height"
+    }
+   },
+   "custom_pars": [
+    "pt",
+    "pt0posx",
+    "pt0posy",
+    "pt0posz",
+    "pt1posx",
+    "pt1posy",
+    "pt1posz",
+    "pt2posx",
+    "pt2posy",
+    "pt2posz",
+    "pt3posx",
+    "pt3posy",
+    "pt3posz",
+    "pt4posx",
+    "pt4posy",
+    "pt4posz"
+   ]
+  },
+  "fill/primitive_cross": {
+   "type": "primitivePOP",
+   "family": "POP",
+   "pos": [
+    520,
+    1000
+   ],
+   "pars": {
+    "addpts": true,
+    "method": "set",
+    "pageindex": 1,
+    "pt0posx": -0.2,
+    "pt1posx": 0.2,
+    "pt2posy": -0.2,
+    "pt3posy": 0.2,
+    "pt4posz": -0.2,
+    "pt5posz": 0.2,
+    "setprimtype": "lines"
+   },
+   "custom_pars": [
+    "pt",
+    "pt0posx",
+    "pt0posy",
+    "pt0posz",
+    "pt1posx",
+    "pt1posy",
+    "pt1posz",
+    "pt2posx",
+    "pt2posy",
+    "pt2posz",
+    "pt3posx",
+    "pt3posy",
+    "pt3posz",
+    "pt4posx",
+    "pt4posy",
+    "pt4posz",
+    "pt5posx",
+    "pt5posy",
+    "pt5posz"
+   ]
+  },
+  "fill/primitive_quadrants": {
+   "type": "primitivePOP",
+   "family": "POP",
+   "pos": [
+    520,
+    780
+   ],
+   "pars": {
+    "addpts": true,
+    "method": "set",
+    "pageindex": 1,
+    "pt0posx": 0.07,
+    "pt0posy": 0.07,
+    "pt0posz": 0.07,
+    "pt1posx": -0.07,
+    "pt1posy": -0.07,
+    "pt1posz": -0.07,
+    "pt2posx": -0.07,
+    "pt2posy": 0.07,
+    "pt2posz": 0.07,
+    "pt3posx": 0.07,
+    "pt3posy": -0.07,
+    "pt3posz": -0.07,
+    "pt4posx": 0.07,
+    "pt4posy": 0.07,
+    "pt4posz": -0.07,
+    "pt5posx": -0.07,
+    "pt5posy": -0.07,
+    "pt5posz": 0.07,
+    "pt6posx": -0.07,
+    "pt6posy": 0.07,
+    "pt6posz": -0.07,
+    "pt7posx": 0.07,
+    "pt7posy": -0.07,
+    "pt7posz": 0.07,
+    "setprimtype": "lines"
+   },
+   "custom_pars": [
+    "pt",
+    "pt0posx",
+    "pt0posy",
+    "pt0posz",
+    "pt1posx",
+    "pt1posy",
+    "pt1posz",
+    "pt2posx",
+    "pt2posy",
+    "pt2posz",
+    "pt3posx",
+    "pt3posy",
+    "pt3posz",
+    "pt4posx",
+    "pt4posy",
+    "pt4posz",
+    "pt5posx",
+    "pt5posy",
+    "pt5posz",
+    "pt6posx",
+    "pt6posy",
+    "pt6posz",
+    "pt7posx",
+    "pt7posy",
+    "pt7posz"
+   ]
+  },
+  "fill/rectangle1": {
+   "type": "rectanglePOP",
+   "family": "POP",
+   "pos": [
+    0,
+    730
+   ],
+   "pars": {
+    "anchorv": 0.0,
+    "sizeu": 0.02,
+    "sizev": 0.5
+   }
+  },
+  "fill/sphere1": {
+   "type": "spherePOP",
+   "family": "POP",
+   "pos": [
+    520,
+    890
+   ],
+   "pars": {
+    "freq": 3,
+    "pageindex": 2,
+    "radx": 0.05,
+    "rady": 0.05,
+    "radz": 0.05
+   }
+  },
+  "fill/switch_lightType": {
+   "type": "switchPOP",
+   "family": "POP",
+   "pos": [
+    1140,
+    500
+   ],
+   "inputs": [
+    [
+     "fill/merge_pointLight"
+    ],
+    [
+     "fill/merge1"
+    ],
+    [
+     "fill/merge2"
+    ]
+   ],
+   "pars": {
+    "index": {
+     "expr": "parent().par.lighttype.menuIndex"
+    }
+   }
+  },
+  "fill/transform1": {
+   "type": "transformPOP",
+   "family": "POP",
+   "pos": [
+    450,
+    370
+   ],
+   "inputs": [
+    [
+     "fill/pointgen1"
+    ]
+   ],
+   "pars": {
+    "tz": 0.8
+   }
+  },
+  "fill/tube_attenuated": {
+   "type": "tubePOP",
+   "family": "POP",
+   "pos": [
+    368,
+    673
+   ],
+   "pars": {
+    "bypass": {
+     "expr": "not parent().par.attenuated"
+    },
+    "height": 0.0,
+    "orient": "z",
+    "radx": {
+     "expr": "parent().par.attenuationend"
+    },
+    "rady": {
+     "expr": "parent().par.attenuationstart"
+    },
+    "rows": 2,
+    "surftype": "rows"
+   }
+  },
+  "fill/tube_cone1": {
+   "type": "tubePOP",
+   "family": "POP",
+   "pos": [
+    0,
+    620
+   ],
+   "pars": {
+    "height": {
+     "expr": "mod.math.cos(mod.math.radians(parent().par.coneangle/2))"
+    },
+    "orient": "z",
+    "radx": {
+     "expr": "mod.math.sin(mod.math.radians(parent().par.coneangle/2))"
+    },
+    "rady": 0.01,
+    "rows": 2,
+    "tz": {
+     "expr": "-me.par.height*0.5"
+    }
+   }
+  },
+  "fill/tube_cone2": {
+   "type": "tubePOP",
+   "family": "POP",
+   "pos": [
+    0,
+    500
+   ],
+   "pars": {
+    "height": 0.0,
+    "orient": "z",
+    "radx": {
+     "expr": "mod.math.sin(mod.math.radians(parent().par.coneangle/2)) + mod.math.sin(mod.math.radians(parent().par.conedelta/2))"
+    },
+    "rady": {
+     "expr": "mod.math.sin(mod.math.radians(parent().par.coneangle/2))"
+    },
+    "rows": 2,
+    "tz": {
+     "expr": "-op('tube_cone1').par.height"
+    }
+   }
+  },
+  "glyph": {
+   "type": "glslTOP",
+   "family": "TOP",
+   "pos": [
+    900,
+    0
+   ],
+   "inputs": [
+    [
+     "tone"
+    ],
+    [
+     "atlas"
+    ],
+    [
+     "codes"
+    ]
+   ],
+   "pars": {
+    "computedat": "glyph_compute",
+    "filtertype": "nearest",
+    "format": "rgba8fixed",
+    "outputresolution": "custom",
+    "pixeldat": "glyph_frag",
+    "resolutionh": 720,
+    "resolutionw": 1280,
+    "vec0name": "uCell",
+    "vec0valuew": {
+     "expr": "op('tk')['rev']"
+    },
+    "vec0valuex": {
+     "expr": "op('tkd')['lvl']"
+    },
+    "vec0valuey": {
+     "expr": "op('tkd')['chunk']"
+    },
+    "vec0valuez": {
+     "expr": "op('tkd')['rev']"
+    },
+    "vec1name": "uText",
+    "vec1valuew": {
+     "expr": "min(1.0, float(op('hub')['hit_high'])) * (0.5 if op('dsc')['on'] else 1)"
+    },
+    "vec1valuex": {
+     "expr": "op('hub')['beat_pos'] * 2"
+    },
+    "vec1valuey": {
+     "expr": "(555, 394, 285, 102, 292, 312, 219, 257, 246, 299)[int(op('dsc')['row'])]"
+    },
+    "vec1valuez": {
+     "expr": "op('starts')[(int(op('hub')['section']) * 5 + int(float(op('shot')['seed']) * 97)) % 21, 0] if int(op('dsc')['row']) == 0 else 0"
+    },
+    "vec2name": "uFx",
+    "vec2valuew": {
+     "expr": "1 if (op('hub')['pulse'] > 0.6 or op('hub')['hit_low'] > 0.25) else 0"
+    },
+    "vec2valuex": {
+     "expr": "(1 if op('hub')['hit_mid'] > 0.45 else 0) ^ int(op('tk')['inv'])"
+    },
+    "vec2valuey": {
+     "expr": "absTime.frame % 100000"
+    },
+    "vec2valuez": 0.22,
+    "vec3name": "uMode",
+    "vec3valuew": {
+     "expr": "0.16 + 3 * (1 - min(1.0, float(op('shot')['age']) / 0.5)) ** 2 - 0.11 * min(1.0, float(op('hub')['hit_low']))"
+    },
+    "vec3valuex": {
+     "expr": "op('tk')['poster']"
+    },
+    "vec3valuey": {
+     "expr": "op('tk')['quad']"
+    },
+    "vec3valuez": {
+     "expr": "op('tk')['ticker']"
+    },
+    "vec4name": "uRow",
+    "vec4valuex": {
+     "expr": "int(op('dsc')['row'])"
+    }
+   }
+  },
+  "glyph_compute": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    320,
+    -120
+   ],
+   "pars": {
+    "language": "glsl"
+   },
+   "text": [
+    "// Example Compute Shader",
+    "",
+    "// uniform float exampleUniform;",
+    "",
+    "layout (local_size_x = 8, local_size_y = 4) in;",
+    "void main()",
+    "{",
+    "\t// This code is running 1:1 per pixel, so early-exit",
+    "\t// if this thread overhangs the edge of the output",
+    "\tif (any(greaterThanEqual(ivec2(gl_GlobalInvocationID.xy), ivec2(uTDOutputInfo.res.zw))))",
+    "\t\treturn;",
+    "",
+    "\tvec4 color;",
+    "\t//color = texelFetch(sTD2DInputs[0], ivec2(gl_GlobalInvocationID.xy), 0);",
+    "\tcolor = vec4(1.0);",
+    "\t// We need to use TDImageStoreOutput() so that 8-bit textures that are sRGB",
+    "\t// encoded can be written to correctly from incoming linear values.",
+    "\t// imageStore() does not do this automatically, while pixel shader outputs do.",
+    "\tTDImageStoreOutput(0, gl_GlobalInvocationID, color);",
+    "}"
+   ]
+  },
+  "glyph_frag": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    600,
+    -120
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.here('shaders/glyph.frag')"
+    },
+    "language": "text",
+    "syncfile": true
+   },
+   "text_file": "experiments/sc_glyph_render/shaders/glyph.frag"
+  },
+  "glyph_info": {
+   "type": "infoDAT",
+   "family": "DAT",
+   "pos": [
+    160,
+    -120
+   ],
+   "pars": {
+    "language": "text",
+    "op": "glyph"
+   }
+  },
+  "glyph_pixel": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    0,
+    -120
+   ],
+   "pars": {
+    "extension": "frag",
+    "language": "glsl"
+   },
+   "text": [
+    "",
+    "// Example Pixel Shader",
+    "",
+    "// uniform float exampleUniform;",
+    "",
+    "out vec4 fragColor;",
+    "void main()",
+    "{",
+    "\t// vec4 color = texture(sTD2DInputs[0], vUV.st);",
+    "\tvec4 color = vec4(1.0);",
+    "\tfragColor = TDOutputSwizzle(color);",
+    "}"
+   ]
+  },
+  "hub": {
+   "type": "selectCHOP",
+   "family": "CHOP",
+   "pos": [
+    -400,
+    200
+   ],
+   "pars": {
+    "chops": "/project1/sw_hub/feed"
+   }
+  },
+  "inp": {
+   "type": "constantCHOP",
+   "family": "CHOP",
+   "pos": [
+    -800,
+    330
+   ],
+   "pars": {
+    "const0name": "on",
+    "const0value": {
+     "expr": "1 if (lambda o: o is not None and o.isTOP and not o.path.startswith(parent().path + '/'))(op(parent().par.Input.eval().strip() or '/none')) else 0"
+    }
+   }
+  },
+  "inprep": {
+   "type": "glslTOP",
+   "family": "TOP",
+   "pos": [
+    200,
+    330
+   ],
+   "inputs": [
+    [
+     "insel"
+    ]
+   ],
+   "pars": {
+    "computedat": "inprep_compute",
+    "filtertype": "mipmap",
+    "format": "rgba16float",
+    "inputextenduv": "mirror",
+    "outputresolution": "custom",
+    "pixeldat": "inprep_frag",
+    "resolutionh": 720,
+    "resolutionw": 1280,
+    "vec0name": "uIn",
+    "vec0valuew": {
+     "expr": "op('tk')['inj'] * (((float(op('shot')['seed']) * 29.11 + 0.70) % 1) - 0.5)"
+    },
+    "vec0valuex": {
+     "expr": "op('tk')['inz'] * (1 + 0.07 * min(1.0, float(op('hub')['hit_low']))) * (1 + 0.5 * op('tk')['land'] * math.exp(-9 * float(op('shot')['age'])))"
+    },
+    "vec0valuey": {
+     "expr": "math.radians(op('tk')['dutch'] * (2 * ((float(op('shot')['seed']) * 13.77 + 0.41) % 1) - 1))"
+    },
+    "vec0valuez": {
+     "expr": "op('tk')['inj'] * (((float(op('shot')['seed']) * 7.31 + 0.13) % 1) - 0.5)"
+    },
+    "vec1name": "uKey",
+    "vec1valuex": 2.0,
+    "vec1valuey": 0.07,
+    "vec1valuez": 0.13
+   }
+  },
+  "inprep_compute": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    320,
+    -120
+   ],
+   "pars": {
+    "language": "glsl"
+   },
+   "text": [
+    "// Example Compute Shader",
+    "",
+    "// uniform float exampleUniform;",
+    "",
+    "layout (local_size_x = 8, local_size_y = 4) in;",
+    "void main()",
+    "{",
+    "\t// This code is running 1:1 per pixel, so early-exit",
+    "\t// if this thread overhangs the edge of the output",
+    "\tif (any(greaterThanEqual(ivec2(gl_GlobalInvocationID.xy), ivec2(uTDOutputInfo.res.zw))))",
+    "\t\treturn;",
+    "",
+    "\tvec4 color;",
+    "\t//color = texelFetch(sTD2DInputs[0], ivec2(gl_GlobalInvocationID.xy), 0);",
+    "\tcolor = vec4(1.0);",
+    "\t// We need to use TDImageStoreOutput() so that 8-bit textures that are sRGB",
+    "\t// encoded can be written to correctly from incoming linear values.",
+    "\t// imageStore() does not do this automatically, while pixel shader outputs do.",
+    "\tTDImageStoreOutput(0, gl_GlobalInvocationID, color);",
+    "}"
+   ]
+  },
+  "inprep_frag": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    0,
+    220
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.here('shaders/inprep.frag')"
+    },
+    "language": "text",
+    "syncfile": true
+   },
+   "text_file": "experiments/sc_glyph_render/shaders/inprep.frag"
+  },
+  "inprep_info": {
+   "type": "infoDAT",
+   "family": "DAT",
+   "pos": [
+    160,
+    -120
+   ],
+   "pars": {
+    "language": "text",
+    "op": "inprep"
+   }
+  },
+  "inprep_pixel": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    0,
+    -120
+   ],
+   "pars": {
+    "extension": "frag",
+    "language": "glsl"
+   },
+   "text": [
+    "",
+    "// Example Pixel Shader",
+    "",
+    "// uniform float exampleUniform;",
+    "",
+    "out vec4 fragColor;",
+    "void main()",
+    "{",
+    "\t// vec4 color = texture(sTD2DInputs[0], vUV.st);",
+    "\tvec4 color = vec4(1.0);",
+    "\tfragColor = TDOutputSwizzle(color);",
+    "}"
+   ]
+  },
+  "insel": {
+   "type": "selectTOP",
+   "family": "TOP",
+   "pos": [
+    0,
+    330
+   ],
+   "pars": {
+    "top": {
+     "expr": "parent().par.Input.eval().strip() if op('inp')['on'] else 'render'"
+    }
+   }
+  },
+  "key": {
+   "type": "lightCOMP",
+   "family": "COMP",
+   "pos": [
+    -200,
+    -490
+   ],
+   "pars": {
+    "dimmer": 3.0,
+    "tx": {
+     "expr": "-2.4 * op('tkd')['side']"
+    },
+    "ty": 2.0,
+    "tz": 2.6
+   }
+  },
+  "key/circle1": {
+   "type": "circlePOP",
+   "family": "POP",
+   "pos": [
+    780,
+    170
+   ],
+   "pars": {
+    "connectivity": "surface",
+    "scale": 0.2
+   }
+  },
+  "key/circle_attenEnd": {
+   "type": "circlePOP",
+   "family": "POP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "bypass": {
+     "expr": "not parent().par.attenuated"
+    },
+    "connectivity": "surface",
+    "pageindex": 3,
+    "radx": 0.1,
+    "rady": 0.1,
+    "tz": {
+     "expr": "-parent().par.attenuationend"
+    }
+   }
+  },
+  "key/circle_attenStart": {
+   "type": "circlePOP",
+   "family": "POP",
+   "pos": [
+    0,
+    120
+   ],
+   "pars": {
+    "bypass": {
+     "expr": "not parent().par.attenuated"
+    },
+    "connectivity": "surface",
+    "pageindex": 1,
+    "radx": 0.1,
+    "rady": 0.1,
+    "tz": {
+     "expr": "-parent().par.attenuationstart"
+    }
+   }
+  },
+  "key/connectivity1": {
+   "type": "connectivityPOP",
+   "family": "POP",
+   "pos": [
+    780,
+    290
+   ],
+   "inputs": [
+    [
+     "key/merge3"
+    ]
+   ],
+   "pars": {
+    "surftype": "lines"
+   }
+  },
+  "key/copy1": {
+   "type": "copyPOP",
+   "family": "POP",
+   "pos": [
+    520,
+    670
+   ],
+   "inputs": [
+    [
+     "key/tube_attenuated"
+    ]
+   ],
+   "pars": {
+    "ncy": 2,
+    "pageindex": 2,
+    "rx": 90.0
+   }
+  },
+  "key/line_atten": {
+   "type": "linePOP",
+   "family": "POP",
+   "pos": [
+    0,
+    230
+   ],
+   "pars": {
+    "bypass": {
+     "expr": "not parent().par.attenuated"
+    },
+    "divs": 1,
+    "pageindex": 2,
+    "pt0posz": {
+     "expr": "-parent().par.attenuationstart"
+    },
+    "pt1posz": {
+     "expr": "-parent().par.attenuationend"
+    }
+   },
+   "custom_pars": [
+    "pt",
+    "pt0posx",
+    "pt0posy",
+    "pt0posz",
+    "pt1posx",
+    "pt1posy",
+    "pt1posz"
+   ]
+  },
+  "key/merge1": {
+   "type": "mergePOP",
+   "family": "POP",
+   "pos": [
+    250,
+    500
+   ],
+   "inputs": [
+    [
+     "key/rectangle1"
+    ],
+    [
+     "key/tube_cone1"
+    ],
+    [
+     "key/tube_cone2"
+    ],
+    [
+     "key/primitive1"
+    ],
+    [
+     "key/line_atten"
+    ],
+    [
+     "key/circle_attenStart"
+    ],
+    [
+     "key/circle_attenEnd"
+    ]
+   ],
+   "pars": {
+    "pageindex": 1
+   }
+  },
+  "key/merge2": {
+   "type": "mergePOP",
+   "family": "POP",
+   "pos": [
+    950,
+    230
+   ],
+   "inputs": [
+    [
+     "key/connectivity1"
+    ],
+    [
+     "key/circle1"
+    ]
+   ]
+  },
+  "key/merge3": {
+   "type": "mergePOP",
+   "family": "POP",
+   "pos": [
+    620,
+    290
+   ],
+   "inputs": [
+    [
+     "key/pointgen1"
+    ],
+    [
+     "key/transform1"
+    ]
+   ]
+  },
+  "key/merge_pointLight": {
+   "type": "mergePOP",
+   "family": "POP",
+   "pos": [
+    760,
+    820
+   ],
+   "inputs": [
+    [
+     "key/sphere1"
+    ],
+    [
+     "key/primitive_quadrants"
+    ],
+    [
+     "key/copy1"
+    ]
+   ],
+   "pars": {
+    "pageindex": 1
+   }
+  },
+  "key/pointgen1": {
+   "type": "pointgeneratorPOP",
+   "family": "POP",
+   "pos": [
+    270,
+    290
+   ],
+   "pars": {
+    "numpoints": 17,
+    "pageindex": 1,
+    "shape": "circle",
+    "sx": 0.2,
+    "sy": 0.2,
+    "sz": 0.2
+   }
+  },
+  "key/primitive1": {
+   "type": "primitivePOP",
+   "family": "POP",
+   "pos": [
+    0,
+    390
+   ],
+   "pars": {
+    "addpts": true,
+    "method": "pattern",
+    "pageindex": 1,
+    "prim0pattern": "0 1 0 2 0 3 0 4",
+    "prim0type": "lines",
+    "pt1posx": {
+     "expr": "mod.math.sin(mod.math.radians(parent().par.coneangle/2)) + mod.math.sin(mod.math.radians(parent().par.conedelta/2))"
+    },
+    "pt1posz": {
+     "expr": "-op('tube_cone1').par.height"
+    },
+    "pt2posx": {
+     "expr": "mod.math.sin(-mod.math.radians(parent().par.coneangle/2)) - mod.math.sin(mod.math.radians(parent().par.conedelta/2))"
+    },
+    "pt2posz": {
+     "expr": "0-op('tube_cone1').par.height"
+    },
+    "pt3posy": {
+     "expr": "-mod.math.sin(-mod.math.radians(parent().par.coneangle/2)) - mod.math.sin(mod.math.radians(parent().par.conedelta/2))"
+    },
+    "pt3posz": {
+     "expr": "-op('tube_cone1').par.height"
+    },
+    "pt4posy": {
+     "expr": "mod.math.sin(-mod.math.radians(parent().par.coneangle/2)) - mod.math.sin(mod.math.radians(parent().par.conedelta/2))"
+    },
+    "pt4posz": {
+     "expr": "-op('tube_cone1').par.height"
+    }
+   },
+   "custom_pars": [
+    "pt",
+    "pt0posx",
+    "pt0posy",
+    "pt0posz",
+    "pt1posx",
+    "pt1posy",
+    "pt1posz",
+    "pt2posx",
+    "pt2posy",
+    "pt2posz",
+    "pt3posx",
+    "pt3posy",
+    "pt3posz",
+    "pt4posx",
+    "pt4posy",
+    "pt4posz"
+   ]
+  },
+  "key/primitive_cross": {
+   "type": "primitivePOP",
+   "family": "POP",
+   "pos": [
+    520,
+    1000
+   ],
+   "pars": {
+    "addpts": true,
+    "method": "set",
+    "pageindex": 1,
+    "pt0posx": -0.2,
+    "pt1posx": 0.2,
+    "pt2posy": -0.2,
+    "pt3posy": 0.2,
+    "pt4posz": -0.2,
+    "pt5posz": 0.2,
+    "setprimtype": "lines"
+   },
+   "custom_pars": [
+    "pt",
+    "pt0posx",
+    "pt0posy",
+    "pt0posz",
+    "pt1posx",
+    "pt1posy",
+    "pt1posz",
+    "pt2posx",
+    "pt2posy",
+    "pt2posz",
+    "pt3posx",
+    "pt3posy",
+    "pt3posz",
+    "pt4posx",
+    "pt4posy",
+    "pt4posz",
+    "pt5posx",
+    "pt5posy",
+    "pt5posz"
+   ]
+  },
+  "key/primitive_quadrants": {
+   "type": "primitivePOP",
+   "family": "POP",
+   "pos": [
+    520,
+    780
+   ],
+   "pars": {
+    "addpts": true,
+    "method": "set",
+    "pageindex": 1,
+    "pt0posx": 0.07,
+    "pt0posy": 0.07,
+    "pt0posz": 0.07,
+    "pt1posx": -0.07,
+    "pt1posy": -0.07,
+    "pt1posz": -0.07,
+    "pt2posx": -0.07,
+    "pt2posy": 0.07,
+    "pt2posz": 0.07,
+    "pt3posx": 0.07,
+    "pt3posy": -0.07,
+    "pt3posz": -0.07,
+    "pt4posx": 0.07,
+    "pt4posy": 0.07,
+    "pt4posz": -0.07,
+    "pt5posx": -0.07,
+    "pt5posy": -0.07,
+    "pt5posz": 0.07,
+    "pt6posx": -0.07,
+    "pt6posy": 0.07,
+    "pt6posz": -0.07,
+    "pt7posx": 0.07,
+    "pt7posy": -0.07,
+    "pt7posz": 0.07,
+    "setprimtype": "lines"
+   },
+   "custom_pars": [
+    "pt",
+    "pt0posx",
+    "pt0posy",
+    "pt0posz",
+    "pt1posx",
+    "pt1posy",
+    "pt1posz",
+    "pt2posx",
+    "pt2posy",
+    "pt2posz",
+    "pt3posx",
+    "pt3posy",
+    "pt3posz",
+    "pt4posx",
+    "pt4posy",
+    "pt4posz",
+    "pt5posx",
+    "pt5posy",
+    "pt5posz",
+    "pt6posx",
+    "pt6posy",
+    "pt6posz",
+    "pt7posx",
+    "pt7posy",
+    "pt7posz"
+   ]
+  },
+  "key/rectangle1": {
+   "type": "rectanglePOP",
+   "family": "POP",
+   "pos": [
+    0,
+    730
+   ],
+   "pars": {
+    "anchorv": 0.0,
+    "sizeu": 0.02,
+    "sizev": 0.5
+   }
+  },
+  "key/sphere1": {
+   "type": "spherePOP",
+   "family": "POP",
+   "pos": [
+    520,
+    890
+   ],
+   "pars": {
+    "freq": 3,
+    "pageindex": 2,
+    "radx": 0.05,
+    "rady": 0.05,
+    "radz": 0.05
+   }
+  },
+  "key/switch_lightType": {
+   "type": "switchPOP",
+   "family": "POP",
+   "pos": [
+    1140,
+    500
+   ],
+   "inputs": [
+    [
+     "key/merge_pointLight"
+    ],
+    [
+     "key/merge1"
+    ],
+    [
+     "key/merge2"
+    ]
+   ],
+   "pars": {
+    "index": {
+     "expr": "parent().par.lighttype.menuIndex"
+    }
+   }
+  },
+  "key/transform1": {
+   "type": "transformPOP",
+   "family": "POP",
+   "pos": [
+    450,
+    370
+   ],
+   "inputs": [
+    [
+     "key/pointgen1"
+    ]
+   ],
+   "pars": {
+    "tz": 0.8
+   }
+  },
+  "key/tube_attenuated": {
+   "type": "tubePOP",
+   "family": "POP",
+   "pos": [
+    368,
+    673
+   ],
+   "pars": {
+    "bypass": {
+     "expr": "not parent().par.attenuated"
+    },
+    "height": 0.0,
+    "orient": "z",
+    "radx": {
+     "expr": "parent().par.attenuationend"
+    },
+    "rady": {
+     "expr": "parent().par.attenuationstart"
+    },
+    "rows": 2,
+    "surftype": "rows"
+   }
+  },
+  "key/tube_cone1": {
+   "type": "tubePOP",
+   "family": "POP",
+   "pos": [
+    0,
+    620
+   ],
+   "pars": {
+    "height": {
+     "expr": "mod.math.cos(mod.math.radians(parent().par.coneangle/2))"
+    },
+    "orient": "z",
+    "radx": {
+     "expr": "mod.math.sin(mod.math.radians(parent().par.coneangle/2))"
+    },
+    "rady": 0.01,
+    "rows": 2,
+    "tz": {
+     "expr": "-me.par.height*0.5"
+    }
+   }
+  },
+  "key/tube_cone2": {
+   "type": "tubePOP",
+   "family": "POP",
+   "pos": [
+    0,
+    500
+   ],
+   "pars": {
+    "height": 0.0,
+    "orient": "z",
+    "radx": {
+     "expr": "mod.math.sin(mod.math.radians(parent().par.coneangle/2)) + mod.math.sin(mod.math.radians(parent().par.conedelta/2))"
+    },
+    "rady": {
+     "expr": "mod.math.sin(mod.math.radians(parent().par.coneangle/2))"
+    },
+    "rows": 2,
+    "tz": {
+     "expr": "-op('tube_cone1').par.height"
+    }
+   }
+  },
+  "local": {
+   "type": "baseCOMP",
+   "family": "COMP",
+   "pos": [
+    -400,
+    460
+   ]
+  },
+  "local/modules": {
+   "type": "baseCOMP",
+   "family": "COMP",
+   "pos": [
+    0,
+    0
+   ]
+  },
+  "local/modules/paths": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "file": {
+     "expr": "project.folder.replace(chr(92), '/') + '/experiments/sw_hub/paths_module.py'"
+    },
+    "language": "text",
+    "syncfile": true
+   },
+   "text_file": "experiments/sw_hub/paths_module.py"
+  },
+  "m0": {
+   "type": "geometryCOMP",
+   "family": "COMP",
+   "pos": [
+    -200,
+    300
+   ],
+   "pars": {
+    "material": "/project1/sc_glyph_render/m0/mat",
+    "render": {
+     "expr": "((0 - int(op('tkd')['base'])) % 6) < op('tk')['multi']"
+    },
+    "rx": {
+     "expr": "8 * math.sin(op('hub')['evolve'] * 0.5) - 10 * min(1.0, float(op('hub')['hit_low']))"
+    },
+    "ry": {
+     "expr": "-16 * op('tkd')['side'] + op('tk')['swing'] * math.sin(op('hub')['evolve'] * 0.55 + 2 * ((0 - int(op('tkd')['base'])) % 6)) + 10 * math.sin(op('hub')['beat_pos'] * math.pi) + 360 * (1 - min(1.0, float(op('hub')['section_pos']) / 0.10)) ** 3"
+    },
+    "rz": {
+     "expr": "5 * math.sin(op('hub')['bar_pos'] * math.pi)"
+    },
+    "scale": {
+     "expr": "1.15 * op('tk')['msc'] * (1 + 0.07 * min(1.0, float(op('hub')['hit_low']))) * (1 + op('tk')['land'] * math.exp(-9 * float(op('shot')['age'])))"
+    },
+    "tx": {
+     "expr": "(((0 - int(op('tkd')['base'])) % 6) - 1) * 1.08 if op('tk')['multi'] > 1 else op('tk')['tx'] * op('tkd')['side'] + op('tk')['drift'] * math.sin(op('hub')['evolve'] * 0.45 + 6.283 * ((float(op('shot')['seed']) * 7.31 + 0.13) % 1))"
+    },
+    "ty": {
+     "expr": "0.04 * math.sin(op('hub')['evolve'] * 0.7 + ((0 - int(op('tkd')['base'])) % 6))"
+    }
+   }
+  },
+  "m0/mat": {
+   "type": "pbrMAT",
+   "family": "MAT",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "basecolormap": "/project1/sc_glyph_render/m0/tex",
+    "metallic": 0.0,
+    "roughness": 0.45
+   }
+  },
+  "m0/mesh": {
+   "type": "fileinPOP",
+   "family": "POP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.model_file('marble_bust')"
+    }
+   }
+  },
+  "m0/tex": {
+   "type": "moviefileinTOP",
+   "family": "TOP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.model_texture('marble_bust') or mod.paths.here('data/standin.png')"
+    }
+   }
+  },
+  "m1": {
+   "type": "geometryCOMP",
+   "family": "COMP",
+   "pos": [
+    -200,
+    190
+   ],
+   "pars": {
+    "material": "/project1/sc_glyph_render/m1/mat",
+    "render": {
+     "expr": "((1 - int(op('tkd')['base'])) % 6) < op('tk')['multi']"
+    },
+    "rx": {
+     "expr": "8 * math.sin(op('hub')['evolve'] * 0.5) - 10 * min(1.0, float(op('hub')['hit_low']))"
+    },
+    "ry": {
+     "expr": "-16 * op('tkd')['side'] + op('tk')['swing'] * math.sin(op('hub')['evolve'] * 0.55 + 2 * ((1 - int(op('tkd')['base'])) % 6)) + 10 * math.sin(op('hub')['beat_pos'] * math.pi) + 360 * (1 - min(1.0, float(op('hub')['section_pos']) / 0.10)) ** 3"
+    },
+    "rz": {
+     "expr": "5 * math.sin(op('hub')['bar_pos'] * math.pi)"
+    },
+    "scale": {
+     "expr": "1.1 * op('tk')['msc'] * (1 + 0.07 * min(1.0, float(op('hub')['hit_low']))) * (1 + op('tk')['land'] * math.exp(-9 * float(op('shot')['age'])))"
+    },
+    "tx": {
+     "expr": "(((1 - int(op('tkd')['base'])) % 6) - 1) * 1.08 if op('tk')['multi'] > 1 else op('tk')['tx'] * op('tkd')['side'] + op('tk')['drift'] * math.sin(op('hub')['evolve'] * 0.45 + 6.283 * ((float(op('shot')['seed']) * 7.31 + 0.13) % 1))"
+    },
+    "ty": {
+     "expr": "0.04 * math.sin(op('hub')['evolve'] * 0.7 + ((1 - int(op('tkd')['base'])) % 6))"
+    }
+   }
+  },
+  "m1/mat": {
+   "type": "pbrMAT",
+   "family": "MAT",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "basecolormap": "/project1/sc_glyph_render/m1/tex",
+    "metallic": 0.0,
+    "roughness": 0.45
+   }
+  },
+  "m1/mesh": {
+   "type": "fileinPOP",
+   "family": "POP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.model_file('space_helmet')"
+    }
+   }
+  },
+  "m1/tex": {
+   "type": "moviefileinTOP",
+   "family": "TOP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.model_texture('space_helmet') or mod.paths.here('data/standin.png')"
+    }
+   }
+  },
+  "m2": {
+   "type": "geometryCOMP",
+   "family": "COMP",
+   "pos": [
+    -200,
+    80
+   ],
+   "pars": {
+    "material": "/project1/sc_glyph_render/m2/mat",
+    "render": {
+     "expr": "((2 - int(op('tkd')['base'])) % 6) < op('tk')['multi']"
+    },
+    "rx": {
+     "expr": "8 * math.sin(op('hub')['evolve'] * 0.5) - 10 * min(1.0, float(op('hub')['hit_low']))"
+    },
+    "ry": {
+     "expr": "-16 * op('tkd')['side'] + op('tk')['swing'] * math.sin(op('hub')['evolve'] * 0.55 + 2 * ((2 - int(op('tkd')['base'])) % 6)) + 10 * math.sin(op('hub')['beat_pos'] * math.pi) + 360 * (1 - min(1.0, float(op('hub')['section_pos']) / 0.10)) ** 3"
+    },
+    "rz": {
+     "expr": "5 * math.sin(op('hub')['bar_pos'] * math.pi)"
+    },
+    "scale": {
+     "expr": "1.15 * op('tk')['msc'] * (1 + 0.07 * min(1.0, float(op('hub')['hit_low']))) * (1 + op('tk')['land'] * math.exp(-9 * float(op('shot')['age'])))"
+    },
+    "tx": {
+     "expr": "(((2 - int(op('tkd')['base'])) % 6) - 1) * 1.08 if op('tk')['multi'] > 1 else op('tk')['tx'] * op('tkd')['side'] + op('tk')['drift'] * math.sin(op('hub')['evolve'] * 0.45 + 6.283 * ((float(op('shot')['seed']) * 7.31 + 0.13) % 1))"
+    },
+    "ty": {
+     "expr": "0.04 * math.sin(op('hub')['evolve'] * 0.7 + ((2 - int(op('tkd')['base'])) % 6))"
+    }
+   }
+  },
+  "m2/mat": {
+   "type": "pbrMAT",
+   "family": "MAT",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "basecolormap": "/project1/sc_glyph_render/m2/tex",
+    "metallic": 0.0,
+    "roughness": 0.45
+   }
+  },
+  "m2/mesh": {
+   "type": "fileinPOP",
+   "family": "POP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.model_file('gramophone')"
+    }
+   }
+  },
+  "m2/tex": {
+   "type": "moviefileinTOP",
+   "family": "TOP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.model_texture('gramophone') or mod.paths.here('data/standin.png')"
+    }
+   }
+  },
+  "m3": {
+   "type": "geometryCOMP",
+   "family": "COMP",
+   "pos": [
+    -200,
+    -30
+   ],
+   "pars": {
+    "material": "/project1/sc_glyph_render/m3/mat",
+    "render": {
+     "expr": "((3 - int(op('tkd')['base'])) % 6) < op('tk')['multi']"
+    },
+    "rx": {
+     "expr": "8 * math.sin(op('hub')['evolve'] * 0.5) - 10 * min(1.0, float(op('hub')['hit_low']))"
+    },
+    "ry": {
+     "expr": "-16 * op('tkd')['side'] + op('tk')['swing'] * math.sin(op('hub')['evolve'] * 0.55 + 2 * ((3 - int(op('tkd')['base'])) % 6)) + 10 * math.sin(op('hub')['beat_pos'] * math.pi) + 360 * (1 - min(1.0, float(op('hub')['section_pos']) / 0.10)) ** 3"
+    },
+    "rz": {
+     "expr": "5 * math.sin(op('hub')['bar_pos'] * math.pi)"
+    },
+    "scale": {
+     "expr": "1.2 * op('tk')['msc'] * (1 + 0.07 * min(1.0, float(op('hub')['hit_low']))) * (1 + op('tk')['land'] * math.exp(-9 * float(op('shot')['age'])))"
+    },
+    "tx": {
+     "expr": "(((3 - int(op('tkd')['base'])) % 6) - 1) * 1.08 if op('tk')['multi'] > 1 else op('tk')['tx'] * op('tkd')['side'] + op('tk')['drift'] * math.sin(op('hub')['evolve'] * 0.45 + 6.283 * ((float(op('shot')['seed']) * 7.31 + 0.13) % 1))"
+    },
+    "ty": {
+     "expr": "0.04 * math.sin(op('hub')['evolve'] * 0.7 + ((3 - int(op('tkd')['base'])) % 6))"
+    }
+   }
+  },
+  "m3/mat": {
+   "type": "pbrMAT",
+   "family": "MAT",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "basecolormap": "/project1/sc_glyph_render/m3/tex",
+    "metallic": 0.0,
+    "roughness": 0.45
+   }
+  },
+  "m3/mesh": {
+   "type": "fileinPOP",
+   "family": "POP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.model_file('rubber_duck')"
+    }
+   }
+  },
+  "m3/tex": {
+   "type": "moviefileinTOP",
+   "family": "TOP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.model_texture('rubber_duck') or mod.paths.here('data/standin.png')"
+    }
+   }
+  },
+  "m4": {
+   "type": "geometryCOMP",
+   "family": "COMP",
+   "pos": [
+    -200,
+    -140
+   ],
+   "pars": {
+    "material": "/project1/sc_glyph_render/m4/mat",
+    "render": {
+     "expr": "((4 - int(op('tkd')['base'])) % 6) < op('tk')['multi']"
+    },
+    "rx": {
+     "expr": "8 * math.sin(op('hub')['evolve'] * 0.5) - 10 * min(1.0, float(op('hub')['hit_low']))"
+    },
+    "ry": {
+     "expr": "-16 * op('tkd')['side'] + op('tk')['swing'] * math.sin(op('hub')['evolve'] * 0.55 + 2 * ((4 - int(op('tkd')['base'])) % 6)) + 10 * math.sin(op('hub')['beat_pos'] * math.pi) + 360 * (1 - min(1.0, float(op('hub')['section_pos']) / 0.10)) ** 3"
+    },
+    "rz": {
+     "expr": "5 * math.sin(op('hub')['bar_pos'] * math.pi)"
+    },
+    "scale": {
+     "expr": "1.15 * op('tk')['msc'] * (1 + 0.07 * min(1.0, float(op('hub')['hit_low']))) * (1 + op('tk')['land'] * math.exp(-9 * float(op('shot')['age'])))"
+    },
+    "tx": {
+     "expr": "(((4 - int(op('tkd')['base'])) % 6) - 1) * 1.08 if op('tk')['multi'] > 1 else op('tk')['tx'] * op('tkd')['side'] + op('tk')['drift'] * math.sin(op('hub')['evolve'] * 0.45 + 6.283 * ((float(op('shot')['seed']) * 7.31 + 0.13) % 1))"
+    },
+    "ty": {
+     "expr": "0.04 * math.sin(op('hub')['evolve'] * 0.7 + ((4 - int(op('tkd')['base'])) % 6))"
+    }
+   }
+  },
+  "m4/mat": {
+   "type": "pbrMAT",
+   "family": "MAT",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "basecolormap": "/project1/sc_glyph_render/m4/tex",
+    "metallic": 0.0,
+    "roughness": 0.45
+   }
+  },
+  "m4/mesh": {
+   "type": "fileinPOP",
+   "family": "POP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.model_file('hourglass')"
+    }
+   }
+  },
+  "m4/tex": {
+   "type": "moviefileinTOP",
+   "family": "TOP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.model_texture('hourglass') or mod.paths.here('data/standin.png')"
+    }
+   }
+  },
+  "m5": {
+   "type": "geometryCOMP",
+   "family": "COMP",
+   "pos": [
+    -200,
+    -250
+   ],
+   "pars": {
+    "material": "/project1/sc_glyph_render/m5/mat",
+    "render": {
+     "expr": "((5 - int(op('tkd')['base'])) % 6) < op('tk')['multi']"
+    },
+    "rx": {
+     "expr": "8 * math.sin(op('hub')['evolve'] * 0.5) - 10 * min(1.0, float(op('hub')['hit_low']))"
+    },
+    "ry": {
+     "expr": "-16 * op('tkd')['side'] + op('tk')['swing'] * math.sin(op('hub')['evolve'] * 0.55 + 2 * ((5 - int(op('tkd')['base'])) % 6)) + 10 * math.sin(op('hub')['beat_pos'] * math.pi) + 360 * (1 - min(1.0, float(op('hub')['section_pos']) / 0.10)) ** 3"
+    },
+    "rz": {
+     "expr": "5 * math.sin(op('hub')['bar_pos'] * math.pi)"
+    },
+    "scale": {
+     "expr": "1.15 * op('tk')['msc'] * (1 + 0.07 * min(1.0, float(op('hub')['hit_low']))) * (1 + op('tk')['land'] * math.exp(-9 * float(op('shot')['age'])))"
+    },
+    "tx": {
+     "expr": "(((5 - int(op('tkd')['base'])) % 6) - 1) * 1.08 if op('tk')['multi'] > 1 else op('tk')['tx'] * op('tkd')['side'] + op('tk')['drift'] * math.sin(op('hub')['evolve'] * 0.45 + 6.283 * ((float(op('shot')['seed']) * 7.31 + 0.13) % 1))"
+    },
+    "ty": {
+     "expr": "0.04 * math.sin(op('hub')['evolve'] * 0.7 + ((5 - int(op('tkd')['base'])) % 6))"
+    }
+   }
+  },
+  "m5/mat": {
+   "type": "pbrMAT",
+   "family": "MAT",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "basecolormap": "/project1/sc_glyph_render/m5/tex",
+    "metallic": 0.0,
+    "roughness": 0.45
+   }
+  },
+  "m5/mesh": {
+   "type": "fileinPOP",
+   "family": "POP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.model_file('amphora')"
+    }
+   }
+  },
+  "m5/tex": {
+   "type": "moviefileinTOP",
+   "family": "TOP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.model_texture('amphora') or mod.paths.here('data/standin.png')"
+    }
+   }
+  },
+  "out1": {
+   "type": "outTOP",
+   "family": "TOP",
+   "pos": [
+    1200,
+    0
+   ],
+   "inputs": [
+    [
+     "glyph"
+    ]
+   ]
+  },
+  "phrase_text": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    200,
+    -1000
+   ],
+   "pars": {
+    "language": "text"
+   },
+   "text": [
+    "EVERY FRAME IS MADE NOW.  THIS PICTURE IS MADE OF LETTERS.  SOUND IN. PICTURE OUT.  PAST. PRESENT. LATER.  LISTEN WITH YOUR EYES.  FOUND, NOT MADE. KEPT, NOT EXPLAINED.  NOTHING HERE IS PRERENDERED.  BLACK OR WHITE. THERE IS NO GREY HERE.  CATALOGUE NO. 0047: AMPHORA  SIXTY FRAMES A SECOND, EVERY ONE NEW  EVERYTHING IS TYPE  HANDLE WITH BOTH HANDS.  OBJECT OF THE DAY: PLATE 07  SIGNAL ACQUIRED...  FEEDBACK LOOP .... CLOSED  DO NOT TOUCH  EXHIBIT 12-B  ORIGIN: UNRECORDED  OBJECT OF UNKNOWN USE  AMPHORA. HOURGLASS. GRAMOPHONE.  LOOP. LOOP. LOOPLOOP.  "
+   ]
+  },
+  "poster": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    0,
+    -60
+   ],
+   "pars": {
+    "alignymode": "bbox",
+    "bgalpha": 1.0,
+    "filtertype": "mipmap",
+    "fontfile": {
+     "expr": "mod.paths.font('chicago')"
+    },
+    "fontsizex": {
+     "expr": "op('posters')[int(op('tkd')['poster']), 1]"
+    },
+    "fontsizexunit": "pixels",
+    "outputresolution": "custom",
+    "resmult": false,
+    "resolutionh": 720,
+    "resolutionw": 1280,
+    "text": {
+     "expr": "op('posters')[int(op('tkd')['poster']), 0].val.replace('|', chr(10))"
+    }
+   }
+  },
+  "posters": {
+   "type": "tableDAT",
+   "family": "DAT",
+   "pos": [
+    -200,
+    -800
+   ],
+   "text": [
+    "EVERY|FRAME IS|MADE NOW.\t174.4",
+    "MADE OF|TYPE.\t261.5",
+    "IN|REAL TIME\t225.9",
+    "HERE.|NOW.\t261.5",
+    "DO NOT|TOUCH\t261.5",
+    "ONE|BIT\t261.5",
+    "ITEM|0047\t261.5",
+    "ORIGIN|UNKNOWN\t261.5",
+    "LOOP.|LOOP.\t261.5",
+    "EVERYTHING|IS TYPE\t203.3",
+    "PLATE|12-B\t261.5",
+    "REAL|TIME\t261.5",
+    "NOTHING|IS STORED.\t203.3",
+    "DRAWN|IN TYPE\t261.5",
+    "MADE OF|LETTERS\t261.5",
+    "1-BIT|TYPE\t261.5",
+    "WALL\t508.3",
+    "WALL\t508.3",
+    "WALL\t508.3",
+    "MACRO\t406.7",
+    "MACRO\t406.7",
+    "MACRO\t406.7",
+    "BLACK TYPE|WHITE PAGE\t203.3",
+    "THE FRAME|INVERTED\t225.9",
+    "THREE|MODELS\t261.5",
+    "NO 3D|MODEL\t261.5",
+    "SHADER|CORRIDOR\t254.2",
+    "NO|GEOMETRY\t254.2",
+    "QUADTREE\t254.2",
+    "QUADTREE\t254.2",
+    "QUADTREE\t254.2",
+    "WALLPAPER\t225.9",
+    "WALLPAPER\t225.9",
+    "WALLPAPER\t225.9",
+    "WORD AS|WINDOW\t261.5",
+    "TEXT AS|A MASK\t261.5",
+    "KEYHOLE|IN TYPE\t261.5"
+   ]
+  },
+  "render": {
+   "type": "renderTOP",
+   "family": "TOP",
+   "pos": [
+    0,
+    100
+   ],
+   "pars": {
+    "camera": "/project1/sc_glyph_render/cam",
+    "filtertype": "mipmap",
+    "geometry": "m*",
+    "lights": "key rim fill",
+    "resolutionh": 720,
+    "resolutionw": 1280
+   }
+  },
+  "rim": {
+   "type": "lightCOMP",
+   "family": "COMP",
+   "pos": [
+    -200,
+    -600
+   ],
+   "pars": {
+    "dimmer": 3.0,
+    "tx": {
+     "expr": "3.2 * op('tkd')['side']"
+    },
+    "ty": 0.6,
+    "tz": -2.2
+   }
+  },
+  "rim/circle1": {
+   "type": "circlePOP",
+   "family": "POP",
+   "pos": [
+    780,
+    170
+   ],
+   "pars": {
+    "connectivity": "surface",
+    "scale": 0.2
+   }
+  },
+  "rim/circle_attenEnd": {
+   "type": "circlePOP",
+   "family": "POP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "bypass": {
+     "expr": "not parent().par.attenuated"
+    },
+    "connectivity": "surface",
+    "pageindex": 3,
+    "radx": 0.1,
+    "rady": 0.1,
+    "tz": {
+     "expr": "-parent().par.attenuationend"
+    }
+   }
+  },
+  "rim/circle_attenStart": {
+   "type": "circlePOP",
+   "family": "POP",
+   "pos": [
+    0,
+    120
+   ],
+   "pars": {
+    "bypass": {
+     "expr": "not parent().par.attenuated"
+    },
+    "connectivity": "surface",
+    "pageindex": 1,
+    "radx": 0.1,
+    "rady": 0.1,
+    "tz": {
+     "expr": "-parent().par.attenuationstart"
+    }
+   }
+  },
+  "rim/connectivity1": {
+   "type": "connectivityPOP",
+   "family": "POP",
+   "pos": [
+    780,
+    290
+   ],
+   "inputs": [
+    [
+     "rim/merge3"
+    ]
+   ],
+   "pars": {
+    "surftype": "lines"
+   }
+  },
+  "rim/copy1": {
+   "type": "copyPOP",
+   "family": "POP",
+   "pos": [
+    520,
+    670
+   ],
+   "inputs": [
+    [
+     "rim/tube_attenuated"
+    ]
+   ],
+   "pars": {
+    "ncy": 2,
+    "pageindex": 2,
+    "rx": 90.0
+   }
+  },
+  "rim/line_atten": {
+   "type": "linePOP",
+   "family": "POP",
+   "pos": [
+    0,
+    230
+   ],
+   "pars": {
+    "bypass": {
+     "expr": "not parent().par.attenuated"
+    },
+    "divs": 1,
+    "pageindex": 2,
+    "pt0posz": {
+     "expr": "-parent().par.attenuationstart"
+    },
+    "pt1posz": {
+     "expr": "-parent().par.attenuationend"
+    }
+   },
+   "custom_pars": [
+    "pt",
+    "pt0posx",
+    "pt0posy",
+    "pt0posz",
+    "pt1posx",
+    "pt1posy",
+    "pt1posz"
+   ]
+  },
+  "rim/merge1": {
+   "type": "mergePOP",
+   "family": "POP",
+   "pos": [
+    250,
+    500
+   ],
+   "inputs": [
+    [
+     "rim/rectangle1"
+    ],
+    [
+     "rim/tube_cone1"
+    ],
+    [
+     "rim/tube_cone2"
+    ],
+    [
+     "rim/primitive1"
+    ],
+    [
+     "rim/line_atten"
+    ],
+    [
+     "rim/circle_attenStart"
+    ],
+    [
+     "rim/circle_attenEnd"
+    ]
+   ],
+   "pars": {
+    "pageindex": 1
+   }
+  },
+  "rim/merge2": {
+   "type": "mergePOP",
+   "family": "POP",
+   "pos": [
+    950,
+    230
+   ],
+   "inputs": [
+    [
+     "rim/connectivity1"
+    ],
+    [
+     "rim/circle1"
+    ]
+   ]
+  },
+  "rim/merge3": {
+   "type": "mergePOP",
+   "family": "POP",
+   "pos": [
+    620,
+    290
+   ],
+   "inputs": [
+    [
+     "rim/pointgen1"
+    ],
+    [
+     "rim/transform1"
+    ]
+   ]
+  },
+  "rim/merge_pointLight": {
+   "type": "mergePOP",
+   "family": "POP",
+   "pos": [
+    760,
+    820
+   ],
+   "inputs": [
+    [
+     "rim/sphere1"
+    ],
+    [
+     "rim/primitive_quadrants"
+    ],
+    [
+     "rim/copy1"
+    ]
+   ],
+   "pars": {
+    "pageindex": 1
+   }
+  },
+  "rim/pointgen1": {
+   "type": "pointgeneratorPOP",
+   "family": "POP",
+   "pos": [
+    270,
+    290
+   ],
+   "pars": {
+    "numpoints": 17,
+    "pageindex": 1,
+    "shape": "circle",
+    "sx": 0.2,
+    "sy": 0.2,
+    "sz": 0.2
+   }
+  },
+  "rim/primitive1": {
+   "type": "primitivePOP",
+   "family": "POP",
+   "pos": [
+    0,
+    390
+   ],
+   "pars": {
+    "addpts": true,
+    "method": "pattern",
+    "pageindex": 1,
+    "prim0pattern": "0 1 0 2 0 3 0 4",
+    "prim0type": "lines",
+    "pt1posx": {
+     "expr": "mod.math.sin(mod.math.radians(parent().par.coneangle/2)) + mod.math.sin(mod.math.radians(parent().par.conedelta/2))"
+    },
+    "pt1posz": {
+     "expr": "-op('tube_cone1').par.height"
+    },
+    "pt2posx": {
+     "expr": "mod.math.sin(-mod.math.radians(parent().par.coneangle/2)) - mod.math.sin(mod.math.radians(parent().par.conedelta/2))"
+    },
+    "pt2posz": {
+     "expr": "0-op('tube_cone1').par.height"
+    },
+    "pt3posy": {
+     "expr": "-mod.math.sin(-mod.math.radians(parent().par.coneangle/2)) - mod.math.sin(mod.math.radians(parent().par.conedelta/2))"
+    },
+    "pt3posz": {
+     "expr": "-op('tube_cone1').par.height"
+    },
+    "pt4posy": {
+     "expr": "mod.math.sin(-mod.math.radians(parent().par.coneangle/2)) - mod.math.sin(mod.math.radians(parent().par.conedelta/2))"
+    },
+    "pt4posz": {
+     "expr": "-op('tube_cone1').par.height"
+    }
+   },
+   "custom_pars": [
+    "pt",
+    "pt0posx",
+    "pt0posy",
+    "pt0posz",
+    "pt1posx",
+    "pt1posy",
+    "pt1posz",
+    "pt2posx",
+    "pt2posy",
+    "pt2posz",
+    "pt3posx",
+    "pt3posy",
+    "pt3posz",
+    "pt4posx",
+    "pt4posy",
+    "pt4posz"
+   ]
+  },
+  "rim/primitive_cross": {
+   "type": "primitivePOP",
+   "family": "POP",
+   "pos": [
+    520,
+    1000
+   ],
+   "pars": {
+    "addpts": true,
+    "method": "set",
+    "pageindex": 1,
+    "pt0posx": -0.2,
+    "pt1posx": 0.2,
+    "pt2posy": -0.2,
+    "pt3posy": 0.2,
+    "pt4posz": -0.2,
+    "pt5posz": 0.2,
+    "setprimtype": "lines"
+   },
+   "custom_pars": [
+    "pt",
+    "pt0posx",
+    "pt0posy",
+    "pt0posz",
+    "pt1posx",
+    "pt1posy",
+    "pt1posz",
+    "pt2posx",
+    "pt2posy",
+    "pt2posz",
+    "pt3posx",
+    "pt3posy",
+    "pt3posz",
+    "pt4posx",
+    "pt4posy",
+    "pt4posz",
+    "pt5posx",
+    "pt5posy",
+    "pt5posz"
+   ]
+  },
+  "rim/primitive_quadrants": {
+   "type": "primitivePOP",
+   "family": "POP",
+   "pos": [
+    520,
+    780
+   ],
+   "pars": {
+    "addpts": true,
+    "method": "set",
+    "pageindex": 1,
+    "pt0posx": 0.07,
+    "pt0posy": 0.07,
+    "pt0posz": 0.07,
+    "pt1posx": -0.07,
+    "pt1posy": -0.07,
+    "pt1posz": -0.07,
+    "pt2posx": -0.07,
+    "pt2posy": 0.07,
+    "pt2posz": 0.07,
+    "pt3posx": 0.07,
+    "pt3posy": -0.07,
+    "pt3posz": -0.07,
+    "pt4posx": 0.07,
+    "pt4posy": 0.07,
+    "pt4posz": -0.07,
+    "pt5posx": -0.07,
+    "pt5posy": -0.07,
+    "pt5posz": 0.07,
+    "pt6posx": -0.07,
+    "pt6posy": 0.07,
+    "pt6posz": -0.07,
+    "pt7posx": 0.07,
+    "pt7posy": -0.07,
+    "pt7posz": 0.07,
+    "setprimtype": "lines"
+   },
+   "custom_pars": [
+    "pt",
+    "pt0posx",
+    "pt0posy",
+    "pt0posz",
+    "pt1posx",
+    "pt1posy",
+    "pt1posz",
+    "pt2posx",
+    "pt2posy",
+    "pt2posz",
+    "pt3posx",
+    "pt3posy",
+    "pt3posz",
+    "pt4posx",
+    "pt4posy",
+    "pt4posz",
+    "pt5posx",
+    "pt5posy",
+    "pt5posz",
+    "pt6posx",
+    "pt6posy",
+    "pt6posz",
+    "pt7posx",
+    "pt7posy",
+    "pt7posz"
+   ]
+  },
+  "rim/rectangle1": {
+   "type": "rectanglePOP",
+   "family": "POP",
+   "pos": [
+    0,
+    730
+   ],
+   "pars": {
+    "anchorv": 0.0,
+    "sizeu": 0.02,
+    "sizev": 0.5
+   }
+  },
+  "rim/sphere1": {
+   "type": "spherePOP",
+   "family": "POP",
+   "pos": [
+    520,
+    890
+   ],
+   "pars": {
+    "freq": 3,
+    "pageindex": 2,
+    "radx": 0.05,
+    "rady": 0.05,
+    "radz": 0.05
+   }
+  },
+  "rim/switch_lightType": {
+   "type": "switchPOP",
+   "family": "POP",
+   "pos": [
+    1140,
+    500
+   ],
+   "inputs": [
+    [
+     "rim/merge_pointLight"
+    ],
+    [
+     "rim/merge1"
+    ],
+    [
+     "rim/merge2"
+    ]
+   ],
+   "pars": {
+    "index": {
+     "expr": "parent().par.lighttype.menuIndex"
+    }
+   }
+  },
+  "rim/transform1": {
+   "type": "transformPOP",
+   "family": "POP",
+   "pos": [
+    450,
+    370
+   ],
+   "inputs": [
+    [
+     "rim/pointgen1"
+    ]
+   ],
+   "pars": {
+    "tz": 0.8
+   }
+  },
+  "rim/tube_attenuated": {
+   "type": "tubePOP",
+   "family": "POP",
+   "pos": [
+    368,
+    673
+   ],
+   "pars": {
+    "bypass": {
+     "expr": "not parent().par.attenuated"
+    },
+    "height": 0.0,
+    "orient": "z",
+    "radx": {
+     "expr": "parent().par.attenuationend"
+    },
+    "rady": {
+     "expr": "parent().par.attenuationstart"
+    },
+    "rows": 2,
+    "surftype": "rows"
+   }
+  },
+  "rim/tube_cone1": {
+   "type": "tubePOP",
+   "family": "POP",
+   "pos": [
+    0,
+    620
+   ],
+   "pars": {
+    "height": {
+     "expr": "mod.math.cos(mod.math.radians(parent().par.coneangle/2))"
+    },
+    "orient": "z",
+    "radx": {
+     "expr": "mod.math.sin(mod.math.radians(parent().par.coneangle/2))"
+    },
+    "rady": 0.01,
+    "rows": 2,
+    "tz": {
+     "expr": "-me.par.height*0.5"
+    }
+   }
+  },
+  "rim/tube_cone2": {
+   "type": "tubePOP",
+   "family": "POP",
+   "pos": [
+    0,
+    500
+   ],
+   "pars": {
+    "height": 0.0,
+    "orient": "z",
+    "radx": {
+     "expr": "mod.math.sin(mod.math.radians(parent().par.coneangle/2)) + mod.math.sin(mod.math.radians(parent().par.conedelta/2))"
+    },
+    "rady": {
+     "expr": "mod.math.sin(mod.math.radians(parent().par.coneangle/2))"
+    },
+    "rows": 2,
+    "tz": {
+     "expr": "-op('tube_cone1').par.height"
+    }
+   }
+  },
+  "shot": {
+   "type": "constantCHOP",
+   "family": "CHOP",
+   "pos": [
+    -400,
+    330
+   ],
+   "pars": {
+    "const0name": "take",
+    "const0value": {
+     "expr": "parent().par.Take"
+    },
+    "const1name": "seed",
+    "const1value": {
+     "expr": "parent().par.Seed"
+    },
+    "const2name": "age",
+    "const2value": {
+     "expr": "max(0, absTime.seconds - parent().par.Shotstart)"
+    }
+   }
+  },
+  "spectrum": {
+   "type": "selectTOP",
+   "family": "TOP",
+   "pos": [
+    -400,
+    60
+   ],
+   "pars": {
+    "top": "/project1/sw_hub/spectex"
+   }
+  },
+  "src": {
+   "type": "switchTOP",
+   "family": "TOP",
+   "pos": [
+    200,
+    100
+   ],
+   "inputs": [
+    [
+     "render"
+    ],
+    [
+     "inprep"
+    ]
+   ],
+   "pars": {
+    "filtertype": "mipmap",
+    "index": {
+     "expr": "int(op('inp')['on'])"
+    }
+   }
+  },
+  "starts": {
+   "type": "tableDAT",
+   "family": "DAT",
+   "pos": [
+    200,
+    -1110
+   ],
+   "text": [
+    "0",
+    "26",
+    "60",
+    "84",
+    "107",
+    "131",
+    "170",
+    "200",
+    "240",
+    "269",
+    "307",
+    "327",
+    "352",
+    "381",
+    "401",
+    "428",
+    "442",
+    "456",
+    "476",
+    "499",
+    "532"
+   ]
+  },
+  "take_names": {
+   "type": "tableDAT",
+   "family": "DAT",
+   "pos": [
+    -600,
+    440
+   ],
+   "text": [
+    "0\tposter",
+    "1\twall",
+    "2\tmacro",
+    "3\tpage",
+    "4\tcorridor",
+    "5\tquadtree",
+    "6\twallpaper",
+    "7\tkeyhole"
+   ]
+  },
+  "tk": {
+   "type": "constantCHOP",
+   "family": "CHOP",
+   "pos": [
+    -600,
+    330
+   ],
+   "pars": {
+    "const0name": "mode",
+    "const0value": {
+     "expr": "(0, 1, 0, 0, 2, 0, 0, 3)[int(op('shot')['take']) % 8]"
+    },
+    "const10name": "multi",
+    "const10value": {
+     "expr": "(1, 1, 1, 3, 0, 1, 1, 1)[int(op('shot')['take']) % 8]"
+    },
+    "const11name": "tx",
+    "const11value": {
+     "expr": "(0.52, 0.2, 0.12, 0.0, 0.52, 0.22, 0.0, 0.0)[int(op('shot')['take']) % 8]"
+    },
+    "const12name": "drift",
+    "const12value": {
+     "expr": "(0.0, 0.45, 0.0, 0.0, 0.0, 0.0, 0.0, 0.75)[int(op('shot')['take']) % 8]"
+    },
+    "const13name": "msc",
+    "const13value": {
+     "expr": "(1.0, 2.5, 1.0, 0.8, 1.0, 1.9, 1.55, 1.1)[int(op('shot')['take']) % 8]"
+    },
+    "const14name": "land",
+    "const14value": {
+     "expr": "(0.5, 0.8, 0.25, 0.3, 0.5, 0.3, 0.0, 0.4)[int(op('shot')['take']) % 8]"
+    },
+    "const15name": "swing",
+    "const15value": {
+     "expr": "(42, 25, 42, 42, 42, 42, 42, 30)[int(op('shot')['take']) % 8]"
+    },
+    "const16name": "tz",
+    "const16value": {
+     "expr": "(3.3, 3.3, 1.35, 3.6, 3.3, 3.3, 3.3, 3.3)[int(op('shot')['take']) % 8]"
+    },
+    "const17name": "cty",
+    "const17value": {
+     "expr": "(-0.05, -0.05, 0.05, 0.75, -0.05, -0.05, -0.05, -0.05)[int(op('shot')['take']) % 8]"
+    },
+    "const18name": "crx",
+    "const18value": {
+     "expr": "(2.5, 2.5, 2.5, -12, 2.5, 2.5, 2.5, 2.5)[int(op('shot')['take']) % 8]"
+    },
+    "const19name": "dutch",
+    "const19value": {
+     "expr": "(0, 10, 30, 0, 0, 6, 0, 0)[int(op('shot')['take']) % 8]"
+    },
+    "const1name": "poster",
+    "const1value": {
+     "expr": "(1, 0, 0, 1, 1, 0, 0, 2)[int(op('shot')['take']) % 8]"
+    },
+    "const20name": "void",
+    "const20value": {
+     "expr": "(0.0, 0.0, 0.0, 0.0, 0.0, 0.33, 0.0, 0.0)[int(op('shot')['take']) % 8]"
+    },
+    "const21name": "pcx",
+    "const21value": {
+     "expr": "(0.5, 0.5, 0.5, 0.22, 0.5, 0.5, 0.5, 0.5)[int(op('shot')['take']) % 8]"
+    },
+    "const22name": "pcy",
+    "const22value": {
+     "expr": "(0.5, 0.5, 0.5, 0.8, 0.5, 0.5, 0.5, 0.5)[int(op('shot')['take']) % 8]"
+    },
+    "const23name": "ps",
+    "const23value": {
+     "expr": "(0.9, 1.0, 1.0, 0.34, 0.2, 1.0, 1.0, 1.3)[int(op('shot')['take']) % 8]"
+    },
+    "const24name": "pj",
+    "const24value": {
+     "expr": "(0.08, 0.0, 0.0, 0.0, 0.34, 0.0, 0.0, 0.3)[int(op('shot')['take']) % 8]"
+    },
+    "const25name": "ticker",
+    "const25value": {
+     "expr": "(0, 1, 0, 0, 0, 0, 0, 0)[int(op('shot')['take']) % 8]"
+    },
+    "const26name": "rev",
+    "const26value": {
+     "expr": "(0, 2, 2, 1, 3, 0, 2, 0)[int(op('shot')['take']) % 8]"
+    },
+    "const27name": "revt",
+    "const27value": {
+     "expr": "(0.45, 0.4, 0.5, 0.5, 0.4, 0.01, 0.3, 0.4)[int(op('shot')['take']) % 8]"
+    },
+    "const28name": "dvoid",
+    "const28value": {
+     "expr": "(0.0, 0.0, 0.0, 0.33, 0.0, 0.0, 0.0, 0.0)[int(op('shot')['take']) % 8]"
+    },
+    "const29name": "inz",
+    "const29value": {
+     "expr": "(1.0, 1.3, 2.6, 1.0, 1.0, 1.25, 1.0, 1.0)[int(op('shot')['take']) % 8]"
+    },
+    "const2name": "lo",
+    "const2value": {
+     "expr": "(1, 5, 1, 3, 3, 1, 5, 4)[int(op('shot')['take']) % 8]"
+    },
+    "const30name": "inj",
+    "const30value": {
+     "expr": "(0.0, 0.1, 0.3, 0.0, 0.0, 0.1, 0.0, 0.0)[int(op('shot')['take']) % 8]"
+    },
+    "const3name": "hi",
+    "const3value": {
+     "expr": "(5, 5, 1, 5, 4, 5, 5, 5)[int(op('shot')['take']) % 8]"
+    },
+    "const4name": "chunk",
+    "const4value": {
+     "expr": "(1, 1, 2, 1, 1, 1, 1, 1)[int(op('shot')['take']) % 8]"
+    },
+    "const5name": "chunkvar",
+    "const5value": {
+     "expr": "(0, 0, 2, 0, 0, 0, 0, 0)[int(op('shot')['take']) % 8]"
+    },
+    "const6name": "quad",
+    "const6value": {
+     "expr": "(0, 0, 0, 0, 0, 1, 0, 0)[int(op('shot')['take']) % 8]"
+    },
+    "const7name": "tiles",
+    "const7value": {
+     "expr": "(1, 1, 1, 1, 1, 1, 3, 1)[int(op('shot')['take']) % 8]"
+    },
+    "const8name": "tilevar",
+    "const8value": {
+     "expr": "(0, 0, 0, 0, 0, 0, 3, 0)[int(op('shot')['take']) % 8]"
+    },
+    "const9name": "inv",
+    "const9value": {
+     "expr": "(0, 0, 0, 1, 0, 0, 0, 0)[int(op('shot')['take']) % 8]"
+    }
+   }
+  },
+  "tkd": {
+   "type": "constantCHOP",
+   "family": "CHOP",
+   "pos": [
+    -600,
+    200
+   ],
+   "pars": {
+    "const0name": "side",
+    "const0value": {
+     "expr": "(1 if (int(op('hub')['section']) + int(float(op('shot')['seed']) * 8)) % 2 else -1)"
+    },
+    "const10name": "poster",
+    "const10value": {
+     "expr": "(int(op('hub')['section']) + int(float(op('shot')['seed']) * 53)) % 13 if not op('dsc')['on'] else 13 + (int(op('shot')['take']) % 8) * 3 + (int(op('hub')['section']) + int(float(op('shot')['seed']) * 53)) % 3"
+    },
+    "const1name": "base",
+    "const1value": {
+     "expr": "(int(op('hub')['section']) + int(float(op('shot')['seed']) * 31)) % 6"
+    },
+    "const2name": "s1",
+    "const2value": {
+     "expr": "((float(op('shot')['seed']) * 7.31 + 0.13) % 1)"
+    },
+    "const3name": "s2",
+    "const3value": {
+     "expr": "((float(op('shot')['seed']) * 13.77 + 0.41) % 1)"
+    },
+    "const4name": "s3",
+    "const4value": {
+     "expr": "((float(op('shot')['seed']) * 29.11 + 0.70) % 1)"
+    },
+    "const5name": "lvl",
+    "const5value": {
+     "expr": "max(op('tk')['lo'], min(op('tk')['hi'], 1 + sum(op('energy_bar')['energy'] > t for t in (0.38, 0.44, 0.5, 0.57))))"
+    },
+    "const6name": "chunk",
+    "const6value": {
+     "expr": "op('tk')['chunk'] + int(((float(op('shot')['seed']) * 29.11 + 0.70) % 1) * op('tk')['chunkvar'])"
+    },
+    "const7name": "tiles",
+    "const7value": {
+     "expr": "(op('tk')['tiles'] + int(((float(op('shot')['seed']) * 13.77 + 0.41) % 1) * op('tk')['tilevar']))"
+    },
+    "const8name": "tiles_now",
+    "const8value": {
+     "expr": "1 + ((op('tk')['tiles'] + int(((float(op('shot')['seed']) * 13.77 + 0.41) % 1) * op('tk')['tilevar'])) - 1) * min(1.0, float(op('shot')['age']) / 0.45) ** 0.5"
+    },
+    "const9name": "rev",
+    "const9value": {
+     "expr": "min(1.0, float(op('hub')['section_pos']) / 0.08, float(op('shot')['age']) / op('tk')['revt'])"
+    }
+   }
+  },
+  "tone": {
+   "type": "glslTOP",
+   "family": "TOP",
+   "pos": [
+    400,
+    0
+   ],
+   "inputs": [
+    [
+     "src"
+    ],
+    [
+     "poster"
+    ]
+   ],
+   "pars": {
+    "computedat": "tone_compute",
+    "format": "rgba16float",
+    "inputfiltertype": "mipmap",
+    "outputresolution": "custom",
+    "pixeldat": "tone_frag",
+    "resolutionh": 720,
+    "resolutionw": 1280,
+    "vec0name": "uTone",
+    "vec0valuew": {
+     "expr": "op('tk')['mode']"
+    },
+    "vec0valuex": {
+     "expr": "min(1.0, float(op('hub')['hit_low']))"
+    },
+    "vec0valuey": {
+     "expr": "op('tkd')['side']"
+    },
+    "vec0valuez": {
+     "expr": "op('hub')['evolve']"
+    },
+    "vec1name": "uPost",
+    "vec1valuew": {
+     "expr": "op('hub')['beat_pos']"
+    },
+    "vec1valuex": {
+     "expr": "op('tk')['pcx'] + op('tk')['pj'] * (((float(op('shot')['seed']) * 7.31 + 0.13) % 1) - 0.5)"
+    },
+    "vec1valuey": {
+     "expr": "op('tk')['pcy'] + 0.5 * op('tk')['pj'] * (((float(op('shot')['seed']) * 13.77 + 0.41) % 1) - 0.5)"
+    },
+    "vec1valuez": {
+     "expr": "op('tk')['ps']"
+    },
+    "vec2name": "uShot",
+    "vec2valuew": {
+     "expr": "((float(op('shot')['seed']) * 29.11 + 0.70) % 1)"
+    },
+    "vec2valuex": {
+     "expr": "float(op('shot')['age'])"
+    },
+    "vec2valuey": {
+     "expr": "((float(op('shot')['seed']) * 7.31 + 0.13) % 1)"
+    },
+    "vec2valuez": {
+     "expr": "((float(op('shot')['seed']) * 13.77 + 0.41) % 1)"
+    },
+    "vec3name": "uMod",
+    "vec3valuew": {
+     "expr": "int(op('hub')['beat_i']) % 2"
+    },
+    "vec3valuex": {
+     "expr": "op('tk')['tx'] * op('tkd')['side'] * (1 if op('tk')['multi'] == 1 else 0)"
+    },
+    "vec3valuey": {
+     "expr": "op('tkd')['tiles_now']"
+    },
+    "vec3valuez": {
+     "expr": "op('tkd')['tiles']"
+    },
+    "vec4name": "uVoid",
+    "vec4valuex": {
+     "expr": "op('tk')['void']"
+    },
+    "vec4valuey": {
+     "expr": "op('inp')['on']"
+    },
+    "vec4valuez": {
+     "expr": "op('tk')['dvoid'] * op('dsc')['on']"
+    }
+   }
+  },
+  "tone_compute": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    320,
+    -120
+   ],
+   "pars": {
+    "language": "glsl"
+   },
+   "text": [
+    "// Example Compute Shader",
+    "",
+    "// uniform float exampleUniform;",
+    "",
+    "layout (local_size_x = 8, local_size_y = 4) in;",
+    "void main()",
+    "{",
+    "\t// This code is running 1:1 per pixel, so early-exit",
+    "\t// if this thread overhangs the edge of the output",
+    "\tif (any(greaterThanEqual(ivec2(gl_GlobalInvocationID.xy), ivec2(uTDOutputInfo.res.zw))))",
+    "\t\treturn;",
+    "",
+    "\tvec4 color;",
+    "\t//color = texelFetch(sTD2DInputs[0], ivec2(gl_GlobalInvocationID.xy), 0);",
+    "\tcolor = vec4(1.0);",
+    "\t// We need to use TDImageStoreOutput() so that 8-bit textures that are sRGB",
+    "\t// encoded can be written to correctly from incoming linear values.",
+    "\t// imageStore() does not do this automatically, while pixel shader outputs do.",
+    "\tTDImageStoreOutput(0, gl_GlobalInvocationID, color);",
+    "}"
+   ]
+  },
+  "tone_frag": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    200,
+    -120
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.here('shaders/tone.frag')"
+    },
+    "language": "text",
+    "syncfile": true
+   },
+   "text_file": "experiments/sc_glyph_render/shaders/tone.frag"
+  },
+  "tone_info": {
+   "type": "infoDAT",
+   "family": "DAT",
+   "pos": [
+    160,
+    -120
+   ],
+   "pars": {
+    "language": "text",
+    "op": "tone"
+   }
+  },
+  "tone_pixel": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    0,
+    -120
+   ],
+   "pars": {
+    "extension": "frag",
+    "language": "glsl"
+   },
+   "text": [
+    "",
+    "// Example Pixel Shader",
+    "",
+    "// uniform float exampleUniform;",
+    "",
+    "out vec4 fragColor;",
+    "void main()",
+    "{",
+    "\t// vec4 color = texture(sTD2DInputs[0], vUV.st);",
+    "\tvec4 color = vec4(1.0);",
+    "\tfragColor = TDOutputSwizzle(color);",
+    "}"
+   ]
+  },
+  "zoom": {
+   "type": "resolutionTOP",
+   "family": "TOP",
+   "pos": [
+    1050,
+    200
+   ],
+   "inputs": [
+    [
+     "zoom_crop"
+    ]
+   ],
+   "pars": {
+    "filtertype": "nearest",
+    "inputfiltertype": "nearest",
+    "outputresolution": "custom",
+    "resolutionh": 720,
+    "resolutionw": 1280
+   }
+  },
+  "zoom_crop": {
+   "type": "cropTOP",
+   "family": "TOP",
+   "pos": [
+    900,
+    200
+   ],
+   "inputs": [
+    [
+     "glyph"
+    ]
+   ],
+   "pars": {
+    "cropbottom": 270.0,
+    "cropbottomunit": "pixels",
+    "cropleft": 480.0,
+    "cropleftunit": "pixels",
+    "cropright": 800.0,
+    "croprightunit": "pixels",
+    "croptop": 450.0,
+    "croptopunit": "pixels"
+   }
+  }
+ }
+}

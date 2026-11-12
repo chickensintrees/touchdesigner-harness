@@ -1,0 +1,170 @@
+{
+  "title": "Paper storm",
+  "technique": "Thousands of copies of a printed sheet of paper, plus a couple of hundred objects, are each placed and turned by one shader that arranges them into different formations.",
+  "music": "The bar turns the formations and the beat flips sheets, changes pages and steps the falling paper. Each kick drum throws things outward and sends an amber shockwave ring through the paper, while overall loudness brightens the lamp and glow.",
+  "takes": [
+    {
+      "name": "Tunnel",
+      "description": "A flight down a tube of printed sheets (blueprints, star charts and pink tickets) towards a marble bust in a dark void, with a ring of sheets flipping to a red reverse on each beat.",
+      "words": [
+        "6144 COPIES",
+        "HOW THIS PICTURE IS MADE   1 OF 3",
+        "INSTANCING",
+        "ONE SHEET OF PAPER, 6144 COPIES",
+        "MODEL: one flat sheet, 2 triangles",
+        "COPIES: 6144, all drawn at once",
+        "PLACED BY: one shader, every frame",
+        "PRINT: 3 sheets like this, mixed",
+        "TOUCHDESIGNER   GEOMETRY COMP INSTANCING",
+        "HOW THIS PICTURE IS MADE   2 OF 3",
+        "ONE SHADER",
+        "DECIDES WHERE EVERY SHEET GOES",
+        "OUTPUT: a 64 x 96 pixel texture",
+        "1 PIXEL: = 1 sheet of paper",
+        "ITS COLOUR: = the position x, y, z",
+        "ALSO: facing, up and tint",
+        "TOUCHDESIGNER   GLSL TOP TO INSTANCES",
+        "HOW THIS PICTURE IS MADE   3 OF 3",
+        "ON THE BEAT",
+        "THE MUSIC MOVES THE PAPER",
+        "BEAT: sheets flip or step",
+        "KICK DRUM: sheets are thrown",
+        "EACH SHOT: a new variation",
+        "SENT AS: a small texture",
+        "TOUCHDESIGNER   AUDIO VALUES TO THE SHADER",
+        "INSTANCING: 6144 COPIES OF ONE PAPER SHEET, EACH PLACED BY A SHADER.",
+        "THE BAR TURNS THE TUNNEL. THE BEAT FLIPS A RING OF SHEETS TO RED."
+      ]
+    },
+    {
+      "name": "Board",
+      "description": "A flat wall of sheets seen square-on, where sheets turned to their yellow reverse spell short three-line phrases in pixel letters and a new phrase flaps in every two beats.",
+      "words": [
+        "INSTANCING 6144 SHEETS",
+        "EVERY SHEET IS A PIXEL OF THIS TEXT",
+        "ONE SHADER PLACES THEM ALL",
+        "LIT PIXEL = SHEET TURNS OVER",
+        "NEW PAGE EVERY 2 BEATS",
+        "KICK DRUM SENDS A RING OUT",
+        "HI-HATS RATTLE LOOSE SHEETS",
+        "96 SHEETS ACROSS 64 DOWN"
+      ]
+    },
+    {
+      "name": "Murmuration",
+      "description": "The sheets become dark silhouettes folding like a flock of birds in a pale cream sky, with the bust small beneath them and no readable text.",
+      "words": [
+        "INSTANCING: 6144 PAPER SHEETS, EACH ONE PLACED BY A SHADER.",
+        "THREE SINE WAVES FOLD THE FLOCK. BASS DEEPENS THE FOLDS."
+      ]
+    },
+    {
+      "name": "Ritual",
+      "description": "No paper at all: rings of rubber ducks, a fence of brass keys that fall like dominoes, traffic cones and amphorae turn around a gold lunar lander on a red background, seen low and close with soft focus.",
+      "words": [
+        "INSTANCING: 196 OBJECTS, EACH ONE PLACED BY A SHADER.",
+        "DUCKS HOP IN A WAVE ON THE BEAT. A KICK DRUM THROWS THE KEYS."
+      ]
+    },
+    {
+      "name": "Rain",
+      "description": "A fixed camera in pale green haze watches sheets fall like leaves past a marble bust, one step per beat, with the nearest ones out of focus.",
+      "words": [
+        "HOW THIS PICTURE IS MADE   1 OF 3",
+        "INSTANCING",
+        "ONE SHEET OF PAPER, 6144 COPIES",
+        "MODEL: one flat sheet, 2 triangles",
+        "COPIES: 6144, all drawn at once",
+        "PLACED BY: one shader, every frame",
+        "PRINT: 3 sheets like this, mixed",
+        "TOUCHDESIGNER   GEOMETRY COMP INSTANCING",
+        "HOW THIS PICTURE IS MADE   2 OF 3",
+        "ONE SHADER",
+        "DECIDES WHERE EVERY SHEET GOES",
+        "OUTPUT: a 64 x 96 pixel texture",
+        "1 PIXEL: = 1 sheet of paper",
+        "ITS COLOUR: = the position x, y, z",
+        "ALSO: facing, up and tint",
+        "TOUCHDESIGNER   GLSL TOP TO INSTANCES",
+        "HOW THIS PICTURE IS MADE   3 OF 3",
+        "ON THE BEAT",
+        "THE MUSIC MOVES THE PAPER",
+        "BEAT: sheets flip or step",
+        "KICK DRUM: sheets are thrown",
+        "EACH SHOT: a new variation",
+        "SENT AS: a small texture",
+        "TOUCHDESIGNER   AUDIO VALUES TO THE SHADER",
+        "INSTANCING: 6144 PAPER SHEETS, EACH ONE PLACED BY A SHADER.",
+        "THEY FALL ONE STEP PER BEAT. NEAR SHEETS GO OUT OF FOCUS."
+      ]
+    },
+    {
+      "name": "Floor",
+      "description": "A view straight down on a tidy floor of printed sheets drawn in chunky black-and-white pixels, where a ring of sheets turning to black spreads out every two beats.",
+      "words": [
+        "INSTANCING: A FLOOR OF 6144 SHEETS, DRAWN IN 1-BIT DITHER.",
+        "EVERY 2 BEATS A RING OF SHEETS TURNS OVER TO BLACK."
+      ]
+    },
+    {
+      "name": "One sheet",
+      "description": "A single large sheet turns close to the camera, sharp and readable, while the whole swirl of paper is a red and blue blur far behind it.",
+      "words": [
+        "HOW THIS PICTURE IS MADE",
+        "INSTANCING",
+        "ONE SHEET OF PAPER, 6144 COPIES",
+        "This sheet is one flat model: two triangles. The blur behind it is 6144 copies of the model, arranged in a spiral by one shader. The shader writes one pixel per copy: its position and which way it faces. The bar turns the spiral. Each kick drum tips this sheet back.",
+        "TOUCHDESIGNER   GEOMETRY COMP INSTANCING FROM A GLSL TOP",
+        "6144 COPIES"
+      ]
+    },
+    {
+      "name": "Oculus",
+      "description": "A view from inside a dome looking up through rings of paper turning against each other, whose blue reverses carry a short phrase.",
+      "words": [
+        "6144 SHEETS",
+        "FLIP ON BEAT",
+        "ONE SHADER",
+        "PAPER COPIES",
+        "RINGS TURN",
+        "KICK WIDENS",
+        "HOW THIS PICTURE IS MADE   1 OF 3",
+        "INSTANCING",
+        "ONE SHEET OF PAPER, 6144 COPIES",
+        "MODEL: one flat sheet, 2 triangles",
+        "COPIES: 6144, all drawn at once",
+        "PLACED BY: one shader, every frame",
+        "PRINT: 3 sheets like this, mixed",
+        "TOUCHDESIGNER   GEOMETRY COMP INSTANCING",
+        "HOW THIS PICTURE IS MADE   2 OF 3",
+        "ONE SHADER",
+        "DECIDES WHERE EVERY SHEET GOES",
+        "OUTPUT: a 64 x 96 pixel texture",
+        "1 PIXEL: = 1 sheet of paper",
+        "ITS COLOUR: = the position x, y, z",
+        "ALSO: facing, up and tint",
+        "TOUCHDESIGNER   GLSL TOP TO INSTANCES",
+        "HOW THIS PICTURE IS MADE   3 OF 3",
+        "ON THE BEAT",
+        "THE MUSIC MOVES THE PAPER",
+        "BEAT: sheets flip or step",
+        "KICK DRUM: sheets are thrown",
+        "EACH SHOT: a new variation",
+        "SENT AS: a small texture",
+        "TOUCHDESIGNER   AUDIO VALUES TO THE SHADER",
+        "INSTANCING: 6144 COPIES OF ONE PAPER SHEET, EACH PLACED BY A SHADER.",
+        "RINGS OF PAPER TURN WITH THE BAR. THE BEAT FLIPS A RING TO BLUE."
+      ]
+    }
+  ],
+  "accepts_input": true,
+  "as_processor": "Prints the picture on every one of 6144 instanced paper sheets (and as a two-colour print on their reverses), then flies, drops or rings them to the music; on the board take the wall of 96 x 64 sheets becomes a flip-dot display of the picture.",
+  "input_takes": [
+    1,
+    6,
+    0,
+    7,
+    4,
+    5
+  ]
+}

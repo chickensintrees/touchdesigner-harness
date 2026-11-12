@@ -10,6 +10,7 @@ from __future__ import annotations
 
 import json
 
+from . import _td
 from ._td import DEFAULT_EXCLUDE, family, get_op, relpath, resolve_path, walk
 
 FORMAT = "tdh-snapshot/1"
@@ -93,10 +94,20 @@ def op_record(node, root):
         file_par = getattr(getattr(node, "par", None), "file", None)
         synced = file_par is not None and str(file_par.eval() if hasattr(file_par, "eval") else file_par.val)
         if synced:
-            rec["text_file"] = synced  # content lives in that file, already in git
+            rec["text_file"] = _repo_relative(synced)  # content lives in that file, already in git
         else:
             rec["text"] = str(getattr(node, "text", "")).splitlines()
     return rec
+
+
+def _repo_relative(path):
+    """A file inside the repo is recorded relative to it, so a snapshot never
+    carries the folder of the machine that wrote it."""
+    text = str(path).replace("\\", "/")
+    root = _td.REPO_ROOT.as_posix().rstrip("/") + "/"
+    if text.lower().startswith(root.lower()):
+        return text[len(root):]
+    return text
 
 
 def _authored_dat(node):

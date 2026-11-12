@@ -1,0 +1,131 @@
+{
+  "title": "Ink in water",
+  "technique": "A two-dimensional fluid simulation in shaders, where words, pages of small print and 3D model silhouettes are laid down as three inks and lit like a wet surface over paper.",
+  "music": "Kicks fire jets that carry a drop of ink, snares spin up pairs of vortices, hi-hats add fine droplets and the bass slowly stirs the whole tank. The voice is a moving nozzle that squirts ink at a height that follows the sung pitch, and each new section of the song stamps a fresh shape in a new place.",
+  "takes": [
+    {
+      "name": "Phrase",
+      "description": "A poster phrase in glossy black ink sits off-centre in cream water, and each kick bursts as a red star of jets.",
+      "words": [
+        "FLUID SIMULATION",
+        "INK IN WATER",
+        "KICKS FIRE JETS",
+        "SNARES SPIN VORTICES",
+        "BASS STIRS THE TANK",
+        "THE WORDS ARE INK IN A FLUID SIMULATION MADE OF SHADERS.",
+        "EACH KICK DRUM FIRES A RED STAR OF JETS INTO THE WATER."
+      ]
+    },
+    {
+      "name": "Marbling",
+      "description": "The whole frame is filled with red, yellow and blue bands, with no word at all, combed into marbled paper by jets from the edges.",
+      "words": [
+        "THIS IS MARBLING: THREE INKS IN ONE SIMULATED FLUID.",
+        "EVERY KICK DRUM COMBS THE BANDS WITH A JET FROM THE EDGE.",
+        "WHERE TWO INKS OVERLAP, THE COLOUR GOES DARKER."
+      ]
+    },
+    {
+      "name": "Night",
+      "description": "A single 3D model appears as glowing ivory ink in dark navy water, with pink jets from the frame edges and yellow snares.",
+      "words": [
+        "A 3D MODEL IS POURED INTO A FLUID SIMULATION AS GLOWING INK.",
+        "KICKS ARE PINK JETS. SNARES ARE YELLOW VORTEX PAIRS."
+      ]
+    },
+    {
+      "name": "Inkblot",
+      "description": "Half the tank is mirrored down the middle like a folded inkblot test plate, with black blots and one red on white card above a typed caption.",
+      "words": [
+        "THIS IS HALF A TANK OF SIMULATED INK, MIRRORED DOWN THE FOLD.",
+        "DRUM HITS DROP INK ON THE LEFT. THE RIGHT IS A REFLECTION.",
+        "KICKS ARE BLACK STARS. SNARES ARE RED VORTEX PAIRS."
+      ]
+    },
+    {
+      "name": "Bleeding page",
+      "description": "A full page of small print bleeds away in pure black and white dots, sometimes inverted to white on black, and is printed again on every bar line.",
+      "words": [
+        "THIS PAGE IS INK IN A SIMULATED TANK OF WATER.",
+        "THE WATER IS A GRID OF 320 X 180 ARROWS THAT SAY",
+        "HOW FAST IT MOVES AT EACH POINT.",
+        "EVERY FRAME THE ARROWS CARRY THEMSELVES ALONG,",
+        "THEN A SOLVER RUNS 22 PASSES SO THAT WATER",
+        "NEVER PILES UP ANYWHERE.",
+        "THE INK IS A 1280 X 720 PICTURE THAT THE",
+        "ARROWS DRAG ALONG.",
+        "A KICK DRUM FIRES A STAR OF JETS AND A DROP OF INK.",
+        "A SNARE SPINS TWO VORTICES IN OPPOSITE WAYS.",
+        "A HI-HAT ADDS ONE FINE DROPLET.",
+        "THE BASS SLOWLY STIRS THE WHOLE TANK.",
+        "THE VOICE IS A NOZZLE: A HIGHER NOTE SITS HIGHER UP.",
+        "EVERY BAR OF THE SONG PRINTS THIS PAGE AGAIN.",
+        "THE PICTURE IS ONLY BLACK AND WHITE DOTS.",
+        "NOTHING HERE IS VIDEO. NINE SHADERS RUN EVERY FRAME."
+      ]
+    },
+    {
+      "name": "Oil film",
+      "description": "A phrase larger than the frame floats as an oil film on black water, so its colour comes from the thickness of the film and shifts in rings as it thins.",
+      "words": [
+        "OIL FILM",
+        "COLOUR IS THICKNESS",
+        "THIN FILM",
+        "INK IN WATER",
+        "THIS IS AN OIL FILM: ITS COLOUR COMES FROM HOW THICK IT IS.",
+        "THE LETTERS CHANGE COLOUR AS THE FLUID STRETCHES THEM."
+      ]
+    },
+    {
+      "name": "Sinking",
+      "description": "Seen from the side, a row of three small model silhouettes at the top sinks as plumes while kicks fall as red drops from above.",
+      "words": [
+        "THIS IS A SIDE VIEW: THE INK IS HEAVIER THAN WATER AND SINKS.",
+        "EACH KICK DRUM IS A RED DROP FALLING FROM THE TOP."
+      ]
+    },
+    {
+      "name": "Survey",
+      "description": "One model is drawn only as contour lines of ink thickness on green graph paper, with no gloss and barely any fill.",
+      "words": [
+        "THE SAME FLUID IS DRAWN AS A MAP OF INK THICKNESS.",
+        "EVERY LINE JOINS POINTS HOLDING THE SAME AMOUNT OF INK."
+      ]
+    },
+    {
+      "name": "Macro",
+      "description": "Letters three times the height of the frame leave only fragments in view, in thick red, yellow and blue inks that mix under a strongly rippled surface.",
+      "words": [
+        "FLUID",
+        "INK",
+        "FLOW",
+        "VORTEX",
+        "JET",
+        "UP CLOSE, THE THREE INKS MIX LIKE COLOURED FILTERS.",
+        "THE GLOSS IS LIGHT ON THE SLOPES OF THE THICK INK."
+      ]
+    },
+    {
+      "name": "Sheet",
+      "description": "A printed star chart lies under the water and bends with every ripple, with a small red stamped phrase on it, black kick stars and blue ink from the voice.",
+      "words": [
+        "SIMULATED INK",
+        "FLUID SOLVER",
+        "INK IN WATER",
+        "INK IN WATER",
+        "TECHNIQUE:  2D FLUID SIMULATION",
+        "WATER:  320 X 180 VELOCITY GRID",
+        "INK:  1280 X 720, THREE INKS",
+        "SOLVER:  22 PASSES A FRAME",
+        "KICK:  JETS + INK",
+        "SNARE:  TWO VORTICES",
+        "HI-HAT:  A DROPLET",
+        "BASS:  STIRS THE TANK",
+        "VOICE:  A NOZZLE",
+        "THE SHEET LIES UNDER SIMULATED WATER, AND RIPPLES BEND IT."
+      ]
+    }
+  ],
+  "accepts_input": true,
+  "as_processor": "It turns the picture into ink in a fluid simulation: bright or dark shapes are pressed into the water on every beat and the drums tear them apart, while the Sheet take instead lays the picture under rippling water."
+}

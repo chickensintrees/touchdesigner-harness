@@ -1,0 +1,29 @@
+{
+ "title": "Shatter and reassemble",
+ "technique": "3D models and extruded phrases are pre-cut into rigid shards, and a shader bursts them apart and pulls them back together exactly, like footage run backwards.",
+ "music": "Each bar bursts the object apart and pulls it back so it locks together on a bar or beat line, with louder passages throwing the shards further. Kick drums crack the object open for a moment, vocals brighten the glow inside the cracks, and a new section of the song swaps in a different object.",
+ "accepts_input": true,
+ "as_processor": "It puts the picture on a flat 16:9 slab (or forty small ones, or a row of seven gold ones), breaks the slab into shards, slabs, chips or a tidy grid of pieces in time with the bars, and pulls it back together so the picture is whole again on a bar line.",
+ "takes": [
+  {"name": "Porcelain", "description": "One statuette (a marble bust, an amphora or a pierced stone) seen close in a dark blue room breaks into a few big pieces that drift apart from an impact point and close on every bar, with the cracks glowing gold from inside.",
+   "words": ["SHATTER AND REASSEMBLE: A 3D MODEL CUT INTO ABOUT A DOZEN BIG PIECES BEFORE PLAYBACK", "A shader pushes the pieces apart and pulls them back, whole on every bar line. Kick drums open the cracks."]},
+  {"name": "Cutting mat", "description": "Forty rubber ducks or forty amphorae lying on their sides are laid out on a green cutting mat and seen from straight above while a wave of detonations crosses the grid, showing red insides and hard shadows.",
+   "words": ["FORTY COPIES OF ONE PRE-CUT MODEL, EACH IN ABOUT 40 SHARDS", "A burst wave crosses the grid every two bars. Each shard's path is a formula of the bar phase, so it reverses exactly."]},
+  {"name": "Tidy grid", "description": "Instead of exploding, one object (a gramophone, a space helmet, a lander, an astrolabe, an hourglass or a traffic cone) takes itself apart into a neat grid of its own pieces lying flat on ink blue, then the pieces fly home.",
+   "words": ["KNOLLING: ONE MODEL TAKEN APART INTO ITS 260 PRE-CUT PIECES", "Each piece hops to a slot in a grid, turns its skin up and scales to fit, then flies home. One cycle is two bars."]},
+  {"name": "Flocking sentence", "description": "A sentence made of thousands of white chips on black, in pure black and white, swirls like a flock of birds and then locks into place from left to right.",
+   "words": ["EVERY FRAME IS MADE NOW.", "SOUND IN. PICTURE OUT.", "NOTHING HERE IS PRERENDERED.", "OBJECT OF UNKNOWN USE", "ONE MESH CUT INTO CHIPS.", "CHIPS FLOCK, THEN LOCK IN.", "WHOLE AGAIN EVERY 2 BARS.", "NO SIMULATION. ONE FORMULA.", "A 3D SENTENCE CUT INTO NEARLY 5,000 CHIPS, DRAWN IN PURE BLACK AND WHITE", "The chips ride a flow field, then lock in from left to right and hold for one bar."]},
+  {"name": "Gilded chorus line", "description": "A receding line of seven gilded busts on a red floor with reflections cracks open one after another down the line, showing plaster-white insides.",
+   "words": ["SEVEN GILDED COPIES OF ONE PRE-CUT MODEL; THE FLOOR REFLECTION IS A MIRRORED COPY", "They crack open one after another down the line, once every two bars. Vocals brighten the white insides."]},
+  {"name": "Slabs", "description": "One object (a broken column, a stack of painted solids, a traffic cone or an hourglass) is sliced into horizontal slabs that slide apart from the top down, seen side-on through a long lens against flat yellow with blue insides.",
+   "words": ["ONE MODEL SLICED ON HORIZONTAL PLANES, TEN SLICES PER UNIT OF HEIGHT", "The slabs slide apart from the top down and close again once per bar. Kick drums nudge them open."]},
+  {"name": "Green glass", "description": "The object becomes a ghost of green glass in the dark, visible only as glowing rims, glints and overlaps, while its shards drift apart and back.",
+   "words": ["THE SAME SHARDS DRAWN ADDITIVELY WITH NO DEPTH TEST", "Only edge-on rims and highlights add up to brightness, so the object reads as glass. It opens and closes over two bars."]},
+  {"name": "Falling phrase", "description": "A red phrase seen low and close from one end falls from the top down into a heap of blocks on cream, then rises back into place.",
+   "words": ["DO NOT TOUCH", "HERE. NOW.", "FOUND, NOT MADE.", "CUT INTO BLOCKS", "FALL. UN-FALL.", "SHATTER IN REVERSE", "EXTRUDED 3D TEXT CUT INTO HUNDREDS OF BLOCKS", "The blocks fall from the top down, then the same motion runs backwards. One fall and rise takes two bars."]},
+  {"name": "Inside the cloud", "description": "The camera sits inside a slow, four-bar burst of chunky shards in a black room, with red insides and a wide lens.",
+   "words": ["THE CAMERA SITS INSIDE ONE BURST THAT LASTS FOUR BARS", "Nothing is simulated: each shard's position is a formula of the bar phase, so every piece returns to its place."]},
+  {"name": "Black and white", "description": "One lit object and its shadow on white paper are reduced to pure black and white dots and move in twelve jerky steps per cycle, like stop motion.",
+   "words": ["ONE LIT MODEL AND ITS SHADOW, DITHERED TO PURE BLACK AND WHITE", "The burst phase is rounded to twelve steps per burst, which gives the stop-motion look."]}
+ ]
+}

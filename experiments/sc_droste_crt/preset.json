@@ -1,0 +1,106 @@
+{
+  "title": "Monitor showing itself",
+  "technique": "A 3D desk of found objects with a monitor whose screen displays the previous frame of the same camera, so real video feedback builds a tunnel of monitors inside monitors.",
+  "music": "Kicks flash the lamp light, make the brass astrolabe glow, light up the screen and nudge the camera in, snares make the amphora jump and hi-hats rattle the gramophone and the little lander, and each of these events then travels down the tunnel as a delayed echo. Each nested copy shifts in colour, and the direction of that shift reverses when the song changes section.",
+  "takes": [
+    {
+      "name": "Desk at night",
+      "description": "A three-quarter view of the whole desk in a blue room with a warm pool of lamp light on the objects and a rainbow tunnel on the screen.",
+      "words": [
+        "VIDEO FEEDBACK ON A 3D MONITOR",
+        "The monitor's screen shows the previous frame of this same camera.",
+        "Each copy inside is 4 frames older and its colours are turned a step."
+      ]
+    },
+    {
+      "name": "Dolly into the screen",
+      "description": "A head-on view of a brightly lit room with a red wall, where the camera travels into the screen and seamlessly re-emerges every two bars.",
+      "words": [
+        "DROSTE ZOOM FROM REAL FEEDBACK",
+        "The screen shows the last frame of a wide camera facing it.",
+        "A second camera flies into it every 2 bars and comes out where it began."
+      ]
+    },
+    {
+      "name": "Spiral twist",
+      "description": "The head-on picture is bent into a continuously zooming spiral in which the nested monitors wind around the centre, lit in amber and blue.",
+      "words": [
+        "ESCHER SPIRAL OF A FEEDBACK TUNNEL",
+        "A shader bends the monitor-in-monitor picture round its centre,",
+        "so the nested screens join into one spiral. It zooms in a level every 4 bars."
+      ]
+    },
+    {
+      "name": "One-bit negative",
+      "description": "A closer view from the left in pure black and white, where each nested copy inverts the one before it and every kick flips the whole frame.",
+      "words": [
+        "ONE-BIT FEEDBACK, NEGATIVE AT EVERY LEVEL",
+        "The screen shows this camera's previous frame as a negative,",
+        "so each copy inverts the one outside it. Every kick drum swaps black and white."
+      ]
+    },
+    {
+      "name": "Wall of monitors",
+      "description": "The desk is gone and fifteen stacked monitors, lit in salmon and blue, all show the same view of the wall, with the colours jumping on kicks.",
+      "words": [
+        "ONE FEEDBACK LOOP ON 15 SCREENS",
+        "Every monitor shows the previous frame of this same camera,",
+        "so the wall is filled with pictures of itself. Kick drums shift the colours."
+      ]
+    },
+    {
+      "name": "Terminal",
+      "description": "A close view of a dark green screen where a short message types itself out and repeats down the nested copies a few frames apart.",
+      "words": [
+        "THIS SCREEN SHOWS ITSELF. THE CAMERA'S LAST FRAME IS THE PICTURE ON THE GLASS. EACH COPY INSIDE IS 8 FRAMES OLDER.",
+        "THE TUNNEL IS NOT DRAWN. IT IS ONE 3D RENDER, FED BACK TO ITS OWN SCREEN ONCE EVERY FRAME.",
+        "THIS TEXT IS TYPED ON THE OUTER SCREEN ONLY. THE COPIES INSIDE ARE ITS ECHOES, 8 FRAMES APART.",
+        "ONE SHADER STEP PER COPY: GREEN TINT, SCANLINES, A LITTLE LESS LIGHT. EACH COPY GETS IT AGAIN.",
+        "KICK DRUMS LIGHT THE GLASS. THE CAMERA SEES THE FLASH. ONE STEP LATER THE NEXT COPY SHOWS IT, AND SO ON.",
+        "BUILT IN TOUCHDESIGNER: RENDER TOP, FEEDBACK TOP, CACHE TOP, ONE GLSL SHADER, A MATERIAL ON THE GLASS."
+      ]
+    },
+    {
+      "name": "Spiral tunnel",
+      "description": "The screen fills most of the frame and each nested copy is turned a little more, with extra turn from the bass, making a twisting corridor of monitor frames in pink and blue.",
+      "words": [
+        "FEEDBACK WITH A TURN",
+        "The screen shows this camera's previous frame, turned up to 17 degrees,",
+        "so the nested monitors wind into a tunnel. Bass notes add more turn."
+      ]
+    },
+    {
+      "name": "Phosphor macro",
+      "description": "An extreme close-up of the screen itself, broken into red, green and blue stripes and slowly panning, with the nested monitor only just readable.",
+      "words": [
+        "PHOSPHOR MACRO OF THE FEEDBACK SCREEN",
+        "No camera here: this is the picture on the monitor's glass, enlarged,",
+        "and a shader splits it into red, green and blue phosphor slots."
+      ]
+    },
+    {
+      "name": "Words out",
+      "description": "There is no room, only the feedback loop running outward, so a short amber phrase drawn in the centre on each beat flies toward the viewer while changing colour.",
+      "words": [
+        "VIDEO FEEDBACK",
+        "A SCREEN",
+        "SHOWING",
+        "ITS OWN LAST FRAME",
+        "CAMERA TOO CLOSE",
+        "SO EACH COPY IS",
+        "BIGGER",
+        "NOT SMALLER",
+        "WORDS FLY OUT",
+        "ONE WORD PER BEAT",
+        "DRAWN SMALL",
+        "IN THE CENTRE",
+        "HUE TURNS EACH STEP",
+        "OLDER IS BIGGER",
+        "NO ROOM",
+        "ONLY THE LOOP"
+      ]
+    }
+  ],
+  "accepts_input": true,
+  "as_processor": "Puts the picture inside a real video feedback loop on an old monitor: it becomes the backdrop behind the desk or the image on the monitor's screen, and the loop repeats it as smaller, older, colour-shifted copies nested inside each other (spiralled, turned, 1-bit, in green phosphor, or flying outward, depending on the take)."
+}

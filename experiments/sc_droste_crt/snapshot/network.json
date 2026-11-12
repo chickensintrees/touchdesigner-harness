@@ -1,0 +1,5537 @@
+{
+ "format": "tdh-snapshot/1",
+ "root": "/project1/sc_droste_crt",
+ "ops": {
+  "black": {
+   "type": "constantTOP",
+   "family": "TOP",
+   "pos": [
+    650,
+    300
+   ],
+   "pars": {
+    "colorb": 0.0,
+    "colorg": 0.0,
+    "colorr": 0.0,
+    "format": "rgba16float",
+    "outputresolution": "custom",
+    "resolutionh": 720,
+    "resolutionw": 1280
+   }
+  },
+  "cache": {
+   "type": "cacheTOP",
+   "family": "TOP",
+   "pos": [
+    650,
+    60
+   ],
+   "inputs": [
+    [
+     "fb"
+    ]
+   ],
+   "pars": {
+    "cachesize": 16
+   }
+  },
+  "cam_a": {
+   "type": "constantCHOP",
+   "family": "CHOP",
+   "pos": [
+    -200,
+    -60
+   ],
+   "pars": {
+    "const0name": "az",
+    "const0value": {
+     "expr": "math.radians(op('tk')['az'] + op('tk')['orb'] * math.sin(op('hub')['evolve'] * 0.9 + parent().par.Seed * 6.283) + (parent().par.Seed - 0.5) * op('tk')['seedaz'])"
+    },
+    "const1name": "el",
+    "const1value": {
+     "expr": "math.radians(op('tk')['el'] + 0.4 * op('tk')['orb'] * math.sin(op('hub')['evolve'] * 0.63 + 1.7)) + 0.08618596698597879"
+    },
+    "const2name": "dist",
+    "const2value": {
+     "expr": "op('tk')['dist'] * (1 - op('tk')['punch'] * min(1.2, op('hub')['hit_low']))"
+    },
+    "const3name": "oaz",
+    "const3value": {
+     "expr": "math.radians(op('tk')['oaz'] + 3 * math.sin(op('hub')['evolve'] * 0.8) + (parent().par.Seed - 0.5) * 10)"
+    },
+    "const4name": "oel",
+    "const4value": {
+     "expr": "math.radians(op('tk')['oel']) + 0.08618596698597879"
+    },
+    "const5name": "e",
+    "const5value": {
+     "expr": "(op('tk')['dist'] * (1.282156129078824 / op('tk')['dist']) ** op('lv')['p'] - op('tk')['dist']) / (1.282156129078824 - op('tk')['dist'] - 1e-6)"
+    }
+   }
+  },
+  "cam_m": {
+   "type": "cameraCOMP",
+   "family": "COMP",
+   "pos": [
+    -30,
+    180
+   ],
+   "pars": {
+    "far": 80.0,
+    "fov": 40.0,
+    "lookat": "/project1/sc_droste_crt/tgt_m",
+    "near": 0.05,
+    "tx": {
+     "expr": "op('camm')['px']"
+    },
+    "ty": {
+     "expr": "op('camm')['py']"
+    },
+    "tz": {
+     "expr": "op('camm')['pz']"
+    }
+   }
+  },
+  "cam_m/file1": {
+   "type": "fileinPOP",
+   "family": "POP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "file": {
+     "expr": "app.samplesFolder + '/Geo/defcam.tog'"
+    }
+   }
+  },
+  "cam_o": {
+   "type": "cameraCOMP",
+   "family": "COMP",
+   "pos": [
+    -30,
+    -60
+   ],
+   "pars": {
+    "far": 80.0,
+    "fov": 40.0,
+    "lookat": "/project1/sc_droste_crt/tgt_o",
+    "near": 0.05,
+    "tx": {
+     "expr": "op('camo')['px']"
+    },
+    "ty": {
+     "expr": "op('camo')['py']"
+    },
+    "tz": {
+     "expr": "op('camo')['pz']"
+    }
+   }
+  },
+  "cam_o/file1": {
+   "type": "fileinPOP",
+   "family": "POP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "file": {
+     "expr": "app.samplesFolder + '/Geo/defcam.tog'"
+    }
+   }
+  },
+  "camm": {
+   "type": "constantCHOP",
+   "family": "CHOP",
+   "pos": [
+    -200,
+    -180
+   ],
+   "pars": {
+    "const0name": "px",
+    "const0value": {
+     "expr": "-0.3597222222222222 + op('cam_a')['dist'] * math.sin(op('cam_a')['az']) * math.cos(op('cam_a')['el'])"
+    },
+    "const1name": "py",
+    "const1value": {
+     "expr": "2.175 + op('cam_a')['dist'] * math.sin(op('cam_a')['el'])"
+    },
+    "const2name": "pz",
+    "const2value": {
+     "expr": "0.3887999999999999 + op('cam_a')['dist'] * math.cos(op('cam_a')['az']) * math.cos(op('cam_a')['el'])"
+    },
+    "const3name": "lx",
+    "const3value": {
+     "expr": "-0.3597222222222222 + op('tk')['tgx']"
+    },
+    "const4name": "ly",
+    "const4value": {
+     "expr": "2.175 + op('tk')['tgy']"
+    },
+    "const5name": "lz",
+    "const5value": {
+     "expr": "0.3887999999999999"
+    }
+   }
+  },
+  "camo": {
+   "type": "constantCHOP",
+   "family": "CHOP",
+   "pos": [
+    -200,
+    -300
+   ],
+   "pars": {
+    "const0name": "px",
+    "const0value": {
+     "expr": "(-0.3597222222222222 + op('tk')['odist'] * math.sin(op('cam_a')['oaz']) * math.cos(op('cam_a')['oel'])) if op('tk')['omode'] > 0.5 else op('camm')['px'] + (-0.3597222222222222 - op('camm')['px']) * op('cam_a')['e']"
+    },
+    "const1name": "py",
+    "const1value": {
+     "expr": "(2.175 + op('tk')['odist'] * math.sin(op('cam_a')['oel'])) if op('tk')['omode'] > 0.5 else op('camm')['py'] + (2.2853671124409902 - op('camm')['py']) * op('cam_a')['e']"
+    },
+    "const2name": "pz",
+    "const2value": {
+     "expr": "(0.3887999999999999 + op('tk')['odist'] * math.cos(op('cam_a')['oaz']) * math.cos(op('cam_a')['oel'])) if op('tk')['omode'] > 0.5 else op('camm')['pz'] + (1.6661971347336864 - op('camm')['pz']) * op('cam_a')['e']"
+    },
+    "const3name": "lx",
+    "const3value": {
+     "expr": "(-0.3597222222222222 + op('tk')['otgx']) if op('tk')['omode'] > 0.5 else op('camm')['lx'] + (-0.3597222222222222 - op('camm')['lx']) * op('cam_a')['e']"
+    },
+    "const4name": "ly",
+    "const4value": {
+     "expr": "(2.175 + op('tk')['otgy']) if op('tk')['omode'] > 0.5 else op('camm')['ly'] + (2.175 - op('camm')['ly']) * op('cam_a')['e']"
+    },
+    "const5name": "lz",
+    "const5value": {
+     "expr": "(0.3887999999999999) if op('tk')['omode'] > 0.5 else op('camm')['lz'] + (0.3887999999999999 - op('camm')['lz']) * op('cam_a')['e']"
+    }
+   }
+  },
+  "cap_body": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    990,
+    -420
+   ],
+   "pars": {
+    "alignx": "left",
+    "aligny": "bottom",
+    "bold": {
+     "expr": "not mod.paths.font('chicago')"
+    },
+    "borderspace1": 34.0,
+    "borderspace2": 22.0,
+    "font": "Arial",
+    "fontfile": {
+     "expr": "mod.paths.font('chicago')"
+    },
+    "fontsizex": 19.08132727115223,
+    "linespacing": 6.0,
+    "outputresolution": "custom",
+    "resmult": false,
+    "resolutionh": 720,
+    "resolutionw": 1280,
+    "text": {
+     "expr": "op('caps')[int(parent().par.Take) % 9, 1].val + chr(10) + op('caps')[int(parent().par.Take) % 9, 2].val"
+    }
+   }
+  },
+  "cap_title": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    990,
+    -300
+   ],
+   "pars": {
+    "alignx": "left",
+    "aligny": "bottom",
+    "bold": {
+     "expr": "not mod.paths.font('chicago')"
+    },
+    "borderspace1": 34.0,
+    "borderspace2": 96.0,
+    "font": "Arial",
+    "fontfile": {
+     "expr": "mod.paths.font('chicago')"
+    },
+    "fontsizex": 26.0,
+    "outputresolution": "custom",
+    "resmult": false,
+    "resolutionh": 720,
+    "resolutionw": 1280,
+    "text": {
+     "expr": "op('caps')[int(parent().par.Take) % 9, 0].val"
+    }
+   }
+  },
+  "capfx": {
+   "type": "glslTOP",
+   "family": "TOP",
+   "pos": [
+    990,
+    -660
+   ],
+   "inputs": [
+    [
+     "post"
+    ],
+    [
+     "cap_body"
+    ],
+    [
+     "cap_title"
+    ]
+   ],
+   "pars": {
+    "computedat": "capfx_compute",
+    "format": "rgba8fixed",
+    "outputresolution": "custom",
+    "pixeldat": "capfx_frag",
+    "resolutionh": 720,
+    "resolutionw": 1280,
+    "vec0name": "uC",
+    "vec0valuew": {
+     "expr": "0"
+    },
+    "vec0valuex": {
+     "expr": "142.0 / 720.0"
+    },
+    "vec0valuey": {
+     "expr": "op('tk')['bit']"
+    },
+    "vec0valuez": {
+     "expr": "0"
+    }
+   }
+  },
+  "capfx_frag": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    990,
+    -540
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.here('shaders/caption.frag')"
+    },
+    "language": "text",
+    "syncfile": true
+   },
+   "text_file": "experiments/sc_droste_crt/shaders/caption.frag"
+  },
+  "capfx_info": {
+   "type": "infoDAT",
+   "family": "DAT",
+   "pos": [
+    160,
+    -120
+   ],
+   "pars": {
+    "language": "text",
+    "op": "capfx"
+   }
+  },
+  "caps": {
+   "type": "tableDAT",
+   "family": "DAT",
+   "pos": [
+    990,
+    -180
+   ],
+   "text": [
+    "VIDEO FEEDBACK ON A 3D MONITOR\tThe monitor's screen shows the previous frame of this same camera.\tEach copy inside is 4 frames older and its colours are turned a step.",
+    "DROSTE ZOOM FROM REAL FEEDBACK\tThe screen shows the last frame of a wide camera facing it.\tA second camera flies into it every 2 bars and comes out where it began.",
+    "ESCHER SPIRAL OF A FEEDBACK TUNNEL\tA shader bends the monitor-in-monitor picture round its centre,\tso the nested screens join into one spiral. It zooms in a level every 4 bars.",
+    "ONE-BIT FEEDBACK, NEGATIVE AT EVERY LEVEL\tThe screen shows this camera's previous frame as a negative,\tso each copy inverts the one outside it. Every kick drum swaps black and white.",
+    "ONE FEEDBACK LOOP ON 15 SCREENS\tEvery monitor shows the previous frame of this same camera,\tso the wall is filled with pictures of itself. Kick drums shift the colours.",
+    "\t\t",
+    "FEEDBACK WITH A TURN\tThe screen shows this camera's previous frame, turned up to 17 degrees,\tso the nested monitors wind into a tunnel. Bass notes add more turn.",
+    "PHOSPHOR MACRO OF THE FEEDBACK SCREEN\tNo camera here: this is the picture on the monitor's glass, enlarged,\tand a shader splits it into red, green and blue phosphor slots.",
+    "\t\t"
+   ]
+  },
+  "cook_driver": {
+   "type": "executeDAT",
+   "family": "DAT",
+   "pos": [
+    -400,
+    -80
+   ],
+   "pars": {
+    "framestart": true,
+    "language": "python"
+   },
+   "text": [
+    "_last = [0, -1]",
+    "",
+    "def onFrameStart(frame):",
+    "    hub = op('/project1/sw_hub')",
+    "    me_on = parent().par.Preview.eval()",
+    "    if hub is not None:",
+    "        me_on = me_on or hub.par.Solo.eval() or hub.par.Scene.eval() == parent().name",
+    "    if me_on:",
+    "        take = int(parent().par.Take)",
+    "        # a cut to this scene, or a new take: the last picture must not come down the tunnel",
+    "        if absTime.frame - _last[0] > 30 or take != _last[1]:",
+    "            op('fb').par.resetpulse.pulse()",
+    "            if hasattr(op('cache').par, 'resetpulse'):",
+    "                op('cache').par.resetpulse.pulse()",
+    "        _last[0] = absTime.frame",
+    "        _last[1] = take",
+    "        op('hub').cook(force=True)",
+    "        op('out1').cook(force=True)",
+    "    return"
+   ]
+  },
+  "csel": {
+   "type": "cacheselectTOP",
+   "family": "TOP",
+   "pos": [
+    650,
+    -60
+   ],
+   "pars": {
+    "cachetop": "cache",
+    "index": {
+     "expr": "-int(min(14, op('tk')['delay']))"
+    }
+   }
+  },
+  "escher": {
+   "type": "glslTOP",
+   "family": "TOP",
+   "pos": [
+    820,
+    -660
+   ],
+   "inputs": [
+    [
+     "mast"
+    ]
+   ],
+   "pars": {
+    "computedat": "escher_compute",
+    "format": "rgba16float",
+    "outputresolution": "custom",
+    "pixeldat": "escher_frag",
+    "resolutionh": 720,
+    "resolutionw": 1280,
+    "vec0name": "uE",
+    "vec0valuew": {
+     "expr": "op('lv')['gain']"
+    },
+    "vec0valuex": {
+     "expr": "1.282156129078824 / op('tk')['dist']"
+    },
+    "vec0valuey": {
+     "expr": "op('lv')['p']"
+    },
+    "vec0valuez": {
+     "expr": "op('lv')['hue']"
+    },
+    "vec1name": "uE2",
+    "vec1valuew": {
+     "expr": "0"
+    },
+    "vec1valuex": {
+     "expr": "op('tk')['twist']"
+    },
+    "vec1valuey": {
+     "expr": "0"
+    },
+    "vec1valuez": {
+     "expr": "0"
+    }
+   }
+  },
+  "escher_frag": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    820,
+    -540
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.here('shaders/escher.frag')"
+    },
+    "language": "text",
+    "syncfile": true
+   },
+   "text_file": "experiments/sc_droste_crt/shaders/escher.frag"
+  },
+  "escher_info": {
+   "type": "infoDAT",
+   "family": "DAT",
+   "pos": [
+    160,
+    -120
+   ],
+   "pars": {
+    "language": "text",
+    "op": "escher"
+   }
+  },
+  "fb": {
+   "type": "feedbackTOP",
+   "family": "TOP",
+   "pos": [
+    650,
+    180
+   ],
+   "inputs": [
+    [
+     "black"
+    ]
+   ],
+   "pars": {
+    "top": "mast"
+   }
+  },
+  "feed": {
+   "type": "switchTOP",
+   "family": "TOP",
+   "pos": [
+    650,
+    -180
+   ],
+   "inputs": [
+    [
+     "fb"
+    ],
+    [
+     "csel"
+    ]
+   ],
+   "pars": {
+    "index": {
+     "expr": "1 if op('tk')['delay'] > 0.5 else 0"
+    }
+   }
+  },
+  "final": {
+   "type": "switchTOP",
+   "family": "TOP",
+   "pos": [
+    990,
+    -780
+   ],
+   "inputs": [
+    [
+     "post"
+    ],
+    [
+     "capfx"
+    ]
+   ],
+   "pars": {
+    "index": {
+     "expr": "1 if (parent().par.Describe and op('caps')[int(parent().par.Take) % 9, 0].val) else 0"
+    }
+   }
+  },
+  "glow_blur": {
+   "type": "blurTOP",
+   "family": "TOP",
+   "pos": [
+    990,
+    180
+   ],
+   "inputs": [
+    [
+     "glow_lo"
+    ]
+   ],
+   "pars": {
+    "size": 10
+   }
+  },
+  "glow_lo": {
+   "type": "resolutionTOP",
+   "family": "TOP",
+   "pos": [
+    990,
+    300
+   ],
+   "inputs": [
+    [
+     "view"
+    ]
+   ],
+   "pars": {
+    "outputresolution": "custom",
+    "resolutionh": 180,
+    "resolutionw": 320
+   }
+  },
+  "hub": {
+   "type": "selectCHOP",
+   "family": "CHOP",
+   "pos": [
+    -400,
+    200
+   ],
+   "pars": {
+    "chops": "/project1/sw_hub/feed"
+   }
+  },
+  "inc": {
+   "type": "constantCHOP",
+   "family": "CHOP",
+   "pos": [
+    -200,
+    -540
+   ],
+   "pars": {
+    "const0name": "bg",
+    "const0value": {
+     "expr": "1 if op('inon')['on'] > 0.5 and int(op('tk')['inp']) in (1, 3) else 0"
+    },
+    "const1name": "gl",
+    "const1value": {
+     "expr": "1 if op('inon')['on'] > 0.5 and int(op('tk')['inp']) in (2, 3) else 0"
+    }
+   }
+  },
+  "inlev": {
+   "type": "levelTOP",
+   "family": "TOP",
+   "pos": [
+    650,
+    -1260
+   ],
+   "inputs": [
+    [
+     "insel"
+    ]
+   ],
+   "pars": {
+    "brightness1": {
+     "expr": "op('tk')['ingain']"
+    }
+   }
+  },
+  "inon": {
+   "type": "constantCHOP",
+   "family": "CHOP",
+   "pos": [
+    -200,
+    -420
+   ],
+   "pars": {
+    "const0name": "on",
+    "const0value": {
+     "expr": "1 if (parent().par.Input.eval().strip() and op(parent().par.Input.eval().strip()) is not None and op(parent().par.Input.eval().strip()).isTOP and not op(parent().par.Input.eval().strip()).path.startswith(parent().path + '/')) else 0"
+    }
+   }
+  },
+  "insel": {
+   "type": "selectTOP",
+   "family": "TOP",
+   "pos": [
+    650,
+    -1140
+   ],
+   "pars": {
+    "outputresolution": "custom",
+    "resolutionh": 720,
+    "resolutionw": 1280,
+    "top": {
+     "expr": "parent().par.Input.eval().strip() if op('inon')['on'] > 0.5 else 'black'"
+    }
+   }
+  },
+  "lamp_aim": {
+   "type": "nullCOMP",
+   "family": "COMP",
+   "pos": [
+    480,
+    300
+   ],
+   "pars": {
+    "tx": 0.1,
+    "ty": 1.452,
+    "tz": 0.35
+   }
+  },
+  "lamp_aim/primitive1": {
+   "type": "primitivePOP",
+   "family": "POP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "addpts": true,
+    "attr0name": "color",
+    "method": "pattern",
+    "prim0pattern": "0 1",
+    "prim0type": "lines",
+    "prim1pattern": "2 3",
+    "prim1type": "lines",
+    "prim2pattern": "4 5",
+    "prim2type": "lines",
+    "pt0colorb": 0.0,
+    "pt0colorg": 0.0,
+    "pt0posx": -0.1,
+    "pt1colorb": 0.0,
+    "pt1colorg": 0.0,
+    "pt1posx": 0.1,
+    "pt2colorb": 0.0,
+    "pt2colorr": 0.0,
+    "pt2posy": -0.1,
+    "pt3colorb": 0.0,
+    "pt3colorr": 0.0,
+    "pt3posy": 0.1,
+    "pt4colorg": 0.0,
+    "pt4colorr": 0.0,
+    "pt4posz": -0.1,
+    "pt5colorg": 0.0,
+    "pt5colorr": 0.0,
+    "pt5posz": 0.1
+   }
+  },
+  "light_fluor": {
+   "type": "lightCOMP",
+   "family": "COMP",
+   "pos": [
+    480,
+    60
+   ],
+   "pars": {
+    "cb": {
+     "expr": "op('tk')['fb']"
+    },
+    "cg": {
+     "expr": "op('tk')['fg']"
+    },
+    "cr": {
+     "expr": "op('tk')['fr']"
+    },
+    "dimmer": {
+     "expr": "op('tk')['fluor'] * (0.85 + 0.3 * op('hub')['energy'] + 0.5 * op('hub')['hit_mid'])"
+    },
+    "tx": -2.2,
+    "ty": 5.0,
+    "tz": 6.0
+   }
+  },
+  "light_fluor/circle1": {
+   "type": "circlePOP",
+   "family": "POP",
+   "pos": [
+    780,
+    170
+   ],
+   "pars": {
+    "connectivity": "surface",
+    "scale": 0.2
+   }
+  },
+  "light_fluor/circle_attenEnd": {
+   "type": "circlePOP",
+   "family": "POP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "bypass": {
+     "expr": "not parent().par.attenuated"
+    },
+    "connectivity": "surface",
+    "pageindex": 3,
+    "radx": 0.1,
+    "rady": 0.1,
+    "tz": {
+     "expr": "-parent().par.attenuationend"
+    }
+   }
+  },
+  "light_fluor/circle_attenStart": {
+   "type": "circlePOP",
+   "family": "POP",
+   "pos": [
+    0,
+    120
+   ],
+   "pars": {
+    "bypass": {
+     "expr": "not parent().par.attenuated"
+    },
+    "connectivity": "surface",
+    "pageindex": 1,
+    "radx": 0.1,
+    "rady": 0.1,
+    "tz": {
+     "expr": "-parent().par.attenuationstart"
+    }
+   }
+  },
+  "light_fluor/connectivity1": {
+   "type": "connectivityPOP",
+   "family": "POP",
+   "pos": [
+    780,
+    290
+   ],
+   "inputs": [
+    [
+     "light_fluor/merge3"
+    ]
+   ],
+   "pars": {
+    "surftype": "lines"
+   }
+  },
+  "light_fluor/copy1": {
+   "type": "copyPOP",
+   "family": "POP",
+   "pos": [
+    520,
+    670
+   ],
+   "inputs": [
+    [
+     "light_fluor/tube_attenuated"
+    ]
+   ],
+   "pars": {
+    "ncy": 2,
+    "pageindex": 2,
+    "rx": 90.0
+   }
+  },
+  "light_fluor/line_atten": {
+   "type": "linePOP",
+   "family": "POP",
+   "pos": [
+    0,
+    230
+   ],
+   "pars": {
+    "bypass": {
+     "expr": "not parent().par.attenuated"
+    },
+    "divs": 1,
+    "pageindex": 2,
+    "pt0posz": {
+     "expr": "-parent().par.attenuationstart"
+    },
+    "pt1posz": {
+     "expr": "-parent().par.attenuationend"
+    }
+   },
+   "custom_pars": [
+    "pt",
+    "pt0posx",
+    "pt0posy",
+    "pt0posz",
+    "pt1posx",
+    "pt1posy",
+    "pt1posz"
+   ]
+  },
+  "light_fluor/merge1": {
+   "type": "mergePOP",
+   "family": "POP",
+   "pos": [
+    250,
+    500
+   ],
+   "inputs": [
+    [
+     "light_fluor/rectangle1"
+    ],
+    [
+     "light_fluor/tube_cone1"
+    ],
+    [
+     "light_fluor/tube_cone2"
+    ],
+    [
+     "light_fluor/primitive1"
+    ],
+    [
+     "light_fluor/line_atten"
+    ],
+    [
+     "light_fluor/circle_attenStart"
+    ],
+    [
+     "light_fluor/circle_attenEnd"
+    ]
+   ],
+   "pars": {
+    "pageindex": 1
+   }
+  },
+  "light_fluor/merge2": {
+   "type": "mergePOP",
+   "family": "POP",
+   "pos": [
+    950,
+    230
+   ],
+   "inputs": [
+    [
+     "light_fluor/connectivity1"
+    ],
+    [
+     "light_fluor/circle1"
+    ]
+   ]
+  },
+  "light_fluor/merge3": {
+   "type": "mergePOP",
+   "family": "POP",
+   "pos": [
+    620,
+    290
+   ],
+   "inputs": [
+    [
+     "light_fluor/pointgen1"
+    ],
+    [
+     "light_fluor/transform1"
+    ]
+   ]
+  },
+  "light_fluor/merge_pointLight": {
+   "type": "mergePOP",
+   "family": "POP",
+   "pos": [
+    760,
+    820
+   ],
+   "inputs": [
+    [
+     "light_fluor/sphere1"
+    ],
+    [
+     "light_fluor/primitive_quadrants"
+    ],
+    [
+     "light_fluor/copy1"
+    ]
+   ],
+   "pars": {
+    "pageindex": 1
+   }
+  },
+  "light_fluor/pointgen1": {
+   "type": "pointgeneratorPOP",
+   "family": "POP",
+   "pos": [
+    270,
+    290
+   ],
+   "pars": {
+    "numpoints": 17,
+    "pageindex": 1,
+    "shape": "circle",
+    "sx": 0.2,
+    "sy": 0.2,
+    "sz": 0.2
+   }
+  },
+  "light_fluor/primitive1": {
+   "type": "primitivePOP",
+   "family": "POP",
+   "pos": [
+    0,
+    390
+   ],
+   "pars": {
+    "addpts": true,
+    "method": "pattern",
+    "pageindex": 1,
+    "prim0pattern": "0 1 0 2 0 3 0 4",
+    "prim0type": "lines",
+    "pt1posx": {
+     "expr": "mod.math.sin(mod.math.radians(parent().par.coneangle/2)) + mod.math.sin(mod.math.radians(parent().par.conedelta/2))"
+    },
+    "pt1posz": {
+     "expr": "-op('tube_cone1').par.height"
+    },
+    "pt2posx": {
+     "expr": "mod.math.sin(-mod.math.radians(parent().par.coneangle/2)) - mod.math.sin(mod.math.radians(parent().par.conedelta/2))"
+    },
+    "pt2posz": {
+     "expr": "0-op('tube_cone1').par.height"
+    },
+    "pt3posy": {
+     "expr": "-mod.math.sin(-mod.math.radians(parent().par.coneangle/2)) - mod.math.sin(mod.math.radians(parent().par.conedelta/2))"
+    },
+    "pt3posz": {
+     "expr": "-op('tube_cone1').par.height"
+    },
+    "pt4posy": {
+     "expr": "mod.math.sin(-mod.math.radians(parent().par.coneangle/2)) - mod.math.sin(mod.math.radians(parent().par.conedelta/2))"
+    },
+    "pt4posz": {
+     "expr": "-op('tube_cone1').par.height"
+    }
+   },
+   "custom_pars": [
+    "pt",
+    "pt0posx",
+    "pt0posy",
+    "pt0posz",
+    "pt1posx",
+    "pt1posy",
+    "pt1posz",
+    "pt2posx",
+    "pt2posy",
+    "pt2posz",
+    "pt3posx",
+    "pt3posy",
+    "pt3posz",
+    "pt4posx",
+    "pt4posy",
+    "pt4posz"
+   ]
+  },
+  "light_fluor/primitive_cross": {
+   "type": "primitivePOP",
+   "family": "POP",
+   "pos": [
+    520,
+    1000
+   ],
+   "pars": {
+    "addpts": true,
+    "method": "set",
+    "pageindex": 1,
+    "pt0posx": -0.2,
+    "pt1posx": 0.2,
+    "pt2posy": -0.2,
+    "pt3posy": 0.2,
+    "pt4posz": -0.2,
+    "pt5posz": 0.2,
+    "setprimtype": "lines"
+   },
+   "custom_pars": [
+    "pt",
+    "pt0posx",
+    "pt0posy",
+    "pt0posz",
+    "pt1posx",
+    "pt1posy",
+    "pt1posz",
+    "pt2posx",
+    "pt2posy",
+    "pt2posz",
+    "pt3posx",
+    "pt3posy",
+    "pt3posz",
+    "pt4posx",
+    "pt4posy",
+    "pt4posz",
+    "pt5posx",
+    "pt5posy",
+    "pt5posz"
+   ]
+  },
+  "light_fluor/primitive_quadrants": {
+   "type": "primitivePOP",
+   "family": "POP",
+   "pos": [
+    520,
+    780
+   ],
+   "pars": {
+    "addpts": true,
+    "method": "set",
+    "pageindex": 1,
+    "pt0posx": 0.07,
+    "pt0posy": 0.07,
+    "pt0posz": 0.07,
+    "pt1posx": -0.07,
+    "pt1posy": -0.07,
+    "pt1posz": -0.07,
+    "pt2posx": -0.07,
+    "pt2posy": 0.07,
+    "pt2posz": 0.07,
+    "pt3posx": 0.07,
+    "pt3posy": -0.07,
+    "pt3posz": -0.07,
+    "pt4posx": 0.07,
+    "pt4posy": 0.07,
+    "pt4posz": -0.07,
+    "pt5posx": -0.07,
+    "pt5posy": -0.07,
+    "pt5posz": 0.07,
+    "pt6posx": -0.07,
+    "pt6posy": 0.07,
+    "pt6posz": -0.07,
+    "pt7posx": 0.07,
+    "pt7posy": -0.07,
+    "pt7posz": 0.07,
+    "setprimtype": "lines"
+   },
+   "custom_pars": [
+    "pt",
+    "pt0posx",
+    "pt0posy",
+    "pt0posz",
+    "pt1posx",
+    "pt1posy",
+    "pt1posz",
+    "pt2posx",
+    "pt2posy",
+    "pt2posz",
+    "pt3posx",
+    "pt3posy",
+    "pt3posz",
+    "pt4posx",
+    "pt4posy",
+    "pt4posz",
+    "pt5posx",
+    "pt5posy",
+    "pt5posz",
+    "pt6posx",
+    "pt6posy",
+    "pt6posz",
+    "pt7posx",
+    "pt7posy",
+    "pt7posz"
+   ]
+  },
+  "light_fluor/rectangle1": {
+   "type": "rectanglePOP",
+   "family": "POP",
+   "pos": [
+    0,
+    730
+   ],
+   "pars": {
+    "anchorv": 0.0,
+    "sizeu": 0.02,
+    "sizev": 0.5
+   }
+  },
+  "light_fluor/sphere1": {
+   "type": "spherePOP",
+   "family": "POP",
+   "pos": [
+    520,
+    890
+   ],
+   "pars": {
+    "freq": 3,
+    "pageindex": 2,
+    "radx": 0.05,
+    "rady": 0.05,
+    "radz": 0.05
+   }
+  },
+  "light_fluor/switch_lightType": {
+   "type": "switchPOP",
+   "family": "POP",
+   "pos": [
+    1140,
+    500
+   ],
+   "inputs": [
+    [
+     "light_fluor/merge_pointLight"
+    ],
+    [
+     "light_fluor/merge1"
+    ],
+    [
+     "light_fluor/merge2"
+    ]
+   ],
+   "pars": {
+    "index": {
+     "expr": "parent().par.lighttype.menuIndex"
+    }
+   }
+  },
+  "light_fluor/transform1": {
+   "type": "transformPOP",
+   "family": "POP",
+   "pos": [
+    450,
+    370
+   ],
+   "inputs": [
+    [
+     "light_fluor/pointgen1"
+    ]
+   ],
+   "pars": {
+    "tz": 0.8
+   }
+  },
+  "light_fluor/tube_attenuated": {
+   "type": "tubePOP",
+   "family": "POP",
+   "pos": [
+    368,
+    673
+   ],
+   "pars": {
+    "bypass": {
+     "expr": "not parent().par.attenuated"
+    },
+    "height": 0.0,
+    "orient": "z",
+    "radx": {
+     "expr": "parent().par.attenuationend"
+    },
+    "rady": {
+     "expr": "parent().par.attenuationstart"
+    },
+    "rows": 2,
+    "surftype": "rows"
+   }
+  },
+  "light_fluor/tube_cone1": {
+   "type": "tubePOP",
+   "family": "POP",
+   "pos": [
+    0,
+    620
+   ],
+   "pars": {
+    "height": {
+     "expr": "mod.math.cos(mod.math.radians(parent().par.coneangle/2))"
+    },
+    "orient": "z",
+    "radx": {
+     "expr": "mod.math.sin(mod.math.radians(parent().par.coneangle/2))"
+    },
+    "rady": 0.01,
+    "rows": 2,
+    "tz": {
+     "expr": "-me.par.height*0.5"
+    }
+   }
+  },
+  "light_fluor/tube_cone2": {
+   "type": "tubePOP",
+   "family": "POP",
+   "pos": [
+    0,
+    500
+   ],
+   "pars": {
+    "height": 0.0,
+    "orient": "z",
+    "radx": {
+     "expr": "mod.math.sin(mod.math.radians(parent().par.coneangle/2)) + mod.math.sin(mod.math.radians(parent().par.conedelta/2))"
+    },
+    "rady": {
+     "expr": "mod.math.sin(mod.math.radians(parent().par.coneangle/2))"
+    },
+    "rows": 2,
+    "tz": {
+     "expr": "-op('tube_cone1').par.height"
+    }
+   }
+  },
+  "light_glow": {
+   "type": "lightCOMP",
+   "family": "COMP",
+   "pos": [
+    480,
+    -60
+   ],
+   "pars": {
+    "attenuated": true,
+    "attenuationend": 3.5,
+    "attenuationstart": 0.3,
+    "cb": {
+     "expr": "0.80"
+    },
+    "cg": {
+     "expr": "0.62"
+    },
+    "cr": {
+     "expr": "0.45"
+    },
+    "dimmer": {
+     "expr": "op('tk')['glow'] * (0.5 + 0.6 * op('hub')['pulse'])"
+    },
+    "tx": -0.3597222222222222,
+    "ty": 2.275,
+    "tz": 1.2888
+   }
+  },
+  "light_glow/circle1": {
+   "type": "circlePOP",
+   "family": "POP",
+   "pos": [
+    780,
+    170
+   ],
+   "pars": {
+    "connectivity": "surface",
+    "scale": 0.2
+   }
+  },
+  "light_glow/circle_attenEnd": {
+   "type": "circlePOP",
+   "family": "POP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "bypass": {
+     "expr": "not parent().par.attenuated"
+    },
+    "connectivity": "surface",
+    "pageindex": 3,
+    "radx": 0.1,
+    "rady": 0.1,
+    "tz": {
+     "expr": "-parent().par.attenuationend"
+    }
+   }
+  },
+  "light_glow/circle_attenStart": {
+   "type": "circlePOP",
+   "family": "POP",
+   "pos": [
+    0,
+    120
+   ],
+   "pars": {
+    "bypass": {
+     "expr": "not parent().par.attenuated"
+    },
+    "connectivity": "surface",
+    "pageindex": 1,
+    "radx": 0.1,
+    "rady": 0.1,
+    "tz": {
+     "expr": "-parent().par.attenuationstart"
+    }
+   }
+  },
+  "light_glow/connectivity1": {
+   "type": "connectivityPOP",
+   "family": "POP",
+   "pos": [
+    780,
+    290
+   ],
+   "inputs": [
+    [
+     "light_glow/merge3"
+    ]
+   ],
+   "pars": {
+    "surftype": "lines"
+   }
+  },
+  "light_glow/copy1": {
+   "type": "copyPOP",
+   "family": "POP",
+   "pos": [
+    520,
+    670
+   ],
+   "inputs": [
+    [
+     "light_glow/tube_attenuated"
+    ]
+   ],
+   "pars": {
+    "ncy": 2,
+    "pageindex": 2,
+    "rx": 90.0
+   }
+  },
+  "light_glow/line_atten": {
+   "type": "linePOP",
+   "family": "POP",
+   "pos": [
+    0,
+    230
+   ],
+   "pars": {
+    "bypass": {
+     "expr": "not parent().par.attenuated"
+    },
+    "divs": 1,
+    "pageindex": 2,
+    "pt0posz": {
+     "expr": "-parent().par.attenuationstart"
+    },
+    "pt1posz": {
+     "expr": "-parent().par.attenuationend"
+    }
+   },
+   "custom_pars": [
+    "pt",
+    "pt0posx",
+    "pt0posy",
+    "pt0posz",
+    "pt1posx",
+    "pt1posy",
+    "pt1posz"
+   ]
+  },
+  "light_glow/merge1": {
+   "type": "mergePOP",
+   "family": "POP",
+   "pos": [
+    250,
+    500
+   ],
+   "inputs": [
+    [
+     "light_glow/rectangle1"
+    ],
+    [
+     "light_glow/tube_cone1"
+    ],
+    [
+     "light_glow/tube_cone2"
+    ],
+    [
+     "light_glow/primitive1"
+    ],
+    [
+     "light_glow/line_atten"
+    ],
+    [
+     "light_glow/circle_attenStart"
+    ],
+    [
+     "light_glow/circle_attenEnd"
+    ]
+   ],
+   "pars": {
+    "pageindex": 1
+   }
+  },
+  "light_glow/merge2": {
+   "type": "mergePOP",
+   "family": "POP",
+   "pos": [
+    950,
+    230
+   ],
+   "inputs": [
+    [
+     "light_glow/connectivity1"
+    ],
+    [
+     "light_glow/circle1"
+    ]
+   ]
+  },
+  "light_glow/merge3": {
+   "type": "mergePOP",
+   "family": "POP",
+   "pos": [
+    620,
+    290
+   ],
+   "inputs": [
+    [
+     "light_glow/pointgen1"
+    ],
+    [
+     "light_glow/transform1"
+    ]
+   ]
+  },
+  "light_glow/merge_pointLight": {
+   "type": "mergePOP",
+   "family": "POP",
+   "pos": [
+    760,
+    820
+   ],
+   "inputs": [
+    [
+     "light_glow/sphere1"
+    ],
+    [
+     "light_glow/primitive_quadrants"
+    ],
+    [
+     "light_glow/copy1"
+    ]
+   ],
+   "pars": {
+    "pageindex": 1
+   }
+  },
+  "light_glow/pointgen1": {
+   "type": "pointgeneratorPOP",
+   "family": "POP",
+   "pos": [
+    270,
+    290
+   ],
+   "pars": {
+    "numpoints": 17,
+    "pageindex": 1,
+    "shape": "circle",
+    "sx": 0.2,
+    "sy": 0.2,
+    "sz": 0.2
+   }
+  },
+  "light_glow/primitive1": {
+   "type": "primitivePOP",
+   "family": "POP",
+   "pos": [
+    0,
+    390
+   ],
+   "pars": {
+    "addpts": true,
+    "method": "pattern",
+    "pageindex": 1,
+    "prim0pattern": "0 1 0 2 0 3 0 4",
+    "prim0type": "lines",
+    "pt1posx": {
+     "expr": "mod.math.sin(mod.math.radians(parent().par.coneangle/2)) + mod.math.sin(mod.math.radians(parent().par.conedelta/2))"
+    },
+    "pt1posz": {
+     "expr": "-op('tube_cone1').par.height"
+    },
+    "pt2posx": {
+     "expr": "mod.math.sin(-mod.math.radians(parent().par.coneangle/2)) - mod.math.sin(mod.math.radians(parent().par.conedelta/2))"
+    },
+    "pt2posz": {
+     "expr": "0-op('tube_cone1').par.height"
+    },
+    "pt3posy": {
+     "expr": "-mod.math.sin(-mod.math.radians(parent().par.coneangle/2)) - mod.math.sin(mod.math.radians(parent().par.conedelta/2))"
+    },
+    "pt3posz": {
+     "expr": "-op('tube_cone1').par.height"
+    },
+    "pt4posy": {
+     "expr": "mod.math.sin(-mod.math.radians(parent().par.coneangle/2)) - mod.math.sin(mod.math.radians(parent().par.conedelta/2))"
+    },
+    "pt4posz": {
+     "expr": "-op('tube_cone1').par.height"
+    }
+   },
+   "custom_pars": [
+    "pt",
+    "pt0posx",
+    "pt0posy",
+    "pt0posz",
+    "pt1posx",
+    "pt1posy",
+    "pt1posz",
+    "pt2posx",
+    "pt2posy",
+    "pt2posz",
+    "pt3posx",
+    "pt3posy",
+    "pt3posz",
+    "pt4posx",
+    "pt4posy",
+    "pt4posz"
+   ]
+  },
+  "light_glow/primitive_cross": {
+   "type": "primitivePOP",
+   "family": "POP",
+   "pos": [
+    520,
+    1000
+   ],
+   "pars": {
+    "addpts": true,
+    "method": "set",
+    "pageindex": 1,
+    "pt0posx": -0.2,
+    "pt1posx": 0.2,
+    "pt2posy": -0.2,
+    "pt3posy": 0.2,
+    "pt4posz": -0.2,
+    "pt5posz": 0.2,
+    "setprimtype": "lines"
+   },
+   "custom_pars": [
+    "pt",
+    "pt0posx",
+    "pt0posy",
+    "pt0posz",
+    "pt1posx",
+    "pt1posy",
+    "pt1posz",
+    "pt2posx",
+    "pt2posy",
+    "pt2posz",
+    "pt3posx",
+    "pt3posy",
+    "pt3posz",
+    "pt4posx",
+    "pt4posy",
+    "pt4posz",
+    "pt5posx",
+    "pt5posy",
+    "pt5posz"
+   ]
+  },
+  "light_glow/primitive_quadrants": {
+   "type": "primitivePOP",
+   "family": "POP",
+   "pos": [
+    520,
+    780
+   ],
+   "pars": {
+    "addpts": true,
+    "method": "set",
+    "pageindex": 1,
+    "pt0posx": 0.07,
+    "pt0posy": 0.07,
+    "pt0posz": 0.07,
+    "pt1posx": -0.07,
+    "pt1posy": -0.07,
+    "pt1posz": -0.07,
+    "pt2posx": -0.07,
+    "pt2posy": 0.07,
+    "pt2posz": 0.07,
+    "pt3posx": 0.07,
+    "pt3posy": -0.07,
+    "pt3posz": -0.07,
+    "pt4posx": 0.07,
+    "pt4posy": 0.07,
+    "pt4posz": -0.07,
+    "pt5posx": -0.07,
+    "pt5posy": -0.07,
+    "pt5posz": 0.07,
+    "pt6posx": -0.07,
+    "pt6posy": 0.07,
+    "pt6posz": -0.07,
+    "pt7posx": 0.07,
+    "pt7posy": -0.07,
+    "pt7posz": 0.07,
+    "setprimtype": "lines"
+   },
+   "custom_pars": [
+    "pt",
+    "pt0posx",
+    "pt0posy",
+    "pt0posz",
+    "pt1posx",
+    "pt1posy",
+    "pt1posz",
+    "pt2posx",
+    "pt2posy",
+    "pt2posz",
+    "pt3posx",
+    "pt3posy",
+    "pt3posz",
+    "pt4posx",
+    "pt4posy",
+    "pt4posz",
+    "pt5posx",
+    "pt5posy",
+    "pt5posz",
+    "pt6posx",
+    "pt6posy",
+    "pt6posz",
+    "pt7posx",
+    "pt7posy",
+    "pt7posz"
+   ]
+  },
+  "light_glow/rectangle1": {
+   "type": "rectanglePOP",
+   "family": "POP",
+   "pos": [
+    0,
+    730
+   ],
+   "pars": {
+    "anchorv": 0.0,
+    "sizeu": 0.02,
+    "sizev": 0.5
+   }
+  },
+  "light_glow/sphere1": {
+   "type": "spherePOP",
+   "family": "POP",
+   "pos": [
+    520,
+    890
+   ],
+   "pars": {
+    "freq": 3,
+    "pageindex": 2,
+    "radx": 0.05,
+    "rady": 0.05,
+    "radz": 0.05
+   }
+  },
+  "light_glow/switch_lightType": {
+   "type": "switchPOP",
+   "family": "POP",
+   "pos": [
+    1140,
+    500
+   ],
+   "inputs": [
+    [
+     "light_glow/merge_pointLight"
+    ],
+    [
+     "light_glow/merge1"
+    ],
+    [
+     "light_glow/merge2"
+    ]
+   ],
+   "pars": {
+    "index": {
+     "expr": "parent().par.lighttype.menuIndex"
+    }
+   }
+  },
+  "light_glow/transform1": {
+   "type": "transformPOP",
+   "family": "POP",
+   "pos": [
+    450,
+    370
+   ],
+   "inputs": [
+    [
+     "light_glow/pointgen1"
+    ]
+   ],
+   "pars": {
+    "tz": 0.8
+   }
+  },
+  "light_glow/tube_attenuated": {
+   "type": "tubePOP",
+   "family": "POP",
+   "pos": [
+    368,
+    673
+   ],
+   "pars": {
+    "bypass": {
+     "expr": "not parent().par.attenuated"
+    },
+    "height": 0.0,
+    "orient": "z",
+    "radx": {
+     "expr": "parent().par.attenuationend"
+    },
+    "rady": {
+     "expr": "parent().par.attenuationstart"
+    },
+    "rows": 2,
+    "surftype": "rows"
+   }
+  },
+  "light_glow/tube_cone1": {
+   "type": "tubePOP",
+   "family": "POP",
+   "pos": [
+    0,
+    620
+   ],
+   "pars": {
+    "height": {
+     "expr": "mod.math.cos(mod.math.radians(parent().par.coneangle/2))"
+    },
+    "orient": "z",
+    "radx": {
+     "expr": "mod.math.sin(mod.math.radians(parent().par.coneangle/2))"
+    },
+    "rady": 0.01,
+    "rows": 2,
+    "tz": {
+     "expr": "-me.par.height*0.5"
+    }
+   }
+  },
+  "light_glow/tube_cone2": {
+   "type": "tubePOP",
+   "family": "POP",
+   "pos": [
+    0,
+    500
+   ],
+   "pars": {
+    "height": 0.0,
+    "orient": "z",
+    "radx": {
+     "expr": "mod.math.sin(mod.math.radians(parent().par.coneangle/2)) + mod.math.sin(mod.math.radians(parent().par.conedelta/2))"
+    },
+    "rady": {
+     "expr": "mod.math.sin(mod.math.radians(parent().par.coneangle/2))"
+    },
+    "rows": 2,
+    "tz": {
+     "expr": "-op('tube_cone1').par.height"
+    }
+   }
+  },
+  "light_lamp": {
+   "type": "lightCOMP",
+   "family": "COMP",
+   "pos": [
+    480,
+    180
+   ],
+   "pars": {
+    "cb": {
+     "expr": "op('tk')['lb']"
+    },
+    "cg": {
+     "expr": "op('tk')['lg']"
+    },
+    "coneangle": 70.0,
+    "conedelta": 40.0,
+    "cr": {
+     "expr": "op('tk')['lr']"
+    },
+    "dimmer": {
+     "expr": "op('tk')['lamp'] * (0.6 + 1.4 * min(1.3, op('hub')['hit_low']) + 0.25 * op('hub')['pulse'])"
+    },
+    "lighttype": "cone",
+    "lookat": "/project1/sc_droste_crt/lamp_aim",
+    "tx": 0.85,
+    "ty": 2.372
+   }
+  },
+  "light_lamp/circle1": {
+   "type": "circlePOP",
+   "family": "POP",
+   "pos": [
+    780,
+    170
+   ],
+   "pars": {
+    "connectivity": "surface",
+    "scale": 0.2
+   }
+  },
+  "light_lamp/circle_attenEnd": {
+   "type": "circlePOP",
+   "family": "POP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "bypass": {
+     "expr": "not parent().par.attenuated"
+    },
+    "connectivity": "surface",
+    "pageindex": 3,
+    "radx": 0.1,
+    "rady": 0.1,
+    "tz": {
+     "expr": "-parent().par.attenuationend"
+    }
+   }
+  },
+  "light_lamp/circle_attenStart": {
+   "type": "circlePOP",
+   "family": "POP",
+   "pos": [
+    0,
+    120
+   ],
+   "pars": {
+    "bypass": {
+     "expr": "not parent().par.attenuated"
+    },
+    "connectivity": "surface",
+    "pageindex": 1,
+    "radx": 0.1,
+    "rady": 0.1,
+    "tz": {
+     "expr": "-parent().par.attenuationstart"
+    }
+   }
+  },
+  "light_lamp/connectivity1": {
+   "type": "connectivityPOP",
+   "family": "POP",
+   "pos": [
+    780,
+    290
+   ],
+   "inputs": [
+    [
+     "light_lamp/merge3"
+    ]
+   ],
+   "pars": {
+    "surftype": "lines"
+   }
+  },
+  "light_lamp/copy1": {
+   "type": "copyPOP",
+   "family": "POP",
+   "pos": [
+    520,
+    670
+   ],
+   "inputs": [
+    [
+     "light_lamp/tube_attenuated"
+    ]
+   ],
+   "pars": {
+    "ncy": 2,
+    "pageindex": 2,
+    "rx": 90.0
+   }
+  },
+  "light_lamp/line_atten": {
+   "type": "linePOP",
+   "family": "POP",
+   "pos": [
+    0,
+    230
+   ],
+   "pars": {
+    "bypass": {
+     "expr": "not parent().par.attenuated"
+    },
+    "divs": 1,
+    "pageindex": 2,
+    "pt0posz": {
+     "expr": "-parent().par.attenuationstart"
+    },
+    "pt1posz": {
+     "expr": "-parent().par.attenuationend"
+    }
+   },
+   "custom_pars": [
+    "pt",
+    "pt0posx",
+    "pt0posy",
+    "pt0posz",
+    "pt1posx",
+    "pt1posy",
+    "pt1posz"
+   ]
+  },
+  "light_lamp/merge1": {
+   "type": "mergePOP",
+   "family": "POP",
+   "pos": [
+    250,
+    500
+   ],
+   "inputs": [
+    [
+     "light_lamp/rectangle1"
+    ],
+    [
+     "light_lamp/tube_cone1"
+    ],
+    [
+     "light_lamp/tube_cone2"
+    ],
+    [
+     "light_lamp/primitive1"
+    ],
+    [
+     "light_lamp/line_atten"
+    ],
+    [
+     "light_lamp/circle_attenStart"
+    ],
+    [
+     "light_lamp/circle_attenEnd"
+    ]
+   ],
+   "pars": {
+    "pageindex": 1
+   }
+  },
+  "light_lamp/merge2": {
+   "type": "mergePOP",
+   "family": "POP",
+   "pos": [
+    950,
+    230
+   ],
+   "inputs": [
+    [
+     "light_lamp/connectivity1"
+    ],
+    [
+     "light_lamp/circle1"
+    ]
+   ]
+  },
+  "light_lamp/merge3": {
+   "type": "mergePOP",
+   "family": "POP",
+   "pos": [
+    620,
+    290
+   ],
+   "inputs": [
+    [
+     "light_lamp/pointgen1"
+    ],
+    [
+     "light_lamp/transform1"
+    ]
+   ]
+  },
+  "light_lamp/merge_pointLight": {
+   "type": "mergePOP",
+   "family": "POP",
+   "pos": [
+    760,
+    820
+   ],
+   "inputs": [
+    [
+     "light_lamp/sphere1"
+    ],
+    [
+     "light_lamp/primitive_quadrants"
+    ],
+    [
+     "light_lamp/copy1"
+    ]
+   ],
+   "pars": {
+    "pageindex": 1
+   }
+  },
+  "light_lamp/pointgen1": {
+   "type": "pointgeneratorPOP",
+   "family": "POP",
+   "pos": [
+    270,
+    290
+   ],
+   "pars": {
+    "numpoints": 17,
+    "pageindex": 1,
+    "shape": "circle",
+    "sx": 0.2,
+    "sy": 0.2,
+    "sz": 0.2
+   }
+  },
+  "light_lamp/primitive1": {
+   "type": "primitivePOP",
+   "family": "POP",
+   "pos": [
+    0,
+    390
+   ],
+   "pars": {
+    "addpts": true,
+    "method": "pattern",
+    "pageindex": 1,
+    "prim0pattern": "0 1 0 2 0 3 0 4",
+    "prim0type": "lines",
+    "pt1posx": {
+     "expr": "mod.math.sin(mod.math.radians(parent().par.coneangle/2)) + mod.math.sin(mod.math.radians(parent().par.conedelta/2))"
+    },
+    "pt1posz": {
+     "expr": "-op('tube_cone1').par.height"
+    },
+    "pt2posx": {
+     "expr": "mod.math.sin(-mod.math.radians(parent().par.coneangle/2)) - mod.math.sin(mod.math.radians(parent().par.conedelta/2))"
+    },
+    "pt2posz": {
+     "expr": "0-op('tube_cone1').par.height"
+    },
+    "pt3posy": {
+     "expr": "-mod.math.sin(-mod.math.radians(parent().par.coneangle/2)) - mod.math.sin(mod.math.radians(parent().par.conedelta/2))"
+    },
+    "pt3posz": {
+     "expr": "-op('tube_cone1').par.height"
+    },
+    "pt4posy": {
+     "expr": "mod.math.sin(-mod.math.radians(parent().par.coneangle/2)) - mod.math.sin(mod.math.radians(parent().par.conedelta/2))"
+    },
+    "pt4posz": {
+     "expr": "-op('tube_cone1').par.height"
+    }
+   },
+   "custom_pars": [
+    "pt",
+    "pt0posx",
+    "pt0posy",
+    "pt0posz",
+    "pt1posx",
+    "pt1posy",
+    "pt1posz",
+    "pt2posx",
+    "pt2posy",
+    "pt2posz",
+    "pt3posx",
+    "pt3posy",
+    "pt3posz",
+    "pt4posx",
+    "pt4posy",
+    "pt4posz"
+   ]
+  },
+  "light_lamp/primitive_cross": {
+   "type": "primitivePOP",
+   "family": "POP",
+   "pos": [
+    520,
+    1000
+   ],
+   "pars": {
+    "addpts": true,
+    "method": "set",
+    "pageindex": 1,
+    "pt0posx": -0.2,
+    "pt1posx": 0.2,
+    "pt2posy": -0.2,
+    "pt3posy": 0.2,
+    "pt4posz": -0.2,
+    "pt5posz": 0.2,
+    "setprimtype": "lines"
+   },
+   "custom_pars": [
+    "pt",
+    "pt0posx",
+    "pt0posy",
+    "pt0posz",
+    "pt1posx",
+    "pt1posy",
+    "pt1posz",
+    "pt2posx",
+    "pt2posy",
+    "pt2posz",
+    "pt3posx",
+    "pt3posy",
+    "pt3posz",
+    "pt4posx",
+    "pt4posy",
+    "pt4posz",
+    "pt5posx",
+    "pt5posy",
+    "pt5posz"
+   ]
+  },
+  "light_lamp/primitive_quadrants": {
+   "type": "primitivePOP",
+   "family": "POP",
+   "pos": [
+    520,
+    780
+   ],
+   "pars": {
+    "addpts": true,
+    "method": "set",
+    "pageindex": 1,
+    "pt0posx": 0.07,
+    "pt0posy": 0.07,
+    "pt0posz": 0.07,
+    "pt1posx": -0.07,
+    "pt1posy": -0.07,
+    "pt1posz": -0.07,
+    "pt2posx": -0.07,
+    "pt2posy": 0.07,
+    "pt2posz": 0.07,
+    "pt3posx": 0.07,
+    "pt3posy": -0.07,
+    "pt3posz": -0.07,
+    "pt4posx": 0.07,
+    "pt4posy": 0.07,
+    "pt4posz": -0.07,
+    "pt5posx": -0.07,
+    "pt5posy": -0.07,
+    "pt5posz": 0.07,
+    "pt6posx": -0.07,
+    "pt6posy": 0.07,
+    "pt6posz": -0.07,
+    "pt7posx": 0.07,
+    "pt7posy": -0.07,
+    "pt7posz": 0.07,
+    "setprimtype": "lines"
+   },
+   "custom_pars": [
+    "pt",
+    "pt0posx",
+    "pt0posy",
+    "pt0posz",
+    "pt1posx",
+    "pt1posy",
+    "pt1posz",
+    "pt2posx",
+    "pt2posy",
+    "pt2posz",
+    "pt3posx",
+    "pt3posy",
+    "pt3posz",
+    "pt4posx",
+    "pt4posy",
+    "pt4posz",
+    "pt5posx",
+    "pt5posy",
+    "pt5posz",
+    "pt6posx",
+    "pt6posy",
+    "pt6posz",
+    "pt7posx",
+    "pt7posy",
+    "pt7posz"
+   ]
+  },
+  "light_lamp/rectangle1": {
+   "type": "rectanglePOP",
+   "family": "POP",
+   "pos": [
+    0,
+    730
+   ],
+   "pars": {
+    "anchorv": 0.0,
+    "sizeu": 0.02,
+    "sizev": 0.5
+   }
+  },
+  "light_lamp/sphere1": {
+   "type": "spherePOP",
+   "family": "POP",
+   "pos": [
+    520,
+    890
+   ],
+   "pars": {
+    "freq": 3,
+    "pageindex": 2,
+    "radx": 0.05,
+    "rady": 0.05,
+    "radz": 0.05
+   }
+  },
+  "light_lamp/switch_lightType": {
+   "type": "switchPOP",
+   "family": "POP",
+   "pos": [
+    1140,
+    500
+   ],
+   "inputs": [
+    [
+     "light_lamp/merge_pointLight"
+    ],
+    [
+     "light_lamp/merge1"
+    ],
+    [
+     "light_lamp/merge2"
+    ]
+   ],
+   "pars": {
+    "index": {
+     "expr": "parent().par.lighttype.menuIndex"
+    }
+   }
+  },
+  "light_lamp/transform1": {
+   "type": "transformPOP",
+   "family": "POP",
+   "pos": [
+    450,
+    370
+   ],
+   "inputs": [
+    [
+     "light_lamp/pointgen1"
+    ]
+   ],
+   "pars": {
+    "tz": 0.8
+   }
+  },
+  "light_lamp/tube_attenuated": {
+   "type": "tubePOP",
+   "family": "POP",
+   "pos": [
+    368,
+    673
+   ],
+   "pars": {
+    "bypass": {
+     "expr": "not parent().par.attenuated"
+    },
+    "height": 0.0,
+    "orient": "z",
+    "radx": {
+     "expr": "parent().par.attenuationend"
+    },
+    "rady": {
+     "expr": "parent().par.attenuationstart"
+    },
+    "rows": 2,
+    "surftype": "rows"
+   }
+  },
+  "light_lamp/tube_cone1": {
+   "type": "tubePOP",
+   "family": "POP",
+   "pos": [
+    0,
+    620
+   ],
+   "pars": {
+    "height": {
+     "expr": "mod.math.cos(mod.math.radians(parent().par.coneangle/2))"
+    },
+    "orient": "z",
+    "radx": {
+     "expr": "mod.math.sin(mod.math.radians(parent().par.coneangle/2))"
+    },
+    "rady": 0.01,
+    "rows": 2,
+    "tz": {
+     "expr": "-me.par.height*0.5"
+    }
+   }
+  },
+  "light_lamp/tube_cone2": {
+   "type": "tubePOP",
+   "family": "POP",
+   "pos": [
+    0,
+    500
+   ],
+   "pars": {
+    "height": 0.0,
+    "orient": "z",
+    "radx": {
+     "expr": "mod.math.sin(mod.math.radians(parent().par.coneangle/2)) + mod.math.sin(mod.math.radians(parent().par.conedelta/2))"
+    },
+    "rady": {
+     "expr": "mod.math.sin(mod.math.radians(parent().par.coneangle/2))"
+    },
+    "rows": 2,
+    "tz": {
+     "expr": "-op('tube_cone1').par.height"
+    }
+   }
+  },
+  "light_rim": {
+   "type": "lightCOMP",
+   "family": "COMP",
+   "pos": [
+    480,
+    -180
+   ],
+   "pars": {
+    "cb": {
+     "expr": "op('tk')['rb']"
+    },
+    "cg": {
+     "expr": "op('tk')['rg']"
+    },
+    "cr": {
+     "expr": "op('tk')['rr']"
+    },
+    "dimmer": {
+     "expr": "op('tk')['rimd'] * (0.7 + 0.8 * op('hub')['hit_mid'])"
+    },
+    "tx": -4.0,
+    "ty": 3.2,
+    "tz": -1.2
+   }
+  },
+  "light_rim/circle1": {
+   "type": "circlePOP",
+   "family": "POP",
+   "pos": [
+    780,
+    170
+   ],
+   "pars": {
+    "connectivity": "surface",
+    "scale": 0.2
+   }
+  },
+  "light_rim/circle_attenEnd": {
+   "type": "circlePOP",
+   "family": "POP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "bypass": {
+     "expr": "not parent().par.attenuated"
+    },
+    "connectivity": "surface",
+    "pageindex": 3,
+    "radx": 0.1,
+    "rady": 0.1,
+    "tz": {
+     "expr": "-parent().par.attenuationend"
+    }
+   }
+  },
+  "light_rim/circle_attenStart": {
+   "type": "circlePOP",
+   "family": "POP",
+   "pos": [
+    0,
+    120
+   ],
+   "pars": {
+    "bypass": {
+     "expr": "not parent().par.attenuated"
+    },
+    "connectivity": "surface",
+    "pageindex": 1,
+    "radx": 0.1,
+    "rady": 0.1,
+    "tz": {
+     "expr": "-parent().par.attenuationstart"
+    }
+   }
+  },
+  "light_rim/connectivity1": {
+   "type": "connectivityPOP",
+   "family": "POP",
+   "pos": [
+    780,
+    290
+   ],
+   "inputs": [
+    [
+     "light_rim/merge3"
+    ]
+   ],
+   "pars": {
+    "surftype": "lines"
+   }
+  },
+  "light_rim/copy1": {
+   "type": "copyPOP",
+   "family": "POP",
+   "pos": [
+    520,
+    670
+   ],
+   "inputs": [
+    [
+     "light_rim/tube_attenuated"
+    ]
+   ],
+   "pars": {
+    "ncy": 2,
+    "pageindex": 2,
+    "rx": 90.0
+   }
+  },
+  "light_rim/line_atten": {
+   "type": "linePOP",
+   "family": "POP",
+   "pos": [
+    0,
+    230
+   ],
+   "pars": {
+    "bypass": {
+     "expr": "not parent().par.attenuated"
+    },
+    "divs": 1,
+    "pageindex": 2,
+    "pt0posz": {
+     "expr": "-parent().par.attenuationstart"
+    },
+    "pt1posz": {
+     "expr": "-parent().par.attenuationend"
+    }
+   },
+   "custom_pars": [
+    "pt",
+    "pt0posx",
+    "pt0posy",
+    "pt0posz",
+    "pt1posx",
+    "pt1posy",
+    "pt1posz"
+   ]
+  },
+  "light_rim/merge1": {
+   "type": "mergePOP",
+   "family": "POP",
+   "pos": [
+    250,
+    500
+   ],
+   "inputs": [
+    [
+     "light_rim/rectangle1"
+    ],
+    [
+     "light_rim/tube_cone1"
+    ],
+    [
+     "light_rim/tube_cone2"
+    ],
+    [
+     "light_rim/primitive1"
+    ],
+    [
+     "light_rim/line_atten"
+    ],
+    [
+     "light_rim/circle_attenStart"
+    ],
+    [
+     "light_rim/circle_attenEnd"
+    ]
+   ],
+   "pars": {
+    "pageindex": 1
+   }
+  },
+  "light_rim/merge2": {
+   "type": "mergePOP",
+   "family": "POP",
+   "pos": [
+    950,
+    230
+   ],
+   "inputs": [
+    [
+     "light_rim/connectivity1"
+    ],
+    [
+     "light_rim/circle1"
+    ]
+   ]
+  },
+  "light_rim/merge3": {
+   "type": "mergePOP",
+   "family": "POP",
+   "pos": [
+    620,
+    290
+   ],
+   "inputs": [
+    [
+     "light_rim/pointgen1"
+    ],
+    [
+     "light_rim/transform1"
+    ]
+   ]
+  },
+  "light_rim/merge_pointLight": {
+   "type": "mergePOP",
+   "family": "POP",
+   "pos": [
+    760,
+    820
+   ],
+   "inputs": [
+    [
+     "light_rim/sphere1"
+    ],
+    [
+     "light_rim/primitive_quadrants"
+    ],
+    [
+     "light_rim/copy1"
+    ]
+   ],
+   "pars": {
+    "pageindex": 1
+   }
+  },
+  "light_rim/pointgen1": {
+   "type": "pointgeneratorPOP",
+   "family": "POP",
+   "pos": [
+    270,
+    290
+   ],
+   "pars": {
+    "numpoints": 17,
+    "pageindex": 1,
+    "shape": "circle",
+    "sx": 0.2,
+    "sy": 0.2,
+    "sz": 0.2
+   }
+  },
+  "light_rim/primitive1": {
+   "type": "primitivePOP",
+   "family": "POP",
+   "pos": [
+    0,
+    390
+   ],
+   "pars": {
+    "addpts": true,
+    "method": "pattern",
+    "pageindex": 1,
+    "prim0pattern": "0 1 0 2 0 3 0 4",
+    "prim0type": "lines",
+    "pt1posx": {
+     "expr": "mod.math.sin(mod.math.radians(parent().par.coneangle/2)) + mod.math.sin(mod.math.radians(parent().par.conedelta/2))"
+    },
+    "pt1posz": {
+     "expr": "-op('tube_cone1').par.height"
+    },
+    "pt2posx": {
+     "expr": "mod.math.sin(-mod.math.radians(parent().par.coneangle/2)) - mod.math.sin(mod.math.radians(parent().par.conedelta/2))"
+    },
+    "pt2posz": {
+     "expr": "0-op('tube_cone1').par.height"
+    },
+    "pt3posy": {
+     "expr": "-mod.math.sin(-mod.math.radians(parent().par.coneangle/2)) - mod.math.sin(mod.math.radians(parent().par.conedelta/2))"
+    },
+    "pt3posz": {
+     "expr": "-op('tube_cone1').par.height"
+    },
+    "pt4posy": {
+     "expr": "mod.math.sin(-mod.math.radians(parent().par.coneangle/2)) - mod.math.sin(mod.math.radians(parent().par.conedelta/2))"
+    },
+    "pt4posz": {
+     "expr": "-op('tube_cone1').par.height"
+    }
+   },
+   "custom_pars": [
+    "pt",
+    "pt0posx",
+    "pt0posy",
+    "pt0posz",
+    "pt1posx",
+    "pt1posy",
+    "pt1posz",
+    "pt2posx",
+    "pt2posy",
+    "pt2posz",
+    "pt3posx",
+    "pt3posy",
+    "pt3posz",
+    "pt4posx",
+    "pt4posy",
+    "pt4posz"
+   ]
+  },
+  "light_rim/primitive_cross": {
+   "type": "primitivePOP",
+   "family": "POP",
+   "pos": [
+    520,
+    1000
+   ],
+   "pars": {
+    "addpts": true,
+    "method": "set",
+    "pageindex": 1,
+    "pt0posx": -0.2,
+    "pt1posx": 0.2,
+    "pt2posy": -0.2,
+    "pt3posy": 0.2,
+    "pt4posz": -0.2,
+    "pt5posz": 0.2,
+    "setprimtype": "lines"
+   },
+   "custom_pars": [
+    "pt",
+    "pt0posx",
+    "pt0posy",
+    "pt0posz",
+    "pt1posx",
+    "pt1posy",
+    "pt1posz",
+    "pt2posx",
+    "pt2posy",
+    "pt2posz",
+    "pt3posx",
+    "pt3posy",
+    "pt3posz",
+    "pt4posx",
+    "pt4posy",
+    "pt4posz",
+    "pt5posx",
+    "pt5posy",
+    "pt5posz"
+   ]
+  },
+  "light_rim/primitive_quadrants": {
+   "type": "primitivePOP",
+   "family": "POP",
+   "pos": [
+    520,
+    780
+   ],
+   "pars": {
+    "addpts": true,
+    "method": "set",
+    "pageindex": 1,
+    "pt0posx": 0.07,
+    "pt0posy": 0.07,
+    "pt0posz": 0.07,
+    "pt1posx": -0.07,
+    "pt1posy": -0.07,
+    "pt1posz": -0.07,
+    "pt2posx": -0.07,
+    "pt2posy": 0.07,
+    "pt2posz": 0.07,
+    "pt3posx": 0.07,
+    "pt3posy": -0.07,
+    "pt3posz": -0.07,
+    "pt4posx": 0.07,
+    "pt4posy": 0.07,
+    "pt4posz": -0.07,
+    "pt5posx": -0.07,
+    "pt5posy": -0.07,
+    "pt5posz": 0.07,
+    "pt6posx": -0.07,
+    "pt6posy": 0.07,
+    "pt6posz": -0.07,
+    "pt7posx": 0.07,
+    "pt7posy": -0.07,
+    "pt7posz": 0.07,
+    "setprimtype": "lines"
+   },
+   "custom_pars": [
+    "pt",
+    "pt0posx",
+    "pt0posy",
+    "pt0posz",
+    "pt1posx",
+    "pt1posy",
+    "pt1posz",
+    "pt2posx",
+    "pt2posy",
+    "pt2posz",
+    "pt3posx",
+    "pt3posy",
+    "pt3posz",
+    "pt4posx",
+    "pt4posy",
+    "pt4posz",
+    "pt5posx",
+    "pt5posy",
+    "pt5posz",
+    "pt6posx",
+    "pt6posy",
+    "pt6posz",
+    "pt7posx",
+    "pt7posy",
+    "pt7posz"
+   ]
+  },
+  "light_rim/rectangle1": {
+   "type": "rectanglePOP",
+   "family": "POP",
+   "pos": [
+    0,
+    730
+   ],
+   "pars": {
+    "anchorv": 0.0,
+    "sizeu": 0.02,
+    "sizev": 0.5
+   }
+  },
+  "light_rim/sphere1": {
+   "type": "spherePOP",
+   "family": "POP",
+   "pos": [
+    520,
+    890
+   ],
+   "pars": {
+    "freq": 3,
+    "pageindex": 2,
+    "radx": 0.05,
+    "rady": 0.05,
+    "radz": 0.05
+   }
+  },
+  "light_rim/switch_lightType": {
+   "type": "switchPOP",
+   "family": "POP",
+   "pos": [
+    1140,
+    500
+   ],
+   "inputs": [
+    [
+     "light_rim/merge_pointLight"
+    ],
+    [
+     "light_rim/merge1"
+    ],
+    [
+     "light_rim/merge2"
+    ]
+   ],
+   "pars": {
+    "index": {
+     "expr": "parent().par.lighttype.menuIndex"
+    }
+   }
+  },
+  "light_rim/transform1": {
+   "type": "transformPOP",
+   "family": "POP",
+   "pos": [
+    450,
+    370
+   ],
+   "inputs": [
+    [
+     "light_rim/pointgen1"
+    ]
+   ],
+   "pars": {
+    "tz": 0.8
+   }
+  },
+  "light_rim/tube_attenuated": {
+   "type": "tubePOP",
+   "family": "POP",
+   "pos": [
+    368,
+    673
+   ],
+   "pars": {
+    "bypass": {
+     "expr": "not parent().par.attenuated"
+    },
+    "height": 0.0,
+    "orient": "z",
+    "radx": {
+     "expr": "parent().par.attenuationend"
+    },
+    "rady": {
+     "expr": "parent().par.attenuationstart"
+    },
+    "rows": 2,
+    "surftype": "rows"
+   }
+  },
+  "light_rim/tube_cone1": {
+   "type": "tubePOP",
+   "family": "POP",
+   "pos": [
+    0,
+    620
+   ],
+   "pars": {
+    "height": {
+     "expr": "mod.math.cos(mod.math.radians(parent().par.coneangle/2))"
+    },
+    "orient": "z",
+    "radx": {
+     "expr": "mod.math.sin(mod.math.radians(parent().par.coneangle/2))"
+    },
+    "rady": 0.01,
+    "rows": 2,
+    "tz": {
+     "expr": "-me.par.height*0.5"
+    }
+   }
+  },
+  "light_rim/tube_cone2": {
+   "type": "tubePOP",
+   "family": "POP",
+   "pos": [
+    0,
+    500
+   ],
+   "pars": {
+    "height": 0.0,
+    "orient": "z",
+    "radx": {
+     "expr": "mod.math.sin(mod.math.radians(parent().par.coneangle/2)) + mod.math.sin(mod.math.radians(parent().par.conedelta/2))"
+    },
+    "rady": {
+     "expr": "mod.math.sin(mod.math.radians(parent().par.coneangle/2))"
+    },
+    "rows": 2,
+    "tz": {
+     "expr": "-op('tube_cone1').par.height"
+    }
+   }
+  },
+  "local": {
+   "type": "baseCOMP",
+   "family": "COMP",
+   "pos": [
+    -400,
+    460
+   ]
+  },
+  "local/modules": {
+   "type": "baseCOMP",
+   "family": "COMP",
+   "pos": [
+    0,
+    0
+   ]
+  },
+  "local/modules/paths": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "file": {
+     "expr": "project.folder.replace(chr(92), '/') + '/experiments/sw_hub/paths_module.py'"
+    },
+    "language": "text",
+    "syncfile": true
+   },
+   "text_file": "experiments/sw_hub/paths_module.py"
+  },
+  "lv": {
+   "type": "constantCHOP",
+   "family": "CHOP",
+   "pos": [
+    -200,
+    60
+   ],
+   "pars": {
+    "const0name": "hue",
+    "const0value": {
+     "expr": "(op('tk')['hue'] * (0.75 + 0.5 * parent().par.Seed) + op('tk')['hk'] * min(1.2, op('hub')['hit_low'])) * (1 - 2 * op('tk')['secflip'] * (int(op('hub')['section']) % 2))"
+    },
+    "const1name": "gain",
+    "const1value": {
+     "expr": "op('tk')['gain']"
+    },
+    "const2name": "rot",
+    "const2value": {
+     "expr": "op('tk')['rot'] * (0.6 + 0.4 * math.sin(op('hub')['bar_pos'] * math.pi)) + 5 * op('tk')['rot'] / 14 * min(1.5, op('hub')['bass'])"
+    },
+    "const3name": "zoom",
+    "const3value": {
+     "expr": "op('tk')['zoom']"
+    },
+    "const4name": "p",
+    "const4value": {
+     "expr": "(op('hub')['bar_pos'] / op('tk')['bars']) % 1"
+    }
+   }
+  },
+  "m_crt": {
+   "type": "geometryCOMP",
+   "family": "COMP",
+   "pos": [
+    140,
+    -60
+   ],
+   "pars": {
+    "material": "/project1/sc_droste_crt/m_crt/mat",
+    "sx": 1.9444444444444446,
+    "sy": 1.5,
+    "sz": 1.2,
+    "tx": -0.35,
+    "ty": 2.01,
+    "tz": -0.12
+   }
+  },
+  "m_crt/mat": {
+   "type": "pbrMAT",
+   "family": "MAT",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "basecolormap": {
+     "expr": "op('plain')"
+    },
+    "metallic": 0.0,
+    "roughness": 0.5
+   }
+  },
+  "m_crt/mesh": {
+   "type": "fileinPOP",
+   "family": "POP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.model_file('')"
+    }
+   }
+  },
+  "m_crt/plain": {
+   "type": "constantTOP",
+   "family": "TOP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "colorb": 0.65,
+    "colorg": 0.75,
+    "colorr": 0.78,
+    "outputresolution": "custom",
+    "resolutionh": 16,
+    "resolutionw": 16
+   }
+  },
+  "m_crt/scrn": {
+   "type": "geometryCOMP",
+   "family": "COMP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "material": "/project1/sc_droste_crt/m_crt/scrn/mat"
+   }
+  },
+  "m_crt/scrn/bulge": {
+   "type": "pointSOP",
+   "family": "SOP",
+   "pos": [
+    0,
+    0
+   ],
+   "inputs": [
+    [
+     "m_crt/scrn/grid"
+    ]
+   ],
+   "pars": {
+    "tx": {
+     "expr": "me.inputPoint.x"
+    },
+    "ty": {
+     "expr": "me.inputPoint.y"
+    },
+    "tz": {
+     "expr": "0.436 + -0.108 * (me.inputPoint.y - 0.10999999999999999) + -0.27 * (me.inputPoint.y - 0.10999999999999999) ** 2 + -0.25 * (me.inputPoint.x - -0.0050000000000000044) ** 2"
+    }
+   }
+  },
+  "m_crt/scrn/grid": {
+   "type": "gridSOP",
+   "family": "SOP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "cols": 13,
+    "rows": 9,
+    "sizex": 0.48,
+    "sizey": 0.35,
+    "tx": -0.0050000000000000044,
+    "ty": 0.10999999999999999
+   }
+  },
+  "m_crt/scrn/mat": {
+   "type": "constantMAT",
+   "family": "MAT",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "colormap": "/project1/sc_droste_crt/scr"
+   }
+  },
+  "m_crt/shape": {
+   "type": "switchPOP",
+   "family": "POP",
+   "pos": [
+    0,
+    0
+   ],
+   "inputs": [
+    [
+     "m_crt/mesh"
+    ],
+    [
+     "m_crt/standin"
+    ]
+   ],
+   "pars": {
+    "index": {
+     "expr": "0 if False else 1"
+    }
+   }
+  },
+  "m_crt/standin": {
+   "type": "mergePOP",
+   "family": "POP",
+   "pos": [
+    0,
+    0
+   ],
+   "inputs": [
+    [
+     "m_crt/standin_b0"
+    ],
+    [
+     "m_crt/standin_b1"
+    ],
+    [
+     "m_crt/standin_b2"
+    ],
+    [
+     "m_crt/standin_b3"
+    ],
+    [
+     "m_crt/standin_b4"
+    ],
+    [
+     "m_crt/standin_b5"
+    ],
+    [
+     "m_crt/standin_b6"
+    ],
+    [
+     "m_crt/standin_b7"
+    ]
+   ]
+  },
+  "m_crt/standin_b0": {
+   "type": "boxPOP",
+   "family": "POP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "sizex": 0.652,
+    "sizey": 0.492,
+    "sizez": 0.69,
+    "ty": 0.126,
+    "tz": 0.04500000000000001,
+    "uniquepoints": true
+   }
+  },
+  "m_crt/standin_b1": {
+   "type": "boxPOP",
+   "family": "POP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "sizex": 0.46,
+    "sizey": 0.37,
+    "sizez": 0.2,
+    "ty": 0.125,
+    "tz": -0.4,
+    "uniquepoints": true
+   }
+  },
+  "m_crt/standin_b2": {
+   "type": "boxPOP",
+   "family": "POP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "sizex": 0.6,
+    "sizey": 0.237,
+    "sizez": 0.92,
+    "ty": -0.2535,
+    "tz": 0.06,
+    "uniquepoints": true
+   }
+  },
+  "m_crt/standin_b3": {
+   "type": "boxPOP",
+   "family": "POP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "sizex": 0.652,
+    "sizey": 0.08700000000000002,
+    "sizez": 0.07999999999999996,
+    "ty": 0.3285,
+    "tz": 0.43,
+    "uniquepoints": true
+   }
+  },
+  "m_crt/standin_b4": {
+   "type": "boxPOP",
+   "family": "POP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "sizex": 0.652,
+    "sizey": 0.05499999999999999,
+    "sizez": 0.07999999999999996,
+    "ty": -0.0925,
+    "tz": 0.43,
+    "uniquepoints": true
+   }
+  },
+  "m_crt/standin_b5": {
+   "type": "boxPOP",
+   "family": "POP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "sizex": 0.08100000000000002,
+    "sizey": 0.35,
+    "sizez": 0.07999999999999996,
+    "tx": -0.2855,
+    "ty": 0.10999999999999999,
+    "tz": 0.43,
+    "uniquepoints": true
+   }
+  },
+  "m_crt/standin_b6": {
+   "type": "boxPOP",
+   "family": "POP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "sizex": 0.09100000000000003,
+    "sizey": 0.35,
+    "sizez": 0.07999999999999996,
+    "tx": 0.28049999999999997,
+    "ty": 0.10999999999999999,
+    "tz": 0.43,
+    "uniquepoints": true
+   }
+  },
+  "m_crt/standin_b7": {
+   "type": "boxPOP",
+   "family": "POP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "sizex": 0.19,
+    "sizey": 0.02400000000000002,
+    "sizez": 0.01200000000000001,
+    "tx": 0.125,
+    "ty": -0.25,
+    "tz": 0.526,
+    "uniquepoints": true
+   }
+  },
+  "m_crt/tex": {
+   "type": "moviefileinTOP",
+   "family": "TOP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.model_texture('')"
+    }
+   }
+  },
+  "m_desk": {
+   "type": "geometryCOMP",
+   "family": "COMP",
+   "pos": [
+    140,
+    60
+   ],
+   "pars": {
+    "material": "/project1/sc_droste_crt/m_desk/mat",
+    "render": {
+     "expr": "op('tk')['room'] > 0.5"
+    },
+    "scale": 3.0,
+    "ty": 0.726
+   }
+  },
+  "m_desk/mat": {
+   "type": "pbrMAT",
+   "family": "MAT",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "basecolormap": {
+     "expr": "op('plain')"
+    },
+    "metallic": 0.0,
+    "roughness": 0.6
+   }
+  },
+  "m_desk/mesh": {
+   "type": "fileinPOP",
+   "family": "POP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.model_file('')"
+    }
+   }
+  },
+  "m_desk/plain": {
+   "type": "constantTOP",
+   "family": "TOP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "colorb": 0.24,
+    "colorg": 0.44,
+    "colorr": 0.62,
+    "outputresolution": "custom",
+    "resolutionh": 16,
+    "resolutionw": 16
+   }
+  },
+  "m_desk/shape": {
+   "type": "switchPOP",
+   "family": "POP",
+   "pos": [
+    0,
+    0
+   ],
+   "inputs": [
+    [
+     "m_desk/mesh"
+    ],
+    [
+     "m_desk/standin"
+    ]
+   ],
+   "pars": {
+    "index": {
+     "expr": "0 if False else 1"
+    }
+   }
+  },
+  "m_desk/standin": {
+   "type": "mergePOP",
+   "family": "POP",
+   "pos": [
+    0,
+    0
+   ],
+   "inputs": [
+    [
+     "m_desk/standin_b0"
+    ],
+    [
+     "m_desk/standin_b1"
+    ],
+    [
+     "m_desk/standin_b2"
+    ],
+    [
+     "m_desk/standin_b3"
+    ]
+   ]
+  },
+  "m_desk/standin_b0": {
+   "type": "boxPOP",
+   "family": "POP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "sizey": 0.03,
+    "sizez": 0.504,
+    "ty": 0.22699999999999998,
+    "uniquepoints": true
+   }
+  },
+  "m_desk/standin_b1": {
+   "type": "boxPOP",
+   "family": "POP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "sizex": 0.27999999999999997,
+    "sizey": 0.45399999999999996,
+    "sizez": 0.47,
+    "tx": -0.33999999999999997,
+    "ty": -0.015,
+    "uniquepoints": true
+   }
+  },
+  "m_desk/standin_b2": {
+   "type": "boxPOP",
+   "family": "POP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "sizex": 0.27999999999999997,
+    "sizey": 0.45399999999999996,
+    "sizez": 0.47,
+    "tx": 0.33999999999999997,
+    "ty": -0.015,
+    "uniquepoints": true
+   }
+  },
+  "m_desk/standin_b3": {
+   "type": "boxPOP",
+   "family": "POP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "sizex": 0.4,
+    "sizey": 0.312,
+    "sizez": 0.01999999999999999,
+    "ty": 0.055999999999999994,
+    "tz": -0.22499999999999998,
+    "uniquepoints": true
+   }
+  },
+  "m_desk/tex": {
+   "type": "moviefileinTOP",
+   "family": "TOP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.model_texture('')"
+    }
+   }
+  },
+  "m_glow": {
+   "type": "geometryCOMP",
+   "family": "COMP",
+   "pos": [
+    140,
+    -300
+   ],
+   "pars": {
+    "material": "/project1/sc_droste_crt/m_glow/mat",
+    "render": {
+     "expr": "op('tk')['room'] > 0.5"
+    },
+    "ry": -35.0,
+    "rz": {
+     "expr": "3 * math.sin(op('hub')['beat_pos'] * math.pi)"
+    },
+    "tx": 1.12,
+    "ty": 1.952,
+    "tz": -0.3
+   }
+  },
+  "m_glow/fit": {
+   "type": "transformPOP",
+   "family": "POP",
+   "pos": [
+    0,
+    0
+   ],
+   "inputs": [
+    [
+     "m_glow/mesh"
+    ]
+   ],
+   "pars": {
+    "scale": 0.4073388198477877,
+    "tx": 0.005668730686411737,
+    "ty": -0.5
+   }
+  },
+  "m_glow/mat": {
+   "type": "pbrMAT",
+   "family": "MAT",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "basecolormap": {
+     "expr": "op('tex') if mod.paths.model_texture('astrolabe') else op('plain')"
+    },
+    "emitb": {
+     "expr": "0.25 + 0.9 * min(1.3, parent(2).op('hub')['hit_low'])"
+    },
+    "emitg": {
+     "expr": "0.25 + 0.9 * min(1.3, parent(2).op('hub')['hit_low'])"
+    },
+    "emitmap": {
+     "expr": "op('tex') if mod.paths.model_texture('astrolabe') else op('plain')"
+    },
+    "emitr": {
+     "expr": "0.25 + 0.9 * min(1.3, parent(2).op('hub')['hit_low'])"
+    },
+    "metallic": 0.0,
+    "roughness": 0.6
+   }
+  },
+  "m_glow/mesh": {
+   "type": "fileinPOP",
+   "family": "POP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.model_file('astrolabe')"
+    }
+   }
+  },
+  "m_glow/plain": {
+   "type": "constantTOP",
+   "family": "TOP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "colorb": 0.24,
+    "colorg": 0.56,
+    "colorr": 0.72,
+    "outputresolution": "custom",
+    "resolutionh": 16,
+    "resolutionw": 16
+   }
+  },
+  "m_glow/shape": {
+   "type": "switchPOP",
+   "family": "POP",
+   "pos": [
+    0,
+    0
+   ],
+   "inputs": [
+    [
+     "m_glow/mesh"
+    ],
+    [
+     "m_glow/fit"
+    ]
+   ],
+   "pars": {
+    "index": {
+     "expr": "0 if mod.paths.have('models/astrolabe/model.obj') else 1"
+    }
+   }
+  },
+  "m_glow/tex": {
+   "type": "moviefileinTOP",
+   "family": "TOP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.model_texture('astrolabe')"
+    }
+   }
+  },
+  "m_hat": {
+   "type": "geometryCOMP",
+   "family": "COMP",
+   "pos": [
+    140,
+    -660
+   ],
+   "pars": {
+    "material": "/project1/sc_droste_crt/m_hat/mat",
+    "render": {
+     "expr": "op('tk')['room'] > 0.5"
+    },
+    "ry": {
+     "expr": "62 + 25 * math.sin(op('hub')['beat_pos'] * math.pi * 0.5)"
+    },
+    "scale": 0.36,
+    "tx": 0.26,
+    "ty": {
+     "expr": "1.632 + 0.10 * min(1.2, op('hub')['hit_high'])"
+    },
+    "tz": 0.6
+   }
+  },
+  "m_hat/fit": {
+   "type": "transformPOP",
+   "family": "POP",
+   "pos": [
+    0,
+    0
+   ],
+   "inputs": [
+    [
+     "m_hat/mesh"
+    ]
+   ],
+   "pars": {
+    "scale": 0.45825617232876115,
+    "tx": 0.006377322022213204,
+    "ty": -0.5
+   }
+  },
+  "m_hat/mat": {
+   "type": "pbrMAT",
+   "family": "MAT",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "basecolormap": {
+     "expr": "op('tex') if mod.paths.model_texture('lander') else op('plain')"
+    },
+    "metallic": 0.0,
+    "roughness": 0.6
+   }
+  },
+  "m_hat/mesh": {
+   "type": "fileinPOP",
+   "family": "POP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.model_file('lander')"
+    }
+   }
+  },
+  "m_hat/plain": {
+   "type": "constantTOP",
+   "family": "TOP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "colorb": 0.22,
+    "colorg": 0.66,
+    "colorr": 0.8,
+    "outputresolution": "custom",
+    "resolutionh": 16,
+    "resolutionw": 16
+   }
+  },
+  "m_hat/shape": {
+   "type": "switchPOP",
+   "family": "POP",
+   "pos": [
+    0,
+    0
+   ],
+   "inputs": [
+    [
+     "m_hat/mesh"
+    ],
+    [
+     "m_hat/fit"
+    ]
+   ],
+   "pars": {
+    "index": {
+     "expr": "0 if mod.paths.have('models/lander/model.obj') else 1"
+    }
+   }
+  },
+  "m_hat/tex": {
+   "type": "moviefileinTOP",
+   "family": "TOP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.model_texture('lander')"
+    }
+   }
+  },
+  "m_kick": {
+   "type": "geometryCOMP",
+   "family": "COMP",
+   "pos": [
+    140,
+    -180
+   ],
+   "pars": {
+    "material": "/project1/sc_droste_crt/m_kick/mat",
+    "render": {
+     "expr": "op('tk')['room'] > 0.5"
+    },
+    "ry": 25.0,
+    "scale": 0.34,
+    "tx": -0.38,
+    "ty": {
+     "expr": "1.5846 + 0.05 * min(1.2, op('hub')['hit_low'])"
+    },
+    "tz": 0.585
+   }
+  },
+  "m_kick/fit": {
+   "type": "transformPOP",
+   "family": "POP",
+   "pos": [
+    0,
+    0
+   ],
+   "inputs": [
+    [
+     "m_kick/mesh"
+    ]
+   ],
+   "pars": {
+    "scale": 0.5091735248097345,
+    "tx": 0.00708591335801467,
+    "ty": -0.39
+   }
+  },
+  "m_kick/mat": {
+   "type": "pbrMAT",
+   "family": "MAT",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "basecolormap": {
+     "expr": "op('tex') if mod.paths.model_texture('rubber_duck') else op('plain')"
+    },
+    "metallic": 0.0,
+    "roughness": 0.6
+   }
+  },
+  "m_kick/mesh": {
+   "type": "fileinPOP",
+   "family": "POP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.model_file('rubber_duck')"
+    }
+   }
+  },
+  "m_kick/plain": {
+   "type": "constantTOP",
+   "family": "TOP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "colorb": 0.2,
+    "colorg": 0.76,
+    "colorr": 0.93,
+    "outputresolution": "custom",
+    "resolutionh": 16,
+    "resolutionw": 16
+   }
+  },
+  "m_kick/shape": {
+   "type": "switchPOP",
+   "family": "POP",
+   "pos": [
+    0,
+    0
+   ],
+   "inputs": [
+    [
+     "m_kick/mesh"
+    ],
+    [
+     "m_kick/fit"
+    ]
+   ],
+   "pars": {
+    "index": {
+     "expr": "0 if mod.paths.have('models/rubber_duck/model.obj') else 1"
+    }
+   }
+  },
+  "m_kick/tex": {
+   "type": "moviefileinTOP",
+   "family": "TOP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.model_texture('rubber_duck')"
+    }
+   }
+  },
+  "m_rattle": {
+   "type": "geometryCOMP",
+   "family": "COMP",
+   "pos": [
+    140,
+    -420
+   ],
+   "pars": {
+    "material": "/project1/sc_droste_crt/m_rattle/mat",
+    "render": {
+     "expr": "op('tk')['room'] > 0.5"
+    },
+    "ry": -22.0,
+    "rz": {
+     "expr": "5 * op('hub')['hit_high'] * math.sin(absTime.seconds * 70)"
+    },
+    "scale": 0.55,
+    "tx": 0.8,
+    "ty": 1.7269999999999999,
+    "tz": 0.44
+   }
+  },
+  "m_rattle/fit": {
+   "type": "transformPOP",
+   "family": "POP",
+   "pos": [
+    0,
+    0
+   ],
+   "inputs": [
+    [
+     "m_rattle/mesh"
+    ]
+   ],
+   "pars": {
+    "scale": 0.4073388198477877,
+    "tx": 0.005668730686411737,
+    "ty": -0.5
+   }
+  },
+  "m_rattle/mat": {
+   "type": "pbrMAT",
+   "family": "MAT",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "basecolormap": {
+     "expr": "op('tex') if mod.paths.model_texture('gramophone') else op('plain')"
+    },
+    "metallic": 0.0,
+    "roughness": 0.6
+   }
+  },
+  "m_rattle/mesh": {
+   "type": "fileinPOP",
+   "family": "POP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.model_file('gramophone')"
+    }
+   }
+  },
+  "m_rattle/plain": {
+   "type": "constantTOP",
+   "family": "TOP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "colorb": 0.16,
+    "colorg": 0.22,
+    "colorr": 0.5,
+    "outputresolution": "custom",
+    "resolutionh": 16,
+    "resolutionw": 16
+   }
+  },
+  "m_rattle/shape": {
+   "type": "switchPOP",
+   "family": "POP",
+   "pos": [
+    0,
+    0
+   ],
+   "inputs": [
+    [
+     "m_rattle/mesh"
+    ],
+    [
+     "m_rattle/fit"
+    ]
+   ],
+   "pars": {
+    "index": {
+     "expr": "0 if mod.paths.have('models/gramophone/model.obj') else 1"
+    }
+   }
+  },
+  "m_rattle/tex": {
+   "type": "moviefileinTOP",
+   "family": "TOP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.model_texture('gramophone')"
+    }
+   }
+  },
+  "m_snare": {
+   "type": "geometryCOMP",
+   "family": "COMP",
+   "pos": [
+    140,
+    -540
+   ],
+   "pars": {
+    "material": "/project1/sc_droste_crt/m_snare/mat",
+    "render": {
+     "expr": "op('tk')['room'] > 0.5"
+    },
+    "ry": 40.0,
+    "rz": {
+     "expr": "14 * op('hub')['hit_mid']"
+    },
+    "scale": 0.48,
+    "tx": -1.12,
+    "ty": {
+     "expr": "1.692 + 0.22 * min(1.2, op('hub')['hit_mid'])"
+    },
+    "tz": 0.36
+   }
+  },
+  "m_snare/fit": {
+   "type": "transformPOP",
+   "family": "POP",
+   "pos": [
+    0,
+    0
+   ],
+   "inputs": [
+    [
+     "m_snare/mesh"
+    ]
+   ],
+   "pars": {
+    "scale": 0.3564214673668142,
+    "tx": 0.004960139350610269,
+    "ty": -0.5
+   }
+  },
+  "m_snare/mat": {
+   "type": "pbrMAT",
+   "family": "MAT",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "basecolormap": {
+     "expr": "op('tex') if mod.paths.model_texture('amphora') else op('plain')"
+    },
+    "metallic": 0.0,
+    "roughness": 0.6
+   }
+  },
+  "m_snare/mesh": {
+   "type": "fileinPOP",
+   "family": "POP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.model_file('amphora')"
+    }
+   }
+  },
+  "m_snare/plain": {
+   "type": "constantTOP",
+   "family": "TOP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "colorb": 0.22,
+    "colorg": 0.36,
+    "colorr": 0.72,
+    "outputresolution": "custom",
+    "resolutionh": 16,
+    "resolutionw": 16
+   }
+  },
+  "m_snare/shape": {
+   "type": "switchPOP",
+   "family": "POP",
+   "pos": [
+    0,
+    0
+   ],
+   "inputs": [
+    [
+     "m_snare/mesh"
+    ],
+    [
+     "m_snare/fit"
+    ]
+   ],
+   "pars": {
+    "index": {
+     "expr": "0 if mod.paths.have('models/amphora/model.obj') else 1"
+    }
+   }
+  },
+  "m_snare/tex": {
+   "type": "moviefileinTOP",
+   "family": "TOP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.model_texture('amphora')"
+    }
+   }
+  },
+  "macro": {
+   "type": "glslTOP",
+   "family": "TOP",
+   "pos": [
+    820,
+    -1020
+   ],
+   "inputs": [
+    [
+     "scr"
+    ]
+   ],
+   "pars": {
+    "computedat": "macro_compute",
+    "format": "rgba16float",
+    "outputresolution": "custom",
+    "pixeldat": "macro_frag",
+    "resolutionh": 720,
+    "resolutionw": 1280,
+    "vec0name": "uP",
+    "vec0valuew": {
+     "expr": "15 + 3 * int(parent().par.Seed * 2.99)"
+    },
+    "vec0valuex": {
+     "expr": "0.36 + 0.10 * math.sin(op('hub')['evolve'] * 0.7 + parent().par.Seed * 6.283)"
+    },
+    "vec0valuey": {
+     "expr": "0.60 + 0.06 * math.cos(op('hub')['evolve'] * 0.5 + parent().par.Seed * 9.0)"
+    },
+    "vec0valuez": {
+     "expr": "op('tk')['mz'] * (0.75 + 0.7 * parent().par.Seed) * (1 + 0.10 * min(1.2, op('hub')['hit_low']))"
+    },
+    "vec1name": "uQ",
+    "vec1valuew": {
+     "expr": "op('shot')['age']"
+    },
+    "vec1valuex": {
+     "expr": "op('hub')['hit_low']"
+    },
+    "vec1valuey": {
+     "expr": "min(1.0, op('hub')['hit_high'])"
+    },
+    "vec1valuez": {
+     "expr": "op('hub')['pulse']"
+    }
+   }
+  },
+  "macro_frag": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    820,
+    -900
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.here('shaders/macro.frag')"
+    },
+    "language": "text",
+    "syncfile": true
+   },
+   "text_file": "experiments/sc_droste_crt/shaders/macro.frag"
+  },
+  "macro_info": {
+   "type": "infoDAT",
+   "family": "DAT",
+   "pos": [
+    160,
+    -120
+   ],
+   "pars": {
+    "language": "text",
+    "op": "macro"
+   }
+  },
+  "mast": {
+   "type": "nullTOP",
+   "family": "TOP",
+   "pos": [
+    820,
+    180
+   ],
+   "inputs": [
+    [
+     "render_m_in"
+    ]
+   ]
+  },
+  "out1": {
+   "type": "outTOP",
+   "family": "TOP",
+   "pos": [
+    990,
+    -900
+   ],
+   "inputs": [
+    [
+     "final"
+    ]
+   ]
+  },
+  "phr": {
+   "type": "tableDAT",
+   "family": "DAT",
+   "pos": [
+    650,
+    -540
+   ],
+   "text": [
+    "REAL|TIME",
+    "HERE.",
+    "NOW.",
+    "DO NOT|TOUCH",
+    "PLATE|07",
+    "NO|PLAYBACK",
+    "SOUND IN|PICTURE|OUT",
+    "EXHIBIT|12-B",
+    "LOUD IS|BRIGHT",
+    "LOOP.|LOOP.",
+    "FEEDBACK|OPEN",
+    "FOUND,|NOT MADE",
+    "SIGNAL|IN.",
+    "FRAME|0047",
+    "OUT OF|NOISE",
+    "MADE OF|LIGHT"
+   ]
+  },
+  "phr_d": {
+   "type": "tableDAT",
+   "family": "DAT",
+   "pos": [
+    650,
+    -780
+   ],
+   "text": [
+    "VIDEO|FEEDBACK",
+    "A SCREEN",
+    "SHOWING",
+    "ITS OWN|LAST|FRAME",
+    "CAMERA|TOO CLOSE",
+    "SO EACH|COPY IS",
+    "BIGGER",
+    "NOT|SMALLER",
+    "WORDS|FLY OUT",
+    "ONE WORD|PER BEAT",
+    "DRAWN|SMALL",
+    "IN THE|CENTRE",
+    "HUE TURNS|EACH STEP",
+    "OLDER IS|BIGGER",
+    "NO ROOM",
+    "ONLY|THE LOOP"
+   ]
+  },
+  "post": {
+   "type": "glslTOP",
+   "family": "TOP",
+   "pos": [
+    990,
+    -60
+   ],
+   "inputs": [
+    [
+     "view"
+    ],
+    [
+     "glow_blur"
+    ],
+    [
+     "scr"
+    ]
+   ],
+   "pars": {
+    "computedat": "post_compute",
+    "format": "rgba8fixed",
+    "outputresolution": "custom",
+    "pixeldat": "post_frag",
+    "resolutionh": 720,
+    "resolutionw": 1280,
+    "vec0name": "uComp",
+    "vec0valuew": {
+     "expr": "op('tk')['bit']"
+    },
+    "vec0valuex": {
+     "expr": "-op('lv')['hue'] * op('lv')['p'] if (op('tk')['view'] == 1 and op('tk')['omode'] < 0.5) else 0"
+    },
+    "vec0valuey": {
+     "expr": "op('lv')['gain'] ** -op('lv')['p'] if (op('tk')['view'] == 1 and op('tk')['omode'] < 0.5) else 1"
+    },
+    "vec0valuez": {
+     "expr": "tdu.clamp((op('lv')['p'] - 0.955) / 0.045, 0, 1) if (op('tk')['view'] == 1 and op('tk')['omode'] < 0.5) else 0"
+    },
+    "vec1name": "uA",
+    "vec1valuew": {
+     "expr": "op('hub')['evolve']"
+    },
+    "vec1valuex": {
+     "expr": "op('shot')['age']"
+    },
+    "vec1valuey": {
+     "expr": "op('hub')['pulse']"
+    },
+    "vec1valuez": {
+     "expr": "min(1.0, op('hub')['hit_high'])"
+    },
+    "vec2name": "uG",
+    "vec2valuew": {
+     "expr": "op('tk')['grain']"
+    },
+    "vec2valuex": {
+     "expr": "op('tk')['psat']"
+    },
+    "vec2valuey": {
+     "expr": "op('tk')['pcon']"
+    },
+    "vec2valuez": {
+     "expr": "op('tk')['vign']"
+    },
+    "vec3name": "uTintP",
+    "vec3valuew": {
+     "expr": "op('tk')['bloom']"
+    },
+    "vec3valuex": {
+     "expr": "op('tk')['sr']"
+    },
+    "vec3valuey": {
+     "expr": "op('tk')['sg']"
+    },
+    "vec3valuez": {
+     "expr": "op('tk')['sb']"
+    },
+    "vec4name": "uB",
+    "vec4valuew": {
+     "expr": "0"
+    },
+    "vec4valuex": {
+     "expr": "min(1.2, op('hub')['hit_low'])"
+    },
+    "vec4valuey": {
+     "expr": "int(op('hub')['hits_low']) % 2"
+    },
+    "vec4valuez": {
+     "expr": "0"
+    }
+   }
+  },
+  "post_frag": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    990,
+    60
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.here('shaders/post.frag')"
+    },
+    "language": "text",
+    "syncfile": true
+   },
+   "text_file": "experiments/sc_droste_crt/shaders/post.frag"
+  },
+  "post_info": {
+   "type": "infoDAT",
+   "family": "DAT",
+   "pos": [
+    160,
+    -120
+   ],
+   "pars": {
+    "language": "text",
+    "op": "post"
+   }
+  },
+  "r_floor": {
+   "type": "geometryCOMP",
+   "family": "COMP",
+   "pos": [
+    140,
+    300
+   ],
+   "pars": {
+    "material": "/project1/sc_droste_crt/r_floor/mat",
+    "render": {
+     "expr": "op('tk')['room'] > 0.5 and op('inc')['bg'] < 0.5"
+    },
+    "rx": -90.0,
+    "tz": 2.0
+   }
+  },
+  "r_floor/grid": {
+   "type": "gridSOP",
+   "family": "SOP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "cols": 2,
+    "rows": 2,
+    "sizex": 24.0,
+    "sizey": 24.0
+   }
+  },
+  "r_floor/mat": {
+   "type": "pbrMAT",
+   "family": "MAT",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "basecolorb": 0.19,
+    "basecolorg": 0.21,
+    "basecolorr": 0.2,
+    "metallic": 0.0,
+    "roughness": 0.85
+   }
+  },
+  "r_wall": {
+   "type": "geometryCOMP",
+   "family": "COMP",
+   "pos": [
+    140,
+    180
+   ],
+   "pars": {
+    "material": "/project1/sc_droste_crt/r_wall/mat",
+    "render": {
+     "expr": "op('tk')['room'] > 0.5 and op('inc')['bg'] < 0.5"
+    },
+    "ty": 4.5,
+    "tz": -1.75
+   }
+  },
+  "r_wall/grid": {
+   "type": "gridSOP",
+   "family": "SOP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "cols": 2,
+    "rows": 2,
+    "sizex": 24.0,
+    "sizey": 9.0
+   }
+  },
+  "r_wall/mat": {
+   "type": "pbrMAT",
+   "family": "MAT",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "basecolorb": {
+     "expr": "parent(2).op('tk')['wb']"
+    },
+    "basecolorg": {
+     "expr": "parent(2).op('tk')['wg']"
+    },
+    "basecolorr": {
+     "expr": "parent(2).op('tk')['wr']"
+    },
+    "metallic": 0.0,
+    "roughness": 0.8
+   }
+  },
+  "render_m": {
+   "type": "renderTOP",
+   "family": "TOP",
+   "pos": [
+    820,
+    300
+   ],
+   "pars": {
+    "bgcolora": {
+     "expr": "0 if op('inc')['bg'] > 0.5 else 1"
+    },
+    "bgcolorb": 0.01,
+    "bgcolorg": 0.006,
+    "bgcolorr": 0.004,
+    "camera": "/project1/sc_droste_crt/cam_m",
+    "format": "rgba16float",
+    "geometry": "m_* r_* w_* m_crt/scrn",
+    "lights": "light_*",
+    "resolutionh": 720,
+    "resolutionw": 1280
+   }
+  },
+  "render_m_in": {
+   "type": "switchTOP",
+   "family": "TOP",
+   "pos": [
+    820,
+    -60
+   ],
+   "inputs": [
+    [
+     "render_m"
+    ],
+    [
+     "render_m_ov"
+    ]
+   ],
+   "pars": {
+    "index": {
+     "expr": "1 if op('inc')['bg'] > 0.5 else 0"
+    }
+   }
+  },
+  "render_m_ov": {
+   "type": "overTOP",
+   "family": "TOP",
+   "pos": [
+    820,
+    60
+   ],
+   "inputs": [
+    [
+     "render_m"
+    ],
+    [
+     "inlev"
+    ]
+   ],
+   "pars": {
+    "format": "rgba16float"
+   }
+  },
+  "render_o": {
+   "type": "renderTOP",
+   "family": "TOP",
+   "pos": [
+    820,
+    -180
+   ],
+   "pars": {
+    "bgcolora": {
+     "expr": "0 if op('inc')['bg'] > 0.5 else 1"
+    },
+    "bgcolorb": 0.01,
+    "bgcolorg": 0.006,
+    "bgcolorr": 0.004,
+    "camera": "/project1/sc_droste_crt/cam_o",
+    "format": "rgba16float",
+    "geometry": "m_* r_* w_* m_crt/scrn",
+    "lights": "light_*",
+    "resolutionh": 720,
+    "resolutionw": 1280
+   }
+  },
+  "render_o_in": {
+   "type": "switchTOP",
+   "family": "TOP",
+   "pos": [
+    820,
+    -420
+   ],
+   "inputs": [
+    [
+     "render_o"
+    ],
+    [
+     "render_o_ov"
+    ]
+   ],
+   "pars": {
+    "index": {
+     "expr": "1 if op('inc')['bg'] > 0.5 else 0"
+    }
+   }
+  },
+  "render_o_ov": {
+   "type": "overTOP",
+   "family": "TOP",
+   "pos": [
+    820,
+    -300
+   ],
+   "inputs": [
+    [
+     "render_o"
+    ],
+    [
+     "inlev"
+    ]
+   ],
+   "pars": {
+    "format": "rgba16float"
+   }
+  },
+  "scr": {
+   "type": "glslTOP",
+   "family": "TOP",
+   "pos": [
+    650,
+    -1020
+   ],
+   "inputs": [
+    [
+     "feed"
+    ],
+    [
+     "term"
+    ],
+    [
+     "inlev"
+    ]
+   ],
+   "pars": {
+    "computedat": "scr_compute",
+    "format": "rgba16float",
+    "outputresolution": "custom",
+    "pixeldat": "scr_frag",
+    "resolutionh": 720,
+    "resolutionw": 1280,
+    "vec0name": "uT",
+    "vec0valuew": {
+     "expr": "op('lv')['zoom']"
+    },
+    "vec0valuex": {
+     "expr": "op('lv')['hue']"
+    },
+    "vec0valuey": {
+     "expr": "op('lv')['gain']"
+    },
+    "vec0valuez": {
+     "expr": "op('lv')['rot']"
+    },
+    "vec1name": "uM",
+    "vec1valuew": {
+     "expr": "op('tk')['scan']"
+    },
+    "vec1valuex": {
+     "expr": "op('tk')['inv']"
+    },
+    "vec1valuey": {
+     "expr": "op('tk')['mono']"
+    },
+    "vec1valuez": {
+     "expr": "op('tk')['flip']"
+    },
+    "vec2name": "uS",
+    "vec2valuew": {
+     "expr": "op('tk')['edge']"
+    },
+    "vec2valuex": {
+     "expr": "op('shot')['age']"
+    },
+    "vec2valuey": {
+     "expr": "(1 if op('tk')['text'] < 1.5 else float(op('hub')['beat'] < 0.45) * (0 if (op('inc')['gl'] > 0.5 and not parent().par.Describe) else 1)) * min(1, op('tk')['text'])"
+    },
+    "vec2valuez": {
+     "expr": "op('hub')['pulse']"
+    },
+    "vec3name": "uTint",
+    "vec3valuew": {
+     "expr": "op('tk')['lsat']"
+    },
+    "vec3valuex": {
+     "expr": "op('tk')['tr']"
+    },
+    "vec3valuey": {
+     "expr": "op('tk')['tg']"
+    },
+    "vec3valuez": {
+     "expr": "op('tk')['tb']"
+    },
+    "vec4name": "uX",
+    "vec4valuew": {
+     "expr": "0"
+    },
+    "vec4valuex": {
+     "expr": "op('tk')['tscale']"
+    },
+    "vec4valuey": {
+     "expr": "op('tk')['kick'] * min(1.2, op('hub')['hit_low'])"
+    },
+    "vec4valuez": {
+     "expr": "op('tk')['inlit']"
+    },
+    "vec5name": "uI",
+    "vec5valuew": {
+     "expr": "op('tk')['inkey']"
+    },
+    "vec5valuex": {
+     "expr": "op('inc')['gl'] * (1 if op('tk')['text'] < 1.5 else float(op('hub')['beat'] < 0.45))"
+    },
+    "vec5valuey": {
+     "expr": "op('tk')['inmix']"
+    },
+    "vec5valuez": {
+     "expr": "op('tk')['inscale']"
+    }
+   }
+  },
+  "scr_frag": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    650,
+    -900
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.here('shaders/screen.frag')"
+    },
+    "language": "text",
+    "syncfile": true
+   },
+   "text_file": "experiments/sc_droste_crt/shaders/screen.frag"
+  },
+  "scr_info": {
+   "type": "infoDAT",
+   "family": "DAT",
+   "pos": [
+    160,
+    -120
+   ],
+   "pars": {
+    "language": "text",
+    "op": "scr"
+   }
+  },
+  "shot": {
+   "type": "constantCHOP",
+   "family": "CHOP",
+   "pos": [
+    -200,
+    300
+   ],
+   "pars": {
+    "const0name": "take",
+    "const0value": {
+     "expr": "parent().par.Take"
+    },
+    "const1name": "seed",
+    "const1value": {
+     "expr": "parent().par.Seed"
+    },
+    "const2name": "age",
+    "const2value": {
+     "expr": "max(0, absTime.seconds - parent().par.Shotstart)"
+    }
+   }
+  },
+  "spectrum": {
+   "type": "selectTOP",
+   "family": "TOP",
+   "pos": [
+    -400,
+    60
+   ],
+   "pars": {
+    "top": "/project1/sw_hub/spectex"
+   }
+  },
+  "term": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    650,
+    -300
+   ],
+   "pars": {
+    "alignx": {
+     "expr": "'center' if op('tk')['text'] > 1.5 else 'left'"
+    },
+    "aligny": {
+     "expr": "'center' if op('tk')['text'] > 1.5 else 'top'"
+    },
+    "bold": {
+     "expr": "not mod.paths.font('chicago')"
+    },
+    "borderspace1": 90.0,
+    "borderspace2": 80.0,
+    "font": "Arial",
+    "fontfile": {
+     "expr": "mod.paths.font('chicago')"
+    },
+    "fontsizex": {
+     "expr": "150 if op('tk')['text'] > 1.5 else 46"
+    },
+    "linespacing": 14.0,
+    "outputresolution": "custom",
+    "resmult": false,
+    "resolutionh": 720,
+    "resolutionw": 1280,
+    "text": {
+     "expr": "'' if op('tk')['text'] < 0.5 else ((op('terms_d' if parent().par.Describe else 'terms')[int(parent().par.Seed * 997) % op('terms_d' if parent().par.Describe else 'terms').numRows, 0].val.replace('|', chr(10))[:int(op('shot')['age'] * 26)] + ('_' if int(absTime.seconds * 4) % 2 else ' ')) if op('tk')['text'] < 1.5 else op('phr_d' if parent().par.Describe else 'phr')[(int(op('hub')['beat_i']) + (0 if parent().par.Describe else int(parent().par.Seed * 997))) % op('phr_d' if parent().par.Describe else 'phr').numRows, 0].val.replace('|', chr(10)))"
+    }
+   }
+  },
+  "terms": {
+   "type": "tableDAT",
+   "family": "DAT",
+   "pos": [
+    650,
+    -420
+   ],
+   "text": [
+    "PROGRAM STARTED...|REAL TIME PICTURE TERMINAL 01|SIGNAL .......... IN|PICTURE ......... OUT|FEEDBACK ........ OPEN",
+    "THIS SCREEN: NOTHING STORED.|A PICTURE IS FORMING.|IT IS MADE NOW.|SOUND IN. PICTURE OUT.",
+    "THE TABLE HOLDS FIVE OBJECTS.|  1  FOUND|  2  NOT MADE|OBJECTS OF UNKNOWN USE.",
+    "NOTHING HERE IS PRERENDERED.|PLEASE WATCH.|EVERY FRAME IS MADE NOW.|THE KICK MOVES THE CAMERA.",
+    "THE LOOP IS RUNNING|SIXTY FRAMES|A SECOND. LISTEN|WITH YOUR EYES.",
+    "PLATE 07|OBJECT OF UNKNOWN USE|HANDLE WITH BOTH HANDS|PAST. PRESENT. LATER."
+   ]
+  },
+  "terms_d": {
+   "type": "tableDAT",
+   "family": "DAT",
+   "pos": [
+    650,
+    -660
+   ],
+   "text": [
+    "THIS SCREEN SHOWS ITSELF.|THE CAMERA'S LAST FRAME|IS THE PICTURE ON THE GLASS.|EACH COPY INSIDE IS|8 FRAMES OLDER.",
+    "THE TUNNEL IS NOT DRAWN.|IT IS ONE 3D RENDER,|FED BACK TO ITS OWN SCREEN|ONCE EVERY FRAME.",
+    "THIS TEXT IS TYPED ON|THE OUTER SCREEN ONLY.|THE COPIES INSIDE ARE|ITS ECHOES, 8 FRAMES APART.",
+    "ONE SHADER STEP PER COPY:|GREEN TINT, SCANLINES,|A LITTLE LESS LIGHT.|EACH COPY GETS IT AGAIN.",
+    "KICK DRUMS LIGHT THE GLASS.|THE CAMERA SEES THE FLASH.|ONE STEP LATER THE NEXT|COPY SHOWS IT, AND SO ON.",
+    "BUILT IN TOUCHDESIGNER:|RENDER TOP, FEEDBACK TOP,|CACHE TOP, ONE GLSL SHADER,|A MATERIAL ON THE GLASS."
+   ]
+  },
+  "tgt_m": {
+   "type": "nullCOMP",
+   "family": "COMP",
+   "pos": [
+    -30,
+    300
+   ],
+   "pars": {
+    "tx": {
+     "expr": "op('camm')['lx']"
+    },
+    "ty": {
+     "expr": "op('camm')['ly']"
+    },
+    "tz": {
+     "expr": "op('camm')['lz']"
+    }
+   }
+  },
+  "tgt_m/primitive1": {
+   "type": "primitivePOP",
+   "family": "POP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "addpts": true,
+    "attr0name": "color",
+    "method": "pattern",
+    "prim0pattern": "0 1",
+    "prim0type": "lines",
+    "prim1pattern": "2 3",
+    "prim1type": "lines",
+    "prim2pattern": "4 5",
+    "prim2type": "lines",
+    "pt0colorb": 0.0,
+    "pt0colorg": 0.0,
+    "pt0posx": -0.1,
+    "pt1colorb": 0.0,
+    "pt1colorg": 0.0,
+    "pt1posx": 0.1,
+    "pt2colorb": 0.0,
+    "pt2colorr": 0.0,
+    "pt2posy": -0.1,
+    "pt3colorb": 0.0,
+    "pt3colorr": 0.0,
+    "pt3posy": 0.1,
+    "pt4colorg": 0.0,
+    "pt4colorr": 0.0,
+    "pt4posz": -0.1,
+    "pt5colorg": 0.0,
+    "pt5colorr": 0.0,
+    "pt5posz": 0.1
+   }
+  },
+  "tgt_o": {
+   "type": "nullCOMP",
+   "family": "COMP",
+   "pos": [
+    -30,
+    60
+   ],
+   "pars": {
+    "tx": {
+     "expr": "op('camo')['lx']"
+    },
+    "ty": {
+     "expr": "op('camo')['ly']"
+    },
+    "tz": {
+     "expr": "op('camo')['lz']"
+    }
+   }
+  },
+  "tgt_o/primitive1": {
+   "type": "primitivePOP",
+   "family": "POP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "addpts": true,
+    "attr0name": "color",
+    "method": "pattern",
+    "prim0pattern": "0 1",
+    "prim0type": "lines",
+    "prim1pattern": "2 3",
+    "prim1type": "lines",
+    "prim2pattern": "4 5",
+    "prim2type": "lines",
+    "pt0colorb": 0.0,
+    "pt0colorg": 0.0,
+    "pt0posx": -0.1,
+    "pt1colorb": 0.0,
+    "pt1colorg": 0.0,
+    "pt1posx": 0.1,
+    "pt2colorb": 0.0,
+    "pt2colorr": 0.0,
+    "pt2posy": -0.1,
+    "pt3colorb": 0.0,
+    "pt3colorr": 0.0,
+    "pt3posy": 0.1,
+    "pt4colorg": 0.0,
+    "pt4colorr": 0.0,
+    "pt4posz": -0.1,
+    "pt5colorg": 0.0,
+    "pt5colorr": 0.0,
+    "pt5posz": 0.1
+   }
+  },
+  "tk": {
+   "type": "constantCHOP",
+   "family": "CHOP",
+   "pos": [
+    -200,
+    180
+   ],
+   "pars": {
+    "const0name": "az",
+    "const0value": {
+     "expr": "(24,0,0,-20,27,-17,0,20,0,)[int(parent().par.Take) % 9]"
+    },
+    "const10name": "oel",
+    "const10value": {
+     "expr": "(0,0,0,0,0,0,0,0,0,)[int(parent().par.Take) % 9]"
+    },
+    "const11name": "odist",
+    "const11value": {
+     "expr": "(1,1,1,1,1,1,1,1,1,)[int(parent().par.Take) % 9]"
+    },
+    "const12name": "otgx",
+    "const12value": {
+     "expr": "(0,0,0,0,0,0,0,0,0,)[int(parent().par.Take) % 9]"
+    },
+    "const13name": "otgy",
+    "const13value": {
+     "expr": "(0,0,0,0,0,0,0,0,0,)[int(parent().par.Take) % 9]"
+    },
+    "const14name": "bars",
+    "const14value": {
+     "expr": "(2,2,4,2,2,2,2,2,2,)[int(parent().par.Take) % 9]"
+    },
+    "const15name": "delay",
+    "const15value": {
+     "expr": "(3,0,1,5,4,7,2,2,3,)[int(parent().par.Take) % 9]"
+    },
+    "const16name": "hue",
+    "const16value": {
+     "expr": "(38,58,44,0,24,0,31,47,31,)[int(parent().par.Take) % 9]"
+    },
+    "const17name": "gain",
+    "const17value": {
+     "expr": "(1.05,1,1,1,1.05,0.86,1.02,1.12,0.96,)[int(parent().par.Take) % 9]"
+    },
+    "const18name": "rot",
+    "const18value": {
+     "expr": "(0,0,0,0,0,0,17,0,5,)[int(parent().par.Take) % 9]"
+    },
+    "const19name": "zoom",
+    "const19value": {
+     "expr": "(1,1,1,1,1,1,1.03,1,1,)[int(parent().par.Take) % 9]"
+    },
+    "const1name": "el",
+    "const1value": {
+     "expr": "(7,0,0,4,-5,3,0,6,0,)[int(parent().par.Take) % 9]"
+    },
+    "const20name": "inv",
+    "const20value": {
+     "expr": "(0,0,0,1,0,0,0,0,0,)[int(parent().par.Take) % 9]"
+    },
+    "const21name": "mono",
+    "const21value": {
+     "expr": "(0,0,0,0,0,1,0,0,0,)[int(parent().par.Take) % 9]"
+    },
+    "const22name": "flip",
+    "const22value": {
+     "expr": "(0,0,0,0,0,0,0,0,0,)[int(parent().par.Take) % 9]"
+    },
+    "const23name": "scan",
+    "const23value": {
+     "expr": "(0.45,0.1,0.15,0,0.45,0.75,0.2,0,0,)[int(parent().par.Take) % 9]"
+    },
+    "const24name": "text",
+    "const24value": {
+     "expr": "(0,0,0,0,0,1,0,0,2,)[int(parent().par.Take) % 9]"
+    },
+    "const25name": "lsat",
+    "const25value": {
+     "expr": "(1.15,1.15,1.15,0,1.15,1.15,1.15,1.15,1,)[int(parent().par.Take) % 9]"
+    },
+    "const26name": "tr",
+    "const26value": {
+     "expr": "(0.55,0.55,0.55,0.55,0.55,0.55,0.55,0.55,0.95,)[int(parent().par.Take) % 9]"
+    },
+    "const27name": "tg",
+    "const27value": {
+     "expr": "(1,1,1,1,1,1,1,1,0.62,)[int(parent().par.Take) % 9]"
+    },
+    "const28name": "tb",
+    "const28value": {
+     "expr": "(0.65,0.65,0.65,0.65,0.65,0.65,0.65,0.65,0.1,)[int(parent().par.Take) % 9]"
+    },
+    "const29name": "room",
+    "const29value": {
+     "expr": "(1,1,1,1,0,1,1,1,0,)[int(parent().par.Take) % 9]"
+    },
+    "const2name": "dist",
+    "const2value": {
+     "expr": "(3.9,2.7873,2.56431,2.7,6.2,2.25,1.78077,3.3,1.05095,)[int(parent().par.Take) % 9]"
+    },
+    "const30name": "wall",
+    "const30value": {
+     "expr": "(0,0,0,0,1,0,0,0,0,)[int(parent().par.Take) % 9]"
+    },
+    "const31name": "lamp",
+    "const31value": {
+     "expr": "(6,6.5,7,7,0,0.5,5,9,0,)[int(parent().par.Take) % 9]"
+    },
+    "const32name": "lr",
+    "const32value": {
+     "expr": "(1,1,1,1,1,1,1,1,1,)[int(parent().par.Take) % 9]"
+    },
+    "const33name": "lg",
+    "const33value": {
+     "expr": "(0.72,0.72,0.72,1,0.72,0.72,0.35,0.72,0.72,)[int(parent().par.Take) % 9]"
+    },
+    "const34name": "lb",
+    "const34value": {
+     "expr": "(0.4,0.4,0.4,1,0.4,0.4,0.6,0.4,0.4,)[int(parent().par.Take) % 9]"
+    },
+    "const35name": "fluor",
+    "const35value": {
+     "expr": "(1.5,4.4,2.6,3,3,0.5,2.2,3,0,)[int(parent().par.Take) % 9]"
+    },
+    "const36name": "fr",
+    "const36value": {
+     "expr": "(0.6,1,1,0.9,1,0.9,0.5,0.6,0.9,)[int(parent().par.Take) % 9]"
+    },
+    "const37name": "fg",
+    "const37value": {
+     "expr": "(0.75,0.93,0.42,0.95,0.28,0.95,0.6,0.75,0.95,)[int(parent().par.Take) % 9]"
+    },
+    "const38name": "fb",
+    "const38value": {
+     "expr": "(1,0.78,0.25,0.8,0.2,0.8,1,1,0.8,)[int(parent().par.Take) % 9]"
+    },
+    "const39name": "glow",
+    "const39value": {
+     "expr": "(4,2.5,4,2.5,5,5,2.5,5,0,)[int(parent().par.Take) % 9]"
+    },
+    "const3name": "tgx",
+    "const3value": {
+     "expr": "(0.55,0,0,-0.2,0.5,-0.18,0,0.35,0,)[int(parent().par.Take) % 9]"
+    },
+    "const40name": "rimd",
+    "const40value": {
+     "expr": "(1.6,1.6,3,1.6,4,0.5,1.6,1.6,0,)[int(parent().par.Take) % 9]"
+    },
+    "const41name": "rr",
+    "const41value": {
+     "expr": "(0.35,0.35,0.2,0.35,0.2,0.35,0.35,0.35,0.35,)[int(parent().par.Take) % 9]"
+    },
+    "const42name": "rg",
+    "const42value": {
+     "expr": "(0.55,0.55,0.5,0.55,0.4,0.55,0.55,0.55,0.55,)[int(parent().par.Take) % 9]"
+    },
+    "const43name": "rb",
+    "const43value": {
+     "expr": "(0.9,0.9,1,0.9,1,0.9,0.9,0.9,0.9,)[int(parent().par.Take) % 9]"
+    },
+    "const44name": "bit",
+    "const44value": {
+     "expr": "(0,0,0,1,0,0,0,0,0,)[int(parent().par.Take) % 9]"
+    },
+    "const45name": "psat",
+    "const45value": {
+     "expr": "(1.08,1.2,1.08,1.08,1.08,1.08,1.08,1.3,1.08,)[int(parent().par.Take) % 9]"
+    },
+    "const46name": "pcon",
+    "const46value": {
+     "expr": "(1.12,1.12,1.12,1.12,1.12,1.12,1.12,1.05,1.12,)[int(parent().par.Take) % 9]"
+    },
+    "const47name": "vign",
+    "const47value": {
+     "expr": "(1,1,1,0.3,1,1,1,0.8,0.6,)[int(parent().par.Take) % 9]"
+    },
+    "const48name": "grain",
+    "const48value": {
+     "expr": "(0.035,0.035,0.035,0,0.035,0.035,0.035,0.02,0.035,)[int(parent().par.Take) % 9]"
+    },
+    "const49name": "bloom",
+    "const49value": {
+     "expr": "(0.5,0.5,0.5,0,0.5,0.5,0.5,0.7,0.9,)[int(parent().par.Take) % 9]"
+    },
+    "const4name": "tgy",
+    "const4value": {
+     "expr": "(-0.22,0,0,-0.05,0,-0.05,0,-0.15,0,)[int(parent().par.Take) % 9]"
+    },
+    "const50name": "sr",
+    "const50value": {
+     "expr": "(0.02,0.02,0.02,0.02,0.02,0,0.02,0.02,0.02,)[int(parent().par.Take) % 9]"
+    },
+    "const51name": "sg",
+    "const51value": {
+     "expr": "(0.05,0.05,0.05,0.05,0.05,0.08,0.05,0.05,0.05,)[int(parent().par.Take) % 9]"
+    },
+    "const52name": "sb",
+    "const52value": {
+     "expr": "(0.09,0.09,0.09,0.09,0.09,0.03,0.09,0.09,0.09,)[int(parent().par.Take) % 9]"
+    },
+    "const53name": "twist",
+    "const53value": {
+     "expr": "(1,1,2,1,1,1,1,1,1,)[int(parent().par.Take) % 9]"
+    },
+    "const54name": "edge",
+    "const54value": {
+     "expr": "(1,0,0,1,1,1,0.5,0,0,)[int(parent().par.Take) % 9]"
+    },
+    "const55name": "tscale",
+    "const55value": {
+     "expr": "(1,1,1,1,1,1,1,1,0.27,)[int(parent().par.Take) % 9]"
+    },
+    "const56name": "wr",
+    "const56value": {
+     "expr": "(0.27,0.6,0.27,0.05,0.27,0.27,0.27,0.27,0.27,)[int(parent().par.Take) % 9]"
+    },
+    "const57name": "wg",
+    "const57value": {
+     "expr": "(0.34,0.09,0.34,0.05,0.34,0.34,0.34,0.34,0.34,)[int(parent().par.Take) % 9]"
+    },
+    "const58name": "wb",
+    "const58value": {
+     "expr": "(0.3,0.06,0.3,0.05,0.3,0.3,0.3,0.3,0.3,)[int(parent().par.Take) % 9]"
+    },
+    "const59name": "kick",
+    "const59value": {
+     "expr": "(0.2,0.1,0.12,0.3,0.35,0.2,0.2,0.25,0.05,)[int(parent().par.Take) % 9]"
+    },
+    "const5name": "orb",
+    "const5value": {
+     "expr": "(4,0,0,4,5,2,1.5,4,0,)[int(parent().par.Take) % 9]"
+    },
+    "const60name": "hk",
+    "const60value": {
+     "expr": "(0,0,0,0,45,0,0,0,0,)[int(parent().par.Take) % 9]"
+    },
+    "const61name": "punch",
+    "const61value": {
+     "expr": "(0.03,0,0,0.06,0.07,0.03,0.03,0.03,0,)[int(parent().par.Take) % 9]"
+    },
+    "const62name": "secflip",
+    "const62value": {
+     "expr": "(1,0,0,1,1,1,1,1,1,)[int(parent().par.Take) % 9]"
+    },
+    "const63name": "mz",
+    "const63value": {
+     "expr": "(1.1,1.1,1.1,1.1,1.1,1.1,1.1,1.1,1.1,)[int(parent().par.Take) % 9]"
+    },
+    "const64name": "inp",
+    "const64value": {
+     "expr": "(1,1,1,2,3,2,2,2,2,)[int(parent().par.Take) % 9]"
+    },
+    "const65name": "inmix",
+    "const65value": {
+     "expr": "(0.55,0.55,0.55,0.6,0.5,0.75,0.8,0.6,1,)[int(parent().par.Take) % 9]"
+    },
+    "const66name": "inscale",
+    "const66value": {
+     "expr": "(1,1,1,1,1,1,1,1,0.34,)[int(parent().par.Take) % 9]"
+    },
+    "const67name": "ingain",
+    "const67value": {
+     "expr": "(1.35,1.35,1.35,1.35,1.35,1.35,1.35,1.35,1.35,)[int(parent().par.Take) % 9]"
+    },
+    "const68name": "inkey",
+    "const68value": {
+     "expr": "(0,0,0,0,0,0,0,0,0,)[int(parent().par.Take) % 9]"
+    },
+    "const69name": "inlit",
+    "const69value": {
+     "expr": "(0,0,0,0,0,1,1,0,0,)[int(parent().par.Take) % 9]"
+    },
+    "const6name": "seedaz",
+    "const6value": {
+     "expr": "(14,0,0,14,14,8,4,14,0,)[int(parent().par.Take) % 9]"
+    },
+    "const7name": "view",
+    "const7value": {
+     "expr": "(0,1,2,0,0,0,0,3,0,)[int(parent().par.Take) % 9]"
+    },
+    "const8name": "omode",
+    "const8value": {
+     "expr": "(0,0,0,0,0,0,0,0,0,)[int(parent().par.Take) % 9]"
+    },
+    "const9name": "oaz",
+    "const9value": {
+     "expr": "(0,0,0,0,0,0,0,0,0,)[int(parent().par.Take) % 9]"
+    }
+   }
+  },
+  "view": {
+   "type": "switchTOP",
+   "family": "TOP",
+   "pos": [
+    820,
+    -780
+   ],
+   "inputs": [
+    [
+     "mast"
+    ],
+    [
+     "render_o_in"
+    ],
+    [
+     "escher"
+    ],
+    [
+     "macro"
+    ]
+   ],
+   "pars": {
+    "index": {
+     "expr": "int(op('tk')['view'])"
+    }
+   }
+  },
+  "w_crt": {
+   "type": "geometryCOMP",
+   "family": "COMP",
+   "pos": [
+    140,
+    -900
+   ],
+   "pars": {
+    "instanceop": "/project1/sc_droste_crt/winst",
+    "instancetx": "tx",
+    "instancety": "ty",
+    "instancetz": "tz",
+    "instancing": true,
+    "material": "/project1/sc_droste_crt/m_crt/mat",
+    "render": {
+     "expr": "op('tk')['wall'] > 0.5"
+    }
+   }
+  },
+  "w_crt/mesh": {
+   "type": "fileinPOP",
+   "family": "POP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.model_file('')"
+    }
+   }
+  },
+  "w_crt/shape": {
+   "type": "switchPOP",
+   "family": "POP",
+   "pos": [
+    0,
+    0
+   ],
+   "inputs": [
+    [
+     "w_crt/mesh"
+    ],
+    [
+     "w_crt/standin"
+    ]
+   ],
+   "pars": {
+    "index": {
+     "expr": "0 if False else 1"
+    }
+   }
+  },
+  "w_crt/standin": {
+   "type": "mergePOP",
+   "family": "POP",
+   "pos": [
+    0,
+    0
+   ],
+   "inputs": [
+    [
+     "w_crt/standin_b0"
+    ],
+    [
+     "w_crt/standin_b1"
+    ],
+    [
+     "w_crt/standin_b2"
+    ],
+    [
+     "w_crt/standin_b3"
+    ],
+    [
+     "w_crt/standin_b4"
+    ],
+    [
+     "w_crt/standin_b5"
+    ],
+    [
+     "w_crt/standin_b6"
+    ],
+    [
+     "w_crt/standin_b7"
+    ]
+   ]
+  },
+  "w_crt/standin_b0": {
+   "type": "boxPOP",
+   "family": "POP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "sizex": 0.652,
+    "sizey": 0.492,
+    "sizez": 0.69,
+    "ty": 0.126,
+    "tz": 0.04500000000000001,
+    "uniquepoints": true
+   }
+  },
+  "w_crt/standin_b1": {
+   "type": "boxPOP",
+   "family": "POP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "sizex": 0.46,
+    "sizey": 0.37,
+    "sizez": 0.2,
+    "ty": 0.125,
+    "tz": -0.4,
+    "uniquepoints": true
+   }
+  },
+  "w_crt/standin_b2": {
+   "type": "boxPOP",
+   "family": "POP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "sizex": 0.6,
+    "sizey": 0.237,
+    "sizez": 0.92,
+    "ty": -0.2535,
+    "tz": 0.06,
+    "uniquepoints": true
+   }
+  },
+  "w_crt/standin_b3": {
+   "type": "boxPOP",
+   "family": "POP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "sizex": 0.652,
+    "sizey": 0.08700000000000002,
+    "sizez": 0.07999999999999996,
+    "ty": 0.3285,
+    "tz": 0.43,
+    "uniquepoints": true
+   }
+  },
+  "w_crt/standin_b4": {
+   "type": "boxPOP",
+   "family": "POP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "sizex": 0.652,
+    "sizey": 0.05499999999999999,
+    "sizez": 0.07999999999999996,
+    "ty": -0.0925,
+    "tz": 0.43,
+    "uniquepoints": true
+   }
+  },
+  "w_crt/standin_b5": {
+   "type": "boxPOP",
+   "family": "POP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "sizex": 0.08100000000000002,
+    "sizey": 0.35,
+    "sizez": 0.07999999999999996,
+    "tx": -0.2855,
+    "ty": 0.10999999999999999,
+    "tz": 0.43,
+    "uniquepoints": true
+   }
+  },
+  "w_crt/standin_b6": {
+   "type": "boxPOP",
+   "family": "POP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "sizex": 0.09100000000000003,
+    "sizey": 0.35,
+    "sizez": 0.07999999999999996,
+    "tx": 0.28049999999999997,
+    "ty": 0.10999999999999999,
+    "tz": 0.43,
+    "uniquepoints": true
+   }
+  },
+  "w_crt/standin_b7": {
+   "type": "boxPOP",
+   "family": "POP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "sizex": 0.19,
+    "sizey": 0.02400000000000002,
+    "sizez": 0.01200000000000001,
+    "tx": 0.125,
+    "ty": -0.25,
+    "tz": 0.526,
+    "uniquepoints": true
+   }
+  },
+  "w_crt/xf": {
+   "type": "transformPOP",
+   "family": "POP",
+   "pos": [
+    0,
+    0
+   ],
+   "inputs": [
+    [
+     "w_crt/shape"
+    ]
+   ],
+   "pars": {
+    "sx": 1.9444444444444446,
+    "sy": 1.5,
+    "sz": 1.2
+   }
+  },
+  "w_scrn": {
+   "type": "geometryCOMP",
+   "family": "COMP",
+   "pos": [
+    140,
+    -1020
+   ],
+   "pars": {
+    "instanceop": "/project1/sc_droste_crt/winst",
+    "instancetx": "tx",
+    "instancety": "ty",
+    "instancetz": "tz",
+    "instancing": true,
+    "material": "/project1/sc_droste_crt/m_crt/scrn/mat",
+    "render": {
+     "expr": "op('tk')['wall'] > 0.5"
+    }
+   }
+  },
+  "w_scrn/bulge": {
+   "type": "pointSOP",
+   "family": "SOP",
+   "pos": [
+    0,
+    0
+   ],
+   "inputs": [
+    [
+     "w_scrn/grid"
+    ]
+   ],
+   "pars": {
+    "tx": {
+     "expr": "me.inputPoint.x"
+    },
+    "ty": {
+     "expr": "me.inputPoint.y"
+    },
+    "tz": {
+     "expr": "0.436 + -0.108 * (me.inputPoint.y - 0.10999999999999999) + -0.27 * (me.inputPoint.y - 0.10999999999999999) ** 2 + -0.25 * (me.inputPoint.x - -0.0050000000000000044) ** 2"
+    }
+   }
+  },
+  "w_scrn/grid": {
+   "type": "gridSOP",
+   "family": "SOP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "cols": 13,
+    "rows": 9,
+    "sizex": 0.48,
+    "sizey": 0.35,
+    "tx": -0.0050000000000000044,
+    "ty": 0.10999999999999999
+   }
+  },
+  "w_scrn/xf": {
+   "type": "transformSOP",
+   "family": "SOP",
+   "pos": [
+    0,
+    0
+   ],
+   "inputs": [
+    [
+     "w_scrn/bulge"
+    ]
+   ],
+   "pars": {
+    "sx": 1.9444444444444446,
+    "sy": 1.5,
+    "sz": 1.2
+   }
+  },
+  "winst": {
+   "type": "tableDAT",
+   "family": "DAT",
+   "pos": [
+    140,
+    -780
+   ],
+   "text": [
+    "tx\tty\ttz",
+    "-2.923588888888889\t0.8828399999999996\t-0.36",
+    "-1.6367944444444444\t0.8828399999999996\t-0.24",
+    "-0.35\t0.8828399999999996\t-0.12",
+    "0.9367944444444444\t0.8828399999999996\t-0.24",
+    "2.2235888888888886\t0.8828399999999996\t-0.36",
+    "-2.923588888888889\t2.01\t-0.36",
+    "-1.6367944444444444\t2.01\t-0.24",
+    "0.9367944444444444\t2.01\t-0.24",
+    "2.2235888888888886\t2.01\t-0.36",
+    "-2.923588888888889\t3.1371599999999997\t-0.36",
+    "-1.6367944444444444\t3.1371599999999997\t-0.24",
+    "-0.35\t3.1371599999999997\t-0.12",
+    "0.9367944444444444\t3.1371599999999997\t-0.24",
+    "2.2235888888888886\t3.1371599999999997\t-0.36"
+   ]
+  }
+ }
+}
