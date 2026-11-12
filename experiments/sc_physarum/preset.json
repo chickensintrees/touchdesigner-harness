@@ -1,6 +1,6 @@
 {
   "title": "Slime mould",
-  "technique": "A slime mould simulation: about 230,000 tiny agents follow each other's trails and grow veins over turning 3D objects, printed sheets and short phrases.",
+  "technique": "A slime mould simulation: about 230,000 agents follow each other's trails and grow veins over objects and phrases.",
   "music": "Bass sets how coarse the vein mesh is, vocals make it more cellular, and drums and overall energy speed the agents up. Each kick scatters a share of the agents, each snare briefly makes them flee what they were tracing, and a new section of the song swaps the subject so the veins abandon it and find the next one.",
   "accepts_input": true,
   "as_processor": "Treats the picture it is given as food: 230,400 slime mould agents sniff out its bright shapes and edges and redraw it in veins, drips or toner grains, in whichever take is showing.",

@@ -1,6 +1,6 @@
 {
   "title": "Letter architecture",
-  "technique": "A single ray-marched shader draws an endless folded fractal lattice of steel blocks, with sign lettering embossed into its surfaces as real relief that catches light.",
+  "technique": "One ray-marched shader draws an endless folded fractal of steel blocks with lettering embossed into its surfaces.",
   "music": "Bass and vocal pitch change the fold angles so each note reshapes the building, the bar line opens the gaps between blocks, and every kick sends a pulse of light travelling through the space. Snares make the red lettering flare, hi-hats knock lights out or flash random blocks, and the camera never stops moving.",
   "takes": [
     {

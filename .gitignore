@@ -22,6 +22,10 @@ experiments/*/captures/*
 /lab.toe
 /lab.*.toe
 
+# touchdesigner-mcp's component, downloaded by docs/INSTALL.md step 3 (a separate project).
+/touchdesigner-mcp-td/
+/touchdesigner-mcp-td.zip
+
 # Shader Park compiler deps
 node_modules/
 

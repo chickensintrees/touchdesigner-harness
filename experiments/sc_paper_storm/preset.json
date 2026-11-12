@@ -1,6 +1,6 @@
 {
   "title": "Paper storm",
-  "technique": "Thousands of copies of a printed sheet of paper, plus a couple of hundred objects, are each placed and turned by one shader that arranges them into different formations.",
+  "technique": "Thousands of copies of a printed sheet are placed and turned by one shader that arranges them into formations.",
   "music": "The bar turns the formations and the beat flips sheets, changes pages and steps the falling paper. Each kick drum throws things outward and sends an amber shockwave ring through the paper, while overall loudness brightens the lamp and glow.",
   "takes": [
     {

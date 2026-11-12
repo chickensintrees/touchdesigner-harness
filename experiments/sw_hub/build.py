@@ -43,10 +43,13 @@ def build():
 
     page = hub.appendCustomPage("Hub")
     page.appendStr("Track", label="Track")[0].val = SAMPLE
-    page.appendFloat("Duration", label="Duration (s)")[0].val = 1
+    page.appendFloat("Duration", label="Duration (s)")[0].expr = "me.op('local/modules/hub').module.duration(me.par.Track.eval())"
     page.appendFloat("Volume", label="Speaker Volume")[0].val = 0
     page.appendStr("Scene", label="Active Scene")
     page.appendToggle("Solo", label="Cook All Scenes")
+    # Track time normally follows the audio as it plays. A value of 0 or more here is used
+    # as the track time instead: the cutter's recorder steps it one frame at a time.
+    page.appendFloat("Clock", label="Track Time Override (s, -1 = follow the audio)")[0].val = -1
 
     # The module DAT that finds each track's files, so no folder is stored in the hub.
     local = hub.create(td.baseCOMP, "local")
@@ -59,6 +62,11 @@ def build():
     audio = hub.create(td.audiofileinCHOP, "audio")
     audio.par.file.expr = "mod.hub.audio(parent().par.Track.eval())"
     audio.par.repeat = "on"
+    # With a track time override the audio is read at that time, so the live level and
+    # spectrum agree with the looked-up analysis while the recorder steps frame by frame.
+    audio.par.playmode.expr = "'specify' if parent().par.Clock.eval() >= 0 else 'sequential'"
+    audio.par.indexunit = "seconds"
+    audio.par.index.expr = "max(parent().par.Clock.eval(), 0)"
 
     # Volume is on the speaker output only, so analysis and recordings are unaffected.
     out = hub.create(td.audiodeviceoutCHOP, "audioout")
@@ -70,10 +78,12 @@ def build():
 
     tsec = hub.create(td.constantCHOP, "tsec")
     tsec.par.name0 = "t"
-    tsec.par.value0.expr = "op('ainfo')['true_sample'] / max(op('ainfo')['sample_rate'], 1)"
+    tsec.par.value0.expr = ("parent().par.Clock.eval() if parent().par.Clock.eval() >= 0 "
+                            "else op('ainfo')['true_sample'] / max(op('ainfo')['sample_rate'], 1)")
 
     feedin = hub.create(td.fileinCHOP, "feedin")
     feedin.par.file.expr = "mod.hub.feed(parent().par.Track.eval()) + '/feed.chan'"
+    feedin.par.renameto.expr = "mod.hub.channels(parent().par.Track.eval())"
     feedin.par.rateoption = "override"  # "resample" would stretch the 100 Hz rows to 60
     feedin.par.rate = 100
     feedin.par.renamefrom = "*"
@@ -151,11 +161,9 @@ def build():
 def set_track(slug):
     """Point the hub at a track and its baked feed, and restart it."""
     hub = op(HUB)
-    _, folder = tracks()[slug]
-    meta = json.loads(open(folder + "/feed.json", encoding="utf-8").read())
-    hub.par.Track = slug
-    hub.par.Duration = (meta["samples"] - 1) / meta["rate"]
-    hub.op("feedin").par.renameto = " ".join(meta["channels"])
+    if slug not in tracks():
+        raise KeyError(slug)
+    hub.par.Track = slug  # Duration and the feed's channel names follow the Track parameter
     hub.op("feedin").par.refreshpulse.pulse()
     hub.op("audio").par.cuepulse.pulse()
     return slug

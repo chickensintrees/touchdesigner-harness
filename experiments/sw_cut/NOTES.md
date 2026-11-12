@@ -6,7 +6,7 @@ Cut between scene networks in time with the music. Works if every cut lands on a
 ## How it is made
 - `cutlogic.py` holds the decisions and has no TouchDesigner imports; `tests/test_cutlogic.py` runs it over synthetic feeds. `build.py` wires it to the hub and a Switch TOP, and is the source of truth for the COMP.
 - The `scenes` table gives each scene an energy band. Bands and the Loud threshold (0.58) are tuned to the track the cutter was first built with (249 s, 125 bpm), whose `energy` only spans about 0.37 to 0.62; another track needs other numbers, or a normalised intensity channel in the feed.
-- `record(file, seconds)` in build.py records the cut with the track's audio.
+- `record(file, seconds, start=0)` in build.py records the cut frame by frame: the hub's track time is stepped once per cooked frame and the project is off the clock, so the file is right however slowly the machine renders. The file holds the picture only; the sound is added afterwards from the track (the ffmpeg line is in the function's docstring).
 
 ## Log
 <!-- Newest first. -->

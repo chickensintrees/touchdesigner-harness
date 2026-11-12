@@ -1,8 +1,10 @@
 """Decides which scene is on screen, one frame at a time. No TouchDesigner imports:
 the Execute DAT in sw_cut feeds it the hub's channels, and tests feed it a baked feed.
 
-A "cut key" names the current shot slot. It changes at every musical section, and
-inside loud passages every `bars_loud` bars. When the key changes, the cut waits
+A "cut key" names the current shot slot. It changes at every musical section,
+inside loud passages every `bars_loud` bars, and inside quiet passages every
+`bars_quiet` bars counted from the section's start (so a long quiet section is
+not one long shot). When the key changes, the cut waits
 for the next beat line, then shows the scene that fits the passage's energy and
 has been off screen longest. The next scene is chosen before the cut so it can be
 warmed up (cooked off screen) and feedback loops are alive when it appears.
@@ -19,6 +21,8 @@ DEFAULTS = {
     "loud": 0.75,  # energy at or above this is a loud passage
     "hysteresis": 0.03,  # loud switches off only below loud - hysteresis
     "bars_loud": 2,  # in a loud passage, cut every this many bars
+    "bars_quiet": 0,  # in a quiet passage, cut every this many bars of a section; 0 = at sections only
+    "quiet_last": 0.75,  # no cut inside a quiet section past this share of it: the section's end is near
     "min_bars": 1.0,  # shortest shot, in bars
     "warm_section_pos": 0.88,  # start warming the next scene this far through a section
     "warm_bar": 0.6,  # ...or this far through the last bar before a loud-passage cut
@@ -47,6 +51,8 @@ def new_state():
         "loud_next": None,
         "bar_i": None,
         "beat_i": None,
+        "section": None,
+        "section_bar": 0,  # the bar the current section began in
     }
 
 
@@ -155,7 +161,20 @@ def step(state, feed, scenes, cfg=None):
         state["loud_next"] = energy >= floor
     state["bar_i"], state["beat_i"] = bar_i, beat_i
 
-    key = (int(feed["section"]), bar_i // every if state["loud"] else 0)
+    section = int(feed["section"])
+    if section != state.get("section") or bar_i < state.get("section_bar", 0):
+        state["section"], state["section_bar"] = section, bar_i
+    quiet_every = max(0, int(cfg["bars_quiet"]))
+    in_section = bar_i - state["section_bar"]
+    if state["loud"]:
+        slot = bar_i // every
+    elif quiet_every and feed["section_pos"] <= cfg["quiet_last"]:
+        slot = ("q", in_section // quiet_every)
+    elif quiet_every:
+        slot = state["key"][1] if state["key"] and state["key"][0] == section else ("q", in_section // quiet_every)
+    else:
+        slot = 0
+    key = (section, slot)
     avoid = state["history"][-2:]
 
     if not state["scene"]:
@@ -180,6 +199,8 @@ def step(state, feed, scenes, cfg=None):
         loud_soon = state["loud_next"] if state["loud_next"] is not None else state["loud"]
         crosses = (bar_i + 1) // every != bar_i // every or not state["loud"]
         bar_cut_soon = feed["bar"] > cfg["warm_bar"] and loud_soon and crosses
+        if quiet_every and not loud_soon and feed["bar"] > cfg["warm_bar"] and feed["section_pos"] <= cfg["quiet_last"]:
+            bar_cut_soon = bar_cut_soon or (in_section + 1) // quiet_every != in_section // quiet_every
         if state["pending"] or feed["section_pos"] > cfg["warm_section_pos"] or bar_cut_soon:
             next_key = ("next", int(feed["section"]), bar_i)
             state["next"] = pick(scenes, next_key, energy, avoid, state["last_shown"])

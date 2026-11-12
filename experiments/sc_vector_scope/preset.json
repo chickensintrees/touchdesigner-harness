@@ -1,6 +1,6 @@
 {
  "title": "Oscilloscope beam drawings",
- "technique": "A simulated oscilloscope tube: one glowing beam traces word outlines, 3D model wireframes and waveforms, with fading phosphor afterglow, soft glow and a measuring grid.",
+ "technique": "A simulated oscilloscope: one glowing beam traces word outlines, 3D wireframes and waveforms with fading phosphor afterglow.",
  "music": "The raw left and right audio samples are added to the beam's position, so every drawing shivers and fattens as the track gets louder and is clean when it is quiet. Kicks make the picture swell, ring and brighten, hi-hats fatten the line, shapes change every 4 or 8 beats, and a new section of the song briefly bursts the drawing into scribble.",
  "takes": [
   {"name": "Word", "description": "A single phrase drawn as a green outline low and off-centre on a grid, dissolving into the raw stereo waveform on every fourth beat before the next phrase forms out of it.", "words": ["VECTOR SCOPE", "ONE BEAM / DRAWS THIS", "AUDIO SHAKES / THE LINE", "SLOW BEAM = / BRIGHT LINE", "EVERY 4 BEATS / IT LETS GO", "THE GLOW IS / FADING PHOSPHOR"]},

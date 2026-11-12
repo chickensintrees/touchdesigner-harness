@@ -15,25 +15,19 @@ It isn't another MCP server. It's the harness around one: rules, skills, a small
 - **TouchDesigner 2025.33230 or newer.** A Non-Commercial license is fine (outputs are capped at 1280×1280).
 - **[Claude Code](https://code.claude.com/docs)**
 - **Windows or macOS** with a GPU. TD doesn't run on Linux.
-- **Node.js 24** for touchdesigner-mcp, and git.
+- **git, and Node.js 24** for touchdesigner-mcp (22.18+ and 26+ also satisfy it; 24 is the tested one). The install below checks for both and gives you the download link if one is missing or too old.
 
-## 5-minute setup
+## Install
 
-This is the path that has been tested end to end. Full details, plus TDMCP, are in [docs/SETUP.md](docs/SETUP.md).
+Paste this line into Claude Code, in any folder:
 
-1. **Clone:**
+```
+Set up touchdesigner-harness with me by following https://billmoore.ai/touchdesigner/install.md
+```
 
-   ```bash
-   git clone https://github.com/chickensintrees/touchdesigner-harness.git
-   cd touchdesigner-harness
-   ```
+Claude Code clones this repository and follows [docs/INSTALL.md](docs/INSTALL.md) with you: it checks what is installed, downloads touchdesigner-mcp 2.2.0, and gives you the few clicks that have to happen in TouchDesigner's window, one at a time. It asks before it changes anything outside the clone folder, and it ends by having you start Claude Code in that folder and say *"continue setup"*. The MCP server it registers lets Claude Code run Python inside whatever project is open in TouchDesigner, so the install makes a new lab project: do not use a show file.
 
-2. **Make your lab project.** In TouchDesigner, save a new project as `lab.toe` in the repo folder. It stays out of git.
-3. **Install touchdesigner-mcp 2.2.0** by following its [installation guide](https://github.com/8beeeaaat/touchdesigner-mcp/blob/main/docs/installation.md) for Claude Code. Import `mcp_webserver_base.tox` from the same release into `/project1`.
-4. **Fix the one trap:** set that component's **External .tox** parameter to the *absolute* path of `mcp_webserver_base.tox`. The relative default breaks once the project lives in the repo. Save with Ctrl+S.
-5. **Start Claude Code** in the repo and say: *"connect to TouchDesigner"*.
-
-If step 5 reports your TD build and "0 pre-existing errors", you're ready.
+To do it by hand, or to use TDMCP, follow [docs/SETUP.md](docs/SETUP.md).
 
 ## What a session looks like
 
@@ -62,7 +56,7 @@ The scene engine plays a music track and cuts between eighteen scenes in time wi
 
 ### Run it
 
-After the setup above, ask Claude to *"build the scene engine with experiments/sw_hub/build_all.py"*, or run this in TouchDesigner's Textport:
+The install offers to build it as its last step. At any later time, ask Claude to *"build the scene engine with experiments/sw_hub/build_all.py"*, or run this in TouchDesigner's Textport:
 
 ```python
 g = {'op': op, 'td': td, 'absTime': absTime, 'project': project}
@@ -78,24 +72,24 @@ The [preset gallery](docs/GALLERY.md) shows every take of every scene.
 
 | Scene | Technique | Takes |
 |---|---|---|
-| [Monitor showing itself](docs/GALLERY.md#sc_droste_crt) | A 3D desk of found objects with a monitor whose screen displays the previous frame of the same camera, so real video feedback builds a tunnel of monitors inside monitors. | 9 |
-| [Exploded technical drawing](docs/GALLERY.md#sc_exploded_view) | 3D models of unexplained objects are drawn as engineering line art: a shader traces outlines and creases, the objects come apart, and live dimension lines and labels sit around them. | 10 |
-| [Melting poster datamosh](docs/GALLERY.md#sc_flow_mosh) | A deliberate video-compression glitch: a clean picture flashes for an instant, then its own hidden motion drags blocks of the last frame around until the next clean flash. | 7 |
-| [Ink in water](docs/GALLERY.md#sc_fluid_ink) | A two-dimensional fluid simulation in shaders, where words, pages of small print and 3D model silhouettes are laid down as three inks and lit like a wet surface over paper. | 10 |
-| [Pictures made of type](docs/GALLERY.md#sc_glyph_render) | A 3D scene is redrawn from letters of one bitmap font in pure black and white, with brightness deciding how each letter is inked while the letters spell running sentences. | 8 |
-| [Letter architecture](docs/GALLERY.md#sc_kifs_office) | A single ray-marched shader draws an endless folded fractal lattice of steel blocks, with sign lettering embossed into its surfaces as real relief that catches light. | 7 |
-| [Kinetic type machine](docs/GALLERY.md#sc_kinetic_type) | Moving poster typography in flat colours: every letter, rule and bar is its own small rectangle cut from a font sheet, placed and animated by a shader. | 12 |
-| [Fog and shadow type](docs/GALLERY.md#sc_light_gobo) | A dark room full of drifting fog, lit by a projector, fluorescent tubes and a lamp, where patterned light and the shadows of objects hang as solid shafts in the air. | 11 |
-| [Paper storm](docs/GALLERY.md#sc_paper_storm) | Thousands of copies of a printed sheet of paper, plus a couple of hundred objects, are each placed and turned by one shader that arranges them into different formations. | 8 |
-| [Slime mould](docs/GALLERY.md#sc_physarum) | A slime mould simulation: about 230,000 tiny agents follow each other's trails and grow veins over turning 3D objects, printed sheets and short phrases. | 11 |
-| [Point cloud shapeshifter](docs/GALLERY.md#sc_point_morph) | One cloud of about 124,000 coloured points, sampled from the surfaces of 3D models and lettering, that streams from one shape into the next on a noise wind. | 8 |
-| [Living rubber stamp](docs/GALLERY.md#sc_rd_stamp) | Stamped phrases feed a reaction-diffusion simulation, so the letters grow coral-like tendrils and beads, lit as raised gold, red enamel or black tar ink on printed paper sheets. | 7 |
-| [Misregistered print shop](docs/GALLERY.md#sc_riso_press) | A 3D object lit by red, green and blue lights is split into spot-colour plates, each screened into dots, lines or grain and overprinted out of register on moving paper. | 14 |
-| [Scan line video synth](docs/GALLERY.md#sc_rutt_etra) | A 1970s-style analogue video synthesizer: a hidden source picture is redrawn as glowing scan lines in 3D, each line pushed up and back by the brightness beneath it. | 10 |
-| [Shatter and reassemble](docs/GALLERY.md#sc_shatter) | 3D models and extruded phrases are pre-cut into rigid shards, and a shader bursts them apart and pulls them back together exactly, like footage run backwards. | 10 |
-| [Spectrogram terrain](docs/GALLERY.md#sc_spectral_terrain) | A scrolling history of the last few seconds of the sound spectrum becomes a height map, drawn as a landscape of glowing ridge lines that recede from the viewer. | 8 |
-| [Time-sliced objects](docs/GALLERY.md#sc_time_slab) | A slit-scan effect: a spinning 3D object is recorded for about a second, and every part of the picture shows a different moment of that recording. | 8 |
-| [Oscilloscope beam drawings](docs/GALLERY.md#sc_vector_scope) | A simulated oscilloscope tube: one glowing beam traces word outlines, 3D model wireframes and waveforms, with fading phosphor afterglow, soft glow and a measuring grid. | 11 |
+| [Monitor showing itself](docs/GALLERY.md#sc_droste_crt) | A monitor on a 3D desk shows the camera's previous frame, so video feedback builds a tunnel of monitors. | 9 |
+| [Exploded technical drawing](docs/GALLERY.md#sc_exploded_view) | 3D models are drawn as engineering line art and come apart, with live dimension lines and labels around them. | 10 |
+| [Melting poster datamosh](docs/GALLERY.md#sc_flow_mosh) | A deliberate video-compression glitch: a clean picture flashes, then its own motion drags blocks of the last frame around. | 7 |
+| [Ink in water](docs/GALLERY.md#sc_fluid_ink) | A 2D fluid simulation in shaders, where words and model silhouettes are laid down as inks over paper. | 10 |
+| [Pictures made of type](docs/GALLERY.md#sc_glyph_render) | A 3D scene is redrawn in pure black and white from the letters of one bitmap font. | 8 |
+| [Letter architecture](docs/GALLERY.md#sc_kifs_office) | One ray-marched shader draws an endless folded fractal of steel blocks with lettering embossed into its surfaces. | 7 |
+| [Kinetic type machine](docs/GALLERY.md#sc_kinetic_type) | Moving poster typography: every letter is its own small rectangle cut from a font sheet and animated by a shader. | 12 |
+| [Fog and shadow type](docs/GALLERY.md#sc_light_gobo) | A dark, foggy room where patterned light and the shadows of objects hang as solid shafts in the air. | 11 |
+| [Paper storm](docs/GALLERY.md#sc_paper_storm) | Thousands of copies of a printed sheet are placed and turned by one shader that arranges them into formations. | 8 |
+| [Slime mould](docs/GALLERY.md#sc_physarum) | A slime mould simulation: about 230,000 agents follow each other's trails and grow veins over objects and phrases. | 11 |
+| [Point cloud shapeshifter](docs/GALLERY.md#sc_point_morph) | A cloud of about 124,000 points, sampled from 3D models and lettering, streams from one shape into the next. | 8 |
+| [Living rubber stamp](docs/GALLERY.md#sc_rd_stamp) | Stamped phrases feed a reaction-diffusion simulation, so the letters grow coral-like tendrils and beads. | 7 |
+| [Misregistered print shop](docs/GALLERY.md#sc_riso_press) | A 3D object is split into spot-colour plates, each screened into dots or lines and overprinted out of register. | 14 |
+| [Scan line video synth](docs/GALLERY.md#sc_rutt_etra) | A 1970s-style video synthesizer: a picture is redrawn as glowing scan lines in 3D, displaced by its brightness. | 10 |
+| [Shatter and reassemble](docs/GALLERY.md#sc_shatter) | 3D models and phrases are pre-cut into rigid shards that burst apart and pull back together exactly. | 10 |
+| [Spectrogram terrain](docs/GALLERY.md#sc_spectral_terrain) | The last few seconds of the sound spectrum become a landscape of glowing ridge lines receding from the viewer. | 8 |
+| [Time-sliced objects](docs/GALLERY.md#sc_time_slab) | A slit-scan effect: every part of the picture shows a different moment of a spinning 3D object. | 8 |
+| [Oscilloscope beam drawings](docs/GALLERY.md#sc_vector_scope) | A simulated oscilloscope: one glowing beam traces word outlines, 3D wireframes and waveforms with fading phosphor afterglow. | 11 |
 
 A scene can also take another scene's picture as its input and work on that in place of its own subject. Set the scene's **Input** parameter to the other scene's output.
 
@@ -126,13 +120,13 @@ Three single experiments came before the scene engine. They are the quickest way
 | | |
 |--|--|
 | [`AGENTS.md`](AGENTS.md) | The rules Claude follows around a live TD session. Several of them came from traps hit on a real install. |
-| [`.claude/skills/`](.claude/skills/) | `td-connect`, `td-new-experiment`, `td-sketch` (the build → look → adjust loop), `td-glsl`, `td-verify`, `td-snapshot` |
+| [`.claude/skills/`](.claude/skills/) | `td-setup` (first-time setup), `td-connect`, `td-new-experiment`, `td-sketch` (the build → look → adjust loop), `td-glsl`, `td-verify`, `td-snapshot` |
 | [`td/tdh/`](td/tdh/) | The in-TD toolkit (Python 3.11 + numpy). It handles the error sweep, PNG capture, motion and stall detection, the cook budget, `checks.json` and text snapshots. It observes; it never builds. |
 | Controls | You never have to read the network to change something. As it builds, Claude puts the words, amounts and choices on the experiment as labelled controls, a check fails if any control does nothing, and `tdh.show(...)` opens the controls beside the output so you can move a slider and watch. |
 | [`experiments/`](experiments/) | One folder per idea, and `_template/` to start from. The scene engine is the `sw_*` and `sc_*` folders. |
 | [`assets/`](assets/) | The asset pack the scene engine uses |
 | [`tools/`](tools/) | Offline tools: the feed baker, model conversion, the gallery and the asset pack's generators |
-| [`docs/`](docs/) | [SETUP](docs/SETUP.md) · [TRANSPORTS](docs/TRANSPORTS.md) (servers and tool names) · [REMOTE](docs/REMOTE.md) (phone, other machines, GPU VMs) · [KNOWN-ISSUES](docs/KNOWN-ISSUES.md) · [RESEARCH](docs/RESEARCH.md) (what else exists) |
+| [`docs/`](docs/) | [INSTALL](docs/INSTALL.md) (the walk-through Claude Code follows) · [SETUP](docs/SETUP.md) (the same by hand) · [TRANSPORTS](docs/TRANSPORTS.md) (servers and tool names) · [REMOTE](docs/REMOTE.md) (phone, other machines, GPU VMs) · [KNOWN-ISSUES](docs/KNOWN-ISSUES.md) · [RESEARCH](docs/RESEARCH.md) (what else exists) |
 
 ## Status and limits
 

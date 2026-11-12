@@ -1,6 +1,6 @@
 {
  "title": "Time-sliced objects",
- "technique": "A slit-scan effect: a spinning 3D object is recorded for about a second, and every part of the picture shows a different moment of that recording.",
+ "technique": "A slit-scan effect: every part of the picture shows a different moment of a spinning 3D object.",
  "music": "Kick drums snap the prop round, pulse its size and throw parts of the picture further into the past, while snares make it nod and flash the rim light. Bass and overall loudness set how deep into the past the picture reaches, and the tempo drives the bounce, the sweeps and the crawl.",
  "accepts_input": true,
  "as_processor": "It records the last second of the picture it is given and rebuilds every frame from different moments of it, so anything that moves is torn along giant letters, rings, slices, blades, panels or a grid, or unrolled sideways through a slit; it also sways the picture with the beat and swells it on each kick drum, so even a still picture is cut up in time with the music.",

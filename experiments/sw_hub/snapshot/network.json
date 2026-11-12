@@ -24,6 +24,12 @@
     "file": {
      "expr": "mod.hub.audio(parent().par.Track.eval())"
     },
+    "index": {
+     "expr": "max(parent().par.Clock.eval(), 0)"
+    },
+    "playmode": {
+     "expr": "'specify' if parent().par.Clock.eval() >= 0 else 'sequential'"
+    },
     "timeslice": true
    }
   },
@@ -144,7 +150,9 @@
     },
     "rate": 100.0,
     "rateoption": "override",
-    "renameto": "t rms bass drums vocals other energy pitch pitch_conf bass_pitch beat_pos bar_pos section section_pos hit_low hit_mid hit_high hits_low hits_mid hits_high onset onsets"
+    "renameto": {
+     "expr": "mod.hub.channels(parent().par.Track.eval())"
+    }
    }
   },
   "lag": {
@@ -412,7 +420,7 @@
    "pars": {
     "const0name": "t",
     "const0value": {
-     "expr": "op('ainfo')['true_sample'] / max(op('ainfo')['sample_rate'], 1)"
+     "expr": "parent().par.Clock.eval() if parent().par.Clock.eval() >= 0 else op('ainfo')['true_sample'] / max(op('ainfo')['sample_rate'], 1)"
     }
    }
   }

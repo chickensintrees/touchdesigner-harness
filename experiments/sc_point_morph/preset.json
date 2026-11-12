@@ -1,6 +1,6 @@
 {
  "title": "Point cloud shapeshifter",
- "technique": "One cloud of about 124,000 coloured points, sampled from the surfaces of 3D models and lettering, that streams from one shape into the next on a noise wind.",
+ "technique": "A cloud of about 124,000 points, sampled from 3D models and lettering, streams from one shape into the next.",
  "music": "Each new section of the song sends the cloud flying into its next shape, and every beat sweeps a bright band up through it. Kicks make the surface jump and throw light outward, bass swells the whole body, and vocals make scattered points shimmer.",
  "accepts_input": true,
  "as_processor": "Rebuilds the picture out of about 124,000 points: a relief sheet whose points take the picture's colours and stand forward where it is bright, which then streams off into 3D models and back, or is printed as a two-ink halftone, traced as a contour map of its brightness, raked as a one-ink landscape, or shown through a wall of discs.",

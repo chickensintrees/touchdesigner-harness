@@ -7,31 +7,31 @@ To call one up by hand, open the `sw_cut` component's **Manual** page, turn **Cu
 
 | Scene | Technique | Takes |
 |---|---|---|
-| [Monitor showing itself](#sc_droste_crt) | A 3D desk of found objects with a monitor whose screen displays the previous frame of the same camera, so real video feedback builds a tunnel of monitors inside monitors. | 9 |
-| [Exploded technical drawing](#sc_exploded_view) | 3D models of unexplained objects are drawn as engineering line art: a shader traces outlines and creases, the objects come apart, and live dimension lines and labels sit around them. | 10 |
-| [Melting poster datamosh](#sc_flow_mosh) | A deliberate video-compression glitch: a clean picture flashes for an instant, then its own hidden motion drags blocks of the last frame around until the next clean flash. | 7 |
-| [Ink in water](#sc_fluid_ink) | A two-dimensional fluid simulation in shaders, where words, pages of small print and 3D model silhouettes are laid down as three inks and lit like a wet surface over paper. | 10 |
-| [Pictures made of type](#sc_glyph_render) | A 3D scene is redrawn from letters of one bitmap font in pure black and white, with brightness deciding how each letter is inked while the letters spell running sentences. | 8 |
-| [Letter architecture](#sc_kifs_office) | A single ray-marched shader draws an endless folded fractal lattice of steel blocks, with sign lettering embossed into its surfaces as real relief that catches light. | 7 |
-| [Kinetic type machine](#sc_kinetic_type) | Moving poster typography in flat colours: every letter, rule and bar is its own small rectangle cut from a font sheet, placed and animated by a shader. | 12 |
-| [Fog and shadow type](#sc_light_gobo) | A dark room full of drifting fog, lit by a projector, fluorescent tubes and a lamp, where patterned light and the shadows of objects hang as solid shafts in the air. | 11 |
-| [Paper storm](#sc_paper_storm) | Thousands of copies of a printed sheet of paper, plus a couple of hundred objects, are each placed and turned by one shader that arranges them into different formations. | 8 |
-| [Slime mould](#sc_physarum) | A slime mould simulation: about 230,000 tiny agents follow each other's trails and grow veins over turning 3D objects, printed sheets and short phrases. | 11 |
-| [Point cloud shapeshifter](#sc_point_morph) | One cloud of about 124,000 coloured points, sampled from the surfaces of 3D models and lettering, that streams from one shape into the next on a noise wind. | 8 |
-| [Living rubber stamp](#sc_rd_stamp) | Stamped phrases feed a reaction-diffusion simulation, so the letters grow coral-like tendrils and beads, lit as raised gold, red enamel or black tar ink on printed paper sheets. | 7 |
-| [Misregistered print shop](#sc_riso_press) | A 3D object lit by red, green and blue lights is split into spot-colour plates, each screened into dots, lines or grain and overprinted out of register on moving paper. | 14 |
-| [Scan line video synth](#sc_rutt_etra) | A 1970s-style analogue video synthesizer: a hidden source picture is redrawn as glowing scan lines in 3D, each line pushed up and back by the brightness beneath it. | 10 |
-| [Shatter and reassemble](#sc_shatter) | 3D models and extruded phrases are pre-cut into rigid shards, and a shader bursts them apart and pulls them back together exactly, like footage run backwards. | 10 |
-| [Spectrogram terrain](#sc_spectral_terrain) | A scrolling history of the last few seconds of the sound spectrum becomes a height map, drawn as a landscape of glowing ridge lines that recede from the viewer. | 8 |
-| [Time-sliced objects](#sc_time_slab) | A slit-scan effect: a spinning 3D object is recorded for about a second, and every part of the picture shows a different moment of that recording. | 8 |
-| [Oscilloscope beam drawings](#sc_vector_scope) | A simulated oscilloscope tube: one glowing beam traces word outlines, 3D model wireframes and waveforms, with fading phosphor afterglow, soft glow and a measuring grid. | 11 |
+| [Monitor showing itself](#sc_droste_crt) | A monitor on a 3D desk shows the camera's previous frame, so video feedback builds a tunnel of monitors. | 9 |
+| [Exploded technical drawing](#sc_exploded_view) | 3D models are drawn as engineering line art and come apart, with live dimension lines and labels around them. | 10 |
+| [Melting poster datamosh](#sc_flow_mosh) | A deliberate video-compression glitch: a clean picture flashes, then its own motion drags blocks of the last frame around. | 7 |
+| [Ink in water](#sc_fluid_ink) | A 2D fluid simulation in shaders, where words and model silhouettes are laid down as inks over paper. | 10 |
+| [Pictures made of type](#sc_glyph_render) | A 3D scene is redrawn in pure black and white from the letters of one bitmap font. | 8 |
+| [Letter architecture](#sc_kifs_office) | One ray-marched shader draws an endless folded fractal of steel blocks with lettering embossed into its surfaces. | 7 |
+| [Kinetic type machine](#sc_kinetic_type) | Moving poster typography: every letter is its own small rectangle cut from a font sheet and animated by a shader. | 12 |
+| [Fog and shadow type](#sc_light_gobo) | A dark, foggy room where patterned light and the shadows of objects hang as solid shafts in the air. | 11 |
+| [Paper storm](#sc_paper_storm) | Thousands of copies of a printed sheet are placed and turned by one shader that arranges them into formations. | 8 |
+| [Slime mould](#sc_physarum) | A slime mould simulation: about 230,000 agents follow each other's trails and grow veins over objects and phrases. | 11 |
+| [Point cloud shapeshifter](#sc_point_morph) | A cloud of about 124,000 points, sampled from 3D models and lettering, streams from one shape into the next. | 8 |
+| [Living rubber stamp](#sc_rd_stamp) | Stamped phrases feed a reaction-diffusion simulation, so the letters grow coral-like tendrils and beads. | 7 |
+| [Misregistered print shop](#sc_riso_press) | A 3D object is split into spot-colour plates, each screened into dots or lines and overprinted out of register. | 14 |
+| [Scan line video synth](#sc_rutt_etra) | A 1970s-style video synthesizer: a picture is redrawn as glowing scan lines in 3D, displaced by its brightness. | 10 |
+| [Shatter and reassemble](#sc_shatter) | 3D models and phrases are pre-cut into rigid shards that burst apart and pull back together exactly. | 10 |
+| [Spectrogram terrain](#sc_spectral_terrain) | The last few seconds of the sound spectrum become a landscape of glowing ridge lines receding from the viewer. | 8 |
+| [Time-sliced objects](#sc_time_slab) | A slit-scan effect: every part of the picture shows a different moment of a spinning 3D object. | 8 |
+| [Oscilloscope beam drawings](#sc_vector_scope) | A simulated oscilloscope: one glowing beam traces word outlines, 3D wireframes and waveforms with fading phosphor afterglow. | 11 |
 
 ## Scenes
 
 <a id="sc_droste_crt"></a>
 ### Monitor showing itself
 
-`sc_droste_crt` · A 3D desk of found objects with a monitor whose screen displays the previous frame of the same camera, so real video feedback builds a tunnel of monitors inside monitors.
+`sc_droste_crt` · A monitor on a 3D desk shows the camera's previous frame, so video feedback builds a tunnel of monitors.
 
 **Follows the music:** Kicks flash the lamp light, make the brass astrolabe glow, light up the screen and nudge the camera in, snares make the amphora jump and hi-hats rattle the gramophone and the little lander, and each of these events then travels down the tunnel as a delayed echo. Each nested copy shifts in colour, and the direction of that shift reverses when the song changes section.
 
@@ -52,7 +52,7 @@ To call one up by hand, open the `sw_cut` component's **Manual** page, turn **Cu
 <a id="sc_exploded_view"></a>
 ### Exploded technical drawing
 
-`sc_exploded_view` · 3D models of unexplained objects are drawn as engineering line art: a shader traces outlines and creases, the objects come apart, and live dimension lines and labels sit around them.
+`sc_exploded_view` · 3D models are drawn as engineering line art and come apart, with live dimension lines and labels around them.
 
 **Follows the music:** Each kick snaps the parts further apart or closer together, and the parts of a lunar lander fly out on the bar line and land one by one through the bar. Snares drop a rubber stamp, the beat thickens the lines, and a new section of the song swaps the object.
 
@@ -74,7 +74,7 @@ To call one up by hand, open the `sw_cut` component's **Manual** page, turn **Cu
 <a id="sc_flow_mosh"></a>
 ### Melting poster datamosh
 
-`sc_flow_mosh` · A deliberate video-compression glitch: a clean picture flashes for an instant, then its own hidden motion drags blocks of the last frame around until the next clean flash.
+`sc_flow_mosh` · A deliberate video-compression glitch: a clean picture flashes, then its own motion drags blocks of the last frame around.
 
 **Follows the music:** Each kick drum snaps the clean picture back, fully on strong kicks and in ragged patches on weak ones, while snares restore about a third of it and break the smear into bigger tiles. Louder passages smear faster, vocals add vertical streaks and a red and blue colour split, and a new section of the song prints the next picture as a ghost over the old one before it snaps in on the beat.
 
@@ -93,7 +93,7 @@ To call one up by hand, open the `sw_cut` component's **Manual** page, turn **Cu
 <a id="sc_fluid_ink"></a>
 ### Ink in water
 
-`sc_fluid_ink` · A two-dimensional fluid simulation in shaders, where words, pages of small print and 3D model silhouettes are laid down as three inks and lit like a wet surface over paper.
+`sc_fluid_ink` · A 2D fluid simulation in shaders, where words and model silhouettes are laid down as inks over paper.
 
 **Follows the music:** Kicks fire jets that carry a drop of ink, snares spin up pairs of vortices, hi-hats add fine droplets and the bass slowly stirs the whole tank. The voice is a moving nozzle that squirts ink at a height that follows the sung pitch, and each new section of the song stamps a fresh shape in a new place.
 
@@ -115,7 +115,7 @@ To call one up by hand, open the `sw_cut` component's **Manual** page, turn **Cu
 <a id="sc_glyph_render"></a>
 ### Pictures made of type
 
-`sc_glyph_render` · A 3D scene is redrawn from letters of one bitmap font in pure black and white, with brightness deciding how each letter is inked while the letters spell running sentences.
+`sc_glyph_render` · A 3D scene is redrawn in pure black and white from the letters of one bitmap font.
 
 **Follows the music:** The text advances two characters on every beat, the snare flips the whole frame to its negative, and the kick swells the model and flashes the big word white. Louder bars use smaller letters, and hi-hats scatter stray characters through the sentences.
 
@@ -135,7 +135,7 @@ To call one up by hand, open the `sw_cut` component's **Manual** page, turn **Cu
 <a id="sc_kifs_office"></a>
 ### Letter architecture
 
-`sc_kifs_office` · A single ray-marched shader draws an endless folded fractal lattice of steel blocks, with sign lettering embossed into its surfaces as real relief that catches light.
+`sc_kifs_office` · One ray-marched shader draws an endless folded fractal of steel blocks with lettering embossed into its surfaces.
 
 **Follows the music:** Bass and vocal pitch change the fold angles so each note reshapes the building, the bar line opens the gaps between blocks, and every kick sends a pulse of light travelling through the space. Snares make the red lettering flare, hi-hats knock lights out or flash random blocks, and the camera never stops moving.
 
@@ -154,7 +154,7 @@ To call one up by hand, open the `sw_cut` component's **Manual** page, turn **Cu
 <a id="sc_kinetic_type"></a>
 ### Kinetic type machine
 
-`sc_kinetic_type` · Moving poster typography in flat colours: every letter, rule and bar is its own small rectangle cut from a font sheet, placed and animated by a shader.
+`sc_kinetic_type` · Moving poster typography: every letter is its own small rectangle cut from a font sheet and animated by a shader.
 
 **Follows the music:** The beat steps the scrolling lines, typing, word changes and giant counting numerals, while kick drums jolt and scatter the letters, snares flip the colours and hi-hats light up single letters. Louder passages open the layouts up, and each new section of the song swaps in another phrase and arrangement.
 
@@ -178,7 +178,7 @@ To call one up by hand, open the `sw_cut` component's **Manual** page, turn **Cu
 <a id="sc_light_gobo"></a>
 ### Fog and shadow type
 
-`sc_light_gobo` · A dark room full of drifting fog, lit by a projector, fluorescent tubes and a lamp, where patterned light and the shadows of objects hang as solid shafts in the air.
+`sc_light_gobo` · A dark, foggy room where patterned light and the shadows of objects hang as solid shafts in the air.
 
 **Follows the music:** Kick and snare hits strike the fluorescent tubes and kick the projector brighter, while the bass and kick make the fog thicken in puffs. The beat moves the patterns in the light, the bar slowly sweeps the projector, and each new section of the song changes the projected phrase.
 
@@ -201,7 +201,7 @@ To call one up by hand, open the `sw_cut` component's **Manual** page, turn **Cu
 <a id="sc_paper_storm"></a>
 ### Paper storm
 
-`sc_paper_storm` · Thousands of copies of a printed sheet of paper, plus a couple of hundred objects, are each placed and turned by one shader that arranges them into different formations.
+`sc_paper_storm` · Thousands of copies of a printed sheet are placed and turned by one shader that arranges them into formations.
 
 **Follows the music:** The bar turns the formations and the beat flips sheets, changes pages and steps the falling paper. Each kick drum throws things outward and sends an amber shockwave ring through the paper, while overall loudness brightens the lamp and glow.
 
@@ -221,7 +221,7 @@ To call one up by hand, open the `sw_cut` component's **Manual** page, turn **Cu
 <a id="sc_physarum"></a>
 ### Slime mould
 
-`sc_physarum` · A slime mould simulation: about 230,000 tiny agents follow each other's trails and grow veins over turning 3D objects, printed sheets and short phrases.
+`sc_physarum` · A slime mould simulation: about 230,000 agents follow each other's trails and grow veins over objects and phrases.
 
 **Follows the music:** Bass sets how coarse the vein mesh is, vocals make it more cellular, and drums and overall energy speed the agents up. Each kick scatters a share of the agents, each snare briefly makes them flee what they were tracing, and a new section of the song swaps the subject so the veins abandon it and find the next one.
 
@@ -244,7 +244,7 @@ To call one up by hand, open the `sw_cut` component's **Manual** page, turn **Cu
 <a id="sc_point_morph"></a>
 ### Point cloud shapeshifter
 
-`sc_point_morph` · One cloud of about 124,000 coloured points, sampled from the surfaces of 3D models and lettering, that streams from one shape into the next on a noise wind.
+`sc_point_morph` · A cloud of about 124,000 points, sampled from 3D models and lettering, streams from one shape into the next.
 
 **Follows the music:** Each new section of the song sends the cloud flying into its next shape, and every beat sweeps a bright band up through it. Kicks make the surface jump and throw light outward, bass swells the whole body, and vocals make scattered points shimmer.
 
@@ -264,7 +264,7 @@ To call one up by hand, open the `sw_cut` component's **Manual** page, turn **Cu
 <a id="sc_rd_stamp"></a>
 ### Living rubber stamp
 
-`sc_rd_stamp` · Stamped phrases feed a reaction-diffusion simulation, so the letters grow coral-like tendrils and beads, lit as raised gold, red enamel or black tar ink on printed paper sheets.
+`sc_rd_stamp` · Stamped phrases feed a reaction-diffusion simulation, so the letters grow coral-like tendrils and beads.
 
 **Follows the music:** Each kick drum presses the letters solid again, and between kicks they hollow into outlines, worms and beads; a new song section brings a new phrase and ink. Louder, bassier passages let the growth spread further from the letters, snares burn it back, and high hits make the ink glint.
 
@@ -283,7 +283,7 @@ To call one up by hand, open the `sw_cut` component's **Manual** page, turn **Cu
 <a id="sc_riso_press"></a>
 ### Misregistered print shop
 
-`sc_riso_press` · A 3D object lit by red, green and blue lights is split into spot-colour plates, each screened into dots, lines or grain and overprinted out of register on moving paper.
+`sc_riso_press` · A 3D object is split into spot-colour plates, each screened into dots or lines and overprinted out of register.
 
 **Follows the music:** Kick, snare and hi-hat each re-expose their own plate and knock it out of register before it springs back, while the bass swells the dots and lines. The paper advances on the beat or the bar, and each new section of the song changes the object, the words and the inks.
 
@@ -309,7 +309,7 @@ To call one up by hand, open the `sw_cut` component's **Manual** page, turn **Cu
 <a id="sc_rutt_etra"></a>
 ### Scan line video synth
 
-`sc_rutt_etra` · A 1970s-style analogue video synthesizer: a hidden source picture is redrawn as glowing scan lines in 3D, each line pushed up and back by the brightness beneath it.
+`sc_rutt_etra` · A 1970s-style video synthesizer: a picture is redrawn as glowing scan lines in 3D, displaced by its brightness.
 
 **Follows the music:** Bass bends the whole picture sideways, kick hits make the lines stand taller and flash, and snare hits tear bands of lines sideways. Hi-hats break the lines into gaps, the live spectrum ripples along them, and each new section of the song turns the picture to a new angle and rolls it once.
 
@@ -331,7 +331,7 @@ To call one up by hand, open the `sw_cut` component's **Manual** page, turn **Cu
 <a id="sc_shatter"></a>
 ### Shatter and reassemble
 
-`sc_shatter` · 3D models and extruded phrases are pre-cut into rigid shards, and a shader bursts them apart and pulls them back together exactly, like footage run backwards.
+`sc_shatter` · 3D models and phrases are pre-cut into rigid shards that burst apart and pull back together exactly.
 
 **Follows the music:** Each bar bursts the object apart and pulls it back so it locks together on a bar or beat line, with louder passages throwing the shards further. Kick drums crack the object open for a moment, vocals brighten the glow inside the cracks, and a new section of the song swaps in a different object.
 
@@ -353,7 +353,7 @@ To call one up by hand, open the `sw_cut` component's **Manual** page, turn **Cu
 <a id="sc_spectral_terrain"></a>
 ### Spectrogram terrain
 
-`sc_spectral_terrain` · A scrolling history of the last few seconds of the sound spectrum becomes a height map, drawn as a landscape of glowing ridge lines that recede from the viewer.
+`sc_spectral_terrain` · The last few seconds of the sound spectrum become a landscape of glowing ridge lines receding from the viewer.
 
 **Follows the music:** The frequency spectrum is the shape of the land itself, with the newest sound at the near edge, and each kick drum sends a bright swell rolling away, nudges the camera and flashes the standing words. The sung note sets the height of a ribbon of light, the bass note tints the horizon glow, and snare hits split the colours.
 
@@ -373,7 +373,7 @@ To call one up by hand, open the `sw_cut` component's **Manual** page, turn **Cu
 <a id="sc_time_slab"></a>
 ### Time-sliced objects
 
-`sc_time_slab` · A slit-scan effect: a spinning 3D object is recorded for about a second, and every part of the picture shows a different moment of that recording.
+`sc_time_slab` · A slit-scan effect: every part of the picture shows a different moment of a spinning 3D object.
 
 **Follows the music:** Kick drums snap the prop round, pulse its size and throw parts of the picture further into the past, while snares make it nod and flash the rim light. Bass and overall loudness set how deep into the past the picture reaches, and the tempo drives the bounce, the sweeps and the crawl.
 
@@ -393,7 +393,7 @@ To call one up by hand, open the `sw_cut` component's **Manual** page, turn **Cu
 <a id="sc_vector_scope"></a>
 ### Oscilloscope beam drawings
 
-`sc_vector_scope` · A simulated oscilloscope tube: one glowing beam traces word outlines, 3D model wireframes and waveforms, with fading phosphor afterglow, soft glow and a measuring grid.
+`sc_vector_scope` · A simulated oscilloscope: one glowing beam traces word outlines, 3D wireframes and waveforms with fading phosphor afterglow.
 
 **Follows the music:** The raw left and right audio samples are added to the beam's position, so every drawing shivers and fattens as the track gets louder and is clean when it is quiet. Kicks make the picture swell, ring and brighten, hi-hats fatten the line, shapes change every 4 or 8 beats, and a new section of the song briefly bursts the drawing into scribble.
 

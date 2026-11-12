@@ -1,5 +1,7 @@
 # Setup (macOS or Windows)
 
+This is the setup by hand. Claude Code can walk you through it instead: see [INSTALL.md](INSTALL.md), or the "Install" section of the README.
+
 Two MCP servers work with this harness. Pick one; you can add the other later, and both can run at the same time.
 
 | | Server | Status |

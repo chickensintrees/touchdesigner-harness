@@ -1,6 +1,6 @@
 {
  "title": "Scan line video synth",
- "technique": "A 1970s-style analogue video synthesizer: a hidden source picture is redrawn as glowing scan lines in 3D, each line pushed up and back by the brightness beneath it.",
+ "technique": "A 1970s-style video synthesizer: a picture is redrawn as glowing scan lines in 3D, displaced by its brightness.",
  "music": "Bass bends the whole picture sideways, kick hits make the lines stand taller and flash, and snare hits tear bands of lines sideways. Hi-hats break the lines into gaps, the live spectrum ripples along them, and each new section of the song turns the picture to a new angle and rolls it once.",
  "accepts_input": true,
  "as_processor": "Redraws the picture it is given as glowing scan lines in 3D: brighter parts of the picture lift the lines higher, and in some takes the lines take on the picture's colours.",

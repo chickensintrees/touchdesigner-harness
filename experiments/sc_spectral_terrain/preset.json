@@ -1,6 +1,6 @@
 {
   "title": "Spectrogram terrain",
-  "technique": "A scrolling history of the last few seconds of the sound spectrum becomes a height map, drawn as a landscape of glowing ridge lines that recede from the viewer.",
+  "technique": "The last few seconds of the sound spectrum become a landscape of glowing ridge lines receding from the viewer.",
   "music": "The frequency spectrum is the shape of the land itself, with the newest sound at the near edge, and each kick drum sends a bright swell rolling away, nudges the camera and flashes the standing words. The sung note sets the height of a ribbon of light, the bass note tints the horizon glow, and snare hits split the colours.",
   "takes": [
     {

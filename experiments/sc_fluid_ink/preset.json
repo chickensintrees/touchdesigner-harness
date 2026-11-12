@@ -1,6 +1,6 @@
 {
   "title": "Ink in water",
-  "technique": "A two-dimensional fluid simulation in shaders, where words, pages of small print and 3D model silhouettes are laid down as three inks and lit like a wet surface over paper.",
+  "technique": "A 2D fluid simulation in shaders, where words and model silhouettes are laid down as inks over paper.",
   "music": "Kicks fire jets that carry a drop of ink, snares spin up pairs of vortices, hi-hats add fine droplets and the bass slowly stirs the whole tank. The voice is a moving nozzle that squirts ink at a height that follows the sung pitch, and each new section of the song stamps a fresh shape in a new place.",
   "takes": [
     {

@@ -1,6 +1,6 @@
 {
  "title": "Shatter and reassemble",
- "technique": "3D models and extruded phrases are pre-cut into rigid shards, and a shader bursts them apart and pulls them back together exactly, like footage run backwards.",
+ "technique": "3D models and phrases are pre-cut into rigid shards that burst apart and pull back together exactly.",
  "music": "Each bar bursts the object apart and pulls it back so it locks together on a bar or beat line, with louder passages throwing the shards further. Kick drums crack the object open for a moment, vocals brighten the glow inside the cracks, and a new section of the song swaps in a different object.",
  "accepts_input": true,
  "as_processor": "It puts the picture on a flat 16:9 slab (or forty small ones, or a row of seven gold ones), breaks the slab into shards, slabs, chips or a tidy grid of pieces in time with the bars, and pulls it back together so the picture is whole again on a bar line.",

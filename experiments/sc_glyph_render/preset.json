@@ -1,6 +1,6 @@
 {
  "title": "Pictures made of type",
- "technique": "A 3D scene is redrawn from letters of one bitmap font in pure black and white, with brightness deciding how each letter is inked while the letters spell running sentences.",
+ "technique": "A 3D scene is redrawn in pure black and white from the letters of one bitmap font.",
  "music": "The text advances two characters on every beat, the snare flips the whole frame to its negative, and the kick swells the model and flashes the big word white. Louder bars use smaller letters, and hi-hats scatter stray characters through the sentences.",
  "accepts_input": true,
  "as_processor": "It redraws the incoming picture as running bitmap type in pure black and white: dark areas become the black void, bright areas flip to black type on white, and the take decides whether that fills the frame, a quadtree, a wallpaper grid, a corridor's doors and end wall, or the inside of a giant word.",

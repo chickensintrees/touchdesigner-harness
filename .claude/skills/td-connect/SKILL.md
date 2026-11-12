@@ -6,7 +6,7 @@ description: Connect to the running TouchDesigner session and load the tdh toolk
 # Connect to TouchDesigner
 
 1. **Find the server.** Call the MCP server's project-info tool (TDMCP: `project_info`; others: see `docs/TRANSPORTS.md`).
-   - If there is no TouchDesigner MCP server, or the call fails: stop. Tell the user to open `lab.toe` (or their project), check that the server component is Active, and check `claude mcp list`. Setup is in `docs/SETUP.md`. Don't continue without a connection.
+   - If there is no TouchDesigner MCP server, or the call fails: stop. Tell the user to open `lab.toe` (or their project), check that the server component is Active, and check `claude mcp list`. If nothing is set up yet, offer the `td-setup` skill (the walk-through in `docs/INSTALL.md`); the same steps by hand are in `docs/SETUP.md`. Don't continue without a connection.
 2. **Load tdh** with the execute-python tool (TDMCP: `execute_code`). Use this repo's absolute path: run `pwd` in the shell if you don't know it.
 
    ```python

@@ -1,6 +1,6 @@
 {
  "title": "Melting poster datamosh",
- "technique": "A deliberate video-compression glitch: a clean picture flashes for an instant, then its own hidden motion drags blocks of the last frame around until the next clean flash.",
+ "technique": "A deliberate video-compression glitch: a clean picture flashes, then its own motion drags blocks of the last frame around.",
  "music": "Each kick drum snaps the clean picture back, fully on strong kicks and in ragged patches on weak ones, while snares restore about a third of it and break the smear into bigger tiles. Louder passages smear faster, vocals add vertical streaks and a red and blue colour split, and a new section of the song prints the next picture as a ghost over the old one before it snaps in on the beat.",
  "accepts_input": true,
  "as_processor": "Treats the picture it is given like compressed video: shows it clean on each kick drum, then drags blocks of the last frame along the picture's own motion until the next kick.",

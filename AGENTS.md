@@ -31,6 +31,7 @@ You are working with a live TouchDesigner (TD) session through an MCP server. Th
 
 | Want | Do |
 |------|----|
+| Set up from scratch, or "continue setup" | `td-setup` skill (follows `docs/INSTALL.md`) |
 | Is it connected? | `td-connect` skill |
 | Start something new | `td-new-experiment` skill |
 | Iterate on a look | `td-sketch` skill |

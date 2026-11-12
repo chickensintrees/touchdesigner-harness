@@ -1,6 +1,6 @@
 {
  "title": "Misregistered print shop",
- "technique": "A 3D object lit by red, green and blue lights is split into spot-colour plates, each screened into dots, lines or grain and overprinted out of register on moving paper.",
+ "technique": "A 3D object is split into spot-colour plates, each screened into dots or lines and overprinted out of register.",
  "music": "Kick, snare and hi-hat each re-expose their own plate and knock it out of register before it springs back, while the bass swells the dots and lines. The paper advances on the beat or the bar, and each new section of the song changes the object, the words and the inks.",
  "accepts_input": true,
  "as_processor": "Prints the picture as a colour separation: its red, green and blue channels become three ink plates (dark areas take the most ink), each screened into dots, lines, rings or hatching and overprinted out of register on paper, with each plate re-exposed on its own drum hit.",

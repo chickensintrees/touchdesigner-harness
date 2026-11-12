@@ -1,6 +1,6 @@
 {
  "title": "Kinetic type machine",
- "technique": "Moving poster typography in flat colours: every letter, rule and bar is its own small rectangle cut from a font sheet, placed and animated by a shader.",
+ "technique": "Moving poster typography: every letter is its own small rectangle cut from a font sheet and animated by a shader.",
  "music": "The beat steps the scrolling lines, typing, word changes and giant counting numerals, while kick drums jolt and scatter the letters, snares flip the colours and hi-hats light up single letters. Louder passages open the layouts up, and each new section of the song swaps in another phrase and arrangement.",
  "accepts_input": true,
  "as_processor": "Prints the picture as a two-colour line screen in the take's flat colours, inside the moving type and more faintly behind it, so big letters and numerals become windows onto it; the mosaic take turns it into a halftone made of letters, and rings and ticker wall also size every letter by the brightness of the picture under it.",

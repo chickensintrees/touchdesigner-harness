@@ -86,3 +86,30 @@ def audio(slug):
 def feed(slug):
     """The feed folder for a track; the sample's if that track is not there."""
     return _entry(slug)[1]
+
+
+_META = {}  # feed folder -> (mtime of feed.json, its contents)
+
+
+def _meta(slug):
+    import json
+
+    path = feed(slug) + "/feed.json"
+    stamp = os.path.getmtime(path)
+    cached = _META.get(path)
+    if not cached or cached[0] != stamp:
+        with open(path, encoding="utf-8") as fh:
+            cached = _META[path] = (stamp, json.load(fh))
+    return cached[1]
+
+
+def duration(slug):
+    """Length in seconds of a track's feed. The hub's Duration parameter reads this, so
+    it is right however the Track parameter was set."""
+    meta = _meta(slug)
+    return (meta["samples"] - 1) / meta["rate"]
+
+
+def channels(slug):
+    """The feed's channel names, space separated (what the feed's File In CHOP renames to)."""
+    return " ".join(_meta(slug)["channels"])

@@ -1,6 +1,6 @@
 {
  "title": "Living rubber stamp",
- "technique": "Stamped phrases feed a reaction-diffusion simulation, so the letters grow coral-like tendrils and beads, lit as raised gold, red enamel or black tar ink on printed paper sheets.",
+ "technique": "Stamped phrases feed a reaction-diffusion simulation, so the letters grow coral-like tendrils and beads.",
  "music": "Each kick drum presses the letters solid again, and between kicks they hollow into outlines, worms and beads; a new song section brings a new phrase and ink. Louder, bassier passages let the growth spread further from the letters, snares burn it back, and high hits make the ink glint.",
  "accepts_input": true,
  "as_processor": "Stamps the bright shapes of the picture into the simulation in place of the words, so its outlines stand up as gold, enamel or tar ink that follows the picture as it moves and grows and breaks up between kick drums; two takes also print the picture itself on the page underneath.",

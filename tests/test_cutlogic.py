@@ -164,3 +164,39 @@ def test_cutting_carries_on_after_the_track_loops():
     shots, _ = cutlogic.simulate(_feed(), NAMES, SCENES, loops=3)
     per_loop = Counter(int(s[0] // 60.0) for s in shots)
     assert per_loop[0] >= 7 and per_loop[1] >= 7 and per_loop[2] >= 7
+
+
+# ---- quiet passages: a long section is not one long shot ----------------------
+
+
+def test_quiet_sections_are_split_every_bars_quiet_bars():
+    # 24 s sections of 2 s bars: with bars_quiet 4 a shot is at most 8 s, plus the beat it waits for
+    rows = _feed(duration=96.0, section_s=24.0)
+    shots, cold = cutlogic.simulate(rows, NAMES, MANY, {"bars_quiet": 4})
+    gaps = _gaps(shots)
+    assert max(gaps) <= 8.5 + 1e-6, gaps
+    assert min(gaps) >= 2.0 - 1e-6, gaps  # never shorter than the shortest shot (one bar)
+    assert not cold
+
+
+def test_bars_quiet_zero_keeps_one_shot_per_section():
+    rows = _feed(duration=96.0, section_s=24.0)
+    shots, _ = cutlogic.simulate(rows, NAMES, MANY, {"bars_quiet": 0})
+    assert len(shots) == 4 and max(_gaps(shots)) >= 23.9
+
+
+def test_no_quiet_cut_just_before_a_section_ends():
+    # 18 s sections: the bar grid would cut at 16 s, two seconds before the section's own cut
+    rows = _feed(duration=72.0, section_s=18.0)
+    shots, _ = cutlogic.simulate(rows, NAMES, MANY, {"bars_quiet": 4})
+    in_section = sorted({round(s[0] % 18.0, 1) for s in shots})
+    assert all(t <= 0.75 * 18.0 + 0.5 for t in in_section), in_section
+
+
+def test_bars_quiet_keeps_the_loud_grid_and_adds_a_cut_where_the_music_turns_loud():
+    loud = _feed(energy=lambda t: 0.9)
+    a, _ = cutlogic.simulate(loud, NAMES, SCENES, {"bars_quiet": 0})
+    b, _ = cutlogic.simulate(loud, NAMES, SCENES, {"bars_quiet": 4})
+    # loudness is decided at the first bar line, so the one extra cut is on the beat after it
+    assert {s[0] for s in b} - {s[0] for s in a} == {2.5}
+    assert {s[0] for s in a} <= {s[0] for s in b}

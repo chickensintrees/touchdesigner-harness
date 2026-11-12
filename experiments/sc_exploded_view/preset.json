@@ -1,6 +1,6 @@
 {
  "title": "Exploded technical drawing",
- "technique": "3D models of unexplained objects are drawn as engineering line art: a shader traces outlines and creases, the objects come apart, and live dimension lines and labels sit around them.",
+ "technique": "3D models are drawn as engineering line art and come apart, with live dimension lines and labels around them.",
  "music": "Each kick snaps the parts further apart or closer together, and the parts of a lunar lander fly out on the bar line and land one by one through the bar. Snares drop a rubber stamp, the beat thickens the lines, and a new section of the song swaps the object.",
  "accepts_input": true,
  "as_processor": "Redraws the picture it is given as a draughtsman would, in the take's paper and two inks: on five takes it is wrapped round the 3D parts as hatching, contour rings or tiles on the separate parts and comes apart with them, and on the other five its edges are traced and its tones hatched onto the sheet behind the parts.",

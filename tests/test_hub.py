@@ -49,3 +49,12 @@ def test_your_own_pack_comes_first(tmp_path, monkeypatch):
     _track(mine, "zebra")
     (repo / "assets.local.txt").write_text(str(mine) + "\n")
     assert m.default_track() == "zebra"
+
+
+def test_duration_and_channels_come_from_the_tracks_own_feed(tmp_path, monkeypatch):
+    m, repo = _module(tmp_path, monkeypatch)
+    _track(repo / "assets", "drive")
+    feed = repo / "assets" / "feeds" / "drive" / "feed.json"
+    feed.write_text('{"samples": 1001, "rate": 100.0, "channels": ["t", "energy"]}')
+    assert m.duration("drive") == 10.0
+    assert m.channels("drive") == "t energy"

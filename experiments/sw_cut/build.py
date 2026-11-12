@@ -50,7 +50,7 @@ DRIVER = '''def onFrameStart(frame):
         }
         looks = par.Looks.eval()
         cfg = {
-            'loud': par.Loud.eval(), 'bars_loud': par.Barsloud.eval(), 'min_bars': par.Minbars.eval(),
+            'loud': par.Loud.eval(), 'bars_loud': par.Barsloud.eval(), 'bars_quiet': par.Barsquiet.eval(), 'min_bars': par.Minbars.eval(),
             'treatments': treatments[1:], 'treat_chance': par.Treatchance.eval() * looks,
             'transitions': transitions[1:], 'trans_chance': par.Transchance.eval() * looks,
             'layer_modes': layer_modes[1:], 'layer_chance': par.Layerchance.eval() * looks,
@@ -126,8 +126,37 @@ DRIVER = '''def onFrameStart(frame):
     mix.par.vec1valuex = progress
     mix.par.vec1valuey = age
     comp.op('out1').cook(force=True)
-    if comp.op('rec').par.record.eval():
-        comp.op('rec').cook(force=True)
+    _recording(comp)
+    return
+
+
+def _recording(comp):
+    """Start, feed and stop the recorder (see record() in build.py). While it runs,
+    the hub's track time is stepped one frame at a time and the project is off the
+    clock, so every frame is cooked and written in order however long a frame takes."""
+    rec = comp.op('rec')
+    hub = op('/project1/sw_hub')
+    arm = comp.fetch('rec_arm', 0)
+    if arm > 0:
+        comp.store('rec_arm', arm - 1)
+        if arm == 1:
+            comp.store('state', None)
+            comp.store('log', [])
+            comp.store('cuts', 0)
+            rec.par.record = True
+        return
+    left = comp.fetch('rec_left', 0)
+    if left <= 0:
+        return
+    rec.cook(force=True)
+    done = comp.fetch('rec_done', 0) + 1
+    comp.store('rec_done', done)
+    hub.par.Clock = comp.fetch('rec_start', 0.0) + done / rec.par.fps.eval()
+    comp.store('rec_left', left - 1)
+    if left == 1:
+        rec.par.record = False
+        hub.par.Clock = -1
+        project.realTime = comp.fetch('rec_realtime', True)
     return
 
 
@@ -140,21 +169,33 @@ def _dress(target, plan):
 '''
 
 
-def record(file, seconds, from_start=True):
-    """Record the cut with the track's audio. Returns at once; the Movie File Out
-    stops itself after `seconds`. Read tdh.errors right after: a codec that needs
-    a licence fails silently otherwise."""
+def record(file, seconds, start=0.0):
+    """Record `seconds` of the cut, beginning at track time `start`. Returns at once;
+    the cutter's driver starts the recorder two frames later and stops it itself.
+
+    The recording is frame-accurate, not real-time. While it runs, the hub's track
+    time is stepped by one frame per cooked frame (its Clock parameter) and the
+    project's Realtime setting is off, so the file plays at the right speed however
+    slowly the machine renders. A recording made on the clock comes out in slow
+    motion whenever frames are dropped. Both settings are put back at the end.
+
+    The file holds the picture only. Add the sound afterwards from the track itself:
+        ffmpeg -i film.mov -ss <start> -t <seconds> -i <track> -map 0:v -map 1:a -c:v libx264 -c:a aac out.mp4
+    Read tdh.errors right after starting: a codec that needs a licence fails
+    silently otherwise. Progress: op(CUT).fetch('rec_left') frames to go.
+    """
     cut = op(CUT)
     rec = cut.op("rec")
-    rec.par.record = False
+    rec.par.record = False  # the recorder only starts a new file on a frame after it was off
     rec.par.file = file
-    rec.par.length = seconds
-    if from_start:
-        op("/project1/sw_hub/audio").par.cuepulse.pulse()
-        cut.store("state", None)
-        cut.store("log", [])
-        cut.store("cuts", 0)
-    rec.par.record = True
+    if cut.fetch("rec_left", 0) <= 0:
+        cut.store("rec_realtime", bool(td.project.realTime))
+    cut.store("rec_start", float(start))
+    cut.store("rec_done", 0)
+    cut.store("rec_left", int(round(seconds * rec.par.fps.eval())))
+    cut.store("rec_arm", 2)
+    op("/project1/sw_hub").par.Clock = float(start)
+    td.project.realTime = False
     return file
 
 
@@ -177,6 +218,7 @@ def build(scenes=None, loud=0.58):
     page.appendToggle("Auto", label="Cut With The Music")[0].val = True
     page.appendFloat("Loud", label="Loud Above (energy)")[0].val = loud
     page.appendInt("Barsloud", label="Bars Per Cut When Loud")[0].val = 2
+    page.appendInt("Barsquiet", label="Bars Per Cut When Quiet (0 = sections only)")[0].val = 4
     page.appendFloat("Minbars", label="Shortest Shot (bars)")[0].val = 1
     page.appendFloat("Looks", label="Looks Amount (0 = clean cuts only)")[0].val = 1
     page.appendFloat("Treatchance", label="Share Of Shots Treated")[0].val = 0.4
@@ -253,10 +295,7 @@ def build(scenes=None, loud=0.58):
     # h264/h265 need a Commercial licence ("GPU Accelerated H.264/H.265 Encoding
     # requires a Commercial license"); Motion JPEG records, then ffmpeg converts.
     rec.par.videocodec = "mjpa"
-    rec.par.audiochop = "/project1/sw_hub/audio"
-    rec.par.audiocodec = "aac"
-    rec.par.limitlength = True
-    rec.par.lengthunit = "seconds"
+    rec.par.limitlength = False  # the driver counts the frames (see record())
     mix.outputConnectors[0].connect(rec)
     rec.nodeX, rec.nodeY = 850, -150
 
