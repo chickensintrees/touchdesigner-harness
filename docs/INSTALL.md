@@ -31,10 +31,10 @@ If there is no clone yet, make one in the person's home folder (`<HOME>` below; 
 git clone https://github.com/chickensintrees/touchdesigner-harness.git "<HOME>/touchdesigner-harness"
 ```
 
-**The clone folder already exists.** Do not delete or overwrite it. Check what it is:
+**The clone folder already exists.** Do not delete or overwrite it. Check what it is, using the real path of that folder:
 
 ```
-git -C "<HOME>/touchdesigner-harness" remote get-url origin
+git -C "<the existing folder>" remote get-url origin
 ```
 
 - If the answer is `https://github.com/chickensintrees/touchdesigner-harness` (with or without `.git`, or the same path over SSH), it is an earlier clone and may be out of date. Tell the person, and ask whether to use and update it. After a yes, run `git -C "<CLONE>" pull --ff-only`, then check that `<CLONE>/.claude/skills/td-setup/SKILL.md` exists. Then skip every later step whose check already passes.
