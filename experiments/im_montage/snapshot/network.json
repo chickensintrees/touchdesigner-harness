@@ -1,0 +1,2021 @@
+{
+ "format": "tdh-snapshot/1",
+ "root": "/project1/im_montage",
+ "ops": {
+  "cam": {
+   "type": "cameraCOMP",
+   "family": "COMP",
+   "pos": [
+    600,
+    300
+   ],
+   "pars": {
+    "far": 60.0,
+    "fov": 46.0,
+    "near": 0.05,
+    "rz": {
+     "expr": "op('lay')['roll'][0]"
+    },
+    "tx": {
+     "expr": "op('lay')['camx'][0]"
+    },
+    "ty": {
+     "expr": "op('lay')['camy'][0]"
+    },
+    "tz": {
+     "expr": "op('lay')['camz'][0]"
+    }
+   }
+  },
+  "cam/file1": {
+   "type": "fileinPOP",
+   "family": "POP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "file": {
+     "expr": "app.samplesFolder + '/Geo/defcam.tog'"
+    }
+   }
+  },
+  "card0": {
+   "type": "geometryCOMP",
+   "family": "COMP",
+   "pos": [
+    340,
+    300
+   ],
+   "pars": {
+    "material": "/project1/im_montage/mat0",
+    "rz": {
+     "expr": "op('lay')['rz'][0]"
+    },
+    "sx": {
+     "expr": "op('lay')['sx'][0]"
+    },
+    "sy": {
+     "expr": "op('lay')['s'][0]"
+    },
+    "tx": {
+     "expr": "op('lay')['x'][0]"
+    },
+    "ty": {
+     "expr": "op('lay')['y'][0]"
+    },
+    "tz": {
+     "expr": "op('lay')['z'][0]"
+    }
+   }
+  },
+  "card0/rect": {
+   "type": "rectangleSOP",
+   "family": "SOP",
+   "pos": [
+    0,
+    0
+   ]
+  },
+  "card1": {
+   "type": "geometryCOMP",
+   "family": "COMP",
+   "pos": [
+    340,
+    190
+   ],
+   "pars": {
+    "material": "/project1/im_montage/mat1",
+    "rz": {
+     "expr": "op('lay')['rz'][1]"
+    },
+    "sx": {
+     "expr": "op('lay')['sx'][1]"
+    },
+    "sy": {
+     "expr": "op('lay')['s'][1]"
+    },
+    "tx": {
+     "expr": "op('lay')['x'][1]"
+    },
+    "ty": {
+     "expr": "op('lay')['y'][1]"
+    },
+    "tz": {
+     "expr": "op('lay')['z'][1]"
+    }
+   }
+  },
+  "card1/rect": {
+   "type": "rectangleSOP",
+   "family": "SOP",
+   "pos": [
+    0,
+    0
+   ]
+  },
+  "card10": {
+   "type": "geometryCOMP",
+   "family": "COMP",
+   "pos": [
+    340,
+    -800
+   ],
+   "pars": {
+    "material": "/project1/im_montage/mat10",
+    "rz": {
+     "expr": "op('lay')['rz'][10]"
+    },
+    "sx": {
+     "expr": "op('lay')['sx'][10]"
+    },
+    "sy": {
+     "expr": "op('lay')['s'][10]"
+    },
+    "tx": {
+     "expr": "op('lay')['x'][10]"
+    },
+    "ty": {
+     "expr": "op('lay')['y'][10]"
+    },
+    "tz": {
+     "expr": "op('lay')['z'][10]"
+    }
+   }
+  },
+  "card10/rect": {
+   "type": "rectangleSOP",
+   "family": "SOP",
+   "pos": [
+    0,
+    0
+   ]
+  },
+  "card11": {
+   "type": "geometryCOMP",
+   "family": "COMP",
+   "pos": [
+    340,
+    -910
+   ],
+   "pars": {
+    "material": "/project1/im_montage/mat11",
+    "rz": {
+     "expr": "op('lay')['rz'][11]"
+    },
+    "sx": {
+     "expr": "op('lay')['sx'][11]"
+    },
+    "sy": {
+     "expr": "op('lay')['s'][11]"
+    },
+    "tx": {
+     "expr": "op('lay')['x'][11]"
+    },
+    "ty": {
+     "expr": "op('lay')['y'][11]"
+    },
+    "tz": {
+     "expr": "op('lay')['z'][11]"
+    }
+   }
+  },
+  "card11/rect": {
+   "type": "rectangleSOP",
+   "family": "SOP",
+   "pos": [
+    0,
+    0
+   ]
+  },
+  "card2": {
+   "type": "geometryCOMP",
+   "family": "COMP",
+   "pos": [
+    340,
+    80
+   ],
+   "pars": {
+    "material": "/project1/im_montage/mat2",
+    "rz": {
+     "expr": "op('lay')['rz'][2]"
+    },
+    "sx": {
+     "expr": "op('lay')['sx'][2]"
+    },
+    "sy": {
+     "expr": "op('lay')['s'][2]"
+    },
+    "tx": {
+     "expr": "op('lay')['x'][2]"
+    },
+    "ty": {
+     "expr": "op('lay')['y'][2]"
+    },
+    "tz": {
+     "expr": "op('lay')['z'][2]"
+    }
+   }
+  },
+  "card2/rect": {
+   "type": "rectangleSOP",
+   "family": "SOP",
+   "pos": [
+    0,
+    0
+   ]
+  },
+  "card3": {
+   "type": "geometryCOMP",
+   "family": "COMP",
+   "pos": [
+    340,
+    -30
+   ],
+   "pars": {
+    "material": "/project1/im_montage/mat3",
+    "rz": {
+     "expr": "op('lay')['rz'][3]"
+    },
+    "sx": {
+     "expr": "op('lay')['sx'][3]"
+    },
+    "sy": {
+     "expr": "op('lay')['s'][3]"
+    },
+    "tx": {
+     "expr": "op('lay')['x'][3]"
+    },
+    "ty": {
+     "expr": "op('lay')['y'][3]"
+    },
+    "tz": {
+     "expr": "op('lay')['z'][3]"
+    }
+   }
+  },
+  "card3/rect": {
+   "type": "rectangleSOP",
+   "family": "SOP",
+   "pos": [
+    0,
+    0
+   ]
+  },
+  "card4": {
+   "type": "geometryCOMP",
+   "family": "COMP",
+   "pos": [
+    340,
+    -140
+   ],
+   "pars": {
+    "material": "/project1/im_montage/mat4",
+    "rz": {
+     "expr": "op('lay')['rz'][4]"
+    },
+    "sx": {
+     "expr": "op('lay')['sx'][4]"
+    },
+    "sy": {
+     "expr": "op('lay')['s'][4]"
+    },
+    "tx": {
+     "expr": "op('lay')['x'][4]"
+    },
+    "ty": {
+     "expr": "op('lay')['y'][4]"
+    },
+    "tz": {
+     "expr": "op('lay')['z'][4]"
+    }
+   }
+  },
+  "card4/rect": {
+   "type": "rectangleSOP",
+   "family": "SOP",
+   "pos": [
+    0,
+    0
+   ]
+  },
+  "card5": {
+   "type": "geometryCOMP",
+   "family": "COMP",
+   "pos": [
+    340,
+    -250
+   ],
+   "pars": {
+    "material": "/project1/im_montage/mat5",
+    "rz": {
+     "expr": "op('lay')['rz'][5]"
+    },
+    "sx": {
+     "expr": "op('lay')['sx'][5]"
+    },
+    "sy": {
+     "expr": "op('lay')['s'][5]"
+    },
+    "tx": {
+     "expr": "op('lay')['x'][5]"
+    },
+    "ty": {
+     "expr": "op('lay')['y'][5]"
+    },
+    "tz": {
+     "expr": "op('lay')['z'][5]"
+    }
+   }
+  },
+  "card5/rect": {
+   "type": "rectangleSOP",
+   "family": "SOP",
+   "pos": [
+    0,
+    0
+   ]
+  },
+  "card6": {
+   "type": "geometryCOMP",
+   "family": "COMP",
+   "pos": [
+    340,
+    -360
+   ],
+   "pars": {
+    "material": "/project1/im_montage/mat6",
+    "rz": {
+     "expr": "op('lay')['rz'][6]"
+    },
+    "sx": {
+     "expr": "op('lay')['sx'][6]"
+    },
+    "sy": {
+     "expr": "op('lay')['s'][6]"
+    },
+    "tx": {
+     "expr": "op('lay')['x'][6]"
+    },
+    "ty": {
+     "expr": "op('lay')['y'][6]"
+    },
+    "tz": {
+     "expr": "op('lay')['z'][6]"
+    }
+   }
+  },
+  "card6/rect": {
+   "type": "rectangleSOP",
+   "family": "SOP",
+   "pos": [
+    0,
+    0
+   ]
+  },
+  "card7": {
+   "type": "geometryCOMP",
+   "family": "COMP",
+   "pos": [
+    340,
+    -470
+   ],
+   "pars": {
+    "material": "/project1/im_montage/mat7",
+    "rz": {
+     "expr": "op('lay')['rz'][7]"
+    },
+    "sx": {
+     "expr": "op('lay')['sx'][7]"
+    },
+    "sy": {
+     "expr": "op('lay')['s'][7]"
+    },
+    "tx": {
+     "expr": "op('lay')['x'][7]"
+    },
+    "ty": {
+     "expr": "op('lay')['y'][7]"
+    },
+    "tz": {
+     "expr": "op('lay')['z'][7]"
+    }
+   }
+  },
+  "card7/rect": {
+   "type": "rectangleSOP",
+   "family": "SOP",
+   "pos": [
+    0,
+    0
+   ]
+  },
+  "card8": {
+   "type": "geometryCOMP",
+   "family": "COMP",
+   "pos": [
+    340,
+    -580
+   ],
+   "pars": {
+    "material": "/project1/im_montage/mat8",
+    "rz": {
+     "expr": "op('lay')['rz'][8]"
+    },
+    "sx": {
+     "expr": "op('lay')['sx'][8]"
+    },
+    "sy": {
+     "expr": "op('lay')['s'][8]"
+    },
+    "tx": {
+     "expr": "op('lay')['x'][8]"
+    },
+    "ty": {
+     "expr": "op('lay')['y'][8]"
+    },
+    "tz": {
+     "expr": "op('lay')['z'][8]"
+    }
+   }
+  },
+  "card8/rect": {
+   "type": "rectangleSOP",
+   "family": "SOP",
+   "pos": [
+    0,
+    0
+   ]
+  },
+  "card9": {
+   "type": "geometryCOMP",
+   "family": "COMP",
+   "pos": [
+    340,
+    -690
+   ],
+   "pars": {
+    "material": "/project1/im_montage/mat9",
+    "rz": {
+     "expr": "op('lay')['rz'][9]"
+    },
+    "sx": {
+     "expr": "op('lay')['sx'][9]"
+    },
+    "sy": {
+     "expr": "op('lay')['s'][9]"
+    },
+    "tx": {
+     "expr": "op('lay')['x'][9]"
+    },
+    "ty": {
+     "expr": "op('lay')['y'][9]"
+    },
+    "tz": {
+     "expr": "op('lay')['z'][9]"
+    }
+   }
+  },
+  "card9/rect": {
+   "type": "rectangleSOP",
+   "family": "SOP",
+   "pos": [
+    0,
+    0
+   ]
+  },
+  "cook_driver": {
+   "type": "executeDAT",
+   "family": "DAT",
+   "pos": [
+    -400,
+    -100
+   ],
+   "pars": {
+    "framestart": true,
+    "language": "python"
+   },
+   "text": [
+    "def onFrameStart(frame):",
+    "    if parent().par.Preview.eval():",
+    "        op('out1').cook(force=True)",
+    "    return"
+   ]
+  },
+  "finish": {
+   "type": "baseCOMP",
+   "family": "COMP",
+   "pos": [
+    1150,
+    0
+   ],
+   "inputs": [
+    [
+     "over"
+    ]
+   ],
+   "pars": {
+    "Blackcolorb": 0.2,
+    "Blackcolorg": 0.28,
+    "Blackcolorr": 0.55,
+    "Blacktint": 0.07,
+    "Bloom": 0.2,
+    "Castb": 0.88,
+    "Castg": 0.99,
+    "Castr": 1.0,
+    "Grain": 0.4,
+    "Halation": 0.45,
+    "Letterbox": 2.0,
+    "Misregister": 0.1,
+    "Preset": {
+     "expr": "op('layouts').module.FINISHES[int(op('lay')['finish'][0])] if parent().par.Finishtake else parent().par.Finish"
+    },
+    "Preview": {
+     "expr": "parent().par.Preview"
+    },
+    "Soften": 0.15,
+    "Vignette": 0.45,
+    "Weave": 0.35
+   },
+   "custom_pars": [
+    "Blackcolorb",
+    "Blackcolorg",
+    "Blackcolorr",
+    "Blacktint",
+    "Bleed",
+    "Bloom",
+    "Bypass",
+    "Castb",
+    "Castg",
+    "Castr",
+    "Corners",
+    "Curvature",
+    "Dither",
+    "Ditherpixel",
+    "Fourthree",
+    "Grain",
+    "Halation",
+    "Headswitch",
+    "Input",
+    "Letterbox",
+    "Mask",
+    "Misregister",
+    "Preset",
+    "Preview",
+    "Scanlines",
+    "Soften",
+    "Tracking",
+    "Vignette",
+    "Weave"
+   ]
+  },
+  "finish/bloom": {
+   "type": "blurTOP",
+   "family": "TOP",
+   "pos": [
+    1020,
+    0
+   ],
+   "inputs": [
+    [
+     "finish/bright"
+    ]
+   ],
+   "pars": {
+    "size": 6
+   }
+  },
+  "finish/bright": {
+   "type": "glslTOP",
+   "family": "TOP",
+   "pos": [
+    850,
+    0
+   ],
+   "inputs": [
+    [
+     "finish/signal"
+    ]
+   ],
+   "pars": {
+    "computedat": "bright_compute",
+    "format": "rgba16float",
+    "outputresolution": "quarter",
+    "pixeldat": "bright_frag",
+    "vec0name": "uKnee",
+    "vec0valuew": {
+     "expr": "0"
+    },
+    "vec0valuex": {
+     "expr": "0.7"
+    },
+    "vec0valuey": {
+     "expr": "0"
+    },
+    "vec0valuez": {
+     "expr": "0"
+    }
+   }
+  },
+  "finish/bright_frag": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.experiment('sw_finish', 'shaders/bright.frag')"
+    },
+    "language": "text",
+    "syncfile": true
+   },
+   "text_file": "experiments/sw_finish/shaders/bright.frag"
+  },
+  "finish/bright_info": {
+   "type": "infoDAT",
+   "family": "DAT",
+   "pos": [
+    160,
+    -120
+   ],
+   "pars": {
+    "language": "text",
+    "op": "bright"
+   }
+  },
+  "finish/bypass": {
+   "type": "switchTOP",
+   "family": "TOP",
+   "pos": [
+    1530,
+    0
+   ],
+   "inputs": [
+    [
+     "finish/display"
+    ],
+    [
+     "finish/fit"
+    ]
+   ],
+   "pars": {
+    "index": {
+     "expr": "1 if parent().par.Bypass else 0"
+    }
+   }
+  },
+  "finish/cook_driver": {
+   "type": "executeDAT",
+   "family": "DAT",
+   "pos": [
+    200,
+    -200
+   ],
+   "pars": {
+    "framestart": true,
+    "language": "python"
+   },
+   "text": [
+    "def onFrameStart(frame):",
+    "    if parent().par.Preview.eval():",
+    "        op('out1').cook(force=True)",
+    "    return"
+   ]
+  },
+  "finish/display": {
+   "type": "glslTOP",
+   "family": "TOP",
+   "pos": [
+    1360,
+    0
+   ],
+   "inputs": [
+    [
+     "finish/signal"
+    ],
+    [
+     "finish/bloom"
+    ],
+    [
+     "finish/halation"
+    ]
+   ],
+   "pars": {
+    "computedat": "display_compute",
+    "format": "rgba8fixed",
+    "pixeldat": "display_frag",
+    "vec0name": "uTube",
+    "vec0valuew": {
+     "expr": "parent().par.Corners"
+    },
+    "vec0valuex": {
+     "expr": "parent().par.Curvature"
+    },
+    "vec0valuey": {
+     "expr": "parent().par.Scanlines"
+    },
+    "vec0valuez": {
+     "expr": "parent().par.Mask"
+    },
+    "vec1name": "uGlow",
+    "vec1valuew": {
+     "expr": "parent().par.Grain"
+    },
+    "vec1valuex": {
+     "expr": "parent().par.Bloom"
+    },
+    "vec1valuey": {
+     "expr": "parent().par.Halation"
+    },
+    "vec1valuez": {
+     "expr": "parent().par.Misregister"
+    },
+    "vec2name": "uFrame",
+    "vec2valuew": {
+     "expr": "parent().par.Ditherpixel"
+    },
+    "vec2valuex": {
+     "expr": "parent().par.Letterbox"
+    },
+    "vec2valuey": {
+     "expr": "parent().par.Fourthree"
+    },
+    "vec2valuez": {
+     "expr": "parent().par.Dither"
+    },
+    "vec3name": "uTint",
+    "vec3valuew": {
+     "expr": "parent().par.Blacktint"
+    },
+    "vec3valuex": {
+     "expr": "parent().par.Blackcolorr"
+    },
+    "vec3valuey": {
+     "expr": "parent().par.Blackcolorg"
+    },
+    "vec3valuez": {
+     "expr": "parent().par.Blackcolorb"
+    },
+    "vec4name": "uCast",
+    "vec4valuew": {
+     "expr": "parent().par.Vignette"
+    },
+    "vec4valuex": {
+     "expr": "parent().par.Castr"
+    },
+    "vec4valuey": {
+     "expr": "parent().par.Castg"
+    },
+    "vec4valuez": {
+     "expr": "parent().par.Castb"
+    },
+    "vec5name": "uClock",
+    "vec5valuew": {
+     "expr": "0"
+    },
+    "vec5valuex": {
+     "expr": "absTime.seconds % 3600"
+    },
+    "vec5valuey": {
+     "expr": "absTime.frame % 4096"
+    },
+    "vec5valuez": {
+     "expr": "parent().par.Weave"
+    }
+   }
+  },
+  "finish/display_frag": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.experiment('sw_finish', 'shaders/display.frag')"
+    },
+    "language": "text",
+    "syncfile": true
+   },
+   "text_file": "experiments/sw_finish/shaders/display.frag"
+  },
+  "finish/display_info": {
+   "type": "infoDAT",
+   "family": "DAT",
+   "pos": [
+    160,
+    -120
+   ],
+   "pars": {
+    "language": "text",
+    "op": "display"
+   }
+  },
+  "finish/fit": {
+   "type": "fitTOP",
+   "family": "TOP",
+   "pos": [
+    510,
+    0
+   ],
+   "inputs": [
+    [
+     "finish/pick"
+    ]
+   ],
+   "pars": {
+    "format": "rgba16float",
+    "outputaspect": "resolution",
+    "outputresolution": "custom",
+    "resolutionh": 720,
+    "resolutionw": 1280
+   }
+  },
+  "finish/halation": {
+   "type": "blurTOP",
+   "family": "TOP",
+   "pos": [
+    1190,
+    0
+   ],
+   "inputs": [
+    [
+     "finish/bloom"
+    ]
+   ],
+   "pars": {
+    "size": 22
+   }
+  },
+  "finish/in1": {
+   "type": "inTOP",
+   "family": "TOP",
+   "pos": [
+    0,
+    0
+   ]
+  },
+  "finish/local": {
+   "type": "baseCOMP",
+   "family": "COMP",
+   "pos": [
+    -400,
+    460
+   ]
+  },
+  "finish/local/modules": {
+   "type": "baseCOMP",
+   "family": "COMP",
+   "pos": [
+    0,
+    0
+   ]
+  },
+  "finish/local/modules/paths": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "file": {
+     "expr": "project.folder.replace(chr(92), '/') + '/experiments/sw_hub/paths_module.py'"
+    },
+    "language": "text",
+    "syncfile": true
+   },
+   "text_file": "experiments/sw_hub/paths_module.py"
+  },
+  "finish/named": {
+   "type": "selectTOP",
+   "family": "TOP",
+   "pos": [
+    170,
+    0
+   ],
+   "pars": {
+    "top": {
+     "expr": "parent().par.Input.eval() or ''"
+    }
+   }
+  },
+  "finish/out1": {
+   "type": "outTOP",
+   "family": "TOP",
+   "pos": [
+    1700,
+    0
+   ],
+   "inputs": [
+    [
+     "finish/bypass"
+    ]
+   ]
+  },
+  "finish/pick": {
+   "type": "switchTOP",
+   "family": "TOP",
+   "pos": [
+    340,
+    0
+   ],
+   "inputs": [
+    [
+     "finish/in1"
+    ],
+    [
+     "finish/named"
+    ]
+   ],
+   "pars": {
+    "index": {
+     "expr": "1 if parent().par.Input.eval() else 0"
+    }
+   }
+  },
+  "finish/preset_exec": {
+   "type": "parameterexecuteDAT",
+   "family": "DAT",
+   "pos": [
+    0,
+    -200
+   ],
+   "pars": {
+    "builtin": false,
+    "language": "python",
+    "op": "..",
+    "pars": "Preset"
+   },
+   "text": [
+    "import json",
+    "",
+    "",
+    "def apply(comp, name):",
+    "    \"\"\"Copy one preset from presets.json onto the Controls page.\"\"\"",
+    "    path = comp.op('local/modules/paths').module.experiment('sw_finish', 'presets.json')",
+    "    with open(path, encoding='utf-8') as fh:",
+    "        presets = json.load(fh)",
+    "    preset = presets.get(name)",
+    "    if preset is None:",
+    "        return",
+    "    for key, value in preset.items():",
+    "        if key == 'label':",
+    "            continue",
+    "        if isinstance(value, list):",
+    "            for suffix, v in zip('rgb', value):",
+    "                getattr(comp.par, key + suffix).val = v",
+    "        elif hasattr(comp.par, key):",
+    "            getattr(comp.par, key).val = value",
+    "",
+    "",
+    "def onValueChange(par, prev):",
+    "    if par.name == 'Preset':",
+    "        apply(parent(), parent().par.Preset.eval())",
+    "    return"
+   ]
+  },
+  "finish/signal": {
+   "type": "glslTOP",
+   "family": "TOP",
+   "pos": [
+    680,
+    0
+   ],
+   "inputs": [
+    [
+     "finish/fit"
+    ]
+   ],
+   "pars": {
+    "computedat": "signal_compute",
+    "format": "rgba16float",
+    "pixeldat": "signal_frag",
+    "vec0name": "uTape",
+    "vec0valuew": {
+     "expr": "parent().par.Soften"
+    },
+    "vec0valuex": {
+     "expr": "parent().par.Bleed"
+    },
+    "vec0valuey": {
+     "expr": "parent().par.Tracking"
+    },
+    "vec0valuez": {
+     "expr": "parent().par.Headswitch"
+    },
+    "vec1name": "uClock",
+    "vec1valuew": {
+     "expr": "0"
+    },
+    "vec1valuex": {
+     "expr": "absTime.seconds % 3600"
+    },
+    "vec1valuey": {
+     "expr": "absTime.frame % 4096"
+    },
+    "vec1valuez": {
+     "expr": "parent().par.Weave"
+    }
+   }
+  },
+  "finish/signal_frag": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.experiment('sw_finish', 'shaders/signal.frag')"
+    },
+    "language": "text",
+    "syncfile": true
+   },
+   "text_file": "experiments/sw_finish/shaders/signal.frag"
+  },
+  "finish/signal_info": {
+   "type": "infoDAT",
+   "family": "DAT",
+   "pos": [
+    160,
+    -120
+   ],
+   "pars": {
+    "language": "text",
+    "op": "signal"
+   }
+  },
+  "ground": {
+   "type": "glslTOP",
+   "family": "TOP",
+   "pos": [
+    600,
+    -200
+   ],
+   "pars": {
+    "computedat": "ground_compute",
+    "format": "rgba8fixed",
+    "outputresolution": "custom",
+    "pixeldat": "ground_frag",
+    "resolutionh": 720,
+    "resolutionw": 1280,
+    "vec0name": "uA",
+    "vec0valuew": {
+     "expr": "op('lay')['mode'][0]"
+    },
+    "vec0valuex": {
+     "expr": "op('lay')['ar'][0]"
+    },
+    "vec0valuey": {
+     "expr": "op('lay')['ag'][0]"
+    },
+    "vec0valuez": {
+     "expr": "op('lay')['ab'][0]"
+    },
+    "vec1name": "uB",
+    "vec1valuew": {
+     "expr": "op('lay')['beat'][0]"
+    },
+    "vec1valuex": {
+     "expr": "op('lay')['br'][0]"
+    },
+    "vec1valuey": {
+     "expr": "op('lay')['bg'][0]"
+    },
+    "vec1valuez": {
+     "expr": "op('lay')['bb'][0]"
+    },
+    "vec2name": "uAim",
+    "vec2valuew": {
+     "expr": "parent().par.Rays"
+    },
+    "vec2valuex": {
+     "expr": "op('lay')['kick'][0]"
+    },
+    "vec2valuey": {
+     "expr": "op('lay')['bass'][0]"
+    },
+    "vec2valuez": {
+     "expr": "absTime.seconds % 3600"
+    }
+   }
+  },
+  "ground_frag": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.experiment('im_montage', 'shaders/ground.frag')"
+    },
+    "language": "text",
+    "syncfile": true
+   },
+   "text_file": "experiments/im_montage/shaders/ground.frag"
+  },
+  "hub": {
+   "type": "selectCHOP",
+   "family": "CHOP",
+   "pos": [
+    -400,
+    60
+   ],
+   "pars": {
+    "chops": "/project1/sw_hub/feed"
+   }
+  },
+  "lay": {
+   "type": "scriptCHOP",
+   "family": "CHOP",
+   "pos": [
+    -250,
+    0
+   ],
+   "inputs": [
+    [
+     "hub"
+    ],
+    [
+     "shot"
+    ]
+   ],
+   "pars": {
+    "callbacks": "lay_code",
+    "exportmethod": "datname"
+   }
+  },
+  "lay_code": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    -250,
+    -260
+   ],
+   "pars": {
+    "language": "text"
+   },
+   "text": [
+    "# Where every card is on this frame. The motion itself is in layouts.py.",
+    "CARD = (\"x\", \"y\", \"z\", \"s\", \"sx\", \"rz\", \"pic\")",
+    "ONE = (\"camx\", \"camy\", \"camz\", \"roll\", \"mode\", \"ar\", \"ag\", \"ab\", \"br\", \"bg\", \"bb\", \"beat\", \"kick\", \"bass\", \"finish\")",
+    "",
+    "",
+    "def onCook(scriptOp):",
+    "    comp = parent()",
+    "    lay = op('layouts').module",
+    "    feed = op('hub')",
+    "    react = comp.par.React.eval()",
+    "    f = {}",
+    "    for name in lay.FEED:",
+    "        ch = feed[name] if feed is not None else None",
+    "        v = ch.eval() if ch is not None else 0.0",
+    "        if name not in (\"beat_pos\", \"bar_pos\", \"hits_low\"):",
+    "            v *= react",
+    "        f[name] = v",
+    "    shot = op('shot')",
+    "    out = lay.frame(shot['take'].eval(), shot['seed'].eval(), shot['age'].eval(), f, 12)",
+    "    table = op('table')",
+    "    good = [r - 1 for r in range(1, table.numRows) if float(table[r, 'cutout_cover'].val or 0) >= 0.03] or [0]",
+    "    size = comp.par.Size.eval()",
+    "    dealer = comp.fetch('deal', None, search=False)",
+    "    if dealer is None:",
+    "        dealer = lay.new_deal()",
+    "    dealt = lay.deal(dealer, shot['take'].eval(), [c[\"pic\"] for c in out[\"cards\"]], len(good))",
+    "    comp.store('deal', dealer)",
+    "    scriptOp.clear()",
+    "    scriptOp.isTimeSlice = False",
+    "    scriptOp.numSamples = len(out[\"cards\"])",
+    "    rows = {k: [] for k in CARD}",
+    "    for c, d in zip(out[\"cards\"], dealt):",
+    "        pic = good[d]",
+    "        aspect = float(table[pic + 1, 'aspect'].val or 1) if table.numRows > 1 else 1.0",
+    "        rows[\"x\"].append(c[\"x\"]); rows[\"y\"].append(c[\"y\"]); rows[\"z\"].append(c[\"z\"])",
+    "        rows[\"s\"].append(c[\"s\"] * size); rows[\"sx\"].append(c[\"s\"] * size * aspect)",
+    "        rows[\"rz\"].append(c[\"rz\"]); rows[\"pic\"].append(pic)",
+    "    for k in CARD:",
+    "        scriptOp.appendChan(k).vals = rows[k]",
+    "    cam, g = out[\"cam\"], out[\"ground\"]",
+    "    one = [cam[\"x\"], cam[\"y\"], cam[\"z\"], cam[\"roll\"], g[\"mode\"], *g[\"a\"], *g[\"b\"], g[\"beat\"], g[\"kick\"], g[\"bass\"], out[\"finish\"]]",
+    "    for k, v in zip(ONE, one):",
+    "        scriptOp.appendChan(k).vals = [v] * scriptOp.numSamples",
+    "    return"
+   ]
+  },
+  "layouts": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    -250,
+    -160
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.experiment('im_montage', 'layouts.py')"
+    },
+    "language": "text",
+    "syncfile": true
+   },
+   "text_file": "experiments/im_montage/layouts.py"
+  },
+  "local": {
+   "type": "baseCOMP",
+   "family": "COMP",
+   "pos": [
+    -400,
+    460
+   ]
+  },
+  "local/modules": {
+   "type": "baseCOMP",
+   "family": "COMP",
+   "pos": [
+    0,
+    0
+   ]
+  },
+  "local/modules/imset": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "file": {
+     "expr": "project.folder.replace(chr(92), '/') + '/experiments/sw_images/imset_module.py'"
+    },
+    "language": "text",
+    "syncfile": true
+   },
+   "text_file": "experiments/sw_images/imset_module.py"
+  },
+  "local/modules/paths": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "file": {
+     "expr": "project.folder.replace(chr(92), '/') + '/experiments/sw_hub/paths_module.py'"
+    },
+    "language": "text",
+    "syncfile": true
+   },
+   "text_file": "experiments/sw_hub/paths_module.py"
+  },
+  "mat0": {
+   "type": "constantMAT",
+   "family": "MAT",
+   "pos": [
+    170,
+    300
+   ],
+   "pars": {
+    "alphatest": true,
+    "alphathreshold": 0.5,
+    "colormap": {
+     "expr": "'pic%d' % int(op('lay')['pic'][0])"
+    }
+   }
+  },
+  "mat1": {
+   "type": "constantMAT",
+   "family": "MAT",
+   "pos": [
+    170,
+    190
+   ],
+   "pars": {
+    "alphatest": true,
+    "alphathreshold": 0.5,
+    "colormap": {
+     "expr": "'pic%d' % int(op('lay')['pic'][1])"
+    }
+   }
+  },
+  "mat10": {
+   "type": "constantMAT",
+   "family": "MAT",
+   "pos": [
+    170,
+    -800
+   ],
+   "pars": {
+    "alphatest": true,
+    "alphathreshold": 0.5,
+    "colormap": {
+     "expr": "'pic%d' % int(op('lay')['pic'][10])"
+    }
+   }
+  },
+  "mat11": {
+   "type": "constantMAT",
+   "family": "MAT",
+   "pos": [
+    170,
+    -910
+   ],
+   "pars": {
+    "alphatest": true,
+    "alphathreshold": 0.5,
+    "colormap": {
+     "expr": "'pic%d' % int(op('lay')['pic'][11])"
+    }
+   }
+  },
+  "mat2": {
+   "type": "constantMAT",
+   "family": "MAT",
+   "pos": [
+    170,
+    80
+   ],
+   "pars": {
+    "alphatest": true,
+    "alphathreshold": 0.5,
+    "colormap": {
+     "expr": "'pic%d' % int(op('lay')['pic'][2])"
+    }
+   }
+  },
+  "mat3": {
+   "type": "constantMAT",
+   "family": "MAT",
+   "pos": [
+    170,
+    -30
+   ],
+   "pars": {
+    "alphatest": true,
+    "alphathreshold": 0.5,
+    "colormap": {
+     "expr": "'pic%d' % int(op('lay')['pic'][3])"
+    }
+   }
+  },
+  "mat4": {
+   "type": "constantMAT",
+   "family": "MAT",
+   "pos": [
+    170,
+    -140
+   ],
+   "pars": {
+    "alphatest": true,
+    "alphathreshold": 0.5,
+    "colormap": {
+     "expr": "'pic%d' % int(op('lay')['pic'][4])"
+    }
+   }
+  },
+  "mat5": {
+   "type": "constantMAT",
+   "family": "MAT",
+   "pos": [
+    170,
+    -250
+   ],
+   "pars": {
+    "alphatest": true,
+    "alphathreshold": 0.5,
+    "colormap": {
+     "expr": "'pic%d' % int(op('lay')['pic'][5])"
+    }
+   }
+  },
+  "mat6": {
+   "type": "constantMAT",
+   "family": "MAT",
+   "pos": [
+    170,
+    -360
+   ],
+   "pars": {
+    "alphatest": true,
+    "alphathreshold": 0.5,
+    "colormap": {
+     "expr": "'pic%d' % int(op('lay')['pic'][6])"
+    }
+   }
+  },
+  "mat7": {
+   "type": "constantMAT",
+   "family": "MAT",
+   "pos": [
+    170,
+    -470
+   ],
+   "pars": {
+    "alphatest": true,
+    "alphathreshold": 0.5,
+    "colormap": {
+     "expr": "'pic%d' % int(op('lay')['pic'][7])"
+    }
+   }
+  },
+  "mat8": {
+   "type": "constantMAT",
+   "family": "MAT",
+   "pos": [
+    170,
+    -580
+   ],
+   "pars": {
+    "alphatest": true,
+    "alphathreshold": 0.5,
+    "colormap": {
+     "expr": "'pic%d' % int(op('lay')['pic'][8])"
+    }
+   }
+  },
+  "mat9": {
+   "type": "constantMAT",
+   "family": "MAT",
+   "pos": [
+    170,
+    -690
+   ],
+   "pars": {
+    "alphatest": true,
+    "alphathreshold": 0.5,
+    "colormap": {
+     "expr": "'pic%d' % int(op('lay')['pic'][9])"
+    }
+   }
+  },
+  "out1": {
+   "type": "outTOP",
+   "family": "TOP",
+   "pos": [
+    1400,
+    0
+   ],
+   "inputs": [
+    [
+     "finish"
+    ]
+   ]
+  },
+  "over": {
+   "type": "overTOP",
+   "family": "TOP",
+   "pos": [
+    980,
+    0
+   ],
+   "inputs": [
+    [
+     "render"
+    ],
+    [
+     "ground"
+    ]
+   ]
+  },
+  "pic0": {
+   "type": "moviefileinTOP",
+   "family": "TOP",
+   "pos": [
+    0,
+    700
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.imset.path(0, 'cutout')"
+    }
+   }
+  },
+  "pic1": {
+   "type": "moviefileinTOP",
+   "family": "TOP",
+   "pos": [
+    130,
+    700
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.imset.path(1, 'cutout')"
+    }
+   }
+  },
+  "pic10": {
+   "type": "moviefileinTOP",
+   "family": "TOP",
+   "pos": [
+    0,
+    920
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.imset.path(10, 'cutout')"
+    }
+   }
+  },
+  "pic11": {
+   "type": "moviefileinTOP",
+   "family": "TOP",
+   "pos": [
+    130,
+    920
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.imset.path(11, 'cutout')"
+    }
+   }
+  },
+  "pic12": {
+   "type": "moviefileinTOP",
+   "family": "TOP",
+   "pos": [
+    260,
+    920
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.imset.path(12, 'cutout')"
+    }
+   }
+  },
+  "pic13": {
+   "type": "moviefileinTOP",
+   "family": "TOP",
+   "pos": [
+    390,
+    920
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.imset.path(13, 'cutout')"
+    }
+   }
+  },
+  "pic14": {
+   "type": "moviefileinTOP",
+   "family": "TOP",
+   "pos": [
+    520,
+    920
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.imset.path(14, 'cutout')"
+    }
+   }
+  },
+  "pic15": {
+   "type": "moviefileinTOP",
+   "family": "TOP",
+   "pos": [
+    0,
+    1030
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.imset.path(15, 'cutout')"
+    }
+   }
+  },
+  "pic16": {
+   "type": "moviefileinTOP",
+   "family": "TOP",
+   "pos": [
+    130,
+    1030
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.imset.path(16, 'cutout')"
+    }
+   }
+  },
+  "pic17": {
+   "type": "moviefileinTOP",
+   "family": "TOP",
+   "pos": [
+    260,
+    1030
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.imset.path(17, 'cutout')"
+    }
+   }
+  },
+  "pic18": {
+   "type": "moviefileinTOP",
+   "family": "TOP",
+   "pos": [
+    390,
+    1030
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.imset.path(18, 'cutout')"
+    }
+   }
+  },
+  "pic19": {
+   "type": "moviefileinTOP",
+   "family": "TOP",
+   "pos": [
+    520,
+    1030
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.imset.path(19, 'cutout')"
+    }
+   }
+  },
+  "pic2": {
+   "type": "moviefileinTOP",
+   "family": "TOP",
+   "pos": [
+    260,
+    700
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.imset.path(2, 'cutout')"
+    }
+   }
+  },
+  "pic20": {
+   "type": "moviefileinTOP",
+   "family": "TOP",
+   "pos": [
+    0,
+    1140
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.imset.path(20, 'cutout')"
+    }
+   }
+  },
+  "pic21": {
+   "type": "moviefileinTOP",
+   "family": "TOP",
+   "pos": [
+    130,
+    1140
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.imset.path(21, 'cutout')"
+    }
+   }
+  },
+  "pic22": {
+   "type": "moviefileinTOP",
+   "family": "TOP",
+   "pos": [
+    260,
+    1140
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.imset.path(22, 'cutout')"
+    }
+   }
+  },
+  "pic23": {
+   "type": "moviefileinTOP",
+   "family": "TOP",
+   "pos": [
+    390,
+    1140
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.imset.path(23, 'cutout')"
+    }
+   }
+  },
+  "pic24": {
+   "type": "moviefileinTOP",
+   "family": "TOP",
+   "pos": [
+    520,
+    1140
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.imset.path(24, 'cutout')"
+    }
+   }
+  },
+  "pic25": {
+   "type": "moviefileinTOP",
+   "family": "TOP",
+   "pos": [
+    0,
+    1250
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.imset.path(25, 'cutout')"
+    }
+   }
+  },
+  "pic26": {
+   "type": "moviefileinTOP",
+   "family": "TOP",
+   "pos": [
+    130,
+    1250
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.imset.path(26, 'cutout')"
+    }
+   }
+  },
+  "pic27": {
+   "type": "moviefileinTOP",
+   "family": "TOP",
+   "pos": [
+    260,
+    1250
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.imset.path(27, 'cutout')"
+    }
+   }
+  },
+  "pic28": {
+   "type": "moviefileinTOP",
+   "family": "TOP",
+   "pos": [
+    390,
+    1250
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.imset.path(28, 'cutout')"
+    }
+   }
+  },
+  "pic29": {
+   "type": "moviefileinTOP",
+   "family": "TOP",
+   "pos": [
+    520,
+    1250
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.imset.path(29, 'cutout')"
+    }
+   }
+  },
+  "pic3": {
+   "type": "moviefileinTOP",
+   "family": "TOP",
+   "pos": [
+    390,
+    700
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.imset.path(3, 'cutout')"
+    }
+   }
+  },
+  "pic30": {
+   "type": "moviefileinTOP",
+   "family": "TOP",
+   "pos": [
+    0,
+    1360
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.imset.path(30, 'cutout')"
+    }
+   }
+  },
+  "pic31": {
+   "type": "moviefileinTOP",
+   "family": "TOP",
+   "pos": [
+    130,
+    1360
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.imset.path(31, 'cutout')"
+    }
+   }
+  },
+  "pic32": {
+   "type": "moviefileinTOP",
+   "family": "TOP",
+   "pos": [
+    260,
+    1360
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.imset.path(32, 'cutout')"
+    }
+   }
+  },
+  "pic33": {
+   "type": "moviefileinTOP",
+   "family": "TOP",
+   "pos": [
+    390,
+    1360
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.imset.path(33, 'cutout')"
+    }
+   }
+  },
+  "pic34": {
+   "type": "moviefileinTOP",
+   "family": "TOP",
+   "pos": [
+    520,
+    1360
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.imset.path(34, 'cutout')"
+    }
+   }
+  },
+  "pic35": {
+   "type": "moviefileinTOP",
+   "family": "TOP",
+   "pos": [
+    0,
+    1470
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.imset.path(35, 'cutout')"
+    }
+   }
+  },
+  "pic36": {
+   "type": "moviefileinTOP",
+   "family": "TOP",
+   "pos": [
+    130,
+    1470
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.imset.path(36, 'cutout')"
+    }
+   }
+  },
+  "pic4": {
+   "type": "moviefileinTOP",
+   "family": "TOP",
+   "pos": [
+    520,
+    700
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.imset.path(4, 'cutout')"
+    }
+   }
+  },
+  "pic5": {
+   "type": "moviefileinTOP",
+   "family": "TOP",
+   "pos": [
+    0,
+    810
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.imset.path(5, 'cutout')"
+    }
+   }
+  },
+  "pic6": {
+   "type": "moviefileinTOP",
+   "family": "TOP",
+   "pos": [
+    130,
+    810
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.imset.path(6, 'cutout')"
+    }
+   }
+  },
+  "pic7": {
+   "type": "moviefileinTOP",
+   "family": "TOP",
+   "pos": [
+    260,
+    810
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.imset.path(7, 'cutout')"
+    }
+   }
+  },
+  "pic8": {
+   "type": "moviefileinTOP",
+   "family": "TOP",
+   "pos": [
+    390,
+    810
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.imset.path(8, 'cutout')"
+    }
+   }
+  },
+  "pic9": {
+   "type": "moviefileinTOP",
+   "family": "TOP",
+   "pos": [
+    520,
+    810
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.imset.path(9, 'cutout')"
+    }
+   }
+  },
+  "render": {
+   "type": "renderTOP",
+   "family": "TOP",
+   "pos": [
+    800,
+    100
+   ],
+   "pars": {
+    "camera": "/project1/im_montage/cam",
+    "geometry": "/project1/im_montage/card0 /project1/im_montage/card1 /project1/im_montage/card2 /project1/im_montage/card3 /project1/im_montage/card4 /project1/im_montage/card5 /project1/im_montage/card6 /project1/im_montage/card7 /project1/im_montage/card8 /project1/im_montage/card9 /project1/im_montage/card10 /project1/im_montage/card11",
+    "lights": "",
+    "resolutionh": 720,
+    "resolutionw": 1280
+   }
+  },
+  "shot": {
+   "type": "constantCHOP",
+   "family": "CHOP",
+   "pos": [
+    -400,
+    -40
+   ],
+   "pars": {
+    "const0name": "take",
+    "const0value": {
+     "expr": "parent().par.Take"
+    },
+    "const1name": "seed",
+    "const1value": {
+     "expr": "parent().par.Seed"
+    },
+    "const2name": "age",
+    "const2value": {
+     "expr": "max(0, absTime.seconds - parent().par.Shotstart)"
+    }
+   }
+  },
+  "table": {
+   "type": "tableDAT",
+   "family": "DAT",
+   "pos": [
+    -400,
+    300
+   ],
+   "pars": {
+    "cols": 21,
+    "file": {
+     "expr": "mod.imset.root('table.tsv')"
+    },
+    "rows": 38,
+    "syncfile": true
+   },
+   "text_file": "assets/image_sets/generated_cutouts/table.tsv"
+  }
+ }
+}

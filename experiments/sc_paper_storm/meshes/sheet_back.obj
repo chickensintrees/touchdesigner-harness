@@ -1,0 +1,15 @@
+# Reverse side of a sheet only (normal -Y), winding reversed and U mirrored so
+# lettering on the back reads the right way round when seen from behind.
+o sheet_back
+v -0.500000 0.000000 0.387097
+v 0.500000 0.000000 0.387097
+v 0.500000 0.000000 -0.387097
+v -0.500000 0.000000 -0.387097
+vn 0.0000 -1.0000 0.0000
+vt 1.000000 0.000000
+vt 0.000000 0.000000
+vt 0.000000 1.000000
+vt 1.000000 1.000000
+s 0
+f 1/1/1 3/3/1 2/2/1
+f 1/1/1 4/4/1 3/3/1

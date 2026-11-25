@@ -1,0 +1,148 @@
+{
+ "clips": [
+  {
+   "name": "aquarium_fish",
+   "file": "aquarium_fish.mp4",
+   "width": 1280,
+   "height": 720,
+   "fps": 16.0,
+   "frames": 81
+  },
+  {
+   "name": "beach_family",
+   "file": "beach_family.mp4",
+   "width": 1280,
+   "height": 720,
+   "fps": 16.0,
+   "frames": 81
+  },
+  {
+   "name": "birthday_home_video",
+   "file": "birthday_home_video.mp4",
+   "width": 1280,
+   "height": 720,
+   "fps": 16.0,
+   "frames": 81
+  },
+  {
+   "name": "bowling_alley",
+   "file": "bowling_alley.mp4",
+   "width": 1280,
+   "height": 720,
+   "fps": 16.0,
+   "frames": 81
+  },
+  {
+   "name": "dance_class",
+   "file": "dance_class.mp4",
+   "width": 1280,
+   "height": 720,
+   "fps": 16.0,
+   "frames": 81
+  },
+  {
+   "name": "desert_road_from_car",
+   "file": "desert_road_from_car.mp4",
+   "width": 1280,
+   "height": 720,
+   "fps": 16.0,
+   "frames": 81
+  },
+  {
+   "name": "dog_backyard",
+   "file": "dog_backyard.mp4",
+   "width": 1280,
+   "height": 720,
+   "fps": 16.0,
+   "frames": 81
+  },
+  {
+   "name": "fairground_night",
+   "file": "fairground_night.mp4",
+   "width": 1280,
+   "height": 720,
+   "fps": 16.0,
+   "frames": 81
+  },
+  {
+   "name": "heron_lake",
+   "file": "heron_lake.mp4",
+   "width": 1280,
+   "height": 720,
+   "fps": 16.0,
+   "frames": 81
+  },
+  {
+   "name": "kitchen_demonstration",
+   "file": "kitchen_demonstration.mp4",
+   "width": 1280,
+   "height": 720,
+   "fps": 16.0,
+   "frames": 81
+  },
+  {
+   "name": "local_tv_studio",
+   "file": "local_tv_studio.mp4",
+   "width": 1280,
+   "height": 720,
+   "fps": 16.0,
+   "frames": 81
+  },
+  {
+   "name": "public_access_host",
+   "file": "public_access_host.mp4",
+   "width": 1280,
+   "height": 720,
+   "fps": 16.0,
+   "frames": 81
+  },
+  {
+   "name": "roller_rink",
+   "file": "roller_rink.mp4",
+   "width": 1280,
+   "height": 720,
+   "fps": 16.0,
+   "frames": 81
+  },
+  {
+   "name": "skatepark",
+   "file": "skatepark.mp4",
+   "width": 1280,
+   "height": 720,
+   "fps": 16.0,
+   "frames": 81
+  },
+  {
+   "name": "sledding_hill",
+   "file": "sledding_hill.mp4",
+   "width": 1280,
+   "height": 720,
+   "fps": 16.0,
+   "frames": 81
+  },
+  {
+   "name": "small_town_parade",
+   "file": "small_town_parade.mp4",
+   "width": 1280,
+   "height": 720,
+   "fps": 16.0,
+   "frames": 81
+  },
+  {
+   "name": "toy_commercial_tabletop",
+   "file": "toy_commercial_tabletop.mp4",
+   "width": 1280,
+   "height": 720,
+   "fps": 16.0,
+   "frames": 81
+  },
+  {
+   "name": "train_window",
+   "file": "train_window.mp4",
+   "width": 1280,
+   "height": 720,
+   "fps": 16.0,
+   "frames": 81
+  }
+ ]
+}

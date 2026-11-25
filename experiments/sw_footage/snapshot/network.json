@@ -1,0 +1,401 @@
+{
+ "format": "tdh-snapshot/1",
+ "root": "/project1/sw_footage",
+ "ops": {
+  "channels": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    -400,
+    -160
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.experiment('sw_footage', 'channels.py')"
+    },
+    "language": "text",
+    "syncfile": true
+   },
+   "text_file": "experiments/sw_footage/channels.py"
+  },
+  "driver": {
+   "type": "executeDAT",
+   "family": "DAT",
+   "pos": [
+    -400,
+    -60
+   ],
+   "pars": {
+    "framestart": true,
+    "language": "python"
+   },
+   "text": [
+    "def onFrameStart(frame):",
+    "    comp = parent()",
+    "    par = comp.par",
+    "    logic = op('channels').module",
+    "    files = op('files')",
+    "    count = max(1, files.numRows - 1)",
+    "    feed = op('hub')",
+    "    music = par.Follow.eval() and feed.numChans > 0",
+    "    n = logic.channel_at(feed['bar_pos'].eval(), par.Bars.eval()) if music else 0",
+    "    first, step = int(par.Clip.eval()), int(par.Step.eval())",
+    "    want = logic.clip_for(n, first, step, count)",
+    "    state = op('state')",
+    "    slot = int(state['slot'].eval())",
+    "    now = absTime.seconds",
+    "    restart = par.Shotstart.eval()",
+    "    if int(state['clip%d' % slot].eval()) != want or restart != comp.fetch('restart', restart, search=False):",
+    "        comp.store('restart', restart)",
+    "        other = 1 - slot",
+    "        state.par['const%dvalue' % (1 + other)] = want",
+    "        state.par['const%dvalue' % (3 + other)] = now",
+    "        state.par.const0value = other",
+    "        state.par.const5value = now",
+    "        comp.store('changes', comp.fetch('changes', 0, search=False) + 1)",
+    "        comp.store('ahead', False)",
+    "    elif not comp.fetch('ahead', False, search=False) and now - state['cut'].eval() > par.Transtime.eval() + 0.1:",
+    "        # the transition is over: the idle player opens the next channel's clip now, so the change does not wait for the file",
+    "        other = 1 - slot",
+    "        state.par['const%dvalue' % (1 + other)] = logic.clip_for(n + 1, first, step, count)",
+    "        state.par['const%dvalue' % (3 + other)] = 0",
+    "        comp.store('ahead', True)",
+    "    if par.Preview.eval():",
+    "        op('out1').cook(force=True)",
+    "    return"
+   ]
+  },
+  "files": {
+   "type": "folderDAT",
+   "family": "DAT",
+   "pos": [
+    -400,
+    300
+   ],
+   "pars": {
+    "allextensions": false,
+    "callbacks": "files_callbacks",
+    "movieextensions": true,
+    "rootfolder": {
+     "expr": "(lambda f: f if (f.startswith('/') or f[1:2] == ':') else project.folder.replace(chr(92), '/') + '/' + f)(str(parent().par.Folder.eval()).replace(chr(92), '/').rstrip('/'))"
+    }
+   }
+  },
+  "files_callbacks": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    0,
+    -120
+   ],
+   "pars": {
+    "language": "python"
+   },
+   "text": [
+    "\"\"\"",
+    "Folder DAT Callbacks",
+    "",
+    "me - this DAT",
+    "",
+    "dat - the DAT that is querying",
+    "info - the file or folder being queried",
+    "\tname \t\t\t\t- the name with extension",
+    "\tbaseName \t\t\t- the name without extension",
+    "\tpath \t\t\t\t- the full path",
+    "\textension \t\t\t- the extension of the file",
+    "\tfolder \t\t\t\t- the path of the folder this is in",
+    "\tisFolder\t\t\t- true if a folder, false if a file",
+    "\tdepth \t\t\t\t- the depth of the file/folder from the root",
+    "\tsize \t\t\t\t- size of file or folder",
+    "\ttype \t\t\t\t- a description of the file type",
+    "\tdateCreated \t\t- the file or folder creation date",
+    "\tdateModified \t\t- the file or folder last modified date",
+    "\tdateAccessed \t\t- the file or folder last accessed date",
+    "\"\"\"",
+    "",
+    "from typing import List, Any",
+    "",
+    "# Uncomment following two functions to add custom columns",
+    "",
+    "# def onInitGetColumnNames(dat: folderDAT) -> List[str]:",
+    "# \t\"\"\"",
+    "# \tCalled to initialize custom column names. Return a list of column names.",
+    "# \t\"\"\"",
+    "# \treturn ['digits']",
+    "",
+    "# def onGetValues(dat: folderDAT, info: FileEntry, row: int) -> List[Any]:",
+    "# \t\"\"\"",
+    "# \tCalled to get custom column values. Return a list of values corresponding",
+    "#   to the custom columns defined in onInitGetColumnNames.",
+    "# \t\"\"\"",
+    "# \treturn [dat.digits]",
+    "",
+    "# control which folders are included",
+    "",
+    "def onGetInclude(dat: folderDAT, info: FileEntry, row: int) -> bool:",
+    "\t\"\"\"",
+    "\tCalled to determine if a file/folder should be included.",
+    "\t",
+    "\tArgs:",
+    "\t\tdat: The DAT that is querying",
+    "\t\tinfo: The FileEntry being queried",
+    "\t\trow: The table row index",
+    "\t\t",
+    "\tReturns:",
+    "\t\tbool: True if the file/folder should be included",
+    "\t\"\"\"",
+    "\treturn True",
+    "",
+    "def onFound(dat: folderDAT, info: FileEntry, row: int):",
+    "\t\"\"\"",
+    "\tCalled when a file/folder is found.",
+    "\t",
+    "\tArgs:",
+    "\t\tdat: The DAT that is querying",
+    "\t\tinfo: The FileEntry that was found",
+    "\t\trow: The table row index",
+    "\t\"\"\"",
+    "\treturn"
+   ]
+  },
+  "hub": {
+   "type": "selectCHOP",
+   "family": "CHOP",
+   "pos": [
+    -400,
+    60
+   ],
+   "pars": {
+    "chops": "/project1/sw_hub/feed"
+   }
+  },
+  "local": {
+   "type": "baseCOMP",
+   "family": "COMP",
+   "pos": [
+    -400,
+    460
+   ]
+  },
+  "local/modules": {
+   "type": "baseCOMP",
+   "family": "COMP",
+   "pos": [
+    0,
+    0
+   ]
+  },
+  "local/modules/paths": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "file": {
+     "expr": "project.folder.replace(chr(92), '/') + '/experiments/sw_hub/paths_module.py'"
+    },
+    "language": "text",
+    "syncfile": true
+   },
+   "text_file": "experiments/sw_hub/paths_module.py"
+  },
+  "mix": {
+   "type": "glslTOP",
+   "family": "TOP",
+   "pos": [
+    450,
+    0
+   ],
+   "inputs": [
+    [
+     "on"
+    ],
+    [
+     "was"
+    ]
+   ],
+   "pars": {
+    "computedat": "mix_compute",
+    "format": "rgba8fixed",
+    "outputresolution": "custom",
+    "pixeldat": "mix_frag",
+    "resolutionh": 720,
+    "resolutionw": 1280,
+    "vec0name": "uShot",
+    "vec0valuew": {
+     "expr": "(op('state')['cut'] * 0.37) % 1"
+    },
+    "vec0valuex": {
+     "expr": "0"
+    },
+    "vec0valuey": {
+     "expr": "parent().par.Transition.menuIndex"
+    },
+    "vec0valuez": {
+     "expr": "0"
+    },
+    "vec1name": "uTime",
+    "vec1valuew": {
+     "expr": "op('hub')['bar_pos'] if op('hub').numChans else 0"
+    },
+    "vec1valuex": {
+     "expr": "min(1, max(0, (absTime.seconds - op('state')['cut'])) / max(0.05, parent().par.Transtime))"
+    },
+    "vec1valuey": {
+     "expr": "max(0, (absTime.seconds - op('state')['cut']))"
+    },
+    "vec1valuez": {
+     "expr": "op('hub')['beat_pos'] if op('hub').numChans else 0"
+    },
+    "vec2name": "uAudio",
+    "vec2valuew": {
+     "expr": "0"
+    },
+    "vec2valuex": {
+     "expr": "0"
+    },
+    "vec2valuey": {
+     "expr": "0"
+    },
+    "vec2valuez": {
+     "expr": "0"
+    }
+   }
+  },
+  "mix_frag": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    450,
+    -250
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.experiment('sw_cut', 'shaders/mix.frag')"
+    },
+    "language": "text",
+    "syncfile": true
+   },
+   "text_file": "experiments/sw_cut/shaders/mix.frag"
+  },
+  "on": {
+   "type": "switchTOP",
+   "family": "TOP",
+   "pos": [
+    250,
+    100
+   ],
+   "inputs": [
+    [
+     "play0"
+    ],
+    [
+     "play1"
+    ]
+   ],
+   "pars": {
+    "index": {
+     "expr": "op('state')['slot']"
+    }
+   }
+  },
+  "out1": {
+   "type": "outTOP",
+   "family": "TOP",
+   "pos": [
+    700,
+    0
+   ],
+   "inputs": [
+    [
+     "mix"
+    ]
+   ]
+  },
+  "play0": {
+   "type": "moviefileinTOP",
+   "family": "TOP",
+   "pos": [
+    0,
+    100
+   ],
+   "pars": {
+    "file": {
+     "expr": "(lambda t, r: t[1 + r % max(1, t.numRows - 1), 'path'].val if t.numRows > 1 else '')(op('files'), int(op('state')['clip0']))"
+    },
+    "index": {
+     "expr": "max(0, absTime.seconds - op('state')['start0']) * parent().par.Speed"
+    },
+    "indexunit": "seconds",
+    "outputresolution": "custom",
+    "playmode": "specify",
+    "resolutionh": 720,
+    "resolutionw": 1280
+   }
+  },
+  "play1": {
+   "type": "moviefileinTOP",
+   "family": "TOP",
+   "pos": [
+    0,
+    -100
+   ],
+   "pars": {
+    "file": {
+     "expr": "(lambda t, r: t[1 + r % max(1, t.numRows - 1), 'path'].val if t.numRows > 1 else '')(op('files'), int(op('state')['clip1']))"
+    },
+    "index": {
+     "expr": "max(0, absTime.seconds - op('state')['start1']) * parent().par.Speed"
+    },
+    "indexunit": "seconds",
+    "outputresolution": "custom",
+    "playmode": "specify",
+    "resolutionh": 720,
+    "resolutionw": 1280
+   }
+  },
+  "state": {
+   "type": "constantCHOP",
+   "family": "CHOP",
+   "pos": [
+    -250,
+    180
+   ],
+   "pars": {
+    "const0name": "slot",
+    "const1name": "clip0",
+    "const1value": 13.0,
+    "const2name": "clip1",
+    "const2value": 2.0,
+    "const3name": "start0",
+    "const3value": 138133.83333333334,
+    "const4name": "start1",
+    "const5name": "cut",
+    "const5value": 138133.83333333334
+   }
+  },
+  "was": {
+   "type": "switchTOP",
+   "family": "TOP",
+   "pos": [
+    250,
+    -100
+   ],
+   "inputs": [
+    [
+     "play0"
+    ],
+    [
+     "play1"
+    ]
+   ],
+   "pars": {
+    "index": {
+     "expr": "1 - op('state')['slot']"
+    }
+   }
+  }
+ }
+}

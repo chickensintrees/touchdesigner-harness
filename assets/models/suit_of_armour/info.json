@@ -1,0 +1,25 @@
+{
+ "slug": "suit_of_armour",
+ "source": "suit_of_armour",
+ "parts_joined": 1,
+ "vertices": 30130,
+ "triangles": 29999,
+ "decimated": true,
+ "original_size_m": [
+  0.4445,
+  0.3057,
+  1.0007
+ ],
+ "size_units": [
+  0.4442,
+  1.0,
+  0.3055
+ ],
+ "has_uv": true,
+ "has_texture": true,
+ "generator": "TRELLIS.2",
+ "group": "monuments",
+ "prompt": "a medieval suit of polished plate armour standing on a display stand, visor closed",
+ "yaw_applied_deg": 0,
+ "facing_set_by": "eye, metric overruled"
+}

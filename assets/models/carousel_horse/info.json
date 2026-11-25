@@ -1,0 +1,25 @@
+{
+ "slug": "carousel_horse",
+ "source": "carousel_horse",
+ "parts_joined": 1,
+ "vertices": 25838,
+ "triangles": 30000,
+ "decimated": true,
+ "original_size_m": [
+  0.2685,
+  0.6049,
+  0.9999
+ ],
+ "size_units": [
+  0.2685,
+  1.0,
+  0.605
+ ],
+ "has_uv": true,
+ "has_texture": true,
+ "generator": "TRELLIS.2",
+ "group": "roadside",
+ "prompt": "a painted wooden carousel horse on a twisted brass pole, white with gold and red saddle",
+ "yaw_applied_deg": 0,
+ "facing_set_by": "eye, metric overruled"
+}

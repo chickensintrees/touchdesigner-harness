@@ -1,0 +1,264 @@
+{
+ "format": "tdh-snapshot/1",
+ "root": "/project1/sw_images",
+ "ops": {
+  "clock": {
+   "type": "constantCHOP",
+   "family": "CHOP",
+   "pos": [
+    -400,
+    180
+   ],
+   "pars": {
+    "const0name": "p",
+    "const0value": {
+     "expr": "parent().par.Start + absTime.seconds / max(0.2, parent().par.Hold)"
+    }
+   }
+  },
+  "cook_driver": {
+   "type": "executeDAT",
+   "family": "DAT",
+   "pos": [
+    -400,
+    -100
+   ],
+   "pars": {
+    "framestart": true,
+    "language": "python"
+   },
+   "text": [
+    "def onFrameStart(frame):",
+    "    if parent().par.Preview.eval():",
+    "        op('out1').cook(force=True)",
+    "    return"
+   ]
+  },
+  "file0": {
+   "type": "moviefileinTOP",
+   "family": "TOP",
+   "pos": [
+    0,
+    100
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.imset.path(op('state')['i0'], 'file')"
+    }
+   }
+  },
+  "file1": {
+   "type": "moviefileinTOP",
+   "family": "TOP",
+   "pos": [
+    0,
+    -100
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.imset.path(op('state')['i1'], 'file')"
+    }
+   }
+  },
+  "local": {
+   "type": "baseCOMP",
+   "family": "COMP",
+   "pos": [
+    -400,
+    460
+   ]
+  },
+  "local/modules": {
+   "type": "baseCOMP",
+   "family": "COMP",
+   "pos": [
+    0,
+    0
+   ]
+  },
+  "local/modules/imset": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "file": {
+     "expr": "project.folder.replace(chr(92), '/') + '/experiments/sw_images/imset_module.py'"
+    },
+    "language": "text",
+    "syncfile": true
+   },
+   "text_file": "experiments/sw_images/imset_module.py"
+  },
+  "local/modules/paths": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "file": {
+     "expr": "project.folder.replace(chr(92), '/') + '/experiments/sw_hub/paths_module.py'"
+    },
+    "language": "text",
+    "syncfile": true
+   },
+   "text_file": "experiments/sw_hub/paths_module.py"
+  },
+  "out1": {
+   "type": "outTOP",
+   "family": "TOP",
+   "pos": [
+    1400,
+    0
+   ],
+   "inputs": [
+    [
+     "player"
+    ]
+   ]
+  },
+  "player": {
+   "type": "glslTOP",
+   "family": "TOP",
+   "pos": [
+    400,
+    0
+   ],
+   "inputs": [
+    [
+     "file0"
+    ],
+    [
+     "file1"
+    ]
+   ],
+   "pars": {
+    "computedat": "player_compute",
+    "format": "rgba8fixed",
+    "outputresolution": "custom",
+    "pixeldat": "player_frag",
+    "resolutionh": 720,
+    "resolutionw": 1280,
+    "vec0name": "uMix",
+    "vec0valuew": {
+     "expr": "op('state')['phase']"
+    },
+    "vec0valuex": {
+     "expr": "op('state')['mix']"
+    },
+    "vec0valuey": {
+     "expr": "parent().par.Change.menuIndex"
+    },
+    "vec0valuez": {
+     "expr": "parent().par.Push"
+    },
+    "vec1name": "uShape",
+    "vec1valuew": {
+     "expr": "absTime.seconds % 600"
+    },
+    "vec1valuex": {
+     "expr": "mod.imset.number(op('state')['i0'], 'aspect')"
+    },
+    "vec1valuey": {
+     "expr": "mod.imset.number(op('state')['i1'], 'aspect')"
+    },
+    "vec1valuez": {
+     "expr": "1 if parent().par.Fill else 0"
+    },
+    "vec2name": "uGround",
+    "vec2valuew": {
+     "expr": "1"
+    },
+    "vec2valuex": {
+     "expr": "parent().par.Groundr"
+    },
+    "vec2valuey": {
+     "expr": "parent().par.Groundg"
+    },
+    "vec2valuez": {
+     "expr": "parent().par.Groundb"
+    },
+    "vec3name": "uColour",
+    "vec3valuew": {
+     "expr": "0"
+    },
+    "vec3valuex": {
+     "expr": "op('state')['i0'] % max(1, mod.imset.count())"
+    },
+    "vec3valuey": {
+     "expr": "op('state')['i1'] % max(1, mod.imset.count())"
+    },
+    "vec3valuez": {
+     "expr": "parent().par.Colour"
+    }
+   }
+  },
+  "player_frag": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.experiment('sw_images', 'shaders/player.frag')"
+    },
+    "language": "text",
+    "syncfile": true
+   },
+   "text_file": "experiments/sw_images/shaders/player.frag"
+  },
+  "state": {
+   "type": "constantCHOP",
+   "family": "CHOP",
+   "pos": [
+    -250,
+    180
+   ],
+   "pars": {
+    "const0name": "idx",
+    "const0value": {
+     "expr": "int(op('clock')['p'])"
+    },
+    "const1name": "phase",
+    "const1value": {
+     "expr": "op('clock')['p'] % 1"
+    },
+    "const2name": "i0",
+    "const2value": {
+     "expr": "2 * ((int(op('clock')['p']) + 1) // 2)"
+    },
+    "const3name": "i1",
+    "const3value": {
+     "expr": "2 * (int(op('clock')['p']) // 2) + 1"
+    },
+    "const4name": "mix",
+    "const4value": {
+     "expr": "(lambda p, tr: (lambda m: m if int(p) % 2 == 0 else 1 - m)(min(1, max(0, ((p % 1) - (1 - tr)) / tr))))(op('clock')['p'], max(0.02, parent().par.Travel))"
+    }
+   }
+  },
+  "table": {
+   "type": "tableDAT",
+   "family": "DAT",
+   "pos": [
+    -400,
+    300
+   ],
+   "pars": {
+    "cols": 21,
+    "file": {
+     "expr": "mod.imset.root('table.tsv')"
+    },
+    "rows": 17,
+    "syncfile": true
+   },
+   "text_file": "assets/image_sets/generated_depth/table.tsv"
+  }
+ }
+}

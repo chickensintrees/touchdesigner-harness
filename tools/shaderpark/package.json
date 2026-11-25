@@ -1,0 +1,10 @@
+{
+  "name": "touchdesigner-harness-shaderpark",
+  "private": true,
+  "description": "Headless Shader Park -> GLSL TOP compiler for experiments. Usage: node compile.mjs <sculpture.js> <outdir>",
+  "license": "MIT",
+  "type": "module",
+  "dependencies": {
+    "shader-park-core": "0.2.8"
+  }
+}

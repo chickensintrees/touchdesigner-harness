@@ -1,0 +1,22 @@
+{
+ "slug": "lander",
+ "source": "lander",
+ "parts_joined": 1,
+ "vertices": 24774,
+ "triangles": 29095,
+ "decimated": false,
+ "original_size_m": [
+  0.8826,
+  0.8833,
+  1.0003
+ ],
+ "size_units": [
+  0.8823,
+  1.0,
+  0.883
+ ],
+ "has_uv": true,
+ "has_texture": true,
+ "generator": "TRELLIS.2",
+ "prompt": "a small retro-futuristic lunar lander: a faceted gold-foil body on four splayed legs with round footpads, an antenna dish and thruster nozzle"
+}

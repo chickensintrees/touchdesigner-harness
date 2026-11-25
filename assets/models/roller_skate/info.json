@@ -1,0 +1,25 @@
+{
+ "slug": "roller_skate",
+ "source": "roller_skate",
+ "parts_joined": 1,
+ "vertices": 30500,
+ "triangles": 29998,
+ "decimated": true,
+ "original_size_m": [
+  0.4069,
+  0.9542,
+  0.9821
+ ],
+ "size_units": [
+  0.4143,
+  1.0,
+  0.9716
+ ],
+ "has_uv": true,
+ "has_texture": true,
+ "generator": "TRELLIS.2",
+ "group": "sport",
+ "prompt": "a single white leather quad roller skate with red wheels and a red toe stop, rainbow laces",
+ "yaw_applied_deg": 0,
+ "facing_set_by": "eye, metric overruled"
+}

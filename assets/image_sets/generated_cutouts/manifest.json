@@ -1,0 +1,1475 @@
+{
+ "version": 1,
+ "name": "generated_cutouts",
+ "count": 37,
+ "order": "colour: hue round the wheel, then near-greys dark to light",
+ "max_side": 1024,
+ "atlas": {
+  "file": "atlas.png",
+  "cols": 7,
+  "rows": 6,
+  "tile": 182
+ },
+ "palette": {
+  "file": "palette.png",
+  "colours_per_image": 5
+ },
+ "table": "table.tsv",
+ "tiers": {
+  "depth": [
+   "guess"
+  ],
+  "cutout": [
+   "provided"
+  ],
+  "meshes": 0,
+  "clips": 0
+ },
+ "skipped": [],
+ "left_out": [],
+ "images": [
+  {
+   "id": "000",
+   "source": "transistor_radio.png",
+   "name": "transistor_radio",
+   "file": "img/000.jpg",
+   "width": 1024,
+   "height": 1024,
+   "aspect": 1.0,
+   "palette": [
+    "#FE7163",
+    "#FC796F",
+    "#6BB2B9",
+    "#975F4C",
+    "#F26157"
+   ],
+   "palette_share": [
+    0.333,
+    0.3,
+    0.171,
+    0.115,
+    0.081
+   ],
+   "mean": [
+    0.8446,
+    0.4834,
+    0.4466
+   ],
+   "hue": 0.0154,
+   "sat": 0.4713,
+   "val": 0.8446,
+   "cluster": 2,
+   "depth": "depth/000.png",
+   "depth_source": "guess",
+   "cutout": "cut/000.png",
+   "cutout_source": "provided",
+   "cutout_cover": 0.2761,
+   "mesh_source": null,
+   "clip": null
+  },
+  {
+   "id": "001",
+   "source": "goldfish_bowl.png",
+   "name": "goldfish_bowl",
+   "file": "img/001.jpg",
+   "width": 1024,
+   "height": 1024,
+   "aspect": 1.0,
+   "palette": [
+    "#DF4C3E",
+    "#E06B5C",
+    "#815830",
+    "#243E57",
+    "#BEA1A8"
+   ],
+   "palette_share": [
+    0.455,
+    0.368,
+    0.072,
+    0.066,
+    0.038
+   ],
+   "mean": [
+    0.7965,
+    0.3561,
+    0.3035
+   ],
+   "hue": 0.0178,
+   "sat": 0.619,
+   "val": 0.7965,
+   "cluster": 2,
+   "depth": "depth/001.png",
+   "depth_source": "guess",
+   "cutout": "cut/001.png",
+   "cutout_source": "provided",
+   "cutout_cover": 0.3651,
+   "mesh_source": null,
+   "clip": null
+  },
+  {
+   "id": "002",
+   "source": "marble_bust.png",
+   "name": "marble_bust",
+   "file": "img/002.jpg",
+   "width": 1024,
+   "height": 1024,
+   "aspect": 1.0,
+   "palette": [
+    "#F06F5D",
+    "#F27967",
+    "#D5C8C2",
+    "#E95B48",
+    "#B58D80"
+   ],
+   "palette_share": [
+    0.423,
+    0.266,
+    0.136,
+    0.105,
+    0.07
+   ],
+   "mean": [
+    0.9107,
+    0.4945,
+    0.4295
+   ],
+   "hue": 0.0225,
+   "sat": 0.5285,
+   "val": 0.9107,
+   "cluster": 2,
+   "depth": "depth/002.png",
+   "depth_source": "guess",
+   "cutout": "cut/002.png",
+   "cutout_source": "provided",
+   "cutout_cover": 0.2102,
+   "mesh_source": null,
+   "clip": null
+  },
+  {
+   "id": "003",
+   "source": "traffic_light.png",
+   "name": "traffic_light",
+   "file": "img/003.jpg",
+   "width": 1024,
+   "height": 1024,
+   "aspect": 1.0,
+   "palette": [
+    "#EFDCE0",
+    "#F5E4E7",
+    "#E7CFD2",
+    "#9F6720",
+    "#DAAB57"
+   ],
+   "palette_share": [
+    0.428,
+    0.235,
+    0.202,
+    0.098,
+    0.037
+   ],
+   "mean": [
+    0.9022,
+    0.8073,
+    0.7793
+   ],
+   "hue": 0.038,
+   "sat": 0.1362,
+   "val": 0.9022,
+   "cluster": 3,
+   "depth": "depth/003.png",
+   "depth_source": "guess",
+   "cutout": "cut/003.png",
+   "cutout_source": "provided",
+   "cutout_cover": 0.132,
+   "mesh_source": null,
+   "clip": null
+  },
+  {
+   "id": "004",
+   "source": "banjo.png",
+   "name": "banjo",
+   "file": "img/004.jpg",
+   "width": 1024,
+   "height": 1024,
+   "aspect": 1.0,
+   "palette": [
+    "#F7A450",
+    "#EB9548",
+    "#D9833F",
+    "#D4CECB",
+    "#6F5342"
+   ],
+   "palette_share": [
+    0.354,
+    0.34,
+    0.207,
+    0.062,
+    0.037
+   ],
+   "mean": [
+    0.9007,
+    0.5963,
+    0.3178
+   ],
+   "hue": 0.0796,
+   "sat": 0.6471,
+   "val": 0.9007,
+   "cluster": 4,
+   "depth": "depth/004.png",
+   "depth_source": "guess",
+   "cutout": "cut/004.png",
+   "cutout_source": "provided",
+   "cutout_cover": 0.1004,
+   "mesh_source": null,
+   "clip": null
+  },
+  {
+   "id": "005",
+   "source": "tugboat.png",
+   "name": "tugboat",
+   "file": "img/005.jpg",
+   "width": 1024,
+   "height": 1024,
+   "aspect": 1.0,
+   "palette": [
+    "#F1BE76",
+    "#F3CC97",
+    "#F8DCB5",
+    "#6B170E",
+    "#BE713E"
+   ],
+   "palette_share": [
+    0.411,
+    0.235,
+    0.149,
+    0.136,
+    0.069
+   ],
+   "mean": [
+    0.8671,
+    0.6655,
+    0.4596
+   ],
+   "hue": 0.0842,
+   "sat": 0.47,
+   "val": 0.8671,
+   "cluster": 4,
+   "depth": "depth/005.png",
+   "depth_source": "guess",
+   "cutout": "cut/005.png",
+   "cutout_source": "provided",
+   "cutout_cover": 0.2305,
+   "mesh_source": null,
+   "clip": null
+  },
+  {
+   "id": "006",
+   "source": "film_projector.png",
+   "name": "film_projector",
+   "file": "img/006.jpg",
+   "width": 1024,
+   "height": 1024,
+   "aspect": 1.0,
+   "palette": [
+    "#F69922",
+    "#F8A544",
+    "#534232",
+    "#E37D16",
+    "#99724D"
+   ],
+   "palette_share": [
+    0.231,
+    0.217,
+    0.213,
+    0.204,
+    0.134
+   ],
+   "mean": [
+    0.7652,
+    0.4952,
+    0.1893
+   ],
+   "hue": 0.0885,
+   "sat": 0.7526,
+   "val": 0.7652,
+   "cluster": 2,
+   "depth": "depth/006.png",
+   "depth_source": "guess",
+   "cutout": "cut/006.png",
+   "cutout_source": "provided",
+   "cutout_cover": 0.3117,
+   "mesh_source": null,
+   "clip": null
+  },
+  {
+   "id": "007",
+   "source": "rocking_horse.png",
+   "name": "rocking_horse",
+   "file": "img/007.jpg",
+   "width": 1024,
+   "height": 1024,
+   "aspect": 1.0,
+   "palette": [
+    "#E8B151",
+    "#DB9F37",
+    "#DFD3C5",
+    "#1E4762",
+    "#975433"
+   ],
+   "palette_share": [
+    0.501,
+    0.234,
+    0.12,
+    0.076,
+    0.069
+   ],
+   "mean": [
+    0.8119,
+    0.6369,
+    0.3448
+   ],
+   "hue": 0.1042,
+   "sat": 0.5753,
+   "val": 0.8119,
+   "cluster": 4,
+   "depth": "depth/007.png",
+   "depth_source": "guess",
+   "cutout": "cut/007.png",
+   "cutout_source": "provided",
+   "cutout_cover": 0.2414,
+   "mesh_source": null,
+   "clip": null
+  },
+  {
+   "id": "008",
+   "source": "popcorn_box.png",
+   "name": "popcorn_box",
+   "file": "img/008.jpg",
+   "width": 1024,
+   "height": 1024,
+   "aspect": 1.0,
+   "palette": [
+    "#F6D26A",
+    "#EBC247",
+    "#D2462A",
+    "#E5D2C4",
+    "#D79F8A"
+   ],
+   "palette_share": [
+    0.438,
+    0.316,
+    0.097,
+    0.09,
+    0.059
+   ],
+   "mean": [
+    0.9244,
+    0.7389,
+    0.388
+   ],
+   "hue": 0.109,
+   "sat": 0.5803,
+   "val": 0.9244,
+   "cluster": 4,
+   "depth": "depth/008.png",
+   "depth_source": "guess",
+   "cutout": "cut/008.png",
+   "cutout_source": "provided",
+   "cutout_cover": 0.2295,
+   "mesh_source": null,
+   "clip": null
+  },
+  {
+   "id": "009",
+   "source": "lumberjack_statue.png",
+   "name": "lumberjack_statue",
+   "file": "img/009.jpg",
+   "width": 1024,
+   "height": 1024,
+   "aspect": 1.0,
+   "palette": [
+    "#E7D69E",
+    "#E0CC8F",
+    "#D6BF7B",
+    "#413C4A",
+    "#957968"
+   ],
+   "palette_share": [
+    0.296,
+    0.292,
+    0.237,
+    0.101,
+    0.075
+   ],
+   "mean": [
+    0.7933,
+    0.7177,
+    0.5203
+   ],
+   "hue": 0.1205,
+   "sat": 0.3442,
+   "val": 0.7933,
+   "cluster": 4,
+   "depth": "depth/009.png",
+   "depth_source": "guess",
+   "cutout": "cut/009.png",
+   "cutout_source": "provided",
+   "cutout_cover": 0.1863,
+   "mesh_source": null,
+   "clip": null
+  },
+  {
+   "id": "010",
+   "source": "zebra.png",
+   "name": "zebra",
+   "file": "img/010.jpg",
+   "width": 1024,
+   "height": 1024,
+   "aspect": 1.0,
+   "palette": [
+    "#EBCD64",
+    "#F3DB84",
+    "#614F38",
+    "#9A8465",
+    "#CBA122"
+   ],
+   "palette_share": [
+    0.426,
+    0.209,
+    0.132,
+    0.119,
+    0.115
+   ],
+   "mean": [
+    0.8054,
+    0.6971,
+    0.3665
+   ],
+   "hue": 0.1255,
+   "sat": 0.5449,
+   "val": 0.8054,
+   "cluster": 4,
+   "depth": "depth/010.png",
+   "depth_source": "guess",
+   "cutout": "cut/010.png",
+   "cutout_source": "provided",
+   "cutout_cover": 0.2426,
+   "mesh_source": null,
+   "clip": null
+  },
+  {
+   "id": "011",
+   "source": "cuckoo_clock.png",
+   "name": "cuckoo_clock",
+   "file": "img/011.jpg",
+   "width": 1024,
+   "height": 1024,
+   "aspect": 1.0,
+   "palette": [
+    "#7DA568",
+    "#94BA80",
+    "#6E7F4C",
+    "#B1CF9F",
+    "#4F3824"
+   ],
+   "palette_share": [
+    0.336,
+    0.259,
+    0.185,
+    0.119,
+    0.1
+   ],
+   "mean": [
+    0.5089,
+    0.6168,
+    0.4105
+   ],
+   "hue": 0.2538,
+   "sat": 0.3344,
+   "val": 0.6168,
+   "cluster": 0,
+   "depth": "depth/011.png",
+   "depth_source": "guess",
+   "cutout": "cut/011.png",
+   "cutout_source": "provided",
+   "cutout_cover": 0.2035,
+   "mesh_source": null,
+   "clip": null
+  },
+  {
+   "id": "012",
+   "source": "harp.png",
+   "name": "harp",
+   "file": "img/012.jpg",
+   "width": 1024,
+   "height": 1024,
+   "aspect": 1.0,
+   "palette": [
+    "#15623C",
+    "#26774E",
+    "#09502B",
+    "#4A8156",
+    "#B29057"
+   ],
+   "palette_share": [
+    0.316,
+    0.263,
+    0.17,
+    0.145,
+    0.107
+   ],
+   "mean": [
+    0.1879,
+    0.4319,
+    0.2689
+   ],
+   "hue": 0.3887,
+   "sat": 0.5648,
+   "val": 0.4319,
+   "cluster": 1,
+   "depth": "depth/012.png",
+   "depth_source": "guess",
+   "cutout": "cut/012.png",
+   "cutout_source": "provided",
+   "cutout_cover": 0.1479,
+   "mesh_source": null,
+   "clip": null
+  },
+  {
+   "id": "013",
+   "source": "hamburger.png",
+   "name": "hamburger",
+   "file": "img/013.jpg",
+   "width": 1024,
+   "height": 1024,
+   "aspect": 1.0,
+   "palette": [
+    "#7CC4C0",
+    "#5FB5B0",
+    "#614E25",
+    "#B37C3A",
+    "#E2B473"
+   ],
+   "palette_share": [
+    0.414,
+    0.309,
+    0.111,
+    0.099,
+    0.067
+   ],
+   "mean": [
+    0.4883,
+    0.6678,
+    0.594
+   ],
+   "hue": 0.4315,
+   "sat": 0.2689,
+   "val": 0.6678,
+   "cluster": 0,
+   "depth": "depth/013.png",
+   "depth_source": "guess",
+   "cutout": "cut/013.png",
+   "cutout_source": "provided",
+   "cutout_cover": 0.2588,
+   "mesh_source": null,
+   "clip": null
+  },
+  {
+   "id": "014",
+   "source": "instant_camera.png",
+   "name": "instant_camera",
+   "file": "img/014.jpg",
+   "width": 1024,
+   "height": 1024,
+   "aspect": 1.0,
+   "palette": [
+    "#64B0B2",
+    "#7AB9BA",
+    "#974F37",
+    "#4E8D8D",
+    "#D9CAB6"
+   ],
+   "palette_share": [
+    0.529,
+    0.241,
+    0.088,
+    0.079,
+    0.063
+   ],
+   "mean": [
+    0.4525,
+    0.6605,
+    0.6531
+   ],
+   "hue": 0.494,
+   "sat": 0.315,
+   "val": 0.6605,
+   "cluster": 0,
+   "depth": "depth/014.png",
+   "depth_source": "guess",
+   "cutout": "cut/014.png",
+   "cutout_source": "provided",
+   "cutout_cover": 0.1688,
+   "mesh_source": null,
+   "clip": null
+  },
+  {
+   "id": "015",
+   "source": "stone_lion.png",
+   "name": "stone_lion",
+   "file": "img/015.jpg",
+   "width": 1024,
+   "height": 1024,
+   "aspect": 1.0,
+   "palette": [
+    "#85C7CB",
+    "#65B3B6",
+    "#869591",
+    "#B4BAB6",
+    "#4A5954"
+   ],
+   "palette_share": [
+    0.572,
+    0.207,
+    0.128,
+    0.063,
+    0.03
+   ],
+   "mean": [
+    0.5002,
+    0.7233,
+    0.7293
+   ],
+   "hue": 0.5044,
+   "sat": 0.3142,
+   "val": 0.7293,
+   "cluster": 0,
+   "depth": "depth/015.png",
+   "depth_source": "guess",
+   "cutout": "cut/015.png",
+   "cutout_source": "provided",
+   "cutout_cover": 0.2228,
+   "mesh_source": null,
+   "clip": null
+  },
+  {
+   "id": "016",
+   "source": "pink_poodle.png",
+   "name": "pink_poodle",
+   "file": "img/016.jpg",
+   "width": 1024,
+   "height": 1024,
+   "aspect": 1.0,
+   "palette": [
+    "#75B9BD",
+    "#94C8CD",
+    "#DFBBC3",
+    "#C5A0A7",
+    "#688588"
+   ],
+   "palette_share": [
+    0.406,
+    0.219,
+    0.195,
+    0.098,
+    0.082
+   ],
+   "mean": [
+    0.5939,
+    0.7134,
+    0.7346
+   ],
+   "hue": 0.5251,
+   "sat": 0.1916,
+   "val": 0.7346,
+   "cluster": 5,
+   "depth": "depth/016.png",
+   "depth_source": "guess",
+   "cutout": "cut/016.png",
+   "cutout_source": "provided",
+   "cutout_cover": 0.3418,
+   "mesh_source": null,
+   "clip": null
+  },
+  {
+   "id": "017",
+   "source": "yellow_biplane.png",
+   "name": "yellow_biplane",
+   "file": "img/017.jpg",
+   "width": 1024,
+   "height": 1024,
+   "aspect": 1.0,
+   "palette": [
+    "#81B3C6",
+    "#9DC7D8",
+    "#5B98B1",
+    "#8E6228",
+    "#A79D67"
+   ],
+   "palette_share": [
+    0.378,
+    0.294,
+    0.179,
+    0.078,
+    0.071
+   ],
+   "mean": [
+    0.5262,
+    0.6759,
+    0.7076
+   ],
+   "hue": 0.5291,
+   "sat": 0.2563,
+   "val": 0.7076,
+   "cluster": 0,
+   "depth": "depth/017.png",
+   "depth_source": "guess",
+   "cutout": "cut/017.png",
+   "cutout_source": "provided",
+   "cutout_cover": 0.1515,
+   "mesh_source": null,
+   "clip": null
+  },
+  {
+   "id": "018",
+   "source": "stereo_viewer_toy.png",
+   "name": "stereo_viewer_toy",
+   "file": "img/018.jpg",
+   "width": 1024,
+   "height": 1024,
+   "aspect": 1.0,
+   "palette": [
+    "#7EBFD7",
+    "#B13637",
+    "#679DB6",
+    "#E8E4E3",
+    "#4E161D"
+   ],
+   "palette_share": [
+    0.756,
+    0.092,
+    0.064,
+    0.057,
+    0.031
+   ],
+   "mean": [
+    0.5237,
+    0.6772,
+    0.7585
+   ],
+   "hue": 0.5577,
+   "sat": 0.3095,
+   "val": 0.7585,
+   "cluster": 0,
+   "depth": "depth/018.png",
+   "depth_source": "guess",
+   "cutout": "cut/018.png",
+   "cutout_source": "provided",
+   "cutout_cover": 0.1768,
+   "mesh_source": null,
+   "clip": null
+  },
+  {
+   "id": "019",
+   "source": "chicken_mascot.png",
+   "name": "chicken_mascot",
+   "file": "img/019.jpg",
+   "width": 1024,
+   "height": 1024,
+   "aspect": 1.0,
+   "palette": [
+    "#07386B",
+    "#174B82",
+    "#02234D",
+    "#D5AD3A",
+    "#8A5832"
+   ],
+   "palette_share": [
+    0.355,
+    0.254,
+    0.159,
+    0.152,
+    0.079
+   ],
+   "mean": [
+    0.2034,
+    0.3058,
+    0.377
+   ],
+   "hue": 0.5684,
+   "sat": 0.4605,
+   "val": 0.377,
+   "cluster": 1,
+   "depth": "depth/019.png",
+   "depth_source": "guess",
+   "cutout": "cut/019.png",
+   "cutout_source": "provided",
+   "cutout_cover": 0.2232,
+   "mesh_source": null,
+   "clip": null
+  },
+  {
+   "id": "020",
+   "source": "snow_globe.png",
+   "name": "snow_globe",
+   "file": "img/020.jpg",
+   "width": 1024,
+   "height": 1024,
+   "aspect": 1.0,
+   "palette": [
+    "#13436A",
+    "#03355B",
+    "#40617D",
+    "#7A101B",
+    "#8B99A1"
+   ],
+   "palette_share": [
+    0.405,
+    0.304,
+    0.158,
+    0.072,
+    0.061
+   ],
+   "mean": [
+    0.1413,
+    0.2711,
+    0.4002
+   ],
+   "hue": 0.5831,
+   "sat": 0.647,
+   "val": 0.4002,
+   "cluster": 1,
+   "depth": "depth/020.png",
+   "depth_source": "guess",
+   "cutout": "cut/020.png",
+   "cutout_source": "provided",
+   "cutout_cover": 0.218,
+   "mesh_source": null,
+   "clip": null
+  },
+  {
+   "id": "021",
+   "source": "soft_pretzel.png",
+   "name": "soft_pretzel",
+   "file": "img/021.jpg",
+   "width": 1024,
+   "height": 1024,
+   "aspect": 1.0,
+   "palette": [
+    "#063D7D",
+    "#8D4D28",
+    "#C38E60",
+    "#3A2F38",
+    "#2A5795"
+   ],
+   "palette_share": [
+    0.612,
+    0.156,
+    0.114,
+    0.06,
+    0.057
+   ],
+   "mean": [
+    0.2097,
+    0.2889,
+    0.4145
+   ],
+   "hue": 0.6022,
+   "sat": 0.4942,
+   "val": 0.4145,
+   "cluster": 1,
+   "depth": "depth/021.png",
+   "depth_source": "guess",
+   "cutout": "cut/021.png",
+   "cutout_source": "provided",
+   "cutout_cover": 0.3097,
+   "mesh_source": null,
+   "clip": null
+  },
+  {
+   "id": "022",
+   "source": "walkie_talkie.png",
+   "name": "walkie_talkie",
+   "file": "img/022.jpg",
+   "width": 1024,
+   "height": 1024,
+   "aspect": 1.0,
+   "palette": [
+    "#9A80C0",
+    "#8F76B8",
+    "#7D639F",
+    "#D69426",
+    "#2B212A"
+   ],
+   "palette_share": [
+    0.421,
+    0.384,
+    0.104,
+    0.067,
+    0.025
+   ],
+   "mean": [
+    0.5815,
+    0.471,
+    0.6716
+   ],
+   "hue": 0.7585,
+   "sat": 0.2987,
+   "val": 0.6716,
+   "cluster": 0,
+   "depth": "depth/022.png",
+   "depth_source": "guess",
+   "cutout": "cut/022.png",
+   "cutout_source": "provided",
+   "cutout_cover": 0.1033,
+   "mesh_source": null,
+   "clip": null
+  },
+  {
+   "id": "023",
+   "source": "saxophone.png",
+   "name": "saxophone",
+   "file": "img/023.jpg",
+   "width": 1024,
+   "height": 1024,
+   "aspect": 1.0,
+   "palette": [
+    "#3F2659",
+    "#2D1946",
+    "#53376D",
+    "#6D4D3F",
+    "#967B65"
+   ],
+   "palette_share": [
+    0.414,
+    0.288,
+    0.201,
+    0.063,
+    0.034
+   ],
+   "mean": [
+    0.2655,
+    0.1688,
+    0.3381
+   ],
+   "hue": 0.7619,
+   "sat": 0.5009,
+   "val": 0.3381,
+   "cluster": 1,
+   "depth": "depth/023.png",
+   "depth_source": "guess",
+   "cutout": "cut/023.png",
+   "cutout_source": "provided",
+   "cutout_cover": 0.0977,
+   "mesh_source": null,
+   "clip": null
+  },
+  {
+   "id": "024",
+   "source": "fire_hydrant.png",
+   "name": "fire_hydrant",
+   "file": "img/024.jpg",
+   "width": 1024,
+   "height": 1024,
+   "aspect": 1.0,
+   "palette": [
+    "#806DA1",
+    "#917CB0",
+    "#6C5B8A",
+    "#D49F2B",
+    "#8C3122"
+   ],
+   "palette_share": [
+    0.332,
+    0.315,
+    0.195,
+    0.108,
+    0.05
+   ],
+   "mean": [
+    0.5458,
+    0.4419,
+    0.5574
+   ],
+   "hue": 0.8166,
+   "sat": 0.2072,
+   "val": 0.5574,
+   "cluster": 0,
+   "depth": "depth/024.png",
+   "depth_source": "guess",
+   "cutout": "cut/024.png",
+   "cutout_source": "provided",
+   "cutout_cover": 0.1662,
+   "mesh_source": null,
+   "clip": null
+  },
+  {
+   "id": "025",
+   "source": "pineapple.png",
+   "name": "pineapple",
+   "file": "img/025.jpg",
+   "width": 1024,
+   "height": 1024,
+   "aspect": 1.0,
+   "palette": [
+    "#F266C6",
+    "#F242BA",
+    "#E62BAA",
+    "#7C5C43",
+    "#C40A83"
+   ],
+   "palette_share": [
+    0.303,
+    0.232,
+    0.227,
+    0.17,
+    0.068
+   ],
+   "mean": [
+    0.847,
+    0.2829,
+    0.6361
+   ],
+   "hue": 0.8957,
+   "sat": 0.6661,
+   "val": 0.847,
+   "cluster": 2,
+   "depth": "depth/025.png",
+   "depth_source": "guess",
+   "cutout": "cut/025.png",
+   "cutout_source": "provided",
+   "cutout_cover": 0.1885,
+   "mesh_source": null,
+   "clip": null
+  },
+  {
+   "id": "026",
+   "source": "masked_wrestler.png",
+   "name": "masked_wrestler",
+   "file": "img/026.jpg",
+   "width": 1024,
+   "height": 1024,
+   "aspect": 1.0,
+   "palette": [
+    "#E75B88",
+    "#133474",
+    "#D14A74",
+    "#9E264A",
+    "#E57296"
+   ],
+   "palette_share": [
+    0.316,
+    0.262,
+    0.188,
+    0.143,
+    0.092
+   ],
+   "mean": [
+    0.6297,
+    0.284,
+    0.4684
+   ],
+   "hue": 0.9111,
+   "sat": 0.549,
+   "val": 0.6297,
+   "cluster": 2,
+   "depth": "depth/026.png",
+   "depth_source": "guess",
+   "cutout": "cut/026.png",
+   "cutout_source": "provided",
+   "cutout_cover": 0.2841,
+   "mesh_source": null,
+   "clip": null
+  },
+  {
+   "id": "027",
+   "source": "gelatin_mould.png",
+   "name": "gelatin_mould",
+   "file": "img/027.jpg",
+   "width": 1024,
+   "height": 1024,
+   "aspect": 1.0,
+   "palette": [
+    "#F664A1",
+    "#E54987",
+    "#8A992A",
+    "#B52155",
+    "#DBCCC1"
+   ],
+   "palette_share": [
+    0.4,
+    0.337,
+    0.102,
+    0.091,
+    0.07
+   ],
+   "mean": [
+    0.868,
+    0.3823,
+    0.5309
+   ],
+   "hue": 0.949,
+   "sat": 0.5596,
+   "val": 0.868,
+   "cluster": 2,
+   "depth": "depth/027.png",
+   "depth_source": "guess",
+   "cutout": "cut/027.png",
+   "cutout_source": "provided",
+   "cutout_cover": 0.2076,
+   "mesh_source": null,
+   "clip": null
+  },
+  {
+   "id": "028",
+   "source": "space_helmet.png",
+   "name": "space_helmet",
+   "file": "img/028.jpg",
+   "width": 1024,
+   "height": 1024,
+   "aspect": 1.0,
+   "palette": [
+    "#951C26",
+    "#7A0515",
+    "#422F28",
+    "#D6CFC7",
+    "#917164"
+   ],
+   "palette_share": [
+    0.41,
+    0.316,
+    0.125,
+    0.082,
+    0.068
+   ],
+   "mean": [
+    0.5294,
+    0.1712,
+    0.1973
+   ],
+   "hue": 0.9879,
+   "sat": 0.6766,
+   "val": 0.5294,
+   "cluster": 1,
+   "depth": "depth/028.png",
+   "depth_source": "guess",
+   "cutout": "cut/028.png",
+   "cutout_source": "provided",
+   "cutout_cover": 0.2824,
+   "mesh_source": null,
+   "clip": null
+  },
+  {
+   "id": "029",
+   "source": "hot_air_balloon.png",
+   "name": "hot_air_balloon",
+   "file": "img/029.jpg",
+   "width": 1024,
+   "height": 1024,
+   "aspect": 1.0,
+   "palette": [
+    "#D1D0D6",
+    "#C2C0C6",
+    "#51596B",
+    "#CD7F43",
+    "#E0E0E5"
+   ],
+   "palette_share": [
+    0.325,
+    0.233,
+    0.191,
+    0.143,
+    0.108
+   ],
+   "mean": [
+    0.7144,
+    0.6731,
+    0.6684
+   ],
+   "hue": 0.0171,
+   "sat": 0.0644,
+   "val": 0.7144,
+   "cluster": 5,
+   "depth": "depth/029.png",
+   "depth_source": "guess",
+   "cutout": "cut/029.png",
+   "cutout_source": "provided",
+   "cutout_cover": 0.3382,
+   "mesh_source": null,
+   "clip": null
+  },
+  {
+   "id": "030",
+   "source": "tortoise.png",
+   "name": "tortoise",
+   "file": "img/030.jpg",
+   "width": 1024,
+   "height": 1024,
+   "aspect": 1.0,
+   "palette": [
+    "#CABADB",
+    "#D8CCE4",
+    "#5B443D",
+    "#967D6D",
+    "#BFAAAE"
+   ],
+   "palette_share": [
+    0.375,
+    0.266,
+    0.148,
+    0.118,
+    0.093
+   ],
+   "mean": [
+    0.7153,
+    0.6451,
+    0.7102
+   ],
+   "hue": 0.8456,
+   "sat": 0.0982,
+   "val": 0.7153,
+   "cluster": 5,
+   "depth": "depth/030.png",
+   "depth_source": "guess",
+   "cutout": "cut/030.png",
+   "cutout_source": "provided",
+   "cutout_cover": 0.2598,
+   "mesh_source": null,
+   "clip": null
+  },
+  {
+   "id": "031",
+   "source": "red_tricycle.png",
+   "name": "red_tricycle",
+   "file": "img/031.jpg",
+   "width": 1024,
+   "height": 1024,
+   "aspect": 1.0,
+   "palette": [
+    "#D1E3DB",
+    "#C9DCD3",
+    "#602D2B",
+    "#BACABF",
+    "#A38881"
+   ],
+   "palette_share": [
+    0.374,
+    0.3,
+    0.148,
+    0.101,
+    0.077
+   ],
+   "mean": [
+    0.7211,
+    0.7395,
+    0.709
+   ],
+   "hue": 0.2673,
+   "sat": 0.0412,
+   "val": 0.7395,
+   "cluster": 5,
+   "depth": "depth/031.png",
+   "depth_source": "guess",
+   "cutout": "cut/031.png",
+   "cutout_source": "provided",
+   "cutout_cover": 0.2038,
+   "mesh_source": null,
+   "clip": null
+  },
+  {
+   "id": "032",
+   "source": "xylophone.png",
+   "name": "xylophone",
+   "file": "img/032.jpg",
+   "width": 1024,
+   "height": 1024,
+   "aspect": 1.0,
+   "palette": [
+    "#D3D7E1",
+    "#DADEE7",
+    "#CAA16F",
+    "#CDC1BA",
+    "#5A5559"
+   ],
+   "palette_share": [
+    0.383,
+    0.294,
+    0.119,
+    0.102,
+    0.101
+   ],
+   "mean": [
+    0.7819,
+    0.7665,
+    0.7664
+   ],
+   "hue": 0.0011,
+   "sat": 0.0198,
+   "val": 0.7819,
+   "cluster": 3,
+   "depth": "depth/032.png",
+   "depth_source": "guess",
+   "cutout": "cut/032.png",
+   "cutout_source": "provided",
+   "cutout_cover": 0.2332,
+   "mesh_source": null,
+   "clip": null
+  },
+  {
+   "id": "033",
+   "source": "lava_lamp.png",
+   "name": "lava_lamp",
+   "file": "img/033.jpg",
+   "width": 1024,
+   "height": 1024,
+   "aspect": 1.0,
+   "palette": [
+    "#CADED4",
+    "#C1D7CC",
+    "#D1E3D9",
+    "#BB5876",
+    "#A6ABA8"
+   ],
+   "palette_share": [
+    0.336,
+    0.286,
+    0.257,
+    0.062,
+    0.058
+   ],
+   "mean": [
+    0.777,
+    0.8236,
+    0.7947
+   ],
+   "hue": 0.3967,
+   "sat": 0.0566,
+   "val": 0.8236,
+   "cluster": 3,
+   "depth": "depth/033.png",
+   "depth_source": "guess",
+   "cutout": "cut/033.png",
+   "cutout_source": "provided",
+   "cutout_cover": 0.14,
+   "mesh_source": null,
+   "clip": null
+  },
+  {
+   "id": "034",
+   "source": "band_drummer.png",
+   "name": "band_drummer",
+   "file": "img/034.jpg",
+   "width": 1024,
+   "height": 1024,
+   "aspect": 1.0,
+   "palette": [
+    "#CFE6E4",
+    "#B9D5D1",
+    "#E1F1F0",
+    "#602D2D",
+    "#B09684"
+   ],
+   "palette_share": [
+    0.378,
+    0.293,
+    0.219,
+    0.061,
+    0.049
+   ],
+   "mean": [
+    0.7697,
+    0.8309,
+    0.8196
+   ],
+   "hue": 0.4692,
+   "sat": 0.0737,
+   "val": 0.8309,
+   "cluster": 3,
+   "depth": "depth/034.png",
+   "depth_source": "guess",
+   "cutout": "cut/034.png",
+   "cutout_source": "provided",
+   "cutout_cover": 0.1219,
+   "mesh_source": null,
+   "clip": null
+  },
+  {
+   "id": "035",
+   "source": "bronze_discus_thrower.png",
+   "name": "bronze_discus_thrower",
+   "file": "img/035.jpg",
+   "width": 1024,
+   "height": 1024,
+   "aspect": 1.0,
+   "palette": [
+    "#D7E8F2",
+    "#E0EFF6",
+    "#C8DDE7",
+    "#676657",
+    "#9FA5A0"
+   ],
+   "palette_share": [
+    0.316,
+    0.275,
+    0.22,
+    0.142,
+    0.047
+   ],
+   "mean": [
+    0.7682,
+    0.8229,
+    0.8422
+   ],
+   "hue": 0.5434,
+   "sat": 0.0879,
+   "val": 0.8422,
+   "cluster": 3,
+   "depth": "depth/035.png",
+   "depth_source": "guess",
+   "cutout": "cut/035.png",
+   "cutout_source": "provided",
+   "cutout_cover": 0.1709,
+   "mesh_source": null,
+   "clip": null
+  },
+  {
+   "id": "036",
+   "source": "toucan.png",
+   "name": "toucan",
+   "file": "img/036.jpg",
+   "width": 1024,
+   "height": 1024,
+   "aspect": 1.0,
+   "palette": [
+    "#F3DFE8",
+    "#F8E7EE",
+    "#EAD1D8",
+    "#382E2B",
+    "#BB9266"
+   ],
+   "palette_share": [
+    0.38,
+    0.334,
+    0.186,
+    0.055,
+    0.044
+   ],
+   "mean": [
+    0.9026,
+    0.8242,
+    0.8423
+   ],
+   "hue": 0.9615,
+   "sat": 0.0868,
+   "val": 0.9026,
+   "cluster": 3,
+   "depth": "depth/036.png",
+   "depth_source": "guess",
+   "cutout": "cut/036.png",
+   "cutout_source": "provided",
+   "cutout_cover": 0.0857,
+   "mesh_source": null,
+   "clip": null
+  }
+ ]
+}

@@ -1,0 +1,103 @@
+{
+ "about": "The generic asset pack's 3D objects: abstract sculptural forms, archetypal imagery, and non-sequitur objects from past, present and future. Each is generated from a concept image with TRELLIS.2.",
+ "style": "single object, centred, whole object in frame, three-quarter view from slightly above, soft even studio light, plain light grey seamless background, no text, no logo, no people, no shadow clutter, product photograph",
+ "objects": [
+  {
+   "name": "ribbon_loop",
+   "group": "abstract",
+   "prompt": "an abstract sculpture: one thick continuous ribbon of polished bronze twisted into an endless looping knot, standing on a small stone plinth"
+  },
+  {
+   "name": "pierced_stone",
+   "group": "abstract",
+   "prompt": "an abstract biomorphic sculpture carved from white marble: a smooth rounded standing form with two large pierced holes through it"
+  },
+  {
+   "name": "balanced_solids",
+   "group": "abstract",
+   "prompt": "an abstract sculpture of geometric solids balanced on one another: a red sphere on a yellow cone on a blue cube on a black cylinder, painted steel"
+  },
+  {
+   "name": "crystal_cluster",
+   "group": "abstract",
+   "prompt": "a large cluster of sharp faceted black obsidian crystals growing in all directions from a rough base, like a mineral specimen"
+  },
+  {
+   "name": "wire_cage",
+   "group": "abstract",
+   "prompt": "an abstract sculpture: an open spherical cage made of thick welded steel rods forming a geodesic lattice, with a smaller solid sphere suspended inside"
+  },
+  {
+   "name": "marble_bust",
+   "group": "archetype",
+   "prompt": "a classical marble bust of an anonymous figure with curly hair and blank eyes, on a square pedestal, weathered ancient sculpture"
+  },
+  {
+   "name": "hourglass",
+   "group": "archetype",
+   "prompt": "a large antique hourglass with a turned dark wooden frame, three spindle posts and pale sand in the glass"
+  },
+  {
+   "name": "skeleton_key",
+   "group": "archetype",
+   "prompt": "a giant ornate antique skeleton key standing upright on its bow, aged brass with a decorative looped handle and a toothed bit"
+  },
+  {
+   "name": "broken_column",
+   "group": "archetype",
+   "prompt": "a fragment of an ancient fluted stone column with an ionic capital, broken off at an angle, on a stone base"
+  },
+  {
+   "name": "amphora",
+   "group": "past",
+   "prompt": "an ancient Greek amphora with two handles, terracotta with black geometric bands, slightly chipped"
+  },
+  {
+   "name": "astrolabe",
+   "group": "past",
+   "prompt": "a brass armillary sphere on a turned stand: nested engraved rings around a small central globe, an antique astronomical instrument"
+  },
+  {
+   "name": "gramophone",
+   "group": "past",
+   "prompt": "an antique wind-up gramophone with a large flared brass horn, a wooden box base, a turntable and a crank handle"
+  },
+  {
+   "name": "traffic_cone",
+   "group": "present",
+   "prompt": "an orange traffic cone with two white reflective bands on a square black rubber base, slightly scuffed"
+  },
+  {
+   "name": "rubber_duck",
+   "group": "present",
+   "prompt": "a classic yellow rubber duck bath toy with an orange beak, glossy"
+  },
+  {
+   "name": "space_helmet",
+   "group": "future",
+   "prompt": "a white astronaut helmet with a large gold reflective visor, hose connectors and a neck ring, sitting on a surface"
+  },
+  {
+   "name": "lander",
+   "group": "future",
+   "prompt": "a small retro-futuristic lunar lander: a faceted gold-foil body on four splayed legs with round footpads, an antenna dish and thruster nozzle"
+  }
+ ],
+ "sheets": {
+  "about": "Flat printed sheets (textures on a thin slab), generated as images, standing in for the three paper forms.",
+  "items": [
+   {
+    "name": "star_chart",
+    "prompt": "an antique celestial star chart printed on cream paper, constellations drawn as fine lines and dots, flat scan, no border clutter"
+   },
+   {
+    "name": "blueprint",
+    "prompt": "a technical blueprint of an imaginary machine, white lines on deep blue paper, dimension lines and unreadable annotations, flat scan"
+   },
+   {
+    "name": "ticket",
+    "prompt": "a vintage pink paper admission ticket with perforated edge, ornamental border and a large serial number, flat scan"
+   }
+  ]
+ }
+}

@@ -1,0 +1,25 @@
+{
+ "slug": "water_tower",
+ "source": "water_tower",
+ "parts_joined": 1,
+ "vertices": 30057,
+ "triangles": 30000,
+ "decimated": true,
+ "original_size_m": [
+  0.368,
+  0.3659,
+  1.0005
+ ],
+ "size_units": [
+  0.3678,
+  1.0,
+  0.3657
+ ],
+ "has_uv": true,
+ "has_texture": true,
+ "generator": "TRELLIS.2",
+ "group": "roadside",
+ "prompt": "a small-town steel water tower on four legs with a conical roof, painted white with a red band",
+ "yaw_applied_deg": 0,
+ "facing_set_by": "eye, metric agreed"
+}

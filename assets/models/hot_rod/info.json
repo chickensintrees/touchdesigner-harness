@@ -1,0 +1,25 @@
+{
+ "slug": "hot_rod",
+ "source": "hot_rod",
+ "parts_joined": 1,
+ "vertices": 32583,
+ "triangles": 29999,
+ "decimated": true,
+ "original_size_m": [
+  0.5167,
+  1.0004,
+  0.4314
+ ],
+ "size_units": [
+  0.5165,
+  0.4313,
+  1.0
+ ],
+ "has_uv": true,
+ "has_texture": true,
+ "generator": "TRELLIS.2",
+ "group": "machines",
+ "prompt": "a 1930s hot rod car with exposed chrome engine and flame paint job in orange on black",
+ "yaw_applied_deg": 0,
+ "facing_set_by": "eye, metric overruled"
+}

@@ -1,0 +1,16 @@
+{
+  "root": "/project1/sc_riso_press",
+  "checks": [
+    {"type": "no_errors"},
+    {"type": "not_black", "path": "out1", "min_mean": 0.05},
+    {"type": "no_nan", "path": "out1"},
+    {"type": "no_nan", "path": "sep"},
+    {"type": "moving", "path": "out1", "min_delta": 0.0005},
+    {"type": "chop_range", "path": "ctl", "channels": "slide", "min": 0, "max": 1},
+    {"type": "chop_range", "path": "ctl", "channels": "lay*", "min": 0, "max": 1},
+    {"type": "chop_range", "path": "ctl", "channels": "reg*", "min": 0, "max": 0.2},
+    {"type": "chop_range", "path": "ctl", "channels": "driver_ms", "min": 0, "max": 2},
+    {"type": "resolution", "path": "out1", "width": 1280, "height": 720, "max": [1280, 1280]},
+    {"type": "cook_budget", "max_ms": 8}
+  ]
+}

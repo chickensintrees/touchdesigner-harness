@@ -1,0 +1,22 @@
+{
+ "slug": "ribbon_loop",
+ "source": "ribbon_loop",
+ "parts_joined": 1,
+ "vertices": 31767,
+ "triangles": 29404,
+ "decimated": false,
+ "original_size_m": [
+  0.7087,
+  0.5898,
+  1.0012
+ ],
+ "size_units": [
+  0.7078,
+  1.0,
+  0.5891
+ ],
+ "has_uv": true,
+ "has_texture": true,
+ "generator": "TRELLIS.2",
+ "prompt": "an abstract sculpture: one thick continuous ribbon of polished bronze twisted into an endless looping knot, standing on a small stone plinth"
+}

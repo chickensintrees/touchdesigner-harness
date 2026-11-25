@@ -1,0 +1,659 @@
+{
+ "version": 1,
+ "name": "generated_depth",
+ "count": 16,
+ "order": "colour: hue round the wheel, then near-greys dark to light",
+ "max_side": 1280,
+ "atlas": {
+  "file": "atlas.png",
+  "cols": 4,
+  "rows": 4,
+  "tile": 256
+ },
+ "palette": {
+  "file": "palette.png",
+  "colours_per_image": 5
+ },
+ "table": "table.tsv",
+ "tiers": {
+  "depth": [
+   "provided"
+  ],
+  "cutout": [
+   "rough"
+  ],
+  "meshes": 0,
+  "clips": 0
+ },
+ "skipped": [],
+ "left_out": [
+  "drive_in_theatre",
+  "gas_station_road"
+ ],
+ "images": [
+  {
+   "id": "000",
+   "source": "arcade_row.png",
+   "name": "arcade_row",
+   "file": "img/000.jpg",
+   "width": 1280,
+   "height": 720,
+   "aspect": 1.7778,
+   "palette": [
+    "#444758",
+    "#161116",
+    "#A38172",
+    "#DEC7BD",
+    "#934336"
+   ],
+   "palette_share": [
+    0.28,
+    0.235,
+    0.219,
+    0.136,
+    0.13
+   ],
+   "mean": [
+    0.4278,
+    0.3443,
+    0.3418
+   ],
+   "hue": 0.0049,
+   "sat": 0.2011,
+   "val": 0.4278,
+   "cluster": 0,
+   "depth": "depth/000.png",
+   "depth_source": "provided",
+   "cutout": "cut/000.png",
+   "cutout_source": "rough",
+   "cutout_cover": 0.6132,
+   "mesh_source": null,
+   "clip": null
+  },
+  {
+   "id": "001",
+   "source": "museum_statue_gallery.png",
+   "name": "museum_statue_gallery",
+   "file": "img/001.jpg",
+   "width": 1280,
+   "height": 720,
+   "aspect": 1.7778,
+   "palette": [
+    "#B8BAAF",
+    "#D25043",
+    "#A9877B",
+    "#85423B",
+    "#559691"
+   ],
+   "palette_share": [
+    0.338,
+    0.284,
+    0.161,
+    0.113,
+    0.104
+   ],
+   "mean": [
+    0.6786,
+    0.5119,
+    0.4697
+   ],
+   "hue": 0.0337,
+   "sat": 0.3078,
+   "val": 0.6786,
+   "cluster": 1,
+   "depth": "depth/001.png",
+   "depth_source": "provided",
+   "cutout": "cut/001.png",
+   "cutout_source": "rough",
+   "cutout_cover": 0.2171,
+   "mesh_source": null,
+   "clip": null
+  },
+  {
+   "id": "002",
+   "source": "studio_camera_set.png",
+   "name": "studio_camera_set",
+   "file": "img/002.jpg",
+   "width": 1280,
+   "height": 720,
+   "aspect": 1.7778,
+   "palette": [
+    "#16110F",
+    "#505851",
+    "#989385",
+    "#D76A2A",
+    "#963716"
+   ],
+   "palette_share": [
+    0.338,
+    0.206,
+    0.181,
+    0.154,
+    0.121
+   ],
+   "mean": [
+    0.4025,
+    0.2882,
+    0.2152
+   ],
+   "hue": 0.0649,
+   "sat": 0.4653,
+   "val": 0.4025,
+   "cluster": 0,
+   "depth": "depth/002.png",
+   "depth_source": "provided",
+   "cutout": "cut/002.png",
+   "cutout_source": "rough",
+   "cutout_cover": 0.4412,
+   "mesh_source": null,
+   "clip": null
+  },
+  {
+   "id": "003",
+   "source": "carousel_horses.png",
+   "name": "carousel_horses",
+   "file": "img/003.jpg",
+   "width": 1280,
+   "height": 720,
+   "aspect": 1.7778,
+   "palette": [
+    "#615146",
+    "#452A1A",
+    "#988674",
+    "#B9C0C2",
+    "#7EB3DA"
+   ],
+   "palette_share": [
+    0.278,
+    0.27,
+    0.24,
+    0.151,
+    0.062
+   ],
+   "mean": [
+    0.4618,
+    0.4156,
+    0.3815
+   ],
+   "hue": 0.0707,
+   "sat": 0.174,
+   "val": 0.4618,
+   "cluster": 5,
+   "depth": "depth/003.png",
+   "depth_source": "provided",
+   "cutout": "cut/003.png",
+   "cutout_source": "rough",
+   "cutout_cover": 0.3798,
+   "mesh_source": null,
+   "clip": null
+  },
+  {
+   "id": "004",
+   "source": "bowling_lane.png",
+   "name": "bowling_lane",
+   "file": "img/004.jpg",
+   "width": 1280,
+   "height": 720,
+   "aspect": 1.7778,
+   "palette": [
+    "#AD9E7B",
+    "#C2AFA6",
+    "#897263",
+    "#4F1818",
+    "#415571"
+   ],
+   "palette_share": [
+    0.391,
+    0.222,
+    0.17,
+    0.121,
+    0.095
+   ],
+   "mean": [
+    0.5877,
+    0.5144,
+    0.4533
+   ],
+   "hue": 0.0757,
+   "sat": 0.2286,
+   "val": 0.5877,
+   "cluster": 1,
+   "depth": "depth/004.png",
+   "depth_source": "provided",
+   "cutout": "cut/004.png",
+   "cutout_source": "rough",
+   "cutout_cover": 0.3129,
+   "mesh_source": null,
+   "clip": null
+  },
+  {
+   "id": "005",
+   "source": "costume_marching_band.png",
+   "name": "costume_marching_band",
+   "file": "img/005.jpg",
+   "width": 1280,
+   "height": 720,
+   "aspect": 1.7778,
+   "palette": [
+    "#837555",
+    "#586231",
+    "#5E201B",
+    "#BB804A",
+    "#AF9E92"
+   ],
+   "palette_share": [
+    0.246,
+    0.242,
+    0.23,
+    0.149,
+    0.133
+   ],
+   "mean": [
+    0.4939,
+    0.392,
+    0.2726
+   ],
+   "hue": 0.0899,
+   "sat": 0.448,
+   "val": 0.4939,
+   "cluster": 0,
+   "depth": "depth/005.png",
+   "depth_source": "provided",
+   "cutout": "cut/005.png",
+   "cutout_source": "rough",
+   "cutout_cover": 0.5704,
+   "mesh_source": null,
+   "clip": null
+  },
+  {
+   "id": "006",
+   "source": "television_aisle.png",
+   "name": "television_aisle",
+   "file": "img/006.jpg",
+   "width": 1280,
+   "height": 720,
+   "aspect": 1.7778,
+   "palette": [
+    "#6B5137",
+    "#8B775E",
+    "#CB8C21",
+    "#452A19",
+    "#BEB2A7"
+   ],
+   "palette_share": [
+    0.314,
+    0.252,
+    0.174,
+    0.151,
+    0.11
+   ],
+   "mean": [
+    0.5303,
+    0.4149,
+    0.2698
+   ],
+   "hue": 0.0928,
+   "sat": 0.4912,
+   "val": 0.5303,
+   "cluster": 0,
+   "depth": "depth/006.png",
+   "depth_source": "provided",
+   "cutout": "cut/006.png",
+   "cutout_source": "rough",
+   "cutout_cover": 0.2961,
+   "mesh_source": null,
+   "clip": null
+  },
+  {
+   "id": "007",
+   "source": "mascot_parade.png",
+   "name": "mascot_parade",
+   "file": "img/007.jpg",
+   "width": 1280,
+   "height": 720,
+   "aspect": 1.7778,
+   "palette": [
+    "#7E787F",
+    "#C1BBC0",
+    "#2D2F2F",
+    "#F3CC3E",
+    "#A47015"
+   ],
+   "palette_share": [
+    0.306,
+    0.246,
+    0.205,
+    0.151,
+    0.092
+   ],
+   "mean": [
+    0.577,
+    0.523,
+    0.4194
+   ],
+   "hue": 0.1096,
+   "sat": 0.2732,
+   "val": 0.577,
+   "cluster": 1,
+   "depth": "depth/007.png",
+   "depth_source": "provided",
+   "cutout": "cut/007.png",
+   "cutout_source": "rough",
+   "cutout_cover": 0.5098,
+   "mesh_source": null,
+   "clip": null
+  },
+  {
+   "id": "008",
+   "source": "tin_robot_army.png",
+   "name": "tin_robot_army",
+   "file": "img/008.jpg",
+   "width": 1280,
+   "height": 720,
+   "aspect": 1.7778,
+   "palette": [
+    "#354F48",
+    "#5CB3B8",
+    "#892F18",
+    "#E5BE4D",
+    "#9E7949"
+   ],
+   "palette_share": [
+    0.257,
+    0.251,
+    0.173,
+    0.169,
+    0.15
+   ],
+   "mean": [
+    0.4817,
+    0.4855,
+    0.3639
+   ],
+   "hue": 0.172,
+   "sat": 0.2504,
+   "val": 0.4855,
+   "cluster": 5,
+   "depth": "depth/008.png",
+   "depth_source": "provided",
+   "cutout": "cut/008.png",
+   "cutout_source": "rough",
+   "cutout_cover": 0.5671,
+   "mesh_source": null,
+   "clip": null
+  },
+  {
+   "id": "009",
+   "source": "flamingo_pool.png",
+   "name": "flamingo_pool",
+   "file": "img/009.jpg",
+   "width": 1280,
+   "height": 720,
+   "aspect": 1.7778,
+   "palette": [
+    "#515B28",
+    "#798A82",
+    "#6F6056",
+    "#A0C2D6",
+    "#D4C1BB"
+   ],
+   "palette_share": [
+    0.272,
+    0.235,
+    0.233,
+    0.136,
+    0.125
+   ],
+   "mean": [
+    0.4884,
+    0.5098,
+    0.4469
+   ],
+   "hue": 0.2234,
+   "sat": 0.1235,
+   "val": 0.5098,
+   "cluster": 5,
+   "depth": "depth/009.png",
+   "depth_source": "provided",
+   "cutout": "cut/009.png",
+   "cutout_source": "rough",
+   "cutout_cover": 0.3209,
+   "mesh_source": null,
+   "clip": null
+  },
+  {
+   "id": "010",
+   "source": "dinosaur_hall.png",
+   "name": "dinosaur_hall",
+   "file": "img/010.jpg",
+   "width": 1280,
+   "height": 720,
+   "aspect": 1.7778,
+   "palette": [
+    "#786553",
+    "#322A20",
+    "#B4A89A",
+    "#154A2F",
+    "#0E8867"
+   ],
+   "palette_share": [
+    0.273,
+    0.261,
+    0.185,
+    0.17,
+    0.111
+   ],
+   "mean": [
+    0.3293,
+    0.3821,
+    0.3104
+   ],
+   "hue": 0.2893,
+   "sat": 0.1877,
+   "val": 0.3821,
+   "cluster": 2,
+   "depth": "depth/010.png",
+   "depth_source": "provided",
+   "cutout": "cut/010.png",
+   "cutout_source": "rough",
+   "cutout_cover": 0.3963,
+   "mesh_source": null,
+   "clip": null
+  },
+  {
+   "id": "011",
+   "source": "statue_garden.png",
+   "name": "statue_garden",
+   "file": "img/011.jpg",
+   "width": 1280,
+   "height": 720,
+   "aspect": 1.7778,
+   "palette": [
+    "#2079B8",
+    "#627749",
+    "#3F5022",
+    "#92ABB8",
+    "#192412"
+   ],
+   "palette_share": [
+    0.362,
+    0.224,
+    0.151,
+    0.133,
+    0.13
+   ],
+   "mean": [
+    0.2565,
+    0.4308,
+    0.4503
+   ],
+   "hue": 0.5168,
+   "sat": 0.4304,
+   "val": 0.4503,
+   "cluster": 2,
+   "depth": "depth/011.png",
+   "depth_source": "provided",
+   "cutout": "cut/011.png",
+   "cutout_source": "rough",
+   "cutout_cover": 0.4729,
+   "mesh_source": null,
+   "clip": null
+  },
+  {
+   "id": "012",
+   "source": "lighthouse_pier.png",
+   "name": "lighthouse_pier",
+   "file": "img/012.jpg",
+   "width": 1280,
+   "height": 720,
+   "aspect": 1.7778,
+   "palette": [
+    "#948C77",
+    "#7AB0D3",
+    "#497875",
+    "#3595CD",
+    "#493130"
+   ],
+   "palette_share": [
+    0.336,
+    0.215,
+    0.184,
+    0.148,
+    0.116
+   ],
+   "mean": [
+    0.4155,
+    0.5292,
+    0.5594
+   ],
+   "hue": 0.535,
+   "sat": 0.2572,
+   "val": 0.5594,
+   "cluster": 3,
+   "depth": "depth/012.png",
+   "depth_source": "provided",
+   "cutout": "cut/012.png",
+   "cutout_source": "rough",
+   "cutout_cover": 0.5021,
+   "mesh_source": null,
+   "clip": null
+  },
+  {
+   "id": "013",
+   "source": "roadside_dinosaur.png",
+   "name": "roadside_dinosaur",
+   "file": "img/013.jpg",
+   "width": 1280,
+   "height": 720,
+   "aspect": 1.7778,
+   "palette": [
+    "#2E78A9",
+    "#B89A88",
+    "#6F7869",
+    "#7FA9BE",
+    "#284336"
+   ],
+   "palette_share": [
+    0.262,
+    0.257,
+    0.205,
+    0.192,
+    0.084
+   ],
+   "mean": [
+    0.4308,
+    0.5244,
+    0.5566
+   ],
+   "hue": 0.5426,
+   "sat": 0.226,
+   "val": 0.5566,
+   "cluster": 3,
+   "depth": "depth/013.png",
+   "depth_source": "provided",
+   "cutout": "cut/013.png",
+   "cutout_source": "rough",
+   "cutout_cover": 0.3956,
+   "mesh_source": null,
+   "clip": null
+  },
+  {
+   "id": "014",
+   "source": "satellite_dish_field.png",
+   "name": "satellite_dish_field",
+   "file": "img/014.jpg",
+   "width": 1280,
+   "height": 720,
+   "aspect": 1.7778,
+   "palette": [
+    "#125691",
+    "#D5D6D2",
+    "#5A99BA",
+    "#495539",
+    "#7C7855"
+   ],
+   "palette_share": [
+    0.457,
+    0.168,
+    0.146,
+    0.116,
+    0.113
+   ],
+   "mean": [
+    0.3134,
+    0.4738,
+    0.5684
+   ],
+   "hue": 0.5618,
+   "sat": 0.4486,
+   "val": 0.5684,
+   "cluster": 4,
+   "depth": "depth/014.png",
+   "depth_source": "provided",
+   "cutout": "cut/014.png",
+   "cutout_source": "rough",
+   "cutout_cover": 0.4009,
+   "mesh_source": null,
+   "clip": null
+  },
+  {
+   "id": "015",
+   "source": "giant_chess_plaza.png",
+   "name": "giant_chess_plaza",
+   "file": "img/015.jpg",
+   "width": 1280,
+   "height": 720,
+   "aspect": 1.7778,
+   "palette": [
+    "#A2B9CB",
+    "#677B8D",
+    "#394355",
+    "#9D3417",
+    "#DF7336"
+   ],
+   "palette_share": [
+    0.399,
+    0.214,
+    0.157,
+    0.118,
+    0.112
+   ],
+   "mean": [
+    0.5458,
+    0.5079,
+    0.5231
+   ],
+   "hue": 0.9331,
+   "sat": 0.0695,
+   "val": 0.5458,
+   "cluster": 1,
+   "depth": "depth/015.png",
+   "depth_source": "provided",
+   "cutout": "cut/015.png",
+   "cutout_source": "rough",
+   "cutout_cover": 0.5204,
+   "mesh_source": null,
+   "clip": null
+  }
+ ]
+}

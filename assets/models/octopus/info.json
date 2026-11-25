@@ -1,0 +1,25 @@
+{
+ "slug": "octopus",
+ "source": "octopus",
+ "parts_joined": 1,
+ "vertices": 32740,
+ "triangles": 30000,
+ "decimated": true,
+ "original_size_m": [
+  0.9967,
+  0.9772,
+  0.7012
+ ],
+ "size_units": [
+  1.0,
+  0.7035,
+  0.9805
+ ],
+ "has_uv": true,
+ "has_texture": true,
+ "generator": "TRELLIS.2",
+ "group": "nature",
+ "prompt": "an orange octopus with curling tentacles and visible suckers, glossy, standing on its arms",
+ "yaw_applied_deg": 0,
+ "facing_set_by": "eye, metric agreed"
+}

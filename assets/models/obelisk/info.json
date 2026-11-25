@@ -1,0 +1,25 @@
+{
+ "slug": "obelisk",
+ "source": "obelisk",
+ "parts_joined": 1,
+ "vertices": 18916,
+ "triangles": 30000,
+ "decimated": true,
+ "original_size_m": [
+  0.3846,
+  0.3876,
+  1.0
+ ],
+ "size_units": [
+  0.3846,
+  1.0,
+  0.3876
+ ],
+ "has_uv": true,
+ "has_texture": true,
+ "generator": "TRELLIS.2",
+ "group": "monuments",
+ "prompt": "a pink granite obelisk with carved bands on a stepped stone base",
+ "yaw_applied_deg": 0,
+ "facing_set_by": "eye, metric overruled"
+}

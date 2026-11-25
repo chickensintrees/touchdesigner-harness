@@ -1,0 +1,1346 @@
+{
+ "format": "tdh-snapshot/1",
+ "root": "/project1/id_title_card",
+ "ops": {
+  "card": {
+   "type": "glslTOP",
+   "family": "TOP",
+   "pos": [
+    250,
+    0
+   ],
+   "pars": {
+    "computedat": "card_compute",
+    "format": "rgba16float",
+    "outputresolution": "custom",
+    "pixeldat": "card_frag",
+    "resolutionh": 720,
+    "resolutionw": 1280,
+    "tops": "run0 run1 run2 run3 run4 run5 run6 run7",
+    "vec0name": "uCard",
+    "vec0valuew": {
+     "expr": "op('motion')['beat']"
+    },
+    "vec0valuex": {
+     "expr": "int(parent().par.Take) % 5"
+    },
+    "vec0valuey": {
+     "expr": "op('motion')['cb']"
+    },
+    "vec0valuez": {
+     "expr": "op('motion')['total']"
+    },
+    "vec10name": "uRect5",
+    "vec10valuew": {
+     "expr": "float(op('runs')[6, 'y1'])"
+    },
+    "vec10valuex": {
+     "expr": "float(op('runs')[6, 'x0'])"
+    },
+    "vec10valuey": {
+     "expr": "float(op('runs')[6, 'y0'])"
+    },
+    "vec10valuez": {
+     "expr": "float(op('runs')[6, 'x1'])"
+    },
+    "vec11name": "uRect6",
+    "vec11valuew": {
+     "expr": "float(op('runs')[7, 'y1'])"
+    },
+    "vec11valuex": {
+     "expr": "float(op('runs')[7, 'x0'])"
+    },
+    "vec11valuey": {
+     "expr": "float(op('runs')[7, 'y0'])"
+    },
+    "vec11valuez": {
+     "expr": "float(op('runs')[7, 'x1'])"
+    },
+    "vec12name": "uRect7",
+    "vec12valuew": {
+     "expr": "float(op('runs')[8, 'y1'])"
+    },
+    "vec12valuex": {
+     "expr": "float(op('runs')[8, 'x0'])"
+    },
+    "vec12valuey": {
+     "expr": "float(op('runs')[8, 'y0'])"
+    },
+    "vec12valuez": {
+     "expr": "float(op('runs')[8, 'x1'])"
+    },
+    "vec13name": "uRole0",
+    "vec13valuew": {
+     "expr": "float(op('runs')[1, 'line'])"
+    },
+    "vec13valuex": {
+     "expr": "float(op('runs')[1, 'kind'])"
+    },
+    "vec13valuey": {
+     "expr": "float(op('runs')[1, 'col'])"
+    },
+    "vec13valuez": {
+     "expr": "float(op('runs')[1, 'order'])"
+    },
+    "vec14name": "uRole1",
+    "vec14valuew": {
+     "expr": "float(op('runs')[2, 'line'])"
+    },
+    "vec14valuex": {
+     "expr": "float(op('runs')[2, 'kind'])"
+    },
+    "vec14valuey": {
+     "expr": "float(op('runs')[2, 'col'])"
+    },
+    "vec14valuez": {
+     "expr": "float(op('runs')[2, 'order'])"
+    },
+    "vec15name": "uRole2",
+    "vec15valuew": {
+     "expr": "float(op('runs')[3, 'line'])"
+    },
+    "vec15valuex": {
+     "expr": "float(op('runs')[3, 'kind'])"
+    },
+    "vec15valuey": {
+     "expr": "float(op('runs')[3, 'col'])"
+    },
+    "vec15valuez": {
+     "expr": "float(op('runs')[3, 'order'])"
+    },
+    "vec16name": "uRole3",
+    "vec16valuew": {
+     "expr": "float(op('runs')[4, 'line'])"
+    },
+    "vec16valuex": {
+     "expr": "float(op('runs')[4, 'kind'])"
+    },
+    "vec16valuey": {
+     "expr": "float(op('runs')[4, 'col'])"
+    },
+    "vec16valuez": {
+     "expr": "float(op('runs')[4, 'order'])"
+    },
+    "vec17name": "uRole4",
+    "vec17valuew": {
+     "expr": "float(op('runs')[5, 'line'])"
+    },
+    "vec17valuex": {
+     "expr": "float(op('runs')[5, 'kind'])"
+    },
+    "vec17valuey": {
+     "expr": "float(op('runs')[5, 'col'])"
+    },
+    "vec17valuez": {
+     "expr": "float(op('runs')[5, 'order'])"
+    },
+    "vec18name": "uRole5",
+    "vec18valuew": {
+     "expr": "float(op('runs')[6, 'line'])"
+    },
+    "vec18valuex": {
+     "expr": "float(op('runs')[6, 'kind'])"
+    },
+    "vec18valuey": {
+     "expr": "float(op('runs')[6, 'col'])"
+    },
+    "vec18valuez": {
+     "expr": "float(op('runs')[6, 'order'])"
+    },
+    "vec19name": "uRole6",
+    "vec19valuew": {
+     "expr": "float(op('runs')[7, 'line'])"
+    },
+    "vec19valuex": {
+     "expr": "float(op('runs')[7, 'kind'])"
+    },
+    "vec19valuey": {
+     "expr": "float(op('runs')[7, 'col'])"
+    },
+    "vec19valuez": {
+     "expr": "float(op('runs')[7, 'order'])"
+    },
+    "vec1name": "uGrid",
+    "vec1valuew": {
+     "expr": "0"
+    },
+    "vec1valuex": {
+     "expr": "parent().par.Margin"
+    },
+    "vec1valuey": {
+     "expr": "0"
+    },
+    "vec1valuez": {
+     "expr": "0"
+    },
+    "vec20name": "uRole7",
+    "vec20valuew": {
+     "expr": "float(op('runs')[8, 'line'])"
+    },
+    "vec20valuex": {
+     "expr": "float(op('runs')[8, 'kind'])"
+    },
+    "vec20valuey": {
+     "expr": "float(op('runs')[8, 'col'])"
+    },
+    "vec20valuez": {
+     "expr": "float(op('runs')[8, 'order'])"
+    },
+    "vec2name": "uCol0",
+    "vec2valuew": {
+     "expr": "1"
+    },
+    "vec2valuex": {
+     "expr": "mod('typeset').PALETTES[mod('typeset').take_name(parent().par.Take)][0][0]"
+    },
+    "vec2valuey": {
+     "expr": "mod('typeset').PALETTES[mod('typeset').take_name(parent().par.Take)][0][1]"
+    },
+    "vec2valuez": {
+     "expr": "mod('typeset').PALETTES[mod('typeset').take_name(parent().par.Take)][0][2]"
+    },
+    "vec3name": "uCol1",
+    "vec3valuew": {
+     "expr": "1"
+    },
+    "vec3valuex": {
+     "expr": "mod('typeset').PALETTES[mod('typeset').take_name(parent().par.Take)][1][0]"
+    },
+    "vec3valuey": {
+     "expr": "mod('typeset').PALETTES[mod('typeset').take_name(parent().par.Take)][1][1]"
+    },
+    "vec3valuez": {
+     "expr": "mod('typeset').PALETTES[mod('typeset').take_name(parent().par.Take)][1][2]"
+    },
+    "vec4name": "uCol2",
+    "vec4valuew": {
+     "expr": "1"
+    },
+    "vec4valuex": {
+     "expr": "mod('typeset').PALETTES[mod('typeset').take_name(parent().par.Take)][2][0]"
+    },
+    "vec4valuey": {
+     "expr": "mod('typeset').PALETTES[mod('typeset').take_name(parent().par.Take)][2][1]"
+    },
+    "vec4valuez": {
+     "expr": "mod('typeset').PALETTES[mod('typeset').take_name(parent().par.Take)][2][2]"
+    },
+    "vec5name": "uRect0",
+    "vec5valuew": {
+     "expr": "float(op('runs')[1, 'y1'])"
+    },
+    "vec5valuex": {
+     "expr": "float(op('runs')[1, 'x0'])"
+    },
+    "vec5valuey": {
+     "expr": "float(op('runs')[1, 'y0'])"
+    },
+    "vec5valuez": {
+     "expr": "float(op('runs')[1, 'x1'])"
+    },
+    "vec6name": "uRect1",
+    "vec6valuew": {
+     "expr": "float(op('runs')[2, 'y1'])"
+    },
+    "vec6valuex": {
+     "expr": "float(op('runs')[2, 'x0'])"
+    },
+    "vec6valuey": {
+     "expr": "float(op('runs')[2, 'y0'])"
+    },
+    "vec6valuez": {
+     "expr": "float(op('runs')[2, 'x1'])"
+    },
+    "vec7name": "uRect2",
+    "vec7valuew": {
+     "expr": "float(op('runs')[3, 'y1'])"
+    },
+    "vec7valuex": {
+     "expr": "float(op('runs')[3, 'x0'])"
+    },
+    "vec7valuey": {
+     "expr": "float(op('runs')[3, 'y0'])"
+    },
+    "vec7valuez": {
+     "expr": "float(op('runs')[3, 'x1'])"
+    },
+    "vec8name": "uRect3",
+    "vec8valuew": {
+     "expr": "float(op('runs')[4, 'y1'])"
+    },
+    "vec8valuex": {
+     "expr": "float(op('runs')[4, 'x0'])"
+    },
+    "vec8valuey": {
+     "expr": "float(op('runs')[4, 'y0'])"
+    },
+    "vec8valuez": {
+     "expr": "float(op('runs')[4, 'x1'])"
+    },
+    "vec9name": "uRect4",
+    "vec9valuew": {
+     "expr": "float(op('runs')[5, 'y1'])"
+    },
+    "vec9valuex": {
+     "expr": "float(op('runs')[5, 'x0'])"
+    },
+    "vec9valuey": {
+     "expr": "float(op('runs')[5, 'y0'])"
+    },
+    "vec9valuez": {
+     "expr": "float(op('runs')[5, 'x1'])"
+    }
+   }
+  },
+  "card_frag": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.experiment('id_title_card', 'shaders/card.frag')"
+    },
+    "language": "text",
+    "syncfile": true
+   },
+   "text_file": "experiments/id_title_card/shaders/card.frag"
+  },
+  "cook_driver": {
+   "type": "executeDAT",
+   "family": "DAT",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "framestart": true,
+    "language": "python"
+   },
+   "text": [
+    "def onFrameStart(frame):",
+    "    if parent().par.Preview.eval():",
+    "        op('out1').cook(force=True)",
+    "    return"
+   ]
+  },
+  "finish": {
+   "type": "baseCOMP",
+   "family": "COMP",
+   "pos": [
+    450,
+    0
+   ],
+   "inputs": [
+    [
+     "card"
+    ]
+   ],
+   "pars": {
+    "Castb": 1.0,
+    "Castg": 1.0,
+    "Castr": 1.0,
+    "Preset": {
+     "expr": "('clean', 'clean', 'film35', 'clean', 'clean')[int(parent().par.Take) % 5]"
+    },
+    "Preview": {
+     "expr": "parent().par.Preview"
+    }
+   },
+   "custom_pars": [
+    "Blackcolorb",
+    "Blackcolorg",
+    "Blackcolorr",
+    "Blacktint",
+    "Bleed",
+    "Bloom",
+    "Bypass",
+    "Castb",
+    "Castg",
+    "Castr",
+    "Corners",
+    "Curvature",
+    "Dither",
+    "Ditherpixel",
+    "Fourthree",
+    "Grain",
+    "Halation",
+    "Headswitch",
+    "Input",
+    "Letterbox",
+    "Mask",
+    "Misregister",
+    "Preset",
+    "Preview",
+    "Scanlines",
+    "Soften",
+    "Tracking",
+    "Vignette",
+    "Weave"
+   ]
+  },
+  "finish/bloom": {
+   "type": "blurTOP",
+   "family": "TOP",
+   "pos": [
+    1020,
+    0
+   ],
+   "inputs": [
+    [
+     "finish/bright"
+    ]
+   ],
+   "pars": {
+    "size": 6
+   }
+  },
+  "finish/bright": {
+   "type": "glslTOP",
+   "family": "TOP",
+   "pos": [
+    850,
+    0
+   ],
+   "inputs": [
+    [
+     "finish/signal"
+    ]
+   ],
+   "pars": {
+    "computedat": "bright_compute",
+    "format": "rgba16float",
+    "outputresolution": "quarter",
+    "pixeldat": "bright_frag",
+    "vec0name": "uKnee",
+    "vec0valuew": {
+     "expr": "0"
+    },
+    "vec0valuex": {
+     "expr": "0.7"
+    },
+    "vec0valuey": {
+     "expr": "0"
+    },
+    "vec0valuez": {
+     "expr": "0"
+    }
+   }
+  },
+  "finish/bright_frag": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.experiment('sw_finish', 'shaders/bright.frag')"
+    },
+    "language": "text",
+    "syncfile": true
+   },
+   "text_file": "experiments/sw_finish/shaders/bright.frag"
+  },
+  "finish/bright_info": {
+   "type": "infoDAT",
+   "family": "DAT",
+   "pos": [
+    160,
+    -120
+   ],
+   "pars": {
+    "language": "text",
+    "op": "bright"
+   }
+  },
+  "finish/bypass": {
+   "type": "switchTOP",
+   "family": "TOP",
+   "pos": [
+    1530,
+    0
+   ],
+   "inputs": [
+    [
+     "finish/display"
+    ],
+    [
+     "finish/fit"
+    ]
+   ],
+   "pars": {
+    "index": {
+     "expr": "1 if parent().par.Bypass else 0"
+    }
+   }
+  },
+  "finish/cook_driver": {
+   "type": "executeDAT",
+   "family": "DAT",
+   "pos": [
+    200,
+    -200
+   ],
+   "pars": {
+    "framestart": true,
+    "language": "python"
+   },
+   "text": [
+    "def onFrameStart(frame):",
+    "    if parent().par.Preview.eval():",
+    "        op('out1').cook(force=True)",
+    "    return"
+   ]
+  },
+  "finish/display": {
+   "type": "glslTOP",
+   "family": "TOP",
+   "pos": [
+    1360,
+    0
+   ],
+   "inputs": [
+    [
+     "finish/signal"
+    ],
+    [
+     "finish/bloom"
+    ],
+    [
+     "finish/halation"
+    ]
+   ],
+   "pars": {
+    "computedat": "display_compute",
+    "format": "rgba8fixed",
+    "pixeldat": "display_frag",
+    "vec0name": "uTube",
+    "vec0valuew": {
+     "expr": "parent().par.Corners"
+    },
+    "vec0valuex": {
+     "expr": "parent().par.Curvature"
+    },
+    "vec0valuey": {
+     "expr": "parent().par.Scanlines"
+    },
+    "vec0valuez": {
+     "expr": "parent().par.Mask"
+    },
+    "vec1name": "uGlow",
+    "vec1valuew": {
+     "expr": "parent().par.Grain"
+    },
+    "vec1valuex": {
+     "expr": "parent().par.Bloom"
+    },
+    "vec1valuey": {
+     "expr": "parent().par.Halation"
+    },
+    "vec1valuez": {
+     "expr": "parent().par.Misregister"
+    },
+    "vec2name": "uFrame",
+    "vec2valuew": {
+     "expr": "parent().par.Ditherpixel"
+    },
+    "vec2valuex": {
+     "expr": "parent().par.Letterbox"
+    },
+    "vec2valuey": {
+     "expr": "parent().par.Fourthree"
+    },
+    "vec2valuez": {
+     "expr": "parent().par.Dither"
+    },
+    "vec3name": "uTint",
+    "vec3valuew": {
+     "expr": "parent().par.Blacktint"
+    },
+    "vec3valuex": {
+     "expr": "parent().par.Blackcolorr"
+    },
+    "vec3valuey": {
+     "expr": "parent().par.Blackcolorg"
+    },
+    "vec3valuez": {
+     "expr": "parent().par.Blackcolorb"
+    },
+    "vec4name": "uCast",
+    "vec4valuew": {
+     "expr": "parent().par.Vignette"
+    },
+    "vec4valuex": {
+     "expr": "parent().par.Castr"
+    },
+    "vec4valuey": {
+     "expr": "parent().par.Castg"
+    },
+    "vec4valuez": {
+     "expr": "parent().par.Castb"
+    },
+    "vec5name": "uClock",
+    "vec5valuew": {
+     "expr": "0"
+    },
+    "vec5valuex": {
+     "expr": "absTime.seconds % 3600"
+    },
+    "vec5valuey": {
+     "expr": "absTime.frame % 4096"
+    },
+    "vec5valuez": {
+     "expr": "parent().par.Weave"
+    }
+   }
+  },
+  "finish/display_frag": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.experiment('sw_finish', 'shaders/display.frag')"
+    },
+    "language": "text",
+    "syncfile": true
+   },
+   "text_file": "experiments/sw_finish/shaders/display.frag"
+  },
+  "finish/display_info": {
+   "type": "infoDAT",
+   "family": "DAT",
+   "pos": [
+    160,
+    -120
+   ],
+   "pars": {
+    "language": "text",
+    "op": "display"
+   }
+  },
+  "finish/fit": {
+   "type": "fitTOP",
+   "family": "TOP",
+   "pos": [
+    510,
+    0
+   ],
+   "inputs": [
+    [
+     "finish/pick"
+    ]
+   ],
+   "pars": {
+    "format": "rgba16float",
+    "outputaspect": "resolution",
+    "outputresolution": "custom",
+    "resolutionh": 720,
+    "resolutionw": 1280
+   }
+  },
+  "finish/halation": {
+   "type": "blurTOP",
+   "family": "TOP",
+   "pos": [
+    1190,
+    0
+   ],
+   "inputs": [
+    [
+     "finish/bloom"
+    ]
+   ],
+   "pars": {
+    "size": 22
+   }
+  },
+  "finish/in1": {
+   "type": "inTOP",
+   "family": "TOP",
+   "pos": [
+    0,
+    0
+   ]
+  },
+  "finish/local": {
+   "type": "baseCOMP",
+   "family": "COMP",
+   "pos": [
+    -400,
+    460
+   ]
+  },
+  "finish/local/modules": {
+   "type": "baseCOMP",
+   "family": "COMP",
+   "pos": [
+    0,
+    0
+   ]
+  },
+  "finish/local/modules/paths": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "file": {
+     "expr": "project.folder.replace(chr(92), '/') + '/experiments/sw_hub/paths_module.py'"
+    },
+    "language": "text",
+    "syncfile": true
+   },
+   "text_file": "experiments/sw_hub/paths_module.py"
+  },
+  "finish/named": {
+   "type": "selectTOP",
+   "family": "TOP",
+   "pos": [
+    170,
+    0
+   ],
+   "pars": {
+    "top": {
+     "expr": "parent().par.Input.eval() or ''"
+    }
+   }
+  },
+  "finish/out1": {
+   "type": "outTOP",
+   "family": "TOP",
+   "pos": [
+    1700,
+    0
+   ],
+   "inputs": [
+    [
+     "finish/bypass"
+    ]
+   ]
+  },
+  "finish/pick": {
+   "type": "switchTOP",
+   "family": "TOP",
+   "pos": [
+    340,
+    0
+   ],
+   "inputs": [
+    [
+     "finish/in1"
+    ],
+    [
+     "finish/named"
+    ]
+   ],
+   "pars": {
+    "index": {
+     "expr": "1 if parent().par.Input.eval() else 0"
+    }
+   }
+  },
+  "finish/preset_exec": {
+   "type": "parameterexecuteDAT",
+   "family": "DAT",
+   "pos": [
+    0,
+    -200
+   ],
+   "pars": {
+    "builtin": false,
+    "language": "python",
+    "op": "..",
+    "pars": "Preset"
+   },
+   "text": [
+    "import json",
+    "",
+    "",
+    "def apply(comp, name):",
+    "    \"\"\"Copy one preset from presets.json onto the Controls page.\"\"\"",
+    "    path = comp.op('local/modules/paths').module.experiment('sw_finish', 'presets.json')",
+    "    with open(path, encoding='utf-8') as fh:",
+    "        presets = json.load(fh)",
+    "    preset = presets.get(name)",
+    "    if preset is None:",
+    "        return",
+    "    for key, value in preset.items():",
+    "        if key == 'label':",
+    "            continue",
+    "        if isinstance(value, list):",
+    "            for suffix, v in zip('rgb', value):",
+    "                getattr(comp.par, key + suffix).val = v",
+    "        elif hasattr(comp.par, key):",
+    "            getattr(comp.par, key).val = value",
+    "",
+    "",
+    "def onValueChange(par, prev):",
+    "    if par.name == 'Preset':",
+    "        apply(parent(), parent().par.Preset.eval())",
+    "    return"
+   ]
+  },
+  "finish/signal": {
+   "type": "glslTOP",
+   "family": "TOP",
+   "pos": [
+    680,
+    0
+   ],
+   "inputs": [
+    [
+     "finish/fit"
+    ]
+   ],
+   "pars": {
+    "computedat": "signal_compute",
+    "format": "rgba16float",
+    "pixeldat": "signal_frag",
+    "vec0name": "uTape",
+    "vec0valuew": {
+     "expr": "parent().par.Soften"
+    },
+    "vec0valuex": {
+     "expr": "parent().par.Bleed"
+    },
+    "vec0valuey": {
+     "expr": "parent().par.Tracking"
+    },
+    "vec0valuez": {
+     "expr": "parent().par.Headswitch"
+    },
+    "vec1name": "uClock",
+    "vec1valuew": {
+     "expr": "0"
+    },
+    "vec1valuex": {
+     "expr": "absTime.seconds % 3600"
+    },
+    "vec1valuey": {
+     "expr": "absTime.frame % 4096"
+    },
+    "vec1valuez": {
+     "expr": "parent().par.Weave"
+    }
+   }
+  },
+  "finish/signal_frag": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.experiment('sw_finish', 'shaders/signal.frag')"
+    },
+    "language": "text",
+    "syncfile": true
+   },
+   "text_file": "experiments/sw_finish/shaders/signal.frag"
+  },
+  "finish/signal_info": {
+   "type": "infoDAT",
+   "family": "DAT",
+   "pos": [
+    160,
+    -120
+   ],
+   "pars": {
+    "language": "text",
+    "op": "signal"
+   }
+  },
+  "hub": {
+   "type": "selectCHOP",
+   "family": "CHOP",
+   "pos": [
+    -400,
+    -200
+   ],
+   "pars": {
+    "chops": "/project1/sw_hub/feed"
+   }
+  },
+  "layout_td": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.here('layout_td.py')"
+    },
+    "language": "text",
+    "syncfile": true
+   },
+   "text_file": "experiments/id_title_card/layout_td.py"
+  },
+  "local": {
+   "type": "baseCOMP",
+   "family": "COMP",
+   "pos": [
+    -400,
+    460
+   ]
+  },
+  "local/modules": {
+   "type": "baseCOMP",
+   "family": "COMP",
+   "pos": [
+    0,
+    0
+   ]
+  },
+  "local/modules/paths": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "file": {
+     "expr": "project.folder.replace(chr(92), '/') + '/experiments/sw_hub/paths_module.py'"
+    },
+    "language": "text",
+    "syncfile": true
+   },
+   "text_file": "experiments/sw_hub/paths_module.py"
+  },
+  "m_bold": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    -400,
+    320
+   ],
+   "pars": {
+    "fontfile": {
+     "expr": "mod('layout_td').font_path('bold')"
+    },
+    "fontsizex": 100.0,
+    "fontsizexunit": "pixels",
+    "outputresolution": "custom",
+    "resmult": false,
+    "resolutionh": 16,
+    "resolutionw": 16,
+    "text": ""
+   }
+  },
+  "m_medium": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    -400,
+    210
+   ],
+   "pars": {
+    "fontfile": {
+     "expr": "mod('layout_td').font_path('medium')"
+    },
+    "fontsizex": 100.0,
+    "fontsizexunit": "pixels",
+    "outputresolution": "custom",
+    "resmult": false,
+    "resolutionh": 16,
+    "resolutionw": 16,
+    "text": ""
+   }
+  },
+  "m_system": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    -400,
+    100
+   ],
+   "pars": {
+    "fontfile": {
+     "expr": "mod('layout_td').font_path('system')"
+    },
+    "fontsizex": 100.0,
+    "fontsizexunit": "pixels",
+    "outputresolution": "custom",
+    "resmult": false,
+    "resolutionh": 16,
+    "resolutionw": 16,
+    "text": ""
+   }
+  },
+  "motion": {
+   "type": "constantCHOP",
+   "family": "CHOP",
+   "pos": [
+    -400,
+    -100
+   ],
+   "pars": {
+    "const0name": "cb",
+    "const0value": {
+     "expr": "mod('typeset').cycle_beats((op('hub')['bar_pos'] * 4 if op('hub').numChans else absTime.seconds * 2), parent().par.Cycle)"
+    },
+    "const1name": "total",
+    "const1value": {
+     "expr": "4 * max(0, parent().par.Cycle)"
+    },
+    "const2name": "beat",
+    "const2value": {
+     "expr": "(op('hub')['bar_pos'] * 4 if op('hub').numChans else absTime.seconds * 2) if parent().par.Cycle > 0 else 0"
+    },
+    "const3name": "m",
+    "const3value": {
+     "expr": "mod('typeset').motion(mod('typeset').take_name(parent().par.Take), (op('hub')['bar_pos'] * 4 if op('hub').numChans else absTime.seconds * 2), parent().par.Cycle, float(op('runs')[1, 'span']))"
+    },
+    "const4name": "chars",
+    "const4value": {
+     "expr": "mod('typeset').typed_chars(mod('typeset').cycle_beats((op('hub')['bar_pos'] * 4 if op('hub').numChans else absTime.seconds * 2), parent().par.Cycle), 4 * max(0, parent().par.Cycle))"
+    }
+   }
+  },
+  "out1": {
+   "type": "outTOP",
+   "family": "TOP",
+   "pos": [
+    650,
+    0
+   ],
+   "inputs": [
+    [
+     "finish"
+    ]
+   ]
+  },
+  "run0": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    0,
+    460
+   ],
+   "pars": {
+    "alignx": "left",
+    "aligny": "bottom",
+    "fontfile": {
+     "expr": "mod('layout_td').font_path(op('runs')[1, 'font'].val)"
+    },
+    "fontsizex": {
+     "expr": "max(1, float(op('runs')[1, 'size']))"
+    },
+    "fontsizexunit": "pixels",
+    "outputresolution": "custom",
+    "positionx": {
+     "expr": "float(op('runs')[1, 'px']) + (float(op('runs')[1, 'dx']) and float(op('runs')[1, 'dx']) * op('motion')['m'])"
+    },
+    "positiony": {
+     "expr": "float(op('runs')[1, 'py'])"
+    },
+    "resmult": false,
+    "resolutionh": 720,
+    "resolutionw": 1280,
+    "text": {
+     "expr": "(lambda t, s: t if s < 0 else mod('typeset').typed(t, s, op('motion')['chars']))(op('runs')[1, 'text'].val, int(op('runs')[1, 'typeon']))"
+    },
+    "trackingx": {
+     "expr": "float(op('runs')[1, 'track']) + (float(op('runs')[1, 'dtr']) and float(op('runs')[1, 'dtr']) * op('motion')['m'])"
+    }
+   }
+  },
+  "run1": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    0,
+    350
+   ],
+   "pars": {
+    "alignx": "left",
+    "aligny": "bottom",
+    "fontfile": {
+     "expr": "mod('layout_td').font_path(op('runs')[2, 'font'].val)"
+    },
+    "fontsizex": {
+     "expr": "max(1, float(op('runs')[2, 'size']))"
+    },
+    "fontsizexunit": "pixels",
+    "outputresolution": "custom",
+    "positionx": {
+     "expr": "float(op('runs')[2, 'px']) + (float(op('runs')[2, 'dx']) and float(op('runs')[2, 'dx']) * op('motion')['m'])"
+    },
+    "positiony": {
+     "expr": "float(op('runs')[2, 'py'])"
+    },
+    "resmult": false,
+    "resolutionh": 720,
+    "resolutionw": 1280,
+    "text": {
+     "expr": "(lambda t, s: t if s < 0 else mod('typeset').typed(t, s, op('motion')['chars']))(op('runs')[2, 'text'].val, int(op('runs')[2, 'typeon']))"
+    },
+    "trackingx": {
+     "expr": "float(op('runs')[2, 'track']) + (float(op('runs')[2, 'dtr']) and float(op('runs')[2, 'dtr']) * op('motion')['m'])"
+    }
+   }
+  },
+  "run2": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    0,
+    240
+   ],
+   "pars": {
+    "alignx": "left",
+    "aligny": "bottom",
+    "fontfile": {
+     "expr": "mod('layout_td').font_path(op('runs')[3, 'font'].val)"
+    },
+    "fontsizex": {
+     "expr": "max(1, float(op('runs')[3, 'size']))"
+    },
+    "fontsizexunit": "pixels",
+    "outputresolution": "custom",
+    "positionx": {
+     "expr": "float(op('runs')[3, 'px']) + (float(op('runs')[3, 'dx']) and float(op('runs')[3, 'dx']) * op('motion')['m'])"
+    },
+    "positiony": {
+     "expr": "float(op('runs')[3, 'py'])"
+    },
+    "resmult": false,
+    "resolutionh": 720,
+    "resolutionw": 1280,
+    "text": {
+     "expr": "(lambda t, s: t if s < 0 else mod('typeset').typed(t, s, op('motion')['chars']))(op('runs')[3, 'text'].val, int(op('runs')[3, 'typeon']))"
+    },
+    "trackingx": {
+     "expr": "float(op('runs')[3, 'track']) + (float(op('runs')[3, 'dtr']) and float(op('runs')[3, 'dtr']) * op('motion')['m'])"
+    }
+   }
+  },
+  "run3": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    0,
+    130
+   ],
+   "pars": {
+    "alignx": "left",
+    "aligny": "bottom",
+    "fontfile": {
+     "expr": "mod('layout_td').font_path(op('runs')[4, 'font'].val)"
+    },
+    "fontsizex": {
+     "expr": "max(1, float(op('runs')[4, 'size']))"
+    },
+    "fontsizexunit": "pixels",
+    "outputresolution": "custom",
+    "positionx": {
+     "expr": "float(op('runs')[4, 'px']) + (float(op('runs')[4, 'dx']) and float(op('runs')[4, 'dx']) * op('motion')['m'])"
+    },
+    "positiony": {
+     "expr": "float(op('runs')[4, 'py'])"
+    },
+    "resmult": false,
+    "resolutionh": 720,
+    "resolutionw": 1280,
+    "text": {
+     "expr": "(lambda t, s: t if s < 0 else mod('typeset').typed(t, s, op('motion')['chars']))(op('runs')[4, 'text'].val, int(op('runs')[4, 'typeon']))"
+    },
+    "trackingx": {
+     "expr": "float(op('runs')[4, 'track']) + (float(op('runs')[4, 'dtr']) and float(op('runs')[4, 'dtr']) * op('motion')['m'])"
+    }
+   }
+  },
+  "run4": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    0,
+    20
+   ],
+   "pars": {
+    "alignx": "left",
+    "aligny": "bottom",
+    "fontfile": {
+     "expr": "mod('layout_td').font_path(op('runs')[5, 'font'].val)"
+    },
+    "fontsizex": {
+     "expr": "max(1, float(op('runs')[5, 'size']))"
+    },
+    "fontsizexunit": "pixels",
+    "outputresolution": "custom",
+    "positionx": {
+     "expr": "float(op('runs')[5, 'px']) + (float(op('runs')[5, 'dx']) and float(op('runs')[5, 'dx']) * op('motion')['m'])"
+    },
+    "positiony": {
+     "expr": "float(op('runs')[5, 'py'])"
+    },
+    "resmult": false,
+    "resolutionh": 720,
+    "resolutionw": 1280,
+    "text": {
+     "expr": "(lambda t, s: t if s < 0 else mod('typeset').typed(t, s, op('motion')['chars']))(op('runs')[5, 'text'].val, int(op('runs')[5, 'typeon']))"
+    },
+    "trackingx": {
+     "expr": "float(op('runs')[5, 'track']) + (float(op('runs')[5, 'dtr']) and float(op('runs')[5, 'dtr']) * op('motion')['m'])"
+    }
+   }
+  },
+  "run5": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    0,
+    -90
+   ],
+   "pars": {
+    "alignx": "left",
+    "aligny": "bottom",
+    "fontfile": {
+     "expr": "mod('layout_td').font_path(op('runs')[6, 'font'].val)"
+    },
+    "fontsizex": {
+     "expr": "max(1, float(op('runs')[6, 'size']))"
+    },
+    "fontsizexunit": "pixels",
+    "outputresolution": "custom",
+    "positionx": {
+     "expr": "float(op('runs')[6, 'px']) + (float(op('runs')[6, 'dx']) and float(op('runs')[6, 'dx']) * op('motion')['m'])"
+    },
+    "positiony": {
+     "expr": "float(op('runs')[6, 'py'])"
+    },
+    "resmult": false,
+    "resolutionh": 720,
+    "resolutionw": 1280,
+    "text": {
+     "expr": "(lambda t, s: t if s < 0 else mod('typeset').typed(t, s, op('motion')['chars']))(op('runs')[6, 'text'].val, int(op('runs')[6, 'typeon']))"
+    },
+    "trackingx": {
+     "expr": "float(op('runs')[6, 'track']) + (float(op('runs')[6, 'dtr']) and float(op('runs')[6, 'dtr']) * op('motion')['m'])"
+    }
+   }
+  },
+  "run6": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    0,
+    -200
+   ],
+   "pars": {
+    "alignx": "left",
+    "aligny": "bottom",
+    "fontfile": {
+     "expr": "mod('layout_td').font_path(op('runs')[7, 'font'].val)"
+    },
+    "fontsizex": {
+     "expr": "max(1, float(op('runs')[7, 'size']))"
+    },
+    "fontsizexunit": "pixels",
+    "outputresolution": "custom",
+    "positionx": {
+     "expr": "float(op('runs')[7, 'px']) + (float(op('runs')[7, 'dx']) and float(op('runs')[7, 'dx']) * op('motion')['m'])"
+    },
+    "positiony": {
+     "expr": "float(op('runs')[7, 'py'])"
+    },
+    "resmult": false,
+    "resolutionh": 720,
+    "resolutionw": 1280,
+    "text": {
+     "expr": "(lambda t, s: t if s < 0 else mod('typeset').typed(t, s, op('motion')['chars']))(op('runs')[7, 'text'].val, int(op('runs')[7, 'typeon']))"
+    },
+    "trackingx": {
+     "expr": "float(op('runs')[7, 'track']) + (float(op('runs')[7, 'dtr']) and float(op('runs')[7, 'dtr']) * op('motion')['m'])"
+    }
+   }
+  },
+  "run7": {
+   "type": "textTOP",
+   "family": "TOP",
+   "pos": [
+    0,
+    -310
+   ],
+   "pars": {
+    "alignx": "left",
+    "aligny": "bottom",
+    "fontfile": {
+     "expr": "mod('layout_td').font_path(op('runs')[8, 'font'].val)"
+    },
+    "fontsizex": {
+     "expr": "max(1, float(op('runs')[8, 'size']))"
+    },
+    "fontsizexunit": "pixels",
+    "outputresolution": "custom",
+    "positionx": {
+     "expr": "float(op('runs')[8, 'px']) + (float(op('runs')[8, 'dx']) and float(op('runs')[8, 'dx']) * op('motion')['m'])"
+    },
+    "positiony": {
+     "expr": "float(op('runs')[8, 'py'])"
+    },
+    "resmult": false,
+    "resolutionh": 720,
+    "resolutionw": 1280,
+    "text": {
+     "expr": "(lambda t, s: t if s < 0 else mod('typeset').typed(t, s, op('motion')['chars']))(op('runs')[8, 'text'].val, int(op('runs')[8, 'typeon']))"
+    },
+    "trackingx": {
+     "expr": "float(op('runs')[8, 'track']) + (float(op('runs')[8, 'dtr']) and float(op('runs')[8, 'dtr']) * op('motion')['m'])"
+    }
+   }
+  },
+  "runs": {
+   "type": "scriptDAT",
+   "family": "DAT",
+   "pos": [
+    -200,
+    460
+   ],
+   "pars": {
+    "callbacks": "layout_td"
+   },
+   "text": [
+    "text\tfont\tsize\ttrack\tpx\tpy\tkind\tcol\torder\tline\tx0\ty0\tx1\ty1\tdx\tdtr\ttypeon\tspan",
+    "\t\t0.000\t0.000\t0.000\t0.000\t2\t2\t0.000\t-1\t64.000\t94.800\t1216.000\t98.800\t0.000\t0.000\t-1\t0.000",
+    "OPEN\tbold\t353.271\t-4.239\t47.043\t275.256\t1\t1\t0.000\t0\t59.054\t126.800\t686.464\t374.090\t0.000\t0.000\t-1\t0.000",
+    "STUDIO\tbold\t353.271\t-4.239\t51.636\t-6.654\t1\t1\t1.000\t1\t61.174\t408.710\t922.095\t656.000\t0.000\t0.000\t-1\t0.000",
+    "REEL 04\tmedium\t24\t3.840\t62.512\t634.400\t1\t1\t1.000\t-1\t64.000\t64.000\t152.560\t80.800\t0.000\t0.000\t-1\t0.000",
+    "A LIVE SESSION\tmedium\t24\t3.840\t453.045\t634.400\t1\t1\t2.000\t-1\t453.333\t64.000\t627.213\t80.800\t0.000\t0.000\t-1\t0.000",
+    "2026\tmedium\t24\t3.840\t1164.496\t634.400\t1\t1\t3.000\t-1\t1165.288\t64.000\t1216.000\t80.800\t0.000\t0.000\t-1\t0.000",
+    "\t\t0.000\t0.000\t0.000\t0.000\t0\t0\t0.000\t-1\t0\t0\t0\t0\t0.000\t0.000\t-1\t0.000",
+    "\t\t0.000\t0.000\t0.000\t0.000\t0\t0\t0.000\t-1\t0\t0\t0\t0\t0.000\t0.000\t-1\t0.000"
+   ]
+  },
+  "typeset": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.here('typeset.py')"
+    },
+    "language": "text",
+    "syncfile": true
+   },
+   "text_file": "experiments/id_title_card/typeset.py"
+  }
+ }
+}

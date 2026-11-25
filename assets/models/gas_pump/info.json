@@ -1,0 +1,25 @@
+{
+ "slug": "gas_pump",
+ "source": "gas_pump",
+ "parts_joined": 1,
+ "vertices": 22285,
+ "triangles": 29998,
+ "decimated": true,
+ "original_size_m": [
+  0.3446,
+  0.455,
+  1.0013
+ ],
+ "size_units": [
+  0.4545,
+  1.0,
+  0.3442
+ ],
+ "has_uv": true,
+ "has_texture": true,
+ "generator": "TRELLIS.2",
+ "group": "roadside",
+ "prompt": "a 1950s petrol pump, rounded red enamel body with a glass globe on top and a hose",
+ "yaw_applied_deg": 90,
+ "facing_set_by": "eye, metric agreed"
+}

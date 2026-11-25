@@ -1,0 +1,25 @@
+{
+ "slug": "lobster",
+ "source": "lobster",
+ "parts_joined": 1,
+ "vertices": 31182,
+ "triangles": 30000,
+ "decimated": true,
+ "original_size_m": [
+  0.5962,
+  1.0002,
+  0.3551
+ ],
+ "size_units": [
+  0.5961,
+  0.355,
+  1.0
+ ],
+ "has_uv": true,
+ "has_texture": true,
+ "generator": "TRELLIS.2",
+ "group": "nature",
+ "prompt": "a bright red lobster with large claws raised",
+ "yaw_applied_deg": 0,
+ "facing_set_by": "eye, metric overruled"
+}

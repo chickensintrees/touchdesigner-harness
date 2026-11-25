@@ -1,0 +1,25 @@
+{
+ "slug": "birthday_cake",
+ "source": "birthday_cake",
+ "parts_joined": 1,
+ "vertices": 34875,
+ "triangles": 30000,
+ "decimated": true,
+ "original_size_m": [
+  0.9987,
+  0.9977,
+  0.9493
+ ],
+ "size_units": [
+  1.0,
+  0.9505,
+  0.999
+ ],
+ "has_uv": true,
+ "has_texture": true,
+ "generator": "TRELLIS.2",
+ "group": "plastic",
+ "prompt": "a three-tier birthday cake with pink and white icing, piped rosettes and candles on a cake stand",
+ "yaw_applied_deg": 0,
+ "facing_set_by": "eye, metric overruled"
+}

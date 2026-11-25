@@ -1,0 +1,25 @@
+{
+ "slug": "winged_statue",
+ "source": "winged_statue",
+ "parts_joined": 1,
+ "vertices": 27096,
+ "triangles": 30000,
+ "decimated": true,
+ "original_size_m": [
+  0.5419,
+  0.5585,
+  1.0005
+ ],
+ "size_units": [
+  0.5417,
+  1.0,
+  0.5582
+ ],
+ "has_uv": true,
+ "has_texture": true,
+ "generator": "TRELLIS.2",
+ "group": "monuments",
+ "prompt": "a headless winged victory statue in white marble, draped figure with large wings, on a ship-prow base",
+ "yaw_applied_deg": 0,
+ "facing_set_by": "eye, metric overruled"
+}

@@ -1,0 +1,49 @@
+{
+  "title": "Monitor showing itself",
+  "technique": "A monitor on a 3D desk shows the camera's previous frame, so video feedback builds a tunnel of monitors.",
+  "music": "Kicks flash the lamp, light up the screen and nudge the camera in, and each of these events then travels down the tunnel as a delayed echo. Bass notes turn the spiral further, each beat stamps a new phrase that flies outward, and each nested copy shifts in colour, with the direction of that shift reversing when the song changes section.",
+  "takes": [
+    {
+      "name": "Spiral tunnel",
+      "description": "The screen fills most of the frame and each nested copy is turned a little more, with extra turn from the bass, making a twisting corridor of monitor frames in pink and blue.",
+      "words": [
+        "FEEDBACK WITH A TURN",
+        "The screen shows this camera's previous frame, turned up to 17 degrees,",
+        "so the nested monitors wind into a tunnel. Bass notes add more turn."
+      ]
+    },
+    {
+      "name": "Phosphor macro",
+      "description": "An extreme close-up of the screen itself, broken into red, green and blue stripes and slowly panning, with the nested monitor only just readable.",
+      "words": [
+        "PHOSPHOR MACRO OF THE FEEDBACK SCREEN",
+        "No camera here: this is the picture on the monitor's glass, enlarged,",
+        "and a shader splits it into red, green and blue phosphor slots."
+      ]
+    },
+    {
+      "name": "Words out",
+      "description": "There is no room, only the feedback loop running outward, so a short amber phrase drawn in the centre on each beat flies toward the viewer while changing colour.",
+      "words": [
+        "VIDEO FEEDBACK",
+        "A SCREEN",
+        "SHOWING",
+        "ITS OWN LAST FRAME",
+        "CAMERA TOO CLOSE",
+        "SO EACH COPY IS",
+        "BIGGER",
+        "NOT SMALLER",
+        "WORDS FLY OUT",
+        "ONE WORD PER BEAT",
+        "DRAWN SMALL",
+        "IN THE CENTRE",
+        "HUE TURNS EACH STEP",
+        "OLDER IS BIGGER",
+        "NO ROOM",
+        "ONLY THE LOOP"
+      ]
+    }
+  ],
+  "accepts_input": true,
+  "as_processor": "Puts the picture inside a real video feedback loop on an old monitor: it becomes the backdrop behind the desk or the image on the monitor's screen, and the loop repeats it as smaller, older, colour-shifted copies nested inside each other (spiralled, turned, 1-bit, in green phosphor, or flying outward, depending on the take)."
+}

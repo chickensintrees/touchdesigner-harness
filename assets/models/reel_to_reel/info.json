@@ -1,0 +1,25 @@
+{
+ "slug": "reel_to_reel",
+ "source": "reel_to_reel",
+ "parts_joined": 1,
+ "vertices": 29526,
+ "triangles": 30000,
+ "decimated": true,
+ "original_size_m": [
+  0.969,
+  0.4811,
+  1.0011
+ ],
+ "size_units": [
+  0.9679,
+  1.0,
+  0.4805
+ ],
+ "has_uv": true,
+ "has_texture": true,
+ "generator": "TRELLIS.2",
+ "group": "broadcast",
+ "prompt": "a reel-to-reel tape recorder with two large chrome reels, wood side panels and VU meters",
+ "yaw_applied_deg": 0,
+ "facing_set_by": "eye, metric overruled"
+}

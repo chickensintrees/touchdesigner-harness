@@ -1,0 +1,25 @@
+{
+ "slug": "nautilus",
+ "source": "nautilus",
+ "parts_joined": 1,
+ "vertices": 26832,
+ "triangles": 29999,
+ "decimated": true,
+ "original_size_m": [
+  0.9396,
+  0.7709,
+  1.0004
+ ],
+ "size_units": [
+  0.9392,
+  1.0,
+  0.7706
+ ],
+ "has_uv": true,
+ "has_texture": true,
+ "generator": "TRELLIS.2",
+ "group": "nature",
+ "prompt": "a large nautilus shell with tiger stripes, cut open to show its spiral chambers, on a small stand",
+ "yaw_applied_deg": 0,
+ "facing_set_by": "eye, metric overruled"
+}

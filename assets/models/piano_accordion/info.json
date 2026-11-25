@@ -1,0 +1,31 @@
+{
+ "slug": "accordion",
+ "source": "piano_accordion",
+ "parts_joined": 1,
+ "vertices": 31797,
+ "triangles": 30000,
+ "decimated": true,
+ "original_size_m": [
+  0.946,
+  0.9987,
+  0.8537
+ ],
+ "size_units": [
+  0.8721,
+  1.0,
+  0.9482
+ ],
+ "has_uv": true,
+ "has_texture": true,
+ "generator": "TRELLIS.2",
+ "group": "music",
+ "prompt": "a red pearl accordion with piano keys, bellows slightly open",
+ "yaw_applied_deg": 90,
+ "tilt_applied": [
+  [
+   "X",
+   25
+  ]
+ ],
+ "facing_set_by": "eye, metric agreed"
+}

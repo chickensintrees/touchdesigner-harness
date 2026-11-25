@@ -1,0 +1,7 @@
+*.toe binary
+*.tox binary
+*.png binary
+*.exr binary
+*.glsl text eol=lf
+*.py text eol=lf
+*.json text eol=lf

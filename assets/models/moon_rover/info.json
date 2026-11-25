@@ -1,0 +1,25 @@
+{
+ "slug": "moon_rover",
+ "source": "moon_rover",
+ "parts_joined": 1,
+ "vertices": 35704,
+ "triangles": 30000,
+ "decimated": true,
+ "original_size_m": [
+  0.7464,
+  0.9942,
+  0.917
+ ],
+ "size_units": [
+  0.7507,
+  0.9224,
+  1.0
+ ],
+ "has_uv": true,
+ "has_texture": true,
+ "generator": "TRELLIS.2",
+ "group": "machines",
+ "prompt": "a lunar rover with four wire-mesh wheels, open frame, two seats and a gold foil dish antenna",
+ "yaw_applied_deg": 0,
+ "facing_set_by": "eye, metric overruled"
+}

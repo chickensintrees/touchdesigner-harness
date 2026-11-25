@@ -1,0 +1,25 @@
+{
+ "slug": "turntable",
+ "source": "turntable",
+ "parts_joined": 1,
+ "vertices": 24578,
+ "triangles": 30000,
+ "decimated": true,
+ "original_size_m": [
+  1.0008,
+  0.9917,
+  0.9524
+ ],
+ "size_units": [
+  1.0,
+  0.9516,
+  0.9908
+ ],
+ "has_uv": true,
+ "has_texture": true,
+ "generator": "TRELLIS.2",
+ "group": "music",
+ "prompt": "a record player turntable with a black vinyl record, tone arm and a clear dust cover open",
+ "yaw_applied_deg": 0,
+ "facing_set_by": "eye, metric overruled"
+}

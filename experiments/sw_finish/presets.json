@@ -1,0 +1,37 @@
+{
+  "clean": {
+    "label": "Clean (no finish)",
+    "Grain": 0, "Bloom": 0, "Halation": 0, "Weave": 0, "Scanlines": 0, "Mask": 0, "Curvature": 0, "Corners": 0,
+    "Misregister": 0, "Bleed": 0, "Soften": 0, "Tracking": 0, "Headswitch": 0, "Dither": 0, "Ditherpixel": 3,
+    "Letterbox": 0, "Fourthree": 0, "Vignette": 0, "Blacktint": 0,
+    "Blackcolor": [0.0, 0.0, 0.0], "Cast": [1.0, 1.0, 1.0]
+  },
+  "film35": {
+    "label": "35mm",
+    "Grain": 0.4, "Bloom": 0.2, "Halation": 0.45, "Weave": 0.35, "Scanlines": 0, "Mask": 0, "Curvature": 0, "Corners": 0,
+    "Misregister": 0.1, "Bleed": 0, "Soften": 0.15, "Tracking": 0, "Headswitch": 0, "Dither": 0, "Ditherpixel": 3,
+    "Letterbox": 2.0, "Fourthree": 0, "Vignette": 0.45, "Blacktint": 0.07,
+    "Blackcolor": [0.55, 0.28, 0.2], "Cast": [1.0, 0.99, 0.88]
+  },
+  "vhs": {
+    "label": "VHS",
+    "Grain": 0.18, "Bloom": 0.15, "Halation": 0, "Weave": 0.1, "Scanlines": 0.12, "Mask": 0, "Curvature": 0, "Corners": 0,
+    "Misregister": 0.35, "Bleed": 0.6, "Soften": 0.55, "Tracking": 0.3, "Headswitch": 0.7, "Dither": 0, "Ditherpixel": 3,
+    "Letterbox": 0, "Fourthree": 0, "Vignette": 0.2, "Blacktint": 0.06,
+    "Blackcolor": [0.2, 0.3, 0.6], "Cast": [0.98, 1.0, 1.0]
+  },
+  "crt": {
+    "label": "CRT",
+    "Grain": 0.06, "Bloom": 0.4, "Halation": 0, "Weave": 0, "Scanlines": 0.5, "Mask": 0.35, "Curvature": 0.5, "Corners": 0.5,
+    "Misregister": 0.4, "Bleed": 0.15, "Soften": 0.2, "Tracking": 0, "Headswitch": 0, "Dither": 0, "Ditherpixel": 3,
+    "Letterbox": 0, "Fourthree": 1, "Vignette": 0.5, "Blacktint": 0.05,
+    "Blackcolor": [0.1, 0.5, 0.42], "Cast": [0.97, 1.0, 0.98]
+  },
+  "onebit": {
+    "label": "1-bit",
+    "Grain": 0, "Bloom": 0, "Halation": 0, "Weave": 0, "Scanlines": 0, "Mask": 0, "Curvature": 0, "Corners": 0,
+    "Misregister": 0, "Bleed": 0, "Soften": 0, "Tracking": 0, "Headswitch": 0, "Dither": 1, "Ditherpixel": 2,
+    "Letterbox": 0, "Fourthree": 0, "Vignette": 0, "Blacktint": 0,
+    "Blackcolor": [0.0, 0.0, 0.0], "Cast": [1.0, 1.0, 1.0]
+  }
+}

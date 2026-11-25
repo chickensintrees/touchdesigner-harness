@@ -1,0 +1,25 @@
+{
+ "slug": "bonsai",
+ "source": "bonsai",
+ "parts_joined": 1,
+ "vertices": 36269,
+ "triangles": 30000,
+ "decimated": true,
+ "original_size_m": [
+  0.6376,
+  0.9008,
+  0.9656
+ ],
+ "size_units": [
+  0.6603,
+  1.0,
+  0.9329
+ ],
+ "has_uv": true,
+ "has_texture": true,
+ "generator": "TRELLIS.2",
+ "group": "nature",
+ "prompt": "a bonsai pine tree with a twisted trunk in a shallow blue ceramic pot",
+ "yaw_applied_deg": 0,
+ "facing_set_by": "eye, metric agreed"
+}

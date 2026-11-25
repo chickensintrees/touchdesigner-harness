@@ -1,0 +1,204 @@
+{
+ "format": "tdh-snapshot/1",
+ "root": "/project1/feedback_drift",
+ "ops": {
+  "add1": {
+   "type": "compositeTOP",
+   "family": "TOP",
+   "pos": [
+    1250,
+    100
+   ],
+   "inputs": [
+    [
+     "mult1"
+    ],
+    [
+     "fade1"
+    ]
+   ],
+   "pars": {
+    "operand": "maximum"
+   }
+  },
+  "cook_driver": {
+   "type": "executeDAT",
+   "family": "DAT",
+   "pos": [
+    1400,
+    -300
+   ],
+   "pars": {
+    "framestart": true,
+    "language": "python"
+   },
+   "text": [
+    "def onFrameStart(frame):",
+    "    op('out1').cook(force=True)   # relative to this COMP; NOT '../out1'",
+    "    return"
+   ]
+  },
+  "fade1": {
+   "type": "levelTOP",
+   "family": "TOP",
+   "pos": [
+    1050,
+    100
+   ],
+   "inputs": [
+    [
+     "xf1"
+    ]
+   ],
+   "pars": {
+    "brightness1": 0.965
+   }
+  },
+  "fb1": {
+   "type": "feedbackTOP",
+   "family": "TOP",
+   "pos": [
+    600,
+    100
+   ],
+   "inputs": [
+    [
+     "mult1"
+    ]
+   ],
+   "pars": {
+    "format": "rgba16float",
+    "top": "add1"
+   }
+  },
+  "hsv1": {
+   "type": "hsvadjustTOP",
+   "family": "TOP",
+   "pos": [
+    200,
+    0
+   ],
+   "inputs": [
+    [
+     "ramp1"
+    ]
+   ],
+   "pars": {
+    "hueoffset": {
+     "expr": "(absTime.seconds * 18) % 360"
+    }
+   }
+  },
+  "mult1": {
+   "type": "compositeTOP",
+   "family": "TOP",
+   "pos": [
+    400,
+    100
+   ],
+   "inputs": [
+    [
+     "shape1"
+    ],
+    [
+     "hsv1"
+    ]
+   ]
+  },
+  "noise1": {
+   "type": "noiseTOP",
+   "family": "TOP",
+   "pos": [
+    0,
+    200
+   ],
+   "pars": {
+    "format": "rgba16float",
+    "outputresolution": "custom",
+    "period": 1.2,
+    "resolutionh": 720,
+    "resolutionw": 1280,
+    "tz": {
+     "expr": "absTime.seconds * 0.15"
+    }
+   }
+  },
+  "out1": {
+   "type": "outTOP",
+   "family": "TOP",
+   "pos": [
+    1450,
+    100
+   ],
+   "inputs": [
+    [
+     "add1"
+    ]
+   ]
+  },
+  "ramp1": {
+   "type": "rampTOP",
+   "family": "TOP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "dat": "ramp1_keys",
+    "format": "rgba16float",
+    "outputresolution": "custom",
+    "resolutionh": 720,
+    "resolutionw": 1280
+   }
+  },
+  "ramp1_keys": {
+   "type": "tableDAT",
+   "family": "DAT",
+   "pos": [
+    -200,
+    0
+   ],
+   "text": [
+    "pos\tr\tg\tb\ta",
+    "0.0\t1.0\t0.15\t0.6\t1",
+    "0.5\t0.1\t0.8\t0.9\t1",
+    "1.0\t1.0\t0.7\t0.1\t1"
+   ]
+  },
+  "shape1": {
+   "type": "levelTOP",
+   "family": "TOP",
+   "pos": [
+    200,
+    200
+   ],
+   "inputs": [
+    [
+     "noise1"
+    ]
+   ],
+   "pars": {
+    "blacklevel": 0.55,
+    "contrast": 2.0
+   }
+  },
+  "xf1": {
+   "type": "transformTOP",
+   "family": "TOP",
+   "pos": [
+    800,
+    100
+   ],
+   "inputs": [
+    [
+     "fb1"
+    ]
+   ],
+   "pars": {
+    "rotate": 0.8,
+    "sx": 0.988,
+    "sy": 0.988
+   }
+  }
+ }
+}

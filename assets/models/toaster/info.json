@@ -1,0 +1,25 @@
+{
+ "slug": "toaster",
+ "source": "toaster",
+ "parts_joined": 1,
+ "vertices": 22713,
+ "triangles": 29999,
+ "decimated": true,
+ "original_size_m": [
+  0.6937,
+  1.001,
+  0.7947
+ ],
+ "size_units": [
+  1.0,
+  0.7939,
+  0.693
+ ],
+ "has_uv": true,
+ "has_texture": true,
+ "generator": "TRELLIS.2",
+ "group": "plastic",
+ "prompt": "a rounded chrome 1950s two-slice toaster with two slices of toast popping up",
+ "yaw_applied_deg": 90,
+ "facing_set_by": "eye, metric agreed"
+}

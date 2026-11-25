@@ -1,0 +1,25 @@
+{
+ "slug": "motel_sign",
+ "source": "motel_sign",
+ "parts_joined": 1,
+ "vertices": 27337,
+ "triangles": 29999,
+ "decimated": true,
+ "original_size_m": [
+  0.5306,
+  0.1046,
+  1.0013
+ ],
+ "size_units": [
+  0.5299,
+  1.0,
+  0.1045
+ ],
+ "has_uv": true,
+ "has_texture": true,
+ "generator": "TRELLIS.2",
+ "group": "roadside",
+ "prompt": "a 1950s roadside motel neon sign on a tall pole with a big arrow and a starburst, blank panels, turquoise and red",
+ "yaw_applied_deg": 0,
+ "facing_set_by": "eye, metric agreed"
+}

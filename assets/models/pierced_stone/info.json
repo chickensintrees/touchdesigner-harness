@@ -1,0 +1,22 @@
+{
+ "slug": "pierced_stone",
+ "source": "pierced_stone",
+ "parts_joined": 1,
+ "vertices": 16484,
+ "triangles": 28280,
+ "decimated": false,
+ "original_size_m": [
+  0.7918,
+  0.3371,
+  1.0013
+ ],
+ "size_units": [
+  0.7907,
+  1.0,
+  0.3366
+ ],
+ "has_uv": true,
+ "has_texture": true,
+ "generator": "TRELLIS.2",
+ "prompt": "an abstract biomorphic sculpture carved from white marble: a smooth rounded standing form with two large pierced holes through it"
+}

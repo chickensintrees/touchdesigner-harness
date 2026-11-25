@@ -1,0 +1,1039 @@
+{
+ "format": "tdh-snapshot/1",
+ "root": "/project1/im_depth_relief",
+ "ops": {
+  "cam": {
+   "type": "cameraCOMP",
+   "family": "COMP",
+   "pos": [
+    500,
+    150
+   ],
+   "pars": {
+    "far": 50.0,
+    "fov": 50.0,
+    "lookat": "/project1/im_depth_relief/target",
+    "near": 0.05,
+    "tx": {
+     "expr": "(parent().par.Distance * op('take')['dist'] * (1 - 0.07 * parent().par.React * (op('hub')['hit_low'] if op('hub').numChans else 0))) * math.sin(math.radians(op('take')['az'] + op('take')['swing'] * parent().par.Drift * math.sin((op('hub')['bar_pos'] if op('hub').numChans else absTime.seconds * 0.4) * math.pi * 0.5))) * math.cos(math.radians(op('take')['el'] + 4 * parent().par.Drift * math.sin(absTime.seconds * 0.071 + 1.3)))"
+    },
+    "ty": {
+     "expr": "(parent().par.Distance * op('take')['dist'] * (1 - 0.07 * parent().par.React * (op('hub')['hit_low'] if op('hub').numChans else 0))) * math.sin(math.radians(op('take')['el'] + 4 * parent().par.Drift * math.sin(absTime.seconds * 0.071 + 1.3)))"
+    },
+    "tz": {
+     "expr": "(parent().par.Distance * op('take')['dist'] * (1 - 0.07 * parent().par.React * (op('hub')['hit_low'] if op('hub').numChans else 0))) * math.cos(math.radians(op('take')['az'] + op('take')['swing'] * parent().par.Drift * math.sin((op('hub')['bar_pos'] if op('hub').numChans else absTime.seconds * 0.4) * math.pi * 0.5))) * math.cos(math.radians(op('take')['el'] + 4 * parent().par.Drift * math.sin(absTime.seconds * 0.071 + 1.3)))"
+    }
+   }
+  },
+  "cam/file1": {
+   "type": "fileinPOP",
+   "family": "POP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "file": {
+     "expr": "app.samplesFolder + '/Geo/defcam.tog'"
+    }
+   }
+  },
+  "clock": {
+   "type": "constantCHOP",
+   "family": "CHOP",
+   "pos": [
+    -400,
+    180
+   ],
+   "pars": {
+    "const0name": "p",
+    "const0value": {
+     "expr": "parent().par.Start + (op('hub')['bar_pos'] / max(0.5, parent().par.Bars) if op('hub').numChans else absTime.seconds / max(0.2, parent().par.Hold))"
+    }
+   }
+  },
+  "cloud": {
+   "type": "geometryCOMP",
+   "family": "COMP",
+   "pos": [
+    250,
+    300
+   ],
+   "pars": {
+    "material": "/project1/im_depth_relief/cloud_mat"
+   }
+  },
+  "cloud/grid": {
+   "type": "gridPOP",
+   "family": "POP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "cols": 480,
+    "normal": "none",
+    "rows": 270,
+    "surftype": "points",
+    "texture": "none"
+   }
+  },
+  "cloud_mat": {
+   "type": "glslMAT",
+   "family": "MAT",
+   "pos": [
+    250,
+    150
+   ],
+   "pars": {
+    "pdat": "/project1/im_depth_relief/cloud_pixel",
+    "sampler0name": "sA",
+    "sampler0top": "/project1/im_depth_relief/file0",
+    "sampler1name": "sB",
+    "sampler1top": "/project1/im_depth_relief/file1",
+    "sampler2name": "sDA",
+    "sampler2top": "/project1/im_depth_relief/depth0",
+    "sampler3name": "sDB",
+    "sampler3top": "/project1/im_depth_relief/depth1",
+    "vdat": "/project1/im_depth_relief/cloud_vertex",
+    "vec0name": "uMorph",
+    "vec0valuew": {
+     "expr": "parent().par.Wander"
+    },
+    "vec0valuex": {
+     "expr": "op('state')['mix']"
+    },
+    "vec0valuey": {
+     "expr": "absTime.seconds % 3600"
+    },
+    "vec0valuez": {
+     "expr": "parent().par.Relief * op('take')['relief']"
+    },
+    "vec1name": "uShape",
+    "vec1valuew": {
+     "expr": "640 / math.tan(math.radians(25))"
+    },
+    "vec1valuex": {
+     "expr": "mod.imset.number(op('state')['i0'], 'aspect')"
+    },
+    "vec1valuey": {
+     "expr": "mod.imset.number(op('state')['i1'], 'aspect')"
+    },
+    "vec1valuez": {
+     "expr": "parent().par.Pointsize"
+    },
+    "vec2name": "uGrid",
+    "vec2valuew": {
+     "expr": "0.9"
+    },
+    "vec2valuex": {
+     "expr": "480"
+    },
+    "vec2valuey": {
+     "expr": "270"
+    },
+    "vec2valuez": {
+     "expr": "parent().par.Dust"
+    },
+    "vec3name": "uMusic",
+    "vec3valuew": {
+     "expr": "parent().par.React * (op('hub')['hit_high'] if op('hub').numChans else 0)"
+    },
+    "vec3valuex": {
+     "expr": "parent().par.React * (op('hub')['hit_low'] if op('hub').numChans else 0)"
+    },
+    "vec3valuey": {
+     "expr": "parent().par.React * (op('hub')['bass'] if op('hub').numChans else 0)"
+    },
+    "vec3valuez": {
+     "expr": "parent().par.React * (op('hub')['hit_mid'] if op('hub').numChans else 0)"
+    },
+    "vec4name": "uLook",
+    "vec4valuew": {
+     "expr": "parent().par.Depthcurve"
+    },
+    "vec4valuex": {
+     "expr": "op('take')['look']"
+    },
+    "vec4valuey": {
+     "expr": "op('take')['burst']"
+    },
+    "vec4valuez": {
+     "expr": "op('hub')['beat_pos'] if op('hub').numChans else absTime.seconds * 2"
+    }
+   }
+  },
+  "cloud_pixel": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    400,
+    -250
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.experiment('im_depth_relief', 'shaders/cloud_pixel.glsl')"
+    },
+    "language": "text",
+    "syncfile": true
+   },
+   "text_file": "experiments/im_depth_relief/shaders/cloud_pixel.glsl"
+  },
+  "cloud_vertex": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    250,
+    -250
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.experiment('im_depth_relief', 'shaders/cloud_vertex.glsl')"
+    },
+    "language": "text",
+    "syncfile": true
+   },
+   "text_file": "experiments/im_depth_relief/shaders/cloud_vertex.glsl"
+  },
+  "cook_driver": {
+   "type": "executeDAT",
+   "family": "DAT",
+   "pos": [
+    -400,
+    -100
+   ],
+   "pars": {
+    "framestart": true,
+    "language": "python"
+   },
+   "text": [
+    "def onFrameStart(frame):",
+    "    if parent().par.Preview.eval():",
+    "        op('out1').cook(force=True)",
+    "    return"
+   ]
+  },
+  "depth0": {
+   "type": "moviefileinTOP",
+   "family": "TOP",
+   "pos": [
+    0,
+    40
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.imset.path(op('state')['i0'], 'depth')"
+    }
+   }
+  },
+  "depth1": {
+   "type": "moviefileinTOP",
+   "family": "TOP",
+   "pos": [
+    0,
+    -90
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.imset.path(op('state')['i1'], 'depth')"
+    }
+   }
+  },
+  "file0": {
+   "type": "moviefileinTOP",
+   "family": "TOP",
+   "pos": [
+    0,
+    300
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.imset.path(op('state')['i0'], 'file')"
+    }
+   }
+  },
+  "file1": {
+   "type": "moviefileinTOP",
+   "family": "TOP",
+   "pos": [
+    0,
+    170
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.imset.path(op('state')['i1'], 'file')"
+    }
+   }
+  },
+  "finish": {
+   "type": "baseCOMP",
+   "family": "COMP",
+   "pos": [
+    1150,
+    0
+   ],
+   "inputs": [
+    [
+     "render"
+    ]
+   ],
+   "pars": {
+    "Blackcolorb": 0.2,
+    "Blackcolorg": 0.28,
+    "Blackcolorr": 0.55,
+    "Blacktint": 0.07,
+    "Bloom": 0.2,
+    "Castb": 0.88,
+    "Castg": 0.99,
+    "Castr": 1.0,
+    "Grain": 0.4,
+    "Halation": 0.45,
+    "Letterbox": 2.0,
+    "Misregister": 0.1,
+    "Preset": {
+     "expr": "parent().par.Finish"
+    },
+    "Preview": {
+     "expr": "parent().par.Preview"
+    },
+    "Soften": 0.15,
+    "Vignette": 0.45,
+    "Weave": 0.35
+   },
+   "custom_pars": [
+    "Blackcolorb",
+    "Blackcolorg",
+    "Blackcolorr",
+    "Blacktint",
+    "Bleed",
+    "Bloom",
+    "Bypass",
+    "Castb",
+    "Castg",
+    "Castr",
+    "Corners",
+    "Curvature",
+    "Dither",
+    "Ditherpixel",
+    "Fourthree",
+    "Grain",
+    "Halation",
+    "Headswitch",
+    "Input",
+    "Letterbox",
+    "Mask",
+    "Misregister",
+    "Preset",
+    "Preview",
+    "Scanlines",
+    "Soften",
+    "Tracking",
+    "Vignette",
+    "Weave"
+   ]
+  },
+  "finish/bloom": {
+   "type": "blurTOP",
+   "family": "TOP",
+   "pos": [
+    1020,
+    0
+   ],
+   "inputs": [
+    [
+     "finish/bright"
+    ]
+   ],
+   "pars": {
+    "size": 6
+   }
+  },
+  "finish/bright": {
+   "type": "glslTOP",
+   "family": "TOP",
+   "pos": [
+    850,
+    0
+   ],
+   "inputs": [
+    [
+     "finish/signal"
+    ]
+   ],
+   "pars": {
+    "computedat": "bright_compute",
+    "format": "rgba16float",
+    "outputresolution": "quarter",
+    "pixeldat": "bright_frag",
+    "vec0name": "uKnee",
+    "vec0valuew": {
+     "expr": "0"
+    },
+    "vec0valuex": {
+     "expr": "0.7"
+    },
+    "vec0valuey": {
+     "expr": "0"
+    },
+    "vec0valuez": {
+     "expr": "0"
+    }
+   }
+  },
+  "finish/bright_frag": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.experiment('sw_finish', 'shaders/bright.frag')"
+    },
+    "language": "text",
+    "syncfile": true
+   },
+   "text_file": "experiments/sw_finish/shaders/bright.frag"
+  },
+  "finish/bright_info": {
+   "type": "infoDAT",
+   "family": "DAT",
+   "pos": [
+    160,
+    -120
+   ],
+   "pars": {
+    "language": "text",
+    "op": "bright"
+   }
+  },
+  "finish/bypass": {
+   "type": "switchTOP",
+   "family": "TOP",
+   "pos": [
+    1530,
+    0
+   ],
+   "inputs": [
+    [
+     "finish/display"
+    ],
+    [
+     "finish/fit"
+    ]
+   ],
+   "pars": {
+    "index": {
+     "expr": "1 if parent().par.Bypass else 0"
+    }
+   }
+  },
+  "finish/cook_driver": {
+   "type": "executeDAT",
+   "family": "DAT",
+   "pos": [
+    200,
+    -200
+   ],
+   "pars": {
+    "framestart": true,
+    "language": "python"
+   },
+   "text": [
+    "def onFrameStart(frame):",
+    "    if parent().par.Preview.eval():",
+    "        op('out1').cook(force=True)",
+    "    return"
+   ]
+  },
+  "finish/display": {
+   "type": "glslTOP",
+   "family": "TOP",
+   "pos": [
+    1360,
+    0
+   ],
+   "inputs": [
+    [
+     "finish/signal"
+    ],
+    [
+     "finish/bloom"
+    ],
+    [
+     "finish/halation"
+    ]
+   ],
+   "pars": {
+    "computedat": "display_compute",
+    "format": "rgba8fixed",
+    "pixeldat": "display_frag",
+    "vec0name": "uTube",
+    "vec0valuew": {
+     "expr": "parent().par.Corners"
+    },
+    "vec0valuex": {
+     "expr": "parent().par.Curvature"
+    },
+    "vec0valuey": {
+     "expr": "parent().par.Scanlines"
+    },
+    "vec0valuez": {
+     "expr": "parent().par.Mask"
+    },
+    "vec1name": "uGlow",
+    "vec1valuew": {
+     "expr": "parent().par.Grain"
+    },
+    "vec1valuex": {
+     "expr": "parent().par.Bloom"
+    },
+    "vec1valuey": {
+     "expr": "parent().par.Halation"
+    },
+    "vec1valuez": {
+     "expr": "parent().par.Misregister"
+    },
+    "vec2name": "uFrame",
+    "vec2valuew": {
+     "expr": "parent().par.Ditherpixel"
+    },
+    "vec2valuex": {
+     "expr": "parent().par.Letterbox"
+    },
+    "vec2valuey": {
+     "expr": "parent().par.Fourthree"
+    },
+    "vec2valuez": {
+     "expr": "parent().par.Dither"
+    },
+    "vec3name": "uTint",
+    "vec3valuew": {
+     "expr": "parent().par.Blacktint"
+    },
+    "vec3valuex": {
+     "expr": "parent().par.Blackcolorr"
+    },
+    "vec3valuey": {
+     "expr": "parent().par.Blackcolorg"
+    },
+    "vec3valuez": {
+     "expr": "parent().par.Blackcolorb"
+    },
+    "vec4name": "uCast",
+    "vec4valuew": {
+     "expr": "parent().par.Vignette"
+    },
+    "vec4valuex": {
+     "expr": "parent().par.Castr"
+    },
+    "vec4valuey": {
+     "expr": "parent().par.Castg"
+    },
+    "vec4valuez": {
+     "expr": "parent().par.Castb"
+    },
+    "vec5name": "uClock",
+    "vec5valuew": {
+     "expr": "0"
+    },
+    "vec5valuex": {
+     "expr": "absTime.seconds % 3600"
+    },
+    "vec5valuey": {
+     "expr": "absTime.frame % 4096"
+    },
+    "vec5valuez": {
+     "expr": "parent().par.Weave"
+    }
+   }
+  },
+  "finish/display_frag": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.experiment('sw_finish', 'shaders/display.frag')"
+    },
+    "language": "text",
+    "syncfile": true
+   },
+   "text_file": "experiments/sw_finish/shaders/display.frag"
+  },
+  "finish/display_info": {
+   "type": "infoDAT",
+   "family": "DAT",
+   "pos": [
+    160,
+    -120
+   ],
+   "pars": {
+    "language": "text",
+    "op": "display"
+   }
+  },
+  "finish/fit": {
+   "type": "fitTOP",
+   "family": "TOP",
+   "pos": [
+    510,
+    0
+   ],
+   "inputs": [
+    [
+     "finish/pick"
+    ]
+   ],
+   "pars": {
+    "format": "rgba16float",
+    "outputaspect": "resolution",
+    "outputresolution": "custom",
+    "resolutionh": 720,
+    "resolutionw": 1280
+   }
+  },
+  "finish/halation": {
+   "type": "blurTOP",
+   "family": "TOP",
+   "pos": [
+    1190,
+    0
+   ],
+   "inputs": [
+    [
+     "finish/bloom"
+    ]
+   ],
+   "pars": {
+    "size": 22
+   }
+  },
+  "finish/in1": {
+   "type": "inTOP",
+   "family": "TOP",
+   "pos": [
+    0,
+    0
+   ]
+  },
+  "finish/local": {
+   "type": "baseCOMP",
+   "family": "COMP",
+   "pos": [
+    -400,
+    460
+   ]
+  },
+  "finish/local/modules": {
+   "type": "baseCOMP",
+   "family": "COMP",
+   "pos": [
+    0,
+    0
+   ]
+  },
+  "finish/local/modules/paths": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "file": {
+     "expr": "project.folder.replace(chr(92), '/') + '/experiments/sw_hub/paths_module.py'"
+    },
+    "language": "text",
+    "syncfile": true
+   },
+   "text_file": "experiments/sw_hub/paths_module.py"
+  },
+  "finish/named": {
+   "type": "selectTOP",
+   "family": "TOP",
+   "pos": [
+    170,
+    0
+   ],
+   "pars": {
+    "top": {
+     "expr": "parent().par.Input.eval() or ''"
+    }
+   }
+  },
+  "finish/out1": {
+   "type": "outTOP",
+   "family": "TOP",
+   "pos": [
+    1700,
+    0
+   ],
+   "inputs": [
+    [
+     "finish/bypass"
+    ]
+   ]
+  },
+  "finish/pick": {
+   "type": "switchTOP",
+   "family": "TOP",
+   "pos": [
+    340,
+    0
+   ],
+   "inputs": [
+    [
+     "finish/in1"
+    ],
+    [
+     "finish/named"
+    ]
+   ],
+   "pars": {
+    "index": {
+     "expr": "1 if parent().par.Input.eval() else 0"
+    }
+   }
+  },
+  "finish/preset_exec": {
+   "type": "parameterexecuteDAT",
+   "family": "DAT",
+   "pos": [
+    0,
+    -200
+   ],
+   "pars": {
+    "builtin": false,
+    "language": "python",
+    "op": "..",
+    "pars": "Preset"
+   },
+   "text": [
+    "import json",
+    "",
+    "",
+    "def apply(comp, name):",
+    "    \"\"\"Copy one preset from presets.json onto the Controls page.\"\"\"",
+    "    path = comp.op('local/modules/paths').module.experiment('sw_finish', 'presets.json')",
+    "    with open(path, encoding='utf-8') as fh:",
+    "        presets = json.load(fh)",
+    "    preset = presets.get(name)",
+    "    if preset is None:",
+    "        return",
+    "    for key, value in preset.items():",
+    "        if key == 'label':",
+    "            continue",
+    "        if isinstance(value, list):",
+    "            for suffix, v in zip('rgb', value):",
+    "                getattr(comp.par, key + suffix).val = v",
+    "        elif hasattr(comp.par, key):",
+    "            getattr(comp.par, key).val = value",
+    "",
+    "",
+    "def onValueChange(par, prev):",
+    "    if par.name == 'Preset':",
+    "        apply(parent(), parent().par.Preset.eval())",
+    "    return"
+   ]
+  },
+  "finish/signal": {
+   "type": "glslTOP",
+   "family": "TOP",
+   "pos": [
+    680,
+    0
+   ],
+   "inputs": [
+    [
+     "finish/fit"
+    ]
+   ],
+   "pars": {
+    "computedat": "signal_compute",
+    "format": "rgba16float",
+    "pixeldat": "signal_frag",
+    "vec0name": "uTape",
+    "vec0valuew": {
+     "expr": "parent().par.Soften"
+    },
+    "vec0valuex": {
+     "expr": "parent().par.Bleed"
+    },
+    "vec0valuey": {
+     "expr": "parent().par.Tracking"
+    },
+    "vec0valuez": {
+     "expr": "parent().par.Headswitch"
+    },
+    "vec1name": "uClock",
+    "vec1valuew": {
+     "expr": "0"
+    },
+    "vec1valuex": {
+     "expr": "absTime.seconds % 3600"
+    },
+    "vec1valuey": {
+     "expr": "absTime.frame % 4096"
+    },
+    "vec1valuez": {
+     "expr": "parent().par.Weave"
+    }
+   }
+  },
+  "finish/signal_frag": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.experiment('sw_finish', 'shaders/signal.frag')"
+    },
+    "language": "text",
+    "syncfile": true
+   },
+   "text_file": "experiments/sw_finish/shaders/signal.frag"
+  },
+  "finish/signal_info": {
+   "type": "infoDAT",
+   "family": "DAT",
+   "pos": [
+    160,
+    -120
+   ],
+   "pars": {
+    "language": "text",
+    "op": "signal"
+   }
+  },
+  "hub": {
+   "type": "selectCHOP",
+   "family": "CHOP",
+   "pos": [
+    -400,
+    60
+   ],
+   "pars": {
+    "chops": "/project1/sw_hub/feed"
+   }
+  },
+  "local": {
+   "type": "baseCOMP",
+   "family": "COMP",
+   "pos": [
+    -400,
+    460
+   ]
+  },
+  "local/modules": {
+   "type": "baseCOMP",
+   "family": "COMP",
+   "pos": [
+    0,
+    0
+   ]
+  },
+  "local/modules/imset": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "file": {
+     "expr": "project.folder.replace(chr(92), '/') + '/experiments/sw_images/imset_module.py'"
+    },
+    "language": "text",
+    "syncfile": true
+   },
+   "text_file": "experiments/sw_images/imset_module.py"
+  },
+  "local/modules/paths": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "file": {
+     "expr": "project.folder.replace(chr(92), '/') + '/experiments/sw_hub/paths_module.py'"
+    },
+    "language": "text",
+    "syncfile": true
+   },
+   "text_file": "experiments/sw_hub/paths_module.py"
+  },
+  "out1": {
+   "type": "outTOP",
+   "family": "TOP",
+   "pos": [
+    1400,
+    0
+   ],
+   "inputs": [
+    [
+     "finish"
+    ]
+   ]
+  },
+  "render": {
+   "type": "renderTOP",
+   "family": "TOP",
+   "pos": [
+    800,
+    0
+   ],
+   "pars": {
+    "bgcolora": 1.0,
+    "bgcolorb": 0.018,
+    "bgcolorg": 0.02,
+    "bgcolorr": 0.004,
+    "camera": "/project1/im_depth_relief/cam",
+    "format": "rgba16float",
+    "geometry": "/project1/im_depth_relief/cloud",
+    "lights": "",
+    "resolutionh": 720,
+    "resolutionw": 1280
+   }
+  },
+  "state": {
+   "type": "constantCHOP",
+   "family": "CHOP",
+   "pos": [
+    -250,
+    180
+   ],
+   "pars": {
+    "const0name": "idx",
+    "const0value": {
+     "expr": "int(op('clock')['p'])"
+    },
+    "const1name": "phase",
+    "const1value": {
+     "expr": "op('clock')['p'] % 1"
+    },
+    "const2name": "i0",
+    "const2value": {
+     "expr": "2 * ((int(op('clock')['p']) + 1) // 2)"
+    },
+    "const3name": "i1",
+    "const3value": {
+     "expr": "2 * (int(op('clock')['p']) // 2) + 1"
+    },
+    "const4name": "mix",
+    "const4value": {
+     "expr": "(lambda p, tr: (lambda m: m if int(p) % 2 == 0 else 1 - m)(min(1, max(0, ((p % 1) - (1 - tr)) / tr))))(op('clock')['p'], max(0.02, parent().par.Travel))"
+    }
+   }
+  },
+  "table": {
+   "type": "tableDAT",
+   "family": "DAT",
+   "pos": [
+    -400,
+    300
+   ],
+   "pars": {
+    "cols": 21,
+    "file": {
+     "expr": "mod.imset.root('table.tsv')"
+    },
+    "rows": 17,
+    "syncfile": true
+   },
+   "text_file": "assets/image_sets/generated_depth/table.tsv"
+  },
+  "take": {
+   "type": "constantCHOP",
+   "family": "CHOP",
+   "pos": [
+    -400,
+    -40
+   ],
+   "pars": {
+    "const0name": "az",
+    "const0value": {
+     "expr": "(0, 52, -18, 24, -34, 0)[int(parent().par.Take) % 6]"
+    },
+    "const1name": "el",
+    "const1value": {
+     "expr": "(0, 6, -8, 14, 20, 4)[int(parent().par.Take) % 6]"
+    },
+    "const2name": "dist",
+    "const2value": {
+     "expr": "(1.0, 1.05, 0.5, 0.95, 0.9, 1.1)[int(parent().par.Take) % 6]"
+    },
+    "const3name": "swing",
+    "const3value": {
+     "expr": "(10, 8, 14, 16, 12, 24)[int(parent().par.Take) % 6]"
+    },
+    "const4name": "relief",
+    "const4value": {
+     "expr": "(1.0, 2.0, 1.4, 1.6, 2.2, 1.2)[int(parent().par.Take) % 6]"
+    },
+    "const5name": "look",
+    "const5value": {
+     "expr": "(0, 0, 0, 1, 2, 0)[int(parent().par.Take) % 6]"
+    },
+    "const6name": "burst",
+    "const6value": {
+     "expr": "(0.0, 0.0, 0.0, 0.0, 0.0, 1.0)[int(parent().par.Take) % 6]"
+    }
+   }
+  },
+  "target": {
+   "type": "nullCOMP",
+   "family": "COMP",
+   "pos": [
+    500,
+    300
+   ]
+  },
+  "target/primitive1": {
+   "type": "primitivePOP",
+   "family": "POP",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "addpts": true,
+    "attr0name": "color",
+    "method": "pattern",
+    "prim0pattern": "0 1",
+    "prim0type": "lines",
+    "prim1pattern": "2 3",
+    "prim1type": "lines",
+    "prim2pattern": "4 5",
+    "prim2type": "lines",
+    "pt0colorb": 0.0,
+    "pt0colorg": 0.0,
+    "pt0posx": -0.1,
+    "pt1colorb": 0.0,
+    "pt1colorg": 0.0,
+    "pt1posx": 0.1,
+    "pt2colorb": 0.0,
+    "pt2colorr": 0.0,
+    "pt2posy": -0.1,
+    "pt3colorb": 0.0,
+    "pt3colorr": 0.0,
+    "pt3posy": 0.1,
+    "pt4colorg": 0.0,
+    "pt4colorr": 0.0,
+    "pt4posz": -0.1,
+    "pt5colorg": 0.0,
+    "pt5colorr": 0.0,
+    "pt5posz": 0.1
+   }
+  }
+ }
+}

@@ -1,0 +1,25 @@
+{
+ "slug": "peacock",
+ "source": "peacock",
+ "parts_joined": 1,
+ "vertices": 28856,
+ "triangles": 30000,
+ "decimated": true,
+ "original_size_m": [
+  0.939,
+  0.4563,
+  0.8812
+ ],
+ "size_units": [
+  1.0,
+  0.9384,
+  0.486
+ ],
+ "has_uv": true,
+ "has_texture": true,
+ "generator": "TRELLIS.2",
+ "group": "nature",
+ "prompt": "a peacock with its tail fanned fully open, iridescent blue and green feathers, on a wooden perch base",
+ "yaw_applied_deg": 0,
+ "facing_set_by": "eye, metric agreed"
+}

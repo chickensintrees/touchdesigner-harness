@@ -1,0 +1,25 @@
+{
+ "slug": "submarine",
+ "source": "submarine",
+ "parts_joined": 1,
+ "vertices": 30797,
+ "triangles": 29999,
+ "decimated": true,
+ "original_size_m": [
+  0.4859,
+  0.9995,
+  0.7094
+ ],
+ "size_units": [
+  0.4862,
+  0.7097,
+  1.0
+ ],
+ "has_uv": true,
+ "has_texture": true,
+ "generator": "TRELLIS.2",
+ "group": "machines",
+ "prompt": "a small yellow research submarine with a glass bubble dome, robotic arms and propeller",
+ "yaw_applied_deg": 180,
+ "facing_set_by": "eye, metric agreed"
+}

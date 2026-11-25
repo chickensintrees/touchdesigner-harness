@@ -1,0 +1,44 @@
+# TouchDesigner autosaves and backups
+Backup/
+CrashAutoSave*
+*.dmp
+*.toe.dir/
+*.tox.dir/
+# Python
+__pycache__/
+*.pyc
+.venv/
+.pytest_cache/
+.ruff_cache/
+# OS
+.DS_Store
+Thumbs.db
+# Per-run captures (hero frames are kept; see td-snapshot)
+experiments/*/captures/*
+!experiments/*/captures/hero.png
+!experiments/*/captures/.gitkeep
+# Your local lab project: it contains the MCP server component (TDMCP's license
+# forbids redistributing it), so it never goes in git. Experiments are .tox files.
+/lab.toe
+/lab.*.toe
+
+# touchdesigner-mcp's component, downloaded by docs/INSTALL.md step 3 (a separate project).
+/touchdesigner-mcp-td/
+/touchdesigner-mcp-td.zip
+
+# Shader Park compiler deps
+node_modules/
+
+# FBX COMP import cache
+TDImportCache/
+
+# A pack of your own, kept outside the repo: this file names its folder (see assets/README.md).
+/assets.local.txt
+# Leftover working copies from switching packs (safe to delete).
+/assets_generic/
+/assets_private_old/
+
+# Image templates: a folder of source pictures (often a client's) and the sets
+# prepared from it by tools/imageprep/prepare.py. Neither is ever committed.
+/image_sources/
+/image_sets/

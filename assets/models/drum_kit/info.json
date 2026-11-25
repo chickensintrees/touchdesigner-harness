@@ -1,0 +1,25 @@
+{
+ "slug": "drum_kit",
+ "source": "drum_kit",
+ "parts_joined": 1,
+ "vertices": 33972,
+ "triangles": 30000,
+ "decimated": true,
+ "original_size_m": [
+  0.9994,
+  0.7556,
+  0.7107
+ ],
+ "size_units": [
+  1.0,
+  0.7112,
+  0.756
+ ],
+ "has_uv": true,
+ "has_texture": true,
+ "generator": "TRELLIS.2",
+ "group": "music",
+ "prompt": "a compact drum kit with bass drum, snare, two toms and cymbals, sparkle red finish",
+ "yaw_applied_deg": 0,
+ "facing_set_by": "eye, metric agreed"
+}

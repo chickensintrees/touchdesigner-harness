@@ -1,0 +1,48 @@
+{
+  "title": "Letter architecture",
+  "technique": "One ray-marched shader draws a folded fractal of blocks with lettering embossed into its surfaces, seen as a 1-bit shaft or as a flat red slice.",
+  "music": "Bass and vocal pitch change the fold angles so each note reshapes the lattice. In the shaft every kick sends a pane of light down it, the snare flips the frame to its negative and the shaft snaps a quarter turn every four beats. In the cut every kick pushes the slice deeper and spreads a ring over it, the snare heats the red to orange and hi-hats flash random cells.",
+  "takes": [
+    {
+      "name": "Shaft",
+      "description": "A plunge down a square shaft lined with huge extruded phrase letters and square ring lights, drawn in dithered 1-bit black and white that flips to its negative on the snare.",
+      "words": [
+        "1-BIT RAY MARCH",
+        "EACH DOT IS BLACK OR WHITE.",
+        "4 BY 4 ORDERED DITHER, DOTS DOUBLED.",
+        "THE SNARE SWAPS BLACK AND WHITE.",
+        "1-BIT 1-BIT 1-BIT 1-BIT",
+        "DITHER DITHER DITHER",
+        "RAY MARCH RAY MARCH",
+        "BLACK WHITE BLACK WHITE",
+        "NO GREY NO GREY NO GREY",
+        "SNARE = NEGATIVE"
+      ]
+    },
+    {
+      "name": "Cut",
+      "description": "A flat, poster-like view square onto a diagonal slice through the lattice, with the cut face painted red, phrases knocked out in white, and soft white clay showing through the holes.",
+      "words": [
+        "THIS IS NOT A 3D MODEL.",
+        "ONE SHADER MEASURES THE",
+        "DISTANCE TO A FOLDED BOX",
+        "FOR EVERY PIXEL.",
+        "THIS IS A FLAT SLICE",
+        "THROUGH THAT FRACTAL.",
+        "EACH KICK DRUM PUSHES",
+        "THE SLICE DEEPER."
+      ]
+    }
+  ],
+  "accepts_input": true,
+  "as_processor": "Uses the picture in place of the lettering: its brightness becomes raised relief on the fractal and its colour becomes the paint, shown on the walls of the shaft in 1-bit dither or as a poster on the red cut face.",
+  "input_takes": {
+    "best": [
+      1
+    ],
+    "usable": [
+      0
+    ],
+    "ignores_input": []
+  }
+}

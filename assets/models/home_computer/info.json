@@ -1,0 +1,25 @@
+{
+ "slug": "home_computer",
+ "source": "home_computer",
+ "parts_joined": 1,
+ "vertices": 27373,
+ "triangles": 29999,
+ "decimated": true,
+ "original_size_m": [
+  0.7992,
+  1.001,
+  0.7023
+ ],
+ "size_units": [
+  0.7984,
+  0.7016,
+  1.0
+ ],
+ "has_uv": true,
+ "has_texture": true,
+ "generator": "TRELLIS.2",
+ "group": "arcade",
+ "prompt": "a 1980s all-in-one home computer with built-in screen and keyboard, bright yellow plastic case",
+ "yaw_applied_deg": 0,
+ "facing_set_by": "eye, metric agreed"
+}

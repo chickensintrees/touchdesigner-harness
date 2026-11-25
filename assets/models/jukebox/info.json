@@ -1,0 +1,25 @@
+{
+ "slug": "jukebox",
+ "source": "jukebox",
+ "parts_joined": 1,
+ "vertices": 27284,
+ "triangles": 29999,
+ "decimated": true,
+ "original_size_m": [
+  0.5778,
+  0.4316,
+  0.9896
+ ],
+ "size_units": [
+  0.5839,
+  1.0,
+  0.4361
+ ],
+ "has_uv": true,
+ "has_texture": true,
+ "generator": "TRELLIS.2",
+ "group": "music",
+ "prompt": "a 1940s dome-top jukebox with glowing coloured tubes, chrome grille and wood cabinet",
+ "yaw_applied_deg": 0,
+ "facing_set_by": "eye, metric overruled"
+}

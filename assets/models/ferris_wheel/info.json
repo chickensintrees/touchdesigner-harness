@@ -1,0 +1,25 @@
+{
+ "slug": "ferris_wheel",
+ "source": "ferris_wheel",
+ "parts_joined": 1,
+ "vertices": 33654,
+ "triangles": 30000,
+ "decimated": true,
+ "original_size_m": [
+  0.8575,
+  0.2944,
+  0.9986
+ ],
+ "size_units": [
+  0.8587,
+  1.0,
+  0.2948
+ ],
+ "has_uv": true,
+ "has_texture": true,
+ "generator": "TRELLIS.2",
+ "group": "roadside",
+ "prompt": "a ferris wheel with coloured gondolas on an A-frame support, as a scale model",
+ "yaw_applied_deg": 0,
+ "facing_set_by": "eye, metric overruled"
+}

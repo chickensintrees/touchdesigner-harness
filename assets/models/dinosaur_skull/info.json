@@ -1,0 +1,25 @@
+{
+ "slug": "dinosaur_skull",
+ "source": "dinosaur_skull",
+ "parts_joined": 1,
+ "vertices": 32371,
+ "triangles": 30000,
+ "decimated": true,
+ "original_size_m": [
+  0.5816,
+  1.0005,
+  0.9753
+ ],
+ "size_units": [
+  0.5813,
+  0.9748,
+  1.0
+ ],
+ "has_uv": true,
+ "has_texture": true,
+ "generator": "TRELLIS.2",
+ "group": "monuments",
+ "prompt": "a fossil Tyrannosaurus skull with open jaws on a museum display mount",
+ "yaw_applied_deg": 0,
+ "facing_set_by": "eye, metric overruled"
+}

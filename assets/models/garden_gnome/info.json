@@ -1,0 +1,25 @@
+{
+ "slug": "garden_gnome",
+ "source": "garden_gnome",
+ "parts_joined": 1,
+ "vertices": 20163,
+ "triangles": 30000,
+ "decimated": true,
+ "original_size_m": [
+  0.6414,
+  0.6566,
+  1.001
+ ],
+ "size_units": [
+  0.6407,
+  1.0,
+  0.6559
+ ],
+ "has_uv": true,
+ "has_texture": true,
+ "generator": "TRELLIS.2",
+ "group": "characters",
+ "prompt": "a painted ceramic garden gnome with a red pointed hat, white beard and blue coat",
+ "yaw_applied_deg": 0,
+ "facing_set_by": "eye, metric overruled"
+}

@@ -1,0 +1,22 @@
+{
+ "slug": "traffic_cone",
+ "source": "traffic_cone",
+ "parts_joined": 1,
+ "vertices": 24251,
+ "triangles": 29872,
+ "decimated": false,
+ "original_size_m": [
+  0.6063,
+  0.6061,
+  1.0016
+ ],
+ "size_units": [
+  0.6053,
+  1.0,
+  0.6052
+ ],
+ "has_uv": true,
+ "has_texture": true,
+ "generator": "TRELLIS.2",
+ "prompt": "an orange traffic cone with two white reflective bands on a square black rubber base, slightly scuffed"
+}

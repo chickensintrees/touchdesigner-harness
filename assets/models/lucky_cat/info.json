@@ -1,0 +1,25 @@
+{
+ "slug": "lucky_cat",
+ "source": "lucky_cat",
+ "parts_joined": 1,
+ "vertices": 20146,
+ "triangles": 29998,
+ "decimated": true,
+ "original_size_m": [
+  0.711,
+  0.6681,
+  1.0011
+ ],
+ "size_units": [
+  0.7102,
+  1.0,
+  0.6673
+ ],
+ "has_uv": true,
+ "has_texture": true,
+ "generator": "TRELLIS.2",
+ "group": "characters",
+ "prompt": "a white ceramic maneki-neko lucky cat with one raised paw, red collar and gold bell",
+ "yaw_applied_deg": 0,
+ "facing_set_by": "eye, metric agreed"
+}

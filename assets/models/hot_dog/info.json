@@ -1,0 +1,25 @@
+{
+ "slug": "hot_dog",
+ "source": "hot_dog",
+ "parts_joined": 1,
+ "vertices": 20585,
+ "triangles": 29999,
+ "decimated": true,
+ "original_size_m": [
+  1.0003,
+  0.4477,
+  0.3394
+ ],
+ "size_units": [
+  1.0,
+  0.3393,
+  0.4476
+ ],
+ "has_uv": true,
+ "has_texture": true,
+ "generator": "TRELLIS.2",
+ "group": "plastic",
+ "prompt": "a giant fibreglass hot dog in a bun with a wavy line of mustard, roadside sculpture",
+ "yaw_applied_deg": 0,
+ "facing_set_by": "eye, metric overruled"
+}

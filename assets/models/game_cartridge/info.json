@@ -1,0 +1,25 @@
+{
+ "slug": "game_cartridge",
+ "source": "game_cartridge",
+ "parts_joined": 1,
+ "vertices": 27976,
+ "triangles": 30000,
+ "decimated": true,
+ "original_size_m": [
+  0.9927,
+  0.1685,
+  0.6536
+ ],
+ "size_units": [
+  1.0,
+  0.6585,
+  0.1697
+ ],
+ "has_uv": true,
+ "has_texture": true,
+ "generator": "TRELLIS.2",
+ "group": "arcade",
+ "prompt": "a chunky grey plastic video game cartridge with a blank bright yellow label",
+ "yaw_applied_deg": 0,
+ "facing_set_by": "eye, metric overruled"
+}

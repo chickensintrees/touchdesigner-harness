@@ -1,0 +1,22 @@
+{
+ "slug": "gramophone",
+ "source": "gramophone",
+ "parts_joined": 1,
+ "vertices": 25023,
+ "triangles": 29161,
+ "decimated": false,
+ "original_size_m": [
+  0.7399,
+  0.7372,
+  1.0
+ ],
+ "size_units": [
+  0.7399,
+  1.0,
+  0.7372
+ ],
+ "has_uv": true,
+ "has_texture": true,
+ "generator": "TRELLIS.2",
+ "prompt": "an antique wind-up gramophone with a large flared brass horn, a wooden box base, a turntable and a crank handle"
+}

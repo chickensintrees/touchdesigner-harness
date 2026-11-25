@@ -1,0 +1,25 @@
+{
+ "slug": "diving_helmet",
+ "source": "diving_helmet",
+ "parts_joined": 1,
+ "vertices": 30097,
+ "triangles": 30000,
+ "decimated": true,
+ "original_size_m": [
+  0.8092,
+  0.8862,
+  1.0
+ ],
+ "size_units": [
+  0.8092,
+  1.0,
+  0.8862
+ ],
+ "has_uv": true,
+ "has_texture": true,
+ "generator": "TRELLIS.2",
+ "group": "machines",
+ "prompt": "an antique brass and copper deep-sea diving helmet with round glass portholes",
+ "yaw_applied_deg": 0,
+ "facing_set_by": "eye, metric agreed"
+}

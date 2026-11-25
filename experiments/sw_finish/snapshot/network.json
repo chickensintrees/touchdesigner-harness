@@ -1,0 +1,487 @@
+{
+ "format": "tdh-snapshot/1",
+ "root": "/project1/sw_finish",
+ "ops": {
+  "bloom": {
+   "type": "blurTOP",
+   "family": "TOP",
+   "pos": [
+    1020,
+    0
+   ],
+   "inputs": [
+    [
+     "bright"
+    ]
+   ],
+   "pars": {
+    "size": 6
+   }
+  },
+  "bright": {
+   "type": "glslTOP",
+   "family": "TOP",
+   "pos": [
+    850,
+    0
+   ],
+   "inputs": [
+    [
+     "signal"
+    ]
+   ],
+   "pars": {
+    "computedat": "bright_compute",
+    "format": "rgba16float",
+    "outputresolution": "quarter",
+    "pixeldat": "bright_frag",
+    "vec0name": "uKnee",
+    "vec0valuew": {
+     "expr": "0"
+    },
+    "vec0valuex": {
+     "expr": "0.7"
+    },
+    "vec0valuey": {
+     "expr": "0"
+    },
+    "vec0valuez": {
+     "expr": "0"
+    }
+   }
+  },
+  "bright_frag": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.experiment('sw_finish', 'shaders/bright.frag')"
+    },
+    "language": "text",
+    "syncfile": true
+   },
+   "text_file": "experiments/sw_finish/shaders/bright.frag"
+  },
+  "bright_info": {
+   "type": "infoDAT",
+   "family": "DAT",
+   "pos": [
+    160,
+    -120
+   ],
+   "pars": {
+    "language": "text",
+    "op": "bright"
+   }
+  },
+  "bypass": {
+   "type": "switchTOP",
+   "family": "TOP",
+   "pos": [
+    1530,
+    0
+   ],
+   "inputs": [
+    [
+     "display"
+    ],
+    [
+     "fit"
+    ]
+   ],
+   "pars": {
+    "index": {
+     "expr": "1 if parent().par.Bypass else 0"
+    }
+   }
+  },
+  "cook_driver": {
+   "type": "executeDAT",
+   "family": "DAT",
+   "pos": [
+    200,
+    -200
+   ],
+   "pars": {
+    "framestart": true,
+    "language": "python"
+   },
+   "text": [
+    "def onFrameStart(frame):",
+    "    if parent().par.Preview.eval():",
+    "        op('out1').cook(force=True)",
+    "    return"
+   ]
+  },
+  "display": {
+   "type": "glslTOP",
+   "family": "TOP",
+   "pos": [
+    1360,
+    0
+   ],
+   "inputs": [
+    [
+     "signal"
+    ],
+    [
+     "bloom"
+    ],
+    [
+     "halation"
+    ]
+   ],
+   "pars": {
+    "computedat": "display_compute",
+    "format": "rgba8fixed",
+    "pixeldat": "display_frag",
+    "vec0name": "uTube",
+    "vec0valuew": {
+     "expr": "parent().par.Corners"
+    },
+    "vec0valuex": {
+     "expr": "parent().par.Curvature"
+    },
+    "vec0valuey": {
+     "expr": "parent().par.Scanlines"
+    },
+    "vec0valuez": {
+     "expr": "parent().par.Mask"
+    },
+    "vec1name": "uGlow",
+    "vec1valuew": {
+     "expr": "parent().par.Grain"
+    },
+    "vec1valuex": {
+     "expr": "parent().par.Bloom"
+    },
+    "vec1valuey": {
+     "expr": "parent().par.Halation"
+    },
+    "vec1valuez": {
+     "expr": "parent().par.Misregister"
+    },
+    "vec2name": "uFrame",
+    "vec2valuew": {
+     "expr": "parent().par.Ditherpixel"
+    },
+    "vec2valuex": {
+     "expr": "parent().par.Letterbox"
+    },
+    "vec2valuey": {
+     "expr": "parent().par.Fourthree"
+    },
+    "vec2valuez": {
+     "expr": "parent().par.Dither"
+    },
+    "vec3name": "uTint",
+    "vec3valuew": {
+     "expr": "parent().par.Blacktint"
+    },
+    "vec3valuex": {
+     "expr": "parent().par.Blackcolorr"
+    },
+    "vec3valuey": {
+     "expr": "parent().par.Blackcolorg"
+    },
+    "vec3valuez": {
+     "expr": "parent().par.Blackcolorb"
+    },
+    "vec4name": "uCast",
+    "vec4valuew": {
+     "expr": "parent().par.Vignette"
+    },
+    "vec4valuex": {
+     "expr": "parent().par.Castr"
+    },
+    "vec4valuey": {
+     "expr": "parent().par.Castg"
+    },
+    "vec4valuez": {
+     "expr": "parent().par.Castb"
+    },
+    "vec5name": "uClock",
+    "vec5valuew": {
+     "expr": "0"
+    },
+    "vec5valuex": {
+     "expr": "absTime.seconds % 3600"
+    },
+    "vec5valuey": {
+     "expr": "absTime.frame % 4096"
+    },
+    "vec5valuez": {
+     "expr": "parent().par.Weave"
+    }
+   }
+  },
+  "display_frag": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.experiment('sw_finish', 'shaders/display.frag')"
+    },
+    "language": "text",
+    "syncfile": true
+   },
+   "text_file": "experiments/sw_finish/shaders/display.frag"
+  },
+  "display_info": {
+   "type": "infoDAT",
+   "family": "DAT",
+   "pos": [
+    160,
+    -120
+   ],
+   "pars": {
+    "language": "text",
+    "op": "display"
+   }
+  },
+  "fit": {
+   "type": "fitTOP",
+   "family": "TOP",
+   "pos": [
+    510,
+    0
+   ],
+   "inputs": [
+    [
+     "pick"
+    ]
+   ],
+   "pars": {
+    "format": "rgba16float",
+    "outputaspect": "resolution",
+    "outputresolution": "custom",
+    "resolutionh": 720,
+    "resolutionw": 1280
+   }
+  },
+  "halation": {
+   "type": "blurTOP",
+   "family": "TOP",
+   "pos": [
+    1190,
+    0
+   ],
+   "inputs": [
+    [
+     "bloom"
+    ]
+   ],
+   "pars": {
+    "size": 22
+   }
+  },
+  "in1": {
+   "type": "inTOP",
+   "family": "TOP",
+   "pos": [
+    0,
+    0
+   ]
+  },
+  "local": {
+   "type": "baseCOMP",
+   "family": "COMP",
+   "pos": [
+    -400,
+    460
+   ]
+  },
+  "local/modules": {
+   "type": "baseCOMP",
+   "family": "COMP",
+   "pos": [
+    0,
+    0
+   ]
+  },
+  "local/modules/paths": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "file": {
+     "expr": "project.folder.replace(chr(92), '/') + '/experiments/sw_hub/paths_module.py'"
+    },
+    "language": "text",
+    "syncfile": true
+   },
+   "text_file": "experiments/sw_hub/paths_module.py"
+  },
+  "named": {
+   "type": "selectTOP",
+   "family": "TOP",
+   "pos": [
+    170,
+    0
+   ],
+   "pars": {
+    "top": {
+     "expr": "parent().par.Input.eval() or ''"
+    }
+   }
+  },
+  "out1": {
+   "type": "outTOP",
+   "family": "TOP",
+   "pos": [
+    1700,
+    0
+   ],
+   "inputs": [
+    [
+     "bypass"
+    ]
+   ]
+  },
+  "pick": {
+   "type": "switchTOP",
+   "family": "TOP",
+   "pos": [
+    340,
+    0
+   ],
+   "inputs": [
+    [
+     "in1"
+    ],
+    [
+     "named"
+    ]
+   ],
+   "pars": {
+    "index": {
+     "expr": "1 if parent().par.Input.eval() else 0"
+    }
+   }
+  },
+  "preset_exec": {
+   "type": "parameterexecuteDAT",
+   "family": "DAT",
+   "pos": [
+    0,
+    -200
+   ],
+   "pars": {
+    "builtin": false,
+    "language": "python",
+    "op": "..",
+    "pars": "Preset"
+   },
+   "text": [
+    "import json",
+    "",
+    "",
+    "def apply(comp, name):",
+    "    \"\"\"Copy one preset from presets.json onto the Controls page.\"\"\"",
+    "    path = comp.op('local/modules/paths').module.experiment('sw_finish', 'presets.json')",
+    "    with open(path, encoding='utf-8') as fh:",
+    "        presets = json.load(fh)",
+    "    preset = presets.get(name)",
+    "    if preset is None:",
+    "        return",
+    "    for key, value in preset.items():",
+    "        if key == 'label':",
+    "            continue",
+    "        if isinstance(value, list):",
+    "            for suffix, v in zip('rgb', value):",
+    "                getattr(comp.par, key + suffix).val = v",
+    "        elif hasattr(comp.par, key):",
+    "            getattr(comp.par, key).val = value",
+    "",
+    "",
+    "def onValueChange(par, prev):",
+    "    if par.name == 'Preset':",
+    "        apply(parent(), parent().par.Preset.eval())",
+    "    return"
+   ]
+  },
+  "signal": {
+   "type": "glslTOP",
+   "family": "TOP",
+   "pos": [
+    680,
+    0
+   ],
+   "inputs": [
+    [
+     "fit"
+    ]
+   ],
+   "pars": {
+    "computedat": "signal_compute",
+    "format": "rgba16float",
+    "pixeldat": "signal_frag",
+    "vec0name": "uTape",
+    "vec0valuew": {
+     "expr": "parent().par.Soften"
+    },
+    "vec0valuex": {
+     "expr": "parent().par.Bleed"
+    },
+    "vec0valuey": {
+     "expr": "parent().par.Tracking"
+    },
+    "vec0valuez": {
+     "expr": "parent().par.Headswitch"
+    },
+    "vec1name": "uClock",
+    "vec1valuew": {
+     "expr": "0"
+    },
+    "vec1valuex": {
+     "expr": "absTime.seconds % 3600"
+    },
+    "vec1valuey": {
+     "expr": "absTime.frame % 4096"
+    },
+    "vec1valuez": {
+     "expr": "parent().par.Weave"
+    }
+   }
+  },
+  "signal_frag": {
+   "type": "textDAT",
+   "family": "DAT",
+   "pos": [
+    0,
+    0
+   ],
+   "pars": {
+    "file": {
+     "expr": "mod.paths.experiment('sw_finish', 'shaders/signal.frag')"
+    },
+    "language": "text",
+    "syncfile": true
+   },
+   "text_file": "experiments/sw_finish/shaders/signal.frag"
+  },
+  "signal_info": {
+   "type": "infoDAT",
+   "family": "DAT",
+   "pos": [
+    160,
+    -120
+   ],
+   "pars": {
+    "language": "text",
+    "op": "signal"
+   }
+  }
+ }
+}

@@ -1,0 +1,25 @@
+{
+ "slug": "bear_mascot",
+ "source": "bear_mascot",
+ "parts_joined": 1,
+ "vertices": 22292,
+ "triangles": 29998,
+ "decimated": true,
+ "original_size_m": [
+  0.9819,
+  1.0007,
+  0.9121
+ ],
+ "size_units": [
+  0.9812,
+  0.9114,
+  1.0
+ ],
+ "has_uv": true,
+ "has_texture": true,
+ "generator": "TRELLIS.2",
+ "group": "characters",
+ "prompt": "a sports mascot costume head of a smiling brown bear, oversized, plush fur, on a display stand",
+ "yaw_applied_deg": 180,
+ "facing_set_by": "eye, metric overruled"
+}

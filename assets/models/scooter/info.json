@@ -1,0 +1,25 @@
+{
+ "slug": "scooter",
+ "source": "scooter",
+ "parts_joined": 1,
+ "vertices": 29339,
+ "triangles": 29999,
+ "decimated": true,
+ "original_size_m": [
+  0.4915,
+  0.9999,
+  0.6997
+ ],
+ "size_units": [
+  0.4915,
+  0.6997,
+  1.0
+ ],
+ "has_uv": true,
+ "has_texture": true,
+ "generator": "TRELLIS.2",
+ "group": "machines",
+ "prompt": "a 1960s Italian motor scooter in mint green with a round headlamp and a white seat",
+ "yaw_applied_deg": 0,
+ "facing_set_by": "eye, metric overruled"
+}

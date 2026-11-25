@@ -1,0 +1,22 @@
+{
+ "slug": "broken_column",
+ "source": "broken_column",
+ "parts_joined": 1,
+ "vertices": 23972,
+ "triangles": 29853,
+ "decimated": false,
+ "original_size_m": [
+  0.7455,
+  0.7752,
+  1.0005
+ ],
+ "size_units": [
+  0.7451,
+  1.0,
+  0.7748
+ ],
+ "has_uv": true,
+ "has_texture": true,
+ "generator": "TRELLIS.2",
+ "prompt": "a fragment of an ancient fluted stone column with an ionic capital, broken off at an angle, on a stone base"
+}

@@ -1,0 +1,15 @@
+# Printed side of a sheet only (normal +Y). A sheet model that carries both sides
+# with the same UVs shows its picture mirrored on the back.
+o sheet_front
+v -0.500000 0.000000 0.387097
+v 0.500000 0.000000 0.387097
+v 0.500000 0.000000 -0.387097
+v -0.500000 0.000000 -0.387097
+vn 0.0000 1.0000 0.0000
+vt 0.000000 0.000000
+vt 1.000000 0.000000
+vt 1.000000 1.000000
+vt 0.000000 1.000000
+s 0
+f 1/1/1 2/2/1 3/3/1
+f 1/1/1 3/3/1 4/4/1

@@ -1,0 +1,25 @@
+{
+ "slug": "megaphone",
+ "source": "megaphone",
+ "parts_joined": 1,
+ "vertices": 24164,
+ "triangles": 29999,
+ "decimated": true,
+ "original_size_m": [
+  1.001,
+  0.5808,
+  0.8987
+ ],
+ "size_units": [
+  0.5802,
+  0.8977,
+  1.0
+ ],
+ "has_uv": true,
+ "has_texture": true,
+ "generator": "TRELLIS.2",
+ "group": "broadcast",
+ "prompt": "a red and white handheld megaphone with pistol grip",
+ "yaw_applied_deg": 90,
+ "facing_set_by": "eye, metric overruled"
+}

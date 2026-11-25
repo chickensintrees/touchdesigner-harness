@@ -1,0 +1,25 @@
+{
+ "slug": "moai",
+ "source": "moai",
+ "parts_joined": 1,
+ "vertices": 21467,
+ "triangles": 29999,
+ "decimated": true,
+ "original_size_m": [
+  0.6151,
+  0.7445,
+  1.0001
+ ],
+ "size_units": [
+  0.615,
+  1.0,
+  0.7444
+ ],
+ "has_uv": true,
+ "has_texture": true,
+ "generator": "TRELLIS.2",
+ "group": "monuments",
+ "prompt": "an Easter Island moai statue head carved from dark volcanic stone, weathered",
+ "yaw_applied_deg": 0,
+ "facing_set_by": "eye, metric overruled"
+}
